@@ -486,3 +486,18 @@ describe("round four", () => {
     expect(c.enemy.hp).toBeGreaterThan(31 - 8);
   });
 });
+
+describe("UI-001 navigation helpers", () => {
+  it("newlySighted reports only entities that just came into view", async () => {
+    const { sightedIds, newlySighted, reveal } = await import("../src/game/dungeon");
+    const d = generate(1, makeRng(101));
+    d.seen.fill(false);
+    reveal(d, d.start.x, d.start.y);
+    const before = sightedIds(d);
+    expect(newlySighted(d, before)).toEqual([]);
+    d.seen.fill(true);
+    const fresh = newlySighted(d, before);
+    expect(fresh.length).toBe(d.entities.filter((e) => !e.done && e.kind !== "stairs").length - before.size);
+    expect(fresh.every((e) => !before.has(e.id))).toBe(true);
+  });
+});

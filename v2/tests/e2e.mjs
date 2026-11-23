@@ -26,7 +26,45 @@ await shot("02-town");
 await click("进塔");
 await page.waitForSelector(".explore");
 await shot("03-explore-tip");
-await click("知道了");
+const startPos = (await state()).pos;
+// Close the tip and press forward straight away: the omen card that appears must still gate the key.
+await page.getByRole("button", { name: "知道了" }).first().click();
+await page.keyboard.press("w");
+
+// UI-001 regression: the omen card gates movement, and auto-walk can be stopped.
+{
+  const assert = (ok, msg) => { if (!ok) { errors.push("UI-001: " + msg); console.log("FAIL", msg); } else console.log("ok", msg); };
+  if (await page.locator(".omen-card").count()) {
+    const before = startPos;
+    await page.waitForTimeout(400);
+    assert(JSON.stringify((await state()).pos) === JSON.stringify(before), "movement is blocked while the omen card is unread");
+    assert(await page.locator(".omen-card .omen-hint").count() === 1, "blocked input explains how to continue");
+    await page.keyboard.press("Enter");
+    await page.waitForTimeout(200);
+    assert(await page.locator(".omen-card").count() === 0, "Enter closes the omen card");
+  }
+  // Walk to the farthest reachable seen tile, then stop with Esc after the first step.
+  const target = await page.evaluate(() => {
+    const s = window.__seal, r = s.runSig.value, d = r.dungeon;
+    let best = null;
+    for (let y = 0; y < d.h; y++) for (let x = 0; x < d.w; x++) {
+      if (!d.seen[y * d.w + x] || d.tiles[y * d.w + x]) continue;
+      const p = s.findPath(d, r.pos, { x, y });
+      if (p && (!best || p.length > best.len)) best = { x, y, len: p.length };
+    }
+    return best && { ...best, w: d.w, h: d.h };
+  });
+  if (target && target.len >= 3) {
+    const box = await page.locator(".minimap canvas").boundingBox();
+    await page.mouse.click(box.x + ((target.x + 0.5) / target.w) * box.width, box.y + ((target.y + 0.5) / target.h) * box.height);
+    await page.waitForTimeout(250);
+    await page.keyboard.press("Escape");
+    await page.waitForTimeout(900);
+    const pos = (await state()).pos;
+    assert(!(pos.x === target.x && pos.y === target.y), "Esc stops an auto-walk before it arrives");
+    assert(await page.locator(".stop-walk").count() === 0, "the stop button goes away once stopped");
+  }
+}
 
 // Walk to the nearest visible fight by clicking it on the minimap.
 async function walkToKind(kinds) {

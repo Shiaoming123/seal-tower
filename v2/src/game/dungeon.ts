@@ -181,3 +181,13 @@ export function findPath(d: Dungeon, from: { x: number; y: number }, to: { x: nu
 
 /** Entities you must stop at (fights, events…). Finished shops and rests can be walked through. */
 export const blocks = (e: Entity) => !e.done;
+
+/** Ids of active entities currently on revealed tiles (what the minimap shows). */
+export function sightedIds(d: Dungeon): Set<number> {
+  return new Set(d.entities.filter((e) => !e.done && e.kind !== "stairs" && d.seen[idx(d, e.x, e.y)]).map((e) => e.id));
+}
+
+/** Entities that became visible since `before` — auto-walk stops when one appears. */
+export function newlySighted(d: Dungeon, before: Set<number>): Entity[] {
+  return d.entities.filter((e) => !e.done && e.kind !== "stairs" && d.seen[idx(d, e.x, e.y)] && !before.has(e.id));
+}

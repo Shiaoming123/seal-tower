@@ -2,14 +2,14 @@ import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 import { sfx } from "../audio/sfx";
 import { ENEMIES } from "../data/enemies";
 import { EVENTS } from "../data/events";
-import { DIRS, DIR_NAMES, entityAt, findPath, isWall } from "../game/dungeon";
+import { DIRS, DIR_NAMES, entityAt, findPath, isWall, newlySighted, sightedIds } from "../game/dungeon";
 import * as R from "../game/run";
 import type { Entity, RunState } from "../game/types";
 import { type Billboard, Raycaster } from "../render/raycaster";
 import { theme } from "../render/textures";
 import { OMEN } from "../data/omens";
 import { ART } from "../render/assets";
-import { commit, markTip, overlay, runSig, seenTip, useRun } from "./store";
+import { commit, markTip, overlay, runSig, say, seenTip, useRun } from "./store";
 
 // One renderer for the whole session; screens mount its canvas where they need it.
 export const view = new Raycaster();
@@ -86,7 +86,21 @@ export function Explore() {
   const busy = useRef(false);
   const queued = useRef<null | (() => void)>(null);
   const [walking, setWalking] = useState(false);
+  /** Set to stop an auto-walk before its next step. */
+  const cancelWalk = useRef(false);
+  const [nudge, setNudge] = useState(0);
   const done = () => { busy.current = false; const q = queued.current; queued.current = null; if (q && runSig.value?.screen === "explore") q(); };
+  // 签文输入门: while the floor's omen card is unread, movement waits until it's acknowledged.
+  const showTip = !seenTip("move");
+  const omenOpen = !run.omenSeen && !showTip;
+  // Read live state, not this render's snapshot: a key pressed right after a re-render must still be gated.
+  const omenOpenNow = () => !!runSig.value && !runSig.value.omenSeen && seenTip("move");
+  const gate = (): boolean => {
+    if (!omenOpenNow()) return false;
+    setNudge((n) => n + 1);
+    return true;
+  };
+  const closeOmen = () => { run.omenSeen = true; sfx.click(); commit(); };
   useView(ref, run);
   useLayoutEffect(() => { view.place(run.pos.x, run.pos.y, run.pos.dir); }, [run.floor, run.warp]);
 
@@ -98,6 +112,8 @@ export function Explore() {
     return opened;
   };
   const turn = async (delta: number) => {
+    if (gate()) return;
+    if (walking) { cancelWalk.current = true; return; }
     if (busy.current) { queued.current = () => void turn(delta); return; }
     busy.current = true;
     const dir = (run.pos.dir + delta + 4) % 4;
@@ -107,6 +123,8 @@ export function Explore() {
     done();
   };
   const move = async (back = false) => {
+    if (gate()) return;
+    if (walking) { cancelWalk.current = true; return; }
     if (busy.current) { queued.current = () => void move(back); return; }
     const dir = run.pos.dir;
     const [dx, dy] = DIRS[back ? (dir + 2) % 4 : dir];
@@ -116,27 +134,45 @@ export function Explore() {
     await stepTo(x, y, dir, true);
     done();
   };
+  /** Click a minimap tile: walk there. Clicking again while walking re-targets; any move key stops. */
   const walkTo = async (tx: number, ty: number) => {
-    if (busy.current) return;
+    if (gate()) return;
+    if (busy.current) {
+      if (walking) { cancelWalk.current = true; queued.current = () => void walkTo(tx, ty); }
+      return;
+    }
     const path = findPath(run.dungeon, run.pos, { x: tx, y: ty });
-    if (!path || !path.length) return;
+    if (!path || !path.length) { say("那里还走不过去：路没探明，或者被妖挡住了。"); return; }
     busy.current = true;
+    cancelWalk.current = false;
     setWalking(true);
+    let stopReason = "";
     for (let i = 0; i < path.length; i++) {
+      if (cancelWalk.current) break;
       const p = path[i];
       const dir = DIRS.findIndex(([dx, dy]) => dx === p.x - run.pos.x && dy === p.y - run.pos.y);
       if (dir !== run.pos.dir) { run.pos.dir = dir; await view.moveTo(run.pos.x, run.pos.y, dir, 110); }
+      const before = sightedIds(run.dungeon);
+      const oilBefore = run.oil;
       if (await stepTo(p.x, p.y, dir, i === path.length - 1)) break;
       if (runSig.value?.screen !== "explore") break;
+      const spotted = newlySighted(run.dungeon, before);
+      if (spotted.length && i < path.length - 1) { stopReason = `发现了${spotted.map(entityName).join("、")}，先停下。`; break; }
+      if (oilBefore > 0 && run.oil === 0) { stopReason = "灯灭了，先停下。"; break; }
     }
-    busy.current = false;
+    if (stopReason) say(stopReason, 3000);
+    cancelWalk.current = false;
     setWalking(false);
+    done();
   };
+  const stopWalk = () => { if (walking) { cancelWalk.current = true; sfx.click(); } };
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (overlay.value || run.cardPick) return;
       const k = e.key.toLowerCase();
+      if (omenOpenNow() && (k === "enter" || k === " " || k === "escape")) { e.preventDefault(); closeOmen(); return; }
+      if (k === "escape" || k === " ") { e.preventDefault(); stopWalk(); return; }
       if (k === "w" || k === "arrowup") { e.preventDefault(); void move(); }
       else if (k === "s" || k === "arrowdown") { e.preventDefault(); void move(true); }
       else if (k === "a" || k === "arrowleft" || k === "q") { e.preventDefault(); void turn(-1); }
@@ -144,11 +180,10 @@ export function Explore() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [run]);
+  }, [run, omenOpen, walking]);
 
   const here = entityAt(run.dungeon, run.pos.x, run.pos.y);
   const onStairs = here?.kind === "stairs";
-  const showTip = !seenTip("move");
 
   return (
     <div class="explore">
@@ -162,14 +197,15 @@ export function Explore() {
           </div>
         )}
         {onStairs && <StairsPrompt />}
-        {!run.omenSeen && !showTip && (
-          <div class="omen-card">
+        {omenOpen && (
+          <div class={`omen-card ${nudge ? "nudge" : ""}`} key={`omen-${nudge}`}>
             <span class="omen-tag">本层签文</span>
             {ART[`omen-${run.omen}`] && <img class="omen-art" src={ART[`omen-${run.omen}`]} alt="" />}
             <h3>{OMEN[run.omen].name}</h3>
             <p class="verse">{OMEN[run.omen].verse}</p>
             <p>{OMEN[run.omen].text}</p>
-            <button type="button" class="btn small primary" onClick={() => { run.omenSeen = true; commit(); }}>知道了</button>
+            <button type="button" class="btn small primary" onClick={closeOmen}>知道了 <kbd>Enter</kbd></button>
+            {nudge > 0 && <p class="omen-hint">看完签文再出发：点「知道了」或按 Enter。</p>}
           </div>
         )}
         {run.oil <= 0 ? <div class="dark-warn">灯灭了：小地图不再自动探路，妖趁黑每下多打 {R.DARK_DAMAGE} 点。去狐市买灯油、在灯台添油，或在行囊里烧灯灰。</div>
@@ -177,7 +213,9 @@ export function Explore() {
       </div>
       <aside class="side">
         <Minimap onPick={walkTo} />
-        <div class="ahead">{walking ? "自动行走中… 遇到东西会停下。" : lookAhead(run)}</div>
+        <div class="ahead">
+          {walking ? <>自动行走中，看到妖或事件会自己停下。<button type="button" class="btn small stop-walk" onClick={stopWalk}>停下 <kbd>Esc</kbd></button></> : lookAhead(run)}
+        </div>
         {run.bossIntel && <BossIntel />}
       </aside>
       <div class="pad">
