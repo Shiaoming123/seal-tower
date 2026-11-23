@@ -1,0 +1,719 @@
+{
+  "runtimeBaseline": "189808c",
+  "artBaseline": "0a555ec",
+  "seed": "gallery",
+  "checks": {
+    "fake-fox": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "stairs": {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        "fixture": {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        },
+        "event": {
+          "intro": "event-fake-fox",
+          "reveal": "你一刀挑开摊布，底下是九条白尾巴。它不笑了。",
+          "revealArt": "fake-fox",
+          "via": [
+            "前进",
+            "揭穿它",
+            "迎战"
+          ],
+          "foe": {
+            "id": 20002,
+            "kind": "elite",
+            "done": false,
+            "x": 8,
+            "y": 9,
+            "event": "fakefox",
+            "enemy": "fake-fox",
+            "hpMul": 0.8,
+            "dmgAdd": 0
+          }
+        },
+        "results": {
+          "normal": {
+            "expected": "fake-fox-hurt",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 27,
+            "peakExtent": [
+              552,
+              238.8,
+              724.9,
+              476.5
+            ],
+            "intentBottom": 216.8,
+            "hpLoss": 0,
+            "enemyLoss": 6,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "guarded": {
+            "expected": "fake-fox",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 30,
+            "peakExtent": [
+              541.7,
+              231.7,
+              733.7,
+              474.3
+            ],
+            "intentBottom": 211.8,
+            "hpLoss": 0,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "charm": {
+            "expected": "fake-fox-attack",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 39,
+            "peakExtent": [
+              526.7,
+              243.7,
+              754.2,
+              506.8
+            ],
+            "intentBottom": 216.8,
+            "hpLoss": 6,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "partial": {
+            "expected": "fake-fox-attack",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 38,
+            "peakExtent": [
+              528.6,
+              239.6,
+              752.3,
+              498.3
+            ],
+            "intentBottom": 211.8,
+            "hpLoss": 4,
+            "enemyLoss": 0,
+            "cashLoss": 12,
+            "block": 5
+          },
+          "lash": {
+            "expected": "fake-fox-attack",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 39,
+            "peakExtent": [
+              525.8,
+              238.3,
+              755,
+              503.4
+            ],
+            "intentBottom": 211.8,
+            "hpLoss": 24,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "full": {
+            "expected": "fake-fox-attack",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 39,
+            "peakExtent": [
+              526.6,
+              243.7,
+              754.1,
+              506.8
+            ],
+            "intentBottom": 216.8,
+            "hpLoss": 0,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 10
+          }
+        },
+        "assetsMatchPreMerge": true,
+        "assets": {
+          "event-fake-fox": {
+            "webpSha256": "7e5303ae7c12051329fbbb857699eb95264aa16915db4d23a8f3d6726934aea0",
+            "sourceSha256": "348e0f14473cc66e0008c7681ac274f3199249818d5fb2d587b92129d0a68ada",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              40,
+              36,
+              381,
+              391
+            ],
+            "matches0a555ec": true
+          },
+          "fake-fox-attack": {
+            "webpSha256": "1d3c03b6025038c4176f34953a738380682f34d87f69db7d814d94cb41c4908f",
+            "sourceSha256": "52bfc59d099669b497e49080f81aaf10bfd613f7e5ddfb444c5a4f152d601359",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              63,
+              55,
+              338,
+              373
+            ],
+            "matches0a555ec": null
+          },
+          "fake-fox-hurt": {
+            "webpSha256": "6c4e58b85fbed6c278b2a2da45e398bc6c8babf0f76beed3937246ce0c9ddb60",
+            "sourceSha256": "c9220ee1bb695889993ed6e9b08d0127fcc152141cc7e4f9f2ab9eabaa338714",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              71,
+              26,
+              324,
+              374
+            ],
+            "matches0a555ec": null
+          },
+          "fake-fox": {
+            "webpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+            "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              56,
+              23,
+              337,
+              378
+            ],
+            "matches0a555ec": true
+          }
+        },
+        "errors": []
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "stairs": {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        "fixture": {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        },
+        "event": {
+          "intro": "event-fake-fox",
+          "reveal": "你一刀挑开摊布，底下是九条白尾巴。它不笑了。",
+          "revealArt": "fake-fox",
+          "via": [
+            "前进",
+            "揭穿它",
+            "迎战"
+          ],
+          "foe": {
+            "id": 20002,
+            "kind": "elite",
+            "done": false,
+            "x": 8,
+            "y": 9,
+            "event": "fakefox",
+            "enemy": "fake-fox",
+            "hpMul": 0.8,
+            "dmgAdd": 0
+          }
+        },
+        "results": {
+          "normal": {
+            "expected": "fake-fox-hurt",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 29,
+            "peakExtent": [
+              74.4,
+              239.5,
+              311.2,
+              565.4
+            ],
+            "intentBottom": 212.5,
+            "hpLoss": 0,
+            "enemyLoss": 6,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "guarded": {
+            "expected": "fake-fox",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 30,
+            "peakExtent": [
+              60.2,
+              236.8,
+              323.2,
+              569.1
+            ],
+            "intentBottom": 212.5,
+            "hpLoss": 0,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "charm": {
+            "expected": "fake-fox-attack",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 38,
+            "peakExtent": [
+              39.7,
+              221.2,
+              351.4,
+              581.7
+            ],
+            "intentBottom": 212.5,
+            "hpLoss": 6,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "partial": {
+            "expected": "fake-fox-attack",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 38,
+            "peakExtent": [
+              44.8,
+              229.2,
+              346.2,
+              577.8
+            ],
+            "intentBottom": 212.5,
+            "hpLoss": 4,
+            "enemyLoss": 0,
+            "cashLoss": 12,
+            "block": 5
+          },
+          "lash": {
+            "expected": "fake-fox-attack",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 38,
+            "peakExtent": [
+              39.7,
+              221.2,
+              351.4,
+              581.7
+            ],
+            "intentBottom": 212.5,
+            "hpLoss": 24,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "full": {
+            "expected": "fake-fox-attack",
+            "returns": "fake-fox",
+            "firstLoadedMs": 0,
+            "activitySamples": 38,
+            "peakExtent": [
+              42.3,
+              225.3,
+              348.8,
+              579.7
+            ],
+            "intentBottom": 212.5,
+            "hpLoss": 0,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 10
+          }
+        },
+        "assetsMatchPreMerge": true,
+        "assets": {
+          "event-fake-fox": {
+            "webpSha256": "7e5303ae7c12051329fbbb857699eb95264aa16915db4d23a8f3d6726934aea0",
+            "sourceSha256": "348e0f14473cc66e0008c7681ac274f3199249818d5fb2d587b92129d0a68ada",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              40,
+              36,
+              381,
+              391
+            ],
+            "matches0a555ec": true
+          },
+          "fake-fox-attack": {
+            "webpSha256": "1d3c03b6025038c4176f34953a738380682f34d87f69db7d814d94cb41c4908f",
+            "sourceSha256": "52bfc59d099669b497e49080f81aaf10bfd613f7e5ddfb444c5a4f152d601359",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              63,
+              55,
+              338,
+              373
+            ],
+            "matches0a555ec": null
+          },
+          "fake-fox-hurt": {
+            "webpSha256": "6c4e58b85fbed6c278b2a2da45e398bc6c8babf0f76beed3937246ce0c9ddb60",
+            "sourceSha256": "c9220ee1bb695889993ed6e9b08d0127fcc152141cc7e4f9f2ab9eabaa338714",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              71,
+              26,
+              324,
+              374
+            ],
+            "matches0a555ec": null
+          },
+          "fake-fox": {
+            "webpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+            "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              56,
+              23,
+              337,
+              378
+            ],
+            "matches0a555ec": true
+          }
+        },
+        "errors": []
+      }
+    ],
+    "fallen": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "stairs": {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        "fixture": {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        },
+        "results": {
+          "normal": {
+            "expected": "fallen-hurt",
+            "returns": "fallen-guard",
+            "firstLoadedMs": 0,
+            "activitySamples": 22,
+            "peakExtent": [
+              525.4,
+              245.8,
+              742.6,
+              474.7
+            ],
+            "intentBottom": 216.8,
+            "hpLoss": 4,
+            "enemyLoss": 6,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "guarded": {
+            "expected": "fallen",
+            "returns": "fallen",
+            "firstLoadedMs": 0,
+            "activitySamples": 29,
+            "peakExtent": [
+              553,
+              236.6,
+              691.6,
+              478.7
+            ],
+            "intentBottom": 216.8,
+            "hpLoss": 0,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "cut": {
+            "expected": "fallen-strike",
+            "returns": "fallen",
+            "firstLoadedMs": 0,
+            "activitySamples": 39,
+            "peakExtent": [
+              540.8,
+              243.1,
+              762.2,
+              509.4
+            ],
+            "intentBottom": 216.8,
+            "hpLoss": 14,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 0
+          }
+        },
+        "assetsMatchPreMerge": true,
+        "assets": {
+          "fallen-guard": {
+            "webpSha256": "5b2e43de21fe6c32cc8760462d325c1f8f6476fa60eedd89af715c21e2fd58e1",
+            "sourceSha256": "2b233a86fa3e31651d7bd0c706c68e2cdba91ed9f919c5f2e57da10841d88035",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              113,
+              30,
+              346,
+              394
+            ],
+            "matches0a555ec": true
+          },
+          "fallen-hurt": {
+            "webpSha256": "0ad5de6c4f541b273acac42484e87be5da0b98ea6099c3e9cd4bc5c032b3d5ad",
+            "sourceSha256": "2ffbad2ca3f7d57b80ad636b44d4aaec6d3570a5eca7e1f9cfa86c8f38c38d2a",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              30,
+              39,
+              362,
+              389
+            ],
+            "matches0a555ec": null
+          },
+          "fallen": {
+            "webpSha256": "e17bd5a342ea2bd1c7908d42743049c13070a47e965916ca8e09edc88693b560",
+            "sourceSha256": "4d629d413a4b4ee6e6502234cb03e3d57cf542876d20d0e8f431cb897ac2ce72",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              76,
+              24,
+              289,
+              396
+            ],
+            "matches0a555ec": true
+          },
+          "fallen-strike": {
+            "webpSha256": "7b34780f173c49ff9db1c77e11f3981552ca6ce57da8087bbbeae9c79d3d4547",
+            "sourceSha256": "b1bb4d3cce6313cd770fca244d48f11bc92a8a6729bfbd20bac3cd66dc609b17",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              84,
+              57,
+              365,
+              395
+            ],
+            "matches0a555ec": false
+          }
+        },
+        "errors": []
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "stairs": {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        "fixture": {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        },
+        "results": {
+          "normal": {
+            "expected": "fallen-hurt",
+            "returns": "fallen-guard",
+            "firstLoadedMs": 0,
+            "activitySamples": 25,
+            "peakExtent": [
+              36.3,
+              249.3,
+              333.8,
+              562.9
+            ],
+            "intentBottom": 212.5,
+            "hpLoss": 4,
+            "enemyLoss": 6,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "guarded": {
+            "expected": "fallen",
+            "returns": "fallen",
+            "firstLoadedMs": 0,
+            "activitySamples": 30,
+            "peakExtent": [
+              75.7,
+              236.6,
+              265.6,
+              568.3
+            ],
+            "intentBottom": 212.5,
+            "hpLoss": 0,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 0
+          },
+          "cut": {
+            "expected": "fallen-strike",
+            "returns": "fallen",
+            "firstLoadedMs": 0,
+            "activitySamples": 38,
+            "peakExtent": [
+              59,
+              220.4,
+              362.3,
+              585.3
+            ],
+            "intentBottom": 212.5,
+            "hpLoss": 14,
+            "enemyLoss": 0,
+            "cashLoss": 0,
+            "block": 0
+          }
+        },
+        "assetsMatchPreMerge": true,
+        "assets": {
+          "fallen-guard": {
+            "webpSha256": "5b2e43de21fe6c32cc8760462d325c1f8f6476fa60eedd89af715c21e2fd58e1",
+            "sourceSha256": "2b233a86fa3e31651d7bd0c706c68e2cdba91ed9f919c5f2e57da10841d88035",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              113,
+              30,
+              346,
+              394
+            ],
+            "matches0a555ec": true
+          },
+          "fallen-hurt": {
+            "webpSha256": "0ad5de6c4f541b273acac42484e87be5da0b98ea6099c3e9cd4bc5c032b3d5ad",
+            "sourceSha256": "2ffbad2ca3f7d57b80ad636b44d4aaec6d3570a5eca7e1f9cfa86c8f38c38d2a",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              30,
+              39,
+              362,
+              389
+            ],
+            "matches0a555ec": null
+          },
+          "fallen": {
+            "webpSha256": "e17bd5a342ea2bd1c7908d42743049c13070a47e965916ca8e09edc88693b560",
+            "sourceSha256": "4d629d413a4b4ee6e6502234cb03e3d57cf542876d20d0e8f431cb897ac2ce72",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              76,
+              24,
+              289,
+              396
+            ],
+            "matches0a555ec": true
+          },
+          "fallen-strike": {
+            "webpSha256": "7b34780f173c49ff9db1c77e11f3981552ca6ce57da8087bbbeae9c79d3d4547",
+            "sourceSha256": "b1bb4d3cce6313cd770fca244d48f11bc92a8a6729bfbd20bac3cd66dc609b17",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              84,
+              57,
+              365,
+              395
+            ],
+            "matches0a555ec": false
+          }
+        },
+        "errors": []
+      }
+    ]
+  }
+}

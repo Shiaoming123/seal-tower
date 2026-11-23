@@ -72,7 +72,7 @@
   "fallen-strike": {
     "file": "fallen-strike.png",
     "sourceSha256": "b1bb4d3cce6313cd770fca244d48f11bc92a8a6729bfbd20bac3cd66dc609b17",
-    "webpSha256": "e34200114cfc2f75044bfdcb76fbb2bbd6c3bef1a1679119be5e933c13d8b3da"
+    "webpSha256": "7b34780f173c49ff9db1c77e11f3981552ca6ce57da8087bbbeae9c79d3d4547"
   },
   "fallen": {
     "file": "fallen.png",
@@ -263,5 +263,20 @@
     "file": "rat-hurt.png",
     "sourceSha256": "536256498a6210ebe4402c56abba397187183bfbbee966451fef2c4e9ebd42fc",
     "webpSha256": "e5872be694de3abad262a5cf1b4f750f477766b6c3e39a75d380c0ec79c97394"
+  },
+  "fake-fox-attack": {
+    "file": "fake-fox-attack.png",
+    "sourceSha256": "52bfc59d099669b497e49080f81aaf10bfd613f7e5ddfb444c5a4f152d601359",
+    "webpSha256": "1d3c03b6025038c4176f34953a738380682f34d87f69db7d814d94cb41c4908f"
+  },
+  "fake-fox-hurt": {
+    "file": "fake-fox-hurt.png",
+    "sourceSha256": "c9220ee1bb695889993ed6e9b08d0127fcc152141cc7e4f9f2ab9eabaa338714",
+    "webpSha256": "6c4e58b85fbed6c278b2a2da45e398bc6c8babf0f76beed3937246ce0c9ddb60"
+  },
+  "fallen-hurt": {
+    "file": "fallen-hurt.png",
+    "sourceSha256": "2ffbad2ca3f7d57b80ad636b44d4aaec6d3570a5eca7e1f9cfa86c8f38c38d2a",
+    "webpSha256": "0ad5de6c4f541b273acac42484e87be5da0b98ea6099c3e9cd4bc5c032b3d5ad"
   }
 }

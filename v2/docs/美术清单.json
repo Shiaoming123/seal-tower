@@ -2011,7 +2011,7 @@
       "category": "敌怪姿态",
       "usedBy": "fallen 受击",
       "fallback": "fallen",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2067,7 +2067,7 @@
       "category": "敌怪姿态",
       "usedBy": "fake-fox 扑击/出招",
       "fallback": "fake-fox",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2075,7 +2075,7 @@
       "category": "敌怪姿态",
       "usedBy": "fake-fox 受击",
       "fallback": "fake-fox",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {

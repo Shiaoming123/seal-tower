@@ -125,7 +125,7 @@ const poseFrames = {
   rat: { size: [320, 241], crops: { attack: [0, 144, 1254, 945], hurt: [0, 120, 1254, 945] } },
   louse: { size: [420, 154], crops: { attack: [0, 351, 1254, 533], hurt: [0, 371, 1254, 533] } },
 };
-const lungeInsets = { "paper-matron-attack": 17, "night-fox-attack": 9, "fallen-elder-strike": 17, "bell-attack": 13, "bell-heavy-attack": 14, "rat-attack": 28 };
+const lungeInsets = { "paper-matron-attack": 17, "night-fox-attack": 9, "fallen-elder-strike": 17, "bell-attack": 13, "bell-heavy-attack": 14, "rat-attack": 28, "fake-fox-attack": 13, "fallen-strike": 6 };
 let overrides = 0;
 for (const { id, file } of overridesFromDisk) {
   if (requested.size && !requested.has(id)) continue;
