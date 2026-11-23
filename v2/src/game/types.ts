@@ -6,6 +6,7 @@ export type GoodId =
   | "redpaper" | "fur" | "inkdust" | "pearl" | "rubbing" | "token" | "shard" | "feather" | "tail"
   | "sword" | "shield" | "lamp" | "ironsword" | "hook" | "mirror" | "abacus" | "bell" | "purse"
   | "whetstone" | "amulet" | "oilpot" | "luckybag" | "wardcharm"
+  | "ironsword-fine" | "shield-fine" | "lamp-fine" | "purse-fine"
   | "salve" | "pill" | "lining";
 export type StatusId = "str" | "weak" | "vuln" | "thorns" | "focus" | "ward" | "barricade" | "lampArray" | "swordIntent" | "bulwark" | "counter" | "interest" | "blind" | "burn" | "swordQi" | "ironshirt";
 export type Screen = "town" | "explore" | "combat" | "reward" | "shop" | "event" | "rest" | "result";

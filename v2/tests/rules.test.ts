@@ -671,3 +671,54 @@ describe("free-form bag and fragile goods (GAME-003C)", () => {
     expect(orderProgress(run).ready).toBe(true);
   });
 });
+
+describe("refining (GAME-003B)", () => {
+  const place = (run: RunState, id: string, x: number, y: number, rot = 0) => {
+    run.bag.items.push({ uid: run.nextUid++, id: id as never, x, y, rot });
+  };
+  const clearBag = (run: RunState) => { run.bag.items = []; };
+
+  it("gear next to its accessory is refined after a win, using the accessory up", async () => {
+    const { combatDeck } = await import("../src/game/combat");
+    const run = createRun(41, "sword", "lamp");
+    clearBag(run);
+    place(run, "ironsword", 0, 0);
+    place(run, "whetstone", 1, 0);
+    expect(bag.pendingRefines(run.bag).length).toBe(1);
+    fightWith(run, "louse");
+    winCombat(run);
+    expect(run.bag.items.map((i) => i.id)).toContain("ironsword-fine");
+    expect(run.bag.items.map((i) => i.id)).not.toContain("whetstone");
+    expect(run.reward!.note).toMatch(/淬炼/);
+    const strike = combatDeck(run).find((c) => c.from === "ironsword-fine" && c.id === "strike")!;
+    expect(strike.up).toBe(true);
+    expect(strike.bonus?.dmg).toBe(1);
+  });
+
+  it("apart, nothing is refined", () => {
+    const run = createRun(42, "sword", "lamp");
+    clearBag(run);
+    place(run, "ironsword", 0, 0);
+    place(run, "whetstone", 3, 0);
+    fightWith(run, "louse");
+    winCombat(run);
+    expect(run.bag.items.map((i) => i.id)).toEqual(expect.arrayContaining(["ironsword", "whetstone"]));
+  });
+
+  it("refined gear keeps its base passive and adds its own", () => {
+    const run = createRun(43, "sword", "lamp");
+    clearBag(run);
+    place(run, "shield-fine", 0, 0);
+    const c = fightWith(run, "louse");
+    handOf(run, []);
+    c.block = 10;
+    c.enemy.intent = { key: "wait", name: "等", block: 1 };
+    endTurn(run);
+    expect(c.block).toBe(4);
+  });
+
+  it("refined gear never drops or shows up in shops", async () => {
+    const { GEAR_IDS } = await import("../src/data/goods");
+    expect(GEAR_IDS.some((id) => id.endsWith("-fine"))).toBe(false);
+  });
+});

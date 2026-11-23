@@ -165,6 +165,7 @@ export function winCombat(run: RunState) {
     note = c.enemy.partIntact ? `${def.part.label}完好无损。` : `${def.part.label}被重击打碎了。`;
   }
   if (has(run, "lamp")) goods.push("ash");
+  if (has(run, "lamp-fine")) goods.push("ash");
   if (bag.tagLevel(run.bag, "lamp") >= 2) goods.push("ash");
   if (run.omen === "horde" && c.kind === "fight") goods.push(def.drops[0].good);
   if (has(run, "fangcharm")) run.hp = Math.min(run.maxHp, run.hp + 4);
@@ -185,6 +186,14 @@ export function winCombat(run: RunState) {
       }
       run.stats.harvests++;
     } else if (def.harvest.good !== "stolen") note += ` 没能取到${def.harvest.label}（${def.harvest.text}）。`;
+  }
+  // 淬炼: gear next to its accessory is refined after a win, and the accessory is used up.
+  const refined = bag.pendingRefines(run.bag);
+  for (const r of refined) {
+    note += ` 淬炼：${GOODS[r.gear.id].name}和${GOODS[r.with.id].name}炼成了${GOODS[r.into].name}。`;
+    bag.removeUid(run.bag, r.with.uid);
+    r.gear.id = r.into;
+    discover(run, "g:" + r.into);
   }
   if (c.stolen.length && def.harvest?.good !== "stolen") note += ` 被抢走的${c.stolen.map((g) => GOODS[g].name).join("、")}被它毁了。`;
   const gold = (c.kind === "guardian" && run.floor === 3 ? 0 : int(c.rng, def.gold[0], def.gold[1]))

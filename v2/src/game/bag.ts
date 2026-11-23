@@ -1,4 +1,4 @@
-import { GOODS, TAGS, TAG_IDS, type TagId } from "../data/goods";
+import { GOODS, REFINES, TAGS, TAG_IDS, type TagId } from "../data/goods";
 import type { Bag, GoodId, PlacedGood } from "./types";
 
 /** Cells an item covers after rotating `rot` quarter turns clockwise, normalised to start at 0,0. */
@@ -200,4 +200,20 @@ export function autoPiece(bag: Bag, shape: ExpandShape = "line"): [number, numbe
     if (!expandProblem(bag, cells)) return cells;
   }
   return null;
+}
+
+// ---------------------------------------------------------------- 淬炼 (refining)
+
+/** Refines that will happen after the next won fight: each accessory refines at most one piece of gear. */
+export function pendingRefines(bag: Bag): { gear: PlacedGood; with: PlacedGood; into: GoodId }[] {
+  const used = new Set<number>();
+  const out: { gear: PlacedGood; with: PlacedGood; into: GoodId }[] = [];
+  for (const r of REFINES) for (const g of bag.items) {
+    if (g.id !== r.gear) continue;
+    const w = neighbours(bag, g).find((o) => o.id === r.with && !used.has(o.uid));
+    if (!w) continue;
+    used.add(w.uid);
+    out.push({ gear: g, with: w, into: r.into });
+  }
+  return out;
 }

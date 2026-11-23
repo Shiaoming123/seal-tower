@@ -26,7 +26,7 @@ export type CombatEvent =
 
 const HAND = 5;
 /** True if you own the 法宝 or carry the gear with this id. */
-export const has = (run: RunState, id: string) => run.relics.includes(id) || run.bag.items.some((it) => it.id === id);
+export const has = (run: RunState, id: string) => run.relics.includes(id) || run.bag.items.some((it) => it.id === id || GOODS[it.id].base === id);
 
 /** Your deck for a fight: known cards plus the cards of every weapon in the bag. */
 export function combatDeck(run: RunState): CardInst[] {
@@ -35,9 +35,10 @@ export function combatDeck(run: RunState): CardInst[] {
   for (const it of run.bag.items) {
     const cards = GOODS[it.id].cards;
     if (!cards) continue;
-    const dmg = bag.auraOn(run.bag, it, "dmg"), blk = bag.auraOn(run.bag, it, "blk");
+    const g = GOODS[it.id];
+    const dmg = bag.auraOn(run.bag, it, "dmg") + (g.selfBonus?.dmg ?? 0), blk = bag.auraOn(run.bag, it, "blk") + (g.selfBonus?.blk ?? 0);
     const bonus = dmg || blk ? { dmg, blk } : undefined;
-    for (const id of cards) out.push({ uid: uid--, id, up: false, from: it.id, bonus });
+    for (const id of cards) out.push({ uid: uid--, id, up: !!g.cardsUp, from: it.id, bonus });
   }
   return out;
 }
@@ -298,7 +299,7 @@ function startTurn(run: RunState, events: CombatEvent[]) {
   c.turn++;
   run.stats.turns++;
   // Block you keep between turns: 木挡板 keeps 2, a full 盾 set 3 more.
-  const keep = (has(run, "shield") ? 2 : 0) + (bag.tagLevel(run.bag, "guard") >= 2 ? 3 : 0);
+  const keep = (has(run, "shield") ? 2 : 0) + (has(run, "shield-fine") ? 2 : 0) + (bag.tagLevel(run.bag, "guard") >= 2 ? 3 : 0);
   // (Not on turn 1: block granted at the start of a fight — 护心镜, the 盾 set — must survive into it.)
   if (!c.status.barricade && c.turn > 1) c.block = Math.min(keep, c.block);
   c.energy = c.maxEnergy + (c.turn === 1 && has(run, "bell") ? 1 : 0);
@@ -405,6 +406,7 @@ function crack(run: RunState, c: CombatState, events: CombatEvent[]) {
     if (!into || bag.auraOn(run.bag, it, "ward") || !chance(c.rng, CRACK_CHANCE)) continue;
     events.push({ t: "crack", good: it.id, into });
     it.id = into;
+    discover(run, "g:" + into);
   }
 }
 

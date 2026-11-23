@@ -30,6 +30,11 @@ export interface GoodDef {
   dim?: boolean;
   /** Fragile goods: taking a hit with this in the bag may crack it into this cheaper good. */
   fragile?: GoodId;
+  /** Refined gear (精): the item it was refined from. It keeps that item's passive and counts as it. */
+  base?: GoodId;
+  /** Refined gear: its cards come upgraded, and get this bonus. */
+  cardsUp?: boolean;
+  selfBonus?: { dmg?: number; blk?: number };
 }
 
 const V3: [number, number][] = [[0, 0], [0, 1], [0, 2]];
@@ -96,6 +101,16 @@ const list: GoodDef[] = [
   { id: "wardcharm", kind: "gear", tier: 1, name: "镇货符", icon: "icon-wardcharm", shape: ONE, price: 6,
     aura: { kind: "ward", n: 1, text: "相邻的货不会被抢" }, text: "贴在货上，鼠妖不敢下嘴。" },
 
+  // ---------- refined gear (精): made in the bag, never sold in shops; same art with a gold 精 badge ----------
+  { id: "ironsword-fine", base: "ironsword", tags: ["blade"], kind: "gear", name: "精铁剑", icon: "ward-blade", tilt: [-45, 1.6], shape: V3, price: 14, cards: ["strike", "gap"], cardsUp: true, selfBonus: { dmg: 1 },
+    passive: "牌已升级，伤害再 +1。", text: "磨刀石磨了一整夜的铁剑，刃口亮得能照人。" },
+  { id: "shield-fine", base: "shield", tags: ["guard"], kind: "gear", name: "精木挡板", icon: "plank", shape: H2, price: 16, cards: ["bash", "spikes"], cardsUp: true,
+    passive: "牌已升级。回合结束时最多保留 4 点格挡。", text: "贴了护身符的木挡板，挨一下就嗡一声。" },
+  { id: "lamp-fine", base: "lamp", tags: ["lamp"], kind: "gear", name: "精引灯盘", icon: "seal", shape: V2, price: 18, cards: ["dust", "flame"], cardsUp: true,
+    passive: "牌已升级。每场战斗胜利后多得 2 份灯灰。", text: "浸过灯油的引灯盘，火一点就旺。" },
+  { id: "purse-fine", base: "purse", tags: ["coin"], kind: "gear", name: "精钱袋", icon: "order-purse", shape: H2, price: 12, cards: ["guardgoods"], cardsUp: true,
+    aura: { kind: "sell", n: 1, text: "相邻的每件货物卖价 +1" }, text: "缝进了招财袋的钱袋，货装进去都显得体面。" },
+
   // ---------- consumables ----------
   { id: "salve", kind: "consumable", name: "金疮药", icon: "salve", shape: V2, price: 5,
     text: "随时可以取出来用，回复 12 气血。", use: { label: "用药 · 回复 12 气血", heal: 12, inCombat: true } },
@@ -119,5 +134,14 @@ export const TAG_IDS = Object.keys(TAGS) as TagId[];
 
 export const GOODS = Object.fromEntries(list.map((g) => [g.id, g])) as Record<GoodId, GoodDef>;
 export const goodName = (id: GoodId) => GOODS[id].name;
-export const GEAR_IDS = list.filter((g) => g.kind === "gear").map((g) => g.id);
+/** Gear that can drop or be sold (refined gear is only made in the bag). */
+export const GEAR_IDS = list.filter((g) => g.kind === "gear" && !g.base).map((g) => g.id);
+
+/** 淬炼: gear sitting next to this accessory when you win a fight is refined; the accessory is used up. */
+export const REFINES: { gear: GoodId; with: GoodId; into: GoodId }[] = [
+  { gear: "ironsword", with: "whetstone", into: "ironsword-fine" },
+  { gear: "shield", with: "amulet", into: "shield-fine" },
+  { gear: "lamp", with: "oilpot", into: "lamp-fine" },
+  { gear: "purse", with: "luckybag", into: "purse-fine" },
+];
 export const KIND_LABEL = { goods: "货物", gear: "装备", consumable: "消耗品" } as const;

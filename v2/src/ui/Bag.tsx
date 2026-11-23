@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import { sfx } from "../audio/sfx";
 import { CARDS } from "../data/cards";
-import { GOODS, KIND_LABEL, TAGS, TAG_IDS } from "../data/goods";
+import { GOODS, KIND_LABEL, REFINES, TAGS, TAG_IDS } from "../data/goods";
 import * as bag from "../game/bag";
 import { POUCH_SLOTS, canExpand, sewPiece, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
 import type { GoodId, RunState } from "../game/types";
@@ -92,6 +92,9 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
   const linked = new Set(sel ? bag.neighbours(b, sel).filter((o) => GOODS[sel.id].aura || GOODS[o.id].aura).map((o) => o.uid) : []);
   const preview = held && hover ? { cells: bag.shapeOf(held.id, held.rot).map(([x, y]) => [x + hover.x, y + hover.y] as [number, number]), ok: bag.fits(b, held.id, hover.x, hover.y, held.rot, held.from === "bag" ? held.uid : -1) } : null;
   // Gold cells: where an accessory's boost reaches — for the one being dragged (at the drop spot) or the one selected.
+  // Gear and accessories that will be refined (淬炼) after the next won fight.
+  const refines = bag.pendingRefines(b);
+  const refining = new Set(refines.flatMap((r) => [r.gear.uid, r.with.uid]));
   const reach = held && GOODS[held.id].aura ? (preview ? bag.auraCells(b, preview.cells) : [])
     : !held && sel && GOODS[sel.id].aura ? bag.auraCells(b, bag.footprint(sel)) : [];
 
@@ -121,7 +124,7 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
           const g = GOODS[it.id];
           const isHeld = held?.from === "bag" && held.uid === it.uid;
           return (
-            <div class={`item kind-${g.kind} ${selected === it.uid ? "selected" : ""} ${isHeld ? "held" : ""} ${g.dim ? "dim" : ""} ${linked.has(it.uid) ? "linked" : ""} ${g.aura ? "aura" : ""}`}
+            <div class={`item kind-${g.kind} ${selected === it.uid ? "selected" : ""} ${isHeld ? "held" : ""} ${g.dim ? "dim" : ""} ${linked.has(it.uid) ? "linked" : ""} ${g.aura ? "aura" : ""} ${g.base ? "fine" : ""} ${refining.has(it.uid) ? "refining" : ""}`}
               style={{ left: `${it.x * cell}px`, top: `${it.y * cell}px`, width: `${size.w * cell}px`, height: `${size.h * cell}px` }}
               onPointerDown={(e) => startDrag({ from: "bag", uid: it.uid, id: it.id, rot: it.rot }, e as unknown as PointerEvent)}
               onClick={() => {
@@ -141,6 +144,8 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
                 style={{ width: `${(it.rot % 2 ? size.h : size.w) * cell}px`, height: `${(it.rot % 2 ? size.w : size.h) * cell}px`, transform: `translate(-50%, -50%) rotate(${it.rot * 90 + (g.tilt?.[0] ?? 0)}deg) scale(${g.tilt?.[1] ?? 1})` }} />
               {mode === "sell" && <span class={`price ${confirmSell === it.uid ? "confirm" : ""}`}>{confirmSell === it.uid ? `卖?${sellPrice(run, it.id, run.floor, run.shop?.sold[it.id] ?? 0, it.uid)}` : sellPrice(run, it.id, run.floor, run.shop?.sold[it.id] ?? 0, it.uid)}</span>}
               {mode !== "sell" && <AuraBadge run={run} uid={it.uid} />}
+              {g.base && <span class="fine-badge">精</span>}
+              {refining.has(it.uid) && GOODS[it.id].cards && <span class="refine-badge">战后淬炼</span>}
             </div>
           );
         })}
@@ -190,6 +195,7 @@ function ItemDetails({ run, uid, onRotate, onDone, onSew }: { run: RunState; uid
       {g.cards && <p class="det-cards">牌组多出：{g.cards.map((c) => `「${CARDS[c].name}」`).join("")}</p>}
       {g.aura && <p class="det-aura">配件：{g.aura.text}。现在挨着：{bag.neighbours(run.bag, it).map((o) => GOODS[o.id].name).join("、") || "什么也没有"}</p>}
       {!g.aura && <AuraLine run={run} uid={it.uid} />}
+      <RefineLine run={run} uid={it.uid} />
       {g.tags && <p class="det-tags">{g.tags.map((t) => `「${TAGS[t].name}」${TAGS[t].at[0]} 件：${TAGS[t].text[0]}；${TAGS[t].at[1]} 件：${TAGS[t].text[1]}`).join("　")}</p>}
       <div class="row">
         {canUse && <button type="button" class="btn small primary" onClick={() => {
@@ -369,4 +375,15 @@ function BagExpander({ run, uid, onDone }: { run: RunState; uid: number; onDone:
       <p class={`sew-hint ${problem ? "bad" : ""}`}>{!at ? "把鼠标移到行囊外面看看能拼在哪；手机上点一下预览，再点一下缝上。" : problem ?? "可以缝在这里：点一下缝上。"}</p>
     </div>
   );
+}
+
+/** 淬炼 in plain words: what this item will become (or could become), and what it costs. */
+function RefineLine({ run, uid }: { run: RunState; uid: number }) {
+  const it = run.bag.items.find((i) => i.uid === uid)!;
+  const r = bag.pendingRefines(run.bag).find((p) => p.gear.uid === uid || p.with.uid === uid);
+  if (r) return <p class="det-refine">打赢下一场后淬炼：{GOODS[r.gear.id].name}和{GOODS[r.with.id].name}炼成{GOODS[r.into].name}（{GOODS[r.with.id].name}会用掉）。不想淬炼就把它们挪开。</p>;
+  const recipe = REFINES.find((x) => x.gear === it.id || x.with === it.id);
+  if (!recipe || GOODS[it.id].base) return null;
+  const other = recipe.gear === it.id ? recipe.with : recipe.gear;
+  return <p class="det-refine dim">和{GOODS[other].name}挨着放，打赢一场后能淬炼成{GOODS[recipe.into].name}。</p>;
 }
