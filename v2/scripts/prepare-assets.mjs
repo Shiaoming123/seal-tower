@@ -99,16 +99,9 @@ if (!requested.size) {
 }
 // Real art dropped into v2/art takes precedence over legacy sources.
 const edges = Object.fromEntries([...Object.entries(manifest).map(([id, [, e]]) => [id, e]), ...tints.map(([id, , e]) => [id, e])]);
-// Match the two fire-rat keyframes so Combat can swap them without a change in scale.
-edges["fire-rat-attack"] = edges["fire-rat"];
+// The historical `-strike` names share their idle frame's dimensions.
 edges["fallen-strike"] = edges.fallen;
 edges["fallen-elder-strike"] = edges["fallen-elder"];
-edges["bronze-puppet-attack"] = edges["bronze-puppet"];
-edges["bronze-puppet-hurt"] = edges["bronze-puppet"];
-edges["thorn-stele-attack"] = edges["thorn-stele"];
-edges["thorn-stele-hurt"] = edges["thorn-stele"];
-edges["night-owl-attack"] = edges["night-owl"];
-edges["night-owl-hurt"] = edges["night-owl"];
 const exportFile = path.join(artDir, "exports.json");
 const previousExports = await readFile(exportFile, "utf8").then(JSON.parse, (err) => {
   if (err.code !== "ENOENT") throw err;
@@ -118,12 +111,12 @@ const exports = requested.size ? { ...previousExports } : {};
 const digest = (data) => createHash("sha256").update(data).digest("hex");
 // Reserve space around tightly framed transparent cutouts without changing the export limit.
 const paddedSprites = new Set([
-  "lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine", "fire-rat", "fire-rat-attack", "stele-spirit", "event-cart",
+  "lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine", "fire-rat", "stele-spirit", "event-cart",
   "fallen", "fallen-strike", "fallen-guard", "fallen-elder", "fallen-elder-strike", "fallen-elder-guard",
-  "paper-matron", "fake-fox", "event-fake-fox", "map-fake-fox",
-  "thorn-stele", "thorn-stele-attack", "thorn-stele-hurt",
-  "bronze-puppet", "bronze-puppet-attack", "bronze-puppet-hurt",
-  "night-owl", "night-owl-attack", "night-owl-hurt",
+  "paper-matron", "moth-queen", "fake-fox", "event-fake-fox", "map-fake-fox",
+  "thorn-stele",
+  "bronze-puppet",
+  "night-owl",
   "event-den", "event-hunter", "event-pool",
 ]);
 let overrides = 0;
@@ -132,10 +125,14 @@ for (const { id, file } of overridesFromDisk) {
   // New art for ids the game looks up with a fallback (cards, relics, portraits…) gets a size by prefix.
   const prefixEdge = [["card-", 256], ["relic-", 192], ["build-", 192], ["icon-", 128], ["portrait-", 480], ["event-", 420], ["map-", 256], ["omen-", 480]]
     .find(([p]) => id.startsWith(p))?.[1];
-  const edge = edges[id] ?? prefixEdge ?? 440;
+  // Keep conventional combat poses on the same canvas and safety edge as idle.
+  const baseId = id.replace(/-(?:attack|hurt)$/, "");
+  const edge = edges[id] ?? edges[baseId] ?? prefixEdge ?? 440;
   const source = await readFile(path.join(artDir, file));
-  const margin = paddedSprites.has(id) ? Math.round(edge * .05) : 0;
-  const extent = edge - margin * 2;
+  const margin = paddedSprites.has(id) || paddedSprites.has(baseId) ? Math.round(edge * .05) : 0;
+  // Leave room for the paper blades at the peak of the attack lunge.
+  const sideMargin = id === "paper-matron-attack" ? margin + 17 : margin;
+  const extent = edge - sideMargin * 2;
   // The square ink-moth master has large transparent top and bottom margins.
   // Its in-game scale is height-based, so trim that surplus before applying the shared safety edge.
   const sprite = sharp(source);
@@ -145,7 +142,13 @@ for (const { id, file } of overridesFromDisk) {
     sprite.extract({ left: 0, top: 120, width: 1254, height: 1062 });
   }
   sprite.resize(extent, extent, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" });
-  if (margin) sprite.extend({ top: margin, right: margin, bottom: margin, left: margin, background: "#00000000" });
+  if (sideMargin) sprite.extend({
+    top: sideMargin * 2 - margin,
+    right: sideMargin,
+    bottom: margin,
+    left: sideMargin,
+    background: "#00000000",
+  });
   const output = await sprite.webp({ quality: 84, alphaQuality: 90, effort: 6 }).toBuffer();
   await writeFile(path.join(out, id + ".webp"), output);
   exports[id] = { file, sourceSha256: digest(source), webpSha256: digest(output) };

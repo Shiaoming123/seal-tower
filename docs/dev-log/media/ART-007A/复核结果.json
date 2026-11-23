@@ -1,0 +1,1853 @@
+{
+  "worktree": "seal-tower-art",
+  "base": "f2c6f60",
+  "resolved": true,
+  "fixture": "gallery 首层，从 5,9 朝北前进进入 5,8 测试战。",
+  "recordings": {
+    "baselinePaper": {
+      "mode": "baseline",
+      "enemy": "paper-matron",
+      "seed": "gallery",
+      "baselineMethod": "在同版 UI 中，仅在隔离浏览器移除动作图映射，令动作回落主图。",
+      "fixture": "同一 gallery 签，从正常入口第一层进塔，脚本预置同一邻格守关妖，实际点击前进开战。用两次普通斩装满打断阈值再实际结束回合到原生格挡（纸扎糊纸身12，蛾娘召灯10）。缺斩时将一张手牌换成基础斩；可选重击赋临时力量8。纸扎二阶段前专用测试位 32/60，去除格挡与力量后真实点斩。未经自然遇敌与实体手机抽测。",
+      "measurements": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "fixture": {
+            "target": {
+              "x": 5,
+              "y": 8,
+              "dir": 0
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            }
+          },
+          "intent": [
+            "纸人扑",
+            "剪纸刀阵",
+            "糊纸身"
+          ],
+          "playerDamage": 9,
+          "enemyDamage": 6,
+          "enemyBlockBefore": 12,
+          "enemyBlockAfter": 6,
+          "fullBlockEnemyHealthBefore": 48,
+          "fullBlockEnemyHealthAfter": 48,
+          "heavyDamage": 14,
+          "phase2": {
+            "before": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 32,
+              "enemyBlock": 0,
+              "intent": "唤纸童",
+              "hand": [
+                "strike",
+                "defend",
+                "bash"
+              ],
+              "energy": 3,
+              "phase": 1,
+              "sprite": "paper-matron",
+              "strength": 1,
+              "damageThisTurn": 14
+            },
+            "after": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 38,
+              "enemyBlock": 10,
+              "intent": "糊纸身",
+              "hand": [
+                "defend",
+                "bash"
+              ],
+              "energy": 2,
+              "phase": 2,
+              "sprite": "paper-matron",
+              "strength": 3,
+              "damageThisTurn": 20
+            }
+          },
+          "attack": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 38,
+            "lastFrame": 257,
+            "widthSpan": [
+              502.7,
+              771
+            ],
+            "verticalSpan": [
+              239.9,
+              533.4
+            ],
+            "intentBottom": 239.8,
+            "handTop": 494,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              514.4,
+              266,
+              251.3,
+              251.3
+            ]
+          },
+          "hurt": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 31,
+            "lastFrame": 196,
+            "widthSpan": [
+              517.7,
+              751.3
+            ],
+            "verticalSpan": [
+              253.5,
+              484
+            ],
+            "intentBottom": 238.5,
+            "handTop": 471,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              514.4,
+              243,
+              251.3,
+              251.3
+            ]
+          },
+          "guard": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 31,
+            "lastFrame": 196,
+            "widthSpan": [
+              527.5,
+              742.3
+            ],
+            "verticalSpan": [
+              266.5,
+              478.5
+            ],
+            "intentBottom": 255.5,
+            "handTop": 466,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              525.4,
+              260,
+              229.3,
+              229.3
+            ]
+          },
+          "heavy": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 43,
+            "lastFrame": 285,
+            "widthSpan": [
+              527.5,
+              742.3
+            ],
+            "verticalSpan": [
+              274.5,
+              484.8
+            ],
+            "intentBottom": 260.5,
+            "handTop": 471,
+            "hitstop": true,
+            "returnedIdleAnchor": [
+              525.4,
+              265,
+              229.3,
+              229.3
+            ]
+          },
+          "assets": {
+            "paper-matron": {
+              "webpSha256": "49f4293ac8a21f952176288ec9f9add19ceea4db44a4727835dbc6e3f0b17d7e",
+              "sourceSha256": "1ba4d9ae9e2ff48409d79d777f84f49c7579e3fba49295703f0e59b478bf7971",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                39,
+                26,
+                412,
+                434
+              ],
+              "legacyMaster": null
+            }
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "fixture": {
+            "target": {
+              "x": 5,
+              "y": 8,
+              "dir": 0
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            }
+          },
+          "intent": [
+            "纸人扑",
+            "剪纸刀阵",
+            "糊纸身"
+          ],
+          "playerDamage": 9,
+          "enemyDamage": 6,
+          "enemyBlockBefore": 12,
+          "enemyBlockAfter": 6,
+          "fullBlockEnemyHealthBefore": 48,
+          "fullBlockEnemyHealthAfter": 48,
+          "heavyDamage": 14,
+          "phase2": {
+            "before": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 32,
+              "enemyBlock": 0,
+              "intent": "唤纸童",
+              "hand": [
+                "strike",
+                "defend",
+                "bash"
+              ],
+              "energy": 3,
+              "phase": 1,
+              "sprite": "paper-matron",
+              "strength": 1,
+              "damageThisTurn": 14
+            },
+            "after": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 38,
+              "enemyBlock": 10,
+              "intent": "糊纸身",
+              "hand": [
+                "defend",
+                "bash"
+              ],
+              "energy": 2,
+              "phase": 2,
+              "sprite": "paper-matron",
+              "strength": 3,
+              "damageThisTurn": 20
+            }
+          },
+          "attack": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 38,
+            "lastFrame": 257,
+            "widthSpan": [
+              6.8,
+              374.4
+            ],
+            "verticalSpan": [
+              184.6,
+              586.7
+            ],
+            "intentBottom": 212.5,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "hurt": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 29,
+            "lastFrame": 182,
+            "widthSpan": [
+              21.2,
+              354.2
+            ],
+            "verticalSpan": [
+              230.9,
+              574.3
+            ],
+            "intentBottom": 212.4,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "guard": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 29,
+            "lastFrame": 190,
+            "widthSpan": [
+              21.2,
+              354.2
+            ],
+            "verticalSpan": [
+              230.9,
+              574.3
+            ],
+            "intentBottom": 212.5,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "heavy": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 42,
+            "lastFrame": 282,
+            "widthSpan": [
+              21.2,
+              354.2
+            ],
+            "verticalSpan": [
+              230.9,
+              574.3
+            ],
+            "intentBottom": 212.5,
+            "handTop": 616.3,
+            "hitstop": true,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "assets": {
+            "paper-matron": {
+              "webpSha256": "49f4293ac8a21f952176288ec9f9add19ceea4db44a4727835dbc6e3f0b17d7e",
+              "sourceSha256": "1ba4d9ae9e2ff48409d79d777f84f49c7579e3fba49295703f0e59b478bf7971",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                39,
+                26,
+                412,
+                434
+              ],
+              "legacyMaster": null
+            }
+          },
+          "errors": []
+        }
+      ]
+    },
+    "baselineMoth": {
+      "mode": "baseline",
+      "enemy": "moth-queen",
+      "seed": "gallery",
+      "baselineMethod": "在同版 UI 中，仅在隔离浏览器移除动作图映射，令动作回落主图。",
+      "fixture": "同一 gallery 签，从正常入口第一层进塔，脚本预置同一邻格守关妖，实际点击前进开战。用两次普通斩装满打断阈值再实际结束回合到原生格挡（纸扎糊纸身12，蛾娘召灯10）。缺斩时将一张手牌换成基础斩；可选重击赋临时力量8。纸扎二阶段前专用测试位 32/60，去除格挡与力量后真实点斩。未经自然遇敌与实体手机抽测。",
+      "measurements": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "fixture": {
+            "target": {
+              "x": 5,
+              "y": 8,
+              "dir": 0
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            }
+          },
+          "intent": [
+            "扑翅",
+            "焚翅",
+            "召灯"
+          ],
+          "playerDamage": 10,
+          "enemyDamage": 6,
+          "enemyBlockBefore": 10,
+          "enemyBlockAfter": 4,
+          "fullBlockEnemyHealthBefore": 52,
+          "fullBlockEnemyHealthAfter": 52,
+          "heavyDamage": null,
+          "phase2": null,
+          "attack": {
+            "art": "moth-queen",
+            "firstLoadedMs": 0,
+            "frames": 39,
+            "lastFrame": 264,
+            "widthSpan": [
+              540,
+              740
+            ],
+            "verticalSpan": [
+              243.6,
+              440.9
+            ],
+            "intentBottom": 239.8,
+            "handTop": 494,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              568.2,
+              266,
+              143.5,
+              142
+            ]
+          },
+          "hurt": {
+            "art": "moth-queen",
+            "firstLoadedMs": 0,
+            "frames": 29,
+            "lastFrame": 184,
+            "widthSpan": [
+              554.1,
+              721.4
+            ],
+            "verticalSpan": [
+              241.4,
+              384.9
+            ],
+            "intentBottom": 238.5,
+            "handTop": 471,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              568.2,
+              243,
+              143.5,
+              142
+            ]
+          },
+          "guard": {
+            "art": "moth-queen",
+            "firstLoadedMs": 0,
+            "frames": 29,
+            "lastFrame": 187,
+            "widthSpan": [
+              554.1,
+              721.4
+            ],
+            "verticalSpan": [
+              233.1,
+              378.6
+            ],
+            "intentBottom": 233.8,
+            "handTop": 466,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              568.2,
+              238,
+              143.5,
+              142
+            ]
+          },
+          "heavy": null,
+          "assets": {
+            "moth-queen": {
+              "webpSha256": "7faeb41ee25880f259d54f0c12818a2423c39bcf40efbf5ef01079955e79be43",
+              "sourceSha256": "afa8db48272eadc66e118c6c9ecd7dd339c5453d6f61ed1f8880bab4d8878a32",
+              "width": 380,
+              "height": 376,
+              "bounds": [
+                2,
+                2,
+                378,
+                369
+              ],
+              "legacyMaster": "assets/moth.webp"
+            }
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "fixture": {
+            "target": {
+              "x": 5,
+              "y": 8,
+              "dir": 0
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            }
+          },
+          "intent": [
+            "扑翅",
+            "焚翅",
+            "召灯"
+          ],
+          "playerDamage": 10,
+          "enemyDamage": 6,
+          "enemyBlockBefore": 10,
+          "enemyBlockAfter": 4,
+          "fullBlockEnemyHealthBefore": 52,
+          "fullBlockEnemyHealthAfter": 52,
+          "heavyDamage": null,
+          "phase2": null,
+          "attack": {
+            "art": "moth-queen",
+            "firstLoadedMs": 0,
+            "frames": 38,
+            "lastFrame": 257,
+            "widthSpan": [
+              16.5,
+              373.4
+            ],
+            "verticalSpan": [
+              137.4,
+              485.8
+            ],
+            "intentBottom": 172.2,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              53.2,
+              189.3,
+              283.5,
+              280.5
+            ]
+          },
+          "hurt": {
+            "art": "moth-queen",
+            "firstLoadedMs": 0,
+            "frames": 29,
+            "lastFrame": 185,
+            "widthSpan": [
+              38.5,
+              345.3
+            ],
+            "verticalSpan": [
+              186,
+              469.4
+            ],
+            "intentBottom": 186.4,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              53.2,
+              189.3,
+              283.5,
+              280.5
+            ]
+          },
+          "guard": {
+            "art": "moth-queen",
+            "firstLoadedMs": 0,
+            "frames": 29,
+            "lastFrame": 188,
+            "widthSpan": [
+              38.5,
+              345.3
+            ],
+            "verticalSpan": [
+              186,
+              469.4
+            ],
+            "intentBottom": 186.5,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              53.2,
+              189.3,
+              283.5,
+              280.5
+            ]
+          },
+          "heavy": null,
+          "assets": {
+            "moth-queen": {
+              "webpSha256": "7faeb41ee25880f259d54f0c12818a2423c39bcf40efbf5ef01079955e79be43",
+              "sourceSha256": "afa8db48272eadc66e118c6c9ecd7dd339c5453d6f61ed1f8880bab4d8878a32",
+              "width": 380,
+              "height": 376,
+              "bounds": [
+                2,
+                2,
+                378,
+                369
+              ],
+              "legacyMaster": "assets/moth.webp"
+            }
+          },
+          "errors": []
+        }
+      ]
+    },
+    "paper396": {
+      "mode": "final",
+      "enemy": "paper-matron",
+      "seed": "gallery",
+      "baselineMethod": null,
+      "fixture": "同一 gallery 签，从正常入口第一层进塔，脚本预置同一邻格守关妖，实际点击前进开战。用两次普通斩装满打断阈值再实际结束回合到原生格挡（纸扎糊纸身12，蛾娘召灯10）。缺斩时将一张手牌换成基础斩；可选重击赋临时力量8。纸扎二阶段前专用测试位 32/60，去除格挡与力量后真实点斩。未经自然遇敌与实体手机抽测。",
+      "measurements": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "fixture": {
+            "target": {
+              "x": 5,
+              "y": 8,
+              "dir": 0
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            }
+          },
+          "intent": [
+            "纸人扑",
+            "剪纸刀阵",
+            "糊纸身"
+          ],
+          "playerDamage": 9,
+          "enemyDamage": 6,
+          "enemyBlockBefore": 12,
+          "enemyBlockAfter": 6,
+          "fullBlockEnemyHealthBefore": 48,
+          "fullBlockEnemyHealthAfter": 48,
+          "heavyDamage": 14,
+          "phase2": {
+            "before": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 32,
+              "enemyBlock": 0,
+              "intent": "唤纸童",
+              "hand": [
+                "strike",
+                "defend",
+                "bash"
+              ],
+              "energy": 3,
+              "phase": 1,
+              "sprite": "paper-matron",
+              "strength": 1,
+              "damageThisTurn": 14
+            },
+            "after": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 38,
+              "enemyBlock": 10,
+              "intent": "糊纸身",
+              "hand": [
+                "defend",
+                "bash"
+              ],
+              "energy": 2,
+              "phase": 2,
+              "sprite": "paper-matron",
+              "strength": 3,
+              "damageThisTurn": 20
+            }
+          },
+          "attack": {
+            "art": "paper-matron-attack",
+            "firstLoadedMs": 0,
+            "frames": 38,
+            "lastFrame": 257,
+            "widthSpan": [
+              503.4,
+              777.4
+            ],
+            "verticalSpan": [
+              251.4,
+              534.8
+            ],
+            "intentBottom": 239.8,
+            "handTop": 494,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              514.4,
+              266,
+              251.3,
+              251.3
+            ]
+          },
+          "hurt": {
+            "art": "paper-matron-hurt",
+            "firstLoadedMs": 0,
+            "frames": 30,
+            "lastFrame": 192,
+            "widthSpan": [
+              517.2,
+              760.8
+            ],
+            "verticalSpan": [
+              252.9,
+              483.4
+            ],
+            "intentBottom": 238.5,
+            "handTop": 471,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              514.4,
+              243,
+              251.3,
+              251.3
+            ]
+          },
+          "guard": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 29,
+            "lastFrame": 187,
+            "widthSpan": [
+              527.5,
+              742.3
+            ],
+            "verticalSpan": [
+              266.5,
+              478.5
+            ],
+            "intentBottom": 255.5,
+            "handTop": 466,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              525.4,
+              260,
+              229.3,
+              229.3
+            ]
+          },
+          "heavy": {
+            "art": "paper-matron-hurt",
+            "firstLoadedMs": 0,
+            "frames": 44,
+            "lastFrame": 287,
+            "widthSpan": [
+              527,
+              750.9
+            ],
+            "verticalSpan": [
+              274,
+              484.3
+            ],
+            "intentBottom": 260.5,
+            "handTop": 471,
+            "hitstop": true,
+            "returnedIdleAnchor": [
+              525.4,
+              265,
+              229.3,
+              229.3
+            ]
+          },
+          "assets": {
+            "paper-matron-hurt": {
+              "webpSha256": "53eb5aa3e14633e6b0b95ba1ce49319b830e0ca71a3fcbdcbbc3f29b973c72ca",
+              "sourceSha256": "2513630b07741edfce22faefdf7586ade474b2c792d851f39038226e0ac0590c",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                38,
+                25,
+                429,
+                433
+              ],
+              "legacyMaster": null
+            },
+            "paper-matron": {
+              "webpSha256": "49f4293ac8a21f952176288ec9f9add19ceea4db44a4727835dbc6e3f0b17d7e",
+              "sourceSha256": "1ba4d9ae9e2ff48409d79d777f84f49c7579e3fba49295703f0e59b478bf7971",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                39,
+                26,
+                412,
+                434
+              ],
+              "legacyMaster": null
+            },
+            "paper-matron-attack": {
+              "webpSha256": "902ca2362044da51a87aebb282085f7b4caa5541f7762a821d3c0e6c91331423",
+              "sourceSha256": "9644451f80c3d592d229be8472da862dbb2aeb6ed10dc82d81c94fa8cf937c74",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                40,
+                42,
+                421,
+                436
+              ],
+              "legacyMaster": null
+            }
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "fixture": {
+            "target": {
+              "x": 5,
+              "y": 8,
+              "dir": 0
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            }
+          },
+          "intent": [
+            "纸人扑",
+            "剪纸刀阵",
+            "糊纸身"
+          ],
+          "playerDamage": 9,
+          "enemyDamage": 6,
+          "enemyBlockBefore": 12,
+          "enemyBlockAfter": 6,
+          "fullBlockEnemyHealthBefore": 48,
+          "fullBlockEnemyHealthAfter": 48,
+          "heavyDamage": 14,
+          "phase2": {
+            "before": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 32,
+              "enemyBlock": 0,
+              "intent": "唤纸童",
+              "hand": [
+                "strike",
+                "defend",
+                "bash"
+              ],
+              "energy": 3,
+              "phase": 1,
+              "sprite": "paper-matron",
+              "strength": 1,
+              "damageThisTurn": 14
+            },
+            "after": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 38,
+              "enemyBlock": 10,
+              "intent": "糊纸身",
+              "hand": [
+                "defend",
+                "bash"
+              ],
+              "energy": 2,
+              "phase": 2,
+              "sprite": "paper-matron",
+              "strength": 3,
+              "damageThisTurn": 20
+            }
+          },
+          "attack": {
+            "art": "paper-matron-attack",
+            "firstLoadedMs": 0,
+            "frames": 38,
+            "lastFrame": 257,
+            "widthSpan": [
+              7.7,
+              383.2
+            ],
+            "verticalSpan": [
+              200.4,
+              588.6
+            ],
+            "intentBottom": 212.5,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "hurt": {
+            "art": "paper-matron-hurt",
+            "firstLoadedMs": 0,
+            "frames": 30,
+            "lastFrame": 193,
+            "widthSpan": [
+              20.4,
+              368.2
+            ],
+            "verticalSpan": [
+              230,
+              573.5
+            ],
+            "intentBottom": 212.4,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "guard": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 29,
+            "lastFrame": 189,
+            "widthSpan": [
+              21.2,
+              354.2
+            ],
+            "verticalSpan": [
+              230.9,
+              574.3
+            ],
+            "intentBottom": 212.5,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "heavy": {
+            "art": "paper-matron-hurt",
+            "firstLoadedMs": 0,
+            "frames": 43,
+            "lastFrame": 286,
+            "widthSpan": [
+              20.4,
+              368.2
+            ],
+            "verticalSpan": [
+              230,
+              573.5
+            ],
+            "intentBottom": 212.5,
+            "handTop": 616.3,
+            "hitstop": true,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "assets": {
+            "paper-matron-attack": {
+              "webpSha256": "902ca2362044da51a87aebb282085f7b4caa5541f7762a821d3c0e6c91331423",
+              "sourceSha256": "9644451f80c3d592d229be8472da862dbb2aeb6ed10dc82d81c94fa8cf937c74",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                40,
+                42,
+                421,
+                436
+              ],
+              "legacyMaster": null
+            },
+            "paper-matron-hurt": {
+              "webpSha256": "53eb5aa3e14633e6b0b95ba1ce49319b830e0ca71a3fcbdcbbc3f29b973c72ca",
+              "sourceSha256": "2513630b07741edfce22faefdf7586ade474b2c792d851f39038226e0ac0590c",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                38,
+                25,
+                429,
+                433
+              ],
+              "legacyMaster": null
+            },
+            "paper-matron": {
+              "webpSha256": "49f4293ac8a21f952176288ec9f9add19ceea4db44a4727835dbc6e3f0b17d7e",
+              "sourceSha256": "1ba4d9ae9e2ff48409d79d777f84f49c7579e3fba49295703f0e59b478bf7971",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                39,
+                26,
+                412,
+                434
+              ],
+              "legacyMaster": null
+            }
+          },
+          "errors": []
+        }
+      ]
+    },
+    "finalPaper": {
+      "mode": "final",
+      "enemy": "paper-matron",
+      "seed": "gallery",
+      "baselineMethod": null,
+      "fixture": "同一 gallery 签，从正常入口第一层进塔，脚本预置同一邻格守关妖，实际点击前进开战。用两次普通斩装满打断阈值再实际结束回合到原生格挡（纸扎糊纸身12，蛾娘召灯10）。缺斩时将一张手牌换成基础斩；可选重击赋临时力量8。纸扎二阶段前专用测试位 32/60，去除格挡与力量后真实点斩。未经自然遇敌与实体手机抽测。",
+      "measurements": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "fixture": {
+            "target": {
+              "x": 5,
+              "y": 8,
+              "dir": 0
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            }
+          },
+          "intent": [
+            "纸人扑",
+            "剪纸刀阵",
+            "糊纸身"
+          ],
+          "playerDamage": 9,
+          "enemyDamage": 6,
+          "enemyBlockBefore": 12,
+          "enemyBlockAfter": 6,
+          "fullBlockEnemyHealthBefore": 48,
+          "fullBlockEnemyHealthAfter": 48,
+          "heavyDamage": 14,
+          "phase2": {
+            "before": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 32,
+              "enemyBlock": 0,
+              "intent": "唤纸童",
+              "hand": [
+                "strike",
+                "defend",
+                "bash"
+              ],
+              "energy": 3,
+              "phase": 1,
+              "sprite": "paper-matron",
+              "strength": 1,
+              "damageThisTurn": 14
+            },
+            "after": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 38,
+              "enemyBlock": 10,
+              "intent": "糊纸身",
+              "hand": [
+                "defend",
+                "bash"
+              ],
+              "energy": 2,
+              "phase": 2,
+              "sprite": "paper-matron",
+              "strength": 3,
+              "damageThisTurn": 20
+            }
+          },
+          "attack": {
+            "art": "paper-matron-attack",
+            "firstLoadedMs": 0,
+            "frames": 38,
+            "lastFrame": 257,
+            "widthSpan": [
+              509,
+              771.6
+            ],
+            "verticalSpan": [
+              262.9,
+              534.8
+            ],
+            "intentBottom": 239.8,
+            "handTop": 494,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              514.4,
+              266,
+              251.3,
+              251.3
+            ]
+          },
+          "hurt": {
+            "art": "paper-matron-hurt",
+            "firstLoadedMs": 0,
+            "frames": 30,
+            "lastFrame": 192,
+            "widthSpan": [
+              517.2,
+              760.8
+            ],
+            "verticalSpan": [
+              252.9,
+              483.4
+            ],
+            "intentBottom": 238.5,
+            "handTop": 471,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              514.4,
+              243,
+              251.3,
+              251.3
+            ]
+          },
+          "guard": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 30,
+            "lastFrame": 191,
+            "widthSpan": [
+              527.5,
+              742.3
+            ],
+            "verticalSpan": [
+              266.5,
+              478.5
+            ],
+            "intentBottom": 255.5,
+            "handTop": 466,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              525.4,
+              260,
+              229.3,
+              229.3
+            ]
+          },
+          "heavy": {
+            "art": "paper-matron-hurt",
+            "firstLoadedMs": 0,
+            "frames": 42,
+            "lastFrame": 280,
+            "widthSpan": [
+              527,
+              750.9
+            ],
+            "verticalSpan": [
+              274,
+              484.3
+            ],
+            "intentBottom": 260.5,
+            "handTop": 471,
+            "hitstop": true,
+            "returnedIdleAnchor": [
+              525.4,
+              265,
+              229.3,
+              229.3
+            ]
+          },
+          "assets": {
+            "paper-matron-hurt": {
+              "webpSha256": "53eb5aa3e14633e6b0b95ba1ce49319b830e0ca71a3fcbdcbbc3f29b973c72ca",
+              "sourceSha256": "2513630b07741edfce22faefdf7586ade474b2c792d851f39038226e0ac0590c",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                38,
+                25,
+                429,
+                433
+              ],
+              "legacyMaster": null
+            },
+            "paper-matron": {
+              "webpSha256": "49f4293ac8a21f952176288ec9f9add19ceea4db44a4727835dbc6e3f0b17d7e",
+              "sourceSha256": "1ba4d9ae9e2ff48409d79d777f84f49c7579e3fba49295703f0e59b478bf7971",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                39,
+                26,
+                412,
+                434
+              ],
+              "legacyMaster": null
+            },
+            "paper-matron-attack": {
+              "webpSha256": "82abba8d5ae90876f973e5210b0bff0ba4405441ec482d6673ad5dcbe4edef2f",
+              "sourceSha256": "9644451f80c3d592d229be8472da862dbb2aeb6ed10dc82d81c94fa8cf937c74",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                48,
+                58,
+                413,
+                436
+              ],
+              "legacyMaster": null
+            }
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "fixture": {
+            "target": {
+              "x": 5,
+              "y": 8,
+              "dir": 0
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            }
+          },
+          "intent": [
+            "纸人扑",
+            "剪纸刀阵",
+            "糊纸身"
+          ],
+          "playerDamage": 9,
+          "enemyDamage": 6,
+          "enemyBlockBefore": 12,
+          "enemyBlockAfter": 6,
+          "fullBlockEnemyHealthBefore": 48,
+          "fullBlockEnemyHealthAfter": 48,
+          "heavyDamage": 14,
+          "phase2": {
+            "before": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 32,
+              "enemyBlock": 0,
+              "intent": "唤纸童",
+              "hand": [
+                "strike",
+                "defend",
+                "bash"
+              ],
+              "energy": 3,
+              "phase": 1,
+              "sprite": "paper-matron",
+              "strength": 1,
+              "damageThisTurn": 14
+            },
+            "after": {
+              "floor": 1,
+              "player": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              },
+              "playerHealth": 45,
+              "turn": 4,
+              "oil": 90,
+              "enemyHealth": 38,
+              "enemyBlock": 10,
+              "intent": "糊纸身",
+              "hand": [
+                "defend",
+                "bash"
+              ],
+              "energy": 2,
+              "phase": 2,
+              "sprite": "paper-matron",
+              "strength": 3,
+              "damageThisTurn": 20
+            }
+          },
+          "attack": {
+            "art": "paper-matron-attack",
+            "firstLoadedMs": 0,
+            "frames": 38,
+            "lastFrame": 257,
+            "widthSpan": [
+              15.6,
+              375.3
+            ],
+            "verticalSpan": [
+              216.2,
+              588.6
+            ],
+            "intentBottom": 212.5,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "hurt": {
+            "art": "paper-matron-hurt",
+            "firstLoadedMs": 0,
+            "frames": 30,
+            "lastFrame": 194,
+            "widthSpan": [
+              20.4,
+              368.2
+            ],
+            "verticalSpan": [
+              230,
+              573.5
+            ],
+            "intentBottom": 212.4,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "guard": {
+            "art": "paper-matron",
+            "firstLoadedMs": 0,
+            "frames": 30,
+            "lastFrame": 195,
+            "widthSpan": [
+              21.2,
+              354.2
+            ],
+            "verticalSpan": [
+              230.9,
+              574.3
+            ],
+            "intentBottom": 212.5,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "heavy": {
+            "art": "paper-matron-hurt",
+            "firstLoadedMs": 0,
+            "frames": 43,
+            "lastFrame": 289,
+            "widthSpan": [
+              20.4,
+              368.2
+            ],
+            "verticalSpan": [
+              230,
+              573.5
+            ],
+            "intentBottom": 212.5,
+            "handTop": 616.3,
+            "hitstop": true,
+            "returnedIdleAnchor": [
+              7.8,
+              215.3,
+              374.4,
+              374.4
+            ]
+          },
+          "assets": {
+            "paper-matron-hurt": {
+              "webpSha256": "53eb5aa3e14633e6b0b95ba1ce49319b830e0ca71a3fcbdcbbc3f29b973c72ca",
+              "sourceSha256": "2513630b07741edfce22faefdf7586ade474b2c792d851f39038226e0ac0590c",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                38,
+                25,
+                429,
+                433
+              ],
+              "legacyMaster": null
+            },
+            "paper-matron": {
+              "webpSha256": "49f4293ac8a21f952176288ec9f9add19ceea4db44a4727835dbc6e3f0b17d7e",
+              "sourceSha256": "1ba4d9ae9e2ff48409d79d777f84f49c7579e3fba49295703f0e59b478bf7971",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                39,
+                26,
+                412,
+                434
+              ],
+              "legacyMaster": null
+            },
+            "paper-matron-attack": {
+              "webpSha256": "82abba8d5ae90876f973e5210b0bff0ba4405441ec482d6673ad5dcbe4edef2f",
+              "sourceSha256": "9644451f80c3d592d229be8472da862dbb2aeb6ed10dc82d81c94fa8cf937c74",
+              "width": 460,
+              "height": 460,
+              "bounds": [
+                48,
+                58,
+                413,
+                436
+              ],
+              "legacyMaster": null
+            }
+          },
+          "errors": []
+        }
+      ]
+    },
+    "finalMoth": {
+      "mode": "final",
+      "enemy": "moth-queen",
+      "seed": "gallery",
+      "baselineMethod": null,
+      "fixture": "同一 gallery 签，从正常入口第一层进塔，脚本预置同一邻格守关妖，实际点击前进开战。用两次普通斩装满打断阈值再实际结束回合到原生格挡（纸扎糊纸身12，蛾娘召灯10）。缺斩时将一张手牌换成基础斩；可选重击赋临时力量8。纸扎二阶段前专用测试位 32/60，去除格挡与力量后真实点斩。未经自然遇敌与实体手机抽测。",
+      "measurements": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "fixture": {
+            "target": {
+              "x": 5,
+              "y": 8,
+              "dir": 0
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            }
+          },
+          "intent": [
+            "扑翅",
+            "焚翅",
+            "召灯"
+          ],
+          "playerDamage": 10,
+          "enemyDamage": 6,
+          "enemyBlockBefore": 10,
+          "enemyBlockAfter": 4,
+          "fullBlockEnemyHealthBefore": 52,
+          "fullBlockEnemyHealthAfter": 52,
+          "heavyDamage": 14,
+          "phase2": null,
+          "attack": {
+            "art": "moth-queen-attack",
+            "firstLoadedMs": 0,
+            "frames": 38,
+            "lastFrame": 257,
+            "widthSpan": [
+              553.2,
+              727.3
+            ],
+            "verticalSpan": [
+              270.8,
+              419.8
+            ],
+            "intentBottom": 239.8,
+            "handTop": 494,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              569,
+              266,
+              142,
+              142
+            ]
+          },
+          "hurt": {
+            "art": "moth-queen-hurt",
+            "firstLoadedMs": 0,
+            "frames": 30,
+            "lastFrame": 191,
+            "widthSpan": [
+              575.7,
+              698.7
+            ],
+            "verticalSpan": [
+              254.5,
+              372.4
+            ],
+            "intentBottom": 238.5,
+            "handTop": 471,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              569,
+              243,
+              142,
+              142
+            ]
+          },
+          "guard": {
+            "art": "moth-queen",
+            "firstLoadedMs": 0,
+            "frames": 30,
+            "lastFrame": 194,
+            "widthSpan": [
+              570.3,
+              707.8
+            ],
+            "verticalSpan": [
+              246.5,
+              362.7
+            ],
+            "intentBottom": 233.8,
+            "handTop": 466,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              569,
+              238,
+              142,
+              142
+            ]
+          },
+          "heavy": {
+            "art": "moth-queen-hurt",
+            "firstLoadedMs": 0,
+            "frames": 43,
+            "lastFrame": 284,
+            "widthSpan": [
+              575.7,
+              698.7
+            ],
+            "verticalSpan": [
+              254.5,
+              372.4
+            ],
+            "intentBottom": 238.8,
+            "handTop": 471,
+            "hitstop": true,
+            "returnedIdleAnchor": [
+              569,
+              243,
+              142,
+              142
+            ]
+          },
+          "assets": {
+            "moth-queen-attack": {
+              "webpSha256": "f9855d50140e111f59a7891cdf82f4d2f71c6f8c0f900f1ddde638c3a5f3ed73",
+              "sourceSha256": "01cfce2ba0d23d2e44d7fe9030baf3ae2bc2ec19dada5bcfe15134658a72a8c3",
+              "width": 380,
+              "height": 380,
+              "bounds": [
+                24,
+                62,
+                357,
+                336
+              ],
+              "legacyMaster": null
+            },
+            "moth-queen-hurt": {
+              "webpSha256": "5bf51a0583307a9144bc3f6dfc600ef86e46d7c149647a9615dbd9bdb90c6757",
+              "sourceSha256": "750ae6f0bbc1f56d21e4f49cf9b8d7d4ee6be048d957a89895fcd17e0a5ca5a0",
+              "width": 380,
+              "height": 380,
+              "bounds": [
+                56,
+                36,
+                320,
+                341
+              ],
+              "legacyMaster": null
+            },
+            "moth-queen": {
+              "webpSha256": "c28d23f4f4ff8f1736a8dfaf25b1920672ab226d642ef11e32112e16fdcd6184",
+              "sourceSha256": "7a46d9025d5f85e819f2e64d0998ff58c3091c22bf3b8882e6f488219681efc1",
+              "width": 380,
+              "height": 380,
+              "bounds": [
+                42,
+                37,
+                344,
+                331
+              ],
+              "legacyMaster": null
+            }
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "fixture": {
+            "target": {
+              "x": 5,
+              "y": 8,
+              "dir": 0
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            }
+          },
+          "intent": [
+            "扑翅",
+            "焚翅",
+            "召灯"
+          ],
+          "playerDamage": 10,
+          "enemyDamage": 6,
+          "enemyBlockBefore": 10,
+          "enemyBlockAfter": 4,
+          "fullBlockEnemyHealthBefore": 52,
+          "fullBlockEnemyHealthAfter": 52,
+          "heavyDamage": 14,
+          "phase2": null,
+          "attack": {
+            "art": "moth-queen-attack",
+            "firstLoadedMs": 0,
+            "frames": 38,
+            "lastFrame": 257,
+            "widthSpan": [
+              39,
+              351.9
+            ],
+            "verticalSpan": [
+              193.7,
+              451.2
+            ],
+            "intentBottom": 172.2,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              54.7,
+              189.3,
+              280.5,
+              280.5
+            ]
+          },
+          "hurt": {
+            "art": "moth-queen-hurt",
+            "firstLoadedMs": 0,
+            "frames": 30,
+            "lastFrame": 194,
+            "widthSpan": [
+              81.3,
+              300.2
+            ],
+            "verticalSpan": [
+              212.1,
+              445
+            ],
+            "intentBottom": 186.4,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              54.7,
+              189.3,
+              280.5,
+              280.5
+            ]
+          },
+          "guard": {
+            "art": "moth-queen",
+            "firstLoadedMs": 0,
+            "frames": 30,
+            "lastFrame": 195,
+            "widthSpan": [
+              70.6,
+              318.3
+            ],
+            "verticalSpan": [
+              212.8,
+              437.4
+            ],
+            "intentBottom": 186.5,
+            "handTop": 616.3,
+            "hitstop": false,
+            "returnedIdleAnchor": [
+              54.7,
+              189.3,
+              280.5,
+              280.5
+            ]
+          },
+          "heavy": {
+            "art": "moth-queen-hurt",
+            "firstLoadedMs": 0,
+            "frames": 43,
+            "lastFrame": 286,
+            "widthSpan": [
+              81.3,
+              300.2
+            ],
+            "verticalSpan": [
+              212.1,
+              445
+            ],
+            "intentBottom": 186.5,
+            "handTop": 616.3,
+            "hitstop": true,
+            "returnedIdleAnchor": [
+              54.7,
+              189.3,
+              280.5,
+              280.5
+            ]
+          },
+          "assets": {
+            "moth-queen-attack": {
+              "webpSha256": "f9855d50140e111f59a7891cdf82f4d2f71c6f8c0f900f1ddde638c3a5f3ed73",
+              "sourceSha256": "01cfce2ba0d23d2e44d7fe9030baf3ae2bc2ec19dada5bcfe15134658a72a8c3",
+              "width": 380,
+              "height": 380,
+              "bounds": [
+                24,
+                62,
+                357,
+                336
+              ],
+              "legacyMaster": null
+            },
+            "moth-queen-hurt": {
+              "webpSha256": "5bf51a0583307a9144bc3f6dfc600ef86e46d7c149647a9615dbd9bdb90c6757",
+              "sourceSha256": "750ae6f0bbc1f56d21e4f49cf9b8d7d4ee6be048d957a89895fcd17e0a5ca5a0",
+              "width": 380,
+              "height": 380,
+              "bounds": [
+                56,
+                36,
+                320,
+                341
+              ],
+              "legacyMaster": null
+            },
+            "moth-queen": {
+              "webpSha256": "c28d23f4f4ff8f1736a8dfaf25b1920672ab226d642ef11e32112e16fdcd6184",
+              "sourceSha256": "7a46d9025d5f85e819f2e64d0998ff58c3091c22bf3b8882e6f488219681efc1",
+              "width": 380,
+              "height": 380,
+              "bounds": [
+                42,
+                37,
+                344,
+                331
+              ],
+              "legacyMaster": null
+            }
+          },
+          "errors": []
+        }
+      ]
+    }
+  }
+}

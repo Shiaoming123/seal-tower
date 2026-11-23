@@ -72,7 +72,7 @@
       "wanted": [],
       "status": "ok",
       "shared": false,
-      "note": "",
+      "note": "已采用 v2/art 原图",
       "priority": "-"
     },
     {
@@ -1827,7 +1827,7 @@
       "category": "敌怪姿态",
       "usedBy": "moth-queen 扑击/出招",
       "fallback": "moth-queen",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1835,7 +1835,7 @@
       "category": "敌怪姿态",
       "usedBy": "moth-queen 受击",
       "fallback": "moth-queen",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1883,6 +1883,22 @@
       "category": "敌怪姿态",
       "usedBy": "bell 受击",
       "fallback": "bell",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "bell-heavy-attack",
+      "category": "敌怪姿态",
+      "usedBy": "bell-heavy 扑击/出招",
+      "fallback": "bell-heavy",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "bell-heavy-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "bell-heavy 受击",
+      "fallback": "bell-heavy",
       "status": "missing",
       "priority": "P2"
     },
@@ -2067,7 +2083,7 @@
       "category": "敌怪姿态",
       "usedBy": "paper-matron 扑击/出招",
       "fallback": "paper-matron",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2075,7 +2091,7 @@
       "category": "敌怪姿态",
       "usedBy": "paper-matron 受击",
       "fallback": "paper-matron",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {

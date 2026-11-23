@@ -81,10 +81,12 @@ const wantCards = Object.keys(parts.CARD_ART).map((id) => ({ file: `card-${id}`,
 const wantRelics = Object.values(RELICS).map((r) => ({ file: `relic-${r.id}`, category: "法宝图标", usedBy: `法宝·${r.name}`, fallback: r.icon }));
 const wantPortraits = CHARACTERS.filter((c) => ["lamp", "herbs", "scholar", "mayor"].includes(c.id)).map((c) => ({ file: `portrait-${c.id}`, category: "人物立绘", usedBy: `人物·${c.name}`, fallback: c.portrait }));
 const wantBuilds = UPGRADES.map((u) => ({ file: `build-${u.id}`, category: "营建图标", usedBy: `营建·${u.name}`, fallback: u.icon }));
-const enemyIds = [...new Set(Object.values(ENEMIES).map((e) => e.sprite))];
+const enemies = Object.values(ENEMIES);
+const enemyIds = [...new Set(enemies.flatMap((e) => e.phase2 ? [e.sprite, e.phase2.sprite] : [e.sprite]))];
 const wantPoses = enemyIds.flatMap((s) => {
   const attack = `${s}-attack`;
-  const fallback = Object.values(ENEMIES).find((e) => e.sprite === s).spriteAttack ?? s;
+  const definition = enemies.find((e) => e.sprite === s) ?? enemies.find((e) => e.phase2?.sprite === s);
+  const fallback = definition?.spriteAttack ?? s;
   // Combat can use a named strike frame. A verified exclusive fallback already covers that pose.
   const hasDedicatedFallback = overrides.has(fallback) && fallback !== s && items.get(fallback)?.usedBy.length === 1;
   const attackFile = !have.has(attack) && hasDedicatedFallback ? fallback : attack;

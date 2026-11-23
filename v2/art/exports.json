@@ -158,5 +158,30 @@
     "file": "thorn-stele-hurt.png",
     "sourceSha256": "443d3459818322c37b2874fe49d8c213b858d54948f2d98832c3f309f582f88d",
     "webpSha256": "61857224d1110f0609772d25983c3ff1e6e81ddd0cab55d7ce9aa62f90b9dc6c"
+  },
+  "paper-matron-attack": {
+    "file": "paper-matron-attack.png",
+    "sourceSha256": "9644451f80c3d592d229be8472da862dbb2aeb6ed10dc82d81c94fa8cf937c74",
+    "webpSha256": "82abba8d5ae90876f973e5210b0bff0ba4405441ec482d6673ad5dcbe4edef2f"
+  },
+  "paper-matron-hurt": {
+    "file": "paper-matron-hurt.png",
+    "sourceSha256": "2513630b07741edfce22faefdf7586ade474b2c792d851f39038226e0ac0590c",
+    "webpSha256": "53eb5aa3e14633e6b0b95ba1ce49319b830e0ca71a3fcbdcbbc3f29b973c72ca"
+  },
+  "moth-queen-attack": {
+    "file": "moth-queen-attack.png",
+    "sourceSha256": "01cfce2ba0d23d2e44d7fe9030baf3ae2bc2ec19dada5bcfe15134658a72a8c3",
+    "webpSha256": "f9855d50140e111f59a7891cdf82f4d2f71c6f8c0f900f1ddde638c3a5f3ed73"
+  },
+  "moth-queen-hurt": {
+    "file": "moth-queen-hurt.png",
+    "sourceSha256": "750ae6f0bbc1f56d21e4f49cf9b8d7d4ee6be048d957a89895fcd17e0a5ca5a0",
+    "webpSha256": "5bf51a0583307a9144bc3f6dfc600ef86e46d7c149647a9615dbd9bdb90c6757"
+  },
+  "moth-queen": {
+    "file": "moth-queen.png",
+    "sourceSha256": "7a46d9025d5f85e819f2e64d0998ff58c3091c22bf3b8882e6f488219681efc1",
+    "webpSha256": "c28d23f4f4ff8f1736a8dfaf25b1920672ab226d642ef11e32112e16fdcd6184"
   }
 }
