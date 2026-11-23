@@ -28,7 +28,10 @@
         "v2/docs/重构说明.md",
         "v2/docs/玩法优化方案.md",
         "v2/docs/长线经营与构筑方案.md",
-        "v2/docs/行囊重设计.md"
+        "v2/docs/行囊重设计.md",
+        "v2/docs/数值体检.md",
+        "v2/docs/sim/report.md",
+        "v2/docs/sim/report-nosell.md"
       ]
     },
     {
@@ -95,7 +98,8 @@
   "mechanics": {
     "bag": "v2/docs/行囊重设计.md",
     "merchant-prices": "v2/docs/长线经营与构筑方案.md",
-    "turn-combat": "v2/docs/玩法优化方案.md"
+    "turn-combat": "v2/docs/玩法优化方案.md",
+    "balance": "v2/docs/数值体检.md"
   },
   "requiredTraces": [
     "ART-007A",
