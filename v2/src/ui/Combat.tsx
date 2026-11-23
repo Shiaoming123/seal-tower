@@ -202,7 +202,7 @@ export function Combat() {
   };
 
   return (
-    <div class={`combat ${fx}`}>
+    <div class={`combat ${fx}`} data-enemy={c.enemy.id}>
       <div class="viewport" ref={ref}>
         <div class={`enemy kind-${c.kind}`}>
           <div class="intent">

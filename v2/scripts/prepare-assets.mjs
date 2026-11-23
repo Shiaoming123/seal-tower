@@ -1,7 +1,8 @@
 // Copies the pixel art we actually use from the legacy folders into src/assets,
 // resized to the size the game draws them at. Run once after changing the manifest.
 import sharp from "sharp";
-import { mkdir, readdir } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
@@ -72,29 +73,58 @@ const tints = [
   ["icon-wardcharm", S("merch-order-hook"), 128, 300, 1, 1],
 ];
 
-await mkdir(out, { recursive: true });
-for (const [id, src, edge, hue, saturation, brightness] of tints) {
-  await sharp(src).resize(edge, edge, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" })
-    .modulate({ hue, saturation, brightness }).webp({ quality: 84, alphaQuality: 90, effort: 6 }).toFile(path.join(out, id + ".webp"));
-}
-for (const [id, [src, edge]] of Object.entries(manifest)) {
-  await sharp(src).resize(edge, edge, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" })
-    .webp({ quality: 84, alphaQuality: 90, effort: 6 }).toFile(path.join(out, id + ".webp"));
-}
-// Real art dropped into v2/art/<id>.png|webp replaces any placeholder with the same id.
 const artDir = path.resolve(root, "v2/art");
+const requested = new Set(process.argv.slice(2));
+const overridesFromDisk = (await readdir(artDir).catch((err) => {
+  if (err.code !== "ENOENT") throw err;
+  return [];
+})).flatMap((file) => {
+  const match = file.match(/^(.+)\.(png|webp|jpg)$/i);
+  return match ? [{ id: match[1], file }] : [];
+});
+for (const id of requested) {
+  if (!overridesFromDisk.some((entry) => entry.id === id)) throw new Error(`No source art for ${id} in v2/art`);
+}
+
+await mkdir(out, { recursive: true });
+if (!requested.size) {
+  for (const [id, src, edge, hue, saturation, brightness] of tints) {
+    await sharp(src).resize(edge, edge, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" })
+      .modulate({ hue, saturation, brightness }).webp({ quality: 84, alphaQuality: 90, effort: 6 }).toFile(path.join(out, id + ".webp"));
+  }
+  for (const [id, [src, edge]] of Object.entries(manifest)) {
+    await sharp(src).resize(edge, edge, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" })
+      .webp({ quality: 84, alphaQuality: 90, effort: 6 }).toFile(path.join(out, id + ".webp"));
+  }
+}
+// Real art dropped into v2/art takes precedence over legacy sources.
 const edges = Object.fromEntries([...Object.entries(manifest).map(([id, [, e]]) => [id, e]), ...tints.map(([id, , e]) => [id, e])]);
+const exportFile = path.join(artDir, "exports.json");
+const previousExports = await readFile(exportFile, "utf8").then(JSON.parse, (err) => {
+  if (err.code !== "ENOENT") throw err;
+  return null;
+});
+const exports = requested.size ? { ...previousExports } : {};
+const digest = (data) => createHash("sha256").update(data).digest("hex");
+// Reserve space around tightly framed transparent cutouts without changing the export limit.
+const paddedSprites = new Set(["lantern-spirit", "water-ghost", "event-peddler"]);
 let overrides = 0;
-for (const file of await readdir(artDir).catch(() => [])) {
-  const m = file.match(/^(.+)\.(png|webp|jpg)$/i);
-  if (!m) continue;
+for (const { id, file } of overridesFromDisk) {
+  if (requested.size && !requested.has(id)) continue;
   // New art for ids the game looks up with a fallback (cards, relics, portraits…) gets a size by prefix.
   const prefixEdge = [["card-", 256], ["relic-", 192], ["build-", 192], ["icon-", 128], ["portrait-", 480], ["event-", 420], ["omen-", 480]]
-    .find(([p]) => m[1].startsWith(p))?.[1];
-  const edge = edges[m[1]] ?? prefixEdge ?? 440;
-  await sharp(path.join(artDir, file)).resize(edge, edge, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" })
-    .webp({ quality: 84, alphaQuality: 90, effort: 6 }).toFile(path.join(out, m[1] + ".webp"));
+    .find(([p]) => id.startsWith(p))?.[1];
+  const edge = edges[id] ?? prefixEdge ?? 440;
+  const source = await readFile(path.join(artDir, file));
+  const margin = paddedSprites.has(id) ? Math.round(edge * .05) : 0;
+  const extent = edge - margin * 2;
+  const sprite = sharp(source).resize(extent, extent, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" });
+  if (margin) sprite.extend({ top: margin, right: margin, bottom: margin, left: margin, background: "#00000000" });
+  const output = await sprite.webp({ quality: 84, alphaQuality: 90, effort: 6 }).toBuffer();
+  await writeFile(path.join(out, id + ".webp"), output);
+  exports[id] = { file, sourceSha256: digest(source), webpSha256: digest(output) };
   overrides++;
 }
+if (overrides || previousExports) await writeFile(exportFile, JSON.stringify(exports, null, 2) + "\n");
 if (overrides) console.log(`replaced ${overrides} placeholder(s) from art/`);
-console.log(`wrote ${Object.keys(manifest).length} assets to ${out}`);
+if (!requested.size) console.log(`wrote ${Object.keys(manifest).length} base assets to ${out}`);

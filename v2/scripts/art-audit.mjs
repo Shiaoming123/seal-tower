@@ -2,6 +2,7 @@
 // shared between several things, or still missing. Writes docs/美术清单.json for image-generation agents.
 // Usage: node scripts/art-audit.mjs
 import { createServer } from "vite";
+import { createHash } from "node:crypto";
 import { readdir, writeFile, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -16,6 +17,23 @@ const [{ ENEMIES, FLOOR_SPAWNS }, { GOODS }, { RELICS }, { CARDS }, { EVENTS }, 
 await server.close();
 
 const have = new Set((await readdir(path.join(root, "src/assets"))).map((f) => f.replace(/\.webp$/, "")));
+const artDir = path.join(root, "art");
+const recorded = await readFile(path.join(artDir, "exports.json"), "utf8").then(JSON.parse, (err) => {
+  if (err.code !== "ENOENT") throw err;
+  return {};
+});
+const digest = (data) => createHash("sha256").update(data).digest("hex");
+const overrides = new Set();
+for (const [id, art] of Object.entries(recorded)) {
+  if (!have.has(id) || path.basename(art.file) !== art.file) continue;
+  const source = await readFile(path.join(artDir, art.file)).catch((err) => {
+    if (err.code !== "ENOENT") throw err;
+    return null;
+  });
+  if (!source || digest(source) !== art.sourceSha256) continue;
+  const output = await readFile(path.join(root, "src/assets", id + ".webp"));
+  if (digest(output) === art.webpSha256) overrides.add(id);
+}
 const prep = await readFile(path.join(root, "scripts/prepare-assets.mjs"), "utf8");
 // Placeholders: recoloured variants, and manifest entries borrowed from art made for something else.
 const tinted = new Set([...prep.matchAll(/\["([a-z0-9-]+)", [SA]\(/g)].map((m) => m[1]));
@@ -32,7 +50,7 @@ const use = (file, category, usedBy, want) => {
   if (want) e.wanted.push(want);
   items.set(file, e);
 };
-const status = (file) => file === "portal" ? "code-drawn" : !have.has(file) ? "missing" : tinted.has(file) ? "placeholder-tint" : BORROWED[file] ? "placeholder-borrowed" : "ok";
+const status = (file) => file === "portal" ? "code-drawn" : !have.has(file) ? "missing" : overrides.has(file) ? "ok" : tinted.has(file) ? "placeholder-tint" : BORROWED[file] ? "placeholder-borrowed" : "ok";
 
 // What the game shows now.
 for (const e of Object.values(ENEMIES)) {
@@ -65,7 +83,7 @@ const wantPoses = enemyIds.flatMap((s) => [
 const wanted = [...wantCards, ...wantRelics, ...wantPortraits, ...wantBuilds, ...wantPoses].map((w) => ({ ...w, status: have.has(w.file) ? "ok" : "missing" }));
 
 const current = [...items.values()].map((e) => ({
-  ...e, status: status(e.file), shared: e.usedBy.length > 1, note: BORROWED[e.file] ? `现在借用：${BORROWED[e.file]}` : tinted.has(e.file) ? "现在是旧图改色" : "",
+  ...e, status: status(e.file), shared: e.usedBy.length > 1, note: overrides.has(e.file) && have.has(e.file) ? "已采用 v2/art 原图" : BORROWED[e.file] ? `现在借用：${BORROWED[e.file]}` : tinted.has(e.file) ? "现在是旧图改色" : "",
 }));
 const priority = (x) => x.category === "敌怪" && x.status !== "ok" ? "P0" : x.category === "事件" && x.status !== "ok" ? "P0"
   : ["卡牌插图", "法宝图标", "人物立绘"].includes(x.category) ? "P1" : x.category === "物品图标" && x.status !== "ok" ? "P1" : "P2";

@@ -130,10 +130,10 @@
         "敌怪·引魂灯"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：旧灯纹印挂灯",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "paper-doll",
@@ -178,10 +178,10 @@
         "敌怪·水鬼"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "stele-spirit",
@@ -929,10 +929,10 @@
         "事件·灯鼠货郎"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：灯鼠",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "event-cart",

@@ -1,0 +1,17 @@
+{
+  "event-peddler": {
+    "file": "event-peddler.png",
+    "sourceSha256": "d222b0a95e8c05fe857a04d74c39cb563d78296ed6989985ccef40028c1d7b47",
+    "webpSha256": "a9273d7a45b495845eec3d785318b49ad6712366a232f28eef511a635fb3e02a"
+  },
+  "lantern-spirit": {
+    "file": "lantern-spirit.png",
+    "sourceSha256": "b386715af8971a7860d75128d6ce409392aa1c0727f42c62a8cdc28c21539ca7",
+    "webpSha256": "4d56fde35a12c9fa5b7b00e2d1ae8597ae6de06bf2d961e581fc3090aa2fc29a"
+  },
+  "water-ghost": {
+    "file": "water-ghost.png",
+    "sourceSha256": "468cf8231066353c715792185149ed4a70f7805e871d3aaa2fa9bb5475e29f8d",
+    "webpSha256": "8e5c99c7bbf30294d013f64117d316c0564c4432a7df44e94508352c8e6a25bc"
+  }
+}

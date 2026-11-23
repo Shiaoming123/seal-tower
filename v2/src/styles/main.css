@@ -377,6 +377,11 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .portrait .player-panel { bottom: 14px; }
 .portrait .intent-line { top: 400px; width: 94%; }
 .portrait .combat-tip { bottom: 480px; }
+/* In portrait the raycast horizon is farther down the tall viewport. */
+.portrait .combat[data-enemy="water-ghost"] { --waterline-portrait: clamp(115px, calc(52% - 220px), calc(100% - 760px)); }
+.portrait .combat[data-enemy="water-ghost"] .enemy { top: var(--waterline-portrait); }
+.portrait .combat[data-enemy="water-ghost"] .intent-line { top: calc(var(--waterline-portrait) + 395px); }
+.portrait .combat[data-enemy="water-ghost"] .combat-tip { top: 15px; bottom: auto; }
 
 /* ---------------------------------------------------------------- overlays */
 .overlay { position: absolute; inset: 0; z-index: 40; background: rgba(5, 3, 2, 0.75); display: grid; place-items: center; }
