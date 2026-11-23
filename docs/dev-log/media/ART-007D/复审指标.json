@@ -1,0 +1,1416 @@
+{
+  "seed": "gallery",
+  "testedWidth": [
+    1280,
+    390
+  ],
+  "revision": "rat 仅攻击导出左右各加 28px 之后",
+  "checks": {
+    "moth": {
+      "390": {
+        "baseline": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": null
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 18,
+          "assets": {
+            "moth": {
+              "width": 320,
+              "height": 290,
+              "bounds": [
+                2,
+                2,
+                316,
+                286
+              ],
+              "webpSha256": "26332b0fd743174845f4c48febcc63b36b9ec1a157f90fbffa10537f15f56997",
+              "sourceSha256": null
+            }
+          },
+          "healthLoss": [
+            6
+          ],
+          "stolen": [],
+          "guard": [
+            10,
+            0,
+            1
+          ],
+          "actualEnemyBlock": null,
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 83,
+          "cardsInjected": [
+            "strike"
+          ],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "moth",
+              "sampleCount": 30,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 17.7
+            },
+            {
+              "path": "attack",
+              "expected": "moth",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 0.6
+            },
+            {
+              "path": "full-block",
+              "expected": "moth",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 0.5
+            },
+            {
+              "path": "heavy",
+              "expected": "moth",
+              "sampleCount": 43,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 17.7
+            }
+          ]
+        },
+        "final": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": null
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 18,
+          "assets": {
+            "moth-hurt": {
+              "width": 320,
+              "height": 290,
+              "bounds": [
+                34,
+                4,
+                291,
+                285
+              ],
+              "webpSha256": "bcac9905ec2247d6589cbf413a634b8a2308330f93689bcae057b4962961df0e",
+              "sourceSha256": "81ec73fedbd68c92115f9dfacc67b18730ebde2b5807c29821346f6b60b15624"
+            },
+            "moth-attack": {
+              "width": 320,
+              "height": 290,
+              "bounds": [
+                9,
+                64,
+                309,
+                284
+              ],
+              "webpSha256": "c555781a9dd4a7173ddd585d8a13e52a44a25fb30f44593f25e6eae81a457ab5",
+              "sourceSha256": "6486b8c05dd5598f55b1ef65723f276c54e50c8980d17ef63a13f90b39a63ba6"
+            },
+            "moth": {
+              "width": 320,
+              "height": 290,
+              "bounds": [
+                2,
+                2,
+                316,
+                286
+              ],
+              "webpSha256": "26332b0fd743174845f4c48febcc63b36b9ec1a157f90fbffa10537f15f56997",
+              "sourceSha256": null
+            }
+          },
+          "healthLoss": [
+            6
+          ],
+          "stolen": [],
+          "guard": [
+            10,
+            0,
+            1
+          ],
+          "actualEnemyBlock": null,
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 82,
+          "cardsInjected": [
+            "strike"
+          ],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "moth-hurt",
+              "sampleCount": 28,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 51
+            },
+            {
+              "path": "attack",
+              "expected": "moth-attack",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 9.1
+            },
+            {
+              "path": "full-block",
+              "expected": "moth-attack",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 9.1
+            },
+            {
+              "path": "heavy",
+              "expected": "moth-hurt",
+              "sampleCount": 43,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 51
+            }
+          ]
+        }
+      },
+      "1280": {
+        "baseline": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": null
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 18,
+          "assets": {
+            "moth": {
+              "width": 320,
+              "height": 290,
+              "bounds": [
+                2,
+                2,
+                316,
+                286
+              ],
+              "webpSha256": "26332b0fd743174845f4c48febcc63b36b9ec1a157f90fbffa10537f15f56997",
+              "sourceSha256": null
+            }
+          },
+          "healthLoss": [
+            6
+          ],
+          "stolen": [],
+          "guard": [
+            10,
+            0,
+            1
+          ],
+          "actualEnemyBlock": null,
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 86,
+          "cardsInjected": [
+            "strike"
+          ],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "moth",
+              "sampleCount": 28,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 535
+            },
+            {
+              "path": "attack",
+              "expected": "moth",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 531.8
+            },
+            {
+              "path": "full-block",
+              "expected": "moth",
+              "sampleCount": 39,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 531
+            },
+            {
+              "path": "heavy",
+              "expected": "moth",
+              "sampleCount": 44,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 535
+            }
+          ]
+        },
+        "final": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": null
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 18,
+          "assets": {
+            "moth-attack": {
+              "width": 320,
+              "height": 290,
+              "bounds": [
+                9,
+                64,
+                309,
+                284
+              ],
+              "webpSha256": "c555781a9dd4a7173ddd585d8a13e52a44a25fb30f44593f25e6eae81a457ab5",
+              "sourceSha256": "6486b8c05dd5598f55b1ef65723f276c54e50c8980d17ef63a13f90b39a63ba6"
+            },
+            "moth-hurt": {
+              "width": 320,
+              "height": 290,
+              "bounds": [
+                34,
+                4,
+                291,
+                285
+              ],
+              "webpSha256": "bcac9905ec2247d6589cbf413a634b8a2308330f93689bcae057b4962961df0e",
+              "sourceSha256": "81ec73fedbd68c92115f9dfacc67b18730ebde2b5807c29821346f6b60b15624"
+            },
+            "moth": {
+              "width": 320,
+              "height": 290,
+              "bounds": [
+                2,
+                2,
+                316,
+                286
+              ],
+              "webpSha256": "26332b0fd743174845f4c48febcc63b36b9ec1a157f90fbffa10537f15f56997",
+              "sourceSha256": null
+            }
+          },
+          "healthLoss": [
+            6
+          ],
+          "stolen": [],
+          "guard": [
+            10,
+            0,
+            1
+          ],
+          "actualEnemyBlock": null,
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 82,
+          "cardsInjected": [
+            "strike"
+          ],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "moth-hurt",
+              "sampleCount": 29,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 553.6
+            },
+            {
+              "path": "attack",
+              "expected": "moth-attack",
+              "sampleCount": 37,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 536.6
+            },
+            {
+              "path": "full-block",
+              "expected": "moth-attack",
+              "sampleCount": 39,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 535.8
+            },
+            {
+              "path": "heavy",
+              "expected": "moth-hurt",
+              "sampleCount": 43,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 553.6
+            }
+          ]
+        }
+      }
+    },
+    "rat": {
+      "390": {
+        "baseline": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20002,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": {
+              "uid": 1001,
+              "id": "shell",
+              "x": 2,
+              "y": 0,
+              "rot": 0
+            }
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 14,
+          "assets": {
+            "rat-swipe": {
+              "width": 320,
+              "height": 242,
+              "bounds": [
+                0,
+                0,
+                319,
+                241
+              ],
+              "webpSha256": "e41b2ac1a8e43e85025eaf0c283539586db701c4e50839f5a888bea04e40f9c5",
+              "sourceSha256": null
+            },
+            "rat": {
+              "width": 320,
+              "height": 241,
+              "bounds": [
+                0,
+                0,
+                319,
+                240
+              ],
+              "webpSha256": "621dbc63641e006dbc496f73371bcc3215936a841938988353430c843e0df91d",
+              "sourceSha256": null
+            }
+          },
+          "healthLoss": [
+            5
+          ],
+          "stolen": [
+            "shell"
+          ],
+          "guard": [
+            5,
+            0,
+            1
+          ],
+          "actualEnemyBlock": null,
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 81,
+          "cardsInjected": [
+            "spikes",
+            "spikes"
+          ],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "rat",
+              "sampleCount": 30,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": -8.4
+            },
+            {
+              "path": "steal",
+              "expected": "rat-swipe",
+              "sampleCount": 37,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": -27
+            },
+            {
+              "path": "full-block",
+              "expected": "rat-swipe",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": -30.8
+            },
+            {
+              "path": "heavy",
+              "expected": "rat",
+              "sampleCount": 43,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": -8.4
+            }
+          ]
+        },
+        "final": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20002,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": {
+              "uid": 1001,
+              "id": "shell",
+              "x": 2,
+              "y": 0,
+              "rot": 0
+            }
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 14,
+          "assets": {
+            "rat-attack": {
+              "width": 320,
+              "height": 241,
+              "bounds": [
+                31,
+                44,
+                285,
+                238
+              ],
+              "webpSha256": "fcdcd776a343c636c48028a23ad646ab3c55a2fd495b19309110770b538166f1",
+              "sourceSha256": "1085360aadeb143065b6f7f27bb048d7456bda419db3d67731d30eb492d2b45d"
+            },
+            "rat-hurt": {
+              "width": 320,
+              "height": 241,
+              "bounds": [
+                8,
+                17,
+                307,
+                227
+              ],
+              "webpSha256": "e5872be694de3abad262a5cf1b4f750f477766b6c3e39a75d380c0ec79c97394",
+              "sourceSha256": "536256498a6210ebe4402c56abba397187183bfbbee966451fef2c4e9ebd42fc"
+            },
+            "rat-swipe": {
+              "width": 320,
+              "height": 242,
+              "bounds": [
+                0,
+                0,
+                319,
+                241
+              ],
+              "webpSha256": "e41b2ac1a8e43e85025eaf0c283539586db701c4e50839f5a888bea04e40f9c5",
+              "sourceSha256": null
+            },
+            "rat": {
+              "width": 320,
+              "height": 241,
+              "bounds": [
+                0,
+                0,
+                319,
+                240
+              ],
+              "webpSha256": "621dbc63641e006dbc496f73371bcc3215936a841938988353430c843e0df91d",
+              "sourceSha256": null
+            }
+          },
+          "healthLoss": [
+            5
+          ],
+          "stolen": [
+            "shell"
+          ],
+          "guard": [
+            5,
+            0,
+            1
+          ],
+          "actualEnemyBlock": null,
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 82,
+          "cardsInjected": [
+            "spikes",
+            "spikes"
+          ],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "rat-hurt",
+              "sampleCount": 30,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 1.2
+            },
+            {
+              "path": "steal",
+              "expected": "rat-attack",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 12.2
+            },
+            {
+              "path": "full-block",
+              "expected": "rat-attack",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 12.3
+            },
+            {
+              "path": "heavy",
+              "expected": "rat-hurt",
+              "sampleCount": 43,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 1.2
+            }
+          ]
+        }
+      },
+      "1280": {
+        "baseline": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20002,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": {
+              "uid": 1001,
+              "id": "shell",
+              "x": 2,
+              "y": 0,
+              "rot": 0
+            }
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 14,
+          "assets": {
+            "rat-swipe": {
+              "width": 320,
+              "height": 242,
+              "bounds": [
+                0,
+                0,
+                319,
+                241
+              ],
+              "webpSha256": "e41b2ac1a8e43e85025eaf0c283539586db701c4e50839f5a888bea04e40f9c5",
+              "sourceSha256": null
+            },
+            "rat": {
+              "width": 320,
+              "height": 241,
+              "bounds": [
+                0,
+                0,
+                319,
+                240
+              ],
+              "webpSha256": "621dbc63641e006dbc496f73371bcc3215936a841938988353430c843e0df91d",
+              "sourceSha256": null
+            }
+          },
+          "healthLoss": [
+            5
+          ],
+          "stolen": [
+            "shell"
+          ],
+          "guard": [
+            5,
+            0,
+            1
+          ],
+          "actualEnemyBlock": null,
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 84,
+          "cardsInjected": [
+            "spikes",
+            "spikes"
+          ],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "rat",
+              "sampleCount": 30,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 439.1
+            },
+            {
+              "path": "steal",
+              "expected": "rat-swipe",
+              "sampleCount": 39,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 419.5
+            },
+            {
+              "path": "full-block",
+              "expected": "rat-swipe",
+              "sampleCount": 39,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 419.5
+            },
+            {
+              "path": "heavy",
+              "expected": "rat",
+              "sampleCount": 43,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 439.1
+            }
+          ]
+        },
+        "final": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20002,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": {
+              "uid": 1001,
+              "id": "shell",
+              "x": 2,
+              "y": 0,
+              "rot": 0
+            }
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 14,
+          "assets": {
+            "rat-swipe": {
+              "width": 320,
+              "height": 242,
+              "bounds": [
+                0,
+                0,
+                319,
+                241
+              ],
+              "webpSha256": "e41b2ac1a8e43e85025eaf0c283539586db701c4e50839f5a888bea04e40f9c5",
+              "sourceSha256": null
+            },
+            "rat": {
+              "width": 320,
+              "height": 241,
+              "bounds": [
+                0,
+                0,
+                319,
+                240
+              ],
+              "webpSha256": "621dbc63641e006dbc496f73371bcc3215936a841938988353430c843e0df91d",
+              "sourceSha256": null
+            },
+            "rat-hurt": {
+              "width": 320,
+              "height": 241,
+              "bounds": [
+                8,
+                17,
+                307,
+                227
+              ],
+              "webpSha256": "e5872be694de3abad262a5cf1b4f750f477766b6c3e39a75d380c0ec79c97394",
+              "sourceSha256": "536256498a6210ebe4402c56abba397187183bfbbee966451fef2c4e9ebd42fc"
+            },
+            "rat-attack": {
+              "width": 320,
+              "height": 241,
+              "bounds": [
+                31,
+                44,
+                285,
+                238
+              ],
+              "webpSha256": "fcdcd776a343c636c48028a23ad646ab3c55a2fd495b19309110770b538166f1",
+              "sourceSha256": "1085360aadeb143065b6f7f27bb048d7456bda419db3d67731d30eb492d2b45d"
+            }
+          },
+          "healthLoss": [
+            5
+          ],
+          "stolen": [
+            "shell"
+          ],
+          "guard": [
+            5,
+            0,
+            1
+          ],
+          "actualEnemyBlock": null,
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 85,
+          "cardsInjected": [
+            "spikes",
+            "spikes"
+          ],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "rat-hurt",
+              "sampleCount": 29,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 448.4
+            },
+            {
+              "path": "steal",
+              "expected": "rat-attack",
+              "sampleCount": 39,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 461.5
+            },
+            {
+              "path": "full-block",
+              "expected": "rat-attack",
+              "sampleCount": 39,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 461.5
+            },
+            {
+              "path": "heavy",
+              "expected": "rat-hurt",
+              "sampleCount": 43,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 448.4
+            }
+          ]
+        }
+      }
+    },
+    "louse": {
+      "390": {
+        "baseline": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": null
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 24,
+          "assets": {
+            "louse": {
+              "width": 420,
+              "height": 154,
+              "bounds": [
+                2,
+                4,
+                416,
+                151
+              ],
+              "webpSha256": "02e6f73c8934229e201f5949c71bc9e50e6a1ba090e92eb24663ad15fbeb5aea",
+              "sourceSha256": null
+            }
+          },
+          "healthLoss": [
+            3,
+            9
+          ],
+          "stolen": [],
+          "guard": [
+            5,
+            0,
+            1
+          ],
+          "actualEnemyBlock": [
+            7,
+            1,
+            0
+          ],
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 78,
+          "cardsInjected": [],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "louse",
+              "sampleCount": 30,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": -1.6
+            },
+            {
+              "path": "curl",
+              "expected": "louse",
+              "sampleCount": 37,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": -25.8
+            },
+            {
+              "path": "chew",
+              "expected": "louse",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": -29.5
+            },
+            {
+              "path": "guarded",
+              "expected": "louse",
+              "sampleCount": 30,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": -1.6
+            },
+            {
+              "path": "full-block",
+              "expected": "louse",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": -29.5
+            },
+            {
+              "path": "heavy",
+              "expected": "louse",
+              "sampleCount": 43,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": -1.6
+            }
+          ]
+        },
+        "final": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": null
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 24,
+          "assets": {
+            "louse-attack": {
+              "width": 420,
+              "height": 154,
+              "bounds": [
+                48,
+                6,
+                377,
+                150
+              ],
+              "webpSha256": "f1674a8b8292a9b781ebac00b964c4d91e33238c560104cc94cd8818478fda82",
+              "sourceSha256": "ba705e9879bced41cb1526c04697eb489a2b6ee35d33f4283f0083ce07b3d53b"
+            },
+            "louse-hurt": {
+              "width": 420,
+              "height": 154,
+              "bounds": [
+                56,
+                39,
+                368,
+                148
+              ],
+              "webpSha256": "be7213aec32f9695b89cd8b7cf895a74065a98092d9c4176359980c44770127d",
+              "sourceSha256": "8215eb0812a109738a1d95fe833a7deb3dc24fc1efaa120efb5ca7b62db4aa7c"
+            },
+            "louse": {
+              "width": 420,
+              "height": 154,
+              "bounds": [
+                2,
+                4,
+                416,
+                151
+              ],
+              "webpSha256": "02e6f73c8934229e201f5949c71bc9e50e6a1ba090e92eb24663ad15fbeb5aea",
+              "sourceSha256": null
+            }
+          },
+          "healthLoss": [
+            3,
+            9
+          ],
+          "stolen": [],
+          "guard": [
+            5,
+            0,
+            1
+          ],
+          "actualEnemyBlock": [
+            7,
+            1,
+            0
+          ],
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 81,
+          "cardsInjected": [],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "louse-hurt",
+              "sampleCount": 30,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 46
+            },
+            {
+              "path": "curl",
+              "expected": "louse-attack",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 13.7
+            },
+            {
+              "path": "chew",
+              "expected": "louse-attack",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 13.6
+            },
+            {
+              "path": "guarded",
+              "expected": "louse",
+              "sampleCount": 29,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": -1.6
+            },
+            {
+              "path": "full-block",
+              "expected": "louse-attack",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 13.6
+            },
+            {
+              "path": "heavy",
+              "expected": "louse-hurt",
+              "sampleCount": 43,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 46
+            }
+          ]
+        }
+      },
+      "1280": {
+        "baseline": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": null
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 24,
+          "assets": {
+            "louse": {
+              "width": 420,
+              "height": 154,
+              "bounds": [
+                2,
+                4,
+                416,
+                151
+              ],
+              "webpSha256": "02e6f73c8934229e201f5949c71bc9e50e6a1ba090e92eb24663ad15fbeb5aea",
+              "sourceSha256": null
+            }
+          },
+          "healthLoss": [
+            3,
+            9
+          ],
+          "stolen": [],
+          "guard": [
+            5,
+            0,
+            1
+          ],
+          "actualEnemyBlock": [
+            7,
+            1,
+            0
+          ],
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 83,
+          "cardsInjected": [],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "louse",
+              "sampleCount": 30,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 251.6
+            },
+            {
+              "path": "curl",
+              "expected": "louse",
+              "sampleCount": 38,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 193.1
+            },
+            {
+              "path": "chew",
+              "expected": "louse",
+              "sampleCount": 39,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 189.7
+            },
+            {
+              "path": "guarded",
+              "expected": "louse",
+              "sampleCount": 30,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 251.6
+            },
+            {
+              "path": "full-block",
+              "expected": "louse",
+              "sampleCount": 39,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 189.7
+            },
+            {
+              "path": "heavy",
+              "expected": "louse",
+              "sampleCount": 43,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 251.6
+            }
+          ]
+        },
+        "final": {
+          "floor": 1,
+          "sign": "rain",
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "fixture": {
+            "target": {
+              "dir": 0,
+              "x": 5,
+              "y": 8
+            },
+            "id": 20001,
+            "from": {
+              "x": 5,
+              "y": 9,
+              "dir": 0
+            },
+            "assigned": null
+          },
+          "initialHp": 54,
+          "initialEnemyHp": 24,
+          "assets": {
+            "louse-attack": {
+              "width": 420,
+              "height": 154,
+              "bounds": [
+                48,
+                6,
+                377,
+                150
+              ],
+              "webpSha256": "f1674a8b8292a9b781ebac00b964c4d91e33238c560104cc94cd8818478fda82",
+              "sourceSha256": "ba705e9879bced41cb1526c04697eb489a2b6ee35d33f4283f0083ce07b3d53b"
+            },
+            "louse-hurt": {
+              "width": 420,
+              "height": 154,
+              "bounds": [
+                56,
+                39,
+                368,
+                148
+              ],
+              "webpSha256": "be7213aec32f9695b89cd8b7cf895a74065a98092d9c4176359980c44770127d",
+              "sourceSha256": "8215eb0812a109738a1d95fe833a7deb3dc24fc1efaa120efb5ca7b62db4aa7c"
+            },
+            "louse": {
+              "width": 420,
+              "height": 154,
+              "bounds": [
+                2,
+                4,
+                416,
+                151
+              ],
+              "webpSha256": "02e6f73c8934229e201f5949c71bc9e50e6a1ba090e92eb24663ad15fbeb5aea",
+              "sourceSha256": null
+            }
+          },
+          "healthLoss": [
+            3,
+            9
+          ],
+          "stolen": [],
+          "guard": [
+            5,
+            0,
+            1
+          ],
+          "actualEnemyBlock": [
+            7,
+            1,
+            0
+          ],
+          "normal": 6,
+          "heavy": 12,
+          "heavyMs": 84,
+          "cardsInjected": [],
+          "motions": [
+            {
+              "path": "hurt",
+              "expected": "louse-hurt",
+              "sampleCount": 30,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 345.8
+            },
+            {
+              "path": "curl",
+              "expected": "louse-attack",
+              "sampleCount": 39,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 276.2
+            },
+            {
+              "path": "chew",
+              "expected": "louse-attack",
+              "sampleCount": 39,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 276.2
+            },
+            {
+              "path": "guarded",
+              "expected": "louse",
+              "sampleCount": 30,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 251.6
+            },
+            {
+              "path": "full-block",
+              "expected": "louse-attack",
+              "sampleCount": 39,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 276.2
+            },
+            {
+              "path": "heavy",
+              "expected": "louse-hurt",
+              "sampleCount": 43,
+              "mismatch": 0,
+              "restored": true,
+              "minMargin": 345.8
+            }
+          ]
+        }
+      }
+    }
+  },
+  "ratBeforeFix": {
+    "steal": -25.9,
+    "fullBlock": -26,
+    "attackWebp": {
+      "width": 320,
+      "height": 241,
+      "bounds": [
+        4,
+        3,
+        311,
+        238
+      ],
+      "webpSha256": "77e9d699fdc4462f3cf319578a8c2d884dd0d43b9da89283c0f141bd43fb8466",
+      "sourceSha256": "1085360aadeb143065b6f7f27bb048d7456bda419db3d67731d30eb492d2b45d"
+    }
+  }
+}

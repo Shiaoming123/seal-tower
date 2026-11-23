@@ -119,7 +119,13 @@ const paddedSprites = new Set([
   "night-owl",
   "event-den", "event-hunter", "event-pool",
 ]);
-const lungeInsets = { "paper-matron-attack": 17, "night-fox-attack": 9, "fallen-elder-strike": 17, "bell-attack": 13, "bell-heavy-attack": 14 };
+// Match the legacy idle aspect without scaling a squat monster to a square.
+const poseFrames = {
+  moth: { size: [320, 290], crops: { attack: [0, 48, 1254, 1136], hurt: [0, 48, 1254, 1136] } },
+  rat: { size: [320, 241], crops: { attack: [0, 144, 1254, 945], hurt: [0, 120, 1254, 945] } },
+  louse: { size: [420, 154], crops: { attack: [0, 351, 1254, 533], hurt: [0, 371, 1254, 533] } },
+};
+const lungeInsets = { "paper-matron-attack": 17, "night-fox-attack": 9, "fallen-elder-strike": 17, "bell-attack": 13, "bell-heavy-attack": 14, "rat-attack": 28 };
 let overrides = 0;
 for (const { id, file } of overridesFromDisk) {
   if (requested.size && !requested.has(id)) continue;
@@ -142,14 +148,29 @@ for (const { id, file } of overridesFromDisk) {
   if (id === "fire-rat" || id === "fire-rat-attack") {
     sprite.extract({ left: 0, top: 120, width: 1254, height: 1062 });
   }
-  sprite.resize(extent, extent, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" });
-  if (sideMargin) sprite.extend({
-    top: sideMargin * 2 - margin,
-    right: sideMargin,
-    bottom: margin,
-    left: sideMargin,
-    background: "#00000000",
-  });
+  const frame = poseFrames[baseId];
+  const crop = frame?.crops[id.slice(baseId.length + 1)];
+  if (crop) {
+    const [left, top, cropWidth, cropHeight] = crop;
+    sprite.extract({ left, top, width: cropWidth, height: cropHeight });
+    const [width, height] = frame.size;
+    const inset = lungeInsets[id] ?? 0;
+    const contentWidth = width - inset * 2;
+    const contentHeight = Math.round(height * contentWidth / width);
+    sprite.resize(contentWidth, contentHeight, { fit: "contain", position: "bottom", background: "#00000000", kernel: "lanczos3" });
+    if (inset) sprite.extend({
+      top: height - contentHeight, bottom: 0, left: inset, right: inset, background: "#00000000",
+    });
+  } else {
+    sprite.resize(extent, extent, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" });
+    if (sideMargin) sprite.extend({
+      top: sideMargin * 2 - margin,
+      right: sideMargin,
+      bottom: margin,
+      left: sideMargin,
+      background: "#00000000",
+    });
+  }
   const output = await sprite.webp({ quality: 84, alphaQuality: 90, effort: 6 }).toBuffer();
   await writeFile(path.join(out, id + ".webp"), output);
   exports[id] = { file, sourceSha256: digest(source), webpSha256: digest(output) };

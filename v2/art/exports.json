@@ -233,5 +233,35 @@
     "file": "bell.png",
     "sourceSha256": "4809f0e00157df163bd7db629550cb8129ec1e8e096e7c06d7d79deb7ecb7980",
     "webpSha256": "34a24a22a8f80e03348f1d159dbe160a34a541985706d3790787b7bab3204441"
+  },
+  "louse-attack": {
+    "file": "louse-attack.png",
+    "sourceSha256": "ba705e9879bced41cb1526c04697eb489a2b6ee35d33f4283f0083ce07b3d53b",
+    "webpSha256": "f1674a8b8292a9b781ebac00b964c4d91e33238c560104cc94cd8818478fda82"
+  },
+  "louse-hurt": {
+    "file": "louse-hurt.png",
+    "sourceSha256": "8215eb0812a109738a1d95fe833a7deb3dc24fc1efaa120efb5ca7b62db4aa7c",
+    "webpSha256": "be7213aec32f9695b89cd8b7cf895a74065a98092d9c4176359980c44770127d"
+  },
+  "moth-attack": {
+    "file": "moth-attack.png",
+    "sourceSha256": "6486b8c05dd5598f55b1ef65723f276c54e50c8980d17ef63a13f90b39a63ba6",
+    "webpSha256": "c555781a9dd4a7173ddd585d8a13e52a44a25fb30f44593f25e6eae81a457ab5"
+  },
+  "moth-hurt": {
+    "file": "moth-hurt.png",
+    "sourceSha256": "81ec73fedbd68c92115f9dfacc67b18730ebde2b5807c29821346f6b60b15624",
+    "webpSha256": "bcac9905ec2247d6589cbf413a634b8a2308330f93689bcae057b4962961df0e"
+  },
+  "rat-attack": {
+    "file": "rat-attack.png",
+    "sourceSha256": "1085360aadeb143065b6f7f27bb048d7456bda419db3d67731d30eb492d2b45d",
+    "webpSha256": "fcdcd776a343c636c48028a23ad646ab3c55a2fd495b19309110770b538166f1"
+  },
+  "rat-hurt": {
+    "file": "rat-hurt.png",
+    "sourceSha256": "536256498a6210ebe4402c56abba397187183bfbbee966451fef2c4e9ebd42fc",
+    "webpSha256": "e5872be694de3abad262a5cf1b4f750f477766b6c3e39a75d380c0ec79c97394"
   }
 }

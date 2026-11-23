@@ -1763,7 +1763,7 @@
       "category": "敌怪姿态",
       "usedBy": "moth 扑击/出招",
       "fallback": "moth",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1771,7 +1771,7 @@
       "category": "敌怪姿态",
       "usedBy": "moth 受击",
       "fallback": "moth",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1779,7 +1779,7 @@
       "category": "敌怪姿态",
       "usedBy": "rat 扑击/出招",
       "fallback": "rat-swipe",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1787,7 +1787,7 @@
       "category": "敌怪姿态",
       "usedBy": "rat 受击",
       "fallback": "rat",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1795,7 +1795,7 @@
       "category": "敌怪姿态",
       "usedBy": "louse 扑击/出招",
       "fallback": "louse",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1803,7 +1803,7 @@
       "category": "敌怪姿态",
       "usedBy": "louse 受击",
       "fallback": "louse",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
