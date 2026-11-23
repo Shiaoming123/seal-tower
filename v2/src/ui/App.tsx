@@ -77,7 +77,6 @@ const FLOOR_NAMES = ["", "第一层 · 照影廊", "第二层 · 桥驿", "第�
 
 function Hud() {
   const run = useRun();
-  const { order, parts } = orderProgress(run);
   const toggle = (o: "bag" | "deck") => { sfx.click(); overlay.value = overlay.value === o ? null : o; };
   const pending = run.pending.length;
   return (
@@ -91,11 +90,18 @@ function Hud() {
         </span>
       </div>
       <RelicRow relics={run.relics} />
-      <div class="hud-order" title={order.story}>
-        <span class="order-label">委托 · {order.client}</span>
-        {run.orderDone ? <span class="done">已交付</span> : parts.map((p) => (
-          <span class={p.have >= p.need ? "ok" : ""}><GoodChip id={p.id} /> {Math.min(p.have, p.need)}/{p.need}</span>
-        ))}
+      <div class="hud-orders">
+        {run.orders.map((_, i) => {
+          const { order, parts, ord } = orderProgress(run, i);
+          return (
+            <div class="hud-order" title={order.story}>
+              <span class="order-label">{order.client}</span>
+              {ord.done ? <span class="done">已交付</span> : parts.map((p) => (
+                <span class={p.have >= p.need ? "ok" : ""}><GoodChip id={p.id} /> {Math.min(p.have, p.need)}/{p.need}</span>
+              ))}
+            </div>
+          );
+        })}
       </div>
       <div class="hud-buttons">
         <button type="button" class={`btn small ${pending ? "alert" : ""}`} onClick={() => toggle("bag")}>行囊{pending ? ` · ${pending} 件没装` : ""} <kbd>B</kbd></button>

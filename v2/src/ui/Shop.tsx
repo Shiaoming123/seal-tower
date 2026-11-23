@@ -26,7 +26,6 @@ export function Shop() {
   const [line, setLine] = useState(LINES[run.floor - 1] ?? LINES[0]);
   const [pose, setPose] = useState<"feixiao" | "feixiao-settle">("feixiao");
   const settlePose = () => { setPose("feixiao-settle"); setTimeout(() => setPose("feixiao"), 1400); };
-  const prog = R.orderProgress(run);
   const buy = (ok: boolean | string | null, what: string) => {
     if (ok === true || ok === null) { sfx.coin(); setLine(`${what}归你了。`); settlePose(); commit(); }
     else say(typeof ok === "string" ? ok : "石不够");
@@ -99,17 +98,22 @@ export function Shop() {
         <h3>卖货 <small>点货物直接卖出；同一种卖得越多越便宜。装备半价回收，要点两下</small></h3>
         <p class="wanted">今天高价收：<GoodChip id={s.wanted} /> 价格翻倍</p>
         <BagGrid mode="sell" cell={44} />
-        <div class="order-box">
-          <b>委托 · {prog.order.client}</b>
-          {run.orderDone ? <span class="done">已交付</span> : prog.order.onReturn ? <span>回镇时自动交付</span> : (
-            <>
-              <span>{prog.parts.map((p) => `${GOODS[p.id].name} ${Math.min(p.have, p.need)}/${p.need}`).join("，")}</span>
-              <button type="button" class="btn small primary" disabled={!prog.ready} onClick={() => { const r = R.deliverOrder(run); if (r) { sfx.coin(); setLine(r); commit(); } }}>
-                {prog.ready ? `交货 · ${prog.order.rewardText}` : "货还不够"}
-              </button>
-            </>
-          )}
-        </div>
+        {run.orders.map((_, i) => {
+          const prog = R.orderProgress(run, i);
+          return (
+            <div class="order-box">
+              <b>委托 · {prog.order.client}{prog.ord.level ? ` · 交情 ${prog.ord.level}` : ""}</b>
+              {prog.ord.done ? <span class="done">已交付</span> : prog.order.onReturn ? <span>回镇时自动交付</span> : (
+                <>
+                  <span>{prog.parts.map((p) => `${GOODS[p.id].name} ${Math.min(p.have, p.need)}/${p.need}`).join("，")}</span>
+                  <button type="button" class="btn small primary" disabled={!prog.ready} onClick={() => { const r = R.deliverOrder(run, i); if (r) { sfx.coin(); setLine(r); commit(); } }}>
+                    {prog.ready ? `交货 · ${R.orderRewardText(prog.ord)}` : "货还不够"}
+                  </button>
+                </>
+              )}
+            </div>
+          );
+        })}
         <button type="button" class="btn big leave" onClick={() => { sfx.click(); run.at = null; run.screen = "explore"; commit(); }}>离开狐市</button>
       </div>
     </div>

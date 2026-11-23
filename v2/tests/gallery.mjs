@@ -15,7 +15,7 @@ await page.goto(url + "?seed=gallery");
 await page.evaluate(() => localStorage.clear());
 await page.reload();
 await page.getByRole("button", { name: "去镇灯铺接单" }).click();
-await page.getByRole("button", { name: "进塔" }).click();
+await page.getByRole("button", { name: "进塔", exact: true }).click();
 await page.waitForSelector(".explore");
 await page.evaluate(() => { const p = JSON.parse(localStorage.getItem("seal-tower.v2.profile")); p.seenTips = ["move", "combat", "steal", "charge", "part"]; localStorage.setItem("seal-tower.v2.profile", JSON.stringify(p)); });
 await page.reload();

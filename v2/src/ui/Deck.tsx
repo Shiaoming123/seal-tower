@@ -15,7 +15,7 @@ export function DeckOverlay() {
           <button type="button" class="btn small" onClick={() => (overlay.value = null)}>关闭 <kbd>Esc</kbd></button></header>
         <div class="card-grid">
           {deck.map((c) => (
-            <CardView id={c.id} up={c.up} preview={preview} small extra={c.from ? <span class="from">来自{GOODS[c.from].name}</span> : undefined} />
+            <CardView id={c.id} up={c.up} bonus={c.bonus} preview={preview} small extra={c.from ? <span class="from">来自{GOODS[c.from].name}</span> : undefined} />
           ))}
         </div>
       </div>

@@ -20,6 +20,8 @@ export interface Ctx {
   interrupt(): boolean;
   harvest(): void;
   drawNext(n: number): void;
+  enemyBurn(): number;
+  gainGold(n: number): void;
   lastConsumedPrice: number;
 }
 
@@ -31,6 +33,8 @@ export interface Preview {
   block: number;
   attacks: number;
   inCombat: boolean;
+  burn: number;
+  goods: number;
 }
 
 type Vals = Record<string, number>;
@@ -150,6 +154,36 @@ const list: CardDef[] = [
     needs: (c) => (c.gold() < 2 ? "身上没钱" : null),
     play: (c, v) => { const spend = Math.floor(c.gold() / 2); c.spendGold(spend); c.attack(Math.floor(spend / v.div)); } },
 
+  // ---------- combo 关键牌 ----------
+  { id: "gale", name: "疾风", cost: 0, type: "attack", rarity: "common", pool: "sword", v: [{ dmg: 4, bonus: 6 }, { dmg: 5, bonus: 8 }], tags: ["multi"],
+    text: (v, p) => `造成 ${d(p, v.dmg)} 伤害。本回合已打出 3 张攻击牌时，再造成 ${d(p, v.bonus)}${p.inCombat ? `（已打 ${p.attacks} 张）` : ""}。`,
+    play: (c, v) => { c.attack(v.dmg); if (c.attacksThisTurn() >= 3) c.attack(v.bonus); } },
+  { id: "sheathe", name: "收剑", cost: 1, type: "skill", rarity: "common", pool: "sword", v: [{ per: 3 }, { per: 4 }],
+    text: (v, p) => `本回合每打出过一张攻击牌，获得 ${v.per} 格挡${p.inCombat ? `（现在 ${v.per * p.attacks}）` : ""}。`,
+    play: (c, v) => c.block(v.per * c.attacksThisTurn()) },
+  { id: "swordqi", name: "剑气纵横", cost: [2, 1], type: "power", rarity: "rare", pool: "sword", v: [{ n: 2 }, { n: 2 }],
+    text: (v) => `之后每打出一张攻击牌，额外造成 ${v.n} 伤害。`, play: (c, v) => c.selfStatus("swordQi", v.n) },
+  { id: "ironshirt", name: "铁布衫", cost: 1, type: "power", rarity: "uncommon", pool: "shield", v: [{ n: 1 }, { n: 2 }],
+    text: (v) => `之后每次获得格挡，额外 +${v.n}。`, play: (c, v) => c.selfStatus("ironshirt", v.n) },
+  { id: "hold", name: "固守", cost: 1, type: "skill", rarity: "common", pool: "shield", v: [{ blk: 5 }, { blk: 7 }],
+    text: (v, p) => `获得 ${v.blk} 格挡。如果打出前你已经有格挡，再获得 ${v.blk}${p.inCombat ? (p.block ? "（会触发）" : "（现在没有格挡）") : ""}。`,
+    play: (c, v) => { const had = c.currentBlock() > 0; c.block(v.blk); if (had) c.block(v.blk); } },
+  { id: "ignite", name: "引火", cost: 1, type: "skill", rarity: "common", pool: "lamp", v: [{ n: 5 }, { n: 7 }], tags: ["fire"],
+    text: (v) => `施加 ${v.n} 层灼烧（敌人每回合掉等量的血，无视格挡，然后少一层）。`, play: (c, v) => c.enemyStatus("burn", v.n) },
+  { id: "burnout", name: "烧尽", cost: 1, type: "attack", rarity: "uncommon", pool: "lamp", v: [{ mul: 2 }, { mul: 3 }], tags: ["fire"],
+    text: (v, p) => `造成敌人灼烧层数 ×${v.mul} 的伤害${p.inCombat ? `（现在 ${p.dmg(p.burn * v.mul)}）` : ""}。不消耗灼烧。`,
+    play: (c, v) => { c.attack(c.enemyBurn() * v.mul); } },
+  { id: "fuel", name: "火上浇油", cost: 1, type: "skill", rarity: "rare", pool: "lamp", v: [{}, {}], exhaust: [true, false], tags: ["fire"],
+    text: (_v, p) => `敌人的灼烧层数翻倍${p.inCombat ? `（${p.burn} → ${p.burn * 2}）` : ""}。`, play: (c) => c.enemyStatus("burn", c.enemyBurn()) },
+  { id: "clearance", name: "清仓", cost: 1, type: "attack", rarity: "uncommon", pool: "lamp", v: [{ dmg: 4 }, { dmg: 6 }], tags: ["goods", "fire"],
+    text: (v, p) => `烧掉行囊里所有灯灰：每份造成 ${d(p, v.dmg)} 伤害${p.inCombat ? `（${p.ash} 份）` : ""}。`,
+    needs: needAsh, play: (c, v) => { const n = c.consume("ash", 99).length; c.attack(v.dmg, n); } },
+  { id: "principal", name: "本利", cost: 1, type: "skill", rarity: "common", pool: "abacus", v: [{ g: 4 }, { g: 6 }], tags: ["money"],
+    text: (v) => `得到 ${v.g} 石。之后身上不少于 50 石，再抽 2 张牌。`, play: (c, v) => { c.gainGold(v.g); if (c.gold() >= 50) c.draw(2); } },
+  { id: "hoard", name: "囤货", cost: [1, 0], type: "power", rarity: "uncommon", pool: "neutral", v: [{}, {}],
+    text: (_v, p) => `行囊里每有 3 件货物，获得 1 点力量${p.inCombat ? `（现在 ${Math.floor(p.goods / 3)} 点）` : ""}。`,
+    play: (c) => { const n = Math.floor(c.goods() / 3); if (n) c.selfStatus("str", n); } },
+
   // ---------- 通用 ----------
   { id: "bandage", name: "包扎", cost: 1, type: "skill", rarity: "common", pool: "neutral", v: [{ heal: 5 }, { heal: 8 }], exhaust: true,
     text: (v) => `回复 ${v.heal} 气血。消耗。`, play: (c, v) => c.heal(v.heal) },
@@ -171,7 +205,16 @@ export function cardCost(def: CardDef, up: boolean): number {
 export function cardExhausts(def: CardDef, up: boolean): boolean {
   return Array.isArray(def.exhaust) ? def.exhaust[up ? 1 : 0] : !!def.exhaust;
 }
-export const cardVals = (def: CardDef, up: boolean) => def.v[up ? 1 : 0];
+/** Card numbers, including bag-neighbour bonuses on damage and block. */
+export function cardVals(def: CardDef, up: boolean, bonus?: { dmg?: number; blk?: number }) {
+  const v = def.v[up ? 1 : 0];
+  if (!bonus) return v;
+  const out = { ...v };
+  if (bonus.dmg && out.dmg !== undefined) out.dmg += bonus.dmg;
+  if (bonus.dmg && out.plus !== undefined) out.plus += bonus.dmg;
+  if (bonus.blk && out.blk !== undefined) out.blk += bonus.blk;
+  return out;
+}
 
 /** Cards you know by heart. Weapons in the bag add their own cards on top. */
 export const BASE_DECK = ["strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend"];

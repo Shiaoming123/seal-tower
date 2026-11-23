@@ -46,6 +46,22 @@ export function findSpot(bag: Bag, id: GoodId, ignoreUid = -1): { x: number; y: 
 }
 
 /** Count one item type, or all trade goods when no id is given. */
+/** Items touching `item` (any of the 8 cells around its footprint). */
+export function neighbours(bag: Bag, item: PlacedGood): PlacedGood[] {
+  const mine = footprint(item);
+  return bag.items.filter((o) => o.uid !== item.uid && footprint(o).some(([x, y]) => mine.some(([mx, my]) => Math.abs(mx - x) <= 1 && Math.abs(my - y) <= 1)));
+}
+
+/** Sum of an aura kind that reaches `item` from accessories next to it. */
+export function auraOn(bag: Bag, item: PlacedGood, kind: "dmg" | "blk" | "sell" | "ward" | "ash"): number {
+  return neighbours(bag, item).reduce((s, o) => s + (GOODS[o.id].aura?.kind === kind ? GOODS[o.id].aura!.n : 0), 0);
+}
+
+/** Extra 灯灰 counted by ash-scaling cards: each ash next to a 灯油壶 counts again. */
+export function ashBonus(bag: Bag): number {
+  return bag.items.filter((it) => it.id === "ash" && auraOn(bag, it, "ash") > 0).length;
+}
+
 export function count(bag: Bag, id?: GoodId): number {
   return bag.items.filter((it) => (id ? it.id === id : GOODS[it.id].kind === "goods")).length;
 }
@@ -68,7 +84,7 @@ export function removeOne(bag: Bag, id: GoodId): boolean {
 export function mostValuable(bag: Bag): PlacedGood | null {
   let best: PlacedGood | null = null;
   // Thieves grab goods and consumables, never your gear.
-  for (const it of bag.items) if (GOODS[it.id].kind !== "gear" && (!best || GOODS[it.id].price > GOODS[best.id].price)) best = it;
+  for (const it of bag.items) if (GOODS[it.id].kind !== "gear" && !auraOn(bag, it, "ward") && (!best || GOODS[it.id].price > GOODS[best.id].price)) best = it;
   return best;
 }
 

@@ -108,7 +108,26 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .portrait-wrap, .order-card .portrait { width: 48px; height: 48px; object-fit: cover; object-position: top; border-radius: 50%; border: 2px solid #8a6a3a; background: #2a1712; }
 .order-reward { color: #6a3a10; }
 .order-hint { color: #4a3a6a; font-size: 13px !important; }
-.order-regular { color: #2f6f3a; font-size: 13px !important; }
+.order-regular { color: #2f6f3a; font-size: 12px !important; }
+.order-card .favor { color: #b8322a; letter-spacing: 1px; }
+.town-tabs { display: flex; gap: 6px; }
+.treasury { margin-left: auto; font-size: 18px; color: #f2c14e; text-shadow: 0 1px 0 #000; }
+.town-build { grid-column: 1 / -1; position: relative; display: flex; flex-direction: column; gap: 10px; min-height: 0; }
+.town-build h3 { margin: 0; font-family: var(--font-title); font-weight: normal; font-size: 24px; color: var(--gold); }
+.town-build h3 small { font-family: var(--font-body); font-size: 14px; }
+.build-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; overflow-y: auto; }
+.build-card { display: flex; flex-direction: column; gap: 6px; padding: 10px 12px; border-radius: 2px; color: var(--paper-ink); min-height: 200px;
+  background: var(--tex-paper, none) center / 256px, #efe2c2; box-shadow: inset 0 0 0 1px #8a6a3a, 0 5px 12px rgba(0, 0, 0, 0.55); }
+.build-card.owned { box-shadow: inset 0 0 0 2px #2f7a3a, 0 5px 12px rgba(0, 0, 0, 0.55); }
+.build-icon { width: 48px; height: 48px; object-fit: contain; }
+.build-body b { font-size: 18px; }
+.build-body p { margin: 2px 0; font-size: 13px; }
+.build-body p.done { color: #2f7a3a; text-decoration: line-through; }
+.build-body p.later { opacity: 0.55; }
+.build-card .btn { margin-top: auto; color: var(--ink); }
+.done-tag { margin-top: auto; color: #2f7a3a; font-size: 14px; }
+.hud-orders { display: flex; flex-direction: column; gap: 1px; }
+.result-box .carried { color: #f2c14e; }
 .weapon-card.locked { filter: grayscale(0.9) brightness(0.6); cursor: not-allowed; }
 .ach-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .ach-list li { display: flex; flex-direction: column; padding: 8px 10px; border-radius: 2px; box-shadow: inset 0 0 0 1px #8a6a3a; opacity: 0.55; }
@@ -346,6 +365,11 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .mode-sell .item { cursor: pointer; }
 .mode-sell .item:hover .foot { background: rgba(242, 193, 78, 0.4); }
 .item .price.confirm { background: #e2483b; color: #fff; }
+.item.aura .foot { background: rgba(180, 120, 255, 0.18); box-shadow: inset 0 0 0 1px rgba(200, 160, 255, 0.7); }
+.item.linked .foot { box-shadow: inset 0 0 0 2px #c9a0ff, 0 0 10px rgba(200, 160, 255, 0.6); }
+.aura-badge { position: absolute; left: 2px; top: 2px; z-index: 3; font-size: 11px; font-weight: bold; padding: 0 4px; border-radius: 3px; background: #6a3a9a; color: #fff; pointer-events: none; white-space: nowrap; }
+.det-aura { color: #6a3a9a; }
+.card .bonus-tag { position: absolute; right: 6px; bottom: 6px; font-size: 11px; color: #6a3a9a; font-weight: bold; }
 .mode-sell { grid-template-columns: auto; }
 .drag-ghost { position: fixed; z-index: 200; pointer-events: none; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; }
 .drag-ghost img { width: 64px; height: 64px; object-fit: contain; filter: drop-shadow(0 4px 6px #000); }

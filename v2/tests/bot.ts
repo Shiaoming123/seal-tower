@@ -46,7 +46,15 @@ export function playRun(run: RunState, opts: { elites?: boolean; onFloor?: () =>
     if (run.screen === "combat") { fight(run); continue; }
     if (run.screen === "reward") {
       const rw = run.reward!;
-      if (rw.cards) R.takeRewardCard(run, rw.cards[0]);
+      if (rw.cards) {
+        // An average player: prefers solid attacks and blocks, skips cards it can't use well.
+        const score = (id: string) => {
+          const d = CARDS[id], v = d.v[0];
+          const raw = (v.dmg ?? 0) * (v.hits ?? 1) + (v.blk ?? 0) + ({ common: 1, uncommon: 3, rare: 5, basic: 0 }[d.rarity]);
+          return raw / Math.max(1, cardCost(d, false));
+        };
+        R.takeRewardCard(run, [...rw.cards].sort((a, b) => score(b) - score(a))[0]);
+      }
       if (rw.relic) R.takeRewardRelic(run, rw.relic);
       if (rw.relicChoices) R.takeRewardRelic(run, rw.relicChoices[0]);
       R.closeReward(run);

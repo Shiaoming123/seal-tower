@@ -73,6 +73,8 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
   };
 
   const sel = run.bag.items.find((it) => it.uid === selected) ?? null;
+  // Items lit up by the selected accessory (or the accessories boosting the selected item).
+  const linked = new Set(sel ? bag.neighbours(b, sel).filter((o) => GOODS[sel.id].aura || GOODS[o.id].aura).map((o) => o.uid) : []);
   const preview = held && hover ? { cells: bag.shapeOf(held.id, held.rot).map(([x, y]) => [x + hover.x, y + hover.y]), ok: bag.fits(b, held.id, hover.x, hover.y, held.rot, held.from === "bag" ? held.uid : -1) } : null;
 
   const rotateSelected = () => {
@@ -96,7 +98,7 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
           const g = GOODS[it.id];
           const isHeld = held?.from === "bag" && held.uid === it.uid;
           return (
-            <div class={`item kind-${g.kind} ${selected === it.uid ? "selected" : ""} ${isHeld ? "held" : ""} ${g.dim ? "dim" : ""}`}
+            <div class={`item kind-${g.kind} ${selected === it.uid ? "selected" : ""} ${isHeld ? "held" : ""} ${g.dim ? "dim" : ""} ${linked.has(it.uid) ? "linked" : ""} ${g.aura ? "aura" : ""}`}
               style={{ left: `${it.x * cell}px`, top: `${it.y * cell}px`, width: `${size.w * cell}px`, height: `${size.h * cell}px` }}
               onPointerDown={(e) => startDrag({ from: "bag", uid: it.uid, id: it.id, rot: it.rot }, e as unknown as PointerEvent)}
               onClick={() => {
@@ -114,7 +116,8 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
               {bag.footprint(it).map(([x, y]) => <span class="foot" style={{ left: `${(x - it.x) * cell}px`, top: `${(y - it.y) * cell}px` }} />)}
               <img src={ART[g.icon]} alt={g.name} draggable={false} class="item-img"
                 style={{ width: `${(it.rot % 2 ? size.h : size.w) * cell}px`, height: `${(it.rot % 2 ? size.w : size.h) * cell}px`, transform: `translate(-50%, -50%) rotate(${it.rot * 90 + (g.tilt?.[0] ?? 0)}deg) scale(${g.tilt?.[1] ?? 1})` }} />
-              {mode === "sell" && <span class={`price ${confirmSell === it.uid ? "confirm" : ""}`}>{confirmSell === it.uid ? `卖?${sellPrice(run, it.id)}` : sellPrice(run, it.id)}</span>}
+              {mode === "sell" && <span class={`price ${confirmSell === it.uid ? "confirm" : ""}`}>{confirmSell === it.uid ? `卖?${sellPrice(run, it.id, run.floor, run.shop?.sold[it.id] ?? 0, it.uid)}` : sellPrice(run, it.id, run.floor, run.shop?.sold[it.id] ?? 0, it.uid)}</span>}
+              {mode !== "sell" && <AuraBadge run={run} uid={it.uid} />}
             </div>
           );
         })}
@@ -158,6 +161,8 @@ function ItemDetails({ run, uid, onRotate, onDone }: { run: RunState; uid: numbe
       <p class="det-text">{g.text}</p>
       {g.passive && <p class="det-passive">带在身上：{g.passive}</p>}
       {g.cards && <p class="det-cards">牌组多出：{g.cards.map((c) => `「${CARDS[c].name}」`).join("")}</p>}
+      {g.aura && <p class="det-aura">配件：{g.aura.text}。现在挨着：{bag.neighbours(run.bag, it).map((o) => GOODS[o.id].name).join("、") || "什么也没有"}</p>}
+      {!g.aura && <AuraLine run={run} uid={it.uid} />}
       <div class="row">
         {canUse && <button type="button" class="btn small primary" onClick={() => { const r = useItem(run, it.uid); if (r) { sfx.coin(); say(r); onDone(); commit(); } }}>{g.use!.label}</button>}
         <button type="button" class="btn small" onClick={onRotate}>旋转</button>
@@ -179,4 +184,30 @@ export function BagOverlay() {
       </div>
     </div>
   );
+}
+
+/** Small corner badge on items that are being boosted by a neighbouring accessory. */
+function AuraBadge({ run, uid }: { run: RunState; uid: number }) {
+  const it = run.bag.items.find((i) => i.uid === uid)!;
+  const g = GOODS[it.id];
+  const bits: string[] = [];
+  if (g.cards) {
+    const d = bag.auraOn(run.bag, it, "dmg"), b = bag.auraOn(run.bag, it, "blk");
+    if (d) bits.push(`攻+${d}`);
+    if (b) bits.push(`挡+${b}`);
+  }
+  if (g.kind === "goods") {
+    const s = bag.auraOn(run.bag, it, "sell");
+    if (s) bits.push(`价+${s}`);
+    if (bag.auraOn(run.bag, it, "ward")) bits.push("护");
+    if (it.id === "ash" && bag.auraOn(run.bag, it, "ash")) bits.push("×2");
+  }
+  return bits.length ? <span class="aura-badge">{bits.join(" ")}</span> : null;
+}
+
+function AuraLine({ run, uid }: { run: RunState; uid: number }) {
+  const it = run.bag.items.find((i) => i.uid === uid)!;
+  const from = bag.neighbours(run.bag, it).filter((o) => GOODS[o.id].aura);
+  if (!from.length) return null;
+  return <p class="det-aura">受到加成：{from.map((o) => `${GOODS[o.id].name}（${GOODS[o.id].aura!.text}）`).join("；")}</p>;
 }

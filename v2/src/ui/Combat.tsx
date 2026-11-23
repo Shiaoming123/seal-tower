@@ -254,7 +254,7 @@ export function Combat() {
           const reason = blockedReason(run, c, card);
           return (
             <div class="hand-slot" style={{ "--i": i, "--n": c.hand.length } as never} key={card.uid}>
-              <CardView id={card.id} up={card.up} preview={preview} disabled={!!reason} reason={reason}
+              <CardView id={card.id} up={card.up} bonus={card.bonus} preview={preview} disabled={!!reason} reason={reason}
                 onClick={() => play(i)} extra={<span class="hotkey">{i + 1}</span>} />
             </div>
           );

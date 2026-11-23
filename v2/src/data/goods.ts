@@ -19,6 +19,8 @@ export interface GoodDef {
   cards?: string[];
   /** gear: passive effect while carried, in plain words */
   passive?: string;
+  /** Accessory that boosts the 8 cells around it in the bag. */
+  aura?: { kind: "dmg" | "blk" | "sell" | "ward" | "ash"; n: number; text: string };
   tier?: 1 | 2 | 3;
   /** Rotate a diagonal icon so it lies along the item's long side (degrees) and enlarge it. */
   tilt?: [number, number];
@@ -75,6 +77,18 @@ const list: GoodDef[] = [
     passive: "每场战斗第一回合多 1 点能量。", text: "摇一下，先手就是你的。" },
   { id: "purse", kind: "gear", tier: 1, name: "货郎钱袋", icon: "order-purse", shape: H2, price: 7, cards: ["guardgoods"],
     text: "货郎的钱袋，教你怎么护住货。" },
+
+  // ---------- accessories: they boost whatever sits around them (8 neighbouring cells) ----------
+  { id: "whetstone", kind: "gear", tier: 1, name: "磨刀石", icon: "icon-whetstone", shape: ONE, price: 6,
+    aura: { kind: "dmg", n: 2, text: "相邻装备的攻击牌伤害 +2" }, text: "放在兵器旁边，出鞘前磨一磨。" },
+  { id: "amulet", kind: "gear", tier: 1, name: "护身符", icon: "icon-amulet", shape: ONE, price: 6,
+    aura: { kind: "blk", n: 2, text: "相邻装备的格挡牌格挡 +2" }, text: "庙里求来的符，贴在盾上更结实。" },
+  { id: "oilpot", kind: "gear", tier: 2, name: "灯油壶", icon: "icon-oilpot", shape: V2, price: 8,
+    aura: { kind: "ash", n: 1, text: "相邻的每份灯灰，在「灯火」这类按灯灰算的牌里算两份" }, text: "浸过油的灰烧得更旺。" },
+  { id: "luckybag", kind: "gear", tier: 1, name: "招财袋", icon: "icon-luckybag", shape: ONE, price: 7,
+    aura: { kind: "sell", n: 2, text: "相邻的每件货物卖价 +2" }, text: "绣着元宝的小袋子，挨着它的货都显得金贵。" },
+  { id: "wardcharm", kind: "gear", tier: 1, name: "镇货符", icon: "icon-wardcharm", shape: ONE, price: 6,
+    aura: { kind: "ward", n: 1, text: "相邻的货不会被抢" }, text: "贴在货上，鼠妖不敢下嘴。" },
 
   // ---------- consumables ----------
   { id: "salve", kind: "consumable", name: "金疮药", icon: "salve", shape: V2, price: 5,

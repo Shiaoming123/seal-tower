@@ -16,9 +16,10 @@ export function addGood(run: RunState, id: GoodId): boolean {
 }
 
 /** What a good would fetch at a floor's shop (defaults to the shop you're in). Gear sells back at half price. */
-export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floor, sold = run.shop?.sold[id] ?? 0): number {
+export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floor, sold = run.shop?.sold[id] ?? 0, uid?: number): number {
   const g = GOODS[id];
-  const pin = run.relics.includes("pin") ? 1 : 0;
+  const item = uid === undefined ? undefined : run.bag.items.find((i) => i.uid === uid);
+  const pin = (run.relics.includes("pin") ? 1 : 0) + (item && g.kind === "goods" ? bag.auraOn(run.bag, item, "sell") : 0);
   if (g.kind !== "goods") return Math.max(1, Math.floor(g.price / 2)) + pin;
   const m = run.markets[floor];
   const raw = Math.round(g.price * (m.mult[id] ?? 1) * (m.wanted === id ? 2 : 1));
@@ -28,7 +29,7 @@ export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floo
 export function sellItem(run: RunState, uid: number): number {
   const item = run.bag.items.find((it) => it.uid === uid);
   if (!item) return 0;
-  const price = sellPrice(run, item.id);
+  const price = sellPrice(run, item.id, run.floor, run.shop?.sold[item.id] ?? 0, uid);
   bag.removeUid(run.bag, uid);
   if (run.shop && GOODS[item.id].kind === "goods") run.shop.sold[item.id] = (run.shop.sold[item.id] ?? 0) + 1;
   run.gold += price;

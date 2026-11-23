@@ -5,12 +5,19 @@ export type GoodId =
   | "ash" | "fang" | "silk" | "shell" | "knot" | "wick" | "clasp" | "clasp-broken" | "copper"
   | "redpaper" | "fur" | "inkdust" | "pearl" | "rubbing" | "token" | "shard" | "feather" | "tail"
   | "sword" | "shield" | "lamp" | "ironsword" | "hook" | "mirror" | "abacus" | "bell" | "purse"
+  | "whetstone" | "amulet" | "oilpot" | "luckybag" | "wardcharm"
   | "salve" | "pill" | "lining";
-export type StatusId = "str" | "weak" | "vuln" | "thorns" | "focus" | "ward" | "barricade" | "lampArray" | "swordIntent" | "bulwark" | "counter" | "interest" | "blind";
+export type StatusId = "str" | "weak" | "vuln" | "thorns" | "focus" | "ward" | "barricade" | "lampArray" | "swordIntent" | "bulwark" | "counter" | "interest" | "blind" | "burn" | "swordQi" | "ironshirt";
 export type Screen = "town" | "explore" | "combat" | "reward" | "shop" | "event" | "rest" | "result";
 export type FloorNo = 1 | 2 | 3;
 
-export interface CardInst { uid: number; id: string; up: boolean; /** gear the card comes from */ from?: GoodId }
+export interface CardInst {
+  uid: number; id: string; up: boolean;
+  /** gear the card comes from */
+  from?: GoodId;
+  /** bonuses from bag neighbours (磨刀石, 护身符…) */
+  bonus?: { dmg?: number; blk?: number };
+}
 
 export interface PlacedGood { uid: number; id: GoodId; x: number; y: number; rot: number }
 export interface Bag { w: number; h: number; items: PlacedGood[] }
@@ -139,7 +146,7 @@ export interface RewardState {
   relic: string | null;
   relicChoices: string[] | null;
   /** Fight kind that produced this reward, used for text. */
-  from: FightKind | "chest";
+  from: FightKind | "chest" | "school";
   /** Enemy part note shown on the reward screen. */
   note: string;
 }
@@ -166,6 +173,8 @@ export interface ShopState {
 
 export interface EventState { id: string; step: number; result: string | null }
 
+export interface RunOrder { id: string; level: number; done: boolean }
+
 export interface RunStats { steps: number; harvests: number; kills: number; goldEarned: number; goodsSold: number; goodsUsed: number; damageTaken: number; turns: number }
 
 export interface RunState {
@@ -174,10 +183,10 @@ export interface RunState {
   rng: RngState;
   difficulty: number;
   weapon: WeaponId;
-  order: string;
-  orderDone: boolean;
-  /** You've done this client's order before. */
-  regular: boolean;
+  /** Orders taken this run. `level` is your favour with that client when you took it. */
+  orders: RunOrder[];
+  /** Town upgrades in effect for this run. */
+  town: Record<string, number>;
   hp: number;
   maxHp: number;
   gold: number;
@@ -226,5 +235,11 @@ export interface Profile {
   ordersDone: string[];
   seenTips: string[];
   achievements: string[];
+  /** 库银: money and goods brought home alive. */
+  treasury: number;
+  /** 营建 levels. */
+  upgrades: Record<string, number>;
+  /** 交情 with each client (order id), 0–5. */
+  favor: Record<string, number>;
   sound: boolean;
 }

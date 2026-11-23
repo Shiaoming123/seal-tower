@@ -61,6 +61,11 @@ const tints = [
   ["icon-shard", S("merch-bell"), 128, 20, 1.2, 1.2],
   ["icon-feather", S("merch-fang"), 128, 30, 0.6, 0.7],
   ["icon-tail", S("merch-knot"), 128, 0, 0.05, 1.6],
+  ["icon-whetstone", S("obstacle-rock"), 128, 200, 0.4, 1],
+  ["icon-amulet", S("merch-order-hook"), 128, 40, 1.2, 1.1],
+  ["icon-oilpot", S("merch-salve"), 128, 30, 1.4, 1.05],
+  ["icon-luckybag", S("seal-purse"), 128, 40, 1.3, 1.15],
+  ["icon-wardcharm", S("merch-order-hook"), 128, 300, 1, 1],
 ];
 
 await mkdir(out, { recursive: true });

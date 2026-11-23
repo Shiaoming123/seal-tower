@@ -147,7 +147,7 @@ describe("combat", () => {
 describe("data", () => {
   it("every card renders text for both versions", () => {
     for (const def of Object.values(CARDS)) for (const v of def.v) {
-      const t = def.text(v, { dmg: (n) => n, ash: 2, gold: 10, block: 3, attacks: 1, inCombat: true });
+      const t = def.text(v, { dmg: (n) => n, ash: 2, gold: 10, block: 3, attacks: 1, inCombat: true, burn: 3, goods: 4 });
       expect(t).not.toMatch(/undefined|NaN/);
     }
   });
@@ -277,7 +277,7 @@ describe("long game", () => {
     const run = createRun(42, "sword", "lamp");
     run.floor = 2;
     run.flags.push("clasp");
-    const profile = { renown: 0, runs: 1, wins: 0, bestFloor: 0, ordersDone: [], seenTips: [], achievements: [], sound: true };
+    const profile = { renown: 0, runs: 1, wins: 0, bestFloor: 0, ordersDone: [], seenTips: [], achievements: [], treasury: 0, upgrades: {}, favor: {}, sound: true };
     const got = ACHIEVEMENTS.filter((a) => a.check(run, profile)).map((a) => a.id);
     expect(got).toEqual(expect.arrayContaining(["floor2", "clasp"]));
     expect(got).not.toContain("win");
@@ -383,5 +383,75 @@ describe("new events", () => {
     const n = run.deck.length;
     R.applyCardPick(run, run.deck[0].uid);
     expect(run.deck.length).toBe(n + 1);
+  });
+});
+
+describe("town economy", () => {
+  it("coming home alive banks coin and goods; dying loses them", async () => {
+    const R = await import("../src/game/run");
+    const run = createRun(71, "sword", "lamp");
+    run.gold = 40; addGood(run, "clasp");
+    run.outcome = "retreat";
+    const alive = R.settle(run);
+    expect(alive.carried).toBe(40 + 10 + R.townValue("sword"));
+    const run2 = createRun(71, "sword", "lamp");
+    run2.gold = 40; run2.outcome = "dead";
+    expect(R.settle(run2).carried).toBe(0);
+  });
+  it("favour makes orders bigger and better paid", async () => {
+    const R = await import("../src/game/run");
+    const base = { id: "lamp", level: 0, done: false }, close = { id: "lamp", level: 4, done: false };
+    expect(R.orderNeeds(close).ash).toBe(R.orderNeeds(base).ash! + 2);
+    expect(R.orderReward(close).gold).toBeGreaterThan(R.orderReward(base).gold);
+  });
+  it("town upgrades change the start of a run", () => {
+    const run = createRun(72, "sword", ["lamp", "herbs"], 0, { upgrades: { ledger: 2, oil: 1, bagsmith: 1, medicine: 1, school: 1 } });
+    expect(run.gold).toBe(50);
+    expect(run.maxOil).toBe(135);
+    expect(run.bag.h).toBe(5);
+    expect(bag.count(run.bag, "salve")).toBe(1);
+    expect(run.screen).toBe("reward");
+    expect(run.orders.length).toBe(2);
+  });
+});
+
+describe("combos", () => {
+  it("a whetstone next to a weapon raises that weapon's attack cards", async () => {
+    const { combatDeck } = await import("../src/game/combat");
+    const run = createRun(81, "sword", "lamp");
+    const sword = run.bag.items.find((i) => i.id === "sword")!;
+    run.bag.items.push({ uid: 999, id: "whetstone", x: sword.x + 1, y: sword.y, rot: 0 });
+    const unison = combatDeck(run).find((c) => c.id === "unison")!;
+    expect(unison.bonus?.dmg).toBe(2);
+    const c = fightWith(run, "louse");
+    c.enemy.block = 0;
+    const hp = c.enemy.hp;
+    c.hand = [{ ...unison }];
+    playCard(run, 0);
+    expect(hp - c.enemy.hp).toBe(6 + 2 + 2); // base + whetstone + sword's first-attack bonus
+  });
+  it("a ward charm keeps its neighbours from being stolen", () => {
+    const run = createRun(82, "sword", "lamp");
+    run.bag.items = [{ uid: 1, id: "clasp", x: 0, y: 0, rot: 0 }, { uid: 2, id: "wardcharm", x: 1, y: 0, rot: 0 }, { uid: 3, id: "ash", x: 4, y: 3, rot: 0 }];
+    expect(bag.mostValuable(run.bag)!.id).toBe("ash");
+  });
+  it("burn ticks through block before the enemy acts, and 烧尽 scales with it", () => {
+    const run = createRun(83, "lamp", "lamp");
+    const c = fightWith(run, "louse");
+    handOf(run, ["ignite"]); playCard(run, 0);
+    const hp = c.enemy.hp;
+    c.enemy.block = 50;
+    handOf(run, []); endTurn(run);
+    expect(hp - c.enemy.hp).toBe(5);
+    expect(c.enemy.status.burn).toBe(4);
+  });
+  it("剑气纵横 adds damage to every later attack", () => {
+    const run = createRun(84, "shield", "lamp");
+    const c = fightWith(run, "louse");
+    c.enemy.block = 0;
+    handOf(run, ["swordqi", "strike"]); playCard(run, 0);
+    const hp = c.enemy.hp;
+    playCard(run, 0);
+    expect(hp - c.enemy.hp).toBe(6 + 2);
   });
 });

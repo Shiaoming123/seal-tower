@@ -11,6 +11,8 @@ export const CARD_ART: Record<string, string> = {
   gather: "knot", flurry: "pin", intent: "grit", cleave: "ward-blade", flow: "silk",
   bash: "mirror", wall: "mirror", spikes: "hook", center: "mirror", guardgoods: "order-purse", ram: "mirror", rooted: "bell-item", bulwark: "hook",
   dust: "ash", reveal: "seal", flame: "ash", burnwick: "seal", barter: "order-purse", scatter: "abacus", reap: "ash", lamparray: "seal", stoke: "ash",
+  gale: "pin", sheathe: "sword", swordqi: "ward-blade", ironshirt: "mirror", hold: "plank", ignite: "seal", burnout: "ash", fuel: "salve",
+  clearance: "ash", principal: "abacus", hoard: "pouch",
   reckon: "abacus", bribe: "order-purse", interest: "abacus", windfall: "abacus",
   bandage: "salve", breath: "silk", talisman: "pin", pluck: "clasp", steady: "knot",
 };
@@ -28,6 +30,9 @@ export const STATUS_INFO: Record<StatusId, { name: string; text: (n: number) => 
   swordIntent: { name: "行云", text: () => "每回合第一张攻击牌后抽 1 张、能量 +1。" },
   bulwark: { name: "以守为攻", text: (n) => `每回合开始获得 ${n} 格挡。` },
   interest: { name: "生息", text: (n) => `每回合开始获得 ${n} 石。` },
+  burn: { name: "灼烧", text: (n) => `每回合掉 ${n} 点血（无视格挡），然后少一层。`, bad: true },
+  swordQi: { name: "剑气", text: (n) => `每打出一张攻击牌，额外造成 ${n} 伤害。` },
+  ironshirt: { name: "铁布衫", text: (n) => `每次获得格挡，额外 +${n}。` },
   blind: { name: "墨糊眼", text: (n) => `下回合少抽 1 张牌（还剩 ${n} 回合）。`, bad: true },
 };
 
@@ -35,9 +40,9 @@ export function Art({ id, class: cls = "", alt = "" }: { id: string; class?: str
   return <img class={`art ${cls}`} src={ART[id]} alt={alt} draggable={false} />;
 }
 
-export function CardView({ id, up, preview, onClick, disabled, reason, small, selected, extra }: {
+export function CardView({ id, up, preview, onClick, disabled, reason, small, selected, extra, bonus }: {
   id: string; up: boolean; preview: Preview; onClick?: () => void; disabled?: boolean; reason?: string | null;
-  small?: boolean; selected?: boolean; extra?: ComponentChildren;
+  small?: boolean; selected?: boolean; extra?: ComponentChildren; bonus?: { dmg?: number; blk?: number };
 }) {
   const def = CARDS[id];
   const cost = cardCost(def, up);
@@ -48,7 +53,8 @@ export function CardView({ id, up, preview, onClick, disabled, reason, small, se
       <span class="name">{def.name}{up ? "+" : ""}</span>
       <span class="pic"><Art id={CARD_ART[id] ?? "sword"} /></span>
       <span class="type">{TYPE_LABEL[def.type]} · {RARITY_LABEL[def.rarity]}</span>
-      <span class="text">{def.text(cardVals(def, up), preview)}</span>
+      <span class="text">{def.text(cardVals(def, up, bonus), preview)}</span>
+      {bonus && (bonus.dmg || bonus.blk) ? <span class="bonus-tag">{bonus.dmg ? `磨刀 +${bonus.dmg}` : ""}{bonus.blk ? ` 护符 +${bonus.blk}` : ""}</span> : null}
       {reason && <span class="reason">{reason}</span>}
       {extra}
     </button>

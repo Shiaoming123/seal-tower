@@ -4,7 +4,7 @@ import type { Profile, RunState } from "../game/types";
 const RUN_KEY = "seal-tower.v2.run";
 const PROFILE_KEY = "seal-tower.v2.profile";
 
-const defaultProfile: Profile = { renown: 0, runs: 0, wins: 0, bestFloor: 0, ordersDone: [], seenTips: [], achievements: [], sound: true };
+const defaultProfile: Profile = { renown: 0, runs: 0, wins: 0, bestFloor: 0, ordersDone: [], seenTips: [], achievements: [], treasury: 0, upgrades: {}, favor: {}, sound: true };
 
 function read<T>(key: string): T | null {
   try { const raw = localStorage.getItem(key); return raw ? (JSON.parse(raw) as T) : null; } catch { return null; }

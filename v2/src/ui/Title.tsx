@@ -4,7 +4,8 @@ import { CARDS } from "../data/cards";
 import { GOODS } from "../data/goods";
 import { ORDERS } from "../data/orders";
 import { ACHIEVEMENTS } from "../data/achievements";
-import { createRun } from "../game/run";
+import { createRun, orderNeeds, orderRewardText } from "../game/run";
+import { MAX_FAVOR, UPGRADES } from "../data/town";
 import { seedFromString } from "../game/rng";
 import type { WeaponId } from "../game/types";
 import { previewFor } from "../game/combat";
@@ -52,17 +53,25 @@ const WEAPONS: { id: WeaponId; label: string; note: string; tag: string }[] = [
 ];
 
 export function Town() {
+  const [tab, setTab] = useState<"go" | "build">("go");
   const [weapon, setWeapon] = useState<WeaponId>("shield");
-  const [order, setOrder] = useState("lamp");
   const p = profileSig.value;
+  const slots = p.upgrades.counter ? 2 : 1;
+  const [orders, setOrders] = useState<string[]>(["lamp"]);
+  const [hint, setHint] = useState("lamp");
   const maxDiff = p.renown >= 12 ? 3 : p.renown >= 7 ? 2 : p.renown >= 3 ? 1 : 0;
   const [diff, setDiff] = useState(0);
+  const toggleOrder = (id: string) => {
+    sfx.click();
+    setHint(id);
+    setOrders((cur) => cur.includes(id) ? (cur.length > 1 ? cur.filter((o) => o !== id) : cur) : slots === 1 ? [id] : [...cur, id].slice(-slots));
+  };
   const start = () => {
     sfx.bell();
     const params = new URLSearchParams(location.search);
     const seed = params.get("seed") ? seedFromString(params.get("seed")!) : (Math.random() * 2 ** 32) >>> 0;
     clearRun();
-    runSig.value = createRun(seed, weapon, order, diff, p.ordersDone.includes(order));
+    runSig.value = createRun(seed, weapon, orders, diff, { favor: p.favor, upgrades: p.upgrades });
     profileSig.value = { ...p, runs: p.runs + 1 };
     page.value = "game";
     commit();
@@ -73,57 +82,106 @@ export function Town() {
       <div class="town-bg" style={{ backgroundImage: `url(${artUrl("shop-wall")})` }} />
       <header class="town-head">
         <button type="button" class="btn small ghost" onClick={() => (page.value = "title")}>← 返回</button>
-        <h2>镇灯铺 · 接单</h2>
-        <p>塔里的妖偷光了镇上的灯油。你是给镇灯铺供货的斩妖人：接一张单，带一件兵器，进塔把货带回来。</p>
+        <h2>镇灯铺</h2>
+        <div class="town-tabs">
+          <button type="button" class={`btn small ${tab === "go" ? "primary" : "ghost"}`} onClick={() => setTab("go")}>接单出发</button>
+          <button type="button" class={`btn small ${tab === "build" ? "primary" : "ghost"}`} onClick={() => setTab("build")}>营建铺子</button>
+        </div>
+        <span class="treasury" title="活着回镇带回来的钱和货，用来营建镇灯铺">库银 {p.treasury} 石</span>
+        <p>塔里的妖偷光了镇上的灯油。你是给镇灯铺供货的斩妖人：接单、带兵器进塔、把货活着带回来。带回来的钱存进库银，用来把铺子越做越大。</p>
       </header>
-      <section class="town-orders">
-        <h3>① 选一张委托单 <small>委托在塔里任何一处狐市都能交</small></h3>
-        <div class="order-list">
-          {Object.values(ORDERS).map((o) => (
-            <button type="button" class={`order-card ${order === o.id ? "selected" : ""}`} onClick={() => { sfx.click(); setOrder(o.id); }}>
-              <div class="order-top"><Art id={o.portrait} class="portrait" /><div><b>{o.client}</b><span>{o.title}</span></div></div>
-              <p>{o.story}</p>
-              <p class="order-reward">报酬：{o.rewardText} · 声望 +{o.renown}</p>
-              {p.ordersDone.includes(o.id) && <p class="order-regular">{o.regular.text}</p>}
-            </button>
-          ))}
-        </div>
-        <p class="order-hint-box">提示：{ORDERS[order].hint}</p>
-      </section>
-      <section class="town-weapons">
-        <h3>② 带一件兵器</h3>
-        <div class="weapon-list">
-          {WEAPONS.map((w) => {
-            const locked = w.id === "abacus" && p.renown < ABACUS_RENOWN;
-            return (
-            <button type="button" class={`weapon-card ${weapon === w.id ? "selected" : ""} ${locked ? "locked" : ""}`} disabled={locked}
-              onClick={() => { sfx.click(); setWeapon(w.id); }} title={locked ? `声望 ${ABACUS_RENOWN} 解锁` : undefined}>
-              <Art id={GOODS[w.id].icon} class="weapon-icon" />
-              <b>{w.label}</b><span class="tag">{w.tag}</span>
-              <p>{locked ? `声望达到 ${ABACUS_RENOWN} 解锁（现在 ${p.renown}）` : w.note}</p>
-            </button>
-            );
-          })}
-        </div>
-        <div class="weapon-detail">
-          <p><b>{gear.name}</b>：{gear.passive} 带在行囊里时，牌组里多出这两张牌：</p>
-          <div class="card-row">
-            {(gear.cards ?? []).map((id) => <CardView id={id} up={false} small preview={previewFor({ bag: { w: 0, h: 0, items: [] }, gold: 0 } as never, null)} />)}
-          </div>
-          <p class="muted">另外每个人都会 4 张「{CARDS.strike.name}」和 4 张「{CARDS.defend.name}」。</p>
-        </div>
-        <div class="town-start">
-          {maxDiff > 0 && (
-            <label class="diff">难度
-              <select value={diff} onChange={(e) => setDiff(Number((e.target as HTMLSelectElement).value))}>
-                {Array.from({ length: maxDiff + 1 }, (_, i) => <option value={i}>{["寻常", "夜签（妖更凶）", "血签（气血更少）", "死签"][i]}</option>)}
-              </select>
-            </label>
-          )}
-          <button type="button" class="btn big primary" onClick={start}>进塔</button>
-        </div>
-      </section>
+      {tab === "build" ? <Build /> : (
+        <>
+          <section class="town-orders">
+            <h3>① 接委托 <small>{slots === 1 ? "一趟接一张" : `一趟最多接 ${slots} 张`}，在塔里任何狐市都能交</small></h3>
+            <div class="order-list">
+              {Object.values(ORDERS).map((o) => {
+                const level = p.favor[o.id] ?? 0;
+                const ord = { id: o.id, level, done: false };
+                const needs = orderNeeds(ord);
+                return (
+                  <button type="button" class={`order-card ${orders.includes(o.id) ? "selected" : ""}`} onClick={() => toggleOrder(o.id)}>
+                    <div class="order-top"><Art id={o.portrait} class="portrait" /><div><b>{o.client}</b><span>{o.title}</span></div></div>
+                    <p class="favor" title="交情越高，要的货越多、给的报酬越多">交情 {"●".repeat(level)}{"○".repeat(MAX_FAVOR - level)}</p>
+                    <p>要：{Object.entries(needs).map(([g, n]) => `${GOODS[g as keyof typeof GOODS].name}×${n}`).join("、")}</p>
+                    <p class="order-reward">报酬：{orderRewardText(ord)}</p>
+                    {level >= 1 && <p class="order-regular">{o.regular.text}</p>}
+                  </button>
+                );
+              })}
+            </div>
+            <p class="order-hint-box"><b>{ORDERS[hint].client}：</b>{ORDERS[hint].story} 提示：{ORDERS[hint].hint}</p>
+          </section>
+          <section class="town-weapons">
+            <h3>② 带一件兵器</h3>
+            <div class="weapon-list">
+              {WEAPONS.map((w) => {
+                const locked = w.id === "abacus" && p.renown < ABACUS_RENOWN;
+                return (
+                <button type="button" class={`weapon-card ${weapon === w.id ? "selected" : ""} ${locked ? "locked" : ""}`} disabled={locked}
+                  onClick={() => { sfx.click(); setWeapon(w.id); }} title={locked ? `声望 ${ABACUS_RENOWN} 解锁` : undefined}>
+                  <Art id={GOODS[w.id].icon} class="weapon-icon" />
+                  <b>{w.label}</b><span class="tag">{w.tag}</span>
+                  <p>{locked ? `声望达到 ${ABACUS_RENOWN} 解锁（现在 ${p.renown}）` : w.note}</p>
+                </button>
+                );
+              })}
+            </div>
+            <div class="weapon-detail">
+              <p><b>{gear.name}</b>：{gear.passive} 带在行囊里时，牌组里多出这两张牌：</p>
+              <div class="card-row">
+                {(gear.cards ?? []).map((id) => <CardView id={id} up={false} small preview={previewFor({ bag: { w: 0, h: 0, items: [] }, gold: 0 } as never, null)} />)}
+              </div>
+              <p class="muted">另外每个人都会 4 张「{CARDS.strike.name}」和 4 张「{CARDS.defend.name}」。</p>
+            </div>
+            <div class="town-start">
+              {maxDiff > 0 && (
+                <label class="diff">难度
+                  <select value={diff} onChange={(e) => setDiff(Number((e.target as HTMLSelectElement).value))}>
+                    {Array.from({ length: maxDiff + 1 }, (_, i) => <option value={i}>{["寻常", "夜签（妖更凶）", "血签（气血更少）", "死签"][i]}</option>)}
+                  </select>
+                </label>
+              )}
+              <button type="button" class="btn big primary" onClick={start}>进塔</button>
+            </div>
+          </section>
+        </>
+      )}
     </div>
+  );
+}
+
+/** 营建: spend the treasury on permanent upgrades. */
+function Build() {
+  const p = profileSig.value;
+  const buy = (id: string, cost: number) => {
+    if (p.treasury < cost) return;
+    sfx.coin();
+    profileSig.value = { ...p, treasury: p.treasury - cost, upgrades: { ...p.upgrades, [id]: (p.upgrades[id] ?? 0) + 1 } };
+    commit();
+  };
+  return (
+    <section class="town-build">
+      <h3>营建铺子 <small>活着回镇时，身上的石和行囊里的货折成库银。倒在塔里就全丢了——所以楼梯口那句「回镇结算」值得想一想。</small></h3>
+      <div class="build-list">
+        {UPGRADES.map((u) => {
+          const lv = p.upgrades[u.id] ?? 0;
+          const next = u.levels[lv];
+          return (
+            <div class={`build-card ${lv ? "owned" : ""}`}>
+              <Art id={u.icon} class="build-icon" />
+              <div class="build-body">
+                <b>{u.name} <small>{lv ? `${lv} / ${u.levels.length} 级` : "未建"}</small></b>
+                {u.levels.map((l, i) => <p class={i < lv ? "done" : i === lv ? "next" : "later"}>{i + 1} 级：{l.text}</p>)}
+              </div>
+              {next
+                ? <button type="button" class="btn small primary" disabled={p.treasury < next.cost} onClick={() => buy(u.id, next.cost)}>营建 · {next.cost} 石</button>
+                : <span class="done-tag">已建满</span>}
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 

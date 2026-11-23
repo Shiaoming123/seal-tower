@@ -9,38 +9,64 @@ import { combatDeck, has, startCombat } from "./combat";
 import { DIRS, entityAt, generate, isWall, reveal, revealAll, revealNear } from "./dungeon";
 import { addGood, autoPackPending, gainRelic, randomRelic } from "./inventory";
 import { type RngState, chance, int, makeRng, pick, weighted } from "./rng";
-import type { Entity, FloorNo, GoodId, Market, RewardState, RunState, ShopState, WeaponId } from "./types";
+import type { Entity, FloorNo, GoodId, Market, RewardState, RunOrder, RunState, ShopState, WeaponId } from "./types";
+import { MAX_FAVOR } from "../data/town";
 
-export const START_HP = 50;
+export const START_HP = 54;
 export const START_GOLD = 20;
 export const START_OIL = 90;
 export const MAX_OIL = 120;
 /** Extra damage per enemy hit while your lamp is out. */
 export const DARK_DAMAGE = 3;
 
-export function createRun(seed: number, weapon: WeaponId, order: string, difficulty = 0, regular = false): RunState {
+export interface RunOptions {
+  /** 交情 per client; missing = 0. */
+  favor?: Record<string, number>;
+  /** 营建 levels. */
+  upgrades?: Record<string, number>;
+}
+
+/** `regular: true` is shorthand for favour 1 with every chosen client (used by tests). */
+export function createRun(seed: number, weapon: WeaponId, orders: string | string[], difficulty = 0, opts: boolean | RunOptions = false): RunState {
   const rng = makeRng(seed);
+  const ids = Array.isArray(orders) ? orders : [orders];
+  const o: RunOptions = opts === true ? { favor: Object.fromEntries(ids.map((id) => [id, 1])) } : opts || {};
+  const town = { ...(o.upgrades ?? {}) };
   let uid = 1;
+  const extraOil = (town.oil ?? 0) * 15;
   const run: RunState = {
-    version: 2, seed, rng, difficulty, weapon, order, orderDone: false, regular,
-    hp: START_HP - difficulty * 3, maxHp: START_HP - difficulty * 3, gold: weapon === "abacus" ? 32 : START_GOLD,
+    version: 2, seed, rng, difficulty, weapon,
+    orders: ids.map((id) => ({ id, level: Math.min(MAX_FAVOR, o.favor?.[id] ?? 0), done: false })), town,
+    hp: START_HP - difficulty * 3, maxHp: START_HP - difficulty * 3,
+    gold: (weapon === "abacus" ? 32 : START_GOLD) + (town.ledger ?? 0) * 15,
     deck: BASE_DECK.map((id) => ({ uid: uid++, id, up: false })),
     relics: [],
-    bag: { w: 5, h: 4, items: [] },
+    bag: { w: 5, h: town.bagsmith ? 5 : 4, items: [] },
     floor: 1,
     dungeon: generate(1, rng),
     pos: { x: 0, y: 0, dir: 0 },
     screen: "explore", combat: null, pending: [], reward: null, event: null, shop: null, at: null,
     stats: { steps: 0, harvests: 0, kills: 0, goldEarned: 0, goodsSold: 0, goodsUsed: 0, damageTaken: 0, turns: 0 },
-    nextUid: 1000, outcome: null, mapRevealed: false, markets: makeMarkets(rng), rumor: false, oil: START_OIL, maxOil: MAX_OIL, bossIntel: false, cardPick: null, log: [], flags: [], eventFight: null, warp: 0,
+    nextUid: 1000, outcome: null, mapRevealed: false, markets: makeMarkets(rng), rumor: false,
+    oil: START_OIL + extraOil, maxOil: MAX_OIL + extraOil, bossIntel: false, cardPick: null, log: [], flags: [], eventFight: null, warp: 0,
   };
   enterFloor(run, 1);
   addGood(run, STARTER_GEAR[weapon]);
   if (weapon === "lamp") for (let i = 0; i < 4; i++) addGood(run, "ash");
-  if (regular) {
-    const r = ORDERS[order].regular;
+  for (const ord of run.orders) if (ord.level >= 1) {
+    const r = ORDERS[ord.id].regular;
     for (const g of r.gift) addGood(run, g);
     if (r.relic) gainRelic(run, r.relic);
+  }
+  if (town.medicine) addGood(run, "salve");
+  if ((town.medicine ?? 0) >= 2) addGood(run, "pill");
+  if (town.shelf) {
+    const tier = town.shelf >= 2 ? 2 : 1;
+    addGood(run, pick(rng, GEAR_IDS.filter((id) => GOODS[id].tier === tier && !["sword", "shield", "lamp", "abacus"].includes(id))));
+  }
+  if (town.school) {
+    run.reward = { gold: 0, goods: [], cards: cardChoices(run, "elite"), relic: null, relicChoices: null, from: "school", note: "学堂的先生教你一招，挑一张带进塔。" };
+    run.screen = "reward";
   }
   return run;
 }
@@ -133,7 +159,12 @@ export function winCombat(run: RunState) {
   if (def.harvest) {
     if (def.harvest.got(c)) {
       if (def.harvest.good === "stolen") { flag(run, "recover"); goods.push(...c.stolen); note += ` 追回了被抢的${c.stolen.map((g) => GOODS[g].name).join("、")}。`; }
-      else { goods.push(def.harvest.good); note += ` 取材成功：多拿到${GOODS[def.harvest.good].name}。`; if (def.harvest.good === "token") flag(run, "token"); }
+      else {
+        goods.push(def.harvest.good);
+        note += ` 取材成功：多拿到${GOODS[def.harvest.good].name}。`;
+        if (def.harvest.good === "token") flag(run, "token");
+        if (has(run, "butcher")) { goods.push(def.harvest.good); run.gold += 5; run.stats.goldEarned += 5; note += " 庖丁刀又多割下一份，外加 5 石。"; }
+      }
       run.stats.harvests++;
     } else if (def.harvest.good !== "stolen") note += ` 没能取到${def.harvest.label}（${def.harvest.text}）。`;
   }
@@ -242,10 +273,10 @@ function makeShop(run: RunState): ShopState {
   const cardPrice = (id: string) => price({ common: 14, uncommon: 22, rare: 34, basic: 10 }[CARDS[id].rarity] + int(run.rng, -2, 2));
   const relics = [randomRelic(run, "common"), randomRelic(run)].filter((id, i, a): id is string => !!id && a.indexOf(id) === i);
   return {
-    cards: cardChoices(run, "shop", 3).map((id) => ({ id, price: cardPrice(id), sold: false })),
+    cards: cardChoices(run, "shop", 3 + (run.town.branch ? 1 : 0)).map((id) => ({ id, price: cardPrice(id), sold: false })),
     relics: relics.map((id) => ({ id, price: price(RELICS[id].price ?? 30), sold: false })),
     gear: weighted(run.rng, GEAR_IDS.filter((id) => !run.bag.items.some((it) => it.id === id) && !["sword", "shield", "lamp"].includes(id) || id === ["shield", "lamp", "sword"][run.floor - 1]),
-      (id) => (GOODS[id].tier === 1 ? 3 : 2), 2).map((id) => ({ id, price: price(GOODS[id].price * 2), sold: false })),
+      (id) => (GOODS[id].tier === 1 ? 3 : 2), 2 + (run.town.branch ? 1 : 0)).map((id) => ({ id, price: price(GOODS[id].price * 2), sold: false })),
     consumables: (["salve", "pill", "lining"] as GoodId[]).map((id) => ({ id, price: price(GOODS[id].price * 2), sold: false })),
     removePrice: price(18),
     removed: false,
@@ -330,23 +361,42 @@ export function startRemove(run: RunState): boolean {
 
 // ---------------------------------------------------------------- orders
 
-export function orderProgress(run: RunState) {
-  const o = ORDERS[run.order];
-  const parts = Object.entries(o.needs).map(([id, n]) => ({ id: id as GoodId, need: n!, have: bag.count(run.bag, id as GoodId) }));
-  return { order: o, parts, ready: !run.orderDone && parts.every((p) => p.have >= p.need) };
+/** What an order asks for at your current favour: every two levels, one more of each good (钟铜 excepted). */
+export function orderNeeds(ord: RunOrder): Partial<Record<GoodId, number>> {
+  const extra = Math.floor(ord.level / 2);
+  return Object.fromEntries(Object.entries(ORDERS[ord.id].needs).map(([g, n]) => [g, g === "copper" ? n : n! + extra]));
 }
 
-/** Hand the order in (at a shop, or automatically on returning to town). Returns the reward line. */
-export function deliverOrder(run: RunState): string | null {
-  const { order, parts, ready } = orderProgress(run);
+/** Reward scaled by favour: +25% coin per level, +1 renown per two levels. */
+export function orderReward(ord: RunOrder) {
+  const o = ORDERS[ord.id];
+  const gold = Math.round((o.reward.gold ?? 0) * (1 + 0.25 * ord.level)) + (ord.level >= 1 ? o.regular.bonusGold ?? 0 : 0);
+  return { gold, salve: o.reward.salve ?? 0, relic: o.reward.relic, renown: o.renown + Math.floor(ord.level / 2) };
+}
+
+export function orderRewardText(ord: RunOrder): string {
+  const r = orderReward(ord);
+  const parts = [r.gold ? `${r.gold} 石` : "", r.salve ? `${r.salve} 瓶金疮药` : "", r.relic ? "一件稀有法宝" : ""].filter(Boolean);
+  return `${parts.join("、") || "声望"} · 声望 +${r.renown}`;
+}
+
+export function orderProgress(run: RunState, i = 0) {
+  const ord = run.orders[i];
+  const order = ORDERS[ord.id];
+  const parts = Object.entries(orderNeeds(ord)).map(([id, n]) => ({ id: id as GoodId, need: n!, have: bag.count(run.bag, id as GoodId) }));
+  return { ord, order, parts, ready: !ord.done && parts.every((p) => p.have >= p.need) };
+}
+
+/** Hand an order in (at a shop, or automatically on returning to town). Returns the reward line. */
+export function deliverOrder(run: RunState, i = 0): string | null {
+  const { ord, order, parts, ready } = orderProgress(run, i);
   if (!ready) return null;
-  for (const p of parts) for (let i = 0; i < p.need; i++) bag.removeOne(run.bag, p.id);
-  run.orderDone = true;
-  const r = order.reward;
+  for (const p of parts) for (let k = 0; k < p.need; k++) bag.removeOne(run.bag, p.id);
+  ord.done = true;
+  const r = orderReward(ord);
   const lines: string[] = [];
-  const gold = (r.gold ?? 0) + (run.regular ? order.regular.bonusGold ?? 0 : 0);
-  if (gold) { run.gold += gold; run.stats.goldEarned += gold; lines.push(`${gold} 石`); }
-  if (r.salve) for (let i = 0; i < r.salve; i++) addGood(run, "salve");
+  if (r.gold) { run.gold += r.gold; run.stats.goldEarned += r.gold; lines.push(`${r.gold} 石`); }
+  for (let k = 0; k < r.salve; k++) addGood(run, "salve");
   if (r.salve) lines.push(`${r.salve} 瓶金疮药`);
   if (r.relic) { const id = randomRelic(run, "rare"); if (id) { gainRelic(run, id); lines.push(`法宝「${RELICS[id].name}」`); } }
   return `${order.client}收下了货。你得到 ${lines.join("、") || "声望"}。`;
@@ -435,23 +485,38 @@ export function floorsCleared(run: RunState) {
   return run.floor - 1 + (beatGuardian ? 1 : 0);
 }
 
-/** Renown earned by this run, settled on the result screen. Also delivers return-only orders. */
-export function settle(run: RunState): { renown: number; lines: string[] } {
+/** What something in the bag is worth back in town: goods at full price, gear and consumables at half. */
+export function townValue(id: GoodId): number {
+  const g = GOODS[id];
+  return g.kind === "goods" ? g.price : Math.floor(g.price / 2);
+}
+
+/**
+ * Settle the run on the result screen. Delivers return-only orders, then works out renown and
+ * what you bring home: alive, your coin plus the town value of your bag goes into the treasury;
+ * dead, it is all lost.
+ */
+export function settle(run: RunState): { renown: number; lines: string[]; carried: number; carriedLines: string[]; delivered: string[] } {
   const lines: string[] = [];
   let renown = 0;
   const cleared = floorsCleared(run);
-  if (run.outcome !== "dead") {
-    const o = ORDERS[run.order];
-    if (o.onReturn && orderProgress(run).ready) { deliverOrder(run); }
-    if (run.orderDone) { renown += o.renown; lines.push(`完成委托「${o.title}」 +${o.renown}`); }
-  } else if (run.orderDone) {
-    const o = ORDERS[run.order];
-    renown += o.renown;
-    lines.push(`委托「${o.title}」已在塔里交付 +${o.renown}`);
-  }
+  const alive = run.outcome !== "dead";
+  run.orders.forEach((ord, i) => {
+    if (alive && ORDERS[ord.id].onReturn && orderProgress(run, i).ready) deliverOrder(run, i);
+    if (ord.done) {
+      const r = orderReward(ord).renown;
+      renown += r;
+      lines.push(`完成委托「${ORDERS[ord.id].title}」 +${r}`);
+    }
+  });
   if (cleared) { renown += cleared; lines.push(`打通 ${cleared} 层 +${cleared}`); }
   if (run.outcome === "win") { renown += 2; lines.push("击败负钟君 +2"); }
-  return { renown, lines };
+  const goodsValue = run.bag.items.reduce((s, it) => s + townValue(it.id), 0);
+  const carried = alive ? run.gold + goodsValue : 0;
+  const carriedLines = alive
+    ? [`身上的石 ${run.gold}`, `行囊里的东西折价 ${goodsValue}`]
+    : [`倒在塔里，身上的 ${run.gold} 石和行囊里值 ${goodsValue} 石的东西都丢了`];
+  return { renown, lines, carried, carriedLines, delivered: run.orders.filter((o) => o.done).map((o) => o.id) };
 }
 
 export const UPGRADED_NAME = (id: string, up: boolean) => CARDS[id].name + (up ? "+" : "");

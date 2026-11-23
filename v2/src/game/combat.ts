@@ -30,7 +30,13 @@ export const has = (run: RunState, id: string) => run.relics.includes(id) || run
 export function combatDeck(run: RunState): CardInst[] {
   const out = run.deck.map((c) => ({ ...c }));
   let uid = -1;
-  for (const it of run.bag.items) for (const id of GOODS[it.id].cards ?? []) out.push({ uid: uid--, id, up: false, from: it.id });
+  for (const it of run.bag.items) {
+    const cards = GOODS[it.id].cards;
+    if (!cards) continue;
+    const dmg = bag.auraOn(run.bag, it, "dmg"), blk = bag.auraOn(run.bag, it, "blk");
+    const bonus = dmg || blk ? { dmg, blk } : undefined;
+    for (const id of cards) out.push({ uid: uid--, id, up: false, from: it.id, bonus });
+  }
   return out;
 }
 
@@ -60,6 +66,7 @@ export function startCombat(run: RunState, entity: Entity, kind: FightKind): Com
   if (has(run, "mirror")) c.block += 6;
   if (has(run, "thorn")) c.status.thorns = (c.status.thorns ?? 0) + 2;
   if (has(run, "abacus")) { const s = Math.min(3, Math.floor(run.gold / 15)); if (s) c.status.str = s; }
+  if (has(run, "treasurebag")) { const s = Math.min(3, Math.floor(bag.count(run.bag) / 4)); if (s) c.status.str = (c.status.str ?? 0) + s; }
   chooseIntent(enemy, r);
   startTurn(run, []);
   return c;
@@ -188,13 +195,15 @@ function makeCtx(run: RunState, c: CombatState, events: CombatEvent[], card: { f
       }
       return total;
     },
-    block(n) { if (n > 0) { c.block += n; events.push({ t: "block", target: "player", amount: n }); } },
+    block(n) { if (n > 0) { n += c.status.ironshirt ?? 0; c.block += n; events.push({ t: "block", target: "player", amount: n }); } },
+    enemyBurn: () => c.enemy.status.burn ?? 0,
+    gainGold(n) { run.gold += n; run.stats.goldEarned += n; },
     enemyStatus(id, n) { c.enemy.status[id] = (c.enemy.status[id] ?? 0) + n; events.push({ t: "status", target: "enemy", id, n }); },
     selfStatus(id, n) { c.status[id] = (c.status[id] ?? 0) + n; events.push({ t: "status", target: "player", id, n }); },
     draw(n) { drawCards(c, n); },
     energy(n) { c.energy += n; },
     heal(n) { const a = Math.min(n, run.maxHp - run.hp); run.hp += a; events.push({ t: "heal", amount: a }); },
-    goods(id) { return bag.count(run.bag, id); },
+    goods(id) { return bag.count(run.bag, id) + (id === "ash" ? bag.ashBonus(run.bag) : 0); },
     consume(which, n = 1) {
       const out: GoodId[] = [];
       for (let i = 0; i < n; i++) { const g = consumeGood(run, c, which, events); if (g) { out.push(g); ctx.lastConsumedPrice = GOODS[g].price; } }
@@ -225,10 +234,12 @@ export function previewFor(run: RunState, c: CombatState | null): Preview {
     inCombat: !!c,
     dmg: (n) => (c ? playerHit(c, n, c.status.focus ?? 0) : n),
     // note: fire weakness / dive / caps are applied in the shared formula above
-    ash: bag.count(run.bag, "ash"),
+    ash: bag.count(run.bag, "ash") + bag.ashBonus(run.bag),
     gold: run.gold,
     block: c?.block ?? 0,
     attacks: c?.attacksThisTurn ?? 0,
+    burn: c?.enemy.status.burn ?? 0,
+    goods: bag.count(run.bag),
   };
 }
 
@@ -238,7 +249,7 @@ export function blockedReason(run: RunState, c: CombatState, card: CardInst): st
   if (c.over) return "战斗已结束";
   if (cardCost(def, card.up) > c.energy) return "能量不够";
   const ctx = makeCtx(run, c, [], { first: true, isAttack: false });
-  return def.needs?.(ctx, cardVals(def, card.up)) ?? null;
+  return def.needs?.(ctx, cardVals(def, card.up, card.bonus)) ?? null;
 }
 
 export function playCard(run: RunState, handIndex: number): { ok: boolean; reason?: string; events: CombatEvent[] } {
@@ -253,11 +264,13 @@ export function playCard(run: RunState, handIndex: number): { ok: boolean; reaso
   c.hand.splice(handIndex, 1);
   const isAttack = def.type === "attack";
   const ctx = makeCtx(run, c, events, { first: true, isAttack, tags: def.tags ?? [] });
-  def.play(ctx, cardVals(def, card.up));
+  def.play(ctx, cardVals(def, card.up, card.bonus));
   c.cardsThisTurn++;
   if (isAttack) {
     if (c.attacksThisTurn === 0 && c.status.swordIntent && !c.over) { drawCards(c, c.status.swordIntent); c.energy += c.status.swordIntent; }
     c.attacksThisTurn++;
+    if (c.status.swordQi && !c.over) damageEnemy(run, c, c.status.swordQi, events);
+    if (c.attacksThisTurn === 4 && has(run, "swordmanual")) c.energy += 2;
   }
   if (c.cardsThisTurn === 3 && has(run, "tassel") && !c.over) damageEnemy(run, c, playerHit(c, 6, 0), events);
   if (def.type === "power") { /* powers leave the deck for this fight */ }
@@ -302,8 +315,19 @@ export function endTurn(run: RunState): CombatEvent[] {
   if (has(run, "knotcharm") && c.block === 0) { const a = Math.min(2, run.maxHp - run.hp); run.hp += a; if (a) events.push({ t: "heal", amount: a }); }
   tick(c.status);
 
-  // Enemy turn.
+  // Burn ticks before the enemy acts and ignores block.
   const e = c.enemy;
+  if (e.status.burn) {
+    const dmg = Math.min(e.hp, e.status.burn + (has(run, "wickcutter") ? 2 : 0));
+    e.hp -= dmg;
+    events.push({ t: "hit", target: "enemy", amount: dmg, blocked: 0 });
+    events.push({ t: "status", target: "enemy", id: "burn", n: -1 });
+    e.status.burn -= 1;
+    if (!e.status.burn) delete e.status.burn;
+    if (e.hp <= 0) { c.over = "win"; return events; }
+  }
+
+  // Enemy turn.
   e.block = 0;
   const i = e.intent;
   events.push({ t: "enemy-move", name: i.name });

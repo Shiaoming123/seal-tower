@@ -1,6 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
 import { ORDERS } from "../data/orders";
 import { ACHIEVEMENTS } from "../data/achievements";
+import { MAX_FAVOR } from "../data/town";
 import * as R from "../game/run";
 import { ART } from "../render/assets";
 import { clearRun, commit, page, profileSig, runSig, useRun } from "./store";
@@ -10,17 +11,21 @@ export function Result() {
   // Settle once: renown, orders and newly earned achievements.
   const [settled] = useState(() => {
     const base = R.settle(run);
+    if (base.carried >= 150) R.flag(run, "loaded");
     const p = profileSig.value;
-    const ordersDone = run.orderDone && !p.ordersDone.includes(run.order) ? [...p.ordersDone, run.order] : p.ordersDone;
-    const next = { ...p, ordersDone };
+    const ordersDone = [...new Set([...p.ordersDone, ...base.delivered])];
+    const favor = { ...p.favor };
+    for (const id of base.delivered) favor[id] = Math.min(MAX_FAVOR, (favor[id] ?? 0) + 1);
+    const next = { ...p, ordersDone, favor };
     const fresh = ACHIEVEMENTS.filter((a) => !p.achievements.includes(a.id) && a.check(run, next));
-    return { ...base, ordersDone, fresh, renown: base.renown + fresh.reduce((s, a) => s + a.renown, 0) };
+    return { ...base, ordersDone, favor, fresh, renown: base.renown + fresh.reduce((s, a) => s + a.renown, 0) };
   });
   useEffect(() => {
     const p = profileSig.value;
     profileSig.value = {
       ...p, renown: p.renown + settled.renown, wins: p.wins + (run.outcome === "win" ? 1 : 0),
       bestFloor: Math.max(p.bestFloor, R.floorsCleared(run)), ordersDone: settled.ordersDone,
+      favor: settled.favor, treasury: p.treasury + settled.carried,
       achievements: [...p.achievements, ...settled.fresh.map((a) => a.id)],
     };
     clearRun();
@@ -42,8 +47,11 @@ export function Result() {
           <li>打倒 <b>{s.kills}</b> 只妖，共 {s.turns} 回合</li>
           <li>赚到 <b>{s.goldEarned}</b> 石，卖出 {s.goodsSold} 件货，战斗里烧掉 {s.goodsUsed} 件</li>
           <li>取材成功 <b>{s.harvests}</b> 次，走了 {s.steps} 步</li>
-          <li>委托「{ORDERS[run.order].title}」：{run.orderDone ? "已完成" : "没完成"}</li>
+          {run.orders.map((o) => <li>委托「{ORDERS[o.id].title}」：{o.done ? `已完成，${ORDERS[o.id].client}的交情 +1` : "没完成"}</li>)}
         </ul>
+        <h3>{settled.carried ? `带回镇灯铺 ${settled.carried} 石` : "什么也没带回来"}</h3>
+        <ul class="carried">{settled.carriedLines.map((l) => <li>{l}</li>)}</ul>
+        <p class="muted">库银现在是 {profileSig.value.treasury} 石，可以在镇灯铺营建。</p>
         <h3>声望 +{settled.renown}</h3>
         <ul class="renown">
           {settled.lines.map((l) => <li>{l}</li>)}
