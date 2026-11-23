@@ -2,6 +2,8 @@
 
 > **当前开发在 [`v2/`](v2/)。** v2 是全量重做的版本：第一人称随机迷宫、卡牌战斗、异形背包构筑、三层塔和负钟君。运行方法见 [v2/README.md](v2/README.md)，反馈与改动的对照见 [v2/docs/重构说明.md](v2/docs/重构说明.md)。下面是旧原型的说明，旧代码原样保留供对照。
 
+[Agent 协作规范](docs/Agent协作规范.md) · [任务清单](docs/协作任务.md) · [开发日志](docs/dev-log/README.md)
+
 一款中式像素风网页 Roguelike 原型。你在镇灯铺接单，进塔打牌猎妖，选择消耗灯灰挡招、卖货换装备，或带货回铺完成委托。当前主线是第一人称的「镇灯铺 · 猎妖供货」。固定机位的斩妖塔、一印两价和押运也保存在项目中。
 
 [下载离线版与开发归档](https://github.com/Shiaoming123/seal-tower/releases/tag/v0.1.0) · [设计背景与对话决策](docs/项目对话与决策.md) · [继续开发](docs/继续开发.md) · [历史归档索引](docs/开发归档.md) · [逐字对话和原附件](docs/conversation/README.md)
