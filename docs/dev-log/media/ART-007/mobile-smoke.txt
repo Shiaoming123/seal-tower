@@ -1,0 +1,17 @@
+shot 01-title
+shot 02-town
+shot 03-explore-tip
+ok movement is blocked while the omen card is unread
+ok blocked input explains how to continue
+ok Enter closes the omen card
+ok Esc stops an auto-walk before it arrives
+ok the stop button goes away once stopped
+shot 03-explore
+shot 05-combat
+shot 06-combat-played
+shot 07-reward
+shot 09-bag
+shot 13-shop
+shot 11-event
+shot 12-event-result
+shot 14-rest
