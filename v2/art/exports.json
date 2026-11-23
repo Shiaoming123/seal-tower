@@ -57,7 +57,7 @@
   "fallen-elder-strike": {
     "file": "fallen-elder-strike.png",
     "sourceSha256": "076da0e7893926cdf4ba532b68987cb000d87ab99e16d8901c144b6b104c7da5",
-    "webpSha256": "e8434739c6c1b32b7cfa8dde6397ff1b1f07fcc6f2c097a9e008f77b01f98aad"
+    "webpSha256": "c33d867921419a04c72a49011e1975c8d9d1ea058257f71d8e32c074c6f3b4df"
   },
   "fallen-elder": {
     "file": "fallen-elder.png",
@@ -183,5 +183,25 @@
     "file": "moth-queen.png",
     "sourceSha256": "7a46d9025d5f85e819f2e64d0998ff58c3091c22bf3b8882e6f488219681efc1",
     "webpSha256": "c28d23f4f4ff8f1736a8dfaf25b1920672ab226d642ef11e32112e16fdcd6184"
+  },
+  "fallen-elder-hurt": {
+    "file": "fallen-elder-hurt.png",
+    "sourceSha256": "fba6ddb558b86fc05ef44e8bcd9231cfdc3f74cc0449d936d80aa73563a93d0d",
+    "webpSha256": "48f63638cfe2dfc399b85a6b07d014f588871fadfb0c6c32e8d48d4b43e97eb4"
+  },
+  "night-fox-attack": {
+    "file": "night-fox-attack.png",
+    "sourceSha256": "e9643d5000c417a1c455dbdbd7ee75f6dfabc41414458a353792ac4defa8b775",
+    "webpSha256": "4e526a16132a8c843aa7ae9701b7d99125c0f8127fe9edd1da3bd3e481a0e692"
+  },
+  "night-fox-hurt": {
+    "file": "night-fox-hurt.png",
+    "sourceSha256": "e902e6d43296ea4c9798b1839003329d8f74f91afac9d5a06a07c5e6dc9cf3e5",
+    "webpSha256": "d47c7417ae679523c968ab670367b026f08f3519390971e8e37b99ce40187b5d"
+  },
+  "night-fox": {
+    "file": "night-fox.png",
+    "sourceSha256": "6941a2948d74eabc6592f2c4086e27237cf3ea47d14ffd30082a8245b757f0cf",
+    "webpSha256": "88d3b5949194c0e339601605169ad985200db6fd884513bd476ef4e1113b2a74"
   }
 }

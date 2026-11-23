@@ -96,7 +96,7 @@
       "wanted": [],
       "status": "ok",
       "shared": false,
-      "note": "",
+      "note": "已采用 v2/art 原图",
       "priority": "-"
     },
     {
@@ -1859,7 +1859,7 @@
       "category": "敌怪姿态",
       "usedBy": "night-fox 扑击/出招",
       "fallback": "night-fox",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1867,7 +1867,7 @@
       "category": "敌怪姿态",
       "usedBy": "night-fox 受击",
       "fallback": "night-fox",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2107,7 +2107,7 @@
       "category": "敌怪姿态",
       "usedBy": "fallen-elder 受击",
       "fallback": "fallen-elder",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     }
   ],

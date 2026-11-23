@@ -113,12 +113,13 @@ const digest = (data) => createHash("sha256").update(data).digest("hex");
 const paddedSprites = new Set([
   "lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine", "fire-rat", "stele-spirit", "event-cart",
   "fallen", "fallen-strike", "fallen-guard", "fallen-elder", "fallen-elder-strike", "fallen-elder-guard",
-  "paper-matron", "moth-queen", "fake-fox", "event-fake-fox", "map-fake-fox",
+  "paper-matron", "moth-queen", "night-fox", "fake-fox", "event-fake-fox", "map-fake-fox",
   "thorn-stele",
   "bronze-puppet",
   "night-owl",
   "event-den", "event-hunter", "event-pool",
 ]);
+const lungeInsets = { "paper-matron-attack": 17, "night-fox-attack": 9, "fallen-elder-strike": 17 };
 let overrides = 0;
 for (const { id, file } of overridesFromDisk) {
   if (requested.size && !requested.has(id)) continue;
@@ -130,8 +131,8 @@ for (const { id, file } of overridesFromDisk) {
   const edge = edges[id] ?? edges[baseId] ?? prefixEdge ?? 440;
   const source = await readFile(path.join(artDir, file));
   const margin = paddedSprites.has(id) || paddedSprites.has(baseId) ? Math.round(edge * .05) : 0;
-  // Leave room for the paper blades at the peak of the attack lunge.
-  const sideMargin = id === "paper-matron-attack" ? margin + 17 : margin;
+  // Keep the widest attack frames below the intent and inside the narrow viewport.
+  const sideMargin = margin + (lungeInsets[id] ?? 0);
   const extent = edge - sideMargin * 2;
   // The square ink-moth master has large transparent top and bottom margins.
   // Its in-game scale is height-based, so trim that surplus before applying the shared safety edge.
