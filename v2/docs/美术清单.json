@@ -1909,7 +1909,7 @@
       "category": "敌怪姿态",
       "usedBy": "lantern-spirit 扑击/出招",
       "fallback": "lantern-spirit",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1917,7 +1917,7 @@
       "category": "敌怪姿态",
       "usedBy": "lantern-spirit 受击",
       "fallback": "lantern-spirit",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1925,7 +1925,7 @@
       "category": "敌怪姿态",
       "usedBy": "paper-doll 扑击/出招",
       "fallback": "paper-doll",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1933,7 +1933,7 @@
       "category": "敌怪姿态",
       "usedBy": "paper-doll 受击",
       "fallback": "paper-doll",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1949,7 +1949,7 @@
       "category": "敌怪姿态",
       "usedBy": "fire-rat 受击",
       "fallback": "fire-rat",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {

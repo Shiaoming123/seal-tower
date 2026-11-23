@@ -32,7 +32,7 @@
   "fire-rat-attack": {
     "file": "fire-rat-attack.png",
     "sourceSha256": "1ae82556a80007503203a72f73f56cf3c2b2efd284568ecf896b3f854980c993",
-    "webpSha256": "c29cb9ab05df884c20700cdbece341f14b33119874eabecd0d937038973116b1"
+    "webpSha256": "a0ef3bbfb867586b9dd15b4470beeb0ca53b3005f46e6155a730ca887e158776"
   },
   "fire-rat": {
     "file": "fire-rat.png",
@@ -298,5 +298,30 @@
     "file": "warden-hurt.png",
     "sourceSha256": "5f2ccc9cf4e2ee774b6073bfac446c3f4ecd6224043f4dfaf1593f725d7f0d57",
     "webpSha256": "00af7cd6365c75c66c2f2fa1202d39bc92166822c11870d67cf6e1eac6fce597"
+  },
+  "fire-rat-hurt": {
+    "file": "fire-rat-hurt.png",
+    "sourceSha256": "c0cd51c26d95c8860115d606f3650fa80d3da16158b0655886a68d1305181abb",
+    "webpSha256": "c8c41cb06b3bc311ae44c6cfcf62f3e65c65be63f2327a8cda9fd5ccf0161f43"
+  },
+  "lantern-spirit-attack": {
+    "file": "lantern-spirit-attack.png",
+    "sourceSha256": "03627e15e5f28463f176bca00a9b502b8af57dd76e197abfefe04b502fcb439a",
+    "webpSha256": "94bbc724dbb536fdef17ef47cf8b660490099b3990786aa96c3ab78f2da68438"
+  },
+  "lantern-spirit-hurt": {
+    "file": "lantern-spirit-hurt.png",
+    "sourceSha256": "60ce21f8a56931d173f5c2aea7c0aaa00a44609fac47f868ec6291ff8ec4d399",
+    "webpSha256": "d82eaa51616401e5b4fdd352f7f83f40f5d63da58ae6a8b057e0acd0421e9304"
+  },
+  "paper-doll-attack": {
+    "file": "paper-doll-attack.png",
+    "sourceSha256": "54699220f1469d382b9b7b722134888cb87016caa5390e5b22c9e20c7a4dc905",
+    "webpSha256": "70cc235cad1b09c0cee667efe7818b80ef74ba3d297ddc6b31f6c981d6292285"
+  },
+  "paper-doll-hurt": {
+    "file": "paper-doll-hurt.png",
+    "sourceSha256": "7caa84309b282ff3786cbde1120de8708fd24b6cc90b835fa2fb97eece80e923",
+    "webpSha256": "dc5aacaf341f23843e8bc8fe7be4d61b1ba413bc1bca44a42e685bcfb3238f95"
   }
 }
