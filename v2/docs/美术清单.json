@@ -275,10 +275,10 @@
         "事件·可疑的白狐摊"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": true,
-      "note": "现在借用：旧白狐商",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "P2"
     },
     {
       "file": "paper-matron",
@@ -287,10 +287,10 @@
         "敌怪·纸扎娘娘"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "fallen-elder",
@@ -927,6 +927,30 @@
       "category": "事件",
       "usedBy": [
         "事件·灯鼠货郎"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "event-fake-fox",
+      "category": "事件",
+      "usedBy": [
+        "事件近景·可疑的白狐摊"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "map-fake-fox",
+      "category": "事件",
+      "usedBy": [
+        "地图物件·可疑的白狐摊"
       ],
       "wanted": [],
       "status": "ok",

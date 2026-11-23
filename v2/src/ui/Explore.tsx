@@ -8,7 +8,7 @@ import type { Entity, RunState } from "../game/types";
 import { type Billboard, Raycaster } from "../render/raycaster";
 import { theme } from "../render/textures";
 import { OMEN } from "../data/omens";
-import { ART } from "../render/assets";
+import { ART, artId } from "../render/assets";
 import { commit, markTip, overlay, runSig, say, seenTip, useRun } from "./store";
 
 // One renderer for the whole session; screens mount its canvas where they need it.
@@ -52,7 +52,11 @@ export function billboards(run: RunState, opts: { shadowOnly?: number } = {}): B
       ({ scale, lift } = enemyStage(e));
       bob = true;
     } else if (e.kind === "shop") { sprite = "trader"; scale = 0.78; }
-    else if (e.kind === "event") { sprite = EVENTS[e.event!].sprite; scale = EVENT_SCALE[sprite] ?? 0.5; }
+    else if (e.kind === "event") {
+      const eventSprite = EVENTS[e.event!].sprite;
+      sprite = artId(`map-${eventSprite}`, eventSprite);
+      scale = EVENT_SCALE[eventSprite] ?? 0.5;
+    }
     else if (e.kind === "rest") { sprite = "lamp"; scale = 0.55; }
     else if (e.kind === "chest") { sprite = "purse"; scale = 0.32; }
     else if (e.kind === "stairs") { sprite = "sign-turn"; scale = 0.55; }

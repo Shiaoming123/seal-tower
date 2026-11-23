@@ -62,7 +62,13 @@ for (const e of Object.values(ENEMIES)) {
 for (const g of Object.values(GOODS)) use(g.icon, "物品图标", `${{ goods: "货物", gear: "装备", consumable: "消耗品" }[g.kind]}·${g.name}`);
 for (const r of Object.values(RELICS)) use(r.icon, "物品图标", `法宝·${r.name}`);
 for (const [id, icon] of Object.entries(parts.CARD_ART)) use(icon, "物品图标", `卡牌·${CARDS[id]?.name ?? id}`);
-for (const ev of Object.values(EVENTS)) use(ev.sprite, "事件", `事件·${ev.title}`);
+for (const ev of Object.values(EVENTS)) {
+  use(ev.sprite, "事件", `事件·${ev.title}`);
+  const closeUp = `event-${ev.sprite}`;
+  if (have.has(closeUp)) use(closeUp, "事件", `事件近景·${ev.title}`);
+  const billboard = `map-${ev.sprite}`;
+  if (have.has(billboard)) use(billboard, "事件", `地图物件·${ev.title}`);
+}
 for (const c of CHARACTERS) use(c.portrait, "人物", `人物·${c.name}`);
 for (const u of UPGRADES) use(u.icon, "物品图标", `营建·${u.name}`);
 for (const [file, what] of [["shop", "标题背景"], ["shop-wall", "镇灯铺背景"], ["market", "狐市背景"], ["court", "第一层事件背景"], ["gate", "第二层事件背景"],

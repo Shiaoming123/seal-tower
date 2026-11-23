@@ -78,5 +78,25 @@
     "file": "fallen.png",
     "sourceSha256": "4d629d413a4b4ee6e6502234cb03e3d57cf542876d20d0e8f431cb897ac2ce72",
     "webpSha256": "e17bd5a342ea2bd1c7908d42743049c13070a47e965916ca8e09edc88693b560"
+  },
+  "fake-fox": {
+    "file": "fake-fox.png",
+    "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+    "webpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc"
+  },
+  "paper-matron": {
+    "file": "paper-matron.png",
+    "sourceSha256": "1ba4d9ae9e2ff48409d79d777f84f49c7579e3fba49295703f0e59b478bf7971",
+    "webpSha256": "49f4293ac8a21f952176288ec9f9add19ceea4db44a4727835dbc6e3f0b17d7e"
+  },
+  "event-fake-fox": {
+    "file": "event-fake-fox.png",
+    "sourceSha256": "348e0f14473cc66e0008c7681ac274f3199249818d5fb2d587b92129d0a68ada",
+    "webpSha256": "7e5303ae7c12051329fbbb857699eb95264aa16915db4d23a8f3d6726934aea0"
+  },
+  "map-fake-fox": {
+    "file": "map-fake-fox.png",
+    "sourceSha256": "4b1fa9977287b9b61ec40d448bfec2ed25bc2e6285ccc23525e5ab2645f0979c",
+    "webpSha256": "914a88ea1bb4800785ac0666065672546047aa18c73233fe336a2a9cb9ebb79b"
   }
 }

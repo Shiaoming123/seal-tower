@@ -83,11 +83,26 @@ export function Combat() {
   useEffect(() => {
     // Pull the camera back and tilt it down so the whole monster stands on the floor above your hand.
     const r0 = runSig.value!;
-    view.place(r0.pos.x, r0.pos.y, r0.pos.dir);
-    // Step back for big monsters when there is floor behind you; never back into a wall.
     const e0 = R.currentEntity(r0);
-    const back = DIRS[(r0.pos.dir + 2) % 4];
-    const roomBehind = !isWall(r0.dungeon, r0.pos.x + back[0], r0.pos.y + back[1]);
+    let { x, y, dir } = r0.pos;
+    // An event can turn into an enemy on the player's tile. Frame it from an open
+    // adjacent tile without moving the player or the encounter in the run.
+    if (e0 && e0.x === x && e0.y === y) {
+      const facing = [dir, (dir + 1) % 4, (dir + 3) % 4, (dir + 2) % 4].find((candidate) => {
+        const [dx, dy] = DIRS[candidate];
+        return !isWall(r0.dungeon, x - dx, y - dy);
+      });
+      if (facing !== undefined) {
+        const [dx, dy] = DIRS[facing];
+        x -= dx;
+        y -= dy;
+        dir = facing;
+      }
+    }
+    view.place(x, y, dir);
+    // Step back for big monsters when there is floor behind the camera.
+    const [backX, backY] = DIRS[(dir + 2) % 4];
+    const roomBehind = !isWall(r0.dungeon, x + backX, y + backY);
     const big = e0?.enemy ? enemyStage(e0).scale > 0.72 : false;
     view.setDolly(roomBehind ? (big ? 1.05 : 0.7) : 0.45, -36);
     const anchor = () => {
@@ -100,17 +115,21 @@ export function Combat() {
       const vw = vp.clientWidth, vh = vp.clientHeight;
       const k = Math.max(vw / VIEW_W, vh / VIEW_H);
       const ox = (vw - VIEW_W * k) / 2, oy = (vh - VIEW_H * k) / 2;
-      const left = ox + (p.cx - p.w / 2) * k, top = oy + p.top * k, w = p.w * k, h = p.h * k;
+      const head = headRef.current;
+      const indicatorHeight = head?.offsetHeight ?? 0;
+      const center = ox + p.cx * k;
+      const foot = oy + p.floorY * k;
+      // Keep the projected foot point and make room for the indicator and the
+      // whole silhouette when a large projection would overlap or get cropped.
+      const h = Math.max(0, Math.min(p.h * k, foot - indicatorHeight - 14, (vw - 24) / aspect));
+      const w = h * aspect, left = center - w / 2, top = foot - h;
       el.style.left = `${left}px`; el.style.top = `${top}px`; el.style.width = `${w}px`; el.style.height = `${h}px`;
       el.style.setProperty("--lit", p.light.toFixed(2));
       el.style.visibility = p.visible ? "visible" : "hidden";
       anchorPt.current = { x: ((left + w / 2) / vw) * 100, y: ((top + h * 0.38) / vh) * 100 };
-      // The info block sits above the head, but never leaves the screen (it overlaps tall bosses instead).
-      const head = headRef.current;
       if (head) {
-        const hh = head.offsetHeight;
-        head.style.left = `${left + w / 2}px`;
-        head.style.top = `${Math.max(6, top - hh - 4)}px`;
+        head.style.left = `${center}px`;
+        head.style.top = `${Math.max(6, top - indicatorHeight - 4)}px`;
       }
       vp.style.setProperty("--ex", `${left + w / 2}px`);
       vp.style.setProperty("--ey", `${top + h * 0.45}px`);

@@ -383,7 +383,6 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .combat-actions { position: absolute; right: 16px; bottom: 16px; z-index: 6; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
 .portrait .hand { left: 0; right: 0; bottom: 110px; }
 .portrait .hand-slot { margin: 0 calc(-14px - var(--n) * 4px); }
-.portrait .enemy-sprite { max-width: 420px; }
 .portrait .player-panel { bottom: 14px; }
 .portrait .enemy-head { width: 92%; }
 .portrait .combat-tip { bottom: 480px; }

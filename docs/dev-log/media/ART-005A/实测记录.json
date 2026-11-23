@@ -1,0 +1,759 @@
+{
+  "app": "http://127.0.0.1:5178/",
+  "records": [
+    {
+      "id": "paper-matron",
+      "view": "combat",
+      "viewport": [
+        1280,
+        720
+      ],
+      "runtimeAsset": "paper-matron.webp",
+      "requestedWebpSha256": "49f4293ac8a21f952176288ec9f9add19ceea4db44a4727835dbc6e3f0b17d7e",
+      "sourceSha256": "1ba4d9ae9e2ff48409d79d777f84f49c7579e3fba49295703f0e59b478bf7971",
+      "exportsShaVerified": true,
+      "bounds": [
+        39,
+        26,
+        412,
+        434
+      ],
+      "alphaFill": 0.342,
+      "painted": [
+        527,
+        262,
+        220,
+        241
+      ],
+      "screenshot": "1280/paper-matron.jpg",
+      "browserErrors": [],
+      "frame": [
+        502.60980224609375,
+        246.22659301757812,
+        274.7647705078125,
+        271.7664489746094
+      ],
+      "intrinsic": [
+        460,
+        460
+      ],
+      "state": "combat",
+      "floor": 1,
+      "panel": [
+        14,
+        628,
+        349.375,
+        78
+      ],
+      "enemyInfo": [
+        475.671875,
+        121,
+        328.65625,
+        77
+      ],
+      "intent": [
+        610,
+        68,
+        60,
+        57
+      ],
+      "heading": "纸扎娘娘60 / 60取材 · 多一张红纸别用带火的牌打出最后一下能取",
+      "actions": [],
+      "dpr": 1,
+      "turnViaPlayerInput": {
+        "before": {
+          "turn": 1,
+          "hp": 54,
+          "intent": "纸人扑",
+          "enemyHp": 60,
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "tile": {
+            "x": 5,
+            "y": 8
+          },
+          "shownIntent": "纸人扑"
+        },
+        "after": {
+          "turn": 2,
+          "hp": 45,
+          "intent": "剪纸刀阵",
+          "enemyHp": 60,
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "tile": {
+            "x": 5,
+            "y": 8
+          },
+          "shownIntent": "剪纸刀阵"
+        }
+      }
+    },
+    {
+      "id": "event-fake-fox",
+      "view": "event",
+      "viewport": [
+        1280,
+        720
+      ],
+      "runtimeAsset": "event-fake-fox.webp",
+      "requestedWebpSha256": "7e5303ae7c12051329fbbb857699eb95264aa16915db4d23a8f3d6726934aea0",
+      "sourceSha256": "348e0f14473cc66e0008c7681ac274f3199249818d5fb2d587b92129d0a68ada",
+      "exportsShaVerified": true,
+      "bounds": [
+        40,
+        36,
+        381,
+        391
+      ],
+      "alphaFill": 0.414,
+      "painted": [
+        151,
+        206,
+        359,
+        374
+      ],
+      "screenshot": "1280/fake-fox-event.jpg",
+      "browserErrors": [],
+      "frame": [
+        40,
+        167.953125,
+        580,
+        442.078125
+      ],
+      "intrinsic": [
+        420,
+        420
+      ],
+      "state": "event",
+      "floor": 2,
+      "panel": [
+        640,
+        179.40625,
+        600,
+        419.1875
+      ],
+      "enemyInfo": null,
+      "intent": null,
+      "heading": "可疑的白狐摊",
+      "actions": [
+        {
+          "text": "买便宜货",
+          "box": [
+            674,
+            350.59375,
+            532,
+            66
+          ],
+          "disabled": false
+        },
+        {
+          "text": "揭穿它",
+          "box": [
+            674,
+            426.59375,
+            532,
+            66
+          ],
+          "disabled": false
+        },
+        {
+          "text": "离开",
+          "box": [
+            674,
+            502.59375,
+            532,
+            66
+          ],
+          "disabled": false
+        }
+      ],
+      "dpr": 1,
+      "stage": "offer",
+      "exploration": {
+        "setup": "place event on adjacent tile; press forward",
+        "mapSprite": "map-fake-fox",
+        "requestedWebpSha256": "914a88ea1bb4800785ac0666065672546047aa18c73233fe336a2a9cb9ebb79b",
+        "sourceSha256": "4b1fa9977287b9b61ec40d448bfec2ed25bc2e6285ccc23525e5ab2645f0979c",
+        "screenshot": "1280/fake-fox-map.jpg"
+      }
+    },
+    {
+      "id": "fake-fox",
+      "view": "event",
+      "viewport": [
+        1280,
+        720
+      ],
+      "runtimeAsset": "fake-fox.webp",
+      "requestedWebpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+      "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+      "exportsShaVerified": true,
+      "bounds": [
+        56,
+        23,
+        337,
+        378
+      ],
+      "alphaFill": 0.396,
+      "painted": [
+        171,
+        193,
+        311,
+        392
+      ],
+      "screenshot": "1280/fake-fox-expose.jpg",
+      "browserErrors": [],
+      "frame": [
+        40,
+        167.953125,
+        580,
+        442.078125
+      ],
+      "intrinsic": [
+        400,
+        400
+      ],
+      "state": "event",
+      "floor": 2,
+      "panel": [
+        640,
+        240.40625,
+        600,
+        297.1875
+      ],
+      "enemyInfo": null,
+      "intent": null,
+      "heading": "可疑的白狐摊",
+      "actions": [],
+      "dpr": 1,
+      "stage": "reveal",
+      "reachedBy": [
+        "揭穿它"
+      ],
+      "persistedAcrossReload": true
+    },
+    {
+      "id": "fake-fox",
+      "view": "combat",
+      "viewport": [
+        1280,
+        720
+      ],
+      "runtimeAsset": "fake-fox.webp",
+      "requestedWebpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+      "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+      "exportsShaVerified": true,
+      "bounds": [
+        56,
+        23,
+        337,
+        378
+      ],
+      "alphaFill": 0.396,
+      "painted": [
+        542,
+        262,
+        191,
+        241
+      ],
+      "screenshot": "1280/fake-fox-combat.jpg",
+      "browserErrors": [],
+      "frame": [
+        502.5696716308594,
+        246.3455810546875,
+        274.8450012207031,
+        271.68621826171875
+      ],
+      "intrinsic": [
+        400,
+        400
+      ],
+      "state": "combat",
+      "floor": 2,
+      "panel": [
+        14,
+        628,
+        349.375,
+        78
+      ],
+      "enemyInfo": [
+        490,
+        121,
+        300,
+        77
+      ],
+      "intent": [
+        581.796875,
+        68,
+        116.40625,
+        57
+      ],
+      "heading": "假狐商77 / 77取材 · 白狐尾一个石头都别让它收走能取",
+      "actions": [],
+      "dpr": 1,
+      "stage": "fight",
+      "reachedBy": [
+        "揭穿它",
+        "迎战"
+      ],
+      "revealCopy": "你一刀挑开摊布，底下是九条白尾巴。它不笑了。",
+      "revealScreenshot": "1280/fake-fox-expose.jpg",
+      "turnViaPlayerInput": {
+        "before": {
+          "turn": 1,
+          "hp": 54,
+          "intent": "迷魂",
+          "enemyHp": 77,
+          "position": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "tile": {
+            "x": 8,
+            "y": 9
+          },
+          "shownIntent": "迷魂"
+        },
+        "after": {
+          "turn": 2,
+          "hp": 48,
+          "intent": "收账",
+          "enemyHp": 77,
+          "position": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "tile": {
+            "x": 8,
+            "y": 9
+          },
+          "shownIntent": "收账"
+        }
+      },
+      "retreatViaPlayerInput": {
+        "from": {
+          "x": 8,
+          "y": 9,
+          "dir": 1
+        },
+        "to": {
+          "x": 7,
+          "y": 9,
+          "dir": 1
+        },
+        "returnedToExploration": true
+      }
+    },
+    {
+      "id": "paper-matron",
+      "view": "combat",
+      "viewport": [
+        390,
+        844
+      ],
+      "runtimeAsset": "paper-matron.webp",
+      "requestedWebpSha256": "49f4293ac8a21f952176288ec9f9add19ceea4db44a4727835dbc6e3f0b17d7e",
+      "sourceSha256": "1ba4d9ae9e2ff48409d79d777f84f49c7579e3fba49295703f0e59b478bf7971",
+      "exportsShaVerified": true,
+      "bounds": [
+        39,
+        26,
+        412,
+        434
+      ],
+      "alphaFill": 0.342,
+      "painted": [
+        40,
+        239,
+        302,
+        330
+      ],
+      "screenshot": "390/paper-matron.jpg",
+      "browserErrors": [],
+      "frame": [
+        6.6927103996276855,
+        217.9937286376953,
+        376.6145324707031,
+        372.1854248046875
+      ],
+      "intrinsic": [
+        460,
+        460
+      ],
+      "state": "combat",
+      "floor": 1,
+      "panel": [
+        9.09999942779541,
+        784.0499877929688,
+        227.09373474121094,
+        50.70001220703125
+      ],
+      "enemyInfo": [
+        88.18671417236328,
+        135.31954956054688,
+        213.62655639648438,
+        50.05000305175781
+      ],
+      "intent": [
+        175.5,
+        100.86955261230469,
+        38.99998474121094,
+        37.05000305175781
+      ],
+      "heading": "纸扎娘娘60 / 60取材 · 多一张红纸别用带火的牌打出最后一下能取",
+      "actions": [],
+      "dpr": 1,
+      "turnViaPlayerInput": {
+        "before": {
+          "turn": 1,
+          "hp": 54,
+          "intent": "纸人扑",
+          "enemyHp": 60,
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "tile": {
+            "x": 5,
+            "y": 8
+          },
+          "shownIntent": "纸人扑"
+        },
+        "after": {
+          "turn": 2,
+          "hp": 45,
+          "intent": "剪纸刀阵",
+          "enemyHp": 60,
+          "position": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "tile": {
+            "x": 5,
+            "y": 8
+          },
+          "shownIntent": "剪纸刀阵"
+        }
+      }
+    },
+    {
+      "id": "event-fake-fox",
+      "view": "event",
+      "viewport": [
+        390,
+        844
+      ],
+      "runtimeAsset": "event-fake-fox.webp",
+      "requestedWebpSha256": "7e5303ae7c12051329fbbb857699eb95264aa16915db4d23a8f3d6726934aea0",
+      "sourceSha256": "348e0f14473cc66e0008c7681ac274f3199249818d5fb2d587b92129d0a68ada",
+      "exportsShaVerified": true,
+      "bounds": [
+        40,
+        36,
+        381,
+        391
+      ],
+      "alphaFill": 0.414,
+      "painted": [
+        87,
+        139,
+        216,
+        225
+      ],
+      "screenshot": "390/fake-fox-event.jpg",
+      "browserErrors": [],
+      "frame": [
+        10.399999618530273,
+        116.18517303466797,
+        369.1999816894531,
+        265.81951904296875
+      ],
+      "intrinsic": [
+        420,
+        420
+      ],
+      "state": "event",
+      "floor": 2,
+      "panel": [
+        10.399999618530273,
+        442.73907470703125,
+        369.1999816894531,
+        272.47186279296875
+      ],
+      "enemyInfo": null,
+      "intent": null,
+      "heading": "可疑的白狐摊",
+      "actions": [
+        {
+          "text": "买便宜货",
+          "box": [
+            32.5,
+            554.0109252929688,
+            325,
+            42.9000244140625
+          ],
+          "disabled": false
+        },
+        {
+          "text": "揭穿它",
+          "box": [
+            32.5,
+            603.4109497070312,
+            325,
+            42.89996337890625
+          ],
+          "disabled": false
+        },
+        {
+          "text": "离开",
+          "box": [
+            32.5,
+            652.8109130859375,
+            325,
+            42.9000244140625
+          ],
+          "disabled": false
+        }
+      ],
+      "dpr": 1,
+      "stage": "offer",
+      "exploration": {
+        "setup": "place event on adjacent tile; press forward",
+        "mapSprite": "map-fake-fox",
+        "requestedWebpSha256": "914a88ea1bb4800785ac0666065672546047aa18c73233fe336a2a9cb9ebb79b",
+        "sourceSha256": "4b1fa9977287b9b61ec40d448bfec2ed25bc2e6285ccc23525e5ab2645f0979c",
+        "screenshot": "390/fake-fox-map.jpg"
+      }
+    },
+    {
+      "id": "fake-fox",
+      "view": "event",
+      "viewport": [
+        390,
+        844
+      ],
+      "runtimeAsset": "fake-fox.webp",
+      "requestedWebpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+      "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+      "exportsShaVerified": true,
+      "bounds": [
+        56,
+        23,
+        337,
+        378
+      ],
+      "alphaFill": 0.396,
+      "painted": [
+        99,
+        131,
+        187,
+        236
+      ],
+      "screenshot": "390/fake-fox-expose.jpg",
+      "browserErrors": [],
+      "frame": [
+        10.399999618530273,
+        116.18517303466797,
+        369.1999816894531,
+        265.81951904296875
+      ],
+      "intrinsic": [
+        400,
+        400
+      ],
+      "state": "event",
+      "floor": 2,
+      "panel": [
+        10.399999618530273,
+        482.3890686035156,
+        369.1999816894531,
+        193.17184448242188
+      ],
+      "enemyInfo": null,
+      "intent": null,
+      "heading": "可疑的白狐摊",
+      "actions": [],
+      "dpr": 1,
+      "stage": "reveal",
+      "reachedBy": [
+        "揭穿它"
+      ],
+      "persistedAcrossReload": true
+    },
+    {
+      "id": "fake-fox",
+      "view": "combat",
+      "viewport": [
+        390,
+        844
+      ],
+      "runtimeAsset": "fake-fox.webp",
+      "requestedWebpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+      "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+      "exportsShaVerified": true,
+      "bounds": [
+        56,
+        23,
+        337,
+        378
+      ],
+      "alphaFill": 0.396,
+      "painted": [
+        61,
+        239,
+        262,
+        331
+      ],
+      "screenshot": "390/fake-fox-combat.jpg",
+      "browserErrors": [],
+      "frame": [
+        6.811848163604736,
+        217.70089721679688,
+        376.3763122558594,
+        372.4236755371094
+      ],
+      "intrinsic": [
+        400,
+        400
+      ],
+      "state": "combat",
+      "floor": 2,
+      "panel": [
+        9.09999942779541,
+        784.0499877929688,
+        227.09373474121094,
+        50.70001220703125
+      ],
+      "enemyInfo": [
+        97.5,
+        135.31954956054688,
+        195,
+        50.05000305175781
+      ],
+      "intent": [
+        157.16796875,
+        100.86955261230469,
+        75.66404724121094,
+        37.05000305175781
+      ],
+      "heading": "假狐商77 / 77取材 · 白狐尾一个石头都别让它收走能取",
+      "actions": [],
+      "dpr": 1,
+      "stage": "fight",
+      "reachedBy": [
+        "揭穿它",
+        "迎战"
+      ],
+      "revealCopy": "你一刀挑开摊布，底下是九条白尾巴。它不笑了。",
+      "revealScreenshot": "390/fake-fox-expose.jpg",
+      "turnViaPlayerInput": {
+        "before": {
+          "turn": 1,
+          "hp": 54,
+          "intent": "迷魂",
+          "enemyHp": 77,
+          "position": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "tile": {
+            "x": 8,
+            "y": 9
+          },
+          "shownIntent": "迷魂"
+        },
+        "after": {
+          "turn": 2,
+          "hp": 48,
+          "intent": "收账",
+          "enemyHp": 77,
+          "position": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "tile": {
+            "x": 8,
+            "y": 9
+          },
+          "shownIntent": "收账"
+        }
+      },
+      "retreatViaPlayerInput": {
+        "from": {
+          "x": 8,
+          "y": 9,
+          "dir": 1
+        },
+        "to": {
+          "x": 7,
+          "y": 9,
+          "dir": 1
+        },
+        "returnedToExploration": true
+      }
+    }
+  ],
+  "otherChoices": [
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "choice": "买便宜货",
+      "result": "你买到了火鼠毛。另一件一出摊子就化成了一把树叶。",
+      "previewAsset": "event-fake-fox.webp",
+      "before": 20,
+      "after": 12,
+      "returnedToExploration": true
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "choice": "离开",
+      "result": "你没有停留。",
+      "previewAsset": "event-fake-fox.webp",
+      "before": 20,
+      "after": 20,
+      "returnedToExploration": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "choice": "买便宜货",
+      "result": "你买到了火鼠毛。另一件一出摊子就化成了一把树叶。",
+      "previewAsset": "event-fake-fox.webp",
+      "before": 20,
+      "after": 12,
+      "returnedToExploration": true
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "choice": "离开",
+      "result": "你没有停留。",
+      "previewAsset": "event-fake-fox.webp",
+      "before": 20,
+      "after": 20,
+      "returnedToExploration": true
+    }
+  ]
+}

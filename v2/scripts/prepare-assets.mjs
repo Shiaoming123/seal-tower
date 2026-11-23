@@ -114,12 +114,13 @@ const digest = (data) => createHash("sha256").update(data).digest("hex");
 const paddedSprites = new Set([
   "lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine", "fire-rat", "fire-rat-attack", "stele-spirit", "event-cart",
   "fallen", "fallen-strike", "fallen-guard", "fallen-elder", "fallen-elder-strike", "fallen-elder-guard",
+  "paper-matron", "fake-fox", "event-fake-fox", "map-fake-fox",
 ]);
 let overrides = 0;
 for (const { id, file } of overridesFromDisk) {
   if (requested.size && !requested.has(id)) continue;
   // New art for ids the game looks up with a fallback (cards, relics, portraits…) gets a size by prefix.
-  const prefixEdge = [["card-", 256], ["relic-", 192], ["build-", 192], ["icon-", 128], ["portrait-", 480], ["event-", 420], ["omen-", 480]]
+  const prefixEdge = [["card-", 256], ["relic-", 192], ["build-", 192], ["icon-", 128], ["portrait-", 480], ["event-", 420], ["map-", 256], ["omen-", 480]]
     .find(([p]) => id.startsWith(p))?.[1];
   const edge = edges[id] ?? prefixEdge ?? 440;
   const source = await readFile(path.join(artDir, file));

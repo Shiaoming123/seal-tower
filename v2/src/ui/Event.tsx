@@ -1,7 +1,7 @@
 import { sfx } from "../audio/sfx";
 import { EVENTS } from "../data/events";
 import * as R from "../game/run";
-import { ART } from "../render/assets";
+import { ART, artId } from "../render/assets";
 import { BagGrid } from "./Bag";
 import { commit, useRun } from "./store";
 
@@ -12,9 +12,11 @@ export function EventScreen() {
   const ev = EVENTS[run.event!.id];
   const options = R.currentEventOptions(run);
   const result = run.event!.result;
+  // The optional close-up is for conversation. The reveal uses the encounter sprite.
+  const sprite = run.eventFight ? ev.sprite : artId(`event-${ev.sprite}`, ev.sprite);
   return (
     <div class="event" style={{ backgroundImage: `linear-gradient(rgba(5,3,2,0.55), rgba(5,3,2,0.75)), url(${ART[FLOOR_BG[run.floor]]})` }}>
-      <div class="event-art"><img src={ART[ev.sprite]} alt="" draggable={false} /></div>
+      <div class="event-art"><img src={ART[sprite]} alt="" draggable={false} /></div>
       <div class="event-box panel">
         <h2>{ev.title}</h2>
         <p class="event-text">{ev.text}</p>
