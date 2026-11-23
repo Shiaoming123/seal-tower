@@ -124,12 +124,30 @@ const poseFrames = {
   moth: { size: [320, 290], crops: { attack: [0, 48, 1254, 1136], hurt: [0, 48, 1254, 1136] } },
   rat: { size: [320, 241], crops: { attack: [0, 144, 1254, 945], hurt: [0, 120, 1254, 945] } },
   louse: { size: [420, 154], crops: { attack: [0, 351, 1254, 533], hurt: [0, 371, 1254, 533] } },
+  "ink-moth": { size: [320, 238], crops: { attack: [0, 100, 1388, 1033], hurt: [0, 84, 1388, 966] } },
   "lantern-spirit": { size: [277, 300], crops: { attack: [102, 20, 1052, 1140], hurt: [102, 20, 1052, 1140] } },
   "paper-doll": { size: [369, 400], crops: { attack: [0, 0, 1254, 1254], hurt: [0, 0, 1254, 1254] }, align: "centre" },
   "mirror-fox": { size: [318, 320], crops: { attack: [0, 16, 1254, 1170], hurt: [0, 30, 1254, 1100] } },
   warden: { size: [440, 294], crops: { attack: [0, 54, 1388, 928], hurt: [0, 0, 1536, 1024] } },
 };
-const lungeInsets = { "paper-matron-attack": 17, "night-fox-attack": 9, "fallen-elder-strike": 17, "bell-attack": 13, "bell-heavy-attack": 14, "rat-attack": 28, "mirror-fox-attack": 13, "warden-attack": 33, "fake-fox-attack": 13, "fallen-strike": 6, "lantern-spirit-attack": 12, "paper-doll-attack": 16, "fire-rat-attack": 14 };
+const lungeInsets = {
+  "paper-matron-attack": 17,
+  "night-fox-attack": 9,
+  "fallen-elder-strike": 17,
+  "bell-attack": 13,
+  "bell-heavy-attack": 14,
+  "rat-attack": 28,
+  "ink-moth-attack": 25,
+  "water-ghost-attack": 14,
+  "stele-spirit-attack": 8,
+  "mirror-fox-attack": 13,
+  "warden-attack": 33,
+  "fake-fox-attack": 13,
+  "fallen-strike": 6,
+  "lantern-spirit-attack": 12,
+  "paper-doll-attack": 16,
+  "fire-rat-attack": 14,
+};
 let overrides = 0;
 for (const { id, file } of overridesFromDisk) {
   if (requested.size && !requested.has(id)) continue;

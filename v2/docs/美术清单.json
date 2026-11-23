@@ -1957,7 +1957,7 @@
       "category": "敌怪姿态",
       "usedBy": "ink-moth 扑击/出招",
       "fallback": "ink-moth",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1965,7 +1965,7 @@
       "category": "敌怪姿态",
       "usedBy": "ink-moth 受击",
       "fallback": "ink-moth",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1973,7 +1973,7 @@
       "category": "敌怪姿态",
       "usedBy": "water-ghost 扑击/出招",
       "fallback": "water-ghost",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1981,7 +1981,7 @@
       "category": "敌怪姿态",
       "usedBy": "water-ghost 受击",
       "fallback": "water-ghost",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1989,7 +1989,7 @@
       "category": "敌怪姿态",
       "usedBy": "stele-spirit 扑击/出招",
       "fallback": "stele-spirit",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1997,7 +1997,7 @@
       "category": "敌怪姿态",
       "usedBy": "stele-spirit 受击",
       "fallback": "stele-spirit",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {

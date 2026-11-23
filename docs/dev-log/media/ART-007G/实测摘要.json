@@ -1,0 +1,976 @@
+[
+  {
+    "foe": "ink-moth",
+    "size": "1280",
+    "host": "http://127.0.0.1:5178",
+    "seed": "gallery",
+    "route": {
+      "stairs": {
+        "target": {
+          "x": 5,
+          "y": 8,
+          "dir": 0
+        },
+        "id": 20121,
+        "from": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "fixture": {
+        "target": {
+          "x": 8,
+          "y": 9,
+          "dir": 1
+        },
+        "id": 20122,
+        "from": {
+          "x": 7,
+          "y": 9,
+          "dir": 1
+        }
+      }
+    },
+    "served": {
+      "ink-moth": {
+        "w": 320,
+        "h": 238,
+        "bounds": [
+          16,
+          16,
+          303,
+          221
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "296753c1fe235919c59dc5823de07438b8374b897d3fb71441cf1fd4d67cffec"
+      },
+      "ink-moth-attack": {
+        "w": 320,
+        "h": 238,
+        "bounds": [
+          31,
+          44,
+          287,
+          226
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "263ac87ca166f493b8c2e953b35d8c277ec400c11e47229fe1ff641c5831a08d"
+      },
+      "ink-moth-hurt": {
+        "w": 320,
+        "h": 238,
+        "bounds": [
+          12,
+          22,
+          307,
+          231
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "ad75fc16bb8ba9b00285c533ede11f08830b9841684572879e5fb2b095215af9"
+      }
+    },
+    "sameDeltasAsBaseline": true,
+    "actions": [
+      [
+        "normal",
+        54,
+        54,
+        37,
+        31,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "ink-full",
+        54,
+        54,
+        31,
+        31,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        "dive-hp",
+        54,
+        46,
+        31,
+        31,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        "heavy",
+        46,
+        46,
+        31,
+        17,
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "phaseFrames": 148,
+    "wrongFrames": 0,
+    "clipFrames": 0,
+    "minAttackSide": 531.6,
+    "minMotionSide": 522.6,
+    "hudBoundingOverlap": 0,
+    "errors": [],
+    "warnings": [
+      "The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio"
+    ]
+  },
+  {
+    "foe": "ink-moth",
+    "size": "390",
+    "host": "http://127.0.0.1:5178",
+    "seed": "gallery",
+    "route": {
+      "stairs": {
+        "target": {
+          "x": 5,
+          "y": 8,
+          "dir": 0
+        },
+        "id": 20121,
+        "from": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "fixture": {
+        "target": {
+          "x": 8,
+          "y": 9,
+          "dir": 1
+        },
+        "id": 20122,
+        "from": {
+          "x": 7,
+          "y": 9,
+          "dir": 1
+        }
+      }
+    },
+    "served": {
+      "ink-moth": {
+        "w": 320,
+        "h": 238,
+        "bounds": [
+          16,
+          16,
+          303,
+          221
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "296753c1fe235919c59dc5823de07438b8374b897d3fb71441cf1fd4d67cffec"
+      },
+      "ink-moth-attack": {
+        "w": 320,
+        "h": 238,
+        "bounds": [
+          31,
+          44,
+          287,
+          226
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "263ac87ca166f493b8c2e953b35d8c277ec400c11e47229fe1ff641c5831a08d"
+      },
+      "ink-moth-hurt": {
+        "w": 320,
+        "h": 238,
+        "bounds": [
+          12,
+          22,
+          307,
+          231
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "ad75fc16bb8ba9b00285c533ede11f08830b9841684572879e5fb2b095215af9"
+      }
+    },
+    "sameDeltasAsBaseline": true,
+    "actions": [
+      [
+        "normal",
+        54,
+        54,
+        37,
+        31,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "ink-full",
+        54,
+        54,
+        31,
+        31,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        "dive-hp",
+        54,
+        46,
+        31,
+        31,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        "heavy",
+        46,
+        46,
+        31,
+        17,
+        1,
+        1,
+        0,
+        0
+      ]
+    ],
+    "phaseFrames": 146,
+    "wrongFrames": 0,
+    "clipFrames": 0,
+    "minAttackSide": 12.2,
+    "minMotionSide": 6.1,
+    "hudBoundingOverlap": 0,
+    "errors": [],
+    "warnings": [
+      "The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio"
+    ]
+  },
+  {
+    "foe": "water-ghost",
+    "size": "1280",
+    "host": "http://127.0.0.1:5178",
+    "seed": "gallery",
+    "route": {
+      "stairs": {
+        "target": {
+          "x": 5,
+          "y": 8,
+          "dir": 0
+        },
+        "id": 20121,
+        "from": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "fixture": {
+        "target": {
+          "x": 8,
+          "y": 9,
+          "dir": 1
+        },
+        "id": 20122,
+        "from": {
+          "x": 7,
+          "y": 9,
+          "dir": 1
+        }
+      }
+    },
+    "served": {
+      "water-ghost": {
+        "w": 420,
+        "h": 387,
+        "bounds": [
+          25,
+          22,
+          395,
+          364
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "8e5c99c7bbf30294d013f64117d316c0564c4432a7df44e94508352c8e6a25bc"
+      },
+      "water-ghost-attack": {
+        "w": 420,
+        "h": 390,
+        "bounds": [
+          37,
+          51,
+          381,
+          366
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "1f72206ab8d99200fa5775a3c068534cc405c83c1c4b478e01742fb2f82d705d"
+      },
+      "water-ghost-hurt": {
+        "w": 420,
+        "h": 387,
+        "bounds": [
+          58,
+          34,
+          342,
+          365
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "9589a1019ed82363e403f2543a0a3835c38587e6064f9efcd5cc44922acbfb35"
+      }
+    },
+    "sameDeltasAsBaseline": true,
+    "actions": [
+      [
+        "sink-half",
+        54,
+        54,
+        48,
+        45,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "sink",
+        54,
+        54,
+        45,
+        45,
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        "lunge-full",
+        54,
+        54,
+        45,
+        45,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        "normal",
+        54,
+        54,
+        45,
+        39,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        "heavy",
+        54,
+        54,
+        39,
+        25,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        "drag-hp",
+        54,
+        40,
+        25,
+        25,
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "phaseFrames": 328,
+    "wrongFrames": 0,
+    "clipFrames": 0,
+    "minAttackSide": 492.1,
+    "minMotionSide": 492.1,
+    "hudBoundingOverlap": 0,
+    "errors": [],
+    "warnings": [
+      "The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio"
+    ]
+  },
+  {
+    "foe": "water-ghost",
+    "size": "390",
+    "host": "http://127.0.0.1:5178",
+    "seed": "gallery",
+    "route": {
+      "stairs": {
+        "target": {
+          "x": 5,
+          "y": 8,
+          "dir": 0
+        },
+        "id": 20121,
+        "from": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "fixture": {
+        "target": {
+          "x": 8,
+          "y": 9,
+          "dir": 1
+        },
+        "id": 20122,
+        "from": {
+          "x": 7,
+          "y": 9,
+          "dir": 1
+        }
+      }
+    },
+    "served": {
+      "water-ghost": {
+        "w": 420,
+        "h": 387,
+        "bounds": [
+          25,
+          22,
+          395,
+          364
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "8e5c99c7bbf30294d013f64117d316c0564c4432a7df44e94508352c8e6a25bc"
+      },
+      "water-ghost-attack": {
+        "w": 420,
+        "h": 390,
+        "bounds": [
+          37,
+          51,
+          381,
+          366
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "1f72206ab8d99200fa5775a3c068534cc405c83c1c4b478e01742fb2f82d705d"
+      },
+      "water-ghost-hurt": {
+        "w": 420,
+        "h": 387,
+        "bounds": [
+          58,
+          34,
+          342,
+          365
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "9589a1019ed82363e403f2543a0a3835c38587e6064f9efcd5cc44922acbfb35"
+      }
+    },
+    "sameDeltasAsBaseline": true,
+    "actions": [
+      [
+        "sink-half",
+        54,
+        54,
+        48,
+        45,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "sink",
+        54,
+        54,
+        45,
+        45,
+        0,
+        0,
+        4,
+        0
+      ],
+      [
+        "lunge-full",
+        54,
+        54,
+        45,
+        45,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        "normal",
+        54,
+        54,
+        45,
+        39,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        "heavy",
+        54,
+        54,
+        39,
+        25,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        "drag-hp",
+        54,
+        40,
+        25,
+        25,
+        0,
+        1,
+        0,
+        0
+      ]
+    ],
+    "phaseFrames": 330,
+    "wrongFrames": 0,
+    "clipFrames": 0,
+    "minAttackSide": 9.8,
+    "minMotionSide": 9.8,
+    "hudBoundingOverlap": 0,
+    "errors": [],
+    "warnings": [
+      "The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio"
+    ]
+  },
+  {
+    "foe": "stele-spirit",
+    "size": "1280",
+    "host": "http://127.0.0.1:5178",
+    "seed": "gallery",
+    "route": {
+      "stairs": {
+        "target": {
+          "x": 5,
+          "y": 8,
+          "dir": 0
+        },
+        "id": 20121,
+        "from": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "fixture": {
+        "target": {
+          "x": 8,
+          "y": 9,
+          "dir": 1
+        },
+        "id": 20122,
+        "from": {
+          "x": 7,
+          "y": 9,
+          "dir": 1
+        }
+      }
+    },
+    "served": {
+      "stele-spirit": {
+        "w": 300,
+        "h": 300,
+        "bounds": [
+          32,
+          22,
+          271,
+          279
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "08b3c6753cc2c902dab9c65e170cca9b969426d9aa295b54c4d47c5d5940ff5b"
+      },
+      "stele-spirit-attack": {
+        "w": 300,
+        "h": 300,
+        "bounds": [
+          38,
+          39,
+          262,
+          281
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "1a3cffd5b9d2ddf9907769ce2690dcc6c87ffac02da186b8ce4a43a5f0e0a303"
+      },
+      "stele-spirit-hurt": {
+        "w": 300,
+        "h": 300,
+        "bounds": [
+          36,
+          21,
+          262,
+          279
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "acd1079cecc14d8f32cdddccf6348079e21d0696d460a59c7230bb3f08a02ddc"
+      }
+    },
+    "sameDeltasAsBaseline": true,
+    "actions": [
+      [
+        "normal",
+        54,
+        54,
+        43,
+        37,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "raise",
+        54,
+        54,
+        37,
+        37,
+        0,
+        0,
+        16,
+        0
+      ],
+      [
+        "press-full",
+        54,
+        54,
+        37,
+        37,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        "heavy",
+        54,
+        54,
+        37,
+        23,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        "carve",
+        54,
+        54,
+        23,
+        23,
+        0,
+        1,
+        6,
+        2
+      ],
+      [
+        "stone-guard",
+        54,
+        54,
+        23,
+        23,
+        0,
+        1,
+        0,
+        2
+      ],
+      [
+        "press-hp",
+        54,
+        37,
+        23,
+        23,
+        0,
+        1,
+        0,
+        2
+      ]
+    ],
+    "phaseFrames": 479,
+    "wrongFrames": 0,
+    "clipFrames": 0,
+    "minAttackSide": 514.4,
+    "minMotionSide": 514.4,
+    "hudBoundingOverlap": 0,
+    "errors": [],
+    "warnings": [
+      "The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio"
+    ]
+  },
+  {
+    "foe": "stele-spirit",
+    "size": "390",
+    "host": "http://127.0.0.1:5178",
+    "seed": "gallery",
+    "route": {
+      "stairs": {
+        "target": {
+          "x": 5,
+          "y": 8,
+          "dir": 0
+        },
+        "id": 20121,
+        "from": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "fixture": {
+        "target": {
+          "x": 8,
+          "y": 9,
+          "dir": 1
+        },
+        "id": 20122,
+        "from": {
+          "x": 7,
+          "y": 9,
+          "dir": 1
+        }
+      }
+    },
+    "served": {
+      "stele-spirit": {
+        "w": 300,
+        "h": 300,
+        "bounds": [
+          32,
+          22,
+          271,
+          279
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "08b3c6753cc2c902dab9c65e170cca9b969426d9aa295b54c4d47c5d5940ff5b"
+      },
+      "stele-spirit-attack": {
+        "w": 300,
+        "h": 300,
+        "bounds": [
+          38,
+          39,
+          262,
+          281
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "1a3cffd5b9d2ddf9907769ce2690dcc6c87ffac02da186b8ce4a43a5f0e0a303"
+      },
+      "stele-spirit-hurt": {
+        "w": 300,
+        "h": 300,
+        "bounds": [
+          36,
+          21,
+          262,
+          279
+        ],
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "hash": "acd1079cecc14d8f32cdddccf6348079e21d0696d460a59c7230bb3f08a02ddc"
+      }
+    },
+    "sameDeltasAsBaseline": true,
+    "actions": [
+      [
+        "normal",
+        54,
+        54,
+        43,
+        37,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "raise",
+        54,
+        54,
+        37,
+        37,
+        0,
+        0,
+        16,
+        0
+      ],
+      [
+        "press-full",
+        54,
+        54,
+        37,
+        37,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        "heavy",
+        54,
+        54,
+        37,
+        23,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        "carve",
+        54,
+        54,
+        23,
+        23,
+        0,
+        1,
+        6,
+        2
+      ],
+      [
+        "stone-guard",
+        54,
+        54,
+        23,
+        23,
+        0,
+        1,
+        0,
+        2
+      ],
+      [
+        "press-hp",
+        54,
+        37,
+        23,
+        23,
+        0,
+        1,
+        0,
+        2
+      ]
+    ],
+    "phaseFrames": 474,
+    "wrongFrames": 0,
+    "clipFrames": 0,
+    "minAttackSide": 36.5,
+    "minMotionSide": 36.5,
+    "hudBoundingOverlap": 0,
+    "errors": [],
+    "warnings": [
+      "The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://developer.chrome.com/blog/autoplay/#web_audio"
+    ]
+  }
+]

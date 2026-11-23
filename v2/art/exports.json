@@ -323,5 +323,35 @@
     "file": "paper-doll-hurt.png",
     "sourceSha256": "7caa84309b282ff3786cbde1120de8708fd24b6cc90b835fa2fb97eece80e923",
     "webpSha256": "dc5aacaf341f23843e8bc8fe7be4d61b1ba413bc1bca44a42e685bcfb3238f95"
+  },
+  "ink-moth-attack": {
+    "file": "ink-moth-attack.png",
+    "sourceSha256": "454f4911658260f945f7e1f5ccf58e814dc6a5c499d544727fcfa8ebf33cc427",
+    "webpSha256": "263ac87ca166f493b8c2e953b35d8c277ec400c11e47229fe1ff641c5831a08d"
+  },
+  "ink-moth-hurt": {
+    "file": "ink-moth-hurt.png",
+    "sourceSha256": "01edbaccc287a1a1cd52714a87c462403d6af1f5c6e61c3ee48b131de8a53dab",
+    "webpSha256": "ad75fc16bb8ba9b00285c533ede11f08830b9841684572879e5fb2b095215af9"
+  },
+  "stele-spirit-attack": {
+    "file": "stele-spirit-attack.png",
+    "sourceSha256": "d832cce1fd5cf69fec57e921b92c34be01f7aea2097079d4dc81ba40c53d266d",
+    "webpSha256": "1a3cffd5b9d2ddf9907769ce2690dcc6c87ffac02da186b8ce4a43a5f0e0a303"
+  },
+  "stele-spirit-hurt": {
+    "file": "stele-spirit-hurt.png",
+    "sourceSha256": "10b74a45915b493bb3df4f47f5bf6f10d4c11540c75743823a3f0565932648be",
+    "webpSha256": "acd1079cecc14d8f32cdddccf6348079e21d0696d460a59c7230bb3f08a02ddc"
+  },
+  "water-ghost-attack": {
+    "file": "water-ghost-attack.png",
+    "sourceSha256": "556d5c9117161cd1a00376c3246754aae51abceeb6e9cceb1e89d6ccbbcbac59",
+    "webpSha256": "1f72206ab8d99200fa5775a3c068534cc405c83c1c4b478e01742fb2f82d705d"
+  },
+  "water-ghost-hurt": {
+    "file": "water-ghost-hurt.png",
+    "sourceSha256": "54b7d6b11c1219e1fa72a15b0725abefb07092a694b4d7f5ce52268fae2fe2cb",
+    "webpSha256": "9589a1019ed82363e403f2543a0a3835c38587e6064f9efcd5cc44922acbfb35"
   }
 }
