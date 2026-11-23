@@ -159,7 +159,11 @@ describe("data", () => {
     }
   });
   it("every event has at least one option that is always available", () => {
-    for (const ev of Object.values(EVENTS)) expect(ev.options.some((o) => !o.locked)).toBe(true);
+    for (const ev of Object.values(EVENTS)) {
+      const run = createRun(1, "sword", "lamp");
+      const opts = typeof ev.options === "function" ? ev.options(run, makeRng(1)) : ev.options;
+      expect(opts.some((o) => !o.locked), ev.id).toBe(true);
+    }
   });
 });
 
@@ -277,5 +281,107 @@ describe("long game", () => {
     const got = ACHIEVEMENTS.filter((a) => a.check(run, profile)).map((a) => a.id);
     expect(got).toEqual(expect.arrayContaining(["floor2", "clasp"]));
     expect(got).not.toContain("win");
+  });
+});
+
+describe("new monsters", () => {
+  const setIntent = (c: ReturnType<typeof fightWith>, key: string) => {
+    const m = ENEMIES[c.enemy.id].moves[key];
+    c.enemy.intent = { key, ...m };
+  };
+  it("thorn stele hurts you for every hit you land", () => {
+    const run = createRun(51, "sword", "lamp");
+    const c = fightWith(run, "thorn-stele");
+    const hp = run.hp; c.block = 0;
+    handOf(run, ["twin"]); playCard(run, 0);
+    expect(run.hp).toBe(hp - 4);
+  });
+  it("bronze puppet caps every hit at 8", () => {
+    const run = createRun(52, "sword", "lamp");
+    const c = fightWith(run, "bronze-puppet");
+    c.status.str = 20; c.enemy.block = 0;
+    const hp = c.enemy.hp;
+    handOf(run, ["strike"]); playCard(run, 0);
+    expect(hp - c.enemy.hp).toBe(8);
+  });
+  it("water ghost takes half damage while diving", () => {
+    const run = createRun(53, "shield", "lamp");
+    const c = fightWith(run, "water-ghost");
+    setIntent(c, "sink"); c.enemy.block = 0;
+    const hp = c.enemy.hp;
+    handOf(run, ["strike"]); playCard(run, 0);
+    expect(hp - c.enemy.hp).toBe(3);
+  });
+  it("paper doll takes double fire damage, but a fire finish burns the red paper", () => {
+    const run = createRun(54, "lamp", "lamp");
+    const c = fightWith(run, "paper-doll");
+    c.enemy.block = 0; c.enemy.hp = 30;
+    handOf(run, ["dust"]); playCard(run, 0);
+    expect(30 - c.enemy.hp).toBe(16);
+    c.enemy.hp = 1; handOf(run, ["dust"]); playCard(run, 0);
+    winCombat(run);
+    expect(run.reward!.goods).not.toContain("redpaper");
+  });
+  it("ink moth's ink makes you draw one fewer card", () => {
+    const run = createRun(55, "sword", "lamp");
+    const c = fightWith(run, "ink-moth");
+    setIntent(c, "ink"); c.block = 0;
+    endTurn(run);
+    expect(c.hand.length).toBe(4);
+    expect(c.blinded).toBe(1);
+  });
+  it("fire rat eats ash, lantern spirit drinks oil, fake fox collects coin — only when damage gets through", () => {
+    const r1 = createRun(56, "sword", "lamp"); addGood(r1, "ash"); addGood(r1, "ash");
+    const c1 = fightWith(r1, "fire-rat"); setIntent(c1, "gnaw"); c1.block = 0; endTurn(r1);
+    expect(bag.count(r1.bag, "ash")).toBe(0);
+    const r2 = createRun(57, "sword", "lamp"); const oil = r2.oil;
+    const c2 = fightWith(r2, "lantern-spirit"); setIntent(c2, "sip"); c2.block = 0; endTurn(r2);
+    expect(r2.oil).toBe(oil - 10);
+    const r3 = createRun(58, "sword", "lamp"); r3.gold = 30;
+    const c3 = fightWith(r3, "fake-fox", "elite"); setIntent(c3, "collect"); c3.block = 99; endTurn(r3);
+    expect(r3.gold).toBe(30);
+  });
+  it("hitting the fallen hunter in its stance costs you and its token", () => {
+    const run = createRun(59, "sword", "lamp");
+    const c = fightWith(run, "fallen", "elite");
+    expect(c.enemy.intent.counter).toBe(4);
+    const hp = run.hp; c.block = 0;
+    handOf(run, ["strike"]); playCard(run, 0);
+    expect(run.hp).toBe(hp - 4);
+    expect(ENEMIES.fallen.harvest!.got(c)).toBe(false);
+  });
+});
+
+describe("new events", () => {
+  it("scavenging deeply turns the event into a fight", async () => {
+    const R = await import("../src/game/run");
+    const run = createRun(61, "sword", "lamp");
+    const e: Entity = { id: 77, kind: "event", x: run.pos.x, y: run.pos.y, event: "scavenge", done: false };
+    run.dungeon.entities.push(e);
+    R.openEntity(run, e);
+    R.chooseEvent(run, 1);
+    expect(run.eventFight).not.toBeNull();
+    R.closeEvent(run);
+    expect(run.screen).toBe("combat");
+    expect(e.kind).toBe("fight");
+  });
+  it("the teleport array moves you somewhere new", async () => {
+    const R = await import("../src/game/run");
+    const run = createRun(62, "sword", "lamp");
+    const e: Entity = { id: 78, kind: "event", x: run.pos.x, y: run.pos.y, event: "portal", done: false };
+    run.dungeon.entities.push(e);
+    R.openEntity(run, e);
+    const from = { ...run.pos };
+    R.chooseEvent(run, 0);
+    expect(run.pos).not.toEqual(from);
+    expect(run.warp).toBe(1);
+  });
+  it("the reflecting pool copies a card", async () => {
+    const R = await import("../src/game/run");
+    const run = createRun(63, "sword", "lamp");
+    run.cardPick = { mode: "copy", source: "event" };
+    const n = run.deck.length;
+    R.applyCardPick(run, run.deck[0].uid);
+    expect(run.deck.length).toBe(n + 1);
   });
 });

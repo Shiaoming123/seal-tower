@@ -3,9 +3,10 @@ import type { RngState } from "./rng";
 export type WeaponId = "sword" | "shield" | "lamp" | "abacus";
 export type GoodId =
   | "ash" | "fang" | "silk" | "shell" | "knot" | "wick" | "clasp" | "clasp-broken" | "copper"
+  | "redpaper" | "fur" | "inkdust" | "pearl" | "rubbing" | "token" | "shard" | "feather" | "tail"
   | "sword" | "shield" | "lamp" | "ironsword" | "hook" | "mirror" | "abacus" | "bell" | "purse"
   | "salve" | "pill" | "lining";
-export type StatusId = "str" | "weak" | "vuln" | "thorns" | "focus" | "ward" | "barricade" | "lampArray" | "swordIntent" | "bulwark" | "counter" | "interest";
+export type StatusId = "str" | "weak" | "vuln" | "thorns" | "focus" | "ward" | "barricade" | "lampArray" | "swordIntent" | "bulwark" | "counter" | "interest" | "blind";
 export type Screen = "town" | "explore" | "combat" | "reward" | "shop" | "event" | "rest" | "result";
 export type FloorNo = 1 | 2 | 3;
 
@@ -22,7 +23,19 @@ export interface Intent {
   hits?: number;
   block?: number;
   str?: number;
-  apply?: { status: "weak" | "vuln"; n: number };
+  apply?: { status: "weak" | "vuln" | "blind"; n: number };
+  /** If damage gets through: burns this much of your lamp oil. */
+  drainOil?: number;
+  /** If damage gets through: eats this many 灯灰 from the bag. */
+  eatAsh?: number;
+  /** If damage gets through: takes this many 石. */
+  stealGold?: number;
+  /** Gains this many permanent thorns (you take damage for each hit you land). */
+  thorns?: number;
+  /** Stance for this turn: each hit you land costs you this much HP. */
+  counter?: number;
+  /** Underwater this turn: your hits deal half damage. */
+  dive?: boolean;
   /** If any of this attack's damage gets through, the enemy grabs the most valuable good in the bag. */
   steal?: boolean;
   /** Winding up. Dealing `threshold` total damage this turn interrupts it; otherwise `then` lands next turn. */
@@ -80,6 +93,18 @@ export interface CombatState {
   fullBlocks: number;
   /** Charges the player broke. */
   interrupts: number;
+  oilDrained: number;
+  ashEaten: number;
+  goldStolen: number;
+  /** Times you were hit by 吐墨 (draw one fewer). */
+  blinded: number;
+  /** Hits landed into an enemy's counter stance. */
+  guardHits: number;
+  /** Damage of your most recent hit (after caps, before block) and the tags of the card that dealt it. */
+  lastHit: number;
+  lastTags: string[];
+  /** Your lamp oil, mirrored here so harvest checks can read it. */
+  oil: number;
   rng: RngState;
 }
 
@@ -182,11 +207,15 @@ export interface RunState {
   /** A 道友 told you the next floor's prices. */
   rumor: boolean;
   /** Open card picker (upgrade / remove), from an event, rest or shop. */
-  cardPick: { mode: "upgrade" | "remove"; source: "event" | "rest" | "shop"; price?: number } | null;
+  cardPick: { mode: "upgrade" | "remove" | "copy"; source: "event" | "rest" | "shop"; price?: number } | null;
   bossIntel: boolean;
   log: string[];
   /** Things that happened this run, for achievements. */
   flags: string[];
+  /** An event turned into a fight: started when the event closes. */
+  eventFight: { enemy: string; kind: "fight" | "elite"; hpMul: number; dmgAdd: number } | null;
+  /** Bumped on teleport so the 3D view snaps to the new spot. */
+  warp: number;
 }
 
 export interface Profile {

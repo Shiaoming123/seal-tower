@@ -45,6 +45,15 @@ const list: GoodDef[] = [
   { id: "wick", kind: "goods", name: "灯芯", icon: "seal", shape: ONE, price: 6, text: "大妖体内还亮着的一截灯芯。燃芯的招式能把它烧成力气。" },
   { id: "clasp", kind: "goods", name: "完整狐扣", icon: "clasp", shape: ONE, price: 10, text: "狐妖颈下的铜扣，完好无损。绯绡出高价收。" },
   { id: "clasp-broken", kind: "goods", name: "碎狐扣", icon: "clasp", shape: ONE, price: 3, dim: true, text: "被重击打裂的狐扣，只能当废铜卖。" },
+  { id: "redpaper", kind: "goods", name: "红纸", icon: "icon-redpaper", shape: ONE, price: 5, text: "纸人童身上没烧着的红纸。纸扎铺拿它扎新的灯笼。" },
+  { id: "fur", kind: "goods", name: "火鼠毛", icon: "icon-fur", shape: ONE, price: 7, text: "火鼠背上的毛，烧不坏。裁缝拿来缝灯罩的里衬。" },
+  { id: "inkdust", kind: "goods", name: "墨粉", icon: "icon-inkdust", shape: ONE, price: 6, text: "墨蛾翅上抖下来的粉，书院拿它研墨。" },
+  { id: "pearl", kind: "goods", name: "水珠", icon: "icon-pearl", shape: ONE, price: 9, text: "水鬼含在嘴里的珠子，夜里会发光。" },
+  { id: "rubbing", kind: "goods", name: "碑拓", icon: "icon-rubbing", shape: V2, price: 8, text: "从活过来的石碑上拓下的字。书院先生收。" },
+  { id: "token", kind: "goods", name: "斩妖令", icon: "icon-token", shape: ONE, price: 12, text: "堕道者腰间的令牌。上面的名字，是一位失踪的斩妖人。" },
+  { id: "shard", kind: "goods", name: "铜片", icon: "icon-shard", shape: ONE, price: 6, text: "铜傀身上掉下的铜片，铁匠拿它补锅。" },
+  { id: "feather", kind: "goods", name: "枭羽", icon: "icon-feather", shape: V2, price: 8, text: "夜枭的翎羽。做成箭羽，射得又快又准。" },
+  { id: "tail", kind: "goods", name: "白狐尾", icon: "icon-tail", shape: H2, price: 14, text: "假狐商的一条尾巴。绯绡说，这本来就不该长在它身上。" },
   { id: "copper", kind: "goods", name: "钟铜", icon: "bell-item", shape: SQ, price: 16, text: "负钟君的碎钟片。镇长要它重铸镇塔钟。" },
 
   // ---------- gear ----------

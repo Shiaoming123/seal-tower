@@ -1,5 +1,5 @@
 import { FLOOR_SPAWNS } from "../data/enemies";
-import { EVENT_IDS } from "../data/events";
+import { EVENTS, EVENT_IDS } from "../data/events";
 import { type RngState, int, next, pick, shuffle } from "./rng";
 import type { Dungeon, Entity, EntityKind, FloorNo } from "./types";
 
@@ -109,9 +109,9 @@ function placeEntities(d: Dungeon, floor: FloorNo, r: RngState) {
   const chestSpot = free().filter((c) => c.dead)[0] ?? pick(r, free());
   add("chest", chestSpot);
 
-  // Two events.
-  const events = shuffle(r, [...EVENT_IDS]);
-  for (let i = 0; i < 2; i++) {
+  // Three events.
+  const events = shuffle(r, EVENT_IDS.filter((id) => (EVENTS[id].minFloor ?? 1) <= floor));
+  for (let i = 0; i < 3; i++) {
     const options = free().filter((c) => c.dist >= 2);
     if (!options.length) break;
     add("event", pick(r, options), { event: events[i] });

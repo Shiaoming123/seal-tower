@@ -1,6 +1,5 @@
 // A simple player used by the balance simulation and smoke tests. It is deliberately average, not optimal.
 import { CARDS, cardCost } from "../src/data/cards";
-import { EVENTS } from "../src/data/events";
 import { blockedReason, endTurn, incomingDamage, playCard } from "../src/game/combat";
 import { entityAt, findPath, revealAll } from "../src/game/dungeon";
 import { useItem } from "../src/game/inventory";
@@ -54,8 +53,7 @@ export function playRun(run: RunState, opts: { elites?: boolean; onFloor?: () =>
       continue;
     }
     if (run.screen === "event") {
-      const ev = EVENTS[run.event!.id];
-      const i = ev.options.findIndex((o) => !o.locked?.(run));
+      const i = R.currentEventOptions(run).findIndex((o) => !o.locked?.(run));
       R.chooseEvent(run, i);
       if (run.cardPick) R.applyCardPick(run, run.deck.find((c) => !c.up && c.id === "strike")?.uid ?? run.deck[0].uid);
       R.closeEvent(run);

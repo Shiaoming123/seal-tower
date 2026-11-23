@@ -24,9 +24,15 @@ export function intentSummary(run: RunState, c: CombatState) {
   if (i.charge) parts.push({ icon: "蓄", label: `${Math.min(c.dmgThisTurn, i.charge.threshold)}/${i.charge.threshold}`, cls: "charge" });
   if (i.dmg && !i.stunned) parts.push({ icon: "攻", label: `${enemyHitDamage(run, c)}${(i.hits ?? 1) > 1 ? `×${i.hits}` : ""}`, cls: "atk" });
   if (i.steal) parts.push({ icon: "抢", label: "", cls: "steal" });
+  if (i.drainOil) parts.push({ icon: "油", label: `-${i.drainOil}`, cls: "steal" });
+  if (i.eatAsh) parts.push({ icon: "灰", label: `-${i.eatAsh}`, cls: "steal" });
+  if (i.stealGold) parts.push({ icon: "钱", label: `-${i.stealGold}`, cls: "steal" });
+  if (i.counter) parts.push({ icon: "架", label: `${i.counter}`, cls: "def" });
+  if (i.dive) parts.push({ icon: "潜", label: "½", cls: "def" });
+  if (i.thorns) parts.push({ icon: "棘", label: `+${i.thorns}`, cls: "buff" });
   if (i.block) parts.push({ icon: "守", label: `${i.block}`, cls: "def" });
   if (i.str) parts.push({ icon: "强", label: `+${i.str}`, cls: "buff" });
-  if (i.apply) parts.push({ icon: i.apply.status === "weak" ? "弱" : "破", label: `${i.apply.n}`, cls: "debuff" });
+  if (i.apply) parts.push({ icon: i.apply.status === "weak" ? "弱" : i.apply.status === "blind" ? "盲" : "破", label: `${i.apply.n}`, cls: "debuff" });
 
   let line = i.text ?? "";
   if (!line) {
@@ -34,9 +40,18 @@ export function intentSummary(run: RunState, c: CombatState) {
     if (i.dmg) bits.push(`打你 ${enemyHitDamage(run, c)} 点${(i.hits ?? 1) > 1 ? `，连打 ${i.hits} 下` : ""}`);
     if (i.block) bits.push(`给自己加 ${i.block} 格挡`);
     if (i.str) bits.push(`力量 +${i.str}`);
-    if (i.apply) bits.push(`让你${i.apply.status === "weak" ? "虚弱（伤害 -25%）" : "露出破绽（受伤 +50%）"} ${i.apply.n} 回合`);
+    if (i.apply) bits.push(i.apply.status === "blind" ? "糊住你的眼睛（下回合少抽 1 张牌）" : `让你${i.apply.status === "weak" ? "虚弱（伤害 -25%）" : "露出破绽（受伤 +50%）"} ${i.apply.n} 回合`);
+    if (i.thorns) bits.push(`身上多长 ${i.thorns} 层棘刺`);
     line = bits.join("，") + "。";
   }
+  if (i.drainOil) line += ` 打穿格挡会吸走你 ${i.drainOil} 点灯油（你有 ${run.oil}）。`;
+  if (i.eatAsh) line += ` 打穿格挡会吃掉你 ${i.eatAsh} 份灯灰。`;
+  if (i.stealGold) line += ` 打穿格挡会收走你 ${i.stealGold} 石。`;
+  const def = ENEMIES[c.enemy.id];
+  if (def.maxHit) line += ` 铜身：你每下最多打 ${def.maxHit} 点。`;
+  if (def.weakTo === "fire") line += " 怕火：扬灰、灯火伤害翻倍。";
+  if (c.enemy.status.thorns) line += ` 你每打它一下，自己挨 ${c.enemy.status.thorns + (i.counter ?? 0)} 点。`;
+  if (def.dmgMod && def.dmgMod(run.oil)) line += def.dmgMod(run.oil) > 0 ? ` 灯油不足 30，它每下多打 ${def.dmgMod(run.oil)}。` : ` 灯油充足，它每下少打 ${-def.dmgMod(run.oil)}。`;
   if (i.steal) {
     const t = stealTarget(run);
     const how = ENEMIES[c.enemy.id].stealFlees ? "叼走" : "抢走并毁掉";
@@ -90,7 +105,8 @@ export function Combat() {
       else if (e.t === "phase") { sfx.bell(); setBanner(e.text); await wait(600); }
       else if (e.t === "heal") { if (e.amount) float(`+${e.amount}`, "heal", "player"); }
       else if (e.t === "goods") float(`${e.gained ? "+" : "烧掉 "}${GOODS[e.good].name}`, e.gained ? "heal" : "status", "player");
-      else if (e.t === "thorns") float(`回敬 ${e.amount}`, "status-self", "enemy");
+      else if (e.t === "thorns") { if (e.target === "player") float(`被扎 ${e.amount}`, "hurt", "player"); else float(`回敬 ${e.amount}`, "status-self", "enemy"); }
+      else if (e.t === "drain") { sfx.steal(); float(e.what === "oil" ? `灯油 -${e.amount}` : e.what === "ash" ? `被吃掉 ${e.amount} 份灯灰` : `被收走 ${e.amount} 石`, "warn", "player"); }
       else if (e.t === "enemy-move") { setBanner(`${c.enemy.name}：${e.name}`); }
       else if (e.t === "fled") { sfx.steal(); setBanner(`${c.enemy.name}钻进洞里跑了！`); await wait(700); }
     }
@@ -194,7 +210,7 @@ export function Combat() {
             </div>
             <div class="intent-name">{c.enemy.intent.name}</div>
           </div>
-          <img class="enemy-sprite" src={ART[fx === "enemy-lunge" && def.spriteAttack ? def.spriteAttack : c.enemy.sprite]} alt={c.enemy.name} draggable={false} style={{ height: `${Math.round(232 * (def.scale ?? 1))}px` }} />
+          <img class="enemy-sprite" src={ART[fx === "enemy-lunge" && def.spriteAttack ? def.spriteAttack : c.enemy.intent.counter && def.spriteStance ? def.spriteStance : c.enemy.sprite]} alt={c.enemy.name} draggable={false} style={{ height: `${Math.round(232 * (def.scale ?? 1))}px` }} />
           <div class="enemy-info">
             <div class="enemy-name">{c.enemy.name}</div>
             <Bar value={c.enemy.hp} max={c.enemy.maxHp} kind="enemy" block={c.enemy.block} />

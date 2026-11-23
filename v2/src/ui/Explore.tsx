@@ -24,6 +24,10 @@ export function entityName(e: Entity): string {
   return KIND_LABEL[e.kind];
 }
 
+const EVENT_SCALE: Record<string, number> = {
+  broker: 0.8, guide: 0.8, "event-hunter": 0.75, "fake-fox": 0.75, "event-peddler": 0.45, "event-cart": 0.6, portal: 0.8, "event-pool": 0.22, "event-shrine": 0.35, "event-den": 0.45,
+};
+
 export function billboards(run: RunState, hide?: number): Billboard[] {
   const out: Billboard[] = [];
   for (const e of run.dungeon.entities) {
@@ -36,7 +40,7 @@ export function billboards(run: RunState, hide?: number): Billboard[] {
       scale = 0.58 * (def.scale ?? 1) * (e.kind === "elite" ? 1.1 : e.kind === "guardian" ? 1.15 : 1);
       bob = true;
     } else if (e.kind === "shop") { sprite = "trader"; scale = 0.78; }
-    else if (e.kind === "event") { sprite = EVENTS[e.event!].sprite; scale = ["broker", "guide"].includes(sprite) ? 0.8 : 0.5; }
+    else if (e.kind === "event") { sprite = EVENTS[e.event!].sprite; scale = EVENT_SCALE[sprite] ?? 0.5; }
     else if (e.kind === "rest") { sprite = "lamp"; scale = 0.55; }
     else if (e.kind === "chest") { sprite = "purse"; scale = 0.32; }
     else if (e.kind === "stairs") { sprite = "sign-turn"; scale = 0.55; }
@@ -82,7 +86,7 @@ export function Explore() {
   const [walking, setWalking] = useState(false);
   const done = () => { busy.current = false; const q = queued.current; queued.current = null; if (q && runSig.value?.screen === "explore") q(); };
   useView(ref, run);
-  useLayoutEffect(() => { view.place(run.pos.x, run.pos.y, run.pos.dir); }, [run.floor]);
+  useLayoutEffect(() => { view.place(run.pos.x, run.pos.y, run.pos.dir); }, [run.floor, run.warp]);
 
   const stepTo = async (x: number, y: number, dir: number, deliberate: boolean) => {
     sfx.step();

@@ -10,6 +10,8 @@ export interface EnemyDef {
   sprite2?: string;
   /** Pose shown while lunging at the player. */
   spriteAttack?: string;
+  /** Pose shown while its intent is a guard stance. */
+  spriteStance?: string;
   hp: [number, number];
   gold: [number, number];
   drops: { good: GoodId; chance: number }[];
@@ -30,6 +32,16 @@ export interface EnemyDef {
   };
   /** Steals then runs: kill it before it gets away to get the goods back. */
   stealFlees?: boolean;
+  /** No single hit can deal more than this. */
+  maxHit?: number;
+  /** Cards with this tag deal double damage to it. */
+  weakTo?: "fire";
+  /** Thorns it starts the fight with. */
+  thorns?: number;
+  /** Extra damage per hit depending on the run (e.g. your lamp oil). */
+  dmgMod?: (oil: number) => number;
+  /** Only shows up through events. */
+  eventOnly?: boolean;
   phase2?: { at: number; sprite: string; str: number; text: string; ai: (e: EnemyState, r: RngState) => string };
   scale?: number;
 }
@@ -133,24 +145,156 @@ export const ENEMIES: Record<string, EnemyDef> = {
     harvest: { label: "多一片钟铜", good: "copper", text: "至少打断一次「蓄钟」",
       state: (c) => (c.interrupts > 0 ? "done" : "open"), got: (c) => c.interrupts > 0 },
   },
+
+  // ================= new monsters (placeholder art until docs/美术需求.md is filled) =================
+  "lantern-spirit": {
+    id: "lantern-spirit", name: "引魂灯", sprite: "lantern-spirit", hp: [14, 17], gold: [6, 9],
+    drops: [{ good: "ash", chance: 0.6 }],
+    moves: {
+      sip: { name: "吸灯油", dmg: 4, drainOil: 10, text: "" }, glare: { name: "照魂", dmg: 3, apply: { status: "weak", n: 1 } },
+      flare: { name: "灯焰", dmg: 7 },
+    },
+    ai: cycle(["sip", "glare", "flare"]),
+    blurb: "飘着的旧灯笼，专吸活人的灯油。被它咬中会少 10 点灯油。",
+    harvest: { label: "灯芯", good: "wick", text: "一滴灯油都别让它吸到，再打倒它",
+      state: (c) => (c.oilDrained > 0 ? "failed" : "open"), got: (c) => c.oilDrained === 0 },
+  },
+  "paper-doll": {
+    id: "paper-doll", name: "纸人童", sprite: "paper-doll", hp: [20, 24], gold: [6, 9], weakTo: "fire",
+    drops: [{ good: "ash", chance: 0.4 }],
+    moves: { paste: { name: "糊纸", block: 6, dmg: 3 }, slice: { name: "纸刃", dmg: 4, hits: 2 } },
+    ai: cycle(["slice", "paste"]),
+    blurb: "纸扎铺丢掉的纸人，夜里自己走了进来。怕火：扬灰、灯火对它伤害翻倍。",
+    harvest: { label: "红纸", good: "redpaper", text: "别用带火的牌打出最后一下，纸会烧掉",
+      state: (c) => (c.lastTags.includes("fire") ? "risk" : "open"), got: (c) => !c.lastTags.includes("fire") },
+  },
+  "fire-rat": {
+    id: "fire-rat", name: "火鼠", sprite: "fire-rat", spriteAttack: "rat-swipe", hp: [15, 18], gold: [7, 10],
+    drops: [{ good: "fang", chance: 0.6 }, { good: "ash", chance: 0.3 }],
+    moves: { gnaw: { name: "啃灰", dmg: 4, eatAsh: 2 }, scurry: { name: "窜咬", dmg: 3, hits: 3 } },
+    ai: cycle(["gnaw", "scurry"]),
+    blurb: "背上冒火星的鼠妖，饿了就啃灯灰。啃灰那下打穿格挡，会吃掉你 2 份灯灰。",
+    harvest: { label: "火鼠毛", good: "fur", text: "一份灯灰都没被它吃掉，再打倒它",
+      state: (c) => (c.ashEaten > 0 ? "failed" : "open"), got: (c) => c.ashEaten === 0 },
+  },
+  "ink-moth": {
+    id: "ink-moth", name: "墨蛾", sprite: "ink-moth", hp: [16, 19], gold: [7, 10],
+    drops: [{ good: "silk", chance: 0.4 }, { good: "ash", chance: 0.5 }],
+    moves: {
+      ink: { name: "吐墨", dmg: 3, apply: { status: "blind", n: 1 } }, dive: { name: "扑", dmg: 7 },
+      dust: { name: "撒粉", dmg: 2, apply: { status: "vuln", n: 1 } },
+    },
+    ai: cycle(["ink", "dive", "dust", "dive"]),
+    blurb: "吃墨长大的蛾子。吐墨糊住你的眼睛，下回合少抽一张牌。",
+    harvest: { label: "墨粉", good: "inkdust", text: "别被它的墨糊到眼睛，再打倒它",
+      state: (c) => (c.blinded > 0 ? "failed" : "open"), got: (c) => c.blinded === 0 },
+  },
+  "water-ghost": {
+    id: "water-ghost", name: "水鬼", sprite: "water-ghost", hp: [26, 30], gold: [9, 13], scale: 1.1,
+    drops: [{ good: "shell", chance: 0.3 }, { good: "ash", chance: 0.3 }],
+    moves: {
+      sink: { name: "潜水", dive: true, block: 4, text: "沉到桥下的水里。这回合你的攻击只有一半伤害，下回合它会扑出来。" },
+      lunge: { name: "扑出水面", dmg: 13 }, drag: { name: "拖拽", dmg: 5, hits: 2 },
+    },
+    ai: (e) => (last(e) === "sink" ? "lunge" : last(e) === "lunge" ? "drag" : "sink"),
+    blurb: "桥下的水鬼。潜水的回合打它只有一半伤害，不如先架好格挡等它扑出来。",
+    harvest: { label: "水珠", good: "pearl", text: "在它浮出水面（不在潜水）的回合打倒它",
+      state: (c) => (c.enemy.intent.dive ? "risk" : "open"), got: (c) => !c.enemy.intent.dive },
+  },
+  "stele-spirit": {
+    id: "stele-spirit", name: "碑灵", sprite: "stele-spirit", hp: [34, 38], gold: [10, 14], scale: 1.1,
+    drops: [{ good: "rubbing", chance: 0.3 }],
+    moves: {
+      raise: { name: "立碑", block: 16 }, press: { name: "镇压", dmg: 13 }, carve: { name: "刻符", str: 2, block: 6 },
+    },
+    ai: cycle(["raise", "press", "carve", "press"]),
+    blurb: "活过来的石碑，一回合立起厚厚的碑面，一回合砸下来，越拖越重。",
+    harvest: { label: "碑拓", good: "rubbing", text: "五个回合之内打倒它，字还没被它磨平",
+      state: (c) => (c.turn > 5 ? "failed" : "open"), got: (c) => c.turn <= 5 },
+  },
+  fallen: {
+    id: "fallen", name: "堕道者", sprite: "fallen", spriteAttack: "fallen-strike", spriteStance: "fallen-guard",
+    hp: [70, 74], gold: [26, 32], scale: 1.2,
+    drops: [{ good: "token", chance: 0.3 }],
+    moves: {
+      stance: { name: "起势", block: 10, counter: 4, text: "摆出架势。这回合你每打它一下，自己挨 4 点。" },
+      cut: { name: "斩", dmg: 14 }, twin: { name: "连斩", dmg: 6, hits: 2 },
+      gather: { name: "蓄刀", charge: { threshold: 18, then: "sever" }, text: "刀举过了头顶。本回合打出 18 点伤害可以打断它。" },
+      sever: { name: "一刀两断", dmg: 26 },
+    },
+    ai: cycle(["stance", "cut", "twin", "gather", "stance", "twin"]),
+    blurb: "走火入魔的斩妖人，用的是和你一样的剑法。起势的回合硬打会被反手划伤。",
+    harvest: { label: "斩妖令", good: "token", text: "别在它起势的回合出手攻击",
+      state: (c) => (c.guardHits > 0 ? "failed" : c.enemy.intent.counter ? "risk" : "open"), got: (c) => c.guardHits === 0 },
+  },
+  "thorn-stele": {
+    id: "thorn-stele", name: "棘碑", sprite: "thorn-stele", hp: [40, 44], gold: [11, 15], thorns: 2, scale: 1.1,
+    drops: [{ good: "rubbing", chance: 0.4 }],
+    moves: {
+      grow: { name: "生棘", thorns: 1, block: 8 }, smash: { name: "砸", dmg: 10 }, rain: { name: "棘雨", dmg: 3, hits: 3 },
+    },
+    ai: cycle(["smash", "grow", "rain", "smash"]),
+    blurb: "缠满荆棘的石碑。你每打它一下，自己都要被扎（看它的「反震」层数）。少出几刀、刀刀要重。",
+    harvest: { label: "碑拓", good: "rubbing", text: "用一下 12 点以上的重击打出最后一下",
+      state: () => "open", got: (c) => c.lastHit >= 12 },
+  },
+  "bronze-puppet": {
+    id: "bronze-puppet", name: "铜傀", sprite: "bronze-puppet", hp: [44, 48], gold: [11, 15], maxHit: 8, scale: 1.15,
+    drops: [{ good: "shard", chance: 0.6 }],
+    moves: {
+      wind: { name: "上弦", charge: { threshold: 14, then: "hammer" }, block: 6, text: "背后的发条在转。本回合打出 14 点伤害可以打断它。" },
+      hammer: { name: "重锤", dmg: 22 }, swing: { name: "抡臂", dmg: 7, hits: 2 },
+    },
+    ai: cycle(["swing", "wind", "swing"]),
+    blurb: "钟楼的铜傀儡。铜身太硬，单次最多只吃 8 点伤害——用多段攻击。",
+    harvest: { label: "铜片", good: "shard", text: "至少打断一次「上弦」",
+      state: (c) => (c.interrupts > 0 ? "done" : "open"), got: (c) => c.interrupts > 0 },
+  },
+  "night-owl": {
+    id: "night-owl", name: "夜枭", sprite: "night-owl", hp: [36, 40], gold: [10, 14], scale: 1.1,
+    drops: [{ good: "feather", chance: 0.3 }],
+    dmgMod: (oil) => (oil < 30 ? 3 : oil >= 60 ? -2 : 0),
+    moves: { swoop: { name: "俯冲", dmg: 5, hits: 2 }, shriek: { name: "夜啼", dmg: 4, apply: { status: "vuln", n: 1 } }, talon: { name: "利爪", dmg: 11 } },
+    ai: cycle(["swoop", "shriek", "talon"]),
+    blurb: "怕光的夜枭。你灯油不少于 60 时它每下少打 2 点；少于 30 时多打 3 点。",
+    harvest: { label: "枭羽", good: "feather", text: "灯油不少于 60 时打倒它",
+      state: (c) => (c.oil >= 60 ? "open" : "failed"), got: (c) => c.oil >= 60 },
+  },
+  "fake-fox": {
+    id: "fake-fox", name: "假狐商", sprite: "fake-fox", hp: [92, 96], gold: [36, 44], scale: 1.25, eventOnly: true,
+    drops: [{ good: "knot", chance: 1 }, { good: "clasp-broken", chance: 0.5 }],
+    moves: {
+      charm: { name: "迷魂", dmg: 6, apply: { status: "weak", n: 2 } }, collect: { name: "收账", dmg: 9, stealGold: 12 },
+      wisp: { name: "狐火", dmg: 4, hits: 3 },
+      flip: { name: "掀摊", charge: { threshold: 16, then: "lash" }, block: 6, text: "摊子底下的尾巴全露出来了。本回合打出 16 点伤害可以打断它。" },
+      lash: { name: "九尾抽", dmg: 24 },
+    },
+    ai: cycle(["charm", "collect", "flip", "wisp", "collect"]),
+    blurb: "冒充绯绡摆摊的白狐。「收账」打穿格挡会抢走你 12 石。",
+    harvest: { label: "白狐尾", good: "tail", text: "一个石头都别让它收走",
+      state: (c) => (c.goldStolen > 0 ? "failed" : "open"), got: (c) => c.goldStolen === 0 },
+  },
 };
 
 /** Which enemies show up on each floor, with tuning. */
 export interface Spawn { id: string; hp: number; dmg: number }
 export const FLOOR_SPAWNS: Record<1 | 2 | 3, { normal: Spawn[]; elite: Spawn[]; guardian: Spawn }> = {
   1: {
-    normal: [{ id: "moth", hp: 1, dmg: 0 }, { id: "rat", hp: 1, dmg: 0 }, { id: "louse", hp: 1, dmg: 0 }],
+    normal: [{ id: "moth", hp: 1, dmg: 0 }, { id: "rat", hp: 1, dmg: 0 }, { id: "louse", hp: 1, dmg: 0 },
+      { id: "lantern-spirit", hp: 1, dmg: 0 }, { id: "paper-doll", hp: 1, dmg: 0 }],
     elite: [{ id: "mirror-fox", hp: 1, dmg: 0 }],
     guardian: { id: "moth-queen", hp: 1, dmg: 0 },
   },
   2: {
-    normal: [{ id: "rat", hp: 2.1, dmg: 3 }, { id: "louse", hp: 1.8, dmg: 3 }, { id: "moth", hp: 2.1, dmg: 3 }, { id: "mirror-fox", hp: 0.95, dmg: 2 }],
-    elite: [{ id: "warden", hp: 1, dmg: 0 }],
+    normal: [{ id: "rat", hp: 2.1, dmg: 3 }, { id: "louse", hp: 1.8, dmg: 3 }, { id: "moth", hp: 2.1, dmg: 3 }, { id: "mirror-fox", hp: 0.95, dmg: 2 },
+      { id: "fire-rat", hp: 2, dmg: 3 }, { id: "ink-moth", hp: 2, dmg: 3 }, { id: "water-ghost", hp: 1.6, dmg: 2 }, { id: "stele-spirit", hp: 1.1, dmg: 2 }],
+    elite: [{ id: "warden", hp: 1, dmg: 0 }, { id: "fallen", hp: 1, dmg: 0 }],
     guardian: { id: "night-fox", hp: 1, dmg: 0 },
   },
   3: {
-    normal: [{ id: "mirror-fox", hp: 1.35, dmg: 5 }, { id: "louse", hp: 2.7, dmg: 6 }, { id: "rat", hp: 3.2, dmg: 6 }, { id: "warden", hp: 0.9, dmg: 2 }],
-    elite: [{ id: "night-fox", hp: 1, dmg: 4 }, { id: "warden", hp: 1.5, dmg: 5 }],
+    normal: [{ id: "mirror-fox", hp: 1.35, dmg: 5 }, { id: "louse", hp: 2.7, dmg: 6 }, { id: "rat", hp: 3.2, dmg: 6 }, { id: "warden", hp: 0.9, dmg: 2 },
+      { id: "thorn-stele", hp: 1.2, dmg: 3 }, { id: "bronze-puppet", hp: 1.2, dmg: 3 }, { id: "night-owl", hp: 1.3, dmg: 3 }, { id: "ink-moth", hp: 3, dmg: 6 }],
+    elite: [{ id: "night-fox", hp: 1, dmg: 4 }, { id: "warden", hp: 1.5, dmg: 5 }, { id: "fallen", hp: 1.3, dmg: 4 }],
     guardian: { id: "bell", hp: 1, dmg: 0 },
   },
 };

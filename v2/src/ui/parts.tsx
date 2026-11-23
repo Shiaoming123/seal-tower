@@ -28,6 +28,7 @@ export const STATUS_INFO: Record<StatusId, { name: string; text: (n: number) => 
   swordIntent: { name: "行云", text: () => "每回合第一张攻击牌后抽 1 张、能量 +1。" },
   bulwark: { name: "以守为攻", text: (n) => `每回合开始获得 ${n} 格挡。` },
   interest: { name: "生息", text: (n) => `每回合开始获得 ${n} 石。` },
+  blind: { name: "墨糊眼", text: (n) => `下回合少抽 1 张牌（还剩 ${n} 回合）。`, bad: true },
 };
 
 export function Art({ id, class: cls = "", alt = "" }: { id: string; class?: string; alt?: string }) {

@@ -85,10 +85,10 @@ export function Town() {
               <p>{o.story}</p>
               <p class="order-reward">报酬：{o.rewardText} · 声望 +{o.renown}</p>
               {p.ordersDone.includes(o.id) && <p class="order-regular">{o.regular.text}</p>}
-              {order === o.id && <p class="order-hint">提示：{o.hint}</p>}
             </button>
           ))}
         </div>
+        <p class="order-hint-box">提示：{ORDERS[order].hint}</p>
       </section>
       <section class="town-weapons">
         <h3>② 带一件兵器</h3>

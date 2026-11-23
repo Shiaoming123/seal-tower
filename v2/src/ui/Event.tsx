@@ -10,6 +10,7 @@ const FLOOR_BG: Record<number, string> = { 1: "court", 2: "gate", 3: "belfry" };
 export function EventScreen() {
   const run = useRun();
   const ev = EVENTS[run.event!.id];
+  const options = R.currentEventOptions(run);
   const result = run.event!.result;
   return (
     <div class="event" style={{ backgroundImage: `linear-gradient(rgba(5,3,2,0.55), rgba(5,3,2,0.75)), url(${ART[FLOOR_BG[run.floor]]})` }}>
@@ -19,7 +20,7 @@ export function EventScreen() {
         <p class="event-text">{ev.text}</p>
         {!result ? (
           <div class="options">
-            {ev.options.map((o, i) => {
+            {options.map((o, i) => {
               const locked = o.locked?.(run) ?? null;
               return (
                 <button type="button" class={`option ${locked ? "locked" : ""}`} disabled={!!locked}
@@ -34,7 +35,7 @@ export function EventScreen() {
             <p class="result-text">{result}</p>
             {run.pending.length > 0 && <BagGrid mode="manage" cell={44} />}
             <button type="button" class="btn big primary" onClick={() => { R.closeEvent(run); commit(); }}>
-              继续{run.pending.length ? `（${run.pending.length} 件没装的留在这里）` : ""}
+              {run.eventFight ? "迎战" : "继续"}{run.pending.length ? `（${run.pending.length} 件没装的留在这里）` : ""}
             </button>
           </>
         )}

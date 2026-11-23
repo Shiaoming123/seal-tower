@@ -16,9 +16,10 @@ export type CombatEvent =
   | { t: "phase"; text: string }
   | { t: "heal"; amount: number }
   | { t: "goods"; good: GoodId; gained: boolean }
-  | { t: "thorns"; amount: number }
+  | { t: "thorns"; amount: number; target?: "player" }
   | { t: "intent" }
   | { t: "fled" }
+  | { t: "drain"; what: "oil" | "ash" | "gold"; amount: number }
   | { t: "enemy-move"; name: string };
 
 const HAND = 5;
@@ -47,11 +48,13 @@ export function makeEnemy(id: string, hpMul: number, dmgAdd: number, difficulty:
 export function startCombat(run: RunState, entity: Entity, kind: FightKind): CombatState {
   const r = makeRng((run.seed ^ (entity.id * 2654435761) ^ (run.floor * 97)) >>> 0);
   const enemy = makeEnemy(entity.enemy!, entity.hpMul ?? 1, entity.dmgAdd ?? 0, run.difficulty, r);
+  if (ENEMIES[enemy.id].thorns) enemy.status.thorns = ENEMIES[enemy.id].thorns;
   const c: CombatState = {
     kind, enemy, energy: 3, maxEnergy: 3, block: 0, status: {},
     draw: shuffle(r, combatDeck(run)), hand: [], discard: [], exhaust: [],
     turn: 0, attacksThisTurn: 0, cardsThisTurn: 0, dmgThisTurn: 0, goodsUsed: 0, stolen: [], harvest: 0, drawBonusNext: 0,
     over: null, rng: r, purseUsed: false, fullBlocks: 0, interrupts: 0, dark: run.oil <= 0,
+    oilDrained: 0, ashEaten: 0, goldStolen: 0, blinded: 0, guardHits: 0, lastHit: 0, lastTags: [], oil: run.oil,
   };
   run.combat = c;
   if (has(run, "mirror")) c.block += 6;
@@ -73,9 +76,10 @@ function chooseIntent(e: EnemyState, r: RngState) {
 }
 
 /** Damage an enemy intent would deal per hit to the player right now. */
-export function enemyHitDamage(_run: RunState, c: CombatState, intent: Intent = c.enemy.intent): number {
+export function enemyHitDamage(run: RunState, c: CombatState, intent: Intent = c.enemy.intent): number {
   if (!intent.dmg) return 0;
-  let dmg = intent.dmg + c.enemy.dmgAdd + (c.enemy.status.str ?? 0) + (c.dark ? 3 : 0);
+  const mod = ENEMIES[c.enemy.id].dmgMod?.(run.oil) ?? 0;
+  let dmg = intent.dmg + c.enemy.dmgAdd + (c.enemy.status.str ?? 0) + (c.dark ? 3 : 0) + mod;
   if (c.enemy.status.weak) dmg = Math.floor(dmg * 0.75);
   if (c.status.vuln) dmg = Math.floor(dmg * 1.5);
   return Math.max(0, dmg);
@@ -88,15 +92,20 @@ export function incomingDamage(run: RunState, c: CombatState): number {
 }
 
 /** Damage shown on cards and dealt by the player's attacks (before block). */
-function playerHit(c: CombatState, base: number, bonus: number): number {
+function playerHit(c: CombatState, base: number, bonus: number, tags: readonly string[] = []): number {
   let dmg = base + bonus + (c.status.str ?? 0);
   if (c.status.weak) dmg = Math.floor(dmg * 0.75);
   if (c.enemy.status.vuln) dmg = Math.floor(dmg * 1.5);
+  const def = ENEMIES[c.enemy.id];
+  if (def.weakTo && tags.includes(def.weakTo)) dmg *= 2;
+  if (c.enemy.intent.dive) dmg = Math.floor(dmg / 2);
+  if (def.maxHit) dmg = Math.min(def.maxHit, dmg);
   return Math.max(0, dmg);
 }
 
-function damageEnemy(_run: RunState, c: CombatState, dmg: number, events: CombatEvent[]): number {
+function damageEnemy(run: RunState, c: CombatState, dmg: number, events: CombatEvent[], card?: { tags: readonly string[] }): number {
   const e = c.enemy;
+  if (card) { c.lastHit = dmg; c.lastTags = [...card.tags]; }
   const blocked = Math.min(e.block, dmg);
   e.block -= blocked;
   const taken = Math.min(e.hp, dmg - blocked);
@@ -107,6 +116,16 @@ function damageEnemy(_run: RunState, c: CombatState, dmg: number, events: Combat
   if (def.part && e.partIntact && dmg - blocked >= def.part.threshold) { e.partIntact = false; part = "broke"; }
   events.push({ t: "hit", target: "enemy", amount: taken, blocked, part });
   if (e.hp <= 0) { c.over = "win"; return taken; }
+  // Thorns and counter stances hurt whoever lands a blow with a card.
+  // The counter stance is the enemy's shown intent, so it is active during your turn.
+  const stance = e.intent.stunned ? 0 : e.intent.counter ?? 0;
+  const spikes = card ? (e.status.thorns ?? 0) + stance : 0;
+  if (spikes) {
+    if (stance) c.guardHits++;
+    events.push({ t: "thorns", amount: spikes, target: "player" });
+    damagePlayer(run, c, spikes, events);
+    if (c.over) return taken;
+  }
   if (def.phase2 && e.phase === 1 && e.hp <= e.maxHp * def.phase2.at) {
     e.phase = 2;
     e.sprite = def.phase2.sprite;
@@ -153,7 +172,7 @@ function drawCards(c: CombatState, n: number) {
   }
 }
 
-function makeCtx(run: RunState, c: CombatState, events: CombatEvent[], card: { first: boolean; isAttack: boolean }): Ctx {
+function makeCtx(run: RunState, c: CombatState, events: CombatEvent[], card: { first: boolean; isAttack: boolean; tags?: readonly string[] }): Ctx {
   const ctx: Ctx = {
     lastConsumedPrice: 0,
     attack(n, hits = 1) {
@@ -165,7 +184,7 @@ function makeCtx(run: RunState, c: CombatState, events: CombatEvent[], card: { f
           if (c.status.focus) { bonus += c.status.focus; delete c.status.focus; }
           if (card.isAttack && c.attacksThisTurn === 0 && has(run, "sword")) bonus += 2;
         }
-        total += damageEnemy(run, c, playerHit(c, n, bonus), events);
+        total += damageEnemy(run, c, playerHit(c, n, bonus, card.tags), events, { tags: card.tags ?? [] });
       }
       return total;
     },
@@ -205,6 +224,7 @@ export function previewFor(run: RunState, c: CombatState | null): Preview {
   return {
     inCombat: !!c,
     dmg: (n) => (c ? playerHit(c, n, c.status.focus ?? 0) : n),
+    // note: fire weakness / dive / caps are applied in the shared formula above
     ash: bag.count(run.bag, "ash"),
     gold: run.gold,
     block: c?.block ?? 0,
@@ -232,7 +252,7 @@ export function playCard(run: RunState, handIndex: number): { ok: boolean; reaso
   c.energy -= cardCost(def, card.up);
   c.hand.splice(handIndex, 1);
   const isAttack = def.type === "attack";
-  const ctx = makeCtx(run, c, events, { first: true, isAttack });
+  const ctx = makeCtx(run, c, events, { first: true, isAttack, tags: def.tags ?? [] });
   def.play(ctx, cardVals(def, card.up));
   c.cardsThisTurn++;
   if (isAttack) {
@@ -257,7 +277,9 @@ function startTurn(run: RunState, events: CombatEvent[]) {
   c.dmgThisTurn = 0;
   delete c.status.ward;
   delete c.status.counter;
-  drawCards(c, HAND + c.drawBonusNext + (c.turn === 1 && has(run, "silkfan") ? 2 : 0));
+  const blind = c.status.blind ? 1 : 0;
+  if (c.status.blind) { c.status.blind -= 1; if (!c.status.blind) delete c.status.blind; }
+  drawCards(c, HAND - blind + c.drawBonusNext + (c.turn === 1 && has(run, "silkfan") ? 2 : 0));
   c.drawBonusNext = 0;
   if (c.status.interest) { run.gold += c.status.interest; run.stats.goldEarned += c.status.interest; }
   if (c.status.bulwark) { c.block += c.status.bulwark; events.push({ t: "block", target: "player", amount: c.status.bulwark }); }
@@ -298,6 +320,7 @@ export function endTurn(run: RunState): CombatEvent[] {
   } else {
     if (i.block) { e.block += i.block; events.push({ t: "block", target: "enemy", amount: i.block }); }
     if (i.str) { e.status.str = (e.status.str ?? 0) + i.str; events.push({ t: "status", target: "enemy", id: "str", n: i.str }); }
+    if (i.thorns) { e.status.thorns = (e.status.thorns ?? 0) + i.thorns; events.push({ t: "status", target: "enemy", id: "thorns", n: i.thorns }); }
     if (i.dmg) {
       let through = 0;
       for (let h = 0; h < (i.hits ?? 1) && !c.over; h++) {
@@ -309,9 +332,14 @@ export function endTurn(run: RunState): CombatEvent[] {
         }
       }
       if (through === 0 && !c.over) c.fullBlocks++;
+      if (through > 0 && !c.over) drain(run, c, i, events);
       if (i.steal && through > 0 && !c.over) steal(run, c, events);
     }
-    if (i.apply && !c.over) { c.status[i.apply.status] = (c.status[i.apply.status] ?? 0) + i.apply.n; events.push({ t: "status", target: "player", id: i.apply.status, n: i.apply.n }); }
+    if (i.apply && !c.over) {
+      c.status[i.apply.status] = (c.status[i.apply.status] ?? 0) + i.apply.n;
+      if (i.apply.status === "blind") c.blinded++;
+      events.push({ t: "status", target: "player", id: i.apply.status, n: i.apply.n });
+    }
     if (i.charge) e.queued = i.charge.then;
   }
   tick(e.status);
@@ -321,6 +349,26 @@ export function endTurn(run: RunState): CombatEvent[] {
   events.push({ t: "intent" });
   startTurn(run, events);
   return events;
+}
+
+/** Oil, ash and coin thieves take their cut when an attack gets through. */
+function drain(run: RunState, c: CombatState, i: Intent, events: CombatEvent[]) {
+  if (i.drainOil) {
+    const a = Math.min(i.drainOil, run.oil);
+    run.oil -= a; c.oilDrained += a; c.oil = run.oil;
+    if (a) events.push({ t: "drain", what: "oil", amount: a });
+  }
+  if (i.eatAsh) {
+    let n = 0;
+    for (; n < i.eatAsh && bag.removeOne(run.bag, "ash"); n++);
+    c.ashEaten += n;
+    if (n) events.push({ t: "drain", what: "ash", amount: n });
+  }
+  if (i.stealGold) {
+    const a = Math.min(i.stealGold, run.gold);
+    run.gold -= a; c.goldStolen += a;
+    if (a) events.push({ t: "drain", what: "gold", amount: a });
+  }
 }
 
 function steal(run: RunState, c: CombatState, events: CombatEvent[]) {

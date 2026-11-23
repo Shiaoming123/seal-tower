@@ -40,6 +40,13 @@ export const ORDERS: Record<string, OrderDef> = {
     hint: "灯鼠掉鼠牙，纸灯蛾掉蛾丝。鼠会抢货，记得护住。",
     regular: { gift: ["salve"], bonusGold: 5, text: "老主顾：先送一瓶金疮药，酬劳多 5 石" },
   },
+  scholar: {
+    id: "scholar", client: "书院先生", portrait: "guide", title: "两张碑拓",
+    story: "书院的老先生在编一部塔志，缺两张塔里石碑上的拓片。碑活过来了，没人敢去拓。",
+    needs: { rubbing: 2 }, reward: { gold: 35 }, renown: 2, rewardText: "35 石",
+    hint: "碑灵（第二层）和棘碑（第三层）会掉碑拓。碑灵要在五回合内打倒，棘碑要用重击收尾，才能多拓一张。",
+    regular: { gift: ["pill"], bonusGold: 10, text: "老主顾：先送一颗养元丹，酬劳多 10 石" },
+  },
   bell: {
     id: "bell", client: "镇长", portrait: "hero", title: "负钟君的钟铜",
     story: "塔顶的镇塔钟被钟妖占了。镇长要你打下它，带回钟铜重铸大钟。",

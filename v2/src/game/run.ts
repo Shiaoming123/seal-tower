@@ -1,6 +1,6 @@
 import { BASE_DECK, CARDS, type CardDef, STARTER_GEAR } from "../data/cards";
 import { ENEMIES } from "../data/enemies";
-import { EVENTS } from "../data/events";
+import { eventOptions } from "../data/events";
 import { GEAR_IDS, GOODS } from "../data/goods";
 import { ORDERS } from "../data/orders";
 import { RELICS } from "../data/relics";
@@ -32,7 +32,7 @@ export function createRun(seed: number, weapon: WeaponId, order: string, difficu
     pos: { x: 0, y: 0, dir: 0 },
     screen: "explore", combat: null, pending: [], reward: null, event: null, shop: null, at: null,
     stats: { steps: 0, harvests: 0, kills: 0, goldEarned: 0, goodsSold: 0, goodsUsed: 0, damageTaken: 0, turns: 0 },
-    nextUid: 1000, outcome: null, mapRevealed: false, markets: makeMarkets(rng), rumor: false, oil: START_OIL, maxOil: MAX_OIL, bossIntel: false, cardPick: null, log: [], flags: [],
+    nextUid: 1000, outcome: null, mapRevealed: false, markets: makeMarkets(rng), rumor: false, oil: START_OIL, maxOil: MAX_OIL, bossIntel: false, cardPick: null, log: [], flags: [], eventFight: null, warp: 0,
   };
   enterFloor(run, 1);
   addGood(run, STARTER_GEAR[weapon]);
@@ -133,7 +133,7 @@ export function winCombat(run: RunState) {
   if (def.harvest) {
     if (def.harvest.got(c)) {
       if (def.harvest.good === "stolen") { flag(run, "recover"); goods.push(...c.stolen); note += ` 追回了被抢的${c.stolen.map((g) => GOODS[g].name).join("、")}。`; }
-      else { goods.push(def.harvest.good); note += ` 取材成功：多拿到${GOODS[def.harvest.good].name}。`; }
+      else { goods.push(def.harvest.good); note += ` 取材成功：多拿到${GOODS[def.harvest.good].name}。`; if (def.harvest.good === "token") flag(run, "token"); }
       run.stats.harvests++;
     } else if (def.harvest.good !== "stolen") note += ` 没能取到${def.harvest.label}（${def.harvest.text}）。`;
   }
@@ -255,7 +255,7 @@ function makeShop(run: RunState): ShopState {
   };
 }
 
-export const TRADE_GOODS: GoodId[] = ["ash", "fang", "silk", "shell", "knot", "wick", "clasp", "clasp-broken", "copper"];
+export const TRADE_GOODS: GoodId[] = ["ash", "fang", "silk", "shell", "knot", "wick", "clasp", "clasp-broken", "copper", "redpaper", "fur", "inkdust", "pearl", "rubbing", "token", "shard", "feather", "tail"];
 
 /**
  * Each floor's shop pays its own prices, fixed when the run starts so rumours can be true.
@@ -354,19 +354,31 @@ export function deliverOrder(run: RunState): string | null {
 
 // ---------------------------------------------------------------- events, rest, cards
 
+/** Options of the open event, stable for this event. */
+export function currentEventOptions(run: RunState) {
+  return eventOptions(run, run.event!.id, (run.seed ^ Math.imul((run.at ?? 0) + 1, 2654435761)) >>> 0);
+}
+
 export function chooseEvent(run: RunState, i: number): boolean {
-  const ev = EVENTS[run.event!.id];
-  const opt = ev.options[i];
+  const opt = currentEventOptions(run)[i];
   if (!opt || run.event!.result || opt.locked?.(run)) return false;
   run.event!.result = opt.apply(run);
   return true;
 }
 
+/** Leave the event. If it turned into a fight, the fight starts here. */
 export function closeEvent(run: RunState) {
   const e = currentEntity(run);
-  if (e) e.done = true;
   run.event = null;
   run.pending = [];
+  if (e && run.eventFight) {
+    const f = run.eventFight;
+    run.eventFight = null;
+    Object.assign(e, { kind: f.kind, enemy: f.enemy, hpMul: f.hpMul, dmgAdd: f.dmgAdd, done: false });
+    openEntity(run, e);
+    return;
+  }
+  if (e) e.done = true;
   run.at = null;
   run.screen = "explore";
 }
@@ -391,6 +403,7 @@ export function applyCardPick(run: RunState, uid: number | null) {
   const card = run.deck.find((c) => c.uid === uid);
   if (!card) return;
   if (pickState.mode === "upgrade") card.up = true;
+  else if (pickState.mode === "copy") run.deck.push({ ...card, uid: run.nextUid++ });
   else run.deck = run.deck.filter((c) => c.uid !== uid);
   if (pickState.source === "shop" && run.shop) { run.gold -= pickState.price ?? 0; run.shop.removed = true; }
   if (pickState.source === "rest") {

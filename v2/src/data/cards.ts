@@ -51,7 +51,7 @@ export interface CardDef {
   /** Return a reason the card can't be played right now, or null. */
   needs?: (c: Ctx, v: Vals) => string | null;
   /** Tags used by AI / UI: uses goods, can interrupt, etc. */
-  tags?: ("goods" | "heavy" | "multi" | "money" | "interrupt")[];
+  tags?: ("goods" | "heavy" | "multi" | "money" | "interrupt" | "fire")[];
 }
 
 const d = (p: Preview, n: number) => (p.inCombat ? `${p.dmg(n)}` : `${n}`);
@@ -108,12 +108,12 @@ const list: CardDef[] = [
     text: (v) => `获得 ${v.th} 层反震。每回合开始获得 3 格挡。`, play: (c, v) => { c.selfStatus("thorns", v.th); c.selfStatus("bulwark", 3); } },
 
   // ---------- 引灯盘 ----------
-  { id: "dust", name: "扬灰", cost: 0, type: "attack", rarity: "basic", pool: "lamp", v: [{ dmg: 8, ash: 1 }, { dmg: 11, ash: 1 }], tags: ["goods"],
+  { id: "dust", name: "扬灰", cost: 0, type: "attack", rarity: "basic", pool: "lamp", v: [{ dmg: 8, ash: 1 }, { dmg: 11, ash: 1 }], tags: ["goods", "fire"],
     text: (v, p) => `烧掉 1 份灯灰：造成 ${d(p, v.dmg)} 伤害，施加 1 层虚弱。`, needs: needAsh,
     play: (c, v) => { c.consume("ash"); c.attack(v.dmg); c.enemyStatus("weak", 1); } },
   { id: "reveal", name: "照妖", cost: 1, type: "skill", rarity: "common", pool: "lamp", v: [{ vuln: 2 }, { vuln: 3 }],
     text: (v) => `施加 ${v.vuln} 层破绽（受到伤害 +50%），抽 1 张牌。`, play: (c, v) => { c.enemyStatus("vuln", v.vuln); c.draw(1); } },
-  { id: "flame", name: "灯火", cost: 1, type: "attack", rarity: "common", pool: "lamp", v: [{ dmg: 5, per: 3 }, { dmg: 6, per: 4 }],
+  { id: "flame", name: "灯火", cost: 1, type: "attack", rarity: "common", pool: "lamp", tags: ["fire"], v: [{ dmg: 5, per: 3 }, { dmg: 6, per: 4 }],
     text: (v, p) => `造成 ${d(p, v.dmg + v.per * p.ash)} 伤害。行囊里每有 1 份灯灰，伤害 +${v.per}（不消耗）。`,
     play: (c, v) => { c.attack(v.dmg + v.per * c.goods("ash")); } },
   { id: "burnwick", name: "燃芯", cost: 0, type: "skill", rarity: "uncommon", pool: "lamp", v: [{ e: 2, draw: 2 }, { e: 3, draw: 2 }], tags: ["goods"],

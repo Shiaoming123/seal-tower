@@ -96,7 +96,7 @@ for (let step = 0; step < Number(process.env.STEPS ?? 60) && seen.size < 11; ste
     await page.waitForTimeout(300);
     if (await page.locator(".overlay .card").count()) await page.locator(".overlay .card").first().click();
     await first("12-event-result");
-    await page.getByRole("button", { name: /继续/ }).click();
+    await page.getByRole("button", { name: /继续|迎战/ }).click();
     continue;
   }
   if (r.screen === "shop") { await first("13-shop"); await page.getByRole("button", { name: "离开狐市" }).click(); continue; }
