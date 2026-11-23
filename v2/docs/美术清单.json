@@ -2003,7 +2003,7 @@
       "category": "敌怪姿态",
       "usedBy": "thorn-stele 扑击/出招",
       "fallback": "thorn-stele",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2011,7 +2011,7 @@
       "category": "敌怪姿态",
       "usedBy": "thorn-stele 受击",
       "fallback": "thorn-stele",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2035,7 +2035,7 @@
       "category": "敌怪姿态",
       "usedBy": "night-owl 扑击/出招",
       "fallback": "night-owl",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2043,7 +2043,7 @@
       "category": "敌怪姿态",
       "usedBy": "night-owl 受击",
       "fallback": "night-owl",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {

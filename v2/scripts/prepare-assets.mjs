@@ -105,6 +105,10 @@ edges["fallen-strike"] = edges.fallen;
 edges["fallen-elder-strike"] = edges["fallen-elder"];
 edges["bronze-puppet-attack"] = edges["bronze-puppet"];
 edges["bronze-puppet-hurt"] = edges["bronze-puppet"];
+edges["thorn-stele-attack"] = edges["thorn-stele"];
+edges["thorn-stele-hurt"] = edges["thorn-stele"];
+edges["night-owl-attack"] = edges["night-owl"];
+edges["night-owl-hurt"] = edges["night-owl"];
 const exportFile = path.join(artDir, "exports.json");
 const previousExports = await readFile(exportFile, "utf8").then(JSON.parse, (err) => {
   if (err.code !== "ENOENT") throw err;
@@ -117,7 +121,9 @@ const paddedSprites = new Set([
   "lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine", "fire-rat", "fire-rat-attack", "stele-spirit", "event-cart",
   "fallen", "fallen-strike", "fallen-guard", "fallen-elder", "fallen-elder-strike", "fallen-elder-guard",
   "paper-matron", "fake-fox", "event-fake-fox", "map-fake-fox",
-  "thorn-stele", "bronze-puppet", "bronze-puppet-attack", "bronze-puppet-hurt", "night-owl",
+  "thorn-stele", "thorn-stele-attack", "thorn-stele-hurt",
+  "bronze-puppet", "bronze-puppet-attack", "bronze-puppet-hurt",
+  "night-owl", "night-owl-attack", "night-owl-hurt",
   "event-den", "event-hunter", "event-pool",
 ]);
 let overrides = 0;

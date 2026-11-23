@@ -138,5 +138,25 @@
     "file": "bronze-puppet-hurt.png",
     "sourceSha256": "60d806624153262b02603ba1662500483f9d200b585705244fca34c1eea18655",
     "webpSha256": "08e07f30b83cfbbbcf96f16b334919929c72cd3c9014d168149d1211ea26dc00"
+  },
+  "night-owl-attack": {
+    "file": "night-owl-attack.png",
+    "sourceSha256": "8a039127762b761a45a171663df85d0d53ec80acbb5ee47329deee9d62360137",
+    "webpSha256": "d399fe37ebdbdee5811292d93f7e8492ec1eb99307bb7a8d326a348096475e89"
+  },
+  "night-owl-hurt": {
+    "file": "night-owl-hurt.png",
+    "sourceSha256": "aea1831d9aa6e574223168935291bccff4b55a1dbbbd7da4ecff736c3526aebd",
+    "webpSha256": "cb8cb866f284e812949c284f5db14412954c592fe622ad50df1727d936af3f95"
+  },
+  "thorn-stele-attack": {
+    "file": "thorn-stele-attack.png",
+    "sourceSha256": "59c099cac31eb76ad830e139729e8d909a8388fa0f64312bb13c4da20eccf5d2",
+    "webpSha256": "7a1e192f6bcbb7881e41fbeedd4d165abbe64bc594542d6734e1e3cfa1f46500"
+  },
+  "thorn-stele-hurt": {
+    "file": "thorn-stele-hurt.png",
+    "sourceSha256": "443d3459818322c37b2874fe49d8c213b858d54948f2d98832c3f309f582f88d",
+    "webpSha256": "61857224d1110f0609772d25983c3ff1e6e81ddd0cab55d7ce9aa62f90b9dc6c"
   }
 }
