@@ -98,5 +98,35 @@
     "file": "map-fake-fox.png",
     "sourceSha256": "b9a57682679bdeb5c91283a209881554bd54d7c4819bac37c7fc973100ec17ee",
     "webpSha256": "09f9e799ff4c66d33c475a94a03dd4398e61f78e2000a9118f49195d4d61416e"
+  },
+  "bronze-puppet": {
+    "file": "bronze-puppet.png",
+    "sourceSha256": "d4f153bae69a0dc2a1f07fc4153d60b7920c524fa05fb6487f78edf43894b259",
+    "webpSha256": "16dcb5f153e7de0fc71dd10d8dceec230ea8d7a23bb1cedce2c13c985858c52c"
+  },
+  "night-owl": {
+    "file": "night-owl.png",
+    "sourceSha256": "03102c3e38511e2cbc3b90f7c7ba00b22f9ebb873060d8749575a8827deeb44b",
+    "webpSha256": "e4a9021d2b62b4ac15243bbd4367e72444845f908d1f73fa66a16c505376939e"
+  },
+  "thorn-stele": {
+    "file": "thorn-stele.png",
+    "sourceSha256": "1d44a688c47bf44b2ef2533396ed142df0def5af81dbca69ae40ac6fe2bb015c",
+    "webpSha256": "91fe6e62c8f261128252f50d465ecd3e3cea00c5e80b545e55f159280557dd0e"
+  },
+  "event-den": {
+    "file": "event-den.png",
+    "sourceSha256": "e349f667cf54938fc8beaf62e6ff1999d9684ba781ec1faba773c29887b7b0bc",
+    "webpSha256": "0297ca46d951ef45839afe6182f52a6fa45013524d5acf78c2d93a8650367a33"
+  },
+  "event-hunter": {
+    "file": "event-hunter.png",
+    "sourceSha256": "0fa440be90bad785b2f0c78517582c55c96b607b3b011b104d67c9f24ccb5571",
+    "webpSha256": "3d23ba19973db3db309a216b2018fc2d66b0444af5958d4a2cbb7e3ea5def68b"
+  },
+  "event-pool": {
+    "file": "event-pool.png",
+    "sourceSha256": "797b411c6cde68aec926162725f89b1f0a7902f16f7cbd10801b849eec8c1be2",
+    "webpSha256": "767931ddd1b1713644f5838a2c4e1ceb2494a674ba1afac9f12075ec823ec1c1"
   }
 }

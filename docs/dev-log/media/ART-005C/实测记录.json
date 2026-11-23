@@ -1,0 +1,612 @@
+{
+  "base": "http://127.0.0.1:5178/",
+  "setup": "gallery seed, first floor, adjacent fixture and real input",
+  "records": [
+    {
+      "mode": "final",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "spec": {
+        "event": "scavenge",
+        "asset": "event-den",
+        "title": "妖窝拾荒",
+        "action": "随手捡一件",
+        "response": "悄悄退了出来"
+      },
+      "fixture": {
+        "x": 5,
+        "y": 8,
+        "dir": 0,
+        "id": 19000,
+        "start": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "mapSprite": "event-den",
+      "mapHash": "0297ca46d951ef45839afe6182f52a6fa45013524d5acf78c2d93a8650367a33",
+      "map": "1280/event-den-map.jpg",
+      "event": "1280/event-den-event.jpg",
+      "runtimeHash": "0297ca46d951ef45839afe6182f52a6fa45013524d5acf78c2d93a8650367a33",
+      "sourceHash": "e349f667cf54938fc8beaf62e6ff1999d9684ba781ec1faba773c29887b7b0bc",
+      "runtimeAsset": "event-den.webp",
+      "painted": {
+        "x": 134,
+        "y": 194,
+        "width": 392,
+        "height": 392
+      },
+      "natural": [
+        320,
+        320
+      ],
+      "menu": {
+        "x": 640,
+        "y": 179.40625,
+        "width": 600,
+        "height": 419.1875
+      },
+      "bodyRect": {
+        "x": 0,
+        "y": 58,
+        "width": 1280,
+        "height": 662
+      },
+      "labels": [
+        {
+          "label": "随手捡一件",
+          "enabled": true,
+          "box": {
+            "x": 674,
+            "y": 350.59375,
+            "width": 532,
+            "height": 66
+          }
+        },
+        {
+          "label": "仔细翻",
+          "enabled": true,
+          "box": {
+            "x": 674,
+            "y": 426.59375,
+            "width": 532,
+            "height": 66
+          }
+        },
+        {
+          "label": "离开",
+          "enabled": true,
+          "box": {
+            "x": 674,
+            "y": 502.59375,
+            "width": 532,
+            "height": 66
+          }
+        }
+      ],
+      "alphaBounds": [
+        18,
+        19,
+        302,
+        303
+      ],
+      "errors": [],
+      "choice": {
+        "action": "随手捡一件",
+        "result": "explore",
+        "outResult": "1280/event-den-result.jpg",
+        "goldDelta": 0,
+        "hpDelta": 0,
+        "upgrades": 0
+      }
+    },
+    {
+      "mode": "final",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "spec": {
+        "event": "hurthunter",
+        "asset": "event-hunter",
+        "title": "受伤的斩妖人",
+        "action": "分他 10 石",
+        "response": "更利落了"
+      },
+      "fixture": {
+        "x": 5,
+        "y": 8,
+        "dir": 0,
+        "id": 19000,
+        "start": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "mapSprite": "event-hunter",
+      "mapHash": "3d23ba19973db3db309a216b2018fc2d66b0444af5958d4a2cbb7e3ea5def68b",
+      "map": "1280/event-hunter-map.jpg",
+      "event": "1280/event-hunter-event.jpg",
+      "runtimeHash": "3d23ba19973db3db309a216b2018fc2d66b0444af5958d4a2cbb7e3ea5def68b",
+      "sourceHash": "0fa440be90bad785b2f0c78517582c55c96b607b3b011b104d67c9f24ccb5571",
+      "runtimeAsset": "event-hunter.webp",
+      "painted": {
+        "x": 143,
+        "y": 194,
+        "width": 380,
+        "height": 392
+      },
+      "natural": [
+        420,
+        420
+      ],
+      "menu": {
+        "x": 640,
+        "y": 179.40625,
+        "width": 600,
+        "height": 419.1875
+      },
+      "bodyRect": {
+        "x": 0,
+        "y": 58,
+        "width": 1280,
+        "height": 662
+      },
+      "labels": [
+        {
+          "label": "给他一瓶金疮药",
+          "enabled": false,
+          "box": {
+            "x": 674,
+            "y": 350.59375,
+            "width": 532,
+            "height": 66
+          }
+        },
+        {
+          "label": "分他 10 石",
+          "enabled": true,
+          "box": {
+            "x": 674,
+            "y": 426.59375,
+            "width": 532,
+            "height": 66
+          }
+        },
+        {
+          "label": "离开",
+          "enabled": true,
+          "box": {
+            "x": 674,
+            "y": 502.59375,
+            "width": 532,
+            "height": 66
+          }
+        }
+      ],
+      "alphaBounds": [
+        32,
+        25,
+        393,
+        397
+      ],
+      "errors": [],
+      "choice": {
+        "action": "分他 10 石",
+        "result": "explore",
+        "outResult": "1280/event-hunter-result.jpg",
+        "goldDelta": -10,
+        "hpDelta": 0,
+        "upgrades": 2
+      }
+    },
+    {
+      "mode": "final",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "spec": {
+        "event": "mirrorpool",
+        "asset": "event-pool",
+        "title": "照影池",
+        "action": "洗把脸",
+        "response": "回复 6 气血"
+      },
+      "fixture": {
+        "x": 5,
+        "y": 8,
+        "dir": 0,
+        "id": 19000,
+        "start": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "mapSprite": "event-pool",
+      "mapHash": "767931ddd1b1713644f5838a2c4e1ceb2494a674ba1afac9f12075ec823ec1c1",
+      "map": "1280/event-pool-map.jpg",
+      "event": "1280/event-pool-event.jpg",
+      "runtimeHash": "767931ddd1b1713644f5838a2c4e1ceb2494a674ba1afac9f12075ec823ec1c1",
+      "sourceHash": "797b411c6cde68aec926162725f89b1f0a7902f16f7cbd10801b849eec8c1be2",
+      "runtimeAsset": "event-pool.webp",
+      "painted": {
+        "x": 134,
+        "y": 272,
+        "width": 392,
+        "height": 250
+      },
+      "natural": [
+        320,
+        320
+      ],
+      "menu": {
+        "x": 640,
+        "y": 194.703125,
+        "width": 600,
+        "height": 388.59375
+      },
+      "bodyRect": {
+        "x": 0,
+        "y": 58,
+        "width": 1280,
+        "height": 662
+      },
+      "labels": [
+        {
+          "label": "照一照",
+          "enabled": true,
+          "box": {
+            "x": 674,
+            "y": 335.296875,
+            "width": 532,
+            "height": 66
+          }
+        },
+        {
+          "label": "洗把脸",
+          "enabled": true,
+          "box": {
+            "x": 674,
+            "y": 411.296875,
+            "width": 532,
+            "height": 66
+          }
+        },
+        {
+          "label": "离开",
+          "enabled": true,
+          "box": {
+            "x": 674,
+            "y": 487.296875,
+            "width": 532,
+            "height": 66
+          }
+        }
+      ],
+      "alphaBounds": [
+        18,
+        75,
+        302,
+        256
+      ],
+      "errors": [],
+      "choice": {
+        "action": "洗把脸",
+        "result": "explore",
+        "outResult": "1280/event-pool-result.jpg",
+        "goldDelta": 0,
+        "hpDelta": 6,
+        "upgrades": 0
+      }
+    },
+    {
+      "mode": "final",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "spec": {
+        "event": "scavenge",
+        "asset": "event-den",
+        "title": "妖窝拾荒",
+        "action": "随手捡一件",
+        "response": "悄悄退了出来"
+      },
+      "fixture": {
+        "x": 5,
+        "y": 8,
+        "dir": 0,
+        "id": 19000,
+        "start": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "mapSprite": "event-den",
+      "mapHash": "0297ca46d951ef45839afe6182f52a6fa45013524d5acf78c2d93a8650367a33",
+      "map": "390/event-den-map.jpg",
+      "event": "390/event-den-event.jpg",
+      "runtimeHash": "0297ca46d951ef45839afe6182f52a6fa45013524d5acf78c2d93a8650367a33",
+      "sourceHash": "e349f667cf54938fc8beaf62e6ff1999d9684ba781ec1faba773c29887b7b0bc",
+      "runtimeAsset": "event-den.webp",
+      "painted": {
+        "x": 77,
+        "y": 132,
+        "width": 236,
+        "height": 236
+      },
+      "natural": [
+        320,
+        320
+      ],
+      "menu": {
+        "x": 10.399999618530273,
+        "y": 442.73907470703125,
+        "width": 369.1999816894531,
+        "height": 272.47186279296875
+      },
+      "bodyRect": {
+        "x": 0,
+        "y": 54.10002136230469,
+        "width": 390,
+        "height": 789.7499389648438
+      },
+      "labels": [
+        {
+          "label": "随手捡一件",
+          "enabled": true,
+          "box": {
+            "x": 32.5,
+            "y": 554.0109252929688,
+            "width": 325,
+            "height": 42.9000244140625
+          }
+        },
+        {
+          "label": "仔细翻",
+          "enabled": true,
+          "box": {
+            "x": 32.5,
+            "y": 603.4109497070312,
+            "width": 325,
+            "height": 42.89996337890625
+          }
+        },
+        {
+          "label": "离开",
+          "enabled": true,
+          "box": {
+            "x": 32.5,
+            "y": 652.8109130859375,
+            "width": 325,
+            "height": 42.9000244140625
+          }
+        }
+      ],
+      "alphaBounds": [
+        18,
+        19,
+        302,
+        303
+      ],
+      "errors": [],
+      "choice": {
+        "action": "随手捡一件",
+        "result": "explore",
+        "outResult": "390/event-den-result.jpg",
+        "goldDelta": 0,
+        "hpDelta": 0,
+        "upgrades": 0
+      }
+    },
+    {
+      "mode": "final",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "spec": {
+        "event": "hurthunter",
+        "asset": "event-hunter",
+        "title": "受伤的斩妖人",
+        "action": "分他 10 石",
+        "response": "更利落了"
+      },
+      "fixture": {
+        "x": 5,
+        "y": 8,
+        "dir": 0,
+        "id": 19000,
+        "start": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "mapSprite": "event-hunter",
+      "mapHash": "3d23ba19973db3db309a216b2018fc2d66b0444af5958d4a2cbb7e3ea5def68b",
+      "map": "390/event-hunter-map.jpg",
+      "event": "390/event-hunter-event.jpg",
+      "runtimeHash": "3d23ba19973db3db309a216b2018fc2d66b0444af5958d4a2cbb7e3ea5def68b",
+      "sourceHash": "0fa440be90bad785b2f0c78517582c55c96b607b3b011b104d67c9f24ccb5571",
+      "runtimeAsset": "event-hunter.webp",
+      "painted": {
+        "x": 82,
+        "y": 132,
+        "width": 228,
+        "height": 235
+      },
+      "natural": [
+        420,
+        420
+      ],
+      "menu": {
+        "x": 10.399999618530273,
+        "y": 442.73907470703125,
+        "width": 369.1999816894531,
+        "height": 272.47186279296875
+      },
+      "bodyRect": {
+        "x": 0,
+        "y": 54.10002136230469,
+        "width": 390,
+        "height": 789.7499389648438
+      },
+      "labels": [
+        {
+          "label": "给他一瓶金疮药",
+          "enabled": false,
+          "box": {
+            "x": 32.5,
+            "y": 554.0109252929688,
+            "width": 325,
+            "height": 42.9000244140625
+          }
+        },
+        {
+          "label": "分他 10 石",
+          "enabled": true,
+          "box": {
+            "x": 32.5,
+            "y": 603.4109497070312,
+            "width": 325,
+            "height": 42.89996337890625
+          }
+        },
+        {
+          "label": "离开",
+          "enabled": true,
+          "box": {
+            "x": 32.5,
+            "y": 652.8109130859375,
+            "width": 325,
+            "height": 42.9000244140625
+          }
+        }
+      ],
+      "alphaBounds": [
+        32,
+        25,
+        393,
+        397
+      ],
+      "errors": [],
+      "choice": {
+        "action": "分他 10 石",
+        "result": "explore",
+        "outResult": "390/event-hunter-result.jpg",
+        "goldDelta": -10,
+        "hpDelta": 0,
+        "upgrades": 2
+      }
+    },
+    {
+      "mode": "final",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "spec": {
+        "event": "mirrorpool",
+        "asset": "event-pool",
+        "title": "照影池",
+        "action": "洗把脸",
+        "response": "回复 6 气血"
+      },
+      "fixture": {
+        "x": 5,
+        "y": 8,
+        "dir": 0,
+        "id": 19000,
+        "start": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        }
+      },
+      "mapSprite": "event-pool",
+      "mapHash": "767931ddd1b1713644f5838a2c4e1ceb2494a674ba1afac9f12075ec823ec1c1",
+      "map": "390/event-pool-map.jpg",
+      "event": "390/event-pool-event.jpg",
+      "runtimeHash": "767931ddd1b1713644f5838a2c4e1ceb2494a674ba1afac9f12075ec823ec1c1",
+      "sourceHash": "797b411c6cde68aec926162725f89b1f0a7902f16f7cbd10801b849eec8c1be2",
+      "runtimeAsset": "event-pool.webp",
+      "painted": {
+        "x": 77,
+        "y": 178,
+        "width": 236,
+        "height": 150
+      },
+      "natural": [
+        320,
+        320
+      ],
+      "menu": {
+        "x": 10.399999618530273,
+        "y": 442.73907470703125,
+        "width": 369.1999816894531,
+        "height": 272.47186279296875
+      },
+      "bodyRect": {
+        "x": 0,
+        "y": 54.10002136230469,
+        "width": 390,
+        "height": 789.7499389648438
+      },
+      "labels": [
+        {
+          "label": "照一照",
+          "enabled": true,
+          "box": {
+            "x": 32.5,
+            "y": 554.0109252929688,
+            "width": 325,
+            "height": 42.9000244140625
+          }
+        },
+        {
+          "label": "洗把脸",
+          "enabled": true,
+          "box": {
+            "x": 32.5,
+            "y": 603.4109497070312,
+            "width": 325,
+            "height": 42.89996337890625
+          }
+        },
+        {
+          "label": "离开",
+          "enabled": true,
+          "box": {
+            "x": 32.5,
+            "y": 652.8109130859375,
+            "width": 325,
+            "height": 42.9000244140625
+          }
+        }
+      ],
+      "alphaBounds": [
+        18,
+        75,
+        302,
+        256
+      ],
+      "errors": [],
+      "choice": {
+        "action": "洗把脸",
+        "result": "explore",
+        "outResult": "390/event-pool-result.jpg",
+        "goldDelta": 0,
+        "hpDelta": 6,
+        "upgrades": 0
+      }
+    }
+  ]
+}

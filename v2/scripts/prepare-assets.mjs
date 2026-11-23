@@ -115,6 +115,8 @@ const paddedSprites = new Set([
   "lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine", "fire-rat", "fire-rat-attack", "stele-spirit", "event-cart",
   "fallen", "fallen-strike", "fallen-guard", "fallen-elder", "fallen-elder-strike", "fallen-elder-guard",
   "paper-matron", "fake-fox", "event-fake-fox", "map-fake-fox",
+  "thorn-stele", "bronze-puppet", "night-owl",
+  "event-den", "event-hunter", "event-pool",
 ]);
 let overrides = 0;
 for (const { id, file } of overridesFromDisk) {

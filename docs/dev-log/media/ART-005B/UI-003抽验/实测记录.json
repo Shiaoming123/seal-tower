@@ -1,0 +1,259 @@
+{
+  "app": "http://127.0.0.1:5178/",
+  "records": [
+    {
+      "id": "paper-matron",
+      "view": "combat",
+      "viewport": [
+        1280,
+        720
+      ],
+      "runtimeAsset": "paper-matron.webp",
+      "requestedWebpSha256": "49f4293ac8a21f952176288ec9f9add19ceea4db44a4727835dbc6e3f0b17d7e",
+      "sourceSha256": "1ba4d9ae9e2ff48409d79d777f84f49c7579e3fba49295703f0e59b478bf7971",
+      "exportsShaVerified": true,
+      "bounds": [
+        39,
+        26,
+        412,
+        434
+      ],
+      "alphaFill": 0.342,
+      "painted": [
+        537,
+        261,
+        202,
+        221
+      ],
+      "screenshot": "1280/paper-matron-phase2.jpg",
+      "browserErrors": [],
+      "frame": [
+        513.154296875,
+        246.67684936523438,
+        253.67578125,
+        248.85543823242188
+      ],
+      "intrinsic": [
+        460,
+        460
+      ],
+      "state": "combat",
+      "floor": 1,
+      "panel": [
+        14,
+        605,
+        349.375,
+        78
+      ],
+      "enemyInfo": [
+        475.671875,
+        98,
+        328.65625,
+        99
+      ],
+      "intent": [
+        605.796875,
+        45,
+        68.40625,
+        57
+      ],
+      "heading": "纸扎娘娘38 / 6010力量 2取材 · 多一张红纸别用带火的牌打出最后一下能取",
+      "actions": [],
+      "dpr": 1,
+      "phase": {
+        "phase": 2,
+        "hp": 38,
+        "block": 10,
+        "str": 2,
+        "intent": "纸人扑"
+      }
+    },
+    {
+      "id": "fallen-elder-guard",
+      "view": "combat",
+      "viewport": [
+        1280,
+        720
+      ],
+      "runtimeAsset": "fallen-elder-guard.webp",
+      "requestedWebpSha256": "d16b31b74b7e94d80b9394f78420cdf89b06f5b494f8dd618f862cf9338beab5",
+      "sourceSha256": "497eda199baffd4e1068f665e425ae3c836c59a51400352f9288780654a3f984",
+      "exportsShaVerified": true,
+      "bounds": [
+        46,
+        26,
+        414,
+        427
+      ],
+      "alphaFill": 0.219,
+      "painted": [
+        532,
+        265,
+        215,
+        235
+      ],
+      "screenshot": "1280/fallen-elder-guard.jpg",
+      "browserErrors": [],
+      "frame": [
+        501.31292724609375,
+        250.06005859375,
+        277.3585205078125,
+        269.1727294921875
+      ],
+      "intrinsic": [
+        460,
+        460
+      ],
+      "state": "combat",
+      "floor": 2,
+      "panel": [
+        14,
+        628,
+        349.375,
+        78
+      ],
+      "enemyInfo": [
+        469.171875,
+        121,
+        341.65625,
+        77
+      ],
+      "intent": [
+        575.1875,
+        68,
+        129.609375,
+        57
+      ],
+      "heading": "堕道首座88 / 88取材 · 多一块斩妖令别在它剑阵的回合出手攻击注意",
+      "actions": [],
+      "dpr": 1
+    },
+    {
+      "id": "paper-matron",
+      "view": "combat",
+      "viewport": [
+        390,
+        844
+      ],
+      "runtimeAsset": "paper-matron.webp",
+      "requestedWebpSha256": "49f4293ac8a21f952176288ec9f9add19ceea4db44a4727835dbc6e3f0b17d7e",
+      "sourceSha256": "1ba4d9ae9e2ff48409d79d777f84f49c7579e3fba49295703f0e59b478bf7971",
+      "exportsShaVerified": true,
+      "bounds": [
+        39,
+        26,
+        412,
+        434
+      ],
+      "alphaFill": 0.342,
+      "painted": [
+        41,
+        241,
+        301,
+        329
+      ],
+      "screenshot": "390/paper-matron-phase2.jpg",
+      "browserErrors": [],
+      "frame": [
+        5.979769706726074,
+        219.74452209472656,
+        378.0404357910156,
+        370.759521484375
+      ],
+      "intrinsic": [
+        460,
+        460
+      ],
+      "state": "combat",
+      "floor": 1,
+      "panel": [
+        9.09999942779541,
+        784.0499877929688,
+        227.09373474121094,
+        50.70001220703125
+      ],
+      "enemyInfo": [
+        88.18671417236328,
+        121.0195541381836,
+        213.62655639648438,
+        64.3499984741211
+      ],
+      "intent": [
+        172.76795959472656,
+        86.56954956054688,
+        44.46406555175781,
+        37.05000305175781
+      ],
+      "heading": "纸扎娘娘38 / 6010力量 2取材 · 多一张红纸别用带火的牌打出最后一下能取",
+      "actions": [],
+      "dpr": 1,
+      "phase": {
+        "phase": 2,
+        "hp": 38,
+        "block": 10,
+        "str": 2,
+        "intent": "纸人扑"
+      }
+    },
+    {
+      "id": "fallen-elder-guard",
+      "view": "combat",
+      "viewport": [
+        390,
+        844
+      ],
+      "runtimeAsset": "fallen-elder-guard.webp",
+      "requestedWebpSha256": "d16b31b74b7e94d80b9394f78420cdf89b06f5b494f8dd618f862cf9338beab5",
+      "sourceSha256": "497eda199baffd4e1068f665e425ae3c836c59a51400352f9288780654a3f984",
+      "exportsShaVerified": true,
+      "bounds": [
+        46,
+        26,
+        414,
+        427
+      ],
+      "alphaFill": 0.219,
+      "painted": [
+        47,
+        243,
+        295,
+        321
+      ],
+      "screenshot": "390/fallen-elder-guard.jpg",
+      "browserErrors": [],
+      "frame": [
+        4.992490768432617,
+        222.16481018066406,
+        380.0149841308594,
+        368.7850341796875
+      ],
+      "intrinsic": [
+        460,
+        460
+      ],
+      "state": "combat",
+      "floor": 2,
+      "panel": [
+        9.09999942779541,
+        784.0499877929688,
+        227.09373474121094,
+        50.70001220703125
+      ],
+      "enemyInfo": [
+        83.96171569824219,
+        135.31954956054688,
+        222.07655334472656,
+        50.05000305175781
+      ],
+      "intent": [
+        152.8718719482422,
+        100.86955261230469,
+        84.24609375,
+        37.05000305175781
+      ],
+      "heading": "堕道首座88 / 88取材 · 多一块斩妖令别在它剑阵的回合出手攻击注意",
+      "actions": [],
+      "dpr": 1
+    }
+  ]
+}

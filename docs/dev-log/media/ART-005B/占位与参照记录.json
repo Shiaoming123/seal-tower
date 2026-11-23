@@ -1,0 +1,1315 @@
+{
+  "seed": "gallery",
+  "baselineMediaIntercept": true,
+  "setup": "Both transitions used real stairs buttons after walking onto adjacent dev test stair entities; enemies placed at same floor-three tile and entered via button",
+  "rows": [
+    {
+      "id": "thorn-stele",
+      "viewport": [
+        1280,
+        720
+      ],
+      "path": "1280/thorn-stele.jpg",
+      "asset": "thorn-stele",
+      "sha": "ba7af85c11020af6181edd841350b43590200c792cb0ba3f9ce45e1884a76de2",
+      "sourceSha256": null,
+      "dimensions": [
+        177,
+        280
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        177,
+        279
+      ],
+      "painted": [
+        561,
+        269,
+        158,
+        248
+      ],
+      "errors": [],
+      "sprite": [
+        559.9191284179688,
+        269.18231201171875,
+        160.1461181640625,
+        249.1805419921875
+      ],
+      "hud": [
+        380,
+        68,
+        520,
+        193.75
+      ],
+      "hands": [
+        330,
+        494,
+        730,
+        240
+      ],
+      "scene": [
+        0,
+        58,
+        1280,
+        662
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "棘碑",
+      "intent": "砸",
+      "health": "40 / 40",
+      "floor": 3,
+      "tier": "fight",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    },
+    {
+      "id": "bronze-puppet",
+      "viewport": [
+        1280,
+        720
+      ],
+      "path": "1280/bronze-puppet.jpg",
+      "asset": "bronze-puppet",
+      "sha": "16353646466aafcbfe38557e9d5ad702514d35b646378adf2713d321b8cc10cc",
+      "sourceSha256": null,
+      "dimensions": [
+        366,
+        380
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        366,
+        380
+      ],
+      "painted": [
+        509,
+        247,
+        261,
+        271
+      ],
+      "errors": [],
+      "sprite": [
+        507.29852294921875,
+        247.36492919921875,
+        265.3873291015625,
+        270.99798583984375
+      ],
+      "hud": [
+        380,
+        68,
+        520,
+        171.75
+      ],
+      "hands": [
+        330,
+        494,
+        730,
+        240
+      ],
+      "scene": [
+        0,
+        58,
+        1280,
+        662
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "铜傀",
+      "intent": "抡臂",
+      "health": "44 / 44",
+      "floor": 3,
+      "tier": "fight",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    },
+    {
+      "id": "night-owl",
+      "viewport": [
+        1280,
+        720
+      ],
+      "path": "1280/night-owl.jpg",
+      "asset": "night-owl",
+      "sha": "6833b584b52e395dbff7e570e8b59af87361581bd3a9bdfd1ebe2977a9ae255f",
+      "sourceSha256": null,
+      "dimensions": [
+        360,
+        356
+      ],
+      "alphaBounds": [
+        2,
+        2,
+        358,
+        352
+      ],
+      "painted": [
+        558,
+        244,
+        164,
+        161
+      ],
+      "errors": [],
+      "sprite": [
+        557.046875,
+        243.0532989501953,
+        165.875,
+        164.03123474121094
+      ],
+      "hud": [
+        380,
+        68,
+        520,
+        171.75
+      ],
+      "hands": [
+        330,
+        494,
+        730,
+        240
+      ],
+      "scene": [
+        0,
+        58,
+        1280,
+        662
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "夜枭",
+      "intent": "俯冲",
+      "health": "36 / 36",
+      "floor": 3,
+      "tier": "fight",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    },
+    {
+      "id": "stele-spirit",
+      "viewport": [
+        1280,
+        720
+      ],
+      "path": "1280/stele-spirit.jpg",
+      "asset": "stele-spirit",
+      "sha": "08b3c6753cc2c902dab9c65e170cca9b969426d9aa295b54c4d47c5d5940ff5b",
+      "sourceSha256": "67833ce80a73811ac1a5a141d23e440a28c4bd2c3127f23d98efdf8be9ecd4dc",
+      "dimensions": [
+        300,
+        300
+      ],
+      "alphaBounds": [
+        32,
+        22,
+        272,
+        280
+      ],
+      "painted": [
+        533,
+        267,
+        217,
+        233
+      ],
+      "errors": [],
+      "sprite": [
+        502.2069091796875,
+        247.420166015625,
+        275.570556640625,
+        270.96063232421875
+      ],
+      "hud": [
+        380,
+        68,
+        520,
+        171.75
+      ],
+      "hands": [
+        330,
+        494,
+        730,
+        240
+      ],
+      "scene": [
+        0,
+        58,
+        1280,
+        662
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "碑灵",
+      "intent": "立碑",
+      "health": "34 / 34",
+      "floor": 3,
+      "tier": "fight",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    },
+    {
+      "id": "bell-heavy",
+      "viewport": [
+        1280,
+        720
+      ],
+      "path": "1280/bell-heavy.jpg",
+      "asset": "bell-heavy",
+      "sha": "85334034109b3515fecb970b0e20a38587021b0b8922f1b865a9da6accc40ade",
+      "sourceSha256": null,
+      "dimensions": [
+        404,
+        420
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        404,
+        420
+      ],
+      "painted": [
+        510,
+        247,
+        261,
+        271
+      ],
+      "errors": [],
+      "sprite": [
+        507.48992919921875,
+        247.30929565429688,
+        265.0045166015625,
+        271.0355529785156
+      ],
+      "hud": [
+        380,
+        68,
+        520,
+        171.75
+      ],
+      "hands": [
+        330,
+        494,
+        730,
+        240
+      ],
+      "scene": [
+        0,
+        58,
+        1280,
+        662
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "负钟君",
+      "intent": "摇铃",
+      "health": "180 / 180",
+      "floor": 3,
+      "tier": "guardian",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    },
+    {
+      "id": "moth-queen",
+      "viewport": [
+        1280,
+        720
+      ],
+      "path": "1280/moth-queen.jpg",
+      "asset": "moth-queen",
+      "sha": "7faeb41ee25880f259d54f0c12818a2423c39bcf40efbf5ef01079955e79be43",
+      "sourceSha256": null,
+      "dimensions": [
+        380,
+        376
+      ],
+      "alphaBounds": [
+        2,
+        2,
+        378,
+        369
+      ],
+      "painted": [
+        558,
+        244,
+        164,
+        160
+      ],
+      "errors": [],
+      "sprite": [
+        557.109375,
+        243.00669860839844,
+        165.765625,
+        164.03126525878906
+      ],
+      "hud": [
+        380,
+        68,
+        520,
+        171.75
+      ],
+      "hands": [
+        330,
+        494,
+        730,
+        240
+      ],
+      "scene": [
+        0,
+        58,
+        1280,
+        662
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "灯蛾娘",
+      "intent": "扑翅",
+      "health": "64 / 64",
+      "floor": 3,
+      "tier": "guardian",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    },
+    {
+      "id": "thorn-stele",
+      "viewport": [
+        390,
+        844
+      ],
+      "path": "390/thorn-stele.jpg",
+      "asset": "thorn-stele",
+      "sha": "ba7af85c11020af6181edd841350b43590200c792cb0ba3f9ce45e1884a76de2",
+      "sourceSha256": null,
+      "dimensions": [
+        177,
+        280
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        177,
+        279
+      ],
+      "painted": [
+        86,
+        245,
+        218,
+        344
+      ],
+      "errors": [],
+      "sprite": [
+        84.43028259277344,
+        245.06492614746094,
+        221.1190948486328,
+        345.17669677734375
+      ],
+      "hud": [
+        15.59999942779541,
+        113.48361206054688,
+        358.79998779296875,
+        125.9375
+      ],
+      "hands": [
+        0,
+        616.3499755859375,
+        390,
+        156
+      ],
+      "scene": [
+        0,
+        54.10002136230469,
+        390,
+        789.7499389648438
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "棘碑",
+      "intent": "砸",
+      "health": "40 / 40",
+      "floor": 3,
+      "tier": "fight",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    },
+    {
+      "id": "bronze-puppet",
+      "viewport": [
+        390,
+        844
+      ],
+      "path": "390/bronze-puppet.jpg",
+      "asset": "bronze-puppet",
+      "sha": "16353646466aafcbfe38557e9d5ad702514d35b646378adf2713d321b8cc10cc",
+      "sourceSha256": null,
+      "dimensions": [
+        366,
+        380
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        366,
+        380
+      ],
+      "painted": [
+        21,
+        228,
+        348,
+        362
+      ],
+      "errors": [],
+      "sprite": [
+        19.23260498046875,
+        228.48699951171875,
+        351.5246276855469,
+        361.5848388671875
+      ],
+      "hud": [
+        15.59999942779541,
+        111.99064636230469,
+        358.79998779296875,
+        111.63749694824219
+      ],
+      "hands": [
+        0,
+        616.3499755859375,
+        390,
+        156
+      ],
+      "scene": [
+        0,
+        54.10002136230469,
+        390,
+        789.7499389648438
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "铜傀",
+      "intent": "抡臂",
+      "health": "44 / 44",
+      "floor": 3,
+      "tier": "fight",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    },
+    {
+      "id": "night-owl",
+      "viewport": [
+        390,
+        844
+      ],
+      "path": "390/night-owl.jpg",
+      "asset": "night-owl",
+      "sha": "6833b584b52e395dbff7e570e8b59af87361581bd3a9bdfd1ebe2977a9ae255f",
+      "sourceSha256": null,
+      "dimensions": [
+        360,
+        356
+      ],
+      "alphaBounds": [
+        2,
+        2,
+        358,
+        352
+      ],
+      "painted": [
+        48,
+        176,
+        295,
+        290
+      ],
+      "errors": [],
+      "sprite": [
+        45.916404724121094,
+        174.1508026123047,
+        298.1570129394531,
+        294.8460693359375
+      ],
+      "hud": [
+        15.59999942779541,
+        60.60002136230469,
+        358.79998779296875,
+        111.63749694824219
+      ],
+      "hands": [
+        0,
+        616.3499755859375,
+        390,
+        156
+      ],
+      "scene": [
+        0,
+        54.10002136230469,
+        390,
+        789.7499389648438
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "夜枭",
+      "intent": "俯冲",
+      "health": "36 / 36",
+      "floor": 3,
+      "tier": "fight",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    },
+    {
+      "id": "stele-spirit",
+      "viewport": [
+        390,
+        844
+      ],
+      "path": "390/stele-spirit.jpg",
+      "asset": "stele-spirit",
+      "sha": "08b3c6753cc2c902dab9c65e170cca9b969426d9aa295b54c4d47c5d5940ff5b",
+      "sourceSha256": "67833ce80a73811ac1a5a141d23e440a28c4bd2c3127f23d98efdf8be9ecd4dc",
+      "dimensions": [
+        300,
+        300
+      ],
+      "alphaBounds": [
+        32,
+        22,
+        272,
+        280
+      ],
+      "painted": [
+        59,
+        271,
+        276,
+        296
+      ],
+      "errors": [],
+      "sprite": [
+        19.781517028808594,
+        245.83914184570312,
+        350.4166259765625,
+        344.5551452636719
+      ],
+      "hud": [
+        15.59999942779541,
+        127.78361511230469,
+        358.79998779296875,
+        111.63749694824219
+      ],
+      "hands": [
+        0,
+        616.3499755859375,
+        390,
+        156
+      ],
+      "scene": [
+        0,
+        54.10002136230469,
+        390,
+        789.7499389648438
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "碑灵",
+      "intent": "立碑",
+      "health": "34 / 34",
+      "floor": 3,
+      "tier": "fight",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    },
+    {
+      "id": "bell-heavy",
+      "viewport": [
+        390,
+        844
+      ],
+      "path": "390/bell-heavy.jpg",
+      "asset": "bell-heavy",
+      "sha": "85334034109b3515fecb970b0e20a38587021b0b8922f1b865a9da6accc40ade",
+      "sourceSha256": null,
+      "dimensions": [
+        404,
+        420
+      ],
+      "alphaBounds": [
+        0,
+        0,
+        404,
+        420
+      ],
+      "painted": [
+        9,
+        204,
+        371,
+        386
+      ],
+      "errors": [],
+      "sprite": [
+        6.349719047546387,
+        204.12303161621094,
+        377.300537109375,
+        386.20257568359375
+      ],
+      "hud": [
+        15.59999942779541,
+        86.04142761230469,
+        358.79998779296875,
+        111.63749694824219
+      ],
+      "hands": [
+        0,
+        616.3499755859375,
+        390,
+        156
+      ],
+      "scene": [
+        0,
+        54.10002136230469,
+        390,
+        789.7499389648438
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "负钟君",
+      "intent": "摇铃",
+      "health": "180 / 180",
+      "floor": 3,
+      "tier": "guardian",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    },
+    {
+      "id": "moth-queen",
+      "viewport": [
+        390,
+        844
+      ],
+      "path": "390/moth-queen.jpg",
+      "asset": "moth-queen",
+      "sha": "7faeb41ee25880f259d54f0c12818a2423c39bcf40efbf5ef01079955e79be43",
+      "sourceSha256": null,
+      "dimensions": [
+        380,
+        376
+      ],
+      "alphaBounds": [
+        2,
+        2,
+        378,
+        369
+      ],
+      "painted": [
+        48,
+        175,
+        295,
+        288
+      ],
+      "errors": [],
+      "sprite": [
+        45.99765396118164,
+        173.29843139648438,
+        297.984375,
+        294.8460998535156
+      ],
+      "hud": [
+        15.59999942779541,
+        60.60002136230469,
+        358.79998779296875,
+        111.63749694824219
+      ],
+      "hands": [
+        0,
+        616.3499755859375,
+        390,
+        156
+      ],
+      "scene": [
+        0,
+        54.10002136230469,
+        390,
+        789.7499389648438
+      ],
+      "position": {
+        "x": 7,
+        "y": 11,
+        "dir": 0
+      },
+      "foe": {
+        "x": 7,
+        "y": 10
+      },
+      "name": "灯蛾娘",
+      "intent": "扑翅",
+      "health": "64 / 64",
+      "floor": 3,
+      "tier": "guardian",
+      "domVisible": true,
+      "turn": 1,
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      }
+    }
+  ]
+}

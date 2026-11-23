@@ -238,10 +238,10 @@
         "敌怪·棘碑"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：旧荆棘碑",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "bronze-puppet",
@@ -250,10 +250,10 @@
         "敌怪·铜傀"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "night-owl",
@@ -262,10 +262,10 @@
         "敌怪·夜枭"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "fake-fox",
@@ -917,10 +917,10 @@
         "事件·妖窝拾荒"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：碎石",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "event-peddler",
@@ -977,10 +977,10 @@
         "事件·受伤的斩妖人"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：斩妖人架势",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "event-shrine",
@@ -1001,10 +1001,10 @@
         "事件·照影池"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：水洼",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "feixiao",
