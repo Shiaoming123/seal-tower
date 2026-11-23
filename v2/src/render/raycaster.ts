@@ -7,7 +7,16 @@ import { TEX, type Theme } from "./textures";
 export const VIEW_W = 384;
 export const VIEW_H = 216;
 
-export interface Billboard { x: number; y: number; sprite: string; scale: number; bob?: boolean; glow?: string }
+export interface Billboard {
+  x: number; y: number; sprite: string; scale: number; bob?: boolean; glow?: string;
+  /** Height above the floor in tile units (flying things). */
+  lift?: number;
+  /** Draw only the contact shadow (the sprite itself is drawn by the combat layer at full resolution). */
+  shadowOnly?: boolean;
+}
+
+/** Where a world object lands on screen, in buffer pixels (VIEW_W × VIEW_H). */
+export interface Projection { cx: number; top: number; w: number; h: number; floorY: number; depth: number; light: number; visible: boolean }
 interface Pose { x: number; y: number; a: number }
 
 const FOV = 0.7;
@@ -28,6 +37,14 @@ export class Raycaster {
   private bob = 0;
   private skyCache: Uint32Array | null = null;
   dim = 0;
+  /** How far the camera is pulled back from its tile centre (combat framing), animated. */
+  private dolly = 0;
+  private dollyTarget = 0;
+  /** Camera tilt in buffer pixels (negative looks down), animated. */
+  private pitch = 0;
+  private pitchTarget = 0;
+  /** Called after every rendered frame (the combat layer re-anchors to the scene). */
+  onFrame: (() => void) | null = null;
   /** 0..1 lamp strength (lamp oil). Low oil darkens the view. */
   lamp = 1;
 
@@ -102,7 +119,46 @@ export class Raycaster {
     this.raf = requestAnimationFrame((t) => { this.raf = 0; this.frame(t); });
   }
 
+  /** Pull the camera back (0 = tile centre) — used to frame an enemy standing one tile ahead. */
+  setDolly(amount: number, pitch = 0) { this.dollyTarget = amount; this.pitchTarget = pitch; this.requestFrame(); }
+
+  /** Light level the scene would give an object at this distance (0..1). */
+  private lightAt(dist: number, now = performance.now()) {
+    const th = this.theme;
+    if (!th) return 1;
+    const flicker = 0.96 + Math.sin(now / 230) * 0.025 + Math.sin(now / 97) * 0.015;
+    return Math.min(1.05, (1.5 / (1 + dist * dist * 0.11)) * th.light * flicker * (0.35 + 0.65 * this.lamp));
+  }
+
+  /** Camera position including the combat dolly. */
+  private eye() {
+    const dirX = Math.cos(this.pose.a), dirY = Math.sin(this.pose.a);
+    return { px: this.pose.x - dirX * this.dolly, py: this.pose.y - dirY * this.dolly, dirX, dirY };
+  }
+
+  /** Project a sprite standing on tile (x, y) to screen space, matching how billboards are drawn. */
+  project(x: number, y: number, scale: number, aspect: number, lift = 0): Projection {
+    const { px, py, dirX, dirY } = this.eye();
+    const planeX = -dirY * FOV, planeY = dirX * FOV;
+    const dx = x + 0.5 - px, dy = y + 0.5 - py;
+    const invDet = 1 / (planeX * dirY - dirX * planeY);
+    const tX = invDet * (dirY * dx - dirX * dy);
+    const tY = invDet * (-planeY * dx + planeX * dy);
+    const W = VIEW_W, H = VIEW_H;
+    if (tY <= 0.2) return { cx: W / 2, top: 0, w: 0, h: 0, floorY: H, depth: tY, light: 1, visible: false };
+    const horizon = (H >> 1) + Math.round(this.bob + this.pitch);
+    const unit = H / tY;
+    const h = unit * scale;
+    const floorY = horizon + unit * 0.5 - unit * lift;
+    return { cx: (W / 2) * (1 + tX / tY), top: floorY - h, w: h * aspect, h, floorY, depth: tY, light: this.lightAt(Math.hypot(dx, dy)), visible: true };
+  }
+
   private frame(now: number) {
+    if (Math.abs(this.dolly - this.dollyTarget) > 0.002 || Math.abs(this.pitch - this.pitchTarget) > 0.2) {
+      this.dolly += (this.dollyTarget - this.dolly) * 0.18;
+      this.pitch += (this.pitchTarget - this.pitch) * 0.18;
+      this.requestFrame();
+    } else { this.dolly = this.dollyTarget; this.pitch = this.pitchTarget; }
     if (this.anim) {
       const k = Math.min(1, (now - this.anim.t0) / this.anim.dur);
       const e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
@@ -118,16 +174,16 @@ export class Raycaster {
       this.requestFrame();
     }
     this.render(now);
+    this.onFrame?.();
   }
 
   private render(now: number) {
     const d = this.dungeon, th = this.theme;
     if (!d || !th) return;
     const W = VIEW_W, H = VIEW_H, buf = this.buf;
-    const px = this.pose.x, py = this.pose.y;
-    const dirX = Math.cos(this.pose.a), dirY = Math.sin(this.pose.a);
+    const { px, py, dirX, dirY } = this.eye();
     const planeX = -dirY * FOV, planeY = dirX * FOV;
-    const pitch = Math.round(this.bob);
+    const pitch = Math.round(this.bob + this.pitch);
     const horizon = (H >> 1) + pitch;
     const flicker = 0.96 + Math.sin(now / 230) * 0.025 + Math.sin(now / 97) * 0.015;
     const [fr, fg, fb] = th.fog;
@@ -214,17 +270,20 @@ export class Raycaster {
       const bob = s.bob ? Math.sin(now / 400 + s.x * 3) * unit * 0.02 : 0;
       const hgt = unit * s.scale;
       const wid = hgt * (sw / sh);
-      const floorY = horizon + unit * 0.5;
+      const ground = horizon + unit * 0.5;
+      const floorY = ground - unit * (s.lift ?? 0);
       const top = floorY - hgt - unit * 0.04 + bob;
       const left = screenX - wid / 2;
-      // contact shadow
+      // contact shadow (smaller and softer under things that fly)
       const cx = Math.round(screenX);
       if (cx >= 0 && cx < W && tY < this.zbuf[cx]) {
-        ctx.fillStyle = "rgba(0,0,0,0.35)";
+        const k = s.lift ? 0.6 : 1;
+        ctx.fillStyle = `rgba(0,0,0,${s.lift ? 0.22 : 0.38})`;
         ctx.beginPath();
-        ctx.ellipse(screenX, floorY - unit * 0.02, wid * 0.32, unit * 0.04, 0, 0, Math.PI * 2);
+        ctx.ellipse(screenX, ground - unit * 0.02, wid * 0.32 * k, unit * 0.045 * k, 0, 0, Math.PI * 2);
         ctx.fill();
       }
+      if (s.shadowOnly) continue;
       const x0 = Math.max(0, Math.floor(left)), x1 = Math.min(W - 1, Math.ceil(left + wid));
       for (let x = x0; x <= x1; x++) {
         if (tY >= this.zbuf[x]) continue;

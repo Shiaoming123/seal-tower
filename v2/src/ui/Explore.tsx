@@ -30,36 +30,46 @@ const EVENT_SCALE: Record<string, number> = {
   broker: 0.8, guide: 0.8, "event-hunter": 0.75, "fake-fox": 0.75, "event-peddler": 0.45, "event-cart": 0.6, portal: 0.8, "event-pool": 0.22, "event-shrine": 0.35, "event-den": 0.45,
 };
 
-export function billboards(run: RunState, hide?: number): Billboard[] {
+/** Monsters that hover: they float above the floor and bob (moths, lanterns, owls). */
+const FLYERS = new Set(["moth", "ink-moth", "moth-queen", "lantern-spirit", "night-owl"]);
+
+/** How a monster stands in the world: its height in tiles and how high it floats. */
+export function enemyStage(e: Entity) {
+  const def = ENEMIES[e.enemy!];
+  const scale = 0.58 * (def.scale ?? 1) * (e.kind === "elite" ? 1.1 : e.kind === "guardian" ? 1.15 : 1);
+  return { scale, lift: FLYERS.has(def.id) ? 0.22 : 0 };
+}
+
+export const isFight = (e: Entity) => e.kind === "fight" || e.kind === "elite" || e.kind === "guardian";
+
+export function billboards(run: RunState, opts: { shadowOnly?: number } = {}): Billboard[] {
   const out: Billboard[] = [];
   for (const e of run.dungeon.entities) {
-    if (e.id === hide) continue;
     if (e.done && e.kind !== "shop") continue;
-    let sprite = "", scale = 0.5, bob = false;
+    let sprite = "", scale = 0.5, bob = false, lift = 0;
     if (e.enemy && e.kind !== "stairs") {
-      const def = ENEMIES[e.enemy];
-      sprite = def.sprite;
-      scale = 0.58 * (def.scale ?? 1) * (e.kind === "elite" ? 1.1 : e.kind === "guardian" ? 1.15 : 1);
+      sprite = ENEMIES[e.enemy].sprite;
+      ({ scale, lift } = enemyStage(e));
       bob = true;
     } else if (e.kind === "shop") { sprite = "trader"; scale = 0.78; }
     else if (e.kind === "event") { sprite = EVENTS[e.event!].sprite; scale = EVENT_SCALE[sprite] ?? 0.5; }
     else if (e.kind === "rest") { sprite = "lamp"; scale = 0.55; }
     else if (e.kind === "chest") { sprite = "purse"; scale = 0.32; }
     else if (e.kind === "stairs") { sprite = "sign-turn"; scale = 0.55; }
-    out.push({ x: e.x, y: e.y, sprite, scale, bob });
+    out.push({ x: e.x, y: e.y, sprite, scale, bob, lift, shadowOnly: e.id === opts.shadowOnly });
   }
   return out;
 }
 
 /** Mounts the shared 3D canvas into a container. */
-export function useView(ref: { current: HTMLDivElement | null }, run: RunState, opts: { hideAll?: boolean; dim?: number } = {}) {
+export function useView(ref: { current: HTMLDivElement | null }, run: RunState, opts: { hideAll?: boolean; dim?: number; combatEntity?: number } = {}) {
   useEffect(() => {
     ref.current?.appendChild(view.canvas);
   }, []);
   useEffect(() => {
     view.dim = opts.dim ?? 0;
     view.lamp = run.oil <= 0 ? 0 : Math.min(1, 0.45 + run.oil / 50);
-    view.setScene(run.dungeon, theme(run.floor), opts.hideAll ? [] : billboards(run));
+    view.setScene(run.dungeon, theme(run.floor), opts.hideAll ? [] : billboards(run, { shadowOnly: opts.combatEntity }));
   });
 }
 
@@ -74,7 +84,8 @@ function lookAhead(run: RunState): string {
       const h = e.enemy && ENEMIES[e.enemy].harvest;
       const part = e.enemy && ENEMIES[e.enemy].part;
       const tip = h ? ` 取材：${h.text}，可多拿${h.label}。` : part ? ` 取材：单次伤害别超过 ${part.threshold - 1}，${part.label}才不会碎。` : "";
-      return `前面 ${i} 格：${entityName(e)}。${tip}`;
+      const engage = i === 1 && isFight(e) ? " 再往前一步就开战。" : "";
+      return `前面 ${i} 格：${entityName(e)}。${engage}${tip}`;
     }
   }
   return "前面是一条长廊。";
@@ -105,6 +116,14 @@ export function Explore() {
   useLayoutEffect(() => { view.place(run.pos.x, run.pos.y, run.pos.dir); }, [run.floor, run.warp]);
 
   const stepTo = async (x: number, y: number, dir: number, deliberate: boolean) => {
+    // Monsters are fought from the tile in front of them, like in a dungeon crawler: face it and the fight starts.
+    const foe = entityAt(run.dungeon, x, y);
+    if (foe && isFight(foe)) {
+      if (run.pos.dir !== dir) { run.pos.dir = dir; await view.moveTo(run.pos.x, run.pos.y, dir, 120); }
+      R.openEntity(run, foe);
+      commit();
+      return true;
+    }
     sfx.step();
     await view.moveTo(x, y, dir);
     const opened = R.arrive(run, x, y, dir, deliberate);

@@ -18,7 +18,16 @@ if (import.meta.env.DEV) {
   const open = (patch: Partial<Entity>) => {
     const run = runSig.value;
     if (!run) return;
-    const e: Entity = { id: 9000 + run.nextUid++, kind: "fight", x: run.pos.x, y: run.pos.y, done: false, ...patch };
+    // Fights stand one tile ahead (like a real encounter); events open where you are.
+    let at = { x: run.pos.x, y: run.pos.y };
+    if (patch.kind !== "event") {
+      const d = run.dungeon, dirs = [[0, -1], [1, 0], [0, 1], [-1, 0]];
+      const order = [run.pos.dir, (run.pos.dir + 1) % 4, (run.pos.dir + 3) % 4, (run.pos.dir + 2) % 4];
+      const dir = order.find((k) => !d.tiles[(run.pos.y + dirs[k][1]) * d.w + run.pos.x + dirs[k][0]]) ?? run.pos.dir;
+      run.pos.dir = dir;
+      at = { x: run.pos.x + dirs[dir][0], y: run.pos.y + dirs[dir][1] };
+    }
+    const e: Entity = { id: 9000 + run.nextUid++, kind: "fight", x: at.x, y: at.y, done: false, ...patch };
     run.dungeon.entities.push(e);
     openEntity(run, e);
     commit();

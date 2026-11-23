@@ -3,14 +3,15 @@ import { sfx } from "../audio/sfx";
 import { ENEMIES } from "../data/enemies";
 import { GOODS } from "../data/goods";
 import { type CombatEvent, blockedReason, endTurn, enemyHitDamage, incomingDamage, playCard, previewFor, stealTarget } from "../game/combat";
-import { DIRS } from "../game/dungeon";
+import { DIRS, isWall } from "../game/dungeon";
 import { useItem } from "../game/inventory";
 import * as R from "../game/run";
 import type { CombatState, RunState } from "../game/types";
-import { ART, artId } from "../render/assets";
-import { useView } from "./Explore";
+import { ART, artId, image } from "../render/assets";
+import { VIEW_H, VIEW_W } from "../render/raycaster";
+import { enemyStage, useView, view } from "./Explore";
 import { Bar, CardView, Statuses } from "./parts";
-import { commit, markTip, overlay, say, seenTip, useRun } from "./store";
+import { commit, markTip, overlay, runSig, say, seenTip, useRun } from "./store";
 
 interface Floater { id: number; text: string; kind: string; x: number; y: number }
 let floaterId = 0;
@@ -73,10 +74,57 @@ export function Combat() {
   const [banner, setBanner] = useState<string>("");
   const [slash, setSlash] = useState(0);
   const busy = useRef(false);
-  useView(ref, run, { hideAll: true, dim: 0.35 });
+  // The fight happens in the scene: the monster keeps standing on its tile, one step ahead of you.
+  const foe = R.currentEntity(run);
+  useView(ref, run, { combatEntity: foe?.id, dim: 0.08 });
+  const enemyRef = useRef<HTMLDivElement>(null);
+  const headRef = useRef<HTMLDivElement>(null);
+  const anchorPt = useRef({ x: 50, y: 34 });
+  useEffect(() => {
+    // Pull the camera back and tilt it down so the whole monster stands on the floor above your hand.
+    const r0 = runSig.value!;
+    view.place(r0.pos.x, r0.pos.y, r0.pos.dir);
+    // Step back for big monsters when there is floor behind you; never back into a wall.
+    const e0 = R.currentEntity(r0);
+    const back = DIRS[(r0.pos.dir + 2) % 4];
+    const roomBehind = !isWall(r0.dungeon, r0.pos.x + back[0], r0.pos.y + back[1]);
+    const big = e0?.enemy ? enemyStage(e0).scale > 0.72 : false;
+    view.setDolly(roomBehind ? (big ? 1.05 : 0.7) : 0.45, -36);
+    const anchor = () => {
+      const el = enemyRef.current, vp = ref.current, e = R.currentEntity(runSig.value!);
+      if (!el || !vp || !e || !e.enemy) return;
+      const st = enemyStage(e);
+      const img = image(runSig.value!.combat?.enemy.sprite ?? ENEMIES[e.enemy].sprite);
+      const aspect = img?.naturalWidth ? img.naturalWidth / img.naturalHeight : 1;
+      const p = view.project(e.x, e.y, st.scale, aspect, st.lift);
+      const vw = vp.clientWidth, vh = vp.clientHeight;
+      const k = Math.max(vw / VIEW_W, vh / VIEW_H);
+      const ox = (vw - VIEW_W * k) / 2, oy = (vh - VIEW_H * k) / 2;
+      const left = ox + (p.cx - p.w / 2) * k, top = oy + p.top * k, w = p.w * k, h = p.h * k;
+      el.style.left = `${left}px`; el.style.top = `${top}px`; el.style.width = `${w}px`; el.style.height = `${h}px`;
+      el.style.setProperty("--lit", p.light.toFixed(2));
+      el.style.visibility = p.visible ? "visible" : "hidden";
+      anchorPt.current = { x: ((left + w / 2) / vw) * 100, y: ((top + h * 0.38) / vh) * 100 };
+      // The info block sits above the head, but never leaves the screen (it overlaps tall bosses instead).
+      const head = headRef.current;
+      if (head) {
+        const hh = head.offsetHeight;
+        head.style.left = `${left + w / 2}px`;
+        head.style.top = `${Math.max(6, top - hh - 4)}px`;
+      }
+      vp.style.setProperty("--ex", `${left + w / 2}px`);
+      vp.style.setProperty("--ey", `${top + h * 0.45}px`);
+    };
+    view.onFrame = anchor;
+    anchor();
+    const ro = new ResizeObserver(anchor);
+    if (ref.current) ro.observe(ref.current);
+    return () => { view.onFrame = null; view.setDolly(0, 0); ro.disconnect(); };
+  }, []);
 
   const float = (text: string, kind: string, target: "enemy" | "player") => {
-    const f = { id: ++floaterId, text, kind, x: target === "enemy" ? 50 + (Math.random() * 16 - 8) : 22 + Math.random() * 8, y: target === "enemy" ? 34 + Math.random() * 8 : 70 };
+    const a = anchorPt.current;
+    const f = { id: ++floaterId, text, kind, x: target === "enemy" ? a.x + (Math.random() * 12 - 6) : 22 + Math.random() * 8, y: target === "enemy" ? a.y + Math.random() * 6 : 70 };
     setFloaters((fs) => [...fs.slice(-8), f]);
     setTimeout(() => setFloaters((fs) => fs.filter((x) => x.id !== f.id)), 1100);
   };
@@ -204,14 +252,16 @@ export function Combat() {
   return (
     <div class={`combat ${fx}`} data-enemy={c.enemy.id}>
       <div class="viewport" ref={ref}>
-        <div class={`enemy kind-${c.kind}`}>
+        <div class={`enemy kind-${c.kind} ${foe && enemyStage(foe).lift ? "flyer" : ""}`} ref={enemyRef} style={{ visibility: "hidden" }}>
+          <img class="enemy-sprite" src={ART[enemyPose(c, def, fx)]} alt={c.enemy.name} draggable={false} />
+        </div>
+        <div class="enemy-head" ref={headRef}>
           <div class="intent">
             <div class="intent-icons">
               {intent.parts.map((p) => <span class={`ib ${p.cls}`}><i>{p.icon}</i>{p.label && <b>{p.label}</b>}</span>)}
             </div>
             <div class="intent-name">{c.enemy.intent.name}</div>
           </div>
-          <img class="enemy-sprite" src={ART[enemyPose(c, def, fx)]} alt={c.enemy.name} draggable={false} style={{ height: `${Math.round(232 * (def.scale ?? 1))}px` }} />
           <div class="enemy-info">
             <div class="enemy-name">{c.enemy.name}</div>
             <Bar value={c.enemy.hp} max={c.enemy.maxHp} kind="enemy" block={c.enemy.block} />
@@ -223,8 +273,8 @@ export function Combat() {
               </div>
             )}
           </div>
+            <div class="intent-line">{intent.line}</div>
         </div>
-        <div class="intent-line">{intent.line}</div>
         {banner && <div class="banner" key={banner}>{banner}</div>}
         {slash > 0 && <div class={`slash s${slash % 3}`} key={`slash${slash}`} />}
         {floaters.map((f) => <span class={`floater ${f.kind}`} key={f.id} style={{ left: `${f.x}%`, top: `${f.y}%` }}>{f.text}</span>)}

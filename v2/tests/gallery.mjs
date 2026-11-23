@@ -27,8 +27,14 @@ const { enemies, events } = await page.evaluate(async () => {
 });
 for (const id of enemies) {
   if (only && !only.includes(id)) continue;
-  await page.evaluate((id) => { const s = window.__seal; s.runSig.value.combat = null; s.runSig.value.screen = "explore"; s.commit(); s.fight(id, "elite"); }, id);
-  await page.waitForTimeout(700);
+  await page.evaluate((id) => {
+    const s = window.__seal, r = s.runSig.value;
+    // Clear the previous test monster so it doesn't linger in the scene behind the next one.
+    const prev = r.dungeon.entities.find((e) => e.id === r.at);
+    if (prev) prev.done = true;
+    r.combat = null; r.screen = "explore"; s.commit(); s.fight(id, "elite");
+  }, id);
+  await page.waitForTimeout(1000);
   await page.screenshot({ path: `${out}/enemy-${id}.png` });
 }
 for (const id of events) {
