@@ -1,0 +1,123 @@
+{
+  "created": "2026-11-22",
+  "generator": "Codex built-in image_gen",
+  "transparent_background": true,
+  "encoding": "2026-11-22 clarity revision, directly cropped from hash-verified original RGBA sheets. Native paintings capped at 3x gameplay dimensions using alpha-aware Lanczos downsampling when needed. WebP quality 96 / alpha 100. logical_size is independent of stored texels and defines combat pose landmarks.",
+  "sources": [
+    {
+      "role": "hero",
+      "source_path": "art-sources/01a20273-7069-7f12-91cd-077d876b8394/exec-ddea451b-e367-42bb-8e94-13144be33c32.png",
+      "source_sha256": "3bffb6397887577006ddfc539471ecac078384611d16d7994d41cc9c53a1f4c5",
+      "prompt": "Use case: stylized-concept. Real production videogame character SPRITE SHEET on a truly transparent background. ONE WIDE horizontal strip arranged as three equally wide invisible cells: three separate nonoverlapping FULL BODY sprites of the SAME character, exactly three figures, one figure per cell. Each fits wholly in its own cell with clear padding between weapons, hair and neighboring pose. Each faces RIGHT in side-view/3-quarter side view, their feet rest on the SAME baseline. Sprite 1 winds up in an alert guard stance, knee bent, sword raised diagonally up and right close to the body. Sprite 2 drops low and lunges hard to the RIGHT, legs in long athletic stance, front arm thrusts a fine steel jian HORIZONTALLY RIGHT at chest level; very important the rightmost pixel of this pose is the sword tip. Sprite 3 recovers with sword raised nearly vertical, weight back, scarf still thrown left. Consistent identity, costumes and proportions. HERO: charismatic handsome adult Chinese swordsman of an exorcist clan. Dramatic black half-up ponytail with jade hairpin, long split hair and red windblown ribbon, intense golden eyes, handsome sharp profile, high cheekbones. Rich deep teal Ming-style waist-length brocade robe over dark ink lamellar shoulder, brass gold cloud embroidery, ivory inner sleeves, a cinnabar long waist sash, dark trousers and black high boots. Elaborate lustrous curved fabric, gold filigree at edges, sword hilt carnelian tassel. Precise luminous hard-edged chunky pixel clusters drawn as a classic high-end Japanese 2D arcade fighting-game sprite circa late 1990s (high-bit pixel art with angular stair steps, limited 32-colour copper-ivory highlights and saturated deep jade cool shadow planes); dimensional sculptural face lit from upper left. Treat each sprite as about 170 native pixels tall visually, hands and precise clean face, strong posing. No watercolor, no airbrush, no soft outlines, no gradients, no floor, no atmosphere, no effects, no background or shadows, no letters, no guide lines. Transparent alpha outside figures. Wide 3:1 landscape composition."
+    },
+    {
+      "role": "moth",
+      "source_path": "art-sources/01a20273-7069-7f12-91cd-077d876b8394/exec-0c892281-91c8-4c0e-866f-36d8c7924ae8.png",
+      "source_sha256": "477b083bd09433b414a8614fec6af48634471f14915269c0369c176a0960b59c",
+      "prompt": "Use case: stylized-concept. A single production side-view boss sprite for an ornate Chinese fantasy pixel art action RPG. Transparent alpha, fully isolated, no painted background, no ground, no cast shadows, no written text, no frame. A giant PAPER LANTERN MOTH facing LEFT, floating diagonally in three-quarter perspective: two large forewings unfurl higher, one nearer wing sharply graphic, two smaller trailing hindwings curve down on the right. Left-facing small furry moth head with a vivid compound eye, ornate feathered feelers and six black jointed fine insect legs. Its abdomen is a heavy glowing honeygold hexagonal Chinese paper lantern framed by dark bronze struts and a red knotted finial with tassel; bulbous large lantern sits under the thorax in the LOWER CENTER, and is the readable glowing weak point. Wings look like folded ivory mulberry paper with embroidered bronze veins clear bold stained-glass sections and large wine/ochre eye spots. Slight translucency, beautifully shaped wing margins with small tears. Mythic, elegant, threatening, not a fairy woman, no human parts. Entire creature including antennae, wings and tassel fully within frame with 8% clear padding around. Crisp distinctive silhouette reads at 160 px. High-end late-1990s Japanese arcade RPG SPRITE ART, hard step-edged deliberate pixel clusters, 32 colour palette, ivory lit planes, bright gold key light upper left, desaturated teal shadow, ink-black and cinnabar accents, sculptural form, no glossy photographic realism, no painted gradients. The actual outline is crisp alpha. Square composition."
+    },
+    {
+      "role": "warden",
+      "source_path": "art-sources/01a20273-7069-7f12-91cd-077d876b8394/exec-6384ae14-2314-4331-a6f1-3f8446a1f280.png",
+      "source_sha256": "73226c5c7df71f33307e91c8fca0aa3d8a9d51c2b5630055125e9d0789ac31a0",
+      "prompt": "Use case: stylized-concept. One isolated production enemy sprite for a premium Chinese mythology side-scrolling pixel art action RPG, true transparent alpha. A powerful nocturnal market shadow FOX beast, quadruped, facing LEFT. Crouched predatory stance, both forelegs on ground and claws gripping floor, heavy hindquarters and large billowing two ink-smoke tails (opaque solid well-shaped tails) rise sharply behind it to the right. Shaggy midnight black fur and deep petrol teal fur planes, bleeding vermilion at ear tips and claws, ivory whiskers, sculptural muzzle bearing teeth, bright amber eyes. Secret market identity: tattered cinnabar merchant cord threaded with three ancient brass cash coins crosses its shoulder; center of ribcage on its visible near shoulder features a circular OCTAGONAL AMBER ward, a vivid golden circular weak point, in front of left-of-center torso. Related to a folklore fox, yet clearly a feral wild animal, not a woman and not cute. Complex readable silhouette with weight and scale, full body nose to tails tip in frame and feet intact. No circle on floor, no decals, no shadow, no floating FX outside silhouette, no background, no gradient, no lettering. High-end late-1990s 2D fighting-game style HD pixel groups, angular outline, intentional larger colour clusters with granular accents, limited ink, jade, ivory, dark red and gold color ramps, warm rim light from upper left and cold reflected shadows under the body, visible dimensional fur planes. Wide 3:2 composition filling a central 80% area."
+    }
+  ],
+  "frames": [
+    {
+      "path": "hero-ready.webp",
+      "source": "hero",
+      "crop_xywh": [
+        5,
+        53,
+        515,
+        636
+      ],
+      "size": [
+        515,
+        636
+      ],
+      "logical_size": [
+        175,
+        216
+      ],
+      "sha256": "9e51ccc135ed73893f3f85625c36f1f55301989b52f5359f89ab93fd3719a7d9"
+    },
+    {
+      "path": "hero-thrust.webp",
+      "source": "hero",
+      "crop_xywh": [
+        580,
+        172,
+        1036,
+        518
+      ],
+      "size": [
+        933,
+        468
+      ],
+      "logical_size": [
+        311,
+        156
+      ],
+      "sha256": "77dd883e3d91d7aed58f0e3af957dc474ab74e4d8e7cf3bed6f777daccd1ed95"
+    },
+    {
+      "path": "hero-recover.webp",
+      "source": "hero",
+      "crop_xywh": [
+        1618,
+        8,
+        541,
+        682
+      ],
+      "size": [
+        541,
+        682
+      ],
+      "logical_size": [
+        183,
+        231
+      ],
+      "sha256": "38717e36505a2a42a4758b5a8668b1b5b0cfeb4ce9c7b5d1a1a542ff8fc37d93"
+    },
+    {
+      "path": "moth.webp",
+      "source": "moth",
+      "crop_xywh": [
+        9,
+        6,
+        1236,
+        1246
+      ],
+      "size": [
+        711,
+        717
+      ],
+      "logical_size": [
+        237,
+        239
+      ],
+      "sha256": "edb8f2d64c4a58e46313cd4bda256c2f8c8649fc6aab6affc1c3f5984f38284e"
+    },
+    {
+      "path": "warden.webp",
+      "source": "warden",
+      "crop_xywh": [
+        9,
+        0,
+        1525,
+        1019
+      ],
+      "size": [
+        978,
+        654
+      ],
+      "logical_size": [
+        326,
+        218
+      ],
+      "sha256": "1a236d9769362caa333fc822d3a153df12990ea32498acb838c94f40b5503f80"
+    }
+  ]
+}

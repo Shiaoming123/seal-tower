@@ -1,0 +1,45 @@
+{
+  "anchors": [
+    {
+      "lamp": {
+        "x": 450,
+        "y": 185.3
+      },
+      "tip": {
+        "x": 243.50893465708344,
+        "y": 167.8697850842933
+      }
+    },
+    {
+      "lamp": {
+        "x": 450,
+        "y": 185.3
+      },
+      "tip": {
+        "x": 450,
+        "y": 185.3
+      }
+    },
+    {
+      "lamp": {
+        "x": 425.96209123686634,
+        "y": 185.87783434526764
+      },
+      "tip": {
+        "x": 254.69924220758682,
+        "y": 115.00675622636217
+      }
+    }
+  ],
+  "contactGapInScenePixels": 0,
+  "unchangedBackgroundSample": "top-left 200×68 pixels",
+  "identicalBackgroundPatches": true,
+  "sourceDimensions": [
+    640,
+    360
+  ],
+  "individualOutput": [
+    1280,
+    720
+  ]
+}

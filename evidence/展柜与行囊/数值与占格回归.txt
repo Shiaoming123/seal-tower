@@ -1,0 +1,19 @@
+Validated 11 silhouettes, all four turns, 5432 accepted and 15688 rejected positions.
+Enumerated 4096 free-space patterns per physical item.
+PASS 11 registered transparent bag sprites × 4 turns, expanded-source alpha checks, pixel roundtrips, dense real run and rejected negative controls.
+PASS explicit 4/7 disposition, slot limits, payment atomicity, insured original, barter removal, two relics, life costs/clamping, damage/healing order, replenishment bounds, side-fight accounting, reusable quote snapshot.
+现卖带钱 seed1 [血/上限/石/守关手数] 11/24/7/4 256签平均 11/24/7/4 各签血量 11–11
+现卖磨剑 seed1 [血/上限/石/守关手数] 22/24/3/2 256签平均 18.46/24/3/2 各签血量 14–22
+留印直过 seed1 [血/上限/石/守关手数] 11/24/10/4 256签平均 11/24/10/4 各签血量 11–11
+留印换牙 seed1 [血/上限/石/守关手数] 19/24/8/3 256签平均 14.61/24/8/3 各签血量 11–19
+留印换膏 seed1 [血/上限/石/守关手数] 17/24/8/4 256签平均 17/24/8/4 各签血量 17–17
+棘钱换血再磨剑 seed1 [血/上限/石/守关手数] 16/24/11/2 256签平均 11.95/24/11.52/2 各签血量 7–16
+侧战开栏双法宝 seed1 [血/上限/石/守关手数] 20/20/7/3 256签平均 15.92/20/7/3 各签血量 12–20
+PASS true grid rotation, swaps and packing, full bag sale rejection, waiting loot, fixed material prices, order-only rollover and blood build strike/heal.
+佩钩放血 seed1 血/上限/石/守关手数 20/24/7/2 256签平均 血/石/手数 15.95/7.52/2.00
+单佩放血 seed1 血/上限/石/守关手数 19/24/12/3 256签平均 血/石/手数 14.09/12.52/3.00
+单钩直斩 seed1 血/上限/石/守关手数 11/24/2/4 256签平均 血/石/手数 11.00/2.00/4.00
+阙剑守势 seed1 血/上限/石/守关手数 17/24/2/4 256签平均 血/石/手数 17.00/2.00/4.00
+旧剑守势 seed1 血/上限/石/守关手数 15/24/7/4 256签平均 血/石/手数 15.00/7.00/4.00
+PASS full-pack real battles retain the actual drop until collection/discard, order redemption whitelist, blood damage and healing tallies.
+evidence\一印两价\一印两价.html (6693793 bytes)

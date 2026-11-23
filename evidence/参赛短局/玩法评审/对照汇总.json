@@ -1,0 +1,269 @@
+{
+  "sha256": "7399a3f3e85bf0f6a51c534ec97ba4907ab16c946b5d6fe1d826002e411287ba",
+  "normalDesktopReplays": 13,
+  "normalMobileReplays": 2,
+  "independentlyChosenPlayReplayed": 1,
+  "matched": [
+    {
+      "trace": "手机-旺市-2份-普通.json",
+      "result": {
+        "quantity": 2,
+        "gateEntryGold": 3,
+        "gateEntryHP": 22,
+        "firstDamage": 6,
+        "hits": 4,
+        "hpAfter": 11,
+        "silkCost": 4,
+        "silkRevenue": 8,
+        "realizedProfit": 4,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 22 → 11。狐柜取货 · 听泉算盘。结余 11 石 · 绢销 2 份 · 绢利 4 石。回首摊再选。开始下一局"
+      },
+      "runMs": 7702
+    },
+    {
+      "trace": "手机-货巢-阙剑-12.json",
+      "result": {
+        "cap": "阙剑",
+        "space": 12,
+        "used": 10,
+        "gateHp": 15,
+        "hpAfter": 4,
+        "hits": 4,
+        "entryCash": 3,
+        "haulGross": 14,
+        "afterSale": 17,
+        "finalGold": 17,
+        "discarded": 2,
+        "shells": 1,
+        "ash": 12
+      },
+      "runMs": 11096
+    },
+    {
+      "trace": "常市-0份-普通.json",
+      "result": {
+        "quantity": 0,
+        "gateEntryGold": 7,
+        "gateEntryHP": 22,
+        "firstDamage": 7,
+        "hits": 3,
+        "hpAfter": 19,
+        "silkCost": 0,
+        "silkRevenue": 0,
+        "realizedProfit": 0,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 3 手 · 出剑 3 次 气血 22 → 19。狐柜取货 · 听泉算盘。结余 7 石 · 绢销 0 份 · 绢利 0 石。回首摊再选。开始下一局"
+      },
+      "runMs": 9595
+    },
+    {
+      "trace": "常市-2份-普通.json",
+      "result": {
+        "quantity": 2,
+        "gateEntryGold": 3,
+        "gateEntryHP": 22,
+        "firstDamage": 6,
+        "hits": 4,
+        "hpAfter": 11,
+        "silkCost": 4,
+        "silkRevenue": 2,
+        "realizedProfit": -2,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 22 → 11。狐柜取货 · 听泉算盘。结余 5 石 · 绢销 2 份 · 绢利 -2 石。回首摊再选。开始下一局"
+      },
+      "runMs": 10300
+    },
+    {
+      "trace": "旺市-0份-普通.json",
+      "result": {
+        "quantity": 0,
+        "gateEntryGold": 7,
+        "gateEntryHP": 22,
+        "firstDamage": 7,
+        "hits": 3,
+        "hpAfter": 19,
+        "silkCost": 0,
+        "silkRevenue": 0,
+        "realizedProfit": 0,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 3 手 · 出剑 3 次 气血 22 → 19。狐柜取货 · 听泉算盘。结余 7 石 · 绢销 0 份 · 绢利 0 石。回首摊再选。开始下一局"
+      },
+      "runMs": 9460
+    },
+    {
+      "trace": "旺市-1份-普通.json",
+      "result": {
+        "quantity": 1,
+        "gateEntryGold": 5,
+        "gateEntryHP": 22,
+        "firstDamage": 7,
+        "hits": 3,
+        "hpAfter": 19,
+        "silkCost": 2,
+        "silkRevenue": 4,
+        "realizedProfit": 2,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 3 手 · 出剑 3 次 气血 22 → 19。狐柜取货 · 听泉算盘。结余 9 石 · 绢销 1 份 · 绢利 2 石。回首摊再选。开始下一局"
+      },
+      "runMs": 10346
+    },
+    {
+      "trace": "旺市-2份-合锋.json",
+      "result": {
+        "quantity": 2,
+        "gateEntryGold": 3,
+        "gateEntryHP": 22,
+        "firstDamage": 8,
+        "hits": 3,
+        "hpAfter": 19,
+        "silkCost": 4,
+        "silkRevenue": 8,
+        "realizedProfit": 4,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 3 手 · 出剑 3 次 气血 22 → 19。狐柜取货 · 听泉算盘。结余 11 石 · 绢销 2 份 · 绢利 4 石。回首摊再选。开始下一局"
+      },
+      "runMs": 7551
+    },
+    {
+      "trace": "旺市-2份-售灰普通.json",
+      "result": {
+        "quantity": 2,
+        "gateEntryGold": 4,
+        "gateEntryHP": 22,
+        "firstDamage": 7,
+        "hits": 3,
+        "hpAfter": 19,
+        "silkCost": 4,
+        "silkRevenue": 8,
+        "realizedProfit": 4,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 3 手 · 出剑 3 次 气血 22 → 19。狐柜取货 · 听泉算盘。结余 12 石 · 绢销 2 份 · 绢利 4 石。回首摊再选。开始下一局"
+      },
+      "runMs": 7438
+    },
+    {
+      "trace": "旺市-2份-普通.json",
+      "result": {
+        "quantity": 2,
+        "gateEntryGold": 3,
+        "gateEntryHP": 22,
+        "firstDamage": 6,
+        "hits": 4,
+        "hpAfter": 11,
+        "silkCost": 4,
+        "silkRevenue": 8,
+        "realizedProfit": 4,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 22 → 11。狐柜取货 · 听泉算盘。结余 11 石 · 绢销 2 份 · 绢利 4 石。回首摊再选。开始下一局"
+      },
+      "runMs": 9891
+    },
+    {
+      "trace": "货巢-原剑-12.json",
+      "result": {
+        "cap": "原剑",
+        "space": 12,
+        "used": 10,
+        "gateHp": 15,
+        "hpAfter": 4,
+        "hits": 4,
+        "entryCash": 8,
+        "haulGross": 16,
+        "afterSale": 24,
+        "finalGold": 24,
+        "discarded": 1,
+        "shells": 2,
+        "ash": 12
+      },
+      "runMs": 15192
+    },
+    {
+      "trace": "货巢-原剑-16.json",
+      "result": {
+        "cap": "原剑",
+        "space": 16,
+        "used": 13,
+        "gateHp": 15,
+        "hpAfter": 4,
+        "hits": 4,
+        "entryCash": 5,
+        "haulGross": 18,
+        "afterSale": 23,
+        "finalGold": 23,
+        "discarded": 0,
+        "shells": 3,
+        "ash": 12
+      },
+      "runMs": 15069
+    },
+    {
+      "trace": "货巢-带绢-12.json",
+      "result": {
+        "cap": "带绢",
+        "space": 12,
+        "used": 12,
+        "gateHp": 15,
+        "hpAfter": 4,
+        "hits": 4,
+        "entryCash": 6,
+        "haulGross": 16,
+        "afterSale": 22,
+        "finalGold": 26,
+        "discarded": 1,
+        "shells": 2,
+        "ash": 12
+      },
+      "runMs": 18990
+    },
+    {
+      "trace": "货巢-带绢-16.json",
+      "result": {
+        "cap": "带绢",
+        "space": 16,
+        "used": 15,
+        "gateHp": 15,
+        "hpAfter": 4,
+        "hits": 4,
+        "entryCash": 3,
+        "haulGross": 18,
+        "afterSale": 21,
+        "finalGold": 25,
+        "discarded": 0,
+        "shells": 3,
+        "ash": 12
+      },
+      "runMs": 14262
+    },
+    {
+      "trace": "货巢-阙剑-12.json",
+      "result": {
+        "cap": "阙剑",
+        "space": 12,
+        "used": 10,
+        "gateHp": 15,
+        "hpAfter": 4,
+        "hits": 4,
+        "entryCash": 3,
+        "haulGross": 14,
+        "afterSale": 17,
+        "finalGold": 17,
+        "discarded": 2,
+        "shells": 1,
+        "ash": 12
+      },
+      "runMs": 16454
+    },
+    {
+      "trace": "货巢-阙剑-16.json",
+      "result": {
+        "cap": "阙剑",
+        "space": 16,
+        "used": 16,
+        "gateHp": 15,
+        "hpAfter": 4,
+        "hits": 4,
+        "entryCash": 0,
+        "haulGross": 18,
+        "afterSale": 18,
+        "finalGold": 18,
+        "discarded": 0,
+        "shells": 3,
+        "ash": 12
+      },
+      "runMs": 20077
+    }
+  ]
+}

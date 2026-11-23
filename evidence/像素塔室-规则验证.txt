@@ -1,0 +1,14 @@
+sword embed 256/256 wins HP 9.6 steps 20.3
+sword carry 183/256 wins HP 4.1 steps 24.5
+sword liquidate 196/256 wins HP 3.9 steps 25.2
+sword rush 199/256 wins HP 6.5 steps 18.7
+disc embed 256/256 wins HP 10.8 steps 23.6
+disc carry 152/256 wins HP 2.1 steps 24.8
+disc liquidate 256/256 wins HP 4.0 steps 26.3
+disc rush 0/256 wins HP 0.0 steps 19.4
+shield embed 256/256 wins HP 13.5 steps 26.0
+shield carry 256/256 wins HP 9.9 steps 27.1
+shield liquidate 256/256 wins HP 11.3 steps 28.0
+shield rush 0/256 wins HP 0.0 steps 18.4
+PASS state integrity, replay, seal routing, resources, delayed echo, damage order, loss and restart.
+Seed 1 verified first offer 4 → second offer 7, two seals, buy mirror, embed other seal.

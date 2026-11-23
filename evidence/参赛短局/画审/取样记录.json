@@ -1,0 +1,646 @@
+{
+  "package": "review3.html",
+  "size": 7001924,
+  "sha256": "7399a3f3e85bf0f6a51c534ec97ba4907ab16c946b5d6fe1d826002e411287ba",
+  "seed": 1,
+  "assets": {
+    "merch-abacus.webp": {
+      "sha256": "2d4d6c39e8b31400d66eb33ec197cc937b169514088ddd944ea087eade9064b1",
+      "size": [
+        340,
+        326
+      ],
+      "embedded": true
+    },
+    "merch-ash.webp": {
+      "sha256": "311e8b7180b97260a835cf069b68e5baf93367f785ddd90bb143016f8c9761ad",
+      "size": [
+        340,
+        310
+      ],
+      "embedded": true
+    },
+    "merch-silk.webp": {
+      "sha256": "ce46a818cb0f2545004274260488d80810db0f6823a9240881bc88820d22d0f6",
+      "size": [
+        110,
+        340
+      ],
+      "embedded": true
+    },
+    "merch-lining.webp": {
+      "sha256": "6f2f329e172cf3b1925aaa5ac80e7d51dd833bfefb8f728d7d4b2e0d017a3255",
+      "size": [
+        340,
+        242
+      ],
+      "embedded": true
+    }
+  },
+  "samples": [
+    {
+      "sample": "常规",
+      "file": "手机离线-0份绢.json",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 390 CSS px 触屏模拟，离线 file",
+      "flow": "0",
+      "result": {
+        "baseline": true,
+        "firstDamage": 6
+      },
+      "errors": [],
+      "frames": {
+        "impact": {
+          "p": 0.43,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "beads": {
+          "p": 0.49531529411364955,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "end": {
+          "p": 0.5512423529371799,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        }
+      }
+    },
+    {
+      "sample": "常规",
+      "file": "手机离线-1份绢.json",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 390 CSS px 触屏模拟，离线 file",
+      "flow": "1",
+      "result": {
+        "quantity": 1,
+        "gateEntryGold": 5,
+        "gateEntryHP": 22,
+        "firstDamage": 7,
+        "hits": 3,
+        "hpAfter": 19,
+        "silkCost": 2,
+        "silkRevenue": 4,
+        "realizedProfit": 2,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 3 手 · 出剑 3 次 气血 22 → 19。狐柜取货 · 听泉算盘。结余 9 石 · 绢销 1 份 · 绢利 2 石。回首摊再选。开始下一局"
+      },
+      "errors": [],
+      "frames": {
+        "impact": {
+          "p": 0.43,
+          "damage": 7,
+          "bonus": 1,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "beads": {
+          "p": 0.49611999999200695,
+          "damage": 7,
+          "bonus": 1,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "end": {
+          "p": 0.5519129411684756,
+          "damage": 7,
+          "bonus": 1,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        }
+      }
+    },
+    {
+      "sample": "常规",
+      "file": "手机离线-2份绢.json",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 390 CSS px 触屏模拟，离线 file",
+      "flow": "2",
+      "result": {
+        "quantity": 2,
+        "gateEntryGold": 3,
+        "gateEntryHP": 22,
+        "firstDamage": 6,
+        "hits": 4,
+        "hpAfter": 11,
+        "silkCost": 4,
+        "silkRevenue": 8,
+        "realizedProfit": 4,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 22 → 11。狐柜取货 · 听泉算盘。结余 11 石 · 绢销 2 份 · 绢利 4 石。回首摊再选。开始下一局"
+      },
+      "errors": [],
+      "frames": {
+        "impact": {
+          "p": 0.43,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "beads": {
+          "p": 0.49772941175671137,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "end": {
+          "p": 0.5535223529331824,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        }
+      }
+    },
+    {
+      "sample": "常规",
+      "file": "手机离线-扩囊.json",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 390 CSS px 触屏模拟，离线 file",
+      "flow": "large",
+      "result": {
+        "expanded": true,
+        "capacity": 16,
+        "holdings": {
+          "shells": 3,
+          "ash": 12
+        },
+        "discarded": {
+          "shells": 0,
+          "ash": 0
+        },
+        "liningCost": 3,
+        "haulResale": 18,
+        "afterSale": 18,
+        "gateStartHP": 15,
+        "hpAfter": 4,
+        "hits": 4,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 15 → 4。狐柜取货 · 饮棘钩。结余 18 石 · 绢销 0 份 · 绢利 0 石。回首摊再选。开始下一局"
+      },
+      "errors": [],
+      "frames": null
+    },
+    {
+      "sample": "常规",
+      "file": "桌面HTTP-0份绢.json",
+      "device": "desk",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 鼠标，环回 HTTP",
+      "flow": "0",
+      "result": {
+        "baseline": true,
+        "firstDamage": 6
+      },
+      "errors": [],
+      "frames": {
+        "impact": {
+          "p": 0.43,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "beads": {
+          "p": 0.49451058824728517,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "end": {
+          "p": 0.5503035294237563,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        }
+      }
+    },
+    {
+      "sample": "常规",
+      "file": "桌面HTTP-1份绢.json",
+      "device": "desk",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 鼠标，环回 HTTP",
+      "flow": "1",
+      "result": {
+        "quantity": 1,
+        "gateEntryGold": 5,
+        "gateEntryHP": 22,
+        "firstDamage": 7,
+        "hits": 3,
+        "hpAfter": 19,
+        "silkCost": 2,
+        "silkRevenue": 4,
+        "realizedProfit": 2,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 3 手 · 出剑 3 次 气血 22 → 19。狐柜取货 · 听泉算盘。结余 9 石 · 绢销 1 份 · 绢利 2 石。回首摊再选。开始下一局"
+      },
+      "errors": [],
+      "frames": {
+        "impact": {
+          "p": 0.43,
+          "damage": 7,
+          "bonus": 1,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "beads": {
+          "p": 0.49571764704683297,
+          "damage": 7,
+          "bonus": 1,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "end": {
+          "p": 0.5517788235174202,
+          "damage": 7,
+          "bonus": 1,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        }
+      }
+    },
+    {
+      "sample": "常规",
+      "file": "桌面HTTP-2份绢.json",
+      "device": "desk",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 鼠标，环回 HTTP",
+      "flow": "2",
+      "result": {
+        "quantity": 2,
+        "gateEntryGold": 3,
+        "gateEntryHP": 22,
+        "firstDamage": 6,
+        "hits": 4,
+        "hpAfter": 11,
+        "silkCost": 4,
+        "silkRevenue": 8,
+        "realizedProfit": 4,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 22 → 11。狐柜取货 · 听泉算盘。结余 11 石 · 绢销 2 份 · 绢利 4 石。回首摊再选。开始下一局"
+      },
+      "errors": [],
+      "frames": {
+        "impact": {
+          "p": 0.43,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "beads": {
+          "p": 0.49585176469389225,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "end": {
+          "p": 0.5516447058703609,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        }
+      }
+    },
+    {
+      "sample": "常规",
+      "file": "桌面HTTP-扩囊.json",
+      "device": "desk",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 鼠标，环回 HTTP",
+      "flow": "large",
+      "result": {
+        "expanded": true,
+        "capacity": 16,
+        "holdings": {
+          "shells": 3,
+          "ash": 12
+        },
+        "discarded": {
+          "shells": 0,
+          "ash": 0
+        },
+        "liningCost": 3,
+        "haulResale": 18,
+        "afterSale": 18,
+        "gateStartHP": 15,
+        "hpAfter": 4,
+        "hits": 4,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 15 → 4。狐柜取货 · 饮棘钩。结余 18 石 · 绢销 0 份 · 绢利 0 石。回首摊再选。开始下一局"
+      },
+      "errors": [],
+      "frames": null
+    },
+    {
+      "sample": "满档算盘",
+      "file": "手机离线-0份绢.json",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 390 CSS px 触屏模拟，离线 file",
+      "flow": "0",
+      "result": {
+        "baseline": false,
+        "abacusTier": 2,
+        "firstDamage": 8
+      },
+      "errors": [],
+      "frames": {
+        "impact": {
+          "p": 0.43,
+          "damage": 8,
+          "bonus": 2,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "beads": {
+          "p": 0.4977294117527153,
+          "damage": 8,
+          "bonus": 2,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "end": {
+          "p": 0.5536564705762432,
+          "damage": 8,
+          "bonus": 2,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        }
+      }
+    },
+    {
+      "sample": "满档算盘",
+      "file": "桌面HTTP-0份绢.json",
+      "device": "desk",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 鼠标，环回 HTTP",
+      "flow": "0",
+      "result": {
+        "baseline": false,
+        "abacusTier": 2,
+        "firstDamage": 8
+      },
+      "errors": [],
+      "frames": {
+        "impact": {
+          "p": 0.43,
+          "damage": 8,
+          "bonus": 2,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "beads": {
+          "p": 0.49598588234894364,
+          "damage": 8,
+          "bonus": 2,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "end": {
+          "p": 0.551912941172474,
+          "damage": 8,
+          "bonus": 2,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        }
+      }
+    },
+    {
+      "sample": "两份同售",
+      "file": "手机离线-2份绢.json",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 390 CSS px 触屏模拟，离线 file",
+      "flow": "2",
+      "result": {
+        "quantity": 2,
+        "gateEntryGold": 3,
+        "gateEntryHP": 22,
+        "firstDamage": 6,
+        "hits": 4,
+        "hpAfter": 11,
+        "silkCost": 4,
+        "silkRevenue": 8,
+        "realizedProfit": 4,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 22 → 11。狐柜取货 · 听泉算盘。结余 11 石 · 绢销 2 份 · 绢利 4 石。回首摊再选。开始下一局"
+      },
+      "errors": [],
+      "frames": {
+        "impact": {
+          "p": 0.43,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "beads": {
+          "p": 0.49786352939977463,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "end": {
+          "p": 0.5537905882233025,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        }
+      }
+    },
+    {
+      "sample": "两份同售",
+      "file": "桌面HTTP-2份绢.json",
+      "device": "desk",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "browser": "157.0.8103.79",
+      "input": "Chromium 鼠标，环回 HTTP",
+      "flow": "2",
+      "result": {
+        "quantity": 2,
+        "gateEntryGold": 3,
+        "gateEntryHP": 22,
+        "firstDamage": 6,
+        "hits": 4,
+        "hpAfter": 11,
+        "silkCost": 4,
+        "silkRevenue": 8,
+        "realizedProfit": 4,
+        "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 22 → 11。狐柜取货 · 听泉算盘。结余 11 石 · 绢销 2 份 · 绢利 4 石。回首摊再选。开始下一局"
+      },
+      "errors": [],
+      "frames": {
+        "impact": {
+          "p": 0.43,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "beads": {
+          "p": 0.4959858823649327,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        },
+        "end": {
+          "p": 0.5519129411884619,
+          "damage": 6,
+          "bonus": 0,
+          "tip": {
+            "x": 450,
+            "y": 204
+          }
+        }
+      }
+    }
+  ],
+  "sourceCaptures": {
+    "release\\手机离线-0份绢-impact.jpg": "54043aad4b86c7f53b4fbbcdc2152d38e6d3364aba12cbcffdcc0280b87dbe2d",
+    "release\\手机离线-1份绢-impact.jpg": "06d59356f3af800738879d42597a1355a50a2e0917f3771b40d78a64d8c11860",
+    "release\\手机离线-1份绢-末市未付.jpg": "d1c7ec20734168c2ead5fb0ddbe6feb23beb641e7504fff80360a9104d8e7b49",
+    "release\\手机离线-1份绢-首柜验价.jpg": "83c510300b0036f4f473ba810c24dda084420daa2c5c4d21f2b2eb738daf4854",
+    "release\\手机离线-2份绢-首柜验价.jpg": "ba6d0f5e4f6f4d6c441f4afa7277ba123f93bfe86e315a767f469bb76f066d14",
+    "release\\手机离线-扩囊-搬仓入囊.jpg": "1f8b310b704e90b17928cbc96e3325cc2a338509f2d3dfafef9603217ee23ca5",
+    "release\\手机离线-扩囊-灯灰验货.jpg": "5767fd081a07adfffef97d67b510e67a42d18d0ab67a82d27560cd249d77b4d8",
+    "release\\桌面HTTP-0份绢-impact.jpg": "01f87ae31b23e1e123e422feb11305ef6ab7de534e9a62b899fc73ac4733d5e0",
+    "release\\桌面HTTP-1份绢-impact.jpg": "9d4d22cad1a18e0a29d06f125055b80de89025f5792bfca67a09839ebdb70121",
+    "release\\桌面HTTP-1份绢-结账.jpg": "86a89b2df2cb72f77b8f957daec7259737f3b945521bcc3247455a7d44420291",
+    "release\\桌面HTTP-1份绢-首柜验价.jpg": "9cdc5b069abdc5d6d0c01be15b3a71c5c9c6eeda44c5fb9c7cf88a6cb990aa27",
+    "release\\桌面HTTP-2份绢-结账.jpg": "b557997eb48e2ce82372f8d738962af2d9f251983d6851dd1829445e35e56977",
+    "release\\桌面HTTP-2份绢-首柜验价.jpg": "5252aabdf6c78d5373b01a5ea3530702a04ae81bb5be9d0fc439f540555d9729",
+    "release\\桌面HTTP-扩囊-搬仓入囊.jpg": "6831a52a1d870f4e500d06054f068d3fa0d70b570932291fb5f6e332ebac7d37",
+    "release\\桌面HTTP-扩囊-灯灰验货.jpg": "794eafd24ef9870d72f83f1e26bbefa99d5ea44ab8c2f052aedeef772cc49914",
+    "release-both\\手机离线-2份绢-末市双绢未付.jpg": "90703872f54ebb38c9907243bfdfc559d1c8511b8d7cd6203181591018c3eadb",
+    "release-double\\手机离线-0份绢-impact.jpg": "39c49307401ae763b2e7bde83243bcd099c0cb951f2812406c289edb2bd625e8",
+    "release-double\\桌面HTTP-0份绢-impact.jpg": "0dc4be201ef679a7f4a9d15c40b9c7bb26f47a206d53c55f1dc60c6723301b9b"
+  },
+  "sheets": {
+    "四件新货.png": "6ccb3b9acc033acd9d843da0c764fc18a7239892607bcb1bff6d8bb21f639f9f",
+    "四行满囊.jpg": "542cf84b73c8ead2518ecb767c89a356be8e24b02f1d33d94b59ac997df14c67",
+    "货柜全景-手机.jpg": "5767fd081a07adfffef97d67b510e67a42d18d0ab67a82d27560cd249d77b4d8",
+    "货柜全景-桌面.jpg": "794eafd24ef9870d72f83f1e26bbefa99d5ea44ab8c2f052aedeef772cc49914",
+    "货签与账本.jpg": "9de6848cd42ef645d570fa80089d5b2ee2eef3d6dea35f5c41343e5aff7bd473",
+    "首击同机位.jpg": "d1d16313aacdcbfaf07aa6c9e2a2422f7bc6a7d6d0cfa0bf4912113db30bbf9c"
+  }
+}

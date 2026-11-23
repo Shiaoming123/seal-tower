@@ -1,0 +1,96 @@
+{
+  "bundleSHA256": "d5fe59f59696a5546d5b69187c4c392644b83fbbcb602c8edfc52a6444e8b001",
+  "seal": [
+    {
+      "choice": "sell-1",
+      "afterHaul": 23,
+      "gateGold": 19,
+      "turns": 3,
+      "hp": 19,
+      "finalGold": 30
+    },
+    {
+      "choice": "keep",
+      "afterHaul": 19,
+      "gateGold": 15,
+      "turns": 3,
+      "hp": 19,
+      "finalGold": 33
+    }
+  ],
+  "combat": [
+    {
+      "turns": 3,
+      "hp": 19,
+      "gold": 10,
+      "sequence": [
+        "strike",
+        "strike",
+        "focus-strike"
+      ]
+    },
+    {
+      "turns": 4,
+      "hp": 15,
+      "gold": 12,
+      "sequence": [
+        "strike",
+        "strike",
+        "guard",
+        "strike"
+      ]
+    },
+    {
+      "turns": 5,
+      "hp": 18,
+      "gold": 12,
+      "sequence": [
+        "strike",
+        "guard",
+        "guard",
+        "strike",
+        "strike"
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": "order-ash",
+      "beforeOrder": 12,
+      "previousEnd": 10,
+      "nextSeed": "2",
+      "firstStallGold": 6,
+      "hp": 22,
+      "weapon": "sword",
+      "bag": [
+        [
+          "seal",
+          1
+        ],
+        [
+          "ash",
+          1
+        ]
+      ]
+    },
+    {
+      "id": "order-purse",
+      "beforeOrder": 12,
+      "previousEnd": 8,
+      "nextSeed": "2",
+      "firstStallGold": 6,
+      "hp": 22,
+      "weapon": "sword",
+      "bag": [
+        [
+          "seal",
+          1
+        ],
+        [
+          "ash",
+          1
+        ]
+      ]
+    }
+  ]
+}

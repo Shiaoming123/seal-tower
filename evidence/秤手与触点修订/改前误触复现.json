@@ -1,0 +1,232 @@
+{
+  "baselineSHA256": "20bab5ffff48e81086977418bde34f2f6ad5907bad3be42e4a6519c71661127b",
+  "legacyTouchEvents": [
+    {
+      "phone": true,
+      "name": "enemy rectangular empty corner",
+      "point": {
+        "x": 234.06,
+        "y": 285.44625
+      },
+      "before": "idle",
+      "after": "swing",
+      "foe": "9",
+      "gold": "3"
+    },
+    {
+      "phone": true,
+      "name": "outside round seal, rectangular corner",
+      "point": {
+        "x": 195.91,
+        "y": 290.49625
+      },
+      "before": "drop",
+      "after": "guide",
+      "foe": "0",
+      "gold": "3"
+    },
+    {
+      "phone": true,
+      "name": "backing",
+      "wh": {
+        "back": [
+          960,
+          540
+        ],
+        "css": [
+          637,
+          358
+        ],
+        "dpr": 3
+      }
+    },
+    {
+      "phone": true,
+      "name": "central scene background",
+      "point": {
+        "x": 210.60000000000002,
+        "y": 441.65562500000004
+      },
+      "before": "quote",
+      "after": "quote",
+      "foe": "0",
+      "gold": "3"
+    },
+    {
+      "phone": true,
+      "name": "ticket gap",
+      "point": {
+        "x": 195,
+        "y": 648.40625
+      },
+      "before": "quote",
+      "after": "result",
+      "foe": "0",
+      "gold": "3"
+    }
+  ],
+  "probes": [
+    {
+      "phone": false,
+      "name": "enemy rectangular empty corner",
+      "point": {
+        "x": 789.28,
+        "y": 86.2
+      },
+      "before": "idle",
+      "after": "swing",
+      "foe": "9",
+      "gold": "3"
+    },
+    {
+      "phone": false,
+      "name": "outside round seal, rectangular corner",
+      "point": {
+        "x": 763.24,
+        "y": 273.66
+      },
+      "before": "drop",
+      "after": "guide",
+      "foe": "0",
+      "gold": "3"
+    },
+    {
+      "phone": false,
+      "name": "backing",
+      "wh": {
+        "back": [
+          960,
+          540
+        ],
+        "css": [
+          1366,
+          768
+        ],
+        "dpr": 1
+      }
+    },
+    {
+      "phone": false,
+      "name": "central scene background",
+      "point": {
+        "x": 737.6400000000001,
+        "y": 407.04
+      },
+      "before": "quote",
+      "after": "quote",
+      "foe": "0",
+      "gold": "3"
+    },
+    {
+      "phone": false,
+      "name": "ticket gap",
+      "point": {
+        "x": 249,
+        "y": 344
+      },
+      "before": "quote",
+      "after": "quote",
+      "foe": "0",
+      "gold": "3"
+    },
+    {
+      "phone": false,
+      "name": "price and benefit copy",
+      "point": {
+        "x": 131.9,
+        "y": 349.08000000000004
+      },
+      "before": "quote",
+      "after": "result",
+      "foe": "0",
+      "gold": "7"
+    },
+    {
+      "phone": false,
+      "name": "empty corner of grit object bounding box",
+      "point": {
+        "x": 801.75,
+        "y": 546.13
+      },
+      "before": "whet",
+      "after": "sharpened",
+      "foe": "0",
+      "gold": "3"
+    },
+    {
+      "phone": true,
+      "name": "enemy rectangular empty corner",
+      "point": {
+        "x": 234.06,
+        "y": 285.44625
+      },
+      "before": "idle",
+      "after": "swing",
+      "foe": "9",
+      "gold": "3"
+    },
+    {
+      "phone": true,
+      "name": "outside round seal, rectangular corner",
+      "point": {
+        "x": 195.91,
+        "y": 290.49625
+      },
+      "before": "drop",
+      "after": "guide",
+      "foe": "0",
+      "gold": "3"
+    },
+    {
+      "phone": true,
+      "name": "backing",
+      "wh": {
+        "back": [
+          960,
+          540
+        ],
+        "css": [
+          637,
+          358
+        ],
+        "dpr": 3
+      }
+    },
+    {
+      "phone": true,
+      "name": "central scene background",
+      "point": {
+        "x": 210.60000000000002,
+        "y": 441.65562500000004
+      },
+      "before": "quote",
+      "after": "quote",
+      "foe": "0",
+      "gold": "3"
+    },
+    {
+      "phone": true,
+      "name": "ticket gap",
+      "point": {
+        "x": 195,
+        "y": 648.40625
+      },
+      "before": "quote",
+      "after": "result",
+      "foe": "0",
+      "gold": "3"
+    },
+    {
+      "phone": true,
+      "name": "price and benefit copy",
+      "point": {
+        "x": 177.95000000000002,
+        "y": 707.28625
+      },
+      "before": "result",
+      "after": "idle",
+      "foe": "19",
+      "gold": "3"
+    }
+  ]
+}

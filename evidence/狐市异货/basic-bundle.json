@@ -1,0 +1,99 @@
+{
+  "mode": "bundle",
+  "kind": "basic",
+  "url": "http://127.0.0.1:8774/evidence/一印两价/一印两价.html",
+  "bundleSHA256": "07cbe532568198207dfc60c94a7d00f05dc4d81bdf2558bcfff2e3de25033366",
+  "final": {
+    "phase": "receipt",
+    "combatKind": "gate-fox",
+    "hp": "22",
+    "foe": "0",
+    "floor": "2",
+    "gold": "3",
+    "seals": "0",
+    "decision": "sell"
+  },
+  "events": [
+    [
+      "profile-open",
+      "idle"
+    ],
+    [
+      "folio-close",
+      "idle"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "primary",
+      "guide"
+    ],
+    [
+      "primary",
+      "rumor"
+    ],
+    [
+      "primary",
+      "stall"
+    ],
+    [
+      "primary",
+      "quote"
+    ],
+    [
+      "primary",
+      "result"
+    ],
+    [
+      "primary",
+      "whet"
+    ],
+    [
+      "primary",
+      "sharpened"
+    ],
+    [
+      "primary",
+      "idle"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "primary",
+      "receipt"
+    ],
+    [
+      "primary",
+      "quote"
+    ],
+    [
+      "secondary",
+      "result"
+    ],
+    [
+      "secondary",
+      "counter"
+    ],
+    [
+      "profile-open",
+      "counter"
+    ],
+    [
+      "folio-close",
+      "counter"
+    ]
+  ],
+  "errors": []
+}

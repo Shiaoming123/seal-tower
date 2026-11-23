@@ -1,0 +1,137 @@
+{
+  "mode": "file",
+  "source": "[本机路径略]/index.html",
+  "browser": "157.0.8103.79",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "simulatedTouch": false,
+  "actions": [
+    {
+      "input": "click",
+      "ms": 4,
+      "settled": 823,
+      "result": {
+        "phase": "idle",
+        "hp": "22",
+        "foe": "3"
+      }
+    },
+    {
+      "input": "K to guard second heavy",
+      "ms": 832,
+      "settled": 1581,
+      "result": {
+        "phase": "idle",
+        "hp": "20",
+        "foe": "3"
+      }
+    },
+    {
+      "input": "click",
+      "ms": 1591,
+      "settled": 2338,
+      "result": {
+        "phase": "cleared",
+        "hp": "20",
+        "foe": "0"
+      }
+    },
+    {
+      "input": "reset",
+      "ms": 2355,
+      "result": {
+        "phase": "idle",
+        "hp": "24",
+        "foe": "9"
+      }
+    },
+    {
+      "input": "620ms hold and release",
+      "ms": 2362,
+      "settled": 3753,
+      "result": {
+        "phase": "idle",
+        "hp": "22",
+        "foe": "1"
+      }
+    },
+    {
+      "input": "click",
+      "ms": 3761,
+      "settled": 4510,
+      "result": {
+        "phase": "cleared",
+        "hp": "22",
+        "foe": "0"
+      }
+    },
+    {
+      "input": "reset",
+      "ms": 4527,
+      "result": {
+        "phase": "idle",
+        "hp": "24",
+        "foe": "9"
+      }
+    }
+  ],
+  "blocked": [],
+  "errors": [],
+  "reducedMotion": true,
+  "layout": {
+    "pageWidth": 1280,
+    "viewport": 1280,
+    "world": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720,
+      "top": 0,
+      "right": 1280,
+      "bottom": 720,
+      "left": 0
+    },
+    "hud": {
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 720,
+      "top": 0,
+      "right": 1280,
+      "bottom": 720,
+      "left": 0
+    }
+  },
+  "initialTarget": {
+    "x": 900,
+    "y": 343,
+    "width": 332,
+    "height": 236
+  },
+  "requested": [
+    "[本机路径略]/index.html",
+    "[本机路径略]",
+    "[本机路径略]",
+    "[本机路径略]",
+    "[本机路径略]",
+    "[本机路径略]",
+    "[本机路径略]",
+    "[本机路径略]",
+    "[本机路径略]",
+    "[本机路径略]"
+  ],
+  "runtimeHashes": {
+    "first-cut/cut.css": "3daf3d0cb4f8f56d2eae38a61721b12748eabc2269228aea0bb91edf263b8169",
+    "game.js": "38e3bf98a609fc8ea91b14394b9d198eb23b417d2bd5285b2db581e78342b490",
+    "first-cut/actors.js": "9cfa5ab4843995fa62bf0105f1154ef7357b7652e3bb19ac41f6f74b904a5d65",
+    "first-cut/hall.js": "5a07ee72635f86a18b1135b1aa378a8e179962b6417a73c8dac8c558c41d0348",
+    "first-cut/ink.js": "d3e43042cddd4bd5e654388bbf39b34be9765ca813ee0ad31f3baec2df35e4e2",
+    "first-cut/scene.js": "3cd9c9cd6fbfe056cfaa42bcf41e892e4a63d0558bf7df5ea478c41cf5393ad7",
+    "first-cut/hud.js": "5aa78e1f15ed6d3d6b4594643e8122939a0b10cf96c007a86514941fb5bfa8bf",
+    "first-cut/voice.js": "a23936df715bf1b72defc72ad5073842f7731fa70b07c6d1e4e35abde0c1e622",
+    "first-cut/cut.js": "fc3b4ffb50630ed8635ea15f5b7cad85240627ea7175e73c83c3934b6f2413d5",
+    "first-cut/index.html": "6f7ca257431aac5ee9265e3c227286f7921d707500d690ba603bc815baf3ab4f"
+  }
+}

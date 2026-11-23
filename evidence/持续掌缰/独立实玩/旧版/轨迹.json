@@ -1,0 +1,3316 @@
+{
+  "hash": "bffb9269164dde11e60374c5024d33b2342fbac4f4f9c759e7c0527d6b43074a",
+  "mode": "branches-touch",
+  "width": 390,
+  "events": [
+    {
+      "t": 666,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 1441,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 2492,
+      "action": "secondary",
+      "text": "连灯灰一并收好"
+    },
+    {
+      "t": 3313,
+      "action": "primary",
+      "text": "递印问行情"
+    },
+    {
+      "t": 4138,
+      "action": "primary",
+      "text": "收下路签，去狐市"
+    },
+    {
+      "t": 4484,
+      "action": "primary",
+      "text": "把灯纹印放上秤"
+    },
+    {
+      "t": 5812,
+      "action": "primary",
+      "text": "成交  ＋4 石"
+    },
+    {
+      "t": 7172,
+      "action": "primary",
+      "text": "俯看货摊"
+    },
+    {
+      "t": 8079,
+      "action": "market-escort",
+      "text": "接押运，查看护送契约"
+    },
+    {
+      "t": 8226,
+      "action": "催马",
+      "text": "催马 · 常速"
+    },
+    {
+      "t": 8261,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 0,
+      "branch": false,
+      "k": 0,
+      "h": "芦根浅滩",
+      "body": "右道有芦根浅滩，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 8636,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 0,
+      "branch": false,
+      "k": 1,
+      "h": "青石堤脚",
+      "body": "左道有青石堤脚，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 9565,
+      "kind": "触摸实体车尾红签",
+      "xy": {
+        "x": 268.5,
+        "y": 420.77231876491646
+      },
+      "pixels": 48,
+      "observed": "",
+      "finished": true,
+      "mile": "第 1 程 · 路标 1/6",
+      "notice": "轻扫路面或点下方车道"
+    },
+    {
+      "t": 9600,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 0,
+      "branch": false,
+      "k": 2,
+      "h": "引车上堤",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。　此处看准货封，错行损一层。",
+      "advertised": "brace",
+      "pick": "brace",
+      "method": "按钮应对"
+    },
+    {
+      "t": 9630,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 1,
+      "branch": false,
+      "k": 0,
+      "h": "芦根浅滩",
+      "body": "左道有芦根浅滩，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 9977,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 1,
+      "branch": false,
+      "k": 1,
+      "h": "青石堤脚",
+      "body": "左道有青石堤脚，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 10435,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 1,
+      "branch": false,
+      "k": 2,
+      "h": "朱栏急弯",
+      "body": "左侧有芦根浅滩，右侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "按钮应对"
+    },
+    {
+      "t": 10921,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 2,
+      "branch": false,
+      "k": 0,
+      "h": "芦根浅滩",
+      "body": "右道有芦根浅滩，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 11283,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 2,
+      "branch": false,
+      "k": 1,
+      "h": "青石堤脚",
+      "body": "右道有青石堤脚，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 11741,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 2,
+      "branch": false,
+      "k": 2,
+      "h": "撑住短桥",
+      "body": "右侧有芦根浅滩，左侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "按钮应对"
+    },
+    {
+      "t": 12199,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 3,
+      "branch": false,
+      "k": 0,
+      "h": "芦根浅滩",
+      "body": "右道有芦根浅滩，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 12588,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 3,
+      "branch": false,
+      "k": 1,
+      "h": "青石堤脚",
+      "body": "右道有青石堤脚，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 13046,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 3,
+      "branch": false,
+      "k": 2,
+      "h": "堤下碎石",
+      "body": "左侧有芦根浅滩，右侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "按钮应对"
+    },
+    {
+      "t": 13505,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 4,
+      "branch": false,
+      "k": 0,
+      "h": "芦根浅滩",
+      "body": "左道有芦根浅滩，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 13893,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 4,
+      "branch": false,
+      "k": 1,
+      "h": "青石堤脚",
+      "body": "左道有青石堤脚，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 14835,
+      "kind": "触摸实体车尾红签",
+      "xy": {
+        "x": 269.5,
+        "y": 421.7719085620525
+      },
+      "pixels": 48,
+      "observed": "",
+      "finished": true,
+      "mile": "第 1 程 · 路标 5/6",
+      "notice": "轻扫路面或点下方车道"
+    },
+    {
+      "t": 14865,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 4,
+      "branch": false,
+      "k": 2,
+      "h": "芦苇夹径",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。　此处看准货封，错行损一层。",
+      "advertised": "brace",
+      "pick": "brace",
+      "method": "按钮应对"
+    },
+    {
+      "t": 14893,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 5,
+      "branch": false,
+      "k": 0,
+      "h": "芦根浅滩",
+      "body": "左道有芦根浅滩，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 15247,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 5,
+      "branch": false,
+      "k": 1,
+      "h": "青石堤脚",
+      "body": "右道有青石堤脚，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 15706,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 5,
+      "branch": false,
+      "k": 2,
+      "h": "守住桥头",
+      "body": "右侧有芦根浅滩，左侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "按钮应对"
+    },
+    {
+      "t": 16144,
+      "kind": "到站",
+      "leg": 0,
+      "landed": {
+        "d": {
+          "pace": "quick",
+          "stage": "station",
+          "leg": "0",
+          "marker": "6",
+          "branchRoad": "false",
+          "cue": "",
+          "completed": "6",
+          "fork": "2",
+          "laneCue": "",
+          "waiting": "false",
+          "selected": "left"
+        },
+        "h": "杉桥短市",
+        "body": "桥头有便宜灯灰。下站水驿最多收两份，每份 3 石。　补货用自家灵石，货装进行囊；每个驿站限量。",
+        "not": "走左辙，车轮过标，箱封安稳。",
+        "mile": "第 1 程 · 路标 6/6",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ],
+        "options": [
+          [
+            "buy-ash",
+            "购灯灰 · 1 石\n每次一份，本站余 3 份。",
+            false
+          ],
+          [
+            "sell-shell",
+            "卖墨蠹壳 · 3 石\n囊中无墨蠹壳",
+            true
+          ],
+          [
+            "repair",
+            "补封 · 1 石\n无松封货箱",
+            true
+          ],
+          [
+            "patch",
+            "补箱 · 一份灯灰\n无空箱",
+            true
+          ],
+          [
+            "visit-branch",
+            "往芦汀灰场 · 支道一标\n芦汀有捡灯人，可领一份灯灰。留囊格，下一驿能卖。",
+            false
+          ],
+          [
+            "continue",
+            "上路\n前往朱窑古道。",
+            false
+          ],
+          [
+            "abort",
+            "卸契返柜\n交回托货，自购物照原样带走。放弃脚程与送箱钱。",
+            false
+          ]
+        ],
+        "receipt": "车上商货　灯灰 1 份　墨蠹壳 0 件\n箱1 封牢　箱2 封牢　箱3 封牢"
+      }
+    },
+    {
+      "t": 16175,
+      "kind": "驿务",
+      "a": "visit-branch",
+      "from": "杉桥短市",
+      "before": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "",
+      "notice": "轻扫路面或点下方车道"
+    },
+    {
+      "t": 16206,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 0,
+      "branch": true,
+      "k": 0,
+      "h": "芦根浅滩",
+      "body": "左道有芦根浅滩，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 16588,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 0,
+      "branch": true,
+      "k": 1,
+      "h": "青石堤脚",
+      "body": "左道有青石堤脚，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 17046,
+      "kind": "路面",
+      "leg": 0,
+      "mark": 0,
+      "branch": true,
+      "k": 2,
+      "h": "捡灯人浅渡",
+      "body": "左侧有芦根浅滩，右侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "按钮应对"
+    },
+    {
+      "t": 17545,
+      "kind": "驿务",
+      "a": "branch-ash",
+      "from": "芦汀灰场",
+      "before": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "车上商货　灯灰 2 份　墨蠹壳 0 件\n箱1 封牢　箱2 封牢　箱3 封牢",
+      "notice": "在芦汀收起一份灯灰，已放进锦囊。"
+    },
+    {
+      "t": 17578,
+      "kind": "驿务",
+      "a": "buy-ash",
+      "from": "杉桥短市",
+      "before": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 6",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "车上商货　灯灰 3 份　墨蠹壳 0 件\n箱1 封牢　箱2 封牢　箱3 封牢",
+      "notice": "买入灯灰一份，灵石 7 → 6。"
+    },
+    {
+      "t": 17606,
+      "kind": "驿务",
+      "a": "buy-ash",
+      "from": "杉桥短市",
+      "before": [
+        "灵石 6",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 5",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "车上商货　灯灰 4 份　墨蠹壳 0 件\n箱1 封牢　箱2 封牢　箱3 封牢",
+      "notice": "买入灯灰一份，灵石 6 → 5。"
+    },
+    {
+      "t": 17685,
+      "kind": "驿务",
+      "a": "continue",
+      "from": "杉桥短市",
+      "before": [
+        "灵石 5",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 5",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "",
+      "notice": "轻扫路面或点下方车道"
+    },
+    {
+      "t": 17713,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 0,
+      "branch": false,
+      "k": 0,
+      "h": "松动窑砖",
+      "body": "左道有松动窑砖，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 18088,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 0,
+      "branch": false,
+      "k": 1,
+      "h": "冷灰车辙",
+      "body": "右道有冷灰车辙，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 18546,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 0,
+      "branch": false,
+      "k": 2,
+      "h": "出驿进山",
+      "body": "右侧有松动窑砖，左侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "按钮应对"
+    },
+    {
+      "t": 19004,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 1,
+      "branch": false,
+      "k": 0,
+      "h": "松动窑砖",
+      "body": "左道有松动窑砖，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 19394,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 1,
+      "branch": false,
+      "k": 1,
+      "h": "冷灰车辙",
+      "body": "左道有冷灰车辙，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 19852,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 1,
+      "branch": false,
+      "k": 2,
+      "h": "窑口松砖",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。　此处看准货封，错行损一层。",
+      "advertised": "brace",
+      "pick": "brace",
+      "method": "按钮应对"
+    },
+    {
+      "t": 20310,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 2,
+      "branch": false,
+      "k": 0,
+      "h": "松动窑砖",
+      "body": "右道有松动窑砖，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 20699,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 2,
+      "branch": false,
+      "k": 1,
+      "h": "冷灰车辙",
+      "body": "右道有冷灰车辙，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 21157,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 2,
+      "branch": false,
+      "k": 2,
+      "h": "赤崖岔口",
+      "body": "左侧有松动窑砖，右侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "按钮应对"
+    },
+    {
+      "t": 21616,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 3,
+      "branch": false,
+      "k": 0,
+      "h": "松动窑砖",
+      "body": "右道有松动窑砖，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 22005,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 3,
+      "branch": false,
+      "k": 1,
+      "h": "冷灰车辙",
+      "body": "右道有冷灰车辙，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 22463,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 3,
+      "branch": false,
+      "k": 2,
+      "h": "石坡浮灰",
+      "body": "右侧有松动窑砖，左侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "按钮应对"
+    },
+    {
+      "t": 22921,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 4,
+      "branch": false,
+      "k": 0,
+      "h": "松动窑砖",
+      "body": "左道有松动窑砖，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 23310,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 4,
+      "branch": false,
+      "k": 1,
+      "h": "冷灰车辙",
+      "body": "左道有冷灰车辙，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 23769,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 4,
+      "branch": false,
+      "k": 2,
+      "h": "压稳石梁",
+      "body": "左侧有松动窑砖，右侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "按钮应对"
+    },
+    {
+      "t": 24227,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 5,
+      "branch": false,
+      "k": 0,
+      "h": "松动窑砖",
+      "body": "右道有松动窑砖，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 24616,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 5,
+      "branch": false,
+      "k": 1,
+      "h": "冷灰车辙",
+      "body": "左道有冷灰车辙，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 25074,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 5,
+      "branch": false,
+      "k": 2,
+      "h": "避开落砾",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。　此处看准货封，错行损一层。",
+      "advertised": "brace",
+      "pick": "brace",
+      "method": "按钮应对"
+    },
+    {
+      "t": 25510,
+      "kind": "到站",
+      "leg": 1,
+      "landed": {
+        "d": {
+          "pace": "quick",
+          "stage": "station",
+          "leg": "1",
+          "marker": "6",
+          "branchRoad": "false",
+          "cue": "",
+          "completed": "13",
+          "fork": "2",
+          "laneCue": "",
+          "waiting": "false",
+          "selected": "brace"
+        },
+        "h": "砾潮水驿",
+        "body": "水驿要灯灰。此处墨壳 2 石，下站挂铃栈收一枚 4 石。　补货用自家灵石，货装进行囊；每个驿站限量。",
+        "not": "护住车厢，车轮过标，箱封安稳。",
+        "mile": "第 2 程 · 路标 6/6",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ],
+        "options": [
+          [
+            "sell-ash",
+            "卖灯灰 · 3 石\n每次一份，本站余 2 份。",
+            false
+          ],
+          [
+            "buy-shell",
+            "购墨蠹壳 · 2 石\n每次一份，本站余 1 份。",
+            false
+          ],
+          [
+            "repair",
+            "补封 · 1 石\n无松封货箱",
+            true
+          ],
+          [
+            "patch",
+            "补箱 · 一份灯灰\n无空箱",
+            true
+          ],
+          [
+            "visit-branch",
+            "往旧窑偏栈 · 支道一标\n窑工要一份灯灰，肯换一枚墨壳。墨壳要能装进锦囊。",
+            false
+          ],
+          [
+            "continue",
+            "上路\n前往悬铃峡。",
+            false
+          ],
+          [
+            "abort",
+            "卸契返柜\n交回托货，自购物照原样带走。放弃脚程与送箱钱。",
+            false
+          ]
+        ],
+        "receipt": "车上商货　灯灰 4 份　墨蠹壳 0 件\n箱1 封牢　箱2 封牢　箱3 封牢"
+      }
+    },
+    {
+      "t": 25536,
+      "kind": "驿务",
+      "a": "visit-branch",
+      "from": "砾潮水驿",
+      "before": [
+        "灵石 5",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 5",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "",
+      "notice": "轻扫路面或点下方车道"
+    },
+    {
+      "t": 25567,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 0,
+      "branch": true,
+      "k": 0,
+      "h": "松动窑砖",
+      "body": "左道有松动窑砖，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 25950,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 0,
+      "branch": true,
+      "k": 1,
+      "h": "冷灰车辙",
+      "body": "左道有冷灰车辙，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 26408,
+      "kind": "路面",
+      "leg": 1,
+      "mark": 0,
+      "branch": true,
+      "k": 2,
+      "h": "窑尾窄坡",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。　此处看准货封，错行损一层。",
+      "advertised": "brace",
+      "pick": "brace",
+      "method": "按钮应对"
+    },
+    {
+      "t": 26905,
+      "kind": "驿务",
+      "a": "branch-shell",
+      "from": "旧窑偏栈",
+      "before": [
+        "灵石 5",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 5",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "车上商货　灯灰 3 份　墨蠹壳 1 件\n箱1 封牢　箱2 封牢　箱3 封牢",
+      "notice": "留灰一份，带壳一枚回驿。"
+    },
+    {
+      "t": 26932,
+      "kind": "驿务",
+      "a": "sell-ash",
+      "from": "砾潮水驿",
+      "before": [
+        "灵石 5",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 8",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "车上商货　灯灰 2 份　墨蠹壳 1 件\n箱1 封牢　箱2 封牢　箱3 封牢",
+      "notice": "售出灯灰一份，灵石 5 → 8。"
+    },
+    {
+      "t": 26959,
+      "kind": "驿务",
+      "a": "sell-ash",
+      "from": "砾潮水驿",
+      "before": [
+        "灵石 8",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 11",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "车上商货　灯灰 1 份　墨蠹壳 1 件\n箱1 封牢　箱2 封牢　箱3 封牢",
+      "notice": "售出灯灰一份，灵石 8 → 11。"
+    },
+    {
+      "t": 27022,
+      "kind": "驿务",
+      "a": "continue",
+      "from": "砾潮水驿",
+      "before": [
+        "灵石 11",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 11",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "",
+      "notice": "轻扫路面或点下方车道"
+    },
+    {
+      "t": 27046,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 0,
+      "branch": false,
+      "k": 0,
+      "h": "腐木桥板",
+      "body": "右道有腐木桥板，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 27429,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 0,
+      "branch": false,
+      "k": 1,
+      "h": "索头横梁",
+      "body": "左道有索头横梁，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 27887,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 0,
+      "branch": false,
+      "k": 2,
+      "h": "切入峡口",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。　此处看准货封，错行损一层。",
+      "advertised": "brace",
+      "pick": "brace",
+      "method": "按钮应对"
+    },
+    {
+      "t": 28345,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 1,
+      "branch": false,
+      "k": 0,
+      "h": "腐木桥板",
+      "body": "左道有腐木桥板，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 28727,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 1,
+      "branch": false,
+      "k": 1,
+      "h": "索头横梁",
+      "body": "左道有索头横梁，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 29193,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 1,
+      "branch": false,
+      "k": 2,
+      "h": "铜铃避风",
+      "body": "左侧有断裂桥板，右侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "按钮应对"
+    },
+    {
+      "t": 29651,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 2,
+      "branch": false,
+      "k": 0,
+      "h": "腐木桥板",
+      "body": "右道有腐木桥板，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 30040,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 2,
+      "branch": false,
+      "k": 1,
+      "h": "索头横梁",
+      "body": "右道有索头横梁，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 30498,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 2,
+      "branch": false,
+      "k": 2,
+      "h": "跨越裂栈",
+      "body": "右侧有断裂桥板，左侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "按钮应对"
+    },
+    {
+      "t": 30956,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 3,
+      "branch": false,
+      "k": 0,
+      "h": "腐木桥板",
+      "body": "右道有腐木桥板，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 31345,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 3,
+      "branch": false,
+      "k": 1,
+      "h": "索头横梁",
+      "body": "右道有索头横梁，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 31804,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 3,
+      "branch": false,
+      "k": 2,
+      "h": "急转飞廊",
+      "body": "左侧有断裂桥板，右侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "按钮应对"
+    },
+    {
+      "t": 32262,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 4,
+      "branch": false,
+      "k": 0,
+      "h": "腐木桥板",
+      "body": "左道有腐木桥板，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 32651,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 4,
+      "branch": false,
+      "k": 1,
+      "h": "索头横梁",
+      "body": "左道有索头横梁，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 33110,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 4,
+      "branch": false,
+      "k": 2,
+      "h": "落叶遮道",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。　此处看准货封，错行损一层。",
+      "advertised": "brace",
+      "pick": "brace",
+      "method": "按钮应对"
+    },
+    {
+      "t": 33568,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 5,
+      "branch": false,
+      "k": 0,
+      "h": "腐木桥板",
+      "body": "左道有腐木桥板，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 33957,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 5,
+      "branch": false,
+      "k": 1,
+      "h": "索头横梁",
+      "body": "右道有索头横梁，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 34415,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 5,
+      "branch": false,
+      "k": 2,
+      "h": "封住风口",
+      "body": "右侧有断裂桥板，左侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "按钮应对"
+    },
+    {
+      "t": 34851,
+      "kind": "到站",
+      "leg": 2,
+      "landed": {
+        "d": {
+          "pace": "quick",
+          "stage": "station",
+          "leg": "2",
+          "marker": "6",
+          "branchRoad": "false",
+          "cue": "",
+          "completed": "20",
+          "fork": "2",
+          "laneCue": "",
+          "waiting": "false",
+          "selected": "left"
+        },
+        "h": "挂铃栈",
+        "body": "最后一次修车。交割所只验车货，剩下的自购货随你回柜。　补货用自家灵石，货装进行囊；每个驿站限量。",
+        "not": "走左辙，车轮过标，箱封安稳。",
+        "mile": "第 3 程 · 路标 6/6",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ],
+        "options": [
+          [
+            "sell-shell",
+            "卖墨蠹壳 · 4 石\n每次一份，本站余 1 份。",
+            false
+          ],
+          [
+            "sell-ash",
+            "卖灯灰 · 2 石\n每次一份，本站余 2 份。",
+            false
+          ],
+          [
+            "buy-ash",
+            "购灯灰 · 2 石\n每次一份，本站余 1 份。",
+            false
+          ],
+          [
+            "repair",
+            "补封 · 1 石\n无松封货箱",
+            true
+          ],
+          [
+            "patch",
+            "补箱 · 一份灯灰\n无空箱",
+            true
+          ],
+          [
+            "visit-branch",
+            "往桥脚夜摊 · 支道一标\n夜摊收一份灰给三石。也能请匠人补一箱，两者只取其一。",
+            false
+          ],
+          [
+            "continue",
+            "上路\n前往照影渡。",
+            false
+          ],
+          [
+            "abort",
+            "卸契返柜\n交回托货，自购物照原样带走。放弃脚程与送箱钱。",
+            false
+          ]
+        ],
+        "receipt": "车上商货　灯灰 1 份　墨蠹壳 1 件\n箱1 封牢　箱2 封牢　箱3 封牢"
+      }
+    },
+    {
+      "t": 34884,
+      "kind": "驿务",
+      "a": "visit-branch",
+      "from": "挂铃栈",
+      "before": [
+        "灵石 11",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 11",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "",
+      "notice": "轻扫路面或点下方车道"
+    },
+    {
+      "t": 34915,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 0,
+      "branch": true,
+      "k": 0,
+      "h": "腐木桥板",
+      "body": "左道有腐木桥板，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 35297,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 0,
+      "branch": true,
+      "k": 1,
+      "h": "索头横梁",
+      "body": "左道有索头横梁，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 35756,
+      "kind": "路面",
+      "leg": 2,
+      "mark": 0,
+      "branch": true,
+      "k": 2,
+      "h": "桥脚下层",
+      "body": "左侧有断裂桥板，右侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "按钮应对"
+    },
+    {
+      "t": 36252,
+      "kind": "驿务",
+      "a": "branch-sale",
+      "from": "桥脚夜摊",
+      "before": [
+        "灵石 11",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 14",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "车上商货　灯灰 0 份　墨蠹壳 1 件\n箱1 封牢　箱2 封牢　箱3 封牢",
+      "notice": "夜摊收灰一份，三石入囊。"
+    },
+    {
+      "t": 36280,
+      "kind": "驿务",
+      "a": "sell-shell",
+      "from": "挂铃栈",
+      "before": [
+        "灵石 14",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 18",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "车上商货　灯灰 0 份　墨蠹壳 0 件\n箱1 封牢　箱2 封牢　箱3 封牢",
+      "notice": "售出墨蠹壳一份，灵石 14 → 18。"
+    },
+    {
+      "t": 36350,
+      "kind": "驿务",
+      "a": "continue",
+      "from": "挂铃栈",
+      "before": [
+        "灵石 18",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 18",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "cargo": "",
+      "notice": "轻扫路面或点下方车道"
+    },
+    {
+      "t": 36373,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 0,
+      "branch": false,
+      "k": 0,
+      "h": "雨滑城砖",
+      "body": "右道有雨滑城砖，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 36756,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 0,
+      "branch": false,
+      "k": 1,
+      "h": "石灯门槛",
+      "body": "左道有石灯门槛，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 37214,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 0,
+      "branch": false,
+      "k": 2,
+      "h": "拾阶下坡",
+      "body": "左侧有雨滑石砖，右侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "按钮应对"
+    },
+    {
+      "t": 37672,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 1,
+      "branch": false,
+      "k": 0,
+      "h": "雨滑城砖",
+      "body": "左道有雨滑城砖，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 38061,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 1,
+      "branch": false,
+      "k": 1,
+      "h": "石灯门槛",
+      "body": "左道有石灯门槛，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 38519,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 1,
+      "branch": false,
+      "k": 2,
+      "h": "避过潮痕",
+      "body": "右侧有雨滑石砖，左侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "按钮应对"
+    },
+    {
+      "t": 38978,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 2,
+      "branch": false,
+      "k": 0,
+      "h": "雨滑城砖",
+      "body": "右道有雨滑城砖，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 39367,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 2,
+      "branch": false,
+      "k": 1,
+      "h": "石灯门槛",
+      "body": "右道有石灯门槛，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 39825,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 2,
+      "branch": false,
+      "k": 2,
+      "h": "托住轮轴",
+      "body": "左侧有雨滑石砖，右侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "按钮应对"
+    },
+    {
+      "t": 40284,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 3,
+      "branch": false,
+      "k": 0,
+      "h": "雨滑城砖",
+      "body": "右道有雨滑城砖，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 40672,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 3,
+      "branch": false,
+      "k": 1,
+      "h": "石灯门槛",
+      "body": "右道有石灯门槛，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 41130,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 3,
+      "branch": false,
+      "k": 2,
+      "h": "折入石埠",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。　此处看准货封，错行损一层。",
+      "advertised": "brace",
+      "pick": "brace",
+      "method": "按钮应对"
+    },
+    {
+      "t": 41589,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 4,
+      "branch": false,
+      "k": 0,
+      "h": "雨滑城砖",
+      "body": "右道有雨滑城砖，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 41978,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 4,
+      "branch": false,
+      "k": 1,
+      "h": "石灯门槛",
+      "body": "右道有石灯门槛，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 42436,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 4,
+      "branch": false,
+      "k": 2,
+      "h": "灯下窄巷",
+      "body": "右侧有雨滑石砖，左侧双辙稳当。　此处看准货封，错行损一层。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "按钮应对"
+    },
+    {
+      "t": 42894,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 5,
+      "branch": false,
+      "k": 0,
+      "h": "雨滑城砖",
+      "body": "右道有雨滑城砖，左道的双车辙完整。",
+      "advertised": "left",
+      "pick": "left",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 43284,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 5,
+      "branch": false,
+      "k": 1,
+      "h": "石灯门槛",
+      "body": "左道有石灯门槛，右道的双车辙完整。",
+      "advertised": "right",
+      "pick": "right",
+      "method": "路下注记换道"
+    },
+    {
+      "t": 43742,
+      "kind": "路面",
+      "leg": 3,
+      "mark": 5,
+      "branch": false,
+      "k": 2,
+      "h": "稳车进城",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。　此处看准货封，错行损一层。",
+      "advertised": "brace",
+      "pick": "brace",
+      "method": "按钮应对"
+    },
+    {
+      "t": 44176,
+      "kind": "到站",
+      "leg": 3,
+      "landed": {
+        "d": {
+          "pace": "quick",
+          "stage": "delivery",
+          "leg": "3",
+          "marker": "6",
+          "branchRoad": "false",
+          "cue": "",
+          "completed": "27",
+          "fork": "2",
+          "laneCue": "",
+          "waiting": "false",
+          "selected": "brace"
+        },
+        "h": "照影渡交割",
+        "body": "渡口逐箱验封。自购灯灰和墨壳仍归你。　脚程 2 石，余 3 箱可交。",
+        "not": "护住车厢，车轮过标，箱封安稳。",
+        "mile": "第 4 程 · 路标 6/6",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ],
+        "options": [
+          [
+            "deliver",
+            "验箱收款\n本次收入 5 石，脚程与箱钱分别入账。",
+            false
+          ]
+        ],
+        "receipt": "应收脚程\n+2 石\n应收箱钱\n+3 石\n进货\n-2 石\n卖货\n+13 石\n沿途采买货利\n+8 石\n自带货售入\n+3 石\n修理\n0 石\n交割后净收\n+16 石"
+      }
+    },
+    {
+      "t": 44239,
+      "kind": "驿务",
+      "a": "deliver",
+      "from": "照影渡交割",
+      "before": [
+        "灵石 18",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "after": [
+        "灵石 23",
+        "实交 3 / 3",
+        "封签 已卸"
+      ],
+      "cargo": "实收脚程\n+2 石\n实收箱钱\n+3 石\n进货\n-2 石\n卖货\n+13 石\n沿途采买货利\n+8 石\n自带货售入\n+3 石\n修理\n0 石\n净收\n+16 石",
+      "notice": "领脚程 2 石，托货 3 石。"
+    },
+    {
+      "t": 44301,
+      "kind": "驿务",
+      "a": "return",
+      "from": "驿运清账",
+      "before": [
+        "灵石 23",
+        "实交 3 / 3",
+        "封签 已卸"
+      ],
+      "after": [
+        "灵石23",
+        "实交3 / 3",
+        "封签已卸"
+      ],
+      "cargo": "实收脚程+2 石实收箱钱+3 石进货-2 石卖货+13 石沿途采买货利+8 石自带货售入+3 石修理0 石净收+16 石",
+      "notice": "领脚程 2 石，托货 3 石。"
+    },
+    {
+      "t": 44326,
+      "action": "market-fourth",
+      "text": "闯夜市狐关"
+    },
+    {
+      "t": 44387,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 45151,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 45922,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 46700,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 47785,
+      "action": "primary",
+      "text": "查看末市货摊"
+    },
+    {
+      "t": 48619,
+      "action": "market-third",
+      "text": "合账离市"
+    }
+  ],
+  "errors": [],
+  "offer": {
+    "d": {
+      "pace": "normal",
+      "stage": "offer",
+      "leg": "0",
+      "marker": "0",
+      "branchRoad": "false",
+      "cue": "",
+      "completed": "0"
+    },
+    "h": "绯绡的押运单",
+    "body": "四段驿道，三处沿途市。带三箱托货前往照影渡。　押金 0 石 · 全程脚程 2 石 · 每箱尚存加 1 石",
+    "not": "",
+    "mile": "",
+    "stats": [
+      "灵石 7",
+      "在车 待领",
+      "封签 待领"
+    ],
+    "options": [
+      [
+        "start",
+        "接单起行\n免费领三箱。自购货要用现钱和囊格。",
+        false
+      ],
+      [
+        null,
+        "合契，回货摊",
+        false
+      ]
+    ],
+    "receipt": "车上商货　灯灰 1 份　墨蠹壳 0 件\n包袱是随车行装。三只托箱挂在车尾，按完封箱数领钱。"
+  },
+  "offerCash": 7,
+  "contract": 8151,
+  "skyProbe": {
+    "choice": "none",
+    "xy": {
+      "x": 195,
+      "y": 136.2890625
+    },
+    "fork": "2",
+    "mile": "第 1 程 · 路标 1/6",
+    "changed": false
+  },
+  "firstTwoDone": 10865,
+  "driveInputs": 81,
+  "paceSwitchedMs": 8226,
+  "physicalBrace": 2,
+  "due": {
+    "d": {
+      "pace": "quick",
+      "stage": "delivery",
+      "leg": "3",
+      "marker": "6",
+      "branchRoad": "false",
+      "cue": "",
+      "completed": "27",
+      "fork": "2",
+      "laneCue": "",
+      "waiting": "false",
+      "selected": "brace"
+    },
+    "h": "照影渡交割",
+    "body": "渡口逐箱验封。自购灯灰和墨壳仍归你。　脚程 2 石，余 3 箱可交。",
+    "not": "护住车厢，车轮过标，箱封安稳。",
+    "mile": "第 4 程 · 路标 6/6",
+    "stats": [
+      "灵石 18",
+      "在车 3 / 3",
+      "封签 6 / 6"
+    ],
+    "options": [
+      [
+        "deliver",
+        "验箱收款\n本次收入 5 石，脚程与箱钱分别入账。",
+        false
+      ]
+    ],
+    "receipt": "应收脚程\n+2 石\n应收箱钱\n+3 石\n进货\n-2 石\n卖货\n+13 石\n沿途采买货利\n+8 石\n自带货售入\n+3 石\n修理\n0 石\n交割后净收\n+16 石"
+  },
+  "paid": {
+    "d": {
+      "pace": "quick",
+      "stage": "done",
+      "leg": "3",
+      "marker": "6",
+      "branchRoad": "false",
+      "cue": "",
+      "completed": "27",
+      "fork": "2",
+      "laneCue": "",
+      "waiting": "false",
+      "selected": "brace"
+    },
+    "h": "驿运清账",
+    "body": "渡口已签收货，车脚与托货逐笔入账。　私货留在囊中，原印仍照旧价验收。",
+    "not": "领脚程 2 石，托货 3 石。",
+    "mile": "第 4 程 · 路标 6/6",
+    "stats": [
+      "灵石 23",
+      "实交 3 / 3",
+      "封签 已卸"
+    ],
+    "options": [
+      [
+        "return",
+        "回到狐柜\n回首柜整备，依原路线守关与结算。",
+        false
+      ]
+    ],
+    "receipt": "实收脚程\n+2 石\n实收箱钱\n+3 石\n进货\n-2 石\n卖货\n+13 石\n沿途采买货利\n+8 石\n自带货售入\n+3 石\n修理\n0 石\n净收\n+16 石"
+  },
+  "returned": {
+    "phase": "counter",
+    "seed": "1",
+    "combatKind": "",
+    "hp": "22",
+    "foe": "0",
+    "floor": "1",
+    "gold": "23",
+    "seals": "0",
+    "decision": "sell",
+    "lot": "grit",
+    "shelf": "gear",
+    "qty": "1"
+  },
+  "final": {
+    "phase": "receipt",
+    "seed": "1",
+    "combatKind": "gate-fox",
+    "hp": "11",
+    "foe": "0",
+    "floor": "2",
+    "gold": "23",
+    "seals": "0",
+    "decision": "sell"
+  },
+  "settlement": "携银破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 22 → 11。驿运净收 +16 石 · 交箱 3/3。结余 23 石 · 绢销 0 份 · 绢利 0 石。回首摊再选。开始下一局",
+  "ms": 48632,
+  "rawTouches": [
+    {
+      "t": 658,
+      "phase": "idle",
+      "ride": false,
+      "label": "出剑",
+      "job": "strike",
+      "x": 123,
+      "y": 611.4000244140625
+    },
+    {
+      "t": 1436,
+      "phase": "idle",
+      "ride": false,
+      "label": "出剑",
+      "job": "strike",
+      "x": 123,
+      "y": 611.4000244140625
+    },
+    {
+      "t": 2485,
+      "phase": "drop",
+      "ride": false,
+      "label": "连灯灰一并收好",
+      "job": "secondary",
+      "x": 279,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 3304,
+      "phase": "guide",
+      "ride": false,
+      "label": "递印问行情",
+      "job": "primary",
+      "x": 194.5,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 4130,
+      "phase": "rumor",
+      "ride": false,
+      "label": "收下路签，去狐市",
+      "job": "primary",
+      "x": 194.5,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 4478,
+      "phase": "stall",
+      "ride": false,
+      "label": "把灯纹印放上秤",
+      "job": "primary",
+      "x": 194.5,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 5804,
+      "phase": "quote",
+      "ride": false,
+      "label": "成交  ＋4 石",
+      "job": "primary",
+      "x": 106.5,
+      "y": 702.4000244140625
+    },
+    {
+      "t": 7165,
+      "phase": "result",
+      "ride": false,
+      "label": "俯看货摊",
+      "job": "primary",
+      "x": 110,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 8055,
+      "phase": "counter",
+      "ride": false,
+      "label": "接押运，查看护送契约",
+      "job": "market-escort",
+      "x": 195,
+      "y": 718.4000244140625
+    },
+    {
+      "t": 8165,
+      "phase": "escort",
+      "ride": true,
+      "stage": "offer",
+      "leg": "0",
+      "mark": "0",
+      "label": "接单起行，免费领三箱。自购货要用现钱和囊格。",
+      "job": "start",
+      "x": 102.25,
+      "y": 703.3699951171875
+    },
+    {
+      "t": 8221,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "0",
+      "fork": "0",
+      "label": "催马 · 常速",
+      "job": "pace",
+      "x": 338.1199951171875,
+      "y": 558.47998046875
+    },
+    {
+      "t": 8256,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "0",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 8631,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "0",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 9075,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "0",
+      "fork": "2",
+      "label": "沿山路前行的镖车，左右滑动换道，点车护封",
+      "job": "world",
+      "x": 195,
+      "y": 136.2890625
+    },
+    {
+      "t": 9554,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "0",
+      "fork": "2",
+      "label": "沿山路前行的镖车，左右滑动换道，点车护封",
+      "job": "world",
+      "x": 268.5,
+      "y": 420.7723083496094
+    },
+    {
+      "t": 9624,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "1",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 9971,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "1",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 10430,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "1",
+      "fork": "2",
+      "label": "走右辙，靠车道右侧行进。",
+      "job": "right",
+      "x": 194.99000549316406,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 10916,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "2",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 11277,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "2",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 11735,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "2",
+      "fork": "2",
+      "label": "走左辙，靠车道左侧行进。",
+      "job": "left",
+      "x": 71.31999969482422,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 12194,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "3",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 12582,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "3",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 13041,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "3",
+      "fork": "2",
+      "label": "走右辙，靠车道右侧行进。",
+      "job": "right",
+      "x": 194.99000549316406,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 13499,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "4",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 13888,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "4",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 14826,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "4",
+      "fork": "2",
+      "label": "沿山路前行的镖车，左右滑动换道，点车护封",
+      "job": "world",
+      "x": 269.5,
+      "y": 421.77191162109375
+    },
+    {
+      "t": 14888,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "5",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 15242,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "5",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 15701,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "5",
+      "fork": "2",
+      "label": "走左辙，靠车道左侧行进。",
+      "job": "left",
+      "x": 71.31999969482422,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 16166,
+      "phase": "escort",
+      "ride": true,
+      "stage": "station",
+      "leg": "0",
+      "mark": "6",
+      "fork": "2",
+      "label": "往芦汀灰场 · 支道一标，芦汀有捡灯人，可领一份灯灰。留囊格，下一驿能卖。",
+      "job": "visit-branch",
+      "x": 102.25,
+      "y": 629.9299926757812
+    },
+    {
+      "t": 16201,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "6",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 16583,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "6",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 17041,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "6",
+      "fork": "2",
+      "label": "走右辙，靠车道右侧行进。",
+      "job": "right",
+      "x": 194.99000549316406,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 17534,
+      "phase": "escort",
+      "ride": true,
+      "stage": "branchMarket",
+      "leg": "0",
+      "mark": "6",
+      "fork": "2",
+      "label": "收一份灯灰，不花灵石，占一份灯灰的位置。",
+      "job": "branch-ash",
+      "x": 102.25,
+      "y": 703.3699951171875
+    },
+    {
+      "t": 17568,
+      "phase": "escort",
+      "ride": true,
+      "stage": "station",
+      "leg": "0",
+      "mark": "6",
+      "fork": "2",
+      "label": "购灯灰 · 1 石，每次一份，本站余 3 份。",
+      "job": "buy-ash",
+      "x": 102.25,
+      "y": 571.1199951171875
+    },
+    {
+      "t": 17596,
+      "phase": "escort",
+      "ride": true,
+      "stage": "station",
+      "leg": "0",
+      "mark": "6",
+      "fork": "2",
+      "label": "购灯灰 · 1 石，每次一份，本站余 2 份。",
+      "job": "buy-ash",
+      "x": 102.25,
+      "y": 571.1199951171875
+    },
+    {
+      "t": 17666,
+      "phase": "escort",
+      "ride": true,
+      "stage": "station",
+      "leg": "0",
+      "mark": "6",
+      "fork": "2",
+      "label": "上路，前往朱窑古道。",
+      "job": "continue",
+      "x": 102.25,
+      "y": 703.3699951171875
+    },
+    {
+      "t": 17708,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "0",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 18083,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "0",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 18541,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "0",
+      "fork": "2",
+      "label": "走左辙，靠车道左侧行进。",
+      "job": "left",
+      "x": 71.31999969482422,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 18999,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "1",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 19388,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "1",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 19847,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "1",
+      "fork": "2",
+      "label": "护住车厢，稳住箱身，防止上下颠动。",
+      "job": "brace",
+      "x": 318.6499938964844,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 20305,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "2",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 20694,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "2",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 21152,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "2",
+      "fork": "2",
+      "label": "走右辙，靠车道右侧行进。",
+      "job": "right",
+      "x": 194.99000549316406,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 21611,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "3",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 22000,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "3",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 22458,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "3",
+      "fork": "2",
+      "label": "走左辙，靠车道左侧行进。",
+      "job": "left",
+      "x": 71.31999969482422,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 22916,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "4",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 23305,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "4",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 23763,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "4",
+      "fork": "2",
+      "label": "走右辙，靠车道右侧行进。",
+      "job": "right",
+      "x": 194.99000549316406,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 24222,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "5",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 24611,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "5",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 25069,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "5",
+      "fork": "2",
+      "label": "护住车厢，稳住箱身，防止上下颠动。",
+      "job": "brace",
+      "x": 318.6499938964844,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 25527,
+      "phase": "escort",
+      "ride": true,
+      "stage": "station",
+      "leg": "1",
+      "mark": "6",
+      "fork": "2",
+      "label": "往旧窑偏栈 · 支道一标，窑工要一份灯灰，肯换一枚墨壳。墨壳要能装进锦囊。",
+      "job": "visit-branch",
+      "x": 102.25,
+      "y": 629.9299926757812
+    },
+    {
+      "t": 25562,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "6",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 25944,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "6",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 26403,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "1",
+      "mark": "6",
+      "fork": "2",
+      "label": "护住车厢，稳住箱身，防止上下颠动。",
+      "job": "brace",
+      "x": 318.6499938964844,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 26895,
+      "phase": "escort",
+      "ride": true,
+      "stage": "branchMarket",
+      "leg": "1",
+      "mark": "6",
+      "fork": "2",
+      "label": "灯灰换墨壳，付一份灯灰，得一枚真壳；挂铃栈收 4 石。",
+      "job": "branch-shell",
+      "x": 102.25,
+      "y": 703.3699951171875
+    },
+    {
+      "t": 26923,
+      "phase": "escort",
+      "ride": true,
+      "stage": "station",
+      "leg": "1",
+      "mark": "6",
+      "fork": "2",
+      "label": "卖灯灰 · 3 石，每次一份，本站余 2 份。",
+      "job": "sell-ash",
+      "x": 102.25,
+      "y": 571.1199951171875
+    },
+    {
+      "t": 26951,
+      "phase": "escort",
+      "ride": true,
+      "stage": "station",
+      "leg": "1",
+      "mark": "6",
+      "fork": "2",
+      "label": "卖灯灰 · 3 石，每次一份，本站余 1 份。",
+      "job": "sell-ash",
+      "x": 102.25,
+      "y": 571.1199951171875
+    },
+    {
+      "t": 27006,
+      "phase": "escort",
+      "ride": true,
+      "stage": "station",
+      "leg": "1",
+      "mark": "6",
+      "fork": "2",
+      "label": "上路，前往悬铃峡。",
+      "job": "continue",
+      "x": 102.25,
+      "y": 703.3699951171875
+    },
+    {
+      "t": 27041,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "0",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 27423,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "0",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 27882,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "0",
+      "fork": "2",
+      "label": "护住车厢，稳住箱身，防止上下颠动。",
+      "job": "brace",
+      "x": 318.6499938964844,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 28340,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "1",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 28722,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "1",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 29187,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "1",
+      "fork": "2",
+      "label": "走右辙，靠车道右侧行进。",
+      "job": "right",
+      "x": 194.99000549316406,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 29646,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "2",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 30034,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "2",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 30493,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "2",
+      "fork": "2",
+      "label": "走左辙，靠车道左侧行进。",
+      "job": "left",
+      "x": 71.31999969482422,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 30951,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "3",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 31340,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "3",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 31798,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "3",
+      "fork": "2",
+      "label": "走右辙，靠车道右侧行进。",
+      "job": "right",
+      "x": 194.99000549316406,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 32257,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "4",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 32646,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "4",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 33104,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "4",
+      "fork": "2",
+      "label": "护住车厢，稳住箱身，防止上下颠动。",
+      "job": "brace",
+      "x": 318.6499938964844,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 33562,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "5",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 33951,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "5",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 34410,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "5",
+      "fork": "2",
+      "label": "走左辙，靠车道左侧行进。",
+      "job": "left",
+      "x": 71.31999969482422,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 34875,
+      "phase": "escort",
+      "ride": true,
+      "stage": "station",
+      "leg": "2",
+      "mark": "6",
+      "fork": "2",
+      "label": "往桥脚夜摊 · 支道一标，夜摊收一份灰给三石。也能请匠人补一箱，两者只取其一。",
+      "job": "visit-branch",
+      "x": 287.75,
+      "y": 629.9299926757812
+    },
+    {
+      "t": 34910,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "6",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 35292,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "6",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 35750,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "2",
+      "mark": "6",
+      "fork": "2",
+      "label": "走右辙，靠车道右侧行进。",
+      "job": "right",
+      "x": 194.99000549316406,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 36243,
+      "phase": "escort",
+      "ride": true,
+      "stage": "branchMarket",
+      "leg": "2",
+      "mark": "6",
+      "fork": "2",
+      "label": "卖一份灯灰 · 3 石，收现钱，付过的进货本钱在账上。",
+      "job": "branch-sale",
+      "x": 102.25,
+      "y": 644.5599975585938
+    },
+    {
+      "t": 36270,
+      "phase": "escort",
+      "ride": true,
+      "stage": "station",
+      "leg": "2",
+      "mark": "6",
+      "fork": "2",
+      "label": "卖墨蠹壳 · 4 石，每次一份，本站余 1 份。",
+      "job": "sell-shell",
+      "x": 102.25,
+      "y": 497.67999267578125
+    },
+    {
+      "t": 36333,
+      "phase": "escort",
+      "ride": true,
+      "stage": "station",
+      "leg": "2",
+      "mark": "6",
+      "fork": "2",
+      "label": "上路，前往照影渡。",
+      "job": "continue",
+      "x": 287.75,
+      "y": 637.25
+    },
+    {
+      "t": 36368,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "0",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 36750,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "0",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 37208,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "0",
+      "fork": "2",
+      "label": "走右辙，靠车道右侧行进。",
+      "job": "right",
+      "x": 194.99000549316406,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 37667,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "1",
+      "fork": "0",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 38056,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "1",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 38514,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "1",
+      "fork": "2",
+      "label": "走左辙，靠车道左侧行进。",
+      "job": "left",
+      "x": 71.31999969482422,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 38972,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "2",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 39361,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "2",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 39819,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "2",
+      "fork": "2",
+      "label": "走右辙，靠车道右侧行进。",
+      "job": "right",
+      "x": 194.99000549316406,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 40278,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "3",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 40667,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "3",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 41125,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "3",
+      "fork": "2",
+      "label": "护住车厢，稳住箱身，防止上下颠动。",
+      "job": "brace",
+      "x": 318.6499938964844,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 41584,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "4",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 41973,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "4",
+      "fork": "1",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 42431,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "4",
+      "fork": "2",
+      "label": "走左辙，靠车道左侧行进。",
+      "job": "left",
+      "x": 71.31999969482422,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 42889,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "5",
+      "fork": "0",
+      "label": "驶入左道",
+      "job": "left",
+      "x": 102.25,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 43278,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "5",
+      "fork": "1",
+      "label": "驶入右道",
+      "job": "right",
+      "x": 287.75,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 43736,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "3",
+      "mark": "5",
+      "fork": "2",
+      "label": "护住车厢，稳住箱身，防止上下颠动。",
+      "job": "brace",
+      "x": 318.6499938964844,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 44229,
+      "phase": "escort",
+      "ride": true,
+      "stage": "delivery",
+      "leg": "3",
+      "mark": "6",
+      "fork": "2",
+      "label": "验箱收款，本次收入 5 石，脚程与箱钱分别入账。",
+      "job": "deliver",
+      "x": 102.25,
+      "y": 703.3699951171875
+    },
+    {
+      "t": 44292,
+      "phase": "escort",
+      "ride": true,
+      "stage": "done",
+      "leg": "3",
+      "mark": "6",
+      "fork": "2",
+      "label": "回到狐柜，回首柜整备，依原路线守关与结算。",
+      "job": "return",
+      "x": 102.25,
+      "y": 703.3699951171875
+    },
+    {
+      "t": 44320,
+      "phase": "counter",
+      "ride": false,
+      "stage": "done",
+      "leg": "3",
+      "mark": "6",
+      "fork": "2",
+      "label": "闯夜市狐关",
+      "job": "market-fourth",
+      "x": 289,
+      "y": 718.4000244140625
+    },
+    {
+      "t": 44382,
+      "phase": "idle",
+      "ride": false,
+      "stage": "done",
+      "leg": "3",
+      "mark": "6",
+      "fork": "2",
+      "label": "出剑",
+      "job": "strike",
+      "x": 123,
+      "y": 582.4000244140625
+    },
+    {
+      "t": 45146,
+      "phase": "idle",
+      "ride": false,
+      "stage": "done",
+      "leg": "3",
+      "mark": "6",
+      "fork": "2",
+      "label": "出剑",
+      "job": "strike",
+      "x": 123,
+      "y": 582.4000244140625
+    },
+    {
+      "t": 45917,
+      "phase": "idle",
+      "ride": false,
+      "stage": "done",
+      "leg": "3",
+      "mark": "6",
+      "fork": "2",
+      "label": "出剑",
+      "job": "strike",
+      "x": 123,
+      "y": 582.4000244140625
+    },
+    {
+      "t": 46695,
+      "phase": "idle",
+      "ride": false,
+      "stage": "done",
+      "leg": "3",
+      "mark": "6",
+      "fork": "2",
+      "label": "出剑",
+      "job": "strike",
+      "x": 123,
+      "y": 582.4000244140625
+    },
+    {
+      "t": 47779,
+      "phase": "finalStall",
+      "ride": false,
+      "stage": "done",
+      "leg": "3",
+      "mark": "6",
+      "fork": "2",
+      "label": "查看末市货摊",
+      "job": "primary",
+      "x": 194.5,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 48612,
+      "phase": "counter",
+      "ride": false,
+      "stage": "done",
+      "leg": "3",
+      "mark": "6",
+      "fork": "2",
+      "label": "合账离市",
+      "job": "market-third",
+      "x": 195,
+      "y": 718.4000244140625
+    }
+  ]
+}

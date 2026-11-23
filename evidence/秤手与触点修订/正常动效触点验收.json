@@ -1,0 +1,279 @@
+{
+  "url": "http://127.0.0.1:8774/evidence/一印两价/一印两价.html",
+  "bundleSHA256": "3e5a91f976df523732fe8254d2e4997aeadb6e867336ebb48288e02297ae2b0c",
+  "assertions": "Negative probes compare all game data attributes, plus observed successful rule actions and turn counter",
+  "seenPoses": [
+    {
+      "phone": false,
+      "poses": [
+        "fox-counter",
+        "fox-fold",
+        "fox-offer",
+        "fox-return",
+        "fox-settle"
+      ]
+    },
+    {
+      "phone": true,
+      "poses": [
+        "fox-counter",
+        "fox-fold",
+        "fox-offer",
+        "fox-return",
+        "fox-settle"
+      ]
+    }
+  ],
+  "trace": [
+    [
+      false,
+      "enemy box empty corner",
+      "idle"
+    ],
+    [
+      false,
+      "enemy press then release on backdrop",
+      "idle"
+    ],
+    [
+      false,
+      "sword command release outside",
+      "idle"
+    ],
+    [
+      false,
+      "seal box empty corner",
+      "drop"
+    ],
+    [
+      false,
+      "pan rectangular corner",
+      "stall"
+    ],
+    [
+      false,
+      "empty seal-grip corner cannot take focus",
+      "stall"
+    ],
+    [
+      false,
+      "seal release back on empty counter",
+      "stall"
+    ],
+    [
+      false,
+      "blank press ending on pan",
+      "stall"
+    ],
+    [
+      false,
+      "canvas",
+      {
+        "back": [
+          1366,
+          768
+        ],
+        "css": [
+          1366,
+          768
+        ],
+        "dpr": 1
+      }
+    ],
+    [
+      false,
+      "central artwork",
+      "quote"
+    ],
+    [
+      false,
+      "price and ticket body",
+      "quote"
+    ],
+    [
+      false,
+      "gap between two visible controls",
+      "quote"
+    ],
+    [
+      false,
+      "release in gap",
+      "quote"
+    ],
+    [
+      false,
+      "press outside release in sell",
+      "quote"
+    ],
+    [
+      false,
+      "cross between competing decisions",
+      "quote"
+    ],
+    [
+      false,
+      "orphan compatibility click",
+      "quote"
+    ],
+    [
+      false,
+      "resize while held",
+      "quote"
+    ],
+    [
+      false,
+      "chest alone cannot spend",
+      "whet"
+    ],
+    [
+      false,
+      "line above buy button",
+      "whet"
+    ],
+    [
+      false,
+      "gate fox empty corner",
+      "idle"
+    ],
+    [
+      false,
+      "terminal scale does not sell",
+      "finalQuote"
+    ],
+    [
+      false,
+      "terminal ticket copy does not sell",
+      "finalQuote"
+    ],
+    [
+      false,
+      "result",
+      "10"
+    ],
+    [
+      true,
+      "enemy box empty corner",
+      "idle"
+    ],
+    [
+      true,
+      "enemy press then release on backdrop",
+      "idle"
+    ],
+    [
+      true,
+      "sword command release outside",
+      "idle"
+    ],
+    [
+      true,
+      "seal box empty corner",
+      "drop"
+    ],
+    [
+      true,
+      "pan rectangular corner",
+      "stall"
+    ],
+    [
+      true,
+      "empty seal-grip corner cannot take focus",
+      "stall"
+    ],
+    [
+      true,
+      "seal release back on empty counter",
+      "stall"
+    ],
+    [
+      true,
+      "blank press ending on pan",
+      "stall"
+    ],
+    [
+      true,
+      "canvas",
+      {
+        "back": [
+          1910,
+          1074
+        ],
+        "css": [
+          637,
+          358
+        ],
+        "dpr": 3
+      }
+    ],
+    [
+      true,
+      "central artwork",
+      "quote"
+    ],
+    [
+      true,
+      "formerly misdirected touch at 195,648",
+      "quote"
+    ],
+    [
+      true,
+      "price and ticket body",
+      "quote"
+    ],
+    [
+      true,
+      "gap between two visible controls",
+      "quote"
+    ],
+    [
+      true,
+      "release in gap",
+      "quote"
+    ],
+    [
+      true,
+      "press outside release in sell",
+      "quote"
+    ],
+    [
+      true,
+      "cross between competing decisions",
+      "quote"
+    ],
+    [
+      true,
+      "orphan compatibility click",
+      "quote"
+    ],
+    [
+      true,
+      "chest alone cannot spend",
+      "whet"
+    ],
+    [
+      true,
+      "line above buy button",
+      "whet"
+    ],
+    [
+      true,
+      "gate fox empty corner",
+      "idle"
+    ],
+    [
+      true,
+      "terminal scale does not sell",
+      "finalQuote"
+    ],
+    [
+      true,
+      "terminal ticket copy does not sell",
+      "finalQuote"
+    ],
+    [
+      true,
+      "result",
+      "10"
+    ]
+  ]
+}

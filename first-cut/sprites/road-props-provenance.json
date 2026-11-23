@@ -1,0 +1,233 @@
+{
+  "provider": "Codex built-in imagegen",
+  "sourceRoot": "art-sources/01a2021b-f2de-7c53-b6ef-d6bd20b1a34c",
+  "technique": "Two original transparent sprite atlases. Extract independent cells and trim source alpha; remap alpha 12..240 before downsampling and WebP encoding.",
+  "assets": [
+    {
+      "asset": "seal-purse.webp",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "cell": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "boundsInCell": [
+        88,
+        66,
+        421,
+        474
+      ],
+      "dimensions": [
+        188,
+        230
+      ],
+      "sha256": "53cadfeb696520d43ca788d4408ee2b89c0ffa1daab757f314fa3f143df67788"
+    },
+    {
+      "asset": "sign-turn.webp",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "cell": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "boundsInCell": [
+        107,
+        8,
+        426,
+        487
+      ],
+      "dimensions": [
+        166,
+        250
+      ],
+      "sha256": "f579cc134d2674afd3d83e65dedaa99aa0f90f5d61dffafd1b4010ddae8c79da"
+    },
+    {
+      "asset": "sign-brace.webp",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "cell": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "boundsInCell": [
+        124,
+        17,
+        382,
+        482
+      ],
+      "dimensions": [
+        139,
+        250
+      ],
+      "sha256": "0ea39bfbc710a5adeffca1813e606487fa1c65cef27cd024bfdc595a0e56f1a1"
+    },
+    {
+      "asset": "stele-thorn.webp",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "cell": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "boundsInCell": [
+        106,
+        7,
+        415,
+        495
+      ],
+      "dimensions": [
+        177,
+        280
+      ],
+      "sha256": "ecd4456ec2b63e1c8a508274301e4b5447c8bb7502a5a1efdd02f69eb592fca6"
+    },
+    {
+      "asset": "stele-ink.webp",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "cell": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "boundsInCell": [
+        85,
+        7,
+        398,
+        495
+      ],
+      "dimensions": [
+        180,
+        280
+      ],
+      "sha256": "a8abfa9f11f2f017e652766d6c57f6579019f502bec833f8f1a52ce7585b39d0"
+    },
+    {
+      "asset": "barrier-post.webp",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "cell": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "boundsInCell": [
+        167,
+        3,
+        333,
+        496
+      ],
+      "dimensions": [
+        74,
+        220
+      ],
+      "sha256": "e2f3d2e9f72ba0d2afba23c26da9243ac8c10a591ff22a988d5efc56e11944b3"
+    },
+    {
+      "asset": "obstacle-water.webp",
+      "source": "exec-bc0bc293-3091-4ffd-9388-432cc1e57adf.png",
+      "cell": [
+        0,
+        0,
+        768,
+        512
+      ],
+      "boundsInCell": [
+        21,
+        46,
+        731,
+        441
+      ],
+      "dimensions": [
+        250,
+        139
+      ],
+      "sha256": "56ca2182e4ec0e0db83b46cb1f75d670e713165ba77d66e1383bf9c097082719"
+    },
+    {
+      "asset": "obstacle-rock.webp",
+      "source": "exec-bc0bc293-3091-4ffd-9388-432cc1e57adf.png",
+      "cell": [
+        768,
+        0,
+        1536,
+        512
+      ],
+      "boundsInCell": [
+        1,
+        106,
+        744,
+        416
+      ],
+      "dimensions": [
+        250,
+        104
+      ],
+      "sha256": "d6adf0613d64a7774de4e9f3b0944d4370040ca3f1228c0cde67be530a422c9e"
+    },
+    {
+      "asset": "obstacle-plank.webp",
+      "source": "exec-bc0bc293-3091-4ffd-9388-432cc1e57adf.png",
+      "cell": [
+        0,
+        512,
+        768,
+        1024
+      ],
+      "boundsInCell": [
+        19,
+        79,
+        741,
+        436
+      ],
+      "dimensions": [
+        250,
+        124
+      ],
+      "sha256": "fd654ee9fa4a1d4d37fd97a12a379a743400077995c4b0ba369692d134cda37a"
+    },
+    {
+      "asset": "obstacle-ruin.webp",
+      "source": "exec-bc0bc293-3091-4ffd-9388-432cc1e57adf.png",
+      "cell": [
+        768,
+        512,
+        1536,
+        1024
+      ],
+      "boundsInCell": [
+        7,
+        78,
+        748,
+        400
+      ],
+      "dimensions": [
+        250,
+        109
+      ],
+      "sha256": "998a973bab37bb197f417eb142d6db23976edff3cbea0c9c2597a48b827b55f7"
+    },
+    {
+      "asset": "seal-purse-tied.webp",
+      "source": "exec-ba6a866a-1c6b-4708-9cb0-163134f60b5d.png",
+      "reference": "seal-purse.webp",
+      "bounds": [
+        316,
+        138,
+        983,
+        1027
+      ],
+      "dimensions": [
+        173,
+        230
+      ],
+      "sha256": "a7dbb713ffd203eb97a52b99457c52bfe332af2be66f200b5e9e8f4d8f202e37"
+    }
+  ]
+}

@@ -1,0 +1,1289 @@
+{
+  "旧包整局": {
+    "hash": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+    "legs_main_ms": [
+      13900,
+      13868,
+      13868,
+      13868
+    ],
+    "branch_ms": [
+      2312,
+      2312,
+      2312
+    ],
+    "market_ms": [
+      72,
+      42,
+      38
+    ],
+    "road_slices": [
+      {
+        "leg": 0,
+        "mark": 0,
+        "branch": false,
+        "ms": 2337,
+        "fix_delay_ms": 113,
+        "safe_ms_after_fix": 2224,
+        "choice": "brace",
+        "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 1,
+        "branch": false,
+        "ms": 2311,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 2,
+        "branch": false,
+        "ms": 2312,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 3,
+        "branch": false,
+        "ms": 2313,
+        "fix_delay_ms": 29,
+        "safe_ms_after_fix": 2284,
+        "choice": "brace",
+        "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 4,
+        "branch": false,
+        "ms": 2312,
+        "fix_delay_ms": 63,
+        "safe_ms_after_fix": 2249,
+        "choice": "left",
+        "notice": "当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 5,
+        "branch": false,
+        "ms": 2315,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前左辙可安全通过。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 6,
+        "branch": true,
+        "ms": 2312,
+        "fix_delay_ms": 33,
+        "safe_ms_after_fix": 2279,
+        "choice": "right",
+        "notice": "当前左辙会松一层封签，可换右辙。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 0,
+        "branch": false,
+        "ms": 2305,
+        "fix_delay_ms": 34,
+        "safe_ms_after_fix": 2271,
+        "choice": "left",
+        "notice": "当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 1,
+        "branch": false,
+        "ms": 2312,
+        "fix_delay_ms": 85,
+        "safe_ms_after_fix": 2227,
+        "choice": "brace",
+        "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 2,
+        "branch": false,
+        "ms": 2312,
+        "fix_delay_ms": 42,
+        "safe_ms_after_fix": 2270,
+        "choice": "right",
+        "notice": "当前左辙会松一层封签，可换右辙。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 3,
+        "branch": false,
+        "ms": 2313,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 4,
+        "branch": false,
+        "ms": 2313,
+        "fix_delay_ms": 42,
+        "safe_ms_after_fix": 2271,
+        "choice": "brace",
+        "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 5,
+        "branch": false,
+        "ms": 2313,
+        "fix_delay_ms": 41,
+        "safe_ms_after_fix": 2272,
+        "choice": "left",
+        "notice": "当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 6,
+        "branch": true,
+        "ms": 2312,
+        "fix_delay_ms": 47,
+        "safe_ms_after_fix": 2265,
+        "choice": "brace",
+        "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 0,
+        "branch": false,
+        "ms": 2307,
+        "fix_delay_ms": 35,
+        "safe_ms_after_fix": 2272,
+        "choice": "brace",
+        "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 1,
+        "branch": false,
+        "ms": 2311,
+        "fix_delay_ms": 62,
+        "safe_ms_after_fix": 2249,
+        "choice": "right",
+        "notice": "当前左辙会松一层封签，可换右辙。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 2,
+        "branch": false,
+        "ms": 2312,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 3,
+        "branch": false,
+        "ms": 2313,
+        "fix_delay_ms": 35,
+        "safe_ms_after_fix": 2278,
+        "choice": "brace",
+        "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 4,
+        "branch": false,
+        "ms": 2314,
+        "fix_delay_ms": 50,
+        "safe_ms_after_fix": 2264,
+        "choice": "left",
+        "notice": "当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 5,
+        "branch": false,
+        "ms": 2311,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前左辙可安全通过。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 6,
+        "branch": true,
+        "ms": 2312,
+        "fix_delay_ms": 40,
+        "safe_ms_after_fix": 2272,
+        "choice": "right",
+        "notice": "当前左辙会松一层封签，可换右辙。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 0,
+        "branch": false,
+        "ms": 2303,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 1,
+        "branch": false,
+        "ms": 2313,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 2,
+        "branch": false,
+        "ms": 2316,
+        "fix_delay_ms": 28,
+        "safe_ms_after_fix": 2288,
+        "choice": "brace",
+        "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 3,
+        "branch": false,
+        "ms": 2309,
+        "fix_delay_ms": 140,
+        "safe_ms_after_fix": 2169,
+        "choice": "left",
+        "notice": "当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 4,
+        "branch": false,
+        "ms": 2312,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前左辙可安全通过。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 5,
+        "branch": false,
+        "ms": 2315,
+        "fix_delay_ms": 43,
+        "safe_ms_after_fix": 2272,
+        "choice": "brace",
+        "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      }
+    ],
+    "errors": [],
+    "pitfall": null,
+    "inputs": 18,
+    "ms": 76806,
+    "haul_ms": 63362,
+    "all_touches": 56,
+    "safe_coast_median_ms": 2312,
+    "safe_after_fix_median_ms": 2271.0
+  },
+  "旧包放手": {
+    "hash": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+    "legs_main_ms": [
+      13902,
+      0,
+      0,
+      0
+    ],
+    "branch_ms": [],
+    "market_ms": [
+      7512
+    ],
+    "road_slices": [
+      {
+        "leg": 0,
+        "mark": 0,
+        "branch": false,
+        "ms": 2336,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 1,
+        "branch": false,
+        "ms": 2312,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "当前右辙可安全通过。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 5 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 2,
+        "branch": false,
+        "ms": 2314,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "当前右辙可安全通过。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 5 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 3,
+        "branch": false,
+        "ms": 2312,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 5 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 4,
+        "branch": false,
+        "ms": 2311,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 7",
+          "在车 2 / 3",
+          "封签 4 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 5,
+        "branch": false,
+        "ms": 2317,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 7",
+          "在车 2 / 3",
+          "封签 3 / 6"
+        ]
+      }
+    ],
+    "errors": [],
+    "pitfall": null,
+    "inputs": null,
+    "ms": 29526
+  },
+  "新包整局": {
+    "hash": "d5fe59f59696a5546d5b69187c4c392644b83fbbcb602c8edfc52a6444e8b001",
+    "legs_main_ms": [
+      7468,
+      7609,
+      7463,
+      7346
+    ],
+    "branch_ms": [
+      1299,
+      1292,
+      1284
+    ],
+    "market_ms": [
+      86,
+      43,
+      30
+    ],
+    "road_slices": [
+      {
+        "leg": 0,
+        "mark": 0,
+        "branch": false,
+        "ms": 1356,
+        "fix_delay_ms": 140,
+        "safe_ms_after_fix": 1216,
+        "choice": "brace",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 1,
+        "branch": false,
+        "ms": 1172,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 2,
+        "branch": false,
+        "ms": 1174,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 3,
+        "branch": false,
+        "ms": 1278,
+        "fix_delay_ms": 27,
+        "safe_ms_after_fix": 1251,
+        "choice": "brace",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 4,
+        "branch": false,
+        "ms": 1312,
+        "fix_delay_ms": 76,
+        "safe_ms_after_fix": 1236,
+        "choice": "left",
+        "notice": "已放慢。当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 5,
+        "branch": false,
+        "ms": 1176,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前左辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 6,
+        "branch": true,
+        "ms": 1299,
+        "fix_delay_ms": 54,
+        "safe_ms_after_fix": 1245,
+        "choice": "right",
+        "notice": "已放慢。当前左辙会松一层封签，可换右辙。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 0,
+        "branch": false,
+        "ms": 1287,
+        "fix_delay_ms": 52,
+        "safe_ms_after_fix": 1235,
+        "choice": "left",
+        "notice": "已放慢。当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 1,
+        "branch": false,
+        "ms": 1286,
+        "fix_delay_ms": 42,
+        "safe_ms_after_fix": 1244,
+        "choice": "brace",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 2,
+        "branch": false,
+        "ms": 1290,
+        "fix_delay_ms": 49,
+        "safe_ms_after_fix": 1241,
+        "choice": "right",
+        "notice": "已放慢。当前左辙会松一层封签，可换右辙。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 3,
+        "branch": false,
+        "ms": 1174,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 4,
+        "branch": false,
+        "ms": 1286,
+        "fix_delay_ms": 42,
+        "safe_ms_after_fix": 1244,
+        "choice": "brace",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 5,
+        "branch": false,
+        "ms": 1286,
+        "fix_delay_ms": 35,
+        "safe_ms_after_fix": 1251,
+        "choice": "left",
+        "notice": "已放慢。当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 1,
+        "mark": 6,
+        "branch": true,
+        "ms": 1292,
+        "fix_delay_ms": 48,
+        "safe_ms_after_fix": 1244,
+        "choice": "brace",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 5",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 0,
+        "branch": false,
+        "ms": 1276,
+        "fix_delay_ms": 33,
+        "safe_ms_after_fix": 1243,
+        "choice": "brace",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 1,
+        "branch": false,
+        "ms": 1277,
+        "fix_delay_ms": 28,
+        "safe_ms_after_fix": 1249,
+        "choice": "right",
+        "notice": "已放慢。当前左辙会松一层封签，可换右辙。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 2,
+        "branch": false,
+        "ms": 1174,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 3,
+        "branch": false,
+        "ms": 1278,
+        "fix_delay_ms": 28,
+        "safe_ms_after_fix": 1250,
+        "choice": "brace",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 4,
+        "branch": false,
+        "ms": 1284,
+        "fix_delay_ms": 36,
+        "safe_ms_after_fix": 1248,
+        "choice": "left",
+        "notice": "已放慢。当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 5,
+        "branch": false,
+        "ms": 1174,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前左辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 2,
+        "mark": 6,
+        "branch": true,
+        "ms": 1284,
+        "fix_delay_ms": 34,
+        "safe_ms_after_fix": 1250,
+        "choice": "right",
+        "notice": "已放慢。当前左辙会松一层封签，可换右辙。",
+        "stats": [
+          "灵石 11",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 0,
+        "branch": false,
+        "ms": 1164,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 1,
+        "branch": false,
+        "ms": 1173,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 2,
+        "branch": false,
+        "ms": 1278,
+        "fix_delay_ms": 29,
+        "safe_ms_after_fix": 1249,
+        "choice": "brace",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 3,
+        "branch": false,
+        "ms": 1278,
+        "fix_delay_ms": 29,
+        "safe_ms_after_fix": 1249,
+        "choice": "left",
+        "notice": "已放慢。当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 4,
+        "branch": false,
+        "ms": 1173,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "coast",
+        "notice": "当前左辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 3,
+        "mark": 5,
+        "branch": false,
+        "ms": 1280,
+        "fix_delay_ms": 29,
+        "safe_ms_after_fix": 1251,
+        "choice": "brace",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 18",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      }
+    ],
+    "errors": [],
+    "pitfall": null,
+    "inputs": 18,
+    "ms": 47607,
+    "haul_ms": 34688,
+    "all_touches": 56,
+    "safe_coast_median_ms": 1174,
+    "safe_after_fix_median_ms": 1246.5
+  },
+  "新包催马放手": {
+    "hash": "d5fe59f59696a5546d5b69187c4c392644b83fbbcb602c8edfc52a6444e8b001",
+    "legs_main_ms": [
+      16899,
+      0,
+      0,
+      0
+    ],
+    "branch_ms": [],
+    "market_ms": [
+      7512
+    ],
+    "road_slices": [
+      {
+        "leg": 0,
+        "mark": 0,
+        "branch": false,
+        "ms": 3626,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 1,
+        "branch": false,
+        "ms": 1263,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 5 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 2,
+        "branch": false,
+        "ms": 1173,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 5 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 3,
+        "branch": false,
+        "ms": 3614,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 5 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 4,
+        "branch": false,
+        "ms": 3608,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "已放慢。当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 7",
+          "在车 2 / 3",
+          "封签 4 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 5,
+        "branch": false,
+        "ms": 3615,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "已放慢。当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 7",
+          "在车 2 / 3",
+          "封签 3 / 6"
+        ]
+      }
+    ],
+    "errors": [],
+    "pitfall": null,
+    "inputs": null,
+    "ms": 32978
+  },
+  "新包常速放手": {
+    "hash": "d5fe59f59696a5546d5b69187c4c392644b83fbbcb602c8edfc52a6444e8b001",
+    "legs_main_ms": [
+      25449,
+      0,
+      0,
+      0
+    ],
+    "branch_ms": [],
+    "market_ms": [
+      7512
+    ],
+    "road_slices": [
+      {
+        "leg": 0,
+        "mark": 0,
+        "branch": false,
+        "ms": 5406,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 1,
+        "branch": false,
+        "ms": 1950,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 5 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 2,
+        "branch": false,
+        "ms": 1862,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 5 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 3,
+        "branch": false,
+        "ms": 5410,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 5 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 4,
+        "branch": false,
+        "ms": 5409,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "已放慢。当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 7",
+          "在车 2 / 3",
+          "封签 4 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 5,
+        "branch": false,
+        "ms": 5412,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "已放慢。当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 7",
+          "在车 2 / 3",
+          "封签 3 / 6"
+        ]
+      }
+    ],
+    "errors": [],
+    "pitfall": null,
+    "inputs": null,
+    "ms": 41501
+  },
+  "新包延迟触屏": {
+    "hash": "d5fe59f59696a5546d5b69187c4c392644b83fbbcb602c8edfc52a6444e8b001",
+    "legs_main_ms": [
+      9538,
+      0,
+      0,
+      0
+    ],
+    "branch_ms": [],
+    "market_ms": [],
+    "road_slices": [
+      {
+        "leg": 0,
+        "mark": 0,
+        "branch": false,
+        "ms": 3092,
+        "fix_delay_ms": 2702,
+        "safe_ms_after_fix": 390,
+        "choice": "",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 1,
+        "branch": false,
+        "ms": 1173,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 2,
+        "branch": false,
+        "ms": 1173,
+        "fix_delay_ms": null,
+        "safe_ms_after_fix": null,
+        "choice": "",
+        "notice": "当前右辙可安全通过，自动快行。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 3,
+        "branch": false,
+        "ms": 1286,
+        "fix_delay_ms": 35,
+        "safe_ms_after_fix": 1251,
+        "choice": "",
+        "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      },
+      {
+        "leg": 0,
+        "mark": 4,
+        "branch": false,
+        "ms": 2814,
+        "fix_delay_ms": 2291,
+        "safe_ms_after_fix": 523,
+        "choice": "",
+        "notice": "已放慢。当前右辙会松一层封签，可换左辙。",
+        "stats": [
+          "灵石 7",
+          "在车 3 / 3",
+          "封签 6 / 6"
+        ]
+      }
+    ],
+    "errors": [],
+    "pitfall": null,
+    "inputs": null,
+    "ms": 18183
+  }
+}

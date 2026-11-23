@@ -1,0 +1,852 @@
+{
+  "hash": "d5fe59f59696a5546d5b69187c4c392644b83fbbcb602c8edfc52a6444e8b001",
+  "mode": "late-touch",
+  "width": 390,
+  "events": [
+    {
+      "t": 943,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 1728,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 2812,
+      "action": "secondary",
+      "text": "连灯灰一并收好"
+    },
+    {
+      "t": 3639,
+      "action": "primary",
+      "text": "问卖价"
+    },
+    {
+      "t": 4471,
+      "action": "primary",
+      "text": "去找狐商"
+    },
+    {
+      "t": 4840,
+      "action": "primary",
+      "text": "把灯纹印放上秤"
+    },
+    {
+      "t": 6180,
+      "action": "primary",
+      "text": "成交  ＋4 石"
+    },
+    {
+      "t": 7542,
+      "action": "primary",
+      "text": "俯看货摊"
+    },
+    {
+      "t": 8467,
+      "action": "market-escort",
+      "text": "接押运，查看护送契约"
+    },
+    {
+      "t": 8673,
+      "action": "催马",
+      "text": "催马"
+    },
+    {
+      "t": 11317,
+      "action": "延迟护箱",
+      "text": "护住车厢，稳住箱身，防止上下颠动。"
+    }
+  ],
+  "errors": [],
+  "offer": {
+    "d": {
+      "pace": "normal",
+      "driving": "continuous",
+      "fork": "",
+      "stage": "offer",
+      "leg": "0",
+      "marker": "0",
+      "branchRoad": "false",
+      "cue": "",
+      "completed": "0"
+    },
+    "h": "绯绡的押运单",
+    "body": "四段驿道，三处沿途市。带三箱托货前往照影渡。　押金 0 石 · 全程脚程 2 石 · 每箱尚存加 1 石",
+    "not": "",
+    "mile": "",
+    "stats": [
+      "灵石 7",
+      "在车 待领",
+      "封签 待领"
+    ],
+    "options": [
+      [
+        "start",
+        "接单起行\n免费领三箱。自购货要用现钱和囊格。",
+        false
+      ],
+      [
+        null,
+        "合契，回货摊",
+        false
+      ]
+    ],
+    "receipt": "随身商货　灯灰 1 份　墨蠹壳 0 件\n车尾挂三箱，上方包袱是行装。沿辙自动快行，遇险会放慢。换到安全侧，遇横索点车尾，见驿牌可拐市。"
+  },
+  "offerCash": 7,
+  "contract": 8576,
+  "delayed": {
+    "first": {
+      "d": {
+        "pace": "quick",
+        "driving": "continuous",
+        "fork": "risk",
+        "stage": "road",
+        "leg": "0",
+        "marker": "0",
+        "branchRoad": "false",
+        "cue": "brace",
+        "completed": "0",
+        "selected": "right",
+        "track": "right",
+        "waiting": "false",
+        "danger": "true"
+      },
+      "h": "引车上堤",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+      "not": "已放慢。前方横索，点车尾或「护住车厢」。",
+      "mile": "第 1 程 · 路标 1/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "options": [
+        [
+          "left",
+          "换左辙",
+          false
+        ],
+        [
+          "right",
+          "沿右辙",
+          false
+        ],
+        [
+          "brace",
+          "护住车厢",
+          false
+        ]
+      ],
+      "receipt": ""
+    },
+    "before": {
+      "d": {
+        "pace": "quick",
+        "driving": "continuous",
+        "fork": "risk",
+        "stage": "road",
+        "leg": "0",
+        "marker": "0",
+        "branchRoad": "false",
+        "cue": "brace",
+        "completed": "0",
+        "selected": "right",
+        "track": "right",
+        "waiting": "false",
+        "danger": "true"
+      },
+      "h": "引车上堤",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+      "not": "已放慢。前方横索，点车尾或「护住车厢」。",
+      "mile": "第 1 程 · 路标 1/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "options": [
+        [
+          "left",
+          "换左辙",
+          false
+        ],
+        [
+          "right",
+          "沿右辙",
+          false
+        ],
+        [
+          "brace",
+          "护住车厢",
+          false
+        ]
+      ],
+      "receipt": ""
+    },
+    "after": {
+      "d": {
+        "pace": "quick",
+        "driving": "continuous",
+        "fork": "risk",
+        "stage": "road",
+        "leg": "0",
+        "marker": "0",
+        "branchRoad": "false",
+        "cue": "brace",
+        "completed": "0",
+        "selected": "brace",
+        "track": "right",
+        "waiting": "false",
+        "danger": "false"
+      },
+      "h": "引车上堤",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+      "not": "已护住车厢，自动快行。",
+      "mile": "第 1 程 · 路标 1/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "options": [
+        [
+          "left",
+          "换左辙",
+          false
+        ],
+        [
+          "right",
+          "沿右辙",
+          false
+        ],
+        [
+          "brace",
+          "已护住车厢",
+          false
+        ]
+      ],
+      "receipt": ""
+    },
+    "safe": {
+      "d": {
+        "pace": "quick",
+        "driving": "continuous",
+        "fork": "risk",
+        "stage": "road",
+        "leg": "0",
+        "marker": "1",
+        "branchRoad": "false",
+        "cue": "right",
+        "completed": "1",
+        "selected": "right",
+        "track": "right",
+        "waiting": "false",
+        "danger": "false"
+      },
+      "h": "朱栏急弯",
+      "body": "左侧有芦根浅滩，右侧双辙稳当。",
+      "not": "当前右辙可安全通过，自动快行。",
+      "mile": "第 1 程 · 路标 2/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "options": [
+        [
+          "left",
+          "换左辙",
+          false
+        ],
+        [
+          "right",
+          "沿右辙",
+          false
+        ]
+      ],
+      "receipt": ""
+    },
+    "next": {
+      "d": {
+        "pace": "quick",
+        "driving": "continuous",
+        "fork": "risk",
+        "stage": "road",
+        "leg": "0",
+        "marker": "2",
+        "branchRoad": "false",
+        "cue": "right",
+        "completed": "2",
+        "selected": "right",
+        "track": "right",
+        "waiting": "false",
+        "danger": "false"
+      },
+      "h": "撑住短桥",
+      "body": "左侧有芦根浅滩，右侧双辙稳当。",
+      "not": "当前右辙可安全通过，自动快行。",
+      "mile": "第 1 程 · 路标 3/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "options": [
+        [
+          "left",
+          "换左辙",
+          false
+        ],
+        [
+          "right",
+          "沿右辙",
+          false
+        ]
+      ],
+      "receipt": ""
+    },
+    "cross": {
+      "d": {
+        "pace": "quick",
+        "driving": "continuous",
+        "fork": "risk",
+        "stage": "road",
+        "leg": "0",
+        "marker": "2",
+        "branchRoad": "false",
+        "cue": "right",
+        "completed": "2",
+        "selected": "right",
+        "track": "right",
+        "waiting": "false",
+        "danger": "false"
+      },
+      "h": "撑住短桥",
+      "body": "左侧有芦根浅滩，右侧双辙稳当。",
+      "not": "当前右辙可安全通过，自动快行。",
+      "mile": "第 1 程 · 路标 3/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "options": [
+        [
+          "left",
+          "换左辙",
+          false
+        ],
+        [
+          "right",
+          "沿右辙",
+          false
+        ]
+      ],
+      "receipt": ""
+    },
+    "open": {
+      "d": {
+        "pace": "quick",
+        "driving": "continuous",
+        "fork": "risk",
+        "stage": "road",
+        "leg": "0",
+        "marker": "4",
+        "branchRoad": "false",
+        "cue": "left",
+        "completed": "4",
+        "selected": "right",
+        "track": "right",
+        "waiting": "false",
+        "danger": "true"
+      },
+      "h": "芦苇夹径",
+      "body": "右侧有芦根浅滩，左侧双辙稳当。",
+      "not": "已放慢。当前右辙会松一层封签，可换左辙。",
+      "mile": "第 1 程 · 路标 5/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "options": [
+        [
+          "left",
+          "换左辙",
+          false
+        ],
+        [
+          "right",
+          "沿右辙",
+          false
+        ]
+      ],
+      "receipt": ""
+    },
+    "changed": {
+      "d": {
+        "pace": "quick",
+        "driving": "continuous",
+        "fork": "risk",
+        "stage": "road",
+        "leg": "0",
+        "marker": "4",
+        "branchRoad": "false",
+        "cue": "left",
+        "completed": "4",
+        "selected": "left",
+        "track": "left",
+        "waiting": "false",
+        "danger": "false"
+      },
+      "h": "芦苇夹径",
+      "body": "右侧有芦根浅滩，左侧双辙稳当。",
+      "not": "当前左辙可安全通过，自动快行。",
+      "mile": "第 1 程 · 路标 5/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "options": [
+        [
+          "left",
+          "沿左辙",
+          false
+        ],
+        [
+          "right",
+          "换右辙",
+          false
+        ]
+      ],
+      "receipt": ""
+    },
+    "carried": {
+      "d": {
+        "pace": "quick",
+        "driving": "continuous",
+        "fork": "risk",
+        "stage": "road",
+        "leg": "0",
+        "marker": "5",
+        "branchRoad": "false",
+        "cue": "left",
+        "completed": "5",
+        "selected": "left",
+        "track": "left",
+        "waiting": "false",
+        "danger": "false"
+      },
+      "h": "守住桥头",
+      "body": "右侧有芦根浅滩，左侧双辙稳当。",
+      "not": "当前左辙可安全通过，自动快行。",
+      "mile": "第 1 程 · 路标 6/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ],
+      "options": [
+        [
+          "left",
+          "沿左辙",
+          false
+        ],
+        [
+          "right",
+          "换右辙",
+          false
+        ]
+      ],
+      "receipt": ""
+    }
+  },
+  "segments": [
+    {
+      "t": 8428,
+      "stage": "offer",
+      "leg": 0,
+      "mark": 0,
+      "branch": false,
+      "track": "",
+      "selected": "",
+      "h": "绯绡的押运单",
+      "notice": "",
+      "pace": "normal",
+      "body": "四段驿道，三处沿途市。带三箱托货前往照影渡。 押金 0 石 · 全程脚程 2 石 · 每箱尚存加 1 石",
+      "speed": "催马",
+      "mile": "",
+      "stats": [
+        "灵石 7",
+        "在车 待领",
+        "封签 待领"
+      ]
+    },
+    {
+      "t": 8590,
+      "stage": "road",
+      "leg": 0,
+      "mark": 0,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "引车上堤",
+      "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+      "pace": "normal",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+      "speed": "催马",
+      "mile": "第 1 程 · 路标 1/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    },
+    {
+      "t": 8648,
+      "stage": "road",
+      "leg": 0,
+      "mark": 0,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "引车上堤",
+      "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+      "pace": "quick",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+      "speed": "收缰",
+      "mile": "第 1 程 · 路标 1/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    },
+    {
+      "t": 11292,
+      "stage": "road",
+      "leg": 0,
+      "mark": 0,
+      "branch": false,
+      "track": "right",
+      "selected": "brace",
+      "h": "引车上堤",
+      "notice": "已护住车厢，自动快行。",
+      "pace": "quick",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+      "speed": "收缰",
+      "mile": "第 1 程 · 路标 1/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    },
+    {
+      "t": 11682,
+      "stage": "road",
+      "leg": 0,
+      "mark": 1,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "朱栏急弯",
+      "notice": "当前右辙可安全通过，自动快行。",
+      "pace": "quick",
+      "body": "左侧有芦根浅滩，右侧双辙稳当。",
+      "speed": "收缰",
+      "mile": "第 1 程 · 路标 2/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    },
+    {
+      "t": 12855,
+      "stage": "road",
+      "leg": 0,
+      "mark": 2,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "撑住短桥",
+      "notice": "当前右辙可安全通过，自动快行。",
+      "pace": "quick",
+      "body": "左侧有芦根浅滩，右侧双辙稳当。",
+      "speed": "收缰",
+      "mile": "第 1 程 · 路标 3/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    },
+    {
+      "t": 14028,
+      "stage": "road",
+      "leg": 0,
+      "mark": 3,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "堤下碎石",
+      "notice": "已放慢。前方横索，点车尾或「护住车厢」。",
+      "pace": "quick",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+      "speed": "收缰",
+      "mile": "第 1 程 · 路标 4/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    },
+    {
+      "t": 14063,
+      "stage": "road",
+      "leg": 0,
+      "mark": 3,
+      "branch": false,
+      "track": "right",
+      "selected": "brace",
+      "h": "堤下碎石",
+      "notice": "已护住车厢，自动快行。",
+      "pace": "quick",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+      "speed": "收缰",
+      "mile": "第 1 程 · 路标 4/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    },
+    {
+      "t": 15314,
+      "stage": "road",
+      "leg": 0,
+      "mark": 4,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "芦苇夹径",
+      "notice": "已放慢。当前右辙会松一层封签，可换左辙。",
+      "pace": "quick",
+      "body": "右侧有芦根浅滩，左侧双辙稳当。",
+      "speed": "收缰",
+      "mile": "第 1 程 · 路标 5/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    },
+    {
+      "t": 17605,
+      "stage": "road",
+      "leg": 0,
+      "mark": 4,
+      "branch": false,
+      "track": "left",
+      "selected": "left",
+      "h": "芦苇夹径",
+      "notice": "当前左辙可安全通过，自动快行。",
+      "pace": "quick",
+      "body": "右侧有芦根浅滩，左侧双辙稳当。",
+      "speed": "收缰",
+      "mile": "第 1 程 · 路标 5/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    },
+    {
+      "t": 18128,
+      "stage": "road",
+      "leg": 0,
+      "mark": 5,
+      "branch": false,
+      "track": "left",
+      "selected": "left",
+      "h": "守住桥头",
+      "notice": "当前左辙可安全通过，自动快行。",
+      "pace": "quick",
+      "body": "右侧有芦根浅滩，左侧双辙稳当。",
+      "speed": "收缰",
+      "mile": "第 1 程 · 路标 6/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    }
+  ],
+  "rawTouches": [
+    {
+      "t": 913,
+      "phase": "idle",
+      "ride": false,
+      "label": "出剑",
+      "job": "strike",
+      "x": 123,
+      "y": 611.4000244140625
+    },
+    {
+      "t": 1702,
+      "phase": "idle",
+      "ride": false,
+      "label": "出剑",
+      "job": "strike",
+      "x": 123,
+      "y": 611.4000244140625
+    },
+    {
+      "t": 2784,
+      "phase": "drop",
+      "ride": false,
+      "label": "连灯灰一并收好",
+      "job": "secondary",
+      "x": 279,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 3611,
+      "phase": "guide",
+      "ride": false,
+      "label": "问卖价",
+      "job": "primary",
+      "x": 194.5,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 4444,
+      "phase": "rumor",
+      "ride": false,
+      "label": "去找狐商",
+      "job": "primary",
+      "x": 194.5,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 4806,
+      "phase": "stall",
+      "ride": false,
+      "label": "把灯纹印放上秤",
+      "job": "primary",
+      "x": 194.5,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 6152,
+      "phase": "quote",
+      "ride": false,
+      "label": "成交  ＋4 石",
+      "job": "primary",
+      "x": 106.5,
+      "y": 702.4000244140625
+    },
+    {
+      "t": 7514,
+      "phase": "result",
+      "ride": false,
+      "label": "俯看货摊",
+      "job": "primary",
+      "x": 110,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 8417,
+      "phase": "counter",
+      "ride": false,
+      "label": "接押运，查看护送契约",
+      "job": "market-escort",
+      "x": 195,
+      "y": 718.4000244140625
+    },
+    {
+      "t": 8583,
+      "phase": "escort",
+      "ride": true,
+      "stage": "offer",
+      "leg": "0",
+      "mark": "0",
+      "fork": "",
+      "label": "接单起行，免费领三箱。自购货要用现钱和囊格。",
+      "job": "start",
+      "x": 102.25,
+      "y": 703.3699951171875
+    },
+    {
+      "t": 8647,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "0",
+      "fork": "risk",
+      "label": "催马",
+      "job": "pace",
+      "x": 342.5,
+      "y": 558.47998046875
+    },
+    {
+      "t": 11291,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "0",
+      "fork": "risk",
+      "label": "护住车厢，稳住箱身，防止上下颠动。",
+      "job": "brace",
+      "x": 318.6499938964844,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 12889,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "2",
+      "fork": "risk",
+      "label": "沿山路前行的镖车，左右滑动换道，点车护封",
+      "job": "world",
+      "x": 127.80000305175781,
+      "y": 283.2098388671875
+    },
+    {
+      "t": 14062,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "3",
+      "fork": "risk",
+      "label": "护住车厢，稳住箱身，防止上下颠动。",
+      "job": "brace",
+      "x": 318.6499938964844,
+      "y": 714.0900268554688
+    },
+    {
+      "t": 17605,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "4",
+      "fork": "risk",
+      "label": "沿山路前行的镖车，左右滑动换道，点车护封",
+      "job": "world",
+      "x": 127.80000305175781,
+      "y": 283.2098388671875
+    }
+  ],
+  "ms": 18183
+}

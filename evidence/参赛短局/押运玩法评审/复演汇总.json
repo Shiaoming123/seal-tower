@@ -1,0 +1,155 @@
+{
+  "seed": 1,
+  "results": [
+    {
+      "case": "self",
+      "name": "常速起行后修箱",
+      "totalMs": 90009,
+      "contractToSettlementMs": 77351,
+      "roadInputs": 81,
+      "width": 392,
+      "endGold": 20,
+      "delivery": "实收脚程\n+2 石\n实收箱钱\n+3 石\n进货\n-2 石\n卖货\n+10 石\n沿途采买货利\n+8 石\n修理\n0 石\n净收\n+13 石",
+      "firstTwoNormalMs": 38943,
+      "braceOnVisibleStamp": 2,
+      "skyIgnored": true
+    },
+    {
+      "case": "branches-touch",
+      "name": "全支市卖灰",
+      "totalMs": 56848,
+      "contractToSettlementMs": 44465,
+      "roadInputs": 81,
+      "width": 390,
+      "endGold": 23,
+      "delivery": "实收脚程\n+2 石\n实收箱钱\n+3 石\n进货\n-2 石\n卖货\n+13 石\n沿途采买货利\n+8 石\n自带货售入\n+3 石\n修理\n0 石\n净收\n+16 石",
+      "firstTwoNormalMs": null,
+      "braceOnVisibleStamp": 2,
+      "skyIgnored": true
+    },
+    {
+      "case": "keep-touch",
+      "name": "主路留印",
+      "totalMs": 53239,
+      "contractToSettlementMs": 43578,
+      "roadInputs": 72,
+      "width": 390,
+      "endGold": 21,
+      "delivery": "实收脚程\n+2 石\n实收箱钱\n+3 石\n进货\n-4 石\n卖货\n+10 石\n沿途采买货利\n+6 石\n修理\n0 石\n净收\n+11 石",
+      "firstTwoNormalMs": null,
+      "braceOnVisibleStamp": 2,
+      "skyIgnored": true
+    },
+    {
+      "case": "mendopt-touch",
+      "name": "同损修箱再售灰",
+      "totalMs": 49178,
+      "contractToSettlementMs": 40638,
+      "roadInputs": 81,
+      "width": 390,
+      "endGold": 22,
+      "delivery": "实收脚程\n+2 石\n实收箱钱\n+3 石\n进货\n-2 石\n卖货\n+12 石\n沿途采买货利\n+8 石\n自带货售入\n+2 石\n修理\n0 石\n净收\n+15 石",
+      "firstTwoNormalMs": null,
+      "braceOnVisibleStamp": 2,
+      "skyIgnored": true
+    },
+    {
+      "case": "sellopt-touch",
+      "name": "同损直接售灰",
+      "totalMs": 49178,
+      "contractToSettlementMs": 40660,
+      "roadInputs": 81,
+      "width": 390,
+      "endGold": 22,
+      "delivery": "实收脚程\n+2 石\n实收箱钱\n+2 石\n进货\n-2 石\n卖货\n+13 石\n沿途采买货利\n+8 石\n自带货售入\n+3 石\n修理\n0 石\n净收\n+15 石",
+      "firstTwoNormalMs": null,
+      "braceOnVisibleStamp": 2,
+      "skyIgnored": true
+    },
+    {
+      "case": "broken-touch",
+      "name": "空车验价",
+      "totalMs": 44510,
+      "contractToSettlementMs": 36084,
+      "roadInputs": 72,
+      "width": 390,
+      "endGold": 9,
+      "delivery": "实收脚程\n+2 石\n实收箱钱\n0 石\n进货\n0 石\n卖货\n0 石\n沿途采买货利\n0 石\n修理\n0 石\n净收\n+2 石",
+      "firstTwoNormalMs": null,
+      "braceOnVisibleStamp": 0,
+      "skyIgnored": true
+    },
+    {
+      "case": "fast-sell",
+      "name": "快线现卖",
+      "totalMs": 18126,
+      "contractToSettlementMs": null,
+      "roadInputs": 0,
+      "width": 1280,
+      "endGold": 7,
+      "delivery": null,
+      "firstTwoNormalMs": null,
+      "braceOnVisibleStamp": null,
+      "skyIgnored": false
+    },
+    {
+      "case": "fast-keep",
+      "name": "快线留印",
+      "totalMs": 19177,
+      "contractToSettlementMs": null,
+      "roadInputs": 0,
+      "width": 1280,
+      "endGold": 10,
+      "delivery": null,
+      "firstTwoNormalMs": null,
+      "braceOnVisibleStamp": null,
+      "skyIgnored": false
+    }
+  ],
+  "pairedPreviousBundleSHA256": "f2b3de639981354178b29590e79fb0596052536511e4595d996d8190ffc2dcc7",
+  "finalBundleSHA256": "bffb9269164dde11e60374c5024d33b2342fbac4f4f9c759e7c0527d6b43074a",
+  "finalReplay": {
+    "mode": "mendopt-touch",
+    "width": 390,
+    "ms": 48200,
+    "skyProbe": {
+      "choice": "none",
+      "xy": {
+        "x": 195,
+        "y": 136.2890625
+      },
+      "fork": "2",
+      "mile": "第 1 程 · 路标 1/6",
+      "changed": false
+    },
+    "physicalBrace": 2,
+    "driveInputs": 81,
+    "returned": {
+      "phase": "counter",
+      "seed": "1",
+      "combatKind": "",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "22",
+      "seals": "0",
+      "decision": "sell",
+      "lot": "grit",
+      "shelf": "gear",
+      "qty": "1"
+    },
+    "final": {
+      "phase": "receipt",
+      "seed": "1",
+      "combatKind": "gate-fox",
+      "hp": "11",
+      "foe": "0",
+      "floor": "2",
+      "gold": "22",
+      "seals": "0",
+      "decision": "sell"
+    },
+    "settlement": "携银破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 22 → 11。驿运净收 +15 石 · 交箱 3/3。结余 22 石 · 绢销 0 份 · 绢利 0 石。回首摊再选。开始下一局",
+    "errors": []
+  }
+}

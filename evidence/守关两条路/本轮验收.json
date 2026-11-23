@@ -1,0 +1,166 @@
+{
+  "入口": "http://127.0.0.1:8774/evidence/%E4%B8%80%E5%8D%B0%E4%B8%A4%E4%BB%B7/%E4%B8%80%E5%8D%B0%E4%B8%A4%E4%BB%B7.html",
+  "单文件字节": 2272395,
+  "SHA256": "20bab5ffff48e81086977418bde34f2f6ad5907bad3be42e4a6519c71661127b",
+  "运行图": {
+    "counter": {
+      "px": [
+        900,
+        300
+      ],
+      "alpha": false,
+      "bytes": 35040,
+      "SHA256": "01c58ef4870c02bd68ffaebc6277b3fcb2052957d6360b1088b8fa9d1aecac0c"
+    },
+    "fox-offer": {
+      "px": [
+        724,
+        543
+      ],
+      "alpha": true,
+      "bytes": 122360,
+      "SHA256": "7b0aa9cc52fd3ad9e537e732a051738ed5e839d5b8a519a0126c79dbdfebb924"
+    },
+    "fox-settle": {
+      "px": [
+        724,
+        543
+      ],
+      "alpha": true,
+      "bytes": 122166,
+      "SHA256": "60a9cef817787b7e05780483adcc325aede377b45b7f9f770029ee4ad0ca7ce8"
+    },
+    "gate": {
+      "px": [
+        960,
+        540
+      ],
+      "alpha": false,
+      "bytes": 237820,
+      "SHA256": "8b417d3307147243ad2b510cdb128f4f01bf67d80369cf1a767dc7d72c0eb917"
+    },
+    "grit": {
+      "px": [
+        256,
+        193
+      ],
+      "alpha": true,
+      "bytes": 27764,
+      "SHA256": "7e530b996f6385d2d1b13fc9ede271a5e47416f4bb35908a111e6c6afe663b29"
+    },
+    "guide-oracle": {
+      "px": [
+        724,
+        543
+      ],
+      "alpha": true,
+      "bytes": 105280,
+      "SHA256": "242762fe7eded8369e27504ad7eecf8e6e5bc670ebea858e01d4711f6a3431a6"
+    },
+    "hall": {
+      "px": [
+        960,
+        540
+      ],
+      "alpha": false,
+      "bytes": 183652,
+      "SHA256": "eb2c097e8383c8212202935871183d96be9067b2a557bc45394769e9eb6f7abd"
+    },
+    "hero-ready": {
+      "px": [
+        175,
+        216
+      ],
+      "alpha": true,
+      "bytes": 29890,
+      "SHA256": "10f779fd04ed778d903276f01ada0b751355623045a5e65414450369cdb7731c"
+    },
+    "hero-recover": {
+      "px": [
+        183,
+        231
+      ],
+      "alpha": true,
+      "bytes": 29852,
+      "SHA256": "a39add2837b3b6d39e3738f26ceab9e023f59fb7dcc7fe6b97c60e32a4256298"
+    },
+    "hero-thrust": {
+      "px": [
+        311,
+        156
+      ],
+      "alpha": true,
+      "bytes": 28456,
+      "SHA256": "92fe530b81f675db94c90ed942e6e36bec23da4b78779a4fc31f504428240bf6"
+    },
+    "last-market": {
+      "px": [
+        960,
+        540
+      ],
+      "alpha": false,
+      "bytes": 149094,
+      "SHA256": "cdf24bf5cfed3a80da9e94717e176eb8de6dc613ae7b544f20e3a03a3c3721e0"
+    },
+    "moth": {
+      "px": [
+        237,
+        239
+      ],
+      "alpha": true,
+      "bytes": 42474,
+      "SHA256": "90bad6da910ebaad91eb1537004a5f08617ee692c29fda350d7ac79e66c07b82"
+    },
+    "shop-wall": {
+      "px": [
+        960,
+        540
+      ],
+      "alpha": false,
+      "bytes": 141604,
+      "SHA256": "0050bdbae7e401aec30b7dc1dae002d7b85de9dda568802e25c6f4bdd92e2f8d"
+    },
+    "warden": {
+      "px": [
+        326,
+        218
+      ],
+      "alpha": true,
+      "bytes": 42238,
+      "SHA256": "3c8233924ca391755aa69bc0d1bd9f27da0a69e58afcaa67cc5d8e6aa428a470"
+    }
+  },
+  "许可": [
+    "OFL-brush.txt",
+    "OFL-ledger.txt",
+    "OFL-script.txt"
+  ],
+  "验收记录": {
+    "source": "source.json",
+    "desktop": "desktop.json",
+    "mobile": "mobile.json",
+    "offline": "offline.json",
+    "film": "film.json",
+    "实物交互": "实物交互.json"
+  },
+  "录像": {
+    "SHA256": "d8f88e61327a5f1f139e6d2d6db910db9a5cdac868dfb38849cd307bf72ed47e",
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1366,
+        "height": 768
+      },
+      {
+        "codec_name": "aac",
+        "channels": 2
+      }
+    ],
+    "format": {
+      "duration": "20.499349",
+      "size": "14570427"
+    }
+  }
+}

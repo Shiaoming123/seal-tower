@@ -1,0 +1,2491 @@
+{
+  "cellPixels": 96,
+  "limits": {
+    "maxOffBoardAlpha": 0.002,
+    "maxNotchAlpha": 0.002,
+    "minReferenceRecall": 0.993,
+    "maxVisibleOutsidePixels": 0,
+    "minEdgePixels": 4,
+    "minMaterialCoverage": 0.06,
+    "minWeaponReach": 2.67,
+    "maxColorError": 0.025,
+    "edgeAlpha": 32
+  },
+  "items": {
+    "abacus": {
+      "registration": {
+        "rows": [
+          "x"
+        ],
+        "sprite": "merch-abacus",
+        "degrees": 0,
+        "span": 0.94,
+        "cx": 0.5,
+        "cy": 0.5,
+        "minCell": 0.13
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.76132
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99871,
+            "colorError": 0.01386
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.76132
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99857,
+            "colorError": 0.01307
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.76132
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99856,
+            "colorError": 0.01307
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.76132
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99857,
+            "colorError": 0.01307
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "2d4d6c39e8b31400d66eb33ec197cc937b169514088ddd944ea087eade9064b1"
+    },
+    "ash": {
+      "registration": {
+        "rows": [
+          "x"
+        ],
+        "sprite": "merch-ash",
+        "degrees": 0,
+        "span": 0.94,
+        "cx": 0.5,
+        "cy": 0.5,
+        "minCell": 0.13
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.6569
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99844,
+            "colorError": 0.0137
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.6569
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99802,
+            "colorError": 0.01334
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.6569
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99801,
+            "colorError": 0.01333
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.6569
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99802,
+            "colorError": 0.01334
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "311e8b7180b97260a835cf069b68e5baf93367f785ddd90bb143016f8c9761ad"
+    },
+    "silk": {
+      "registration": {
+        "rows": [
+          "x",
+          "x"
+        ],
+        "sprite": "merch-silk",
+        "degrees": 0,
+        "span": 1.82,
+        "cx": 0.5,
+        "cy": 1,
+        "minCell": 0.1
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "x",
+              "x"
+            ],
+            "source": [
+              "x",
+              "x"
+            ],
+            "rendered": [
+              "x",
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.4772,
+            "0,1": 0.4885
+          },
+          "reach": 1.8125,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 55
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99758,
+            "colorError": 0.0121
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "xx"
+            ],
+            "source": [
+              "xx"
+            ],
+            "rendered": [
+              "xx"
+            ]
+          },
+          "coverage": {
+            "1,0": 0.4772,
+            "0,0": 0.4885
+          },
+          "reach": 1.8125,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 55
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99723,
+            "colorError": 0.01151
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "x",
+              "x"
+            ],
+            "source": [
+              "x",
+              "x"
+            ],
+            "rendered": [
+              "x",
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,1": 0.4772,
+            "0,0": 0.4885
+          },
+          "reach": 1.8125,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 55
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99722,
+            "colorError": 0.01151
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "xx"
+            ],
+            "source": [
+              "xx"
+            ],
+            "rendered": [
+              "xx"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.4772,
+            "1,0": 0.4885
+          },
+          "reach": 1.8125,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 55
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99723,
+            "colorError": 0.01151
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "ce46a818cb0f2545004274260488d80810db0f6823a9240881bc88820d22d0f6"
+    },
+    "sword": {
+      "registration": {
+        "rows": [
+          "xxx"
+        ],
+        "sprite": "merch-sword",
+        "degrees": 54,
+        "span": 2.2,
+        "cx": 1.433,
+        "cy": 0.587,
+        "minCell": 0.085
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "xxx"
+            ],
+            "source": [
+              "xxx"
+            ],
+            "rendered": [
+              "xxx"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.22596,
+            "1,0": 0.17264,
+            "2,0": 0.11769
+          },
+          "reach": 2.875,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 46
+            },
+            {
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "visiblePixels": 16
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00027,
+            "notch": 0,
+            "recall": 0.99948,
+            "colorError": 0.00036
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x",
+              "x",
+              "x"
+            ],
+            "source": [
+              "x",
+              "x",
+              "x"
+            ],
+            "rendered": [
+              "x",
+              "x",
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.22596,
+            "0,1": 0.17264,
+            "0,2": 0.11769
+          },
+          "reach": 2.875,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 46
+            },
+            {
+              "from": [
+                0,
+                1
+              ],
+              "to": [
+                0,
+                2
+              ],
+              "visiblePixels": 16
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00027,
+            "notch": 0,
+            "recall": 0.99948,
+            "colorError": 0.00036
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "xxx"
+            ],
+            "source": [
+              "xxx"
+            ],
+            "rendered": [
+              "xxx"
+            ]
+          },
+          "coverage": {
+            "2,0": 0.22596,
+            "1,0": 0.17264,
+            "0,0": 0.11769
+          },
+          "reach": 2.875,
+          "crossed": [
+            {
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "visiblePixels": 46
+            },
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 16
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00027,
+            "notch": 0,
+            "recall": 0.99948,
+            "colorError": 0.00036
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "x",
+              "x",
+              "x"
+            ],
+            "source": [
+              "x",
+              "x",
+              "x"
+            ],
+            "rendered": [
+              "x",
+              "x",
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,2": 0.22596,
+            "0,1": 0.17264,
+            "0,0": 0.11769
+          },
+          "reach": 2.875,
+          "crossed": [
+            {
+              "from": [
+                0,
+                1
+              ],
+              "to": [
+                0,
+                2
+              ],
+              "visiblePixels": 46
+            },
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 16
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00027,
+            "notch": 0,
+            "recall": 0.99948,
+            "colorError": 0.00036
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "35bb43e57c4e03ea5cd65d61235a1d9afd27de3c97f33ed88d5901429486a6fa"
+    },
+    "hook": {
+      "registration": {
+        "rows": [
+          "xxx"
+        ],
+        "sprite": "merch-hook",
+        "degrees": 50,
+        "span": 2.25,
+        "cx": 1.513,
+        "cy": 0.477,
+        "minCell": 0.13
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "xxx"
+            ],
+            "source": [
+              "xxx"
+            ],
+            "rendered": [
+              "xxx"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.24151,
+            "1,0": 0.17125,
+            "2,0": 0.19373
+          },
+          "reach": 2.85417,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 48
+            },
+            {
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "visiblePixels": 15
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00001,
+            "notch": 0,
+            "recall": 0.99702,
+            "colorError": 0.00693
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x",
+              "x",
+              "x"
+            ],
+            "source": [
+              "x",
+              "x",
+              "x"
+            ],
+            "rendered": [
+              "x",
+              "x",
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.24151,
+            "0,1": 0.17125,
+            "0,2": 0.19373
+          },
+          "reach": 2.85417,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 48
+            },
+            {
+              "from": [
+                0,
+                1
+              ],
+              "to": [
+                0,
+                2
+              ],
+              "visiblePixels": 15
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00001,
+            "notch": 0,
+            "recall": 0.99702,
+            "colorError": 0.00693
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "xxx"
+            ],
+            "source": [
+              "xxx"
+            ],
+            "rendered": [
+              "xxx"
+            ]
+          },
+          "coverage": {
+            "2,0": 0.24151,
+            "1,0": 0.17125,
+            "0,0": 0.19373
+          },
+          "reach": 2.85417,
+          "crossed": [
+            {
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "visiblePixels": 48
+            },
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 15
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00001,
+            "notch": 0,
+            "recall": 0.99702,
+            "colorError": 0.00693
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "x",
+              "x",
+              "x"
+            ],
+            "source": [
+              "x",
+              "x",
+              "x"
+            ],
+            "rendered": [
+              "x",
+              "x",
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,2": 0.24151,
+            "0,1": 0.17125,
+            "0,0": 0.19374
+          },
+          "reach": 2.85417,
+          "crossed": [
+            {
+              "from": [
+                0,
+                1
+              ],
+              "to": [
+                0,
+                2
+              ],
+              "visiblePixels": 48
+            },
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 15
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00001,
+            "notch": 0,
+            "recall": 0.99702,
+            "colorError": 0.00693
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "93aa2ee985e7f07b08271b76b78d684930e2af2a35e4a3d3b2d2c698ae0bad1a"
+    },
+    "ward-blade": {
+      "registration": {
+        "rows": [
+          "xxx"
+        ],
+        "sprite": "merch-ward-blade",
+        "degrees": 46,
+        "span": 2.17,
+        "cx": 1.455,
+        "cy": 0.499,
+        "minCell": 0.15
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "xxx"
+            ],
+            "source": [
+              "xxx"
+            ],
+            "rendered": [
+              "xxx"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.28828,
+            "1,0": 0.39524,
+            "2,0": 0.21973
+          },
+          "reach": 2.875,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 70
+            },
+            {
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "visiblePixels": 30
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00002,
+            "notch": 0,
+            "recall": 0.99915,
+            "colorError": 0.00306
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x",
+              "x",
+              "x"
+            ],
+            "source": [
+              "x",
+              "x",
+              "x"
+            ],
+            "rendered": [
+              "x",
+              "x",
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.28828,
+            "0,1": 0.39524,
+            "0,2": 0.21973
+          },
+          "reach": 2.875,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 70
+            },
+            {
+              "from": [
+                0,
+                1
+              ],
+              "to": [
+                0,
+                2
+              ],
+              "visiblePixels": 30
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00002,
+            "notch": 0,
+            "recall": 0.99916,
+            "colorError": 0.00306
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "xxx"
+            ],
+            "source": [
+              "xxx"
+            ],
+            "rendered": [
+              "xxx"
+            ]
+          },
+          "coverage": {
+            "2,0": 0.28828,
+            "1,0": 0.39524,
+            "0,0": 0.21973
+          },
+          "reach": 2.875,
+          "crossed": [
+            {
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                2,
+                0
+              ],
+              "visiblePixels": 70
+            },
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 30
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00002,
+            "notch": 0,
+            "recall": 0.99915,
+            "colorError": 0.00306
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "x",
+              "x",
+              "x"
+            ],
+            "source": [
+              "x",
+              "x",
+              "x"
+            ],
+            "rendered": [
+              "x",
+              "x",
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,2": 0.28828,
+            "0,1": 0.39524,
+            "0,0": 0.21973
+          },
+          "reach": 2.875,
+          "crossed": [
+            {
+              "from": [
+                0,
+                1
+              ],
+              "to": [
+                0,
+                2
+              ],
+              "visiblePixels": 70
+            },
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 30
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0.00002,
+            "notch": 0,
+            "recall": 0.99915,
+            "colorError": 0.00306
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "bc5783969f3ea2c41a864e28e4963061c1ef96c14d09264ade517380e062828d"
+    },
+    "knot": {
+      "registration": {
+        "rows": [
+          ".x",
+          "xx"
+        ],
+        "sprite": "merch-knot",
+        "degrees": 8,
+        "span": 1.42,
+        "cx": 1.279,
+        "cy": 1.268,
+        "minCell": 0.065
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              ".x",
+              "xx"
+            ],
+            "source": [
+              ".x",
+              "xx"
+            ],
+            "rendered": [
+              ".x",
+              "xx"
+            ]
+          },
+          "coverage": {
+            "1,0": 0.09652,
+            "0,1": 0.12355,
+            "1,1": 0.59738
+          },
+          "reach": 1.41667,
+          "crossed": [
+            {
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "visiblePixels": 43
+            },
+            {
+              "from": [
+                0,
+                1
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "visiblePixels": 26
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99989,
+            "colorError": 0.00027
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x.",
+              "xx"
+            ],
+            "source": [
+              "x.",
+              "xx"
+            ],
+            "rendered": [
+              "x.",
+              "xx"
+            ]
+          },
+          "coverage": {
+            "1,1": 0.09652,
+            "0,0": 0.12355,
+            "0,1": 0.59738
+          },
+          "reach": 1.41667,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 26
+            },
+            {
+              "from": [
+                0,
+                1
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "visiblePixels": 43
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99988,
+            "colorError": 0.00028
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "xx",
+              "x."
+            ],
+            "source": [
+              "xx",
+              "x."
+            ],
+            "rendered": [
+              "xx",
+              "x."
+            ]
+          },
+          "coverage": {
+            "0,1": 0.09652,
+            "1,0": 0.12355,
+            "0,0": 0.59738
+          },
+          "reach": 1.41667,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 26
+            },
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 43
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99989,
+            "colorError": 0.00028
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "xx",
+              ".x"
+            ],
+            "source": [
+              "xx",
+              ".x"
+            ],
+            "rendered": [
+              "xx",
+              ".x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.09652,
+            "1,1": 0.12355,
+            "1,0": 0.59738
+          },
+          "reach": 1.41667,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 43
+            },
+            {
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "visiblePixels": 26
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99989,
+            "colorError": 0.00028
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "82a48cd3ae2af10fdf0be96fbbcfc523999847fd4281421c443cc9445d708c75"
+    },
+    "ink-shell": {
+      "registration": {
+        "rows": [
+          ".x",
+          "xx"
+        ],
+        "sprite": "merch-ink-shell",
+        "degrees": 2,
+        "span": 1.92,
+        "cx": 0.994,
+        "cy": 0.997,
+        "minCell": 0.14
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              ".x",
+              "xx"
+            ],
+            "source": [
+              ".x",
+              "xx"
+            ],
+            "rendered": [
+              ".x",
+              "xx"
+            ]
+          },
+          "coverage": {
+            "1,0": 0.2133,
+            "0,1": 0.1978,
+            "1,1": 0.40351
+          },
+          "reach": 1.85417,
+          "crossed": [
+            {
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "visiblePixels": 48
+            },
+            {
+              "from": [
+                0,
+                1
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "visiblePixels": 47
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.9999,
+            "colorError": 0.00027
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x.",
+              "xx"
+            ],
+            "source": [
+              "x.",
+              "xx"
+            ],
+            "rendered": [
+              "x.",
+              "xx"
+            ]
+          },
+          "coverage": {
+            "1,1": 0.2133,
+            "0,0": 0.1978,
+            "0,1": 0.40351
+          },
+          "reach": 1.85417,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 47
+            },
+            {
+              "from": [
+                0,
+                1
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "visiblePixels": 48
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.9999,
+            "colorError": 0.00027
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "xx",
+              "x."
+            ],
+            "source": [
+              "xx",
+              "x."
+            ],
+            "rendered": [
+              "xx",
+              "x."
+            ]
+          },
+          "coverage": {
+            "0,1": 0.2133,
+            "1,0": 0.1978,
+            "0,0": 0.40351
+          },
+          "reach": 1.85417,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 47
+            },
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 48
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.9999,
+            "colorError": 0.00027
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "xx",
+              ".x"
+            ],
+            "source": [
+              "xx",
+              ".x"
+            ],
+            "rendered": [
+              "xx",
+              ".x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.2133,
+            "1,1": 0.1978,
+            "1,0": 0.40351
+          },
+          "reach": 1.85417,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 48
+            },
+            {
+              "from": [
+                1,
+                0
+              ],
+              "to": [
+                1,
+                1
+              ],
+              "visiblePixels": 47
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.9999,
+            "colorError": 0.00027
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "94dab5f387ddc71c965e12a90ffa16ed8a5cadff88b4b662e9b9bf5e1e689918"
+    },
+    "mirror": {
+      "registration": {
+        "rows": [
+          "x",
+          "x"
+        ],
+        "sprite": "merch-mirror",
+        "degrees": 0,
+        "span": 1.3,
+        "cx": 0.5,
+        "cy": 1,
+        "minCell": 0.13
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "x",
+              "x"
+            ],
+            "source": [
+              "x",
+              "x"
+            ],
+            "rendered": [
+              "x",
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.45394,
+            "0,1": 0.37824
+          },
+          "reach": 1.29167,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 81
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99955,
+            "colorError": 0.00466
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "xx"
+            ],
+            "source": [
+              "xx"
+            ],
+            "rendered": [
+              "xx"
+            ]
+          },
+          "coverage": {
+            "1,0": 0.45394,
+            "0,0": 0.37824
+          },
+          "reach": 1.29167,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 81
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99961,
+            "colorError": 0.00288
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "x",
+              "x"
+            ],
+            "source": [
+              "x",
+              "x"
+            ],
+            "rendered": [
+              "x",
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,1": 0.45394,
+            "0,0": 0.37824
+          },
+          "reach": 1.29167,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                0,
+                1
+              ],
+              "visiblePixels": 81
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99961,
+            "colorError": 0.00288
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "xx"
+            ],
+            "source": [
+              "xx"
+            ],
+            "rendered": [
+              "xx"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.45394,
+            "1,0": 0.37824
+          },
+          "reach": 1.29167,
+          "crossed": [
+            {
+              "from": [
+                0,
+                0
+              ],
+              "to": [
+                1,
+                0
+              ],
+              "visiblePixels": 81
+            }
+          ],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99961,
+            "colorError": 0.00288
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "42a9fb548842a64d3e09e551797fa8037c1faa6a4f3ec541bf6d2c092665684c"
+    },
+    "bell": {
+      "registration": {
+        "rows": [
+          "x"
+        ],
+        "sprite": "merch-bell",
+        "degrees": 0,
+        "span": 0.94,
+        "cx": 0.5,
+        "cy": 0.5,
+        "minCell": 0.19
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.3502
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99862,
+            "colorError": 0.00421
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.3502
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99984,
+            "colorError": 0.00028
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.3502
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99982,
+            "colorError": 0.00028
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.3502
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99984,
+            "colorError": 0.00028
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "6483190a0f6ba4f2daebdd0780587482fe396af6fd8ea41fd483ec3d378a5e53"
+    },
+    "fang": {
+      "registration": {
+        "rows": [
+          "x"
+        ],
+        "sprite": "merch-fang",
+        "degrees": 0,
+        "span": 0.94,
+        "cx": 0.5,
+        "cy": 0.5,
+        "minCell": 0.19
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.45287
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99697,
+            "colorError": 0.01103
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.45287
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99659,
+            "colorError": 0.01064
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.45288
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99659,
+            "colorError": 0.01064
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.45288
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99659,
+            "colorError": 0.01064
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "ddcd7afc40faea2977ca0bf34cf7a232c8b100333222b0e740e3ed95703978fe"
+    },
+    "salve": {
+      "registration": {
+        "rows": [
+          "x"
+        ],
+        "sprite": "merch-salve",
+        "degrees": 0,
+        "span": 0.93,
+        "cx": 0.5,
+        "cy": 0.5,
+        "minCell": 0.19
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.44169
+          },
+          "reach": 0.91667,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99727,
+            "colorError": 0.00833
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.44169
+          },
+          "reach": 0.91667,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99685,
+            "colorError": 0.00769
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.44169
+          },
+          "reach": 0.91667,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99685,
+            "colorError": 0.00769
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.44169
+          },
+          "reach": 0.91667,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99685,
+            "colorError": 0.00769
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "eaa3b4c27d2be114c6ab3e190ecbc73dcaa900c0b25d4ae7bb85a9793d65d0e4"
+    },
+    "seal": {
+      "registration": {
+        "rows": [
+          "x"
+        ],
+        "sprite": "lamp-seal",
+        "degrees": 0,
+        "span": 0.93,
+        "cx": 0.5,
+        "cy": 0.5,
+        "minCell": 0.19
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.34751
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99807,
+            "colorError": 0.01398
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.34751
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99806,
+            "colorError": 0.01307
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.34751
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99804,
+            "colorError": 0.01299
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.34751
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99806,
+            "colorError": 0.01307
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "ad9dfc08b59fdb274ef31ebfb61c38f60928e761053d918914d07477e0acea81"
+    },
+    "fox-clasp": {
+      "registration": {
+        "rows": [
+          "x"
+        ],
+        "sprite": "merch-fox-clasp",
+        "degrees": 0,
+        "span": 0.94,
+        "cx": 0.5,
+        "cy": 0.5,
+        "minCell": 0.19
+      },
+      "rotationLoop": true,
+      "turns": [
+        {
+          "turn": 0,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.36436
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99858,
+            "colorError": 0.00461
+          },
+          "faults": []
+        },
+        {
+          "turn": 1,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.36436
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99984,
+            "colorError": 0.00027
+          },
+          "faults": []
+        },
+        {
+          "turn": 2,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.36436
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99983,
+            "colorError": 0.00028
+          },
+          "faults": []
+        },
+        {
+          "turn": 3,
+          "detected": {
+            "declared": [
+              "x"
+            ],
+            "source": [
+              "x"
+            ],
+            "rendered": [
+              "x"
+            ]
+          },
+          "coverage": {
+            "0,0": 0.36436
+          },
+          "reach": 0.9375,
+          "crossed": [],
+          "visibleOutside": 0,
+          "ratios": {
+            "offBoard": 0,
+            "notch": 0,
+            "recall": 0.99984,
+            "colorError": 0.00027
+          },
+          "faults": []
+        }
+      ],
+      "sourceSha256": "df48990983900536a14eb49015a5e28403e3667fe63d932f04cf000d47731fca"
+    }
+  },
+  "negative": {
+    "sword": [
+      "measured grid differs from declaration",
+      "occupied-cell coverage",
+      "original sprite colour mismatch",
+      "missing original sprite pixels",
+      "disconnected across grid boundary",
+      "short weapon"
+    ],
+    "ink-shell": [
+      "occupied-cell coverage",
+      "original sprite colour mismatch",
+      "leaked into reserved notch",
+      "missing original sprite pixels",
+      "visible outside declared cells"
+    ]
+  },
+  "nesting": {
+    "items": [
+      {
+        "id": "sword",
+        "x": 0,
+        "y": 0,
+        "rotation": 0
+      },
+      {
+        "id": "ink-shell",
+        "x": 1,
+        "y": 1,
+        "rotation": 0
+      },
+      {
+        "id": "bell",
+        "x": 1,
+        "y": 1,
+        "rotation": 0
+      }
+    ],
+    "legalBell": true,
+    "denied": true,
+    "physicalOverlap": 0,
+    "ruleOverlap": false
+  },
+  "failures": [],
+  "chrome": "157.0.8103.79"
+}

@@ -1,0 +1,12 @@
+{
+  "bundle": "07cbe532568198207dfc60c94a7d00f05dc4d81bdf2558bcfff2e3de25033366",
+  "seed": 2,
+  "checks": [
+    "served bytes match offline file",
+    "opening journal while charging cancels the slash",
+    "opening and closing journal during a held action cancels the transaction",
+    "two-seed variation pays exactly three coins on seed 2",
+    "touch reset at the gate restores initial battle"
+  ],
+  "errors": []
+}

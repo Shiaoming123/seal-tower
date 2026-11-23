@@ -1,0 +1,197 @@
+{
+  "url": "[本机路径略]/review3.html",
+  "mode": "offline",
+  "kind": "combo",
+  "device": "mobile",
+  "bundleSHA256": "7399a3f3e85bf0f6a51c534ec97ba4907ab16c946b5d6fe1d826002e411287ba",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "browser": "151.0.7922.34",
+  "final": {
+    "phase": "idle",
+    "seed": "1",
+    "combatKind": "",
+    "hp": "24",
+    "foe": "9",
+    "floor": "1",
+    "gold": "3",
+    "seals": "0"
+  },
+  "events": [
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "primary",
+      "guide"
+    ],
+    [
+      "primary",
+      "rumor"
+    ],
+    [
+      "primary",
+      "stall"
+    ],
+    [
+      "primary",
+      "quote"
+    ],
+    [
+      "secondary",
+      "result"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "验货",
+      "knot"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "market-third",
+      "crossroads"
+    ],
+    [
+      "primary",
+      "wound"
+    ],
+    [
+      "primary",
+      "blood"
+    ],
+    [
+      "primary",
+      "bloodReceipt"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "验货",
+      "hook"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "profile-open",
+      "counter"
+    ],
+    [
+      "folio-close",
+      "counter"
+    ],
+    [
+      "market-fourth",
+      "idle"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "常规两击",
+      {
+        "phase": "idle",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "16",
+        "foe": "19",
+        "floor": "2",
+        "gold": "0",
+        "seals": "1"
+      },
+      {
+        "phase": "idle",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "18",
+        "foe": "8",
+        "floor": "2",
+        "gold": "0",
+        "seals": "1"
+      },
+      {
+        "phase": "finalStall",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "20",
+        "foe": "0",
+        "floor": "2",
+        "gold": "0",
+        "seals": "1",
+        "decision": "keep"
+      }
+    ],
+    [
+      "primary",
+      "finalQuote"
+    ],
+    [
+      "primary",
+      "finalSale"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "验货",
+      "order-hook"
+    ],
+    [
+      "未付款的寄单",
+      "寄锋契",
+      7,
+      "7",
+      "寄单付 7 石"
+    ],
+    [
+      "验货",
+      "order-purse"
+    ],
+    [
+      "未付款的寄单",
+      "开市本钱",
+      4,
+      "7",
+      "寄单付 4 石"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "market-third",
+      "receipt"
+    ],
+    [
+      "重新打开灵石",
+      "6"
+    ],
+    [
+      "重新打开灵石",
+      "3"
+    ]
+  ],
+  "errors": []
+}

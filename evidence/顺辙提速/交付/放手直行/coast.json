@@ -1,0 +1,676 @@
+{
+  "flow": "coast",
+  "seed": "1",
+  "bundleSHA256": "d5fe59f59696a5546d5b69187c4c392644b83fbbcb602c8edfc52a6444e8b001",
+  "url": "http://127.0.0.1:11865/short-final.html?seed=1",
+  "browser": "157.0.8103.79",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "mode": "环回 HTTP · 桌面鼠标",
+  "speed": "催马",
+  "automated": true,
+  "firstSwordStartMs": 642,
+  "fullRunMs": 76963,
+  "contractedMs": 7584,
+  "handInMs": 73187,
+  "settlementMs": 77605,
+  "totalWallMs": 70021,
+  "observedRoadClock": {
+    "movingMs": 42800.10000000001,
+    "waitingAtForkMs": 0,
+    "journalMs": 0,
+    "otherStationaryRoadMs": 159.6999999999789,
+    "roadFrames": 6180
+  },
+  "roadMs": 42886,
+  "stationaryMs": 0,
+  "journalPausedMs": 0,
+  "pauses": [],
+  "otherMs": 27135,
+  "initial": {
+    "phase": "counter",
+    "seed": "1",
+    "combatKind": "",
+    "hp": "22",
+    "foe": "0",
+    "floor": "1",
+    "gold": "7",
+    "seals": "0",
+    "decision": "sell",
+    "lot": "grit",
+    "shelf": "gear",
+    "qty": "1"
+  },
+  "delivery": {
+    "pace": "quick",
+    "driving": "continuous",
+    "fork": "",
+    "stage": "delivery",
+    "leg": "3",
+    "marker": "6",
+    "branchRoad": "false",
+    "cue": "",
+    "completed": "24",
+    "selected": "right",
+    "track": "right",
+    "waiting": "false",
+    "danger": "false",
+    "visible": true,
+    "title": "照影渡交割",
+    "desc": "渡口逐箱验封。自购灯灰和墨壳仍归你。　脚程 2 石，余 0 箱可交。",
+    "notice": "空车颠过险标，私囊仍在身上。",
+    "milestone": "第 4 程 · 路标 6/6",
+    "entries": {
+      "应收脚程": "+2 石",
+      "应收箱钱": "0 石",
+      "进货": "0 石",
+      "卖货": "0 石",
+      "沿途采买货利": "0 石",
+      "修理": "0 石",
+      "交割后净收": "+2 石"
+    },
+    "stats": {
+      "灵石": "7",
+      "在车": "0 / 3",
+      "封签": "0 / 6"
+    }
+  },
+  "paid": {
+    "pace": "quick",
+    "driving": "continuous",
+    "fork": "",
+    "stage": "done",
+    "leg": "3",
+    "marker": "6",
+    "branchRoad": "false",
+    "cue": "",
+    "completed": "24",
+    "selected": "right",
+    "track": "right",
+    "waiting": "false",
+    "danger": "false",
+    "visible": true,
+    "title": "驿运清账",
+    "desc": "渡口已签收货，车脚与托货逐笔入账。　私货留在囊中，原印仍照旧价验收。",
+    "notice": "领脚程 2 石，托货 0 石。",
+    "milestone": "第 4 程 · 路标 6/6",
+    "entries": {
+      "实收脚程": "+2 石",
+      "实收箱钱": "0 石",
+      "进货": "0 石",
+      "卖货": "0 石",
+      "沿途采买货利": "0 石",
+      "修理": "0 石",
+      "净收": "+2 石"
+    },
+    "stats": {
+      "灵石": "9",
+      "实交": "0 / 3",
+      "封签": "已卸"
+    }
+  },
+  "returned": {
+    "phase": "counter",
+    "seed": "1",
+    "combatKind": "",
+    "hp": "22",
+    "foe": "0",
+    "floor": "1",
+    "gold": "9",
+    "seals": "0",
+    "decision": "sell",
+    "lot": "grit",
+    "shelf": "gear",
+    "qty": "1"
+  },
+  "final": {
+    "phase": "receipt",
+    "seed": "1",
+    "combatKind": "gate-fox",
+    "hp": "11",
+    "foe": "0",
+    "floor": "2",
+    "gold": "9",
+    "seals": "0",
+    "decision": "sell"
+  },
+  "hits": 4,
+  "receipt": "携银破关 灯纹印在首摊售出 ＋4 石 守关 4 手 · 出剑 4 次 气血 22 → 11 驿运净收 +2 石 · 交箱 0/3 结余 9 石 · 绢销 0 份 · 绢利 0 石 回首摊再选 开始下一局",
+  "legs": [
+    {
+      "index": 1,
+      "startMs": 7680,
+      "endMs": 24506,
+      "roadWallMs": 16826,
+      "atArrival": {
+        "灵石": "7",
+        "在车": "1 / 3",
+        "封签": "2 / 6"
+      },
+      "sightings": [
+        {
+          "mark": 1,
+          "decisions": [],
+          "beginMs": 7681,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "brace",
+          "boxes": 3,
+          "endMs": 11234
+        },
+        {
+          "mark": 2,
+          "decisions": [],
+          "beginMs": 11234,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "right",
+          "boxes": 3,
+          "endMs": 12496
+        },
+        {
+          "mark": 3,
+          "decisions": [],
+          "beginMs": 12496,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "right",
+          "boxes": 3,
+          "endMs": 13670
+        },
+        {
+          "mark": 4,
+          "decisions": [],
+          "beginMs": 13670,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "brace",
+          "boxes": 3,
+          "endMs": 17282
+        },
+        {
+          "mark": 5,
+          "decisions": [],
+          "beginMs": 17282,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "left",
+          "boxes": 2,
+          "endMs": 20893
+        },
+        {
+          "mark": 6,
+          "decisions": [],
+          "beginMs": 20893,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "left",
+          "boxes": 2,
+          "endMs": 24506
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 32025,
+      "endMs": 44019,
+      "roadWallMs": 11994,
+      "atArrival": {
+        "灵石": "7",
+        "在车": "0 / 3",
+        "封签": "0 / 6"
+      },
+      "sightings": [
+        {
+          "mark": 1,
+          "decisions": [],
+          "beginMs": 32025,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "left",
+          "boxes": 1,
+          "endMs": 35622
+        },
+        {
+          "mark": 2,
+          "decisions": [],
+          "beginMs": 35622,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "brace",
+          "boxes": 1,
+          "endMs": 39233
+        },
+        {
+          "mark": 3,
+          "decisions": [],
+          "beginMs": 39233,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "right",
+          "boxes": 0,
+          "endMs": 40497
+        },
+        {
+          "mark": 4,
+          "decisions": [],
+          "beginMs": 40497,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "right",
+          "boxes": 0,
+          "endMs": 41671
+        },
+        {
+          "mark": 5,
+          "decisions": [],
+          "beginMs": 41671,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "brace",
+          "boxes": 0,
+          "endMs": 42844
+        },
+        {
+          "mark": 6,
+          "decisions": [],
+          "beginMs": 42844,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "left",
+          "boxes": 0,
+          "endMs": 44019
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 51536,
+      "endMs": 58568,
+      "roadWallMs": 7032,
+      "atArrival": {
+        "灵石": "7",
+        "在车": "0 / 3",
+        "封签": "0 / 6"
+      },
+      "sightings": [
+        {
+          "mark": 1,
+          "decisions": [],
+          "beginMs": 51536,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "brace",
+          "boxes": 0,
+          "endMs": 52699
+        },
+        {
+          "mark": 2,
+          "decisions": [],
+          "beginMs": 52699,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "right",
+          "boxes": 0,
+          "endMs": 53873
+        },
+        {
+          "mark": 3,
+          "decisions": [],
+          "beginMs": 53873,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "right",
+          "boxes": 0,
+          "endMs": 55047
+        },
+        {
+          "mark": 4,
+          "decisions": [],
+          "beginMs": 55047,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "brace",
+          "boxes": 0,
+          "endMs": 56220
+        },
+        {
+          "mark": 5,
+          "decisions": [],
+          "beginMs": 56220,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "left",
+          "boxes": 0,
+          "endMs": 57393
+        },
+        {
+          "mark": 6,
+          "decisions": [],
+          "beginMs": 57393,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "left",
+          "boxes": 0,
+          "endMs": 58568
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 66086,
+      "endMs": 73120,
+      "roadWallMs": 7034,
+      "atArrival": {
+        "灵石": "7",
+        "在车": "0 / 3",
+        "封签": "0 / 6"
+      },
+      "sightings": [
+        {
+          "mark": 1,
+          "decisions": [],
+          "beginMs": 66086,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "right",
+          "boxes": 0,
+          "endMs": 67248
+        },
+        {
+          "mark": 2,
+          "decisions": [],
+          "beginMs": 67248,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "right",
+          "boxes": 0,
+          "endMs": 68421
+        },
+        {
+          "mark": 3,
+          "decisions": [],
+          "beginMs": 68421,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "brace",
+          "boxes": 0,
+          "endMs": 69595
+        },
+        {
+          "mark": 4,
+          "decisions": [],
+          "beginMs": 69595,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "left",
+          "boxes": 0,
+          "endMs": 70769
+        },
+        {
+          "mark": 5,
+          "decisions": [],
+          "beginMs": 70769,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "left",
+          "boxes": 0,
+          "endMs": 71942
+        },
+        {
+          "mark": 6,
+          "decisions": [],
+          "beginMs": 71942,
+          "label": "沿本辙驶过",
+          "track": "right",
+          "cue": "brace",
+          "boxes": 0,
+          "endMs": 73120
+        }
+      ]
+    }
+  ],
+  "branches": [],
+  "branchRoadMs": 0,
+  "stops": [],
+  "turnoffs": [
+    {
+      "index": 1,
+      "entered": false,
+      "ms": 7514,
+      "advert": "杉桥短市售灯灰，每份 1 石。下驿收灰 3 石。",
+      "cash": "7"
+    },
+    {
+      "index": 2,
+      "entered": false,
+      "ms": 7512,
+      "advert": "砾潮水驿收灯灰，每份 3 石。窑口墨壳卖 2 石，下驿收 4 石。",
+      "cash": "7"
+    },
+    {
+      "index": 3,
+      "entered": false,
+      "ms": 7514,
+      "advert": "挂铃栈收墨蠹壳，每份 4 石。最后一驿；错过后照影渡只收托箱。",
+      "cash": "7"
+    }
+  ],
+  "actions": [
+    {
+      "ms": 1000,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 1776,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 2926,
+      "id": "secondary",
+      "label": "连灯灰一并收好"
+    },
+    {
+      "ms": 3254,
+      "id": "primary",
+      "label": "问卖价"
+    },
+    {
+      "ms": 3598,
+      "id": "primary",
+      "label": "去找狐商"
+    },
+    {
+      "ms": 3909,
+      "id": "primary",
+      "label": "把灯纹印放上秤"
+    },
+    {
+      "ms": 5242,
+      "id": "primary",
+      "label": "成交  ＋4 石"
+    },
+    {
+      "ms": 6611,
+      "id": "primary",
+      "label": "俯看货摊"
+    },
+    {
+      "ms": 7496,
+      "id": "market-escort",
+      "label": "接押运，查看护送契约"
+    },
+    {
+      "ms": 7616,
+      "id": "start",
+      "label": "接单起行，免费领三箱。自购货要用现钱和囊格。"
+    },
+    {
+      "ms": 7680,
+      "id": "催马",
+      "label": "催马"
+    },
+    {
+      "ms": 73183,
+      "id": "deliver",
+      "label": "验箱收款，本次收入 2 石，脚程与箱钱分别入账。"
+    },
+    {
+      "ms": 73239,
+      "id": "return",
+      "label": "回到狐柜，回首柜整备，依原路线守关与结算。"
+    },
+    {
+      "ms": 73359,
+      "id": "market-fourth",
+      "label": "闯夜市狐关"
+    },
+    {
+      "ms": 73382,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 74159,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 74924,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 75701,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 76772,
+      "id": "primary",
+      "label": "查看末市货摊"
+    },
+    {
+      "ms": 77600,
+      "id": "market-third",
+      "label": "合账离市"
+    }
+  ],
+  "readable": [
+    {
+      "phase": "offer",
+      "view": {
+        "pace": "normal",
+        "driving": "continuous",
+        "fork": "",
+        "stage": "offer",
+        "leg": "0",
+        "marker": "0",
+        "branchRoad": "false",
+        "cue": "",
+        "completed": "0",
+        "visible": true,
+        "title": "绯绡的押运单",
+        "desc": "四段驿道，三处沿途市。带三箱托货前往照影渡。　押金 0 石 · 全程脚程 2 石 · 每箱尚存加 1 石",
+        "notice": "",
+        "milestone": "",
+        "entries": {},
+        "stats": {
+          "灵石": "7",
+          "在车": "待领",
+          "封签": "待领"
+        },
+        "manifest": "随身商货　灯灰 1 份　墨蠹壳 0 件"
+      }
+    },
+    {
+      "phase": "done",
+      "view": {
+        "pace": "quick",
+        "driving": "continuous",
+        "fork": "",
+        "stage": "done",
+        "leg": "3",
+        "marker": "6",
+        "branchRoad": "false",
+        "cue": "",
+        "completed": "24",
+        "selected": "right",
+        "track": "right",
+        "waiting": "false",
+        "danger": "false",
+        "visible": true,
+        "title": "驿运清账",
+        "desc": "渡口已签收货，车脚与托货逐笔入账。　私货留在囊中，原印仍照旧价验收。",
+        "notice": "领脚程 2 石，托货 0 石。",
+        "milestone": "第 4 程 · 路标 6/6",
+        "entries": {
+          "实收脚程": "+2 石",
+          "实收箱钱": "0 石",
+          "进货": "0 石",
+          "卖货": "0 石",
+          "沿途采买货利": "0 石",
+          "修理": "0 石",
+          "净收": "+2 石"
+        },
+        "stats": {
+          "灵石": "9",
+          "实交": "0 / 3",
+          "封签": "已卸"
+        }
+      }
+    }
+  ],
+  "snapshots": [
+    "coast-接单.jpg",
+    "coast-第1程.jpg",
+    "coast-第2程.jpg",
+    "coast-第3程.jpg",
+    "coast-第4程.jpg",
+    "coast-交货前.jpg",
+    "coast-镖账.jpg",
+    "coast-末市总账.jpg"
+  ],
+  "errors": [],
+  "landmarks": 24,
+  "drivingInputs": 0,
+  "paceCheck": {
+    "clearMs": [
+      1262,
+      1174,
+      1264,
+      1174,
+      1173,
+      1175,
+      1163,
+      1174,
+      1174,
+      1173,
+      1173,
+      1175,
+      1162,
+      1173,
+      1174,
+      1174,
+      1173,
+      1178
+    ],
+    "hazardMs": [
+      3553,
+      3612,
+      3611,
+      3613,
+      3597,
+      3611
+    ],
+    "quoteMs": [
+      7514,
+      7512,
+      7514
+    ]
+  }
+}

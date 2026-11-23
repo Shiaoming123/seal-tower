@@ -1,0 +1,67 @@
+{
+  "provider": "Codex built-in imagegen",
+  "sourceRoot": "art-sources/01a2021b-f2de-7c53-b6ef-d6bd20b1a34c",
+  "registration": [
+    1448,
+    1086
+  ],
+  "runtimeSize": [
+    1200,
+    900
+  ],
+  "review": "Five poses / ten visible hands inspected individually in the source art.",
+  "assets": [
+    {
+      "asset": "fox-counter-hands.webp",
+      "previousAsset": "fox-counter.webp",
+      "source": "exec-1e865654-1e8d-45c4-b2f5-b3418f2c72bf.png",
+      "sourceSHA256": "182bafeafd95667d334b5d0f331c05c19ea905c153d08ab62d89cb61f835954a",
+      "eyeletSourcePixels": null,
+      "sha256": "c3fa56fb6c85554bb19dab982d5597bc11bf7431bc5166ae73c305d8e19cedfe"
+    },
+    {
+      "asset": "fox-offer-hands.webp",
+      "previousAsset": "fox-offer.webp",
+      "source": "exec-21cae0d5-50b9-4154-9e36-bab110be9a36.png",
+      "sourceSHA256": "fcbcad5aa204e3dcd6e8eaab986021f80002a06fae07217eaebac4451a432667",
+      "eyeletSourcePixels": [
+        149,
+        620
+      ],
+      "sha256": "3100f1377aa2bb735d112a5b7c77dc4dab9ee183072df56e22c0cec6f08761e8"
+    },
+    {
+      "asset": "fox-fold-hands.webp",
+      "previousAsset": "fox-fold.webp",
+      "source": "exec-53978f10-2bc7-4826-a7f8-e8a18b331697.png",
+      "sourceSHA256": "c1aef6def35f5bbcf3072270302774fdfb3b8a5faf4d7543e4c6a21da134b322",
+      "eyeletSourcePixels": [
+        273,
+        725
+      ],
+      "sha256": "e66d5e32ce1fa7c1070e10da315bacfab8072d9c3d331a53be5286154c0d1329"
+    },
+    {
+      "asset": "fox-return-hands.webp",
+      "previousAsset": "fox-return.webp",
+      "source": "exec-e4fcc67e-4793-4e98-9230-6407db59723a.png",
+      "sourceSHA256": "099ca95741095eb651d972ecd309780fc55a65ad26e7bf39b3913d6bb41b133c",
+      "eyeletSourcePixels": [
+        459,
+        775
+      ],
+      "sha256": "d04844df6b2feeb834f5fa8b606a425ff0052e8aeaa070f2dba411ac19766706"
+    },
+    {
+      "asset": "fox-settle-hands.webp",
+      "previousAsset": "fox-settle.webp",
+      "source": "exec-77e6a3ad-a1c8-4bd8-b696-21543cd7b481.png",
+      "sourceSHA256": "016733bb03458e45e6cf296aabcf879e52227b65df11d60aa77c69c76956c7e8",
+      "eyeletSourcePixels": [
+        569,
+        807
+      ],
+      "sha256": "4b5bc2071ee3abdfbd24adae2d4f6f8944ad817befc47b674daf5976a1ffbc00"
+    }
+  ]
+}

@@ -1,0 +1,368 @@
+{
+  "bundleSHA256": "8b1a38430fbc65ddfbf1507bb413505115c9f59e7999475bb5d83cac60dc895f",
+  "error": "locator.click: Timeout 10000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#market-third')\u001b[22m\n\u001b[2m    - locator resolved to <button disabled class=\"hitbox\" id=\"market-third\" aria-label=\"合账离市\" aria-disabled=\"true\" data-command=\"settle\"></button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    19 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at press (first-cut\\check-merchant-play.cjs:118:49)\n    at click (first-cut\\check-merchant-play.cjs:129:11)\n    at async rescueRoute (first-cut\\check-merchant-play.cjs:250:52)\n    at async play (first-cut\\check-merchant-play.cjs:373:35)\n    at async main (first-cut\\check-merchant-play.cjs:465:22)",
+  "state": {
+    "phase": "counter",
+    "seed": "1",
+    "combatKind": "gate-fox",
+    "hp": "16",
+    "foe": "0",
+    "floor": "2",
+    "gold": "5",
+    "seals": "0",
+    "decision": "keep",
+    "lot": "order-ash",
+    "shelf": "gear",
+    "qty": "1"
+  },
+  "status": "下局灯灰进货单。现在付 2 石，下局收到 3 份灯灰，占一格。可立即卖 3 石，也可运到驿站分售。。寄单付 2 石 · 此行已寄出一单。合账离市 · 先到行囊收起或放弃地上战利。已寄下局灯灰进货单 · 灵石 7 → 5。寄单付 2 石。合账离市",
+  "buttons": [
+    {
+      "id": "reset",
+      "label": "重新试剑",
+      "disabled": false
+    },
+    {
+      "id": "sound",
+      "label": "关闭声音",
+      "disabled": false
+    },
+    {
+      "id": "market-lot-7",
+      "label": "验看墨蠹壳，2 石",
+      "lot": "ink-shell",
+      "disabled": false
+    },
+    {
+      "id": "market-lot-9",
+      "label": "验看开市本钱，4 石",
+      "lot": "order-purse",
+      "disabled": false
+    },
+    {
+      "id": "market-lot-10",
+      "label": "验看寄锋契，7 石",
+      "lot": "order-hook",
+      "disabled": false
+    },
+    {
+      "id": "market-lot-15",
+      "label": "验看下局灯灰进货单，2 石",
+      "lot": "order-ash",
+      "disabled": false
+    },
+    {
+      "id": "market-gear",
+      "label": "查看器物",
+      "disabled": false
+    },
+    {
+      "id": "market-cargo",
+      "label": "查看商货",
+      "disabled": false
+    },
+    {
+      "id": "primary",
+      "label": "寄单付 2 石",
+      "command": "order-ash",
+      "disabled": true
+    },
+    {
+      "id": "market-third",
+      "label": "合账离市",
+      "command": "settle",
+      "disabled": true
+    },
+    {
+      "id": "profile-open",
+      "label": "查看斩妖手札与行囊",
+      "disabled": false
+    }
+  ],
+  "events": [
+    {
+      "ms": 850,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 1589,
+      "action": "出剑结算",
+      "foeBefore": 9,
+      "foeAfter": 3,
+      "hp": 22
+    },
+    {
+      "ms": 1623,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 2382,
+      "action": "出剑结算",
+      "foeBefore": 3,
+      "foeAfter": 0,
+      "hp": 22
+    },
+    {
+      "ms": 2526,
+      "action": "secondary",
+      "label": "连灯灰一并收好",
+      "command": "",
+      "phase": "guide"
+    },
+    {
+      "ms": 2723,
+      "action": "primary",
+      "label": "递印问行情",
+      "command": "",
+      "phase": "rumor"
+    },
+    {
+      "ms": 2724,
+      "action": "道友开市前报价",
+      "rumor": "先看末市收价。“护着灯纹印过狐关，末市给 7 石。”。封蜡绢首摊 2 石，末市每份收 4 石。。路签 · 旺市收绢，上限两份。收下路签，去狐市"
+    },
+    {
+      "ms": 2951,
+      "action": "primary",
+      "label": "收下路签，去狐市",
+      "command": "",
+      "phase": "stall"
+    },
+    {
+      "ms": 3043,
+      "action": "primary",
+      "label": "把灯纹印放上秤",
+      "command": "",
+      "phase": "quote"
+    },
+    {
+      "ms": 3266,
+      "action": "secondary",
+      "label": "留印上楼",
+      "command": "",
+      "phase": "result"
+    },
+    {
+      "ms": 3411,
+      "action": "primary",
+      "label": "俯看货摊",
+      "command": "",
+      "phase": "counter"
+    },
+    {
+      "ms": 3564,
+      "action": "验货",
+      "name": "knot",
+      "quote": "血珀佩。血棘、放血、每战首次受妖伤各蓄 1 珀，最多 2 层。出剑耗 1 层，增 3 伤并回 2 血。。付 3 石，余 0 石；立即佩戴。拾遗损 2 血，得 2 石，也可绕过。携当前钱囊和余印入关。付 3 石。去侧廊。闯夜市狐关"
+    },
+    {
+      "ms": 3608,
+      "action": "primary",
+      "label": "付 3 石",
+      "command": "buy-knot",
+      "phase": "counter"
+    },
+    {
+      "ms": 3610,
+      "action": "成交",
+      "before": 3,
+      "after": 0,
+      "receipt": "血珀佩。血棘、放血、每战首次受妖伤各蓄 1 珀，最多 2 层。出剑耗 1 层，增 3 伤并回 2 血。。付 3 石 · 此货已售罄。拾遗损 2 血，得 2 石，也可绕过。携当前钱囊和余印入关。已取血珀佩 · 灵石 3 → 0。付 3 石。去侧廊。闯夜市狐关"
+    },
+    {
+      "ms": 3671,
+      "action": "market-third",
+      "label": "去侧廊",
+      "command": "crossroads",
+      "phase": "crossroads"
+    },
+    {
+      "ms": 3780,
+      "action": "market-third",
+      "label": "抢收巢货",
+      "command": "detour-haul",
+      "phase": "idle"
+    },
+    {
+      "ms": 3808,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 4551,
+      "action": "出剑结算",
+      "foeBefore": 10,
+      "foeAfter": 4,
+      "hp": 15
+    },
+    {
+      "ms": 4580,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 5343,
+      "action": "出剑结算",
+      "foeBefore": 4,
+      "foeAfter": 0,
+      "hp": 17
+    },
+    {
+      "ms": 5442,
+      "action": "secondary",
+      "label": "留下地上的货",
+      "command": "leave-loot",
+      "phase": "blood"
+    },
+    {
+      "ms": 5471,
+      "action": "primary",
+      "label": "继续整理",
+      "command": "cancel-leave",
+      "phase": "blood"
+    },
+    {
+      "ms": 5513,
+      "action": "primary",
+      "label": "处理地上战利品",
+      "command": "open-loot",
+      "phase": "blood"
+    },
+    {
+      "ms": 5775,
+      "action": "folio-close",
+      "label": "合卷，返回当前事件",
+      "command": null,
+      "phase": "blood"
+    },
+    {
+      "ms": 5797,
+      "action": "secondary",
+      "label": "留下地上的货",
+      "command": "leave-loot",
+      "phase": "blood"
+    },
+    {
+      "ms": 5824,
+      "action": "secondary",
+      "label": "确认留下",
+      "command": "confirm-leave",
+      "phase": "blood"
+    },
+    {
+      "ms": 5861,
+      "action": "market-third",
+      "label": "合契回柜",
+      "command": "skip-blood",
+      "phase": "bloodReceipt"
+    },
+    {
+      "ms": 6050,
+      "action": "primary",
+      "label": "回到狐柜",
+      "command": "counter",
+      "phase": "counter"
+    },
+    {
+      "ms": 6300,
+      "action": "market-fourth",
+      "label": "闯夜市狐关",
+      "command": "gate",
+      "phase": "idle"
+    },
+    {
+      "ms": 6344,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 7072,
+      "action": "出剑结算",
+      "foeBefore": 19,
+      "foeAfter": 13,
+      "hp": 17
+    },
+    {
+      "ms": 7101,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 7843,
+      "action": "出剑结算",
+      "foeBefore": 13,
+      "foeAfter": 7,
+      "hp": 14
+    },
+    {
+      "ms": 7871,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 8623,
+      "action": "出剑结算",
+      "foeBefore": 7,
+      "foeAfter": 0,
+      "hp": 16
+    },
+    {
+      "ms": 8828,
+      "action": "primary",
+      "label": "将原印放秤",
+      "command": "",
+      "phase": "finalQuote"
+    },
+    {
+      "ms": 9047,
+      "action": "primary",
+      "label": "卖原印 ＋7 石",
+      "command": "",
+      "phase": "finalSale"
+    },
+    {
+      "ms": 9265,
+      "action": "primary",
+      "label": "查看末市货摊",
+      "command": "",
+      "phase": "counter"
+    },
+    {
+      "ms": 9370,
+      "action": "验货",
+      "name": "order-ash",
+      "quote": "下局灯灰进货单。现在付 2 石，下局收到 3 份灯灰，占一格。可立即卖 3 石，也可运到驿站分售。。现在付 2 石，下局收到 3 份灯灰，占一格。可立即卖 3 石，也可运到驿站分售。。合账离市 · 先到行囊收起或放弃地上战利。寄单付 2 石。合账离市"
+    },
+    {
+      "ms": 9405,
+      "action": "primary",
+      "label": "寄单付 2 石",
+      "command": "order-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 9407,
+      "action": "成交",
+      "before": 7,
+      "after": 5,
+      "receipt": "下局灯灰进货单。现在付 2 石，下局收到 3 份灯灰，占一格。可立即卖 3 石，也可运到驿站分售。。寄单付 2 石 · 此行已寄出一单。合账离市 · 先到行囊收起或放弃地上战利。已寄下局灯灰进货单 · 灵石 7 → 5。寄单付 2 石。合账离市"
+    }
+  ],
+  "errors": []
+}

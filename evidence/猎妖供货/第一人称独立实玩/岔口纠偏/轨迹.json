@@ -1,0 +1,1012 @@
+{
+  "url": "[本机路径略]",
+  "bundle": "55d8bcea0c50137f96194f772de2c9b34d5ac2448b20304a86ceb7421a7b0a93",
+  "width": 390,
+  "profile": "touch",
+  "events": [
+    {
+      "op": "order-ash",
+      "before": {
+        "phase": "contract",
+        "leg": "1",
+        "direction": "",
+        "more": "柜台接单　·　路签 1",
+        "title": "今天替谁进塔？",
+        "text": "父亲伤了腿，今天轮到你进塔给街灯找材料。选一位买主，货不齐也能按散价卖。驿柜备有 1 份灰，每份 2 石。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n尚未接单",
+        "readout": "",
+        "options": [
+          {
+            "id": "order-ash",
+            "label": "给灯匠送灰\n两份灰共 7 石。散卖每份 1 石。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "order-clasp",
+            "label": "替绯绡取扣\n一枚完整狐扣 9 石。散卖每枚 4 石。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "order-free",
+            "label": "只做现货\n货归自己，不必保留指定货品。",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "gear",
+        "leg": "1",
+        "direction": "",
+        "more": "出发备货　·　路签 1",
+        "title": "拿一件趁手的",
+        "text": "手上只有一个武器位。路上捡到其他工具，可以当场换用。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gear-knife",
+            "label": "带短铁刀\n免费。牌组多一张 0 点短刺，进击多打 1 伤。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-hook",
+            "label": "买竹柄钩 · 2 石\n牌组多一张回钩。架住蛾翅后，下击可取灯芯。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-buckler",
+            "label": "买木挡板 · 1 石\n多一张盾步。格挡接招后，下击多打 3 伤。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-plate",
+            "label": "带刀配盘 · 3 石\n刀牌加 0 点盘照。扬灰花 1 灰截住本轮敌招。",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "gear-hook",
+      "before": {
+        "phase": "gear",
+        "leg": "1",
+        "direction": "",
+        "more": "出发备货　·　路签 1",
+        "title": "拿一件趁手的",
+        "text": "手上只有一个武器位。路上捡到其他工具，可以当场换用。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gear-knife",
+            "label": "带短铁刀\n免费。牌组多一张 0 点短刺，进击多打 1 伤。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-hook",
+            "label": "买竹柄钩 · 2 石\n牌组多一张回钩。架住蛾翅后，下击可取灯芯。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-buckler",
+            "label": "买木挡板 · 1 石\n多一张盾步。格挡接招后，下击多打 3 伤。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-plate",
+            "label": "带刀配盘 · 3 石\n刀牌加 0 点盘照。扬灰花 1 灰截住本轮敌招。",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "走到灯台",
+        "text": "旧灯台可以收灰或包扎。向前1 格（向北）。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "step",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "走到灯台",
+        "text": "旧灯台可以收灰或包扎。向前1 格（向北）。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "gather",
+        "leg": "1",
+        "direction": "",
+        "more": "沿路取材　·　路签 1",
+        "title": "清理廊口旧灯",
+        "text": "铺里常年替这里换灯。每次经过，可以收一份灯灰，也可以坐下包扎伤口。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gather-ash",
+            "label": "收灯灰 1 份\n收进货袋。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "rest",
+            "label": "歇脚包扎\n恢复最多 3 点气血，留下灯灰。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "gather-ash",
+      "before": {
+        "phase": "gather",
+        "leg": "1",
+        "direction": "",
+        "more": "沿路取材　·　路签 1",
+        "title": "清理廊口旧灯",
+        "text": "铺里常年替这里换灯。每次经过，可以收一份灯灰，也可以坐下包扎伤口。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gather-ash",
+            "label": "收灯灰 1 份\n收进货袋。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "rest",
+            "label": "歇脚包扎\n恢复最多 3 点气血，留下灯灰。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前2 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "turn-left",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前2 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝西 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。先右转，再向前2 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝西走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "step",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝西 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。先右转，再向前2 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝西走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝西 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。先转身，再向前1 格（向东）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n前方是墙",
+            "aria": null,
+            "disabled": true
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "地图",
+      "body": "塔内路线\n\n先到岔路的木牌前。先转身，再向前1 格（向东）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。\n\n金色箭头是你，图上方是北。\n\n灯架在你的北2 格、西1 格。\n\n鼠洞在你的北2 格、东3 格。\n\n回到塔内"
+    },
+    {
+      "op": "turn-right",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝西 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。先转身，再向前1 格（向东）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n前方是墙",
+            "aria": null,
+            "disabled": true
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。先右转，再向前1 格（向东）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n前方是墙",
+            "aria": null,
+            "disabled": true
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "turn-right",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。先右转，再向前1 格（向东）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n前方是墙",
+            "aria": null,
+            "disabled": true
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝东 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前1 格（向东）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝东走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "step",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝东 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前1 格（向东）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝东走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝东 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。先左转，再向前2 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝东走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "turn-left",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝东 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。先左转，再向前2 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝东走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前2 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "step",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前2 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前1 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "step",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前1 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n前方是墙",
+            "aria": null,
+            "disabled": true
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    }
+  ],
+  "screens": [
+    "开场.jpg",
+    "误入壁龛.jpg",
+    "展开地图.jpg",
+    "寻回岔口.jpg"
+  ],
+  "end": {
+    "phase": "walk",
+    "leg": "1",
+    "direction": "面朝北 · 看图",
+    "more": "探路　·　路签 1",
+    "title": "在岔口选猎路",
+    "text": "西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+    "status": "气血 22/22\n灵石 1",
+    "foe": "",
+    "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+    "readout": "",
+    "options": [
+      {
+        "id": "turn-left",
+        "label": "左转\n转向西",
+        "aria": null,
+        "disabled": false
+      },
+      {
+        "id": "step",
+        "label": "向前走\n前方是墙",
+        "aria": null,
+        "disabled": true
+      },
+      {
+        "id": "turn-right",
+        "label": "右转\n转向东",
+        "aria": null,
+        "disabled": false
+      },
+      {
+        "id": "retreat",
+        "label": "带货回铺\n放弃后续猎路",
+        "aria": null,
+        "disabled": false
+      }
+    ],
+    "dialog": ""
+  },
+  "errors": []
+}

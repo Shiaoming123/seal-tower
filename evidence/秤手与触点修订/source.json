@@ -1,0 +1,735 @@
+{
+  "mode": "source",
+  "url": "http://127.0.0.1:8774/first-cut/",
+  "bundleSHA256": "3e5a91f976df523732fe8254d2e4997aeadb6e867336ebb48288e02297ae2b0c",
+  "browser": "157.0.8103.79",
+  "images": {
+    "hero-ready": [
+      515,
+      636
+    ],
+    "hero-thrust": [
+      933,
+      468
+    ],
+    "hero-recover": [
+      541,
+      682
+    ],
+    "moth": [
+      711,
+      717
+    ],
+    "warden": [
+      978,
+      654
+    ],
+    "fox-offer": [
+      1200,
+      900
+    ],
+    "lamp-seal": [
+      412,
+      596
+    ],
+    "fox-counter": [
+      1200,
+      900
+    ],
+    "fox-settle": [
+      1200,
+      900
+    ],
+    "fox-fold": [
+      1200,
+      900
+    ],
+    "fox-return": [
+      1200,
+      900
+    ],
+    "guide-oracle": [
+      724,
+      543
+    ],
+    "hall": [
+      960,
+      540
+    ],
+    "shop-wall": [
+      960,
+      540
+    ],
+    "gate": [
+      960,
+      540
+    ],
+    "grit": [
+      256,
+      193
+    ],
+    "last-market": [
+      960,
+      540
+    ],
+    "counter": [
+      900,
+      300
+    ]
+  },
+  "fonts": [
+    {
+      "family": "\"Tower Script\"",
+      "status": "loaded"
+    },
+    {
+      "family": "\"Tower Brush\"",
+      "status": "loaded"
+    },
+    {
+      "family": "\"Tower Ledger\"",
+      "status": "loaded"
+    }
+  ],
+  "interactions": [
+    "drag outside scale returns to same event; drag onto pan weighs original seal",
+    "drag outside scale returns to same event; drag onto pan weighs original seal",
+    "death at gate, first-stall rollback and keyboard reset"
+  ],
+  "result": {
+    "whet": {
+      "turns": 2,
+      "hp": 22,
+      "gold": 3,
+      "seals": 0,
+      "receipt": "磨刃破关。灯纹印在首摊售出  ＋4 石    砺锋砂  −4 石。守关 2 手 · 出剑 2 次    气血 22 → 22。行囊结余  3 灵石。回首摊再选。重新入塔"
+    },
+    "keep": {
+      "turns": 4,
+      "hp": 11,
+      "gold": 10,
+      "seals": 0,
+      "receipt": "藏印得价。灯纹印在末市售出  ＋7 石。守关 4 手 · 出剑 4 次    气血 22 → 11。行囊结余  10 灵石。回首摊再选。重新入塔"
+    },
+    "cash": {
+      "turns": 4,
+      "hp": 11,
+      "gold": 7,
+      "seals": 0,
+      "receipt": "携银破关。灯纹印在首摊售出  ＋4 石。守关 4 手 · 出剑 4 次    气血 22 → 11。行囊结余  7 灵石。回首摊再选。重新入塔"
+    }
+  },
+  "trace": [
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "24",
+      "foe": "9",
+      "floor": "1",
+      "gold": "3",
+      "seals": "0"
+    },
+    {
+      "action": "hit",
+      "from": 9,
+      "phase": "idle",
+      "hp": "22",
+      "foe": "3",
+      "floor": "1",
+      "gold": "3",
+      "seals": "0"
+    },
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "22",
+      "foe": "3",
+      "floor": "1",
+      "gold": "3",
+      "seals": "0"
+    },
+    {
+      "action": "hit",
+      "from": 3,
+      "phase": "drop",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "3",
+      "seals": "0",
+      "decision": ""
+    },
+    {
+      "action": "object",
+      "phase": "guide",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "3",
+      "seals": "1",
+      "decision": ""
+    },
+    {
+      "action": "primary",
+      "phase": "rumor",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "3",
+      "seals": "1",
+      "decision": ""
+    },
+    {
+      "action": "primary",
+      "phase": "stall",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "3",
+      "seals": "1",
+      "decision": ""
+    },
+    {
+      "action": "primary",
+      "phase": "result",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "7",
+      "seals": "0",
+      "decision": "sell"
+    },
+    {
+      "action": "primary",
+      "phase": "whet",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "7",
+      "seals": "0",
+      "decision": "sell"
+    },
+    {
+      "action": "primary",
+      "phase": "sharpened",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "3",
+      "seals": "0",
+      "decision": "sell"
+    },
+    {
+      "action": "primary",
+      "phase": "idle",
+      "hp": "22",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "0"
+    },
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "22",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "0"
+    },
+    {
+      "action": "hit",
+      "from": 19,
+      "phase": "idle",
+      "hp": "22",
+      "foe": "9",
+      "floor": "2",
+      "gold": "3",
+      "seals": "0"
+    },
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "22",
+      "foe": "9",
+      "floor": "2",
+      "gold": "3",
+      "seals": "0"
+    },
+    {
+      "action": "hit",
+      "from": 9,
+      "phase": "finalStall",
+      "hp": "22",
+      "foe": "0",
+      "floor": "2",
+      "gold": "3",
+      "seals": "0",
+      "decision": "sell"
+    },
+    {
+      "action": "primary",
+      "phase": "receipt",
+      "hp": "22",
+      "foe": "0",
+      "floor": "2",
+      "gold": "3",
+      "seals": "0",
+      "decision": "sell"
+    },
+    {
+      "action": "primary",
+      "phase": "quote",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "3",
+      "seals": "1",
+      "decision": ""
+    },
+    {
+      "action": "secondary",
+      "phase": "result",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "3",
+      "seals": "1",
+      "decision": "keep"
+    },
+    {
+      "action": "primary",
+      "phase": "idle",
+      "hp": "22",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "22",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "hit",
+      "from": 19,
+      "phase": "idle",
+      "hp": "22",
+      "foe": "13",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "22",
+      "foe": "13",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "hit",
+      "from": 13,
+      "phase": "idle",
+      "hp": "19",
+      "foe": "7",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "19",
+      "foe": "7",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "hit",
+      "from": 7,
+      "phase": "idle",
+      "hp": "11",
+      "foe": "1",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "11",
+      "foe": "1",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "hit",
+      "from": 1,
+      "phase": "finalStall",
+      "hp": "11",
+      "foe": "0",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1",
+      "decision": "keep"
+    },
+    {
+      "action": "primary",
+      "phase": "finalSale",
+      "hp": "11",
+      "foe": "0",
+      "floor": "2",
+      "gold": "10",
+      "seals": "0",
+      "decision": "keep"
+    },
+    {
+      "action": "primary",
+      "phase": "receipt",
+      "hp": "11",
+      "foe": "0",
+      "floor": "2",
+      "gold": "10",
+      "seals": "0",
+      "decision": "keep"
+    },
+    {
+      "action": "primary",
+      "phase": "quote",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "3",
+      "seals": "1",
+      "decision": ""
+    },
+    {
+      "action": "primary",
+      "phase": "result",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "7",
+      "seals": "0",
+      "decision": "sell"
+    },
+    {
+      "action": "primary",
+      "phase": "whet",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "7",
+      "seals": "0",
+      "decision": "sell"
+    },
+    {
+      "action": "secondary",
+      "phase": "idle",
+      "hp": "22",
+      "foe": "19",
+      "floor": "2",
+      "gold": "7",
+      "seals": "0"
+    },
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "22",
+      "foe": "19",
+      "floor": "2",
+      "gold": "7",
+      "seals": "0"
+    },
+    {
+      "action": "hit",
+      "from": 19,
+      "phase": "idle",
+      "hp": "22",
+      "foe": "13",
+      "floor": "2",
+      "gold": "7",
+      "seals": "0"
+    },
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "22",
+      "foe": "13",
+      "floor": "2",
+      "gold": "7",
+      "seals": "0"
+    },
+    {
+      "action": "hit",
+      "from": 13,
+      "phase": "idle",
+      "hp": "19",
+      "foe": "7",
+      "floor": "2",
+      "gold": "7",
+      "seals": "0"
+    },
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "19",
+      "foe": "7",
+      "floor": "2",
+      "gold": "7",
+      "seals": "0"
+    },
+    {
+      "action": "hit",
+      "from": 7,
+      "phase": "idle",
+      "hp": "11",
+      "foe": "1",
+      "floor": "2",
+      "gold": "7",
+      "seals": "0"
+    },
+    {
+      "action": "strike",
+      "phase": "swing",
+      "hp": "11",
+      "foe": "1",
+      "floor": "2",
+      "gold": "7",
+      "seals": "0"
+    },
+    {
+      "action": "hit",
+      "from": 1,
+      "phase": "finalStall",
+      "hp": "11",
+      "foe": "0",
+      "floor": "2",
+      "gold": "7",
+      "seals": "0",
+      "decision": "sell"
+    },
+    {
+      "action": "primary",
+      "phase": "receipt",
+      "hp": "11",
+      "foe": "0",
+      "floor": "2",
+      "gold": "7",
+      "seals": "0",
+      "decision": "sell"
+    },
+    {
+      "action": "primary",
+      "phase": "quote",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "3",
+      "seals": "1",
+      "decision": ""
+    },
+    {
+      "action": "secondary",
+      "phase": "result",
+      "hp": "22",
+      "foe": "0",
+      "floor": "1",
+      "gold": "3",
+      "seals": "1",
+      "decision": "keep"
+    },
+    {
+      "action": "primary",
+      "phase": "idle",
+      "hp": "22",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "22",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "22",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "22",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "18",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "18",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "18",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "14",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "14",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "14",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "10",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "10",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "10",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "6",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "6",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "6",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "2",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "2",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "guard",
+      "phase": "swing",
+      "hp": "2",
+      "foe": "19",
+      "floor": "2",
+      "gold": "3",
+      "seals": "1"
+    },
+    {
+      "action": "primary",
+      "phase": "quote",
+      "hp": "22",
+      "foe": "19",
+      "floor": "1",
+      "gold": "3",
+      "seals": "1",
+      "decision": ""
+    }
+  ],
+  "errors": []
+}

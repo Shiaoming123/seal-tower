@@ -1,0 +1,1702 @@
+{
+  "hash": "e9f20cf86dc9707e8ca40a7769689a088cc2b98b7d6818a4a77605b1897d99ae",
+  "elapsed": 69,
+  "events": [
+    {
+      "t": 1,
+      "action": "开始",
+      "phase": "idle",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "idle",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "24",
+        "foe": "9",
+        "floor": "1",
+        "gold": "3",
+        "seals": "0"
+      },
+      "live": [
+        "",
+        "点击纸灯蛾或按 J 出剑。长按至亮环后松手，可用一次合锋。按 K 守势，按 R 重试。"
+      ],
+      "buttons": [
+        [
+          "target",
+          null,
+          "向纸灯蛾出剑，长按可合锋"
+        ],
+        [
+          "strike",
+          null,
+          "出剑"
+        ],
+        [
+          "guard",
+          null,
+          "守势，架剑格挡"
+        ],
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 17,
+      "action": "hold-520",
+      "phase": "idle",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "idle",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "1",
+        "floor": "1",
+        "gold": "3",
+        "seals": "0"
+      },
+      "live": [
+        "",
+        "合锋 8 伤，掠灯造成 2 伤。"
+      ],
+      "buttons": [
+        [
+          "target",
+          null,
+          "向纸灯蛾出剑，长按可合锋"
+        ],
+        [
+          "strike",
+          null,
+          "出剑"
+        ],
+        [
+          "guard",
+          null,
+          "守势，架剑格挡"
+        ],
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 18,
+      "action": "#strike",
+      "phase": "drop",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "drop",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "3",
+        "seals": "0",
+        "decision": ""
+      },
+      "live": [
+        "",
+        "灯纹印。灯芯沉成一枚缺角的印。。纸翅留下灯灰，狐柜每份收 1 石。。拾起灯纹印。连灯灰一并收好"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 19,
+      "action": "#primary",
+      "phase": "guide",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "guide",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      },
+      "live": [
+        "",
+        "行脚道友。“先别急着卖。让我看看，。你手上那枚印是什么纹？”。递印问行情"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "object",
+          null,
+          "递印问行情（场景物件）"
+        ],
+        [
+          "primary",
+          null,
+          "递印问行情"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 20,
+      "action": "#primary",
+      "phase": "rumor",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "rumor",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      },
+      "live": [
+        "",
+        "末市收灯。“护着灯纹印过狐关，末市给 7 石。”。封蜡绢首摊 2 石，末市每份收 4 石。。路签 · 旺市收绢，上限两份。收下路签，去狐市"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "object",
+          null,
+          "收下路签，去狐市（场景物件）"
+        ],
+        [
+          "primary",
+          null,
+          "收下路签，去狐市"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 26,
+      "action": "shot-问价",
+      "phase": "rumor",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "rumor",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      },
+      "live": [
+        "",
+        "末市收灯。“护着灯纹印过狐关，末市给 7 石。”。封蜡绢首摊 2 石，末市每份收 4 石。。路签 · 旺市收绢，上限两份。收下路签，去狐市"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "object",
+          null,
+          "收下路签，去狐市（场景物件）"
+        ],
+        [
+          "primary",
+          null,
+          "收下路签，去狐市"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 27,
+      "action": "#primary",
+      "phase": "stall",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "stall",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      },
+      "live": [
+        "",
+        "狐商 · 绯绡。“好轻的一团灯火。放上来吧，。秤砣会告诉你，它在我这里值多少。”。点秤或拖印上秤。把灯纹印放上秤"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "seal-grip",
+          null,
+          "拾起灯纹印，拖到秤盘或点按上秤"
+        ],
+        [
+          "object",
+          null,
+          "把灯纹印放上秤（场景物件）"
+        ],
+        [
+          "primary",
+          null,
+          "把灯纹印放上秤"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 28,
+      "action": "#primary",
+      "phase": "quote",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "quote",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      },
+      "live": [
+        "",
+        "灯纹印估单。首摊卖 4 石可换砺锋砂，狐关剑伤 6 → 10。。留印须持原印过夜市狐关，末市兑 7 石。。成交  ＋4 石。留印上楼"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 29,
+      "action": "#primary",
+      "phase": "result",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "result",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "7",
+        "seals": "0",
+        "decision": "sell"
+      },
+      "live": [
+        "",
+        "银货两讫。铜盘轻响，4 枚灵石已落入你的钱囊。。“砂匣在这里，旁的货也随你看。”。灵石  3 → 7     妖印  1 → 0。俯看货摊。直接闯关"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 30,
+      "action": "#primary",
+      "phase": "counter",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "counter",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "7",
+        "seals": "0",
+        "decision": "sell",
+        "lot": "grit",
+        "shelf": "gear",
+        "qty": "1"
+      },
+      "live": [
+        "",
+        "砺锋砂。狐关每剑伤害 +4。。付 4 石，余 3 石。拾遗损 2 血，得 2 石，也可绕过。携当前钱囊和余印入关。付 4 石。去侧廊。闯夜市狐关"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "market-lot-0",
+          "grit",
+          "验看砺锋砂，4 石"
+        ],
+        [
+          "market-lot-1",
+          "salve",
+          "验看续灯膏，2 石"
+        ],
+        [
+          "market-lot-2",
+          "mirror",
+          "验看护心镜，4 石"
+        ],
+        [
+          "market-lot-3",
+          "fang",
+          "验看螭牙坠，5 石"
+        ],
+        [
+          "market-lot-4",
+          "hook",
+          "验看饮棘钩，5 石"
+        ],
+        [
+          "market-lot-5",
+          "ward-blade",
+          "验看守阙剑，5 石"
+        ],
+        [
+          "market-lot-6",
+          "knot",
+          "验看血珀佩，3 石"
+        ],
+        [
+          "market-gear",
+          null,
+          "查看器物"
+        ],
+        [
+          "market-cargo",
+          null,
+          "查看商货"
+        ],
+        [
+          "primary",
+          null,
+          "付 4 石"
+        ],
+        [
+          "market-third",
+          null,
+          "去侧廊"
+        ],
+        [
+          "market-fourth",
+          null,
+          "闯夜市狐关"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 36,
+      "action": "#market-cargo",
+      "phase": "counter",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "counter",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "7",
+        "seals": "0",
+        "decision": "sell",
+        "lot": "abacus",
+        "shelf": "cargo",
+        "qty": "1"
+      },
+      "live": [
+        "",
+        "听泉算盘。以入战余款计，每 4 石使本战首剑增 1 伤，至多 2 伤。。交旧铜铃，原栏佩入算盘。。拾遗损 2 血，得 2 石，也可绕过。携当前钱囊和余印入关。旧铃换算盘。去侧廊。闯夜市狐关"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "market-lot-11",
+          "abacus",
+          "验看听泉算盘，0 石"
+        ],
+        [
+          "market-lot-12",
+          "silk",
+          "验看封蜡绢，2 石"
+        ],
+        [
+          "market-lot-14",
+          "lining",
+          "验看锦囊衬布，3 石"
+        ],
+        [
+          "market-gear",
+          null,
+          "查看器物"
+        ],
+        [
+          "market-cargo",
+          null,
+          "查看商货"
+        ],
+        [
+          "primary",
+          null,
+          "旧铃换算盘"
+        ],
+        [
+          "market-third",
+          null,
+          "去侧廊"
+        ],
+        [
+          "market-fourth",
+          null,
+          "闯夜市狐关"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 36,
+      "action": "shot-商货",
+      "phase": "counter",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "counter",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "7",
+        "seals": "0",
+        "decision": "sell",
+        "lot": "abacus",
+        "shelf": "cargo",
+        "qty": "1"
+      },
+      "live": [
+        "",
+        "听泉算盘。以入战余款计，每 4 石使本战首剑增 1 伤，至多 2 伤。。交旧铜铃，原栏佩入算盘。。拾遗损 2 血，得 2 石，也可绕过。携当前钱囊和余印入关。旧铃换算盘。去侧廊。闯夜市狐关"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "market-lot-11",
+          "abacus",
+          "验看听泉算盘，0 石"
+        ],
+        [
+          "market-lot-12",
+          "silk",
+          "验看封蜡绢，2 石"
+        ],
+        [
+          "market-lot-14",
+          "lining",
+          "验看锦囊衬布，3 石"
+        ],
+        [
+          "market-gear",
+          null,
+          "查看器物"
+        ],
+        [
+          "market-cargo",
+          null,
+          "查看商货"
+        ],
+        [
+          "primary",
+          null,
+          "旧铃换算盘"
+        ],
+        [
+          "market-third",
+          null,
+          "去侧廊"
+        ],
+        [
+          "market-fourth",
+          null,
+          "闯夜市狐关"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 41,
+      "action": "#primary",
+      "phase": "counter",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "counter",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "7",
+        "seals": "0",
+        "decision": "sell",
+        "lot": "abacus",
+        "shelf": "cargo",
+        "qty": "1"
+      },
+      "live": [
+        "",
+        "听泉算盘。以入战余款计，每 4 石使本战首剑增 1 伤，至多 2 伤。。旧铃换算盘 · 身上已无旧铜铃。拾遗损 3 血，得 2 石，也可绕过。携当前钱囊和余印入关。已交铃换得听泉算盘 · 灵石 7 → 7。旧铃换算盘。去侧廊。闯夜市狐关"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "market-lot-11",
+          "abacus",
+          "验看听泉算盘，0 石"
+        ],
+        [
+          "market-lot-12",
+          "silk",
+          "验看封蜡绢，2 石"
+        ],
+        [
+          "market-lot-14",
+          "lining",
+          "验看锦囊衬布，3 石"
+        ],
+        [
+          "market-gear",
+          null,
+          "查看器物"
+        ],
+        [
+          "market-cargo",
+          null,
+          "查看商货"
+        ],
+        [
+          "market-third",
+          null,
+          "去侧廊"
+        ],
+        [
+          "market-fourth",
+          null,
+          "闯夜市狐关"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 42,
+      "action": "[data-lot=silk]",
+      "phase": "counter",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "counter",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "7",
+        "seals": "0",
+        "decision": "sell",
+        "lot": "silk",
+        "shelf": "cargo",
+        "qty": "1"
+      },
+      "live": [
+        "",
+        "封蜡绢。每叠占两格。首柜每份 2 石，末市依路签验收。。每份 2 石 × 1，合 2 石；余 5 石。。拾遗损 3 血，得 2 石，也可绕过。携当前钱囊和余印入关。购 1 份　2 石。去侧廊。闯夜市狐关"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "market-lot-11",
+          "abacus",
+          "验看听泉算盘，0 石"
+        ],
+        [
+          "market-lot-12",
+          "silk",
+          "验看封蜡绢，2 石"
+        ],
+        [
+          "market-lot-14",
+          "lining",
+          "验看锦囊衬布，3 石"
+        ],
+        [
+          "market-gear",
+          null,
+          "查看器物"
+        ],
+        [
+          "market-cargo",
+          null,
+          "查看商货"
+        ],
+        [
+          "market-quantity",
+          null,
+          "数量 1 份，切换数量"
+        ],
+        [
+          "primary",
+          null,
+          "购 1 份　2 石"
+        ],
+        [
+          "market-third",
+          null,
+          "去侧廊"
+        ],
+        [
+          "market-fourth",
+          null,
+          "闯夜市狐关"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 43,
+      "action": "#primary",
+      "phase": "counter",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "counter",
+        "seed": "1",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "5",
+        "seals": "0",
+        "decision": "sell",
+        "lot": "silk",
+        "shelf": "cargo",
+        "qty": "1"
+      },
+      "live": [
+        "",
+        "封蜡绢。每叠占两格。首柜每份 2 石，末市依路签验收。。每份 2 石 × 1，合 2 石；余 3 石。。拾遗损 3 血，得 2 石，也可绕过。携当前钱囊和余印入关。已取封蜡绢 · 灵石 7 → 5。购 1 份　2 石。去侧廊。闯夜市狐关"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "market-lot-11",
+          "abacus",
+          "验看听泉算盘，0 石"
+        ],
+        [
+          "market-lot-12",
+          "silk",
+          "验看封蜡绢，2 石"
+        ],
+        [
+          "market-lot-14",
+          "lining",
+          "验看锦囊衬布，3 石"
+        ],
+        [
+          "market-gear",
+          null,
+          "查看器物"
+        ],
+        [
+          "market-cargo",
+          null,
+          "查看商货"
+        ],
+        [
+          "primary",
+          null,
+          "购 1 份　2 石"
+        ],
+        [
+          "market-third",
+          null,
+          "去侧廊"
+        ],
+        [
+          "market-fourth",
+          null,
+          "闯夜市狐关"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 44,
+      "action": "#market-fourth",
+      "phase": "idle",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "idle",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "22",
+        "foe": "19",
+        "floor": "2",
+        "gold": "5",
+        "seals": "0"
+      },
+      "live": [
+        "",
+        "夜市狐，妖力 19。本手 虚晃 0 伤 → 下手 探爪 3 伤"
+      ],
+      "buttons": [
+        [
+          "target",
+          null,
+          "向夜市狐出剑，长按可合锋"
+        ],
+        [
+          "strike",
+          null,
+          "出剑"
+        ],
+        [
+          "guard",
+          null,
+          "守势，架剑格挡"
+        ],
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 45,
+      "action": "#strike",
+      "phase": "idle",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "idle",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "22",
+        "foe": "12",
+        "floor": "2",
+        "gold": "5",
+        "seals": "0"
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "出剑 7 伤，算盘首击增 1 伤，虚晃造成 0 伤。"
+      ],
+      "buttons": [
+        [
+          "target",
+          null,
+          "向夜市狐出剑，长按可合锋"
+        ],
+        [
+          "strike",
+          null,
+          "出剑"
+        ],
+        [
+          "guard",
+          null,
+          "守势，架剑格挡"
+        ],
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 46,
+      "action": "#strike",
+      "phase": "idle",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "idle",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "19",
+        "foe": "6",
+        "floor": "2",
+        "gold": "5",
+        "seals": "0"
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "出剑 6 伤，探爪造成 3 伤。"
+      ],
+      "buttons": [
+        [
+          "target",
+          null,
+          "向夜市狐出剑，长按可合锋"
+        ],
+        [
+          "strike",
+          null,
+          "出剑"
+        ],
+        [
+          "guard",
+          null,
+          "守势，架剑格挡"
+        ],
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 47,
+      "action": "#strike",
+      "phase": "finalStall",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "finalStall",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "19",
+        "foe": "0",
+        "floor": "2",
+        "gold": "5",
+        "seals": "0",
+        "decision": "sell"
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "再见绯绡。“关过了。你的灯纹印在首摊就结了。。过来，我还收妖材。也能替你寄一单。”。原印首摊售出  ＋4 石。查看末市货摊"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 53,
+      "action": "#primary",
+      "phase": "counter",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "counter",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "19",
+        "foe": "0",
+        "floor": "2",
+        "gold": "5",
+        "seals": "0",
+        "decision": "sell",
+        "lot": "silk",
+        "shelf": "cargo",
+        "qty": "1"
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "封蜡绢。每叠占两格。首柜每份 2 石，末市依路签验收。。每份 4 石 × 1，合 4 石；余 9 石。。印价与守关结果入账。售 1 份　4 石。合账离市"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "market-lot-12",
+          "silk",
+          "验看封蜡绢，4 石"
+        ],
+        [
+          "market-gear",
+          null,
+          "查看器物"
+        ],
+        [
+          "market-cargo",
+          null,
+          "查看商货"
+        ],
+        [
+          "primary",
+          null,
+          "售 1 份　4 石"
+        ],
+        [
+          "market-third",
+          null,
+          "合账离市"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 54,
+      "action": "#market-cargo",
+      "phase": "counter",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "counter",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "19",
+        "foe": "0",
+        "floor": "2",
+        "gold": "5",
+        "seals": "0",
+        "decision": "sell",
+        "lot": "silk",
+        "shelf": "cargo",
+        "qty": "1"
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "封蜡绢。每叠占两格。首柜每份 2 石，末市依路签验收。。每份 4 石 × 1，合 4 石；余 9 石。。印价与守关结果入账。售 1 份　4 石。合账离市"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "market-lot-12",
+          "silk",
+          "验看封蜡绢，4 石"
+        ],
+        [
+          "market-gear",
+          null,
+          "查看器物"
+        ],
+        [
+          "market-cargo",
+          null,
+          "查看商货"
+        ],
+        [
+          "primary",
+          null,
+          "售 1 份　4 石"
+        ],
+        [
+          "market-third",
+          null,
+          "合账离市"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 63,
+      "action": "#primary",
+      "phase": "counter",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "counter",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "19",
+        "foe": "0",
+        "floor": "2",
+        "gold": "9",
+        "seals": "0",
+        "decision": "sell",
+        "lot": "fox-clasp",
+        "shelf": "gear",
+        "qty": "1"
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "狐灯扣。夜市狐固定掉落。末市收 3 石。。每份 3 石 × 1，合 3 石；余 12 石。。印价与守关结果入账。已售封蜡绢 · 灵石 5 → 9。售一份 · 3 石。合账离市"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "market-lot-8",
+          "fox-clasp",
+          "验看狐灯扣，3 石"
+        ],
+        [
+          "market-lot-9",
+          "order-purse",
+          "验看开市本钱，4 石"
+        ],
+        [
+          "market-lot-10",
+          "order-hook",
+          "验看寄锋契，7 石"
+        ],
+        [
+          "primary",
+          null,
+          "售一份 · 3 石"
+        ],
+        [
+          "market-third",
+          null,
+          "合账离市"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 64,
+      "action": "#market-third",
+      "phase": "receipt",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "receipt",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "19",
+        "foe": "0",
+        "floor": "2",
+        "gold": "9",
+        "seals": "0",
+        "decision": "sell"
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "佩器破关。灯纹印在首摊售出  ＋4 石。守关 3 手 · 出剑 3 次    气血 22 → 19。狐柜取货 · 听泉算盘。结余 9 石 · 绢销 1 份 · 绢利 2 石。回首摊再选。开始下一局"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "primary",
+          null,
+          "回首摊再选"
+        ],
+        [
+          "secondary",
+          null,
+          "开始下一局"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 64,
+      "action": "shot-结算",
+      "phase": "receipt",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "receipt",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "19",
+        "foe": "0",
+        "floor": "2",
+        "gold": "9",
+        "seals": "0",
+        "decision": "sell"
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "佩器破关。灯纹印在首摊售出  ＋4 石。守关 3 手 · 出剑 3 次    气血 22 → 19。狐柜取货 · 听泉算盘。结余 9 石 · 绢销 1 份 · 绢利 2 石。回首摊再选。开始下一局"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "primary",
+          null,
+          "回首摊再选"
+        ],
+        [
+          "secondary",
+          null,
+          "开始下一局"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 65,
+      "action": "#secondary",
+      "phase": "idle",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "idle",
+        "seed": "2",
+        "combatKind": "",
+        "hp": "24",
+        "foe": "9",
+        "floor": "1",
+        "gold": "3",
+        "seals": "0"
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "纸灯蛾，妖力 9。本手 掠灯 2 伤 → 下手 撞灯 6 伤（重击）"
+      ],
+      "buttons": [
+        [
+          "target",
+          null,
+          "向纸灯蛾出剑，长按可合锋"
+        ],
+        [
+          "strike",
+          null,
+          "出剑"
+        ],
+        [
+          "guard",
+          null,
+          "守势，架剑格挡"
+        ],
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 67,
+      "action": "hold-520",
+      "phase": "idle",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "idle",
+        "seed": "2",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "1",
+        "floor": "1",
+        "gold": "3",
+        "seals": "0"
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "合锋 8 伤，掠灯造成 2 伤。"
+      ],
+      "buttons": [
+        [
+          "target",
+          null,
+          "向纸灯蛾出剑，长按可合锋"
+        ],
+        [
+          "strike",
+          null,
+          "出剑"
+        ],
+        [
+          "guard",
+          null,
+          "守势，架剑格挡"
+        ],
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 67,
+      "action": "#strike",
+      "phase": "drop",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "drop",
+        "seed": "2",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "3",
+        "seals": "0",
+        "decision": ""
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "灯纹印。灯芯沉成一枚缺角的印。。纸翅留下灯灰，狐柜每份收 1 石。。拾起灯纹印。连灯灰一并收好"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 69,
+      "action": "#primary",
+      "phase": "guide",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "guide",
+        "seed": "2",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "行脚道友。“先别急着卖。让我看看，。你手上那枚印是什么纹？”。递印问行情"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "object",
+          null,
+          "递印问行情（场景物件）"
+        ],
+        [
+          "primary",
+          null,
+          "递印问行情"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 69,
+      "action": "#primary",
+      "phase": "rumor",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "rumor",
+        "seed": "2",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "末市收灯。“护着灯纹印过狐关，末市给 7 石。”。封蜡绢首摊 2 石，末市每份收 1 石。。路签 · 常市平收，盘缠留稳。收下路签，去狐市"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "object",
+          null,
+          "收下路签，去狐市（场景物件）"
+        ],
+        [
+          "primary",
+          null,
+          "收下路签，去狐市"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    },
+    {
+      "t": 69,
+      "action": "shot-次局行情",
+      "phase": "rumor",
+      "screen": "照影廊，封妖与开市",
+      "state": {
+        "phase": "rumor",
+        "seed": "2",
+        "combatKind": "",
+        "hp": "22",
+        "foe": "0",
+        "floor": "1",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      },
+      "live": [
+        "算盘首击 · 添 1 伤",
+        "末市收灯。“护着灯纹印过狐关，末市给 7 石。”。封蜡绢首摊 2 石，末市每份收 1 石。。路签 · 常市平收，盘缠留稳。收下路签，去狐市"
+      ],
+      "buttons": [
+        [
+          "reset",
+          null,
+          "重新试剑"
+        ],
+        [
+          "sound",
+          null,
+          "关闭声音"
+        ],
+        [
+          "object",
+          null,
+          "收下路签，去狐市（场景物件）"
+        ],
+        [
+          "primary",
+          null,
+          "收下路签，去狐市"
+        ],
+        [
+          "profile-open",
+          null,
+          "查看斩妖手札与行囊"
+        ]
+      ]
+    }
+  ],
+  "errors": []
+}

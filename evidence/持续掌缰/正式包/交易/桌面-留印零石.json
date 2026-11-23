@@ -1,0 +1,390 @@
+{
+  "url": "http://127.0.0.1:2821/rein-bridge.html?seed=1",
+  "seed": "1",
+  "device": "desk",
+  "flow": "rescue",
+  "bundleSHA256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "browser": "157.0.8103.79",
+  "input": "Chromium 鼠标，环回 HTTP",
+  "automated": true,
+  "entranceToSettlementMs": 9311,
+  "totalAutomationMs": 10000,
+  "videoReadingPauses": false,
+  "media": null,
+  "clip": null,
+  "result": {
+    "hpAfter": 16,
+    "blockedScene": {
+      "phase": "blood",
+      "seed": "1",
+      "combatKind": "ink-mite",
+      "hp": "17",
+      "foe": "0",
+      "floor": "1",
+      "gold": "0",
+      "seals": "1",
+      "decision": "keep"
+    },
+    "preservedSeal": true,
+    "orderedAsh": 3,
+    "claimedOnce": true,
+    "hits": 3
+  },
+  "events": [
+    {
+      "ms": 519,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 1255,
+      "action": "出剑结算",
+      "foeBefore": 9,
+      "foeAfter": 3,
+      "hp": 22
+    },
+    {
+      "ms": 1283,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 2044,
+      "action": "出剑结算",
+      "foeBefore": 3,
+      "foeAfter": 0,
+      "hp": 22
+    },
+    {
+      "ms": 2251,
+      "action": "secondary",
+      "label": "连灯灰一并收好",
+      "command": "",
+      "phase": "guide"
+    },
+    {
+      "ms": 2445,
+      "action": "primary",
+      "label": "问卖价",
+      "command": "",
+      "phase": "rumor"
+    },
+    {
+      "ms": 2447,
+      "action": "道友开市前报价",
+      "rumor": "先看末市收价 这枚灯纹印在首柜卖 4 石，带过狐关能卖 7 石。 封蜡绢首摊 2 石，末市每份收 4 石。 路签 · 旺市收绢，上限两份 去找狐商"
+    },
+    {
+      "ms": 2670,
+      "action": "primary",
+      "label": "去找狐商",
+      "command": "",
+      "phase": "stall"
+    },
+    {
+      "ms": 2870,
+      "action": "primary",
+      "label": "把灯纹印放上秤",
+      "command": "",
+      "phase": "quote"
+    },
+    {
+      "ms": 3081,
+      "action": "secondary",
+      "label": "留印上楼",
+      "command": "",
+      "phase": "result"
+    },
+    {
+      "ms": 3318,
+      "action": "primary",
+      "label": "俯看货摊",
+      "command": "",
+      "phase": "counter"
+    },
+    {
+      "ms": 3404,
+      "action": "验货",
+      "name": "knot",
+      "quote": "血珀佩 血棘、放血、每战首次受妖伤各蓄 1 珀，最多 2 层。出剑耗 1 层，增 3 伤并回 2 血。 付 3 石，余 0 石；立即佩戴 拾遗损 2 血，得 2 石，也可绕过 携当前钱囊和余印入关 付 3 石 去侧廊 闯夜市狐关"
+    },
+    {
+      "ms": 3450,
+      "action": "primary",
+      "label": "付 3 石",
+      "command": "buy-knot",
+      "phase": "counter"
+    },
+    {
+      "ms": 3453,
+      "action": "成交",
+      "before": 3,
+      "after": 0,
+      "receipt": "血珀佩 血棘、放血、每战首次受妖伤各蓄 1 珀，最多 2 层。出剑耗 1 层，增 3 伤并回 2 血。 付 3 石 · 此货已售罄 拾遗损 2 血，得 2 石，也可绕过 携当前钱囊和余印入关 已取血珀佩 · 灵石 3 → 0 付 3 石 去侧廊 闯夜市狐关"
+    },
+    {
+      "ms": 3502,
+      "action": "market-third",
+      "label": "去侧廊",
+      "command": "crossroads",
+      "phase": "crossroads"
+    },
+    {
+      "ms": 3700,
+      "action": "market-third",
+      "label": "抢收巢货",
+      "command": "detour-haul",
+      "phase": "idle"
+    },
+    {
+      "ms": 3727,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 4473,
+      "action": "出剑结算",
+      "foeBefore": 10,
+      "foeAfter": 4,
+      "hp": 15
+    },
+    {
+      "ms": 4499,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 5255,
+      "action": "出剑结算",
+      "foeBefore": 4,
+      "foeAfter": 0,
+      "hp": 17
+    },
+    {
+      "ms": 5368,
+      "action": "secondary",
+      "label": "留下地上的货",
+      "command": "leave-loot",
+      "phase": "blood"
+    },
+    {
+      "ms": 5401,
+      "action": "primary",
+      "label": "继续整理",
+      "command": "cancel-leave",
+      "phase": "blood"
+    },
+    {
+      "ms": 5440,
+      "action": "primary",
+      "label": "处理地上战利品",
+      "command": "open-loot",
+      "phase": "blood"
+    },
+    {
+      "ms": 5624,
+      "action": "folio-close",
+      "label": "关闭手札，返回当前事件",
+      "command": null,
+      "phase": "blood"
+    },
+    {
+      "ms": 5645,
+      "action": "secondary",
+      "label": "留下地上的货",
+      "command": "leave-loot",
+      "phase": "blood"
+    },
+    {
+      "ms": 5665,
+      "action": "secondary",
+      "label": "确认留下",
+      "command": "confirm-leave",
+      "phase": "blood"
+    },
+    {
+      "ms": 5705,
+      "action": "market-third",
+      "label": "合契回柜",
+      "command": "skip-blood",
+      "phase": "bloodReceipt"
+    },
+    {
+      "ms": 5899,
+      "action": "primary",
+      "label": "回到狐柜",
+      "command": "counter",
+      "phase": "counter"
+    },
+    {
+      "ms": 6105,
+      "action": "market-fourth",
+      "label": "闯夜市狐关",
+      "command": "gate",
+      "phase": "idle"
+    },
+    {
+      "ms": 6130,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 6874,
+      "action": "出剑结算",
+      "foeBefore": 19,
+      "foeAfter": 13,
+      "hp": 17
+    },
+    {
+      "ms": 6901,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 7647,
+      "action": "出剑结算",
+      "foeBefore": 13,
+      "foeAfter": 7,
+      "hp": 14
+    },
+    {
+      "ms": 7679,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 8424,
+      "action": "出剑结算",
+      "foeBefore": 7,
+      "foeAfter": 0,
+      "hp": 16
+    },
+    {
+      "ms": 8623,
+      "action": "primary",
+      "label": "将原印放秤",
+      "command": "",
+      "phase": "finalQuote"
+    },
+    {
+      "ms": 8833,
+      "action": "primary",
+      "label": "卖原印 ＋7 石",
+      "command": "",
+      "phase": "finalSale"
+    },
+    {
+      "ms": 9038,
+      "action": "primary",
+      "label": "查看末市货摊",
+      "command": "",
+      "phase": "counter"
+    },
+    {
+      "ms": 9146,
+      "action": "验货",
+      "name": "order-ash",
+      "quote": "下局灯灰进货单 现在付 2 石，下局收到 3 份灯灰，占一格。可立即卖 3 石，也可运到驿站分售。 现在付 2 石，下局收到 3 份灯灰，占一格。可立即卖 3 石，也可运到驿站分售。 点这里收起或留下余货，再继续。 寄单付 2 石 处理地上战利品"
+    },
+    {
+      "ms": 9191,
+      "action": "primary",
+      "label": "寄单付 2 石",
+      "command": "order-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 9193,
+      "action": "成交",
+      "before": 7,
+      "after": 5,
+      "receipt": "下局灯灰进货单 现在付 2 石，下局收到 3 份灯灰，占一格。可立即卖 3 石，也可运到驿站分售。 寄单付 2 石 · 此行已寄出一单 点这里收起或留下余货，再继续。 已寄下局灯灰进货单 · 灵石 7 → 5 寄单付 2 石 处理地上战利品"
+    },
+    {
+      "ms": 9225,
+      "action": "market-third",
+      "label": "处理地上战利品",
+      "command": "open-loot",
+      "phase": "counter"
+    },
+    {
+      "ms": 9269,
+      "action": "folio-close",
+      "label": "关闭手札，返回当前事件",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 9311,
+      "action": "market-third",
+      "label": "合账离市",
+      "command": "settle",
+      "phase": "receipt"
+    },
+    {
+      "ms": 9510,
+      "action": "secondary",
+      "label": "领寄单再入塔",
+      "command": "",
+      "phase": "idle"
+    },
+    {
+      "ms": 9534,
+      "action": "profile-open",
+      "label": "查看斩妖手札与行囊",
+      "command": null,
+      "phase": "idle"
+    },
+    {
+      "ms": 9552,
+      "action": "folio-bag-tab",
+      "label": null,
+      "command": null,
+      "phase": "idle"
+    },
+    {
+      "ms": 9589,
+      "action": "folio-close",
+      "label": "关闭手札，返回当前事件",
+      "command": null,
+      "phase": "idle"
+    },
+    {
+      "ms": 9980,
+      "action": "profile-open",
+      "label": "查看斩妖手札与行囊",
+      "command": null,
+      "phase": "idle"
+    },
+    {
+      "ms": 9999,
+      "action": "folio-bag-tab",
+      "label": null,
+      "command": null,
+      "phase": "idle"
+    }
+  ],
+  "captures": [
+    "桌面-留印零石-有余货的血客.jpg",
+    "桌面-留印零石-零石满囊.jpg"
+  ],
+  "errors": []
+}

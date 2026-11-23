@@ -1,0 +1,101 @@
+{
+  "候选": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+  "入包逐字节匹配": {
+    "fox-counter": {
+      "asset": "fox-counter-hands.webp",
+      "webpSHA256": "c3fa56fb6c85554bb19dab982d5597bc11bf7431bc5166ae73c305d8e19cedfe",
+      "source": "exec-1e865654-1e8d-45c4-b2f5-b3418f2c72bf.png",
+      "sourceSHA256": "182bafeafd95667d334b5d0f331c05c19ea905c153d08ab62d89cb61f835954a"
+    },
+    "fox-offer": {
+      "asset": "fox-offer-hands.webp",
+      "webpSHA256": "3100f1377aa2bb735d112a5b7c77dc4dab9ee183072df56e22c0cec6f08761e8",
+      "source": "exec-21cae0d5-50b9-4154-9e36-bab110be9a36.png",
+      "sourceSHA256": "fcbcad5aa204e3dcd6e8eaab986021f80002a06fae07217eaebac4451a432667"
+    },
+    "fox-fold": {
+      "asset": "fox-fold-hands.webp",
+      "webpSHA256": "e66d5e32ce1fa7c1070e10da315bacfab8072d9c3d331a53be5286154c0d1329",
+      "source": "exec-53978f10-2bc7-4826-a7f8-e8a18b331697.png",
+      "sourceSHA256": "c1aef6def35f5bbcf3072270302774fdfb3b8a5faf4d7543e4c6a21da134b322"
+    },
+    "fox-return": {
+      "asset": "fox-return-hands.webp",
+      "webpSHA256": "d04844df6b2feeb834f5fa8b606a425ff0052e8aeaa070f2dba411ac19766706",
+      "source": "exec-e4fcc67e-4793-4e98-9230-6407db59723a.png",
+      "sourceSHA256": "099ca95741095eb651d972ecd309780fc55a65ad26e7bf39b3913d6bb41b133c"
+    },
+    "fox-settle": {
+      "asset": "fox-settle-hands.webp",
+      "webpSHA256": "4b5bc2071ee3abdfbd24adae2d4f6f8944ad817befc47b674daf5976a1ffbc00",
+      "source": "exec-77e6a3ad-a1c8-4bd8-b696-21543cd7b481.png",
+      "sourceSHA256": "016733bb03458e45e6cf296aabcf879e52227b65df11d60aa77c69c76956c7e8"
+    },
+    "seal-purse": {
+      "asset": "seal-purse.webp",
+      "webpSHA256": "53cadfeb696520d43ca788d4408ee2b89c0ffa1daab757f314fa3f143df67788",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "sourceSHA256": "e9a77fe634b627f6a30262d0f46bb2bba76ca9433f2220565025f2f91329abb9"
+    },
+    "sign-turn": {
+      "asset": "sign-turn.webp",
+      "webpSHA256": "f579cc134d2674afd3d83e65dedaa99aa0f90f5d61dffafd1b4010ddae8c79da",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "sourceSHA256": "e9a77fe634b627f6a30262d0f46bb2bba76ca9433f2220565025f2f91329abb9"
+    },
+    "sign-brace": {
+      "asset": "sign-brace.webp",
+      "webpSHA256": "0ea39bfbc710a5adeffca1813e606487fa1c65cef27cd024bfdc595a0e56f1a1",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "sourceSHA256": "e9a77fe634b627f6a30262d0f46bb2bba76ca9433f2220565025f2f91329abb9"
+    },
+    "stele-thorn": {
+      "asset": "stele-thorn.webp",
+      "webpSHA256": "ecd4456ec2b63e1c8a508274301e4b5447c8bb7502a5a1efdd02f69eb592fca6",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "sourceSHA256": "e9a77fe634b627f6a30262d0f46bb2bba76ca9433f2220565025f2f91329abb9"
+    },
+    "stele-ink": {
+      "asset": "stele-ink.webp",
+      "webpSHA256": "a8abfa9f11f2f017e652766d6c57f6579019f502bec833f8f1a52ce7585b39d0",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "sourceSHA256": "e9a77fe634b627f6a30262d0f46bb2bba76ca9433f2220565025f2f91329abb9"
+    },
+    "barrier-post": {
+      "asset": "barrier-post.webp",
+      "webpSHA256": "e2f3d2e9f72ba0d2afba23c26da9243ac8c10a591ff22a988d5efc56e11944b3",
+      "source": "exec-86cd62d3-efcd-4165-b688-367a663450ba.png",
+      "sourceSHA256": "e9a77fe634b627f6a30262d0f46bb2bba76ca9433f2220565025f2f91329abb9"
+    },
+    "obstacle-water": {
+      "asset": "obstacle-water.webp",
+      "webpSHA256": "56ca2182e4ec0e0db83b46cb1f75d670e713165ba77d66e1383bf9c097082719",
+      "source": "exec-bc0bc293-3091-4ffd-9388-432cc1e57adf.png",
+      "sourceSHA256": "9ac69fd5ae9794fd8e985520bf96a7abd2b9e046b826b768acd66cae1c8398e3"
+    },
+    "obstacle-rock": {
+      "asset": "obstacle-rock.webp",
+      "webpSHA256": "d6adf0613d64a7774de4e9f3b0944d4370040ca3f1228c0cde67be530a422c9e",
+      "source": "exec-bc0bc293-3091-4ffd-9388-432cc1e57adf.png",
+      "sourceSHA256": "9ac69fd5ae9794fd8e985520bf96a7abd2b9e046b826b768acd66cae1c8398e3"
+    },
+    "obstacle-plank": {
+      "asset": "obstacle-plank.webp",
+      "webpSHA256": "fd654ee9fa4a1d4d37fd97a12a379a743400077995c4b0ba369692d134cda37a",
+      "source": "exec-bc0bc293-3091-4ffd-9388-432cc1e57adf.png",
+      "sourceSHA256": "9ac69fd5ae9794fd8e985520bf96a7abd2b9e046b826b768acd66cae1c8398e3"
+    },
+    "obstacle-ruin": {
+      "asset": "obstacle-ruin.webp",
+      "webpSHA256": "998a973bab37bb197f417eb142d6db23976edff3cbea0c9c2597a48b827b55f7",
+      "source": "exec-bc0bc293-3091-4ffd-9388-432cc1e57adf.png",
+      "sourceSHA256": "9ac69fd5ae9794fd8e985520bf96a7abd2b9e046b826b768acd66cae1c8398e3"
+    },
+    "seal-purse-tied": {
+      "asset": "seal-purse-tied.webp",
+      "webpSHA256": "a7dbb713ffd203eb97a52b99457c52bfe332af2be66f200b5e9e8f4d8f202e37",
+      "source": "exec-ba6a866a-1c6b-4708-9cb0-163134f60b5d.png",
+      "sourceSHA256": "222a1c8a7cd00366c7e9d7d8a8286643616afb19e9d2cc6cb3278d31cea0a3d3"
+    }
+  }
+}

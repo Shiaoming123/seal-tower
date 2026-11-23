@@ -1,0 +1,120 @@
+{
+  "generator": "内置 image_gen",
+  "assets": [
+    {
+      "key": "hall",
+      "source": "exec-c7b0b733-5e15-4b3a-8759-13eca954d2f1.png",
+      "prompt": "Use case stylized-concept. Environment background for the first fixed-camera battle in a premium original Chinese dark fantasy hand-pixelled RPG, 16:9 width. The moon-mirror gallery, a roofed old wooden mountain terrace opening onto an immense moon through a distant broken circular stone arch behind the rail. Aged temple beams and a small piece of faded red cloth frame the TOP corners. View is side on, three-quarter view of the ground, camera at chest height. Moody night, far silhouettes of layered pagodas and jagged blue mountains, scattered pale plum blossom. Inlaid bronze partial circular seal set into spacious muted teal slate floor in the lower third, horizontal playable ground at y=80%, wet stone reflecting sparse amber and teal highlights. Compose the focal moon upper center (about 50% across 30% down), leave middle-left & middle-right quiet deeper blue for compositing fighter sprites later. Original elevated neo-geo arcade RPG pixel art, tangible wood and bronze patina, deliberate crisp square clusters, sophisticated restricted palette, near fore pillars dark charcoal, cyan moonlight upper left, subdued golden lanterns on lateral posts. Exquisite atmospheric depth, readable at native 640×360. No character, enemy, monster, shadow of a character, no text, no logo, no game UI, no fake VFX overlays, no weapon objects, no watermark or border. Full bleed rich landscape.",
+      "original": "art-sources/01a2021b-04ec-79f2-8779-e0f9d7ae9e41/exec-c7b0b733-5e15-4b3a-8759-13eca954d2f1.png",
+      "originalSHA256": "484385fdbd51efe32bc88fa45f8eddcf0ed941e74de732020e5a144a69e724ff",
+      "runtime": "first-cut\\sprites\\hall.webp",
+      "runtimeSHA256": "eb2c097e8383c8212202935871183d96be9067b2a557bc45394769e9eb6f7abd",
+      "bytes": 183652,
+      "size": [
+        960,
+        540
+      ],
+      "channels": [
+        "R",
+        "G",
+        "B"
+      ]
+    },
+    {
+      "key": "gate",
+      "source": "exec-c6ff239c-190b-485e-8309-2aa017f480a9.png",
+      "prompt": "Use case: stylized-concept. Production videogame environment asset, wide 16:9 side-view battle stage, no characters, no creatures, no text, no interface. The Fox Lantern Toll Gate on a rainy night, an original lavish hand-pixelled Chinese dark-fantasy arcade RPG backdrop. Camera eye-level slightly above pavement, strong three-quarter vanishing lines and deep parallax planes. Near foreground has subtle wet blue-green stone slabs with horizontal walkable space through the lower 32 percent. Two fighters will stand centered left and right on the same y=78% line so leave their silhouettes readable on middle values without focal details there. Layered roof brackets and oxidized copper ceremonial fox-mask relief above an ancient arched checkpoint in far right background, old gold lanterns glow inside; left distant canal and staggered blue tile roofs fade into fog, a loose vermilion pennant. Palm-sized amber lights, chunky hard-edged pixels, hand-placed pixel clusters and restrained banded shadows, visible clean pixel stair-steps as if a meticulously illustrated 640x360 premium JRPG stage. The eye clearly reads foreground, middle gate and blue night distance, with rich carefully art-directed native game scenery. Palette deep ink teal, cinnabar, old gold, ivory. High-level atmospheric art direction. No photographic textures, no smooth gradient painting, no thick comic outlines, no screen border, no letters, no panel, no stamp. Fill the whole image edge to edge, no transparency.",
+      "original": "art-sources/01a2021b-04ec-79f2-8779-e0f9d7ae9e41/exec-c6ff239c-190b-485e-8309-2aa017f480a9.png",
+      "originalSHA256": "5a0f7d1f4e1fd2e0b6ed631463f5ed7be51d3d30e4f3ea39ec3739888aa698e0",
+      "runtime": "first-cut\\sprites\\gate.webp",
+      "runtimeSHA256": "8b417d3307147243ad2b510cdb128f4f01bf67d80369cf1a767dc7d72c0eb917",
+      "bytes": 237820,
+      "size": [
+        960,
+        540
+      ],
+      "channels": [
+        "R",
+        "G",
+        "B"
+      ]
+    },
+    {
+      "key": "shop-wall",
+      "source": "exec-0e30cf38-5630-443d-aa7d-c791b95cbd40.png",
+      "prompt": "Use case: stylized-concept. A game background plate for a premium hand-pixelled Chinese dark-fantasy night-market merchant encounter; wide 16:9. Interior of an exquisitely weathered mountain fox apothecary, looking horizontally at the BACK WALL behind the shopkeeper. Nobody present. Chest-height camera. Rich layered spaces with silk awnings in burgundy, carved black wooden lattice, antique brass weights hanging from red cords, irregular wooden shelves of pale porcelain, coins, boxes, translucent jade bottles, tied silk sachets and a few warm old amber lanterns along the sides; a screen and distant cold blue canal through a little open window near far left. Captivating environmental storytelling, deep shadows, own distinctive art. Foreground is empty and dark; do not draw a counter, the interactive counter and portrait are separate in-game layers. Center-right kept quieter and darker so a luminous character silhouette can be composited in front. Strong legible pixel clusters, crisp native 480x270 arcade RPG pixel art enlarged with nearest neighbor, limited deliberate palette deep teal ink shadows, cinnabar, old gold and ivory highlights. Beautiful subtle weathering with patterned batik drapery. No humans or creatures, no figures, no merchant, no signage or legible words, no watermarks, no UI, no frame, no numbers. Full bleed single composition.",
+      "original": "art-sources/01a2021b-04ec-79f2-8779-e0f9d7ae9e41/exec-0e30cf38-5630-443d-aa7d-c791b95cbd40.png",
+      "originalSHA256": "81b173943a0739e403711c04444329b7e4409fa8564d95f12558e4cc1a2141d1",
+      "runtime": "first-cut\\sprites\\shop-wall.webp",
+      "runtimeSHA256": "0050bdbae7e401aec30b7dc1dae002d7b85de9dda568802e25c6f4bdd92e2f8d",
+      "bytes": 141604,
+      "size": [
+        960,
+        540
+      ],
+      "channels": [
+        "R",
+        "G",
+        "B"
+      ]
+    },
+    {
+      "key": "last-market",
+      "source": "exec-050ca6a3-b352-4ca5-ab85-9e6dafcf0037.png",
+      "prompt": "Use case: stylized-concept. A 16:9 cinematic hand-pixelled background for a 2.5D Chinese fantasy role-playing game. FINAL night market after the fox gate, seen from inside a riverside stall looking OUT across a wide jade-blue canal at the first glimmer of dawn, distinctly different from a cramped warm apothecary. Frame upper edge with a single shadowed timber eave and trailing old-gold knotted cords at far right; center-left shows a trail of ivory paper lanterns over the water, little boats at their moorings, narrow arched bridge, layered ink-blue tiled roofs in mist, a warm peach stripe on the horizon. Stunning atmospheric depth and tactile hard-edge pixel clusters in a premium side-view arcade RPG, contrasting teal shadows, indigo and violet reflections, small accents of old gold and cinnabar, blue/peach morning light reflecting from the left. Center right reserved for overlay of the large dark-haired fox merchant; keep this central area muted cool teal with a dark wooden vertical at far right. Foreground empty, counter and characters are composited separately. No shopkeeper, no people, no creatures, no front table, no letters, no signs, no logos or interface. Full bleed. Strong stylistic consistency with richly detailed original Chinese temple pixel art.",
+      "original": "art-sources/01a2021b-04ec-79f2-8779-e0f9d7ae9e41/exec-050ca6a3-b352-4ca5-ab85-9e6dafcf0037.png",
+      "originalSHA256": "42ba6640cba2aef52cc237669f43238a44e7b13c3ea2e35a0389f94d79841b26",
+      "runtime": "first-cut\\sprites\\last-market.webp",
+      "runtimeSHA256": "cdf24bf5cfed3a80da9e94717e176eb8de6dc613ae7b544f20e3a03a3c3721e0",
+      "bytes": 149094,
+      "size": [
+        960,
+        540
+      ],
+      "channels": [
+        "R",
+        "G",
+        "B"
+      ]
+    },
+    {
+      "key": "grit",
+      "source": "exec-9c91dff0-ea53-4a09-83ea-bf5543bb6fdb.png",
+      "prompt": "Use case stylized-concept. A single collectible merchant object isolated on genuinely transparent alpha, for the fox trader's sharpening supplies. Original gorgeous high-definition hand-pixelled Chinese fantasy RPG inventory item. Three-quarter overhead view of a compact, OPEN shallow oxidized brass hexagonal box of sparkling coarse cinnabar and gold sharpening sand, an old ivory-jade handled miniature bronze spoon lying diagonally partly in the sand, lid leaning behind at left with a gold line fox-motif. Extremely clear compact silhouette, carved brass gilded trims, lacquered deep teal and cinnabar surfaces, left-top amber light with cool blue shadow planes, chunky sharply stepped pixel clusters as a boutique Neo Geo game icon. Box center with very generous transparent margins on every side. No floor, no backdrop, no pedestal, no hands or character, no ground shadow, no letters, signage, watermark, money or typography. Do not draw a background or simulated checkerboard. Pixel art, not vector, not smooth painting.",
+      "original": "art-sources/01a2021b-04ec-79f2-8779-e0f9d7ae9e41/exec-9c91dff0-ea53-4a09-83ea-bf5543bb6fdb.png",
+      "originalSHA256": "aff98e94294e9335cc11b6de9e9fa85b1121e7a9cfc29b932eee276ec3a4225f",
+      "runtime": "first-cut\\sprites\\grit.webp",
+      "runtimeSHA256": "7e530b996f6385d2d1b13fc9ede271a5e47416f4bb35908a111e6c6afe663b29",
+      "bytes": 27764,
+      "size": [
+        256,
+        193
+      ],
+      "channels": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ]
+    },
+    {
+      "key": "counter",
+      "source": "exec-c6c67abc-8c43-47bb-8b88-f5f99ace6c4f.png",
+      "prompt": "Use case: stylized-concept. GAME TEXTURE MAP only. Orthographic straight-down perfectly rectangular top view of an antique Chinese fox merchant's dark reddish walnut counter for a premium hand-pixelled game. Wide horizontal 3:1 material sample, edge to edge with NO perspective. Background: beautiful weathered dark walnut planks, subtle rich tight horizontal wood grain, darker worn edges, some scratches; right 50 percent covered by a slightly faded deep jade-green woven silk runner laid vertically, embroidered very fine old gold thread border and a few subtle tonal lotus/ruyi motifs, a clear clean space for physical merchandise and a small scale to be placed later. Left half is uninterrupted polished dark timber. The cloth and wood are the only objects. Restrained palette dark chocolate and black cherry wood, muted teal, old brass thread, high end arcade RPG painterly dense pixel clusters. Warm edge lighting from left but no hard cast shadows. No goods, no coins, no boxes, no cup, no paper, no scrolls, no image of character, no writing, no counter legs, no perspective view, no room or background outside table, no border.",
+      "original": "art-sources/01a2021b-04ec-79f2-8779-e0f9d7ae9e41/exec-c6c67abc-8c43-47bb-8b88-f5f99ace6c4f.png",
+      "originalSHA256": "dd191bde6f476089c6a79ff4c146afd0b96c45e25921cf5f27397b3f79db3b2b",
+      "runtime": "first-cut\\sprites\\counter.webp",
+      "runtimeSHA256": "01c58ef4870c02bd68ffaebc6277b3fcb2052957d6360b1088b8fa9d1aecac0c",
+      "bytes": 35040,
+      "size": [
+        900,
+        300
+      ],
+      "channels": [
+        "R",
+        "G",
+        "B"
+      ]
+    }
+  ]
+}

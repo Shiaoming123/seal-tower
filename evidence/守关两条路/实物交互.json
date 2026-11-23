@@ -1,0 +1,17 @@
+{
+  "bundleSHA256": "20bab5ffff48e81086977418bde34f2f6ad5907bad3be42e4a6519c71661127b",
+  "rows": [
+    {
+      "mode": "touch drag from seal to scale and tap green ticket",
+      "phase": "result",
+      "gold": 3,
+      "issues": []
+    },
+    {
+      "mode": "keyboard J to attack, Enter to weigh and select the green ticket",
+      "phase": "result",
+      "gold": 3,
+      "issues": []
+    }
+  ]
+}

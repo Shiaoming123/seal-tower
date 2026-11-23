@@ -1,0 +1,24 @@
+{
+  "item": "灯纹印",
+  "tool": "Codex built-in imagegen",
+  "prompt": "Edit the large flat token visible in input 1 (game capture); deliver ONLY its replacement as a genuine transparent cutout game asset. Input 2 is the real moon hall to match the lighting/finish; input 3 the actual paper lantern moth whose lantern core becomes this collectible. One hand-sized, slightly irregular round Chinese talisman/seal in oblique three-quarter front view: a piece of patinated, worn bronze cloisonné, thick shadowed bevel visibly on the lower RIGHT, with a distinct missing chip at 2 o'clock. Recessed night-jade teal enamel surrounds a small real honey-amber lantern kernel under finely worked archaic bronze ribs like the moth's lantern (folded moth-wing filigree at the shoulders); within amber one visible tiny glowing flame wick, not a flat fire logo. Below, a short knotted frayed cinnabar silk tassel not more than one-quarter of disk diameter. Controlled large forms, dark wedge shadow in the broken lip, cool moonlight on upper left bronze rim, small localized honey light ONLY in the glass kernel, coarsely clustered deliberate HD pixel brush in the same 1990s Chinese fantasy action RPG style as inputs 2/3. Slim antique linework, no chunky black outline. Full art isolated center, fit the entire object with clear transparent margin. Disk dominates silhouette, easy to read at 85 pixels; no scenery, no fake background or matte, pedestal, platform, shadow on the ground, floor or glow outside object, no text/UI or second token. Artistically crafted diegetic object, never a UI badge. Portrait or square framing.",
+  "reference": [
+    "initial-reviewed desktop 02-drop.jpg",
+    "first-cut/sprites/hall.webp",
+    "first-cut/sprites/moth.webp"
+  ],
+  "original": "art-sources/01a2021b-04ec-79f2-8779-e0f9d7ae9e41/exec-f14059b6-3a5e-4578-a667-ee24e0dfcd5a.png",
+  "sourceSha256": "f067c22518468fe7379aea394b29ebb106f7c439425cee1e42250fc4c7e7b360",
+  "crop": [
+    217,
+    44,
+    1028,
+    1217
+  ],
+  "asset": "lamp-seal.webp",
+  "size": [
+    412,
+    596
+  ],
+  "sha256": "ad9dfc08b59fdb274ef31ebfb61c38f60928e761053d918914d07477e0acea81"
+}

@@ -1,0 +1,477 @@
+{
+  "bundle": "escort-v5.html",
+  "bundleSHA256": "bffb9269164dde11e60374c5024d33b2342fbac4f4f9c759e7c0527d6b43074a",
+  "bytes": 8133683,
+  "seed": 1,
+  "assets": {
+    "escort-road": {
+      "sha256": "ab7cb8813e437fc3760b00423ad03bf4c0ef38dfc2ac194914199dbfe72b69c7",
+      "dim": [
+        832,
+        466
+      ],
+      "embedded": true
+    },
+    "escort-road-2": {
+      "sha256": "987b934e00518fa25b9af2ee5316fa5e0e9a1304672a5b9f2c07662655d2953e",
+      "dim": [
+        832,
+        466
+      ],
+      "embedded": true
+    },
+    "escort-road-3": {
+      "sha256": "82e8c3f202606efaa5ef6daafbb1d1574bdc2fcd79225844892c3b38819264ef",
+      "dim": [
+        832,
+        466
+      ],
+      "embedded": true
+    },
+    "escort-road-4": {
+      "sha256": "666285cb648d954da527527004be3af7b61b45c5adb9ef0eef1c51140cc3b55e",
+      "dim": [
+        832,
+        466
+      ],
+      "embedded": true
+    },
+    "escort-cart": {
+      "sha256": "84f8fb34f69d7fd36def11988ff4d5e644c750082387a662050cd0e0af248521",
+      "dim": [
+        332,
+        480
+      ],
+      "embedded": true
+    },
+    "merch-ash": {
+      "sha256": "311e8b7180b97260a835cf069b68e5baf93367f785ddd90bb143016f8c9761ad",
+      "dim": [
+        340,
+        310
+      ],
+      "embedded": true
+    },
+    "merch-ink-shell": {
+      "sha256": "94dab5f387ddc71c965e12a90ffa16ed8a5cadff88b4b662e9b9bf5e1e689918",
+      "dim": [
+        245,
+        260
+      ],
+      "embedded": true
+    },
+    "lamp-seal": {
+      "sha256": "ad9dfc08b59fdb274ef31ebfb61c38f60928e761053d918914d07477e0acea81",
+      "dim": [
+        412,
+        596
+      ],
+      "embedded": true
+    }
+  },
+  "runs": [
+    {
+      "source": "v5-final/normal.json",
+      "browser": "157.0.8103.79",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "flow": "normal",
+      "mode": "环回 HTTP · 桌面鼠标",
+      "inputPace": "游戏内快行按钮",
+      "legs": 4,
+      "stops": 3,
+      "branches": 0,
+      "paid": {
+        "实收脚程": "+2 石",
+        "实收箱钱": "+3 石",
+        "进货": "-4 石",
+        "卖货": "+10 石",
+        "沿途采买货利": "+6 石",
+        "修理": "0 石",
+        "净收": "+11 石"
+      },
+      "delivery": {
+        "应收脚程": "+2 石",
+        "应收箱钱": "+3 石",
+        "进货": "-4 石",
+        "卖货": "+10 石",
+        "沿途采买货利": "+6 石",
+        "修理": "0 石",
+        "交割后净收": "+11 石"
+      },
+      "final": {
+        "phase": "receipt",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "11",
+        "foe": "0",
+        "floor": "2",
+        "gold": "18",
+        "seals": "0",
+        "decision": "sell"
+      },
+      "errors": []
+    },
+    {
+      "source": "v5-final/express.json",
+      "browser": "157.0.8103.79",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "flow": "express",
+      "mode": "离线 file · 390宽触屏模拟",
+      "inputPace": "游戏内快行按钮",
+      "legs": 4,
+      "stops": 3,
+      "branches": 0,
+      "paid": {
+        "实收脚程": "+2 石",
+        "实收箱钱": "+3 石",
+        "进货": "-4 石",
+        "卖货": "+10 石",
+        "沿途采买货利": "+6 石",
+        "修理": "0 石",
+        "净收": "+11 石"
+      },
+      "delivery": {
+        "应收脚程": "+2 石",
+        "应收箱钱": "+3 石",
+        "进货": "-4 石",
+        "卖货": "+10 石",
+        "沿途采买货利": "+6 石",
+        "修理": "0 石",
+        "交割后净收": "+11 石"
+      },
+      "final": {
+        "phase": "receipt",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "11",
+        "foe": "0",
+        "floor": "2",
+        "gold": "21",
+        "seals": "0",
+        "decision": "keep"
+      },
+      "errors": []
+    },
+    {
+      "source": "v5-final/broken.json",
+      "browser": "157.0.8103.79",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "flow": "broken",
+      "mode": "离线 file · 390宽触屏模拟",
+      "inputPace": "游戏内快行按钮",
+      "legs": 4,
+      "stops": 3,
+      "branches": 0,
+      "paid": {
+        "实收脚程": "+2 石",
+        "实收箱钱": "0 石",
+        "进货": "0 石",
+        "卖货": "0 石",
+        "沿途采买货利": "0 石",
+        "修理": "0 石",
+        "净收": "+2 石"
+      },
+      "delivery": {
+        "应收脚程": "+2 石",
+        "应收箱钱": "0 石",
+        "进货": "0 石",
+        "卖货": "0 石",
+        "沿途采买货利": "0 石",
+        "修理": "0 石",
+        "交割后净收": "+2 石"
+      },
+      "final": {
+        "phase": "receipt",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "11",
+        "foe": "0",
+        "floor": "2",
+        "gold": "12",
+        "seals": "0",
+        "decision": "keep"
+      },
+      "errors": []
+    },
+    {
+      "source": "v5-final/abort.json",
+      "browser": "157.0.8103.79",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "flow": "abort",
+      "mode": "环回 HTTP · 桌面鼠标",
+      "inputPace": "游戏内快行按钮",
+      "legs": 1,
+      "stops": 1,
+      "branches": 0,
+      "paid": {
+        "实收脚程": "0 石",
+        "实收箱钱": "0 石",
+        "进货": "-1 石",
+        "卖货": "0 石",
+        "沿途采买货利": "0 石",
+        "修理": "0 石",
+        "净收": "-1 石"
+      },
+      "delivery": null,
+      "final": {
+        "phase": "receipt",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "11",
+        "foe": "0",
+        "floor": "2",
+        "gold": "6",
+        "seals": "0",
+        "decision": "sell"
+      },
+      "errors": []
+    },
+    {
+      "source": "v5-branch-desk/caravan.json",
+      "browser": "157.0.8103.79",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "flow": "caravan",
+      "mode": "环回 HTTP · 桌面鼠标",
+      "inputPace": "游戏内快行按钮",
+      "legs": 4,
+      "stops": 3,
+      "branches": 3,
+      "paid": {
+        "实收脚程": "+2 石",
+        "实收箱钱": "+3 石",
+        "进货": "-4 石",
+        "卖货": "+13 石",
+        "沿途采买货利": "+8 石",
+        "自带货售入": "+3 石",
+        "修理": "0 石",
+        "净收": "+14 石"
+      },
+      "delivery": {
+        "应收脚程": "+2 石",
+        "应收箱钱": "+3 石",
+        "进货": "-4 石",
+        "卖货": "+13 石",
+        "沿途采买货利": "+8 石",
+        "自带货售入": "+3 石",
+        "修理": "0 石",
+        "交割后净收": "+14 石"
+      },
+      "final": {
+        "phase": "receipt",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "11",
+        "foe": "0",
+        "floor": "2",
+        "gold": "21",
+        "seals": "0",
+        "decision": "sell"
+      },
+      "errors": []
+    },
+    {
+      "source": "v5-branch-mobile/caravan.json",
+      "browser": "157.0.8103.79",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "flow": "caravan",
+      "mode": "离线 file · 390宽触屏模拟",
+      "inputPace": "游戏内快行按钮",
+      "legs": 4,
+      "stops": 3,
+      "branches": 3,
+      "paid": {
+        "实收脚程": "+2 石",
+        "实收箱钱": "+3 石",
+        "进货": "-4 石",
+        "卖货": "+13 石",
+        "沿途采买货利": "+8 石",
+        "自带货售入": "+3 石",
+        "修理": "0 石",
+        "净收": "+14 石"
+      },
+      "delivery": {
+        "应收脚程": "+2 石",
+        "应收箱钱": "+3 石",
+        "进货": "-4 石",
+        "卖货": "+13 石",
+        "沿途采买货利": "+8 石",
+        "自带货售入": "+3 石",
+        "修理": "0 石",
+        "交割后净收": "+14 石"
+      },
+      "final": {
+        "phase": "receipt",
+        "seed": "1",
+        "combatKind": "gate-fox",
+        "hp": "11",
+        "foe": "0",
+        "floor": "2",
+        "gold": "21",
+        "seals": "0",
+        "decision": "sell"
+      },
+      "errors": []
+    }
+  ],
+  "touch": {
+    "sha256": "bffb9269164dde11e60374c5024d33b2342fbac4f4f9c759e7c0527d6b43074a",
+    "tests": {
+      "right": {
+        "point": {
+          "x": 278.84999999999997,
+          "y": 395.9625
+        },
+        "before": {
+          "pace": "quick",
+          "stage": "road",
+          "leg": "0",
+          "marker": "0",
+          "branchRoad": "false",
+          "cue": "brace",
+          "completed": "0",
+          "fork": "2",
+          "laneCue": "",
+          "waiting": "false",
+          "selected": "",
+          "visible": true,
+          "title": "引车上堤",
+          "desc": "前方横索架在两桩之间。点车厢压稳箱盖。　此处看准货封，错行损一层。",
+          "notice": "将至 · 稳住货封",
+          "milestone": "第 1 程 · 路标 1/6",
+          "entries": {},
+          "stats": {
+            "灵石": "3",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          }
+        },
+        "after": {
+          "pace": "quick",
+          "stage": "road",
+          "leg": "0",
+          "marker": "1",
+          "branchRoad": "false",
+          "cue": "right",
+          "completed": "1",
+          "fork": "0",
+          "laneCue": "right",
+          "waiting": "false",
+          "selected": "",
+          "visible": true,
+          "title": "芦根浅滩",
+          "desc": "左道有芦根浅滩，右道的双车辙完整。",
+          "notice": "轻扫路面或点下方车道",
+          "milestone": "第 1 程 · 路标 2/6",
+          "entries": {},
+          "stats": {
+            "灵石": "3",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          }
+        }
+      },
+      "left": {
+        "point": {
+          "x": 111.14999999999999,
+          "y": 395.9625
+        },
+        "before": {
+          "pace": "quick",
+          "stage": "road",
+          "leg": "3",
+          "marker": "3",
+          "branchRoad": "false",
+          "cue": "brace",
+          "completed": "21",
+          "fork": "2",
+          "laneCue": "",
+          "waiting": "false",
+          "selected": "",
+          "visible": true,
+          "title": "折入石埠",
+          "desc": "前方横索架在两桩之间。点车厢压稳箱盖。　此处看准货封，错行损一层。",
+          "notice": "将至 · 稳住货封",
+          "milestone": "第 4 程 · 路标 4/6",
+          "entries": {},
+          "stats": {
+            "灵石": "9",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          }
+        },
+        "after": {
+          "pace": "quick",
+          "stage": "road",
+          "leg": "3",
+          "marker": "4",
+          "branchRoad": "false",
+          "cue": "left",
+          "completed": "22",
+          "fork": "0",
+          "laneCue": "left",
+          "waiting": "false",
+          "selected": "",
+          "visible": true,
+          "title": "雨滑城砖",
+          "desc": "右道有雨滑城砖，左道的双车辙完整。",
+          "notice": "轻扫路面或点下方车道",
+          "milestone": "第 4 程 · 路标 5/6",
+          "entries": {},
+          "stats": {
+            "灵石": "9",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          }
+        }
+      }
+    }
+  },
+  "captures": {
+    "v5-branch-desk\\caravan-第1程.jpg": "4ba6566a83a09eabfb54c0238bc76f1cac0609c9e8dea4c974a4c6f7d139c7b5",
+    "v5-branch-desk\\caravan-第2程.jpg": "09a4a94b63afdb5ea6667c708ed4405d273e8bbf044e30a4e89415049eef87bf",
+    "v5-branch-desk\\caravan-第3程.jpg": "718f9d572017a4164851d2108606ee5b2ecb1a8c57b42a0f01acbae48164bc10",
+    "v5-branch-desk\\caravan-第4程.jpg": "f84c5a8a5a7de986a080491090b0607365db4a3579bf909b9d35c1c5ad1b0631",
+    "v5-branch-mobile\\caravan-交货前.jpg": "98bfd4f85868ab5f68aac3f429dddc7611a2b30af0c116bf15a2b38a590b584b",
+    "v5-branch-mobile\\caravan-岔口原驿1.jpg": "235728e626e15e6ac16f866b01f22002dab8c9fc7a32c0b4873b4b55cb7ec263",
+    "v5-branch-mobile\\caravan-岔口原驿2.jpg": "9edd823f07b273a4b723596e134786e0245e0eee6d4df5e1d0d1e7bd0f5ab1dd",
+    "v5-branch-mobile\\caravan-岔口原驿3.jpg": "649d1557e574cd3aaf53553d313391a69e8688bb9eb4aeefc82c6a2fbc81b38c",
+    "v5-branch-mobile\\caravan-岔市1.jpg": "4af0a5b3e2cdf5aafc7fcf61900af65e4d36f5db23280a9462b2563b19962f09",
+    "v5-branch-mobile\\caravan-岔市2.jpg": "a50f6a7eab605145bb586ee10d30a372c9f45616b92fb5193c98ebdfb0894dbb",
+    "v5-branch-mobile\\caravan-岔市3.jpg": "3edcc32489a6ac30eabc9fd60a0b06b993b380e8344ae70d61453a9abda3c18a",
+    "v5-branch-mobile\\caravan-镖账.jpg": "b301b718c23d9d786e292d07094bafde20b8f2aefa06e707fc138d190746e033",
+    "v5-final\\broken-交货前.jpg": "d061d6b016d03aed33a531f1d32a7fc93a4a8be0b80303dd803910bb553cffe7",
+    "v5-final\\express-停车判断-3-1-2-brace.jpg": "b81f302fe2e8cf7992e4181bc76773dda5381a734939289dfd0e1143b55961e5",
+    "v5-final\\normal-停车判断-3-1-2-brace.jpg": "35edae04bc6ead9a6ea37f74064987a8e89b7009e3d976d0ad44ea7b406cd8d4",
+    "v5-multitouch\\express-点车前-left.jpg": "e4328c621541983e0e4ee75e5e78e55cdb4686f1c2b125db92098d9e3ba236f1",
+    "v5-multitouch\\express-点车前-right.jpg": "8d1dde38e771b94a0b75316da7f2d106e0fac2be267de66ffc1d83ad747b9235",
+    "v5-multitouch\\express-点车后-left.jpg": "cb5bc370069d5d4a1f1d24d60891cde221675ccb7f6dcdd24b3f409f0a4135d2",
+    "v5-multitouch\\express-点车后-right.jpg": "fa6d92ff34cb9b127ccb37d257c29a931d015d4498e3167eccd48ec9915f0d82"
+  },
+  "archive": {
+    "两辙护货实触.jpg": "ad2dd8bc117531048f042295cd95b5e86c076fe02d837b2e6f788039c0bf3fa2",
+    "四程道路.jpg": "78847ea842aa1c04583d7769ac37bf7eac4ecb6340a2e0ec7ae9458b369b021e",
+    "满货空车与交割.jpg": "914c0d93ef4bfe540b0d6282e69aad11c125e436fb154dfb495281f58bb62f3b",
+    "竖屏三驿与支市.jpg": "51e4693b301169ecf02d18a673b49a97ea25130f4601eee74fd37a74145b4eac",
+    "素材原画缩览.jpg": "a01c981161bcf58d51f6f7a1d683baad7515b0cfc446093820a8cabf8dc5e052",
+    "近地行驶与停车.jpg": "be8e6227fa564b5188fa028be20956c39685487906daf97ff4d3a089d866e84e",
+    "首审退修实景.jpg": "7677b6530ccd82f2307250ee2158c9545a32337f6a9e45b0ea0a1ef241122539"
+  }
+}

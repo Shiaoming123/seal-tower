@@ -1,0 +1,530 @@
+{
+  "hash": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+  "mode": "miss-touch",
+  "width": 390,
+  "events": [
+    {
+      "t": 948,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 1722,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 2841,
+      "action": "secondary",
+      "text": "连灯灰一并收好"
+    },
+    {
+      "t": 3163,
+      "action": "primary",
+      "text": "问卖价"
+    },
+    {
+      "t": 3983,
+      "action": "primary",
+      "text": "去找狐商"
+    },
+    {
+      "t": 4343,
+      "action": "primary",
+      "text": "把灯纹印放上秤"
+    },
+    {
+      "t": 5685,
+      "action": "primary",
+      "text": "成交  ＋4 石"
+    },
+    {
+      "t": 7038,
+      "action": "primary",
+      "text": "俯看货摊"
+    },
+    {
+      "t": 7963,
+      "action": "market-escort",
+      "text": "接押运，查看护送契约"
+    },
+    {
+      "t": 8155,
+      "action": "催马",
+      "text": "催马 · 常速"
+    }
+  ],
+  "errors": [],
+  "offer": {
+    "d": {
+      "pace": "normal",
+      "driving": "continuous",
+      "fork": "",
+      "stage": "offer",
+      "leg": "0",
+      "marker": "0",
+      "branchRoad": "false",
+      "cue": "",
+      "completed": "0"
+    },
+    "h": "绯绡的押运单",
+    "body": "四段驿道，三处沿途市。带三箱托货前往照影渡。　押金 0 石 · 全程脚程 2 石 · 每箱尚存加 1 石",
+    "not": "",
+    "mile": "",
+    "stats": [
+      "灵石 7",
+      "在车 待领",
+      "封签 待领"
+    ],
+    "options": [
+      [
+        "start",
+        "接单起行\n免费领三箱。自购货要用现钱和囊格。",
+        false
+      ],
+      [
+        null,
+        "合契，回货摊",
+        false
+      ]
+    ],
+    "receipt": "随身商货　灯灰 1 份　墨蠹壳 0 件\n车尾挂三箱，上方包袱是行装。沿当前车辙自动走；遇险换辙、遇横索点车尾，见驿牌可拐市。"
+  },
+  "offerCash": 7,
+  "contract": 8069,
+  "firstIdle": {
+    "d": {
+      "pace": "quick",
+      "driving": "continuous",
+      "fork": "risk",
+      "stage": "road",
+      "leg": "0",
+      "marker": "0",
+      "branchRoad": "false",
+      "cue": "brace",
+      "completed": "0",
+      "selected": "right",
+      "track": "right",
+      "waiting": "false",
+      "danger": "true"
+    },
+    "h": "引车上堤",
+    "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+    "not": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+    "mile": "第 1 程 · 路标 1/6",
+    "stats": [
+      "灵石 7",
+      "在车 3 / 3",
+      "封签 6 / 6"
+    ],
+    "options": [
+      [
+        "left",
+        "换左辙",
+        false
+      ],
+      [
+        "right",
+        "沿右辙",
+        false
+      ],
+      [
+        "brace",
+        "护住车厢",
+        false
+      ]
+    ],
+    "receipt": ""
+  },
+  "unattendedTurn": {
+    "d": {
+      "pace": "quick",
+      "driving": "continuous",
+      "fork": "market",
+      "stage": "turnoff",
+      "leg": "0",
+      "marker": "6",
+      "branchRoad": "false",
+      "cue": "",
+      "completed": "6",
+      "selected": "right",
+      "track": "right",
+      "waiting": "false",
+      "danger": "true"
+    },
+    "h": "杉桥短市",
+    "body": "杉桥短市售灯灰，每份 1 石。下驿收灰 3 石。",
+    "not": "沿本辙将驶过驿口，入市可停车慢慢挑。",
+    "mile": "第 1 程 · 驿口",
+    "stats": [
+      "灵石 7",
+      "在车 1 / 3",
+      "封签 2 / 6"
+    ],
+    "options": [
+      [
+        null,
+        "拐入杉桥短市",
+        false
+      ],
+      [
+        "continue",
+        "沿正路驶过",
+        false
+      ]
+    ],
+    "receipt": ""
+  },
+  "autopassMs": 7502,
+  "nextRoad": {
+    "d": {
+      "pace": "quick",
+      "driving": "continuous",
+      "fork": "risk",
+      "stage": "road",
+      "leg": "1",
+      "marker": "0",
+      "branchRoad": "false",
+      "cue": "left",
+      "completed": "6",
+      "selected": "right",
+      "track": "right",
+      "waiting": "false",
+      "danger": "true"
+    },
+    "h": "出驿进山",
+    "body": "右侧有松动窑砖，左侧双辙稳当。",
+    "not": "当前右辙会松一层封签，可换左辙。",
+    "mile": "第 2 程 · 路标 1/6",
+    "stats": [
+      "灵石 7",
+      "在车 1 / 3",
+      "封签 2 / 6"
+    ],
+    "options": [
+      [
+        "left",
+        "换左辙",
+        false
+      ],
+      [
+        "right",
+        "沿右辙",
+        false
+      ]
+    ],
+    "receipt": ""
+  },
+  "segments": [
+    {
+      "t": 7907,
+      "stage": "offer",
+      "leg": 0,
+      "mark": 0,
+      "branch": false,
+      "track": "",
+      "selected": "",
+      "h": "绯绡的押运单",
+      "notice": "",
+      "pace": "normal",
+      "body": "四段驿道，三处沿途市。带三箱托货前往照影渡。 押金 0 石 · 全程脚程 2 石 · 每箱尚存加 1 石",
+      "speed": "催马 · 常速",
+      "mile": "",
+      "stats": [
+        "灵石 7",
+        "在车 待领",
+        "封签 待领"
+      ]
+    },
+    {
+      "t": 8054,
+      "stage": "road",
+      "leg": 0,
+      "mark": 0,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "引车上堤",
+      "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+      "pace": "normal",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+      "speed": "催马 · 常速",
+      "mile": "第 1 程 · 路标 1/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    },
+    {
+      "t": 8112,
+      "stage": "road",
+      "leg": 0,
+      "mark": 0,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "引车上堤",
+      "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+      "pace": "quick",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+      "speed": "收缰 · 快行中",
+      "mile": "第 1 程 · 路标 1/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 6 / 6"
+      ]
+    },
+    {
+      "t": 10390,
+      "stage": "road",
+      "leg": 0,
+      "mark": 1,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "朱栏急弯",
+      "notice": "当前右辙可安全通过。",
+      "pace": "quick",
+      "body": "左侧有芦根浅滩，右侧双辙稳当。",
+      "speed": "收缰 · 快行中",
+      "mile": "第 1 程 · 路标 2/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 5 / 6"
+      ]
+    },
+    {
+      "t": 12702,
+      "stage": "road",
+      "leg": 0,
+      "mark": 2,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "撑住短桥",
+      "notice": "当前右辙可安全通过。",
+      "pace": "quick",
+      "body": "左侧有芦根浅滩，右侧双辙稳当。",
+      "speed": "收缰 · 快行中",
+      "mile": "第 1 程 · 路标 3/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 5 / 6"
+      ]
+    },
+    {
+      "t": 15016,
+      "stage": "road",
+      "leg": 0,
+      "mark": 3,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "堤下碎石",
+      "notice": "横索会颠松封签，点车尾托箱或「护住车厢」。",
+      "pace": "quick",
+      "body": "前方横索架在两桩之间。点车厢压稳箱盖。",
+      "speed": "收缰 · 快行中",
+      "mile": "第 1 程 · 路标 4/6",
+      "stats": [
+        "灵石 7",
+        "在车 3 / 3",
+        "封签 5 / 6"
+      ]
+    },
+    {
+      "t": 17328,
+      "stage": "road",
+      "leg": 0,
+      "mark": 4,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "芦苇夹径",
+      "notice": "当前右辙会松一层封签，可换左辙。",
+      "pace": "quick",
+      "body": "右侧有芦根浅滩，左侧双辙稳当。",
+      "speed": "收缰 · 快行中",
+      "mile": "第 1 程 · 路标 5/6",
+      "stats": [
+        "灵石 7",
+        "在车 2 / 3",
+        "封签 4 / 6"
+      ]
+    },
+    {
+      "t": 19639,
+      "stage": "road",
+      "leg": 0,
+      "mark": 5,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "守住桥头",
+      "notice": "当前右辙会松一层封签，可换左辙。",
+      "pace": "quick",
+      "body": "右侧有芦根浅滩，左侧双辙稳当。",
+      "speed": "收缰 · 快行中",
+      "mile": "第 1 程 · 路标 6/6",
+      "stats": [
+        "灵石 7",
+        "在车 2 / 3",
+        "封签 3 / 6"
+      ]
+    },
+    {
+      "t": 21956,
+      "stage": "turnoff",
+      "leg": 0,
+      "mark": 6,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "杉桥短市",
+      "notice": "沿本辙将驶过驿口，入市可停车慢慢挑。",
+      "pace": "quick",
+      "body": "杉桥短市售灯灰，每份 1 石。下驿收灰 3 石。",
+      "speed": "收缰 · 快行中",
+      "mile": "第 1 程 · 驿口",
+      "stats": [
+        "灵石 7",
+        "在车 1 / 3",
+        "封签 2 / 6"
+      ]
+    },
+    {
+      "t": 29468,
+      "stage": "road",
+      "leg": 1,
+      "mark": 0,
+      "branch": false,
+      "track": "right",
+      "selected": "right",
+      "h": "出驿进山",
+      "notice": "当前右辙会松一层封签，可换左辙。",
+      "pace": "quick",
+      "body": "右侧有松动窑砖，左侧双辙稳当。",
+      "speed": "收缰 · 快行中",
+      "mile": "第 2 程 · 路标 1/6",
+      "stats": [
+        "灵石 7",
+        "在车 1 / 3",
+        "封签 2 / 6"
+      ]
+    }
+  ],
+  "rawTouches": [
+    {
+      "t": 901,
+      "phase": "idle",
+      "ride": false,
+      "label": "出剑",
+      "job": "strike",
+      "x": 123,
+      "y": 611.4000244140625
+    },
+    {
+      "t": 1679,
+      "phase": "idle",
+      "ride": false,
+      "label": "出剑",
+      "job": "strike",
+      "x": 123,
+      "y": 611.4000244140625
+    },
+    {
+      "t": 2779,
+      "phase": "drop",
+      "ride": false,
+      "label": "连灯灰一并收好",
+      "job": "secondary",
+      "x": 279,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 3104,
+      "phase": "guide",
+      "ride": false,
+      "label": "问卖价",
+      "job": "primary",
+      "x": 194.5,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 3937,
+      "phase": "rumor",
+      "ride": false,
+      "label": "去找狐商",
+      "job": "primary",
+      "x": 194.5,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 4298,
+      "phase": "stall",
+      "ride": false,
+      "label": "把灯纹印放上秤",
+      "job": "primary",
+      "x": 194.5,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 5639,
+      "phase": "quote",
+      "ride": false,
+      "label": "成交  ＋4 石",
+      "job": "primary",
+      "x": 106.5,
+      "y": 702.4000244140625
+    },
+    {
+      "t": 6992,
+      "phase": "result",
+      "ride": false,
+      "label": "俯看货摊",
+      "job": "primary",
+      "x": 110,
+      "y": 704.4000244140625
+    },
+    {
+      "t": 7897,
+      "phase": "counter",
+      "ride": false,
+      "label": "接押运，查看护送契约",
+      "job": "market-escort",
+      "x": 195,
+      "y": 718.4000244140625
+    },
+    {
+      "t": 8048,
+      "phase": "escort",
+      "ride": true,
+      "stage": "offer",
+      "leg": "0",
+      "mark": "0",
+      "fork": "",
+      "label": "接单起行，免费领三箱。自购货要用现钱和囊格。",
+      "job": "start",
+      "x": 102.25,
+      "y": 703.3699951171875
+    },
+    {
+      "t": 8111,
+      "phase": "escort",
+      "ride": true,
+      "stage": "road",
+      "leg": "0",
+      "mark": "0",
+      "fork": "risk",
+      "label": "催马 · 常速",
+      "job": "pace",
+      "x": 338.1199951171875,
+      "y": 558.47998046875
+    }
+  ],
+  "ms": 29526
+}

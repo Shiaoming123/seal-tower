@@ -1,0 +1,655 @@
+{
+  "url": "[本机路径略]",
+  "seed": "1",
+  "device": "mobile",
+  "flow": "small",
+  "bundleSHA256": "7399a3f3e85bf0f6a51c534ec97ba4907ab16c946b5d6fe1d826002e411287ba",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "browser": "157.0.8103.79",
+  "input": "Chromium 390 CSS px 触屏模拟，离线 file",
+  "automated": true,
+  "entranceToSettlementMs": 10829,
+  "videoReadingPauses": false,
+  "media": null,
+  "clip": null,
+  "result": {
+    "expanded": false,
+    "capacity": 12,
+    "holdings": {
+      "shells": 2,
+      "ash": 9
+    },
+    "discarded": {
+      "shells": 1,
+      "ash": 3
+    },
+    "liningCost": 0,
+    "haulResale": 13,
+    "afterSale": 16,
+    "gateStartHP": 15,
+    "hpAfter": 4,
+    "hits": 4,
+    "receipt": "佩器破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 15 → 4。狐柜取货 · 饮棘钩。结余 16 石 · 绢销 0 份 · 绢利 0 石。回首摊再选。开始下一局"
+  },
+  "events": [
+    {
+      "ms": 451,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 1197,
+      "action": "出剑结算",
+      "foeBefore": 9,
+      "foeAfter": 3,
+      "hp": 22
+    },
+    {
+      "ms": 1230,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 1981,
+      "action": "出剑结算",
+      "foeBefore": 3,
+      "foeAfter": 0,
+      "hp": 22
+    },
+    {
+      "ms": 2188,
+      "action": "secondary",
+      "label": "连灯灰一并收好",
+      "command": "",
+      "phase": "guide"
+    },
+    {
+      "ms": 2384,
+      "action": "primary",
+      "label": "递印问行情",
+      "command": "",
+      "phase": "rumor"
+    },
+    {
+      "ms": 2385,
+      "action": "道友开市前报价",
+      "rumor": "末市收灯。“护着灯纹印过狐关，末市给 7 石。”。封蜡绢首摊 2 石，末市每份收 4 石。。路签 · 旺市收绢，上限两份。收下路签，去狐市"
+    },
+    {
+      "ms": 2607,
+      "action": "primary",
+      "label": "收下路签，去狐市",
+      "command": "",
+      "phase": "stall"
+    },
+    {
+      "ms": 2802,
+      "action": "primary",
+      "label": "把灯纹印放上秤",
+      "command": "",
+      "phase": "quote"
+    },
+    {
+      "ms": 3004,
+      "action": "primary",
+      "label": "成交  ＋4 石",
+      "command": "",
+      "phase": "result"
+    },
+    {
+      "ms": 3213,
+      "action": "primary",
+      "label": "俯看货摊",
+      "command": "",
+      "phase": "counter"
+    },
+    {
+      "ms": 3441,
+      "action": "market-cargo",
+      "label": "查看商货",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 3495,
+      "action": "验货",
+      "name": "ash",
+      "quote": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 8 石。。拾遗损 2 血，得 2 石，也可绕过。携当前钱囊和余印入关。售 1 份　1 石。去侧廊。闯夜市狐关"
+    },
+    {
+      "ms": 3530,
+      "action": "primary",
+      "label": "售 1 份　1 石",
+      "command": "vend-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 3531,
+      "action": "成交",
+      "before": 7,
+      "after": 8,
+      "receipt": "听泉算盘。以入战余款计，每 4 石使本战首剑增 1 伤，至多 2 伤。。交旧铜铃，原栏佩入算盘。。拾遗损 2 血，得 2 石，也可绕过。携当前钱囊和余印入关。已售灯灰 · 灵石 7 → 8。旧铃换算盘。去侧廊。闯夜市狐关"
+    },
+    {
+      "ms": 3557,
+      "action": "market-gear",
+      "label": "查看器物",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 3579,
+      "action": "验货",
+      "name": "hook",
+      "quote": "饮棘钩。剑伤 5。血珀释血时再增 3 伤。。付 5 石，余 3 石；旧兵归囊，立即换装。拾遗损 2 血，得 2 石，也可绕过。携当前钱囊和余印入关。付 5 石。去侧廊。闯夜市狐关"
+    },
+    {
+      "ms": 3613,
+      "action": "primary",
+      "label": "付 5 石",
+      "command": "buy-hook",
+      "phase": "counter"
+    },
+    {
+      "ms": 3614,
+      "action": "成交",
+      "before": 8,
+      "after": 3,
+      "receipt": "饮棘钩。剑伤 5。血珀释血时再增 3 伤。。付 5 石 · 此货已售罄。拾遗损 2 血，得 2 石，也可绕过。携当前钱囊和余印入关。已取饮棘钩 · 灵石 8 → 3。付 5 石。去侧廊。闯夜市狐关"
+    },
+    {
+      "ms": 3643,
+      "action": "market-third",
+      "label": "去侧廊",
+      "command": "crossroads",
+      "phase": "crossroads"
+    },
+    {
+      "ms": 3796,
+      "action": "market-third",
+      "label": "抢收巢货",
+      "command": "detour-haul",
+      "phase": "idle"
+    },
+    {
+      "ms": 3848,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 4585,
+      "action": "出剑结算",
+      "foeBefore": 10,
+      "foeAfter": 5,
+      "hp": 15
+    },
+    {
+      "ms": 4606,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 5375,
+      "action": "出剑结算",
+      "foeBefore": 5,
+      "foeAfter": 0,
+      "hp": 15
+    },
+    {
+      "ms": 5417,
+      "action": "profile-open",
+      "label": "查看斩妖手札与行囊",
+      "command": null,
+      "phase": "blood"
+    },
+    {
+      "ms": 5441,
+      "action": "folio-bag-tab",
+      "label": null,
+      "command": null,
+      "phase": "blood"
+    },
+    {
+      "ms": 5442,
+      "action": "仓货待拾",
+      "expanded": false,
+      "bag": "囊底\n12 / 12 格\n待收战利\n墨蠹壳\n灯灰 ×3\n身上佩戴\n饮棘钩\n旧铜铃\n墨蠹壳\n材料 · 待入囊 · 3 格\n\n墨蠹固定掉落。狐柜收 2 石。\n\n收入行囊\n放弃此物\n囊内无法放下。可移动物件、装配或放弃战利。"
+    },
+    {
+      "ms": 5605,
+      "action": "放弃放不下的巢货",
+      "name": "ink-shell"
+    },
+    {
+      "ms": 5709,
+      "action": "放弃放不下的巢货",
+      "name": "ash"
+    },
+    {
+      "ms": 5731,
+      "action": "folio-close",
+      "label": "合卷，返回当前事件",
+      "command": null,
+      "phase": "blood"
+    },
+    {
+      "ms": 5767,
+      "action": "market-third",
+      "label": "合契回柜",
+      "command": "skip-blood",
+      "phase": "bloodReceipt"
+    },
+    {
+      "ms": 5965,
+      "action": "primary",
+      "label": "回到狐柜",
+      "command": "counter",
+      "phase": "counter"
+    },
+    {
+      "ms": 6093,
+      "action": "验货",
+      "name": "ink-shell",
+      "quote": "墨蠹壳。墨蠹固定掉落。狐柜收 2 石。。每份 2 石 × 1，合 2 石；余 5 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。售一份 · 2 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6148,
+      "action": "primary",
+      "label": "售一份 · 2 石",
+      "command": "vend-ink-shell",
+      "phase": "counter"
+    },
+    {
+      "ms": 6150,
+      "action": "成交",
+      "before": 3,
+      "after": 5,
+      "receipt": "墨蠹壳。墨蠹固定掉落。狐柜收 2 石。。每份 2 石 × 1，合 2 石；余 7 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售墨蠹壳 · 灵石 3 → 5。售一份 · 2 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6180,
+      "action": "profile-open",
+      "label": "查看斩妖手札与行囊",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 6204,
+      "action": "folio-bag-tab",
+      "label": null,
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 6349,
+      "action": "拆叠",
+      "originalStack": "ash-5",
+      "newStack": "ash-9"
+    },
+    {
+      "ms": 6376,
+      "action": "folio-close",
+      "label": "合卷，返回当前事件",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 6406,
+      "action": "market-cargo",
+      "label": "查看商货",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 6432,
+      "action": "验货",
+      "name": "ash",
+      "quote": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 6 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6462,
+      "action": "market-stack",
+      "label": "第 1 叠，切换货叠",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 6492,
+      "action": "primary",
+      "label": "售 1 份　1 石",
+      "command": "vend-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 6494,
+      "action": "成交",
+      "before": 5,
+      "after": 6,
+      "receipt": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 7 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 5 → 6。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6524,
+      "action": "profile-open",
+      "label": "查看斩妖手札与行囊",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 6552,
+      "action": "folio-bag-tab",
+      "label": null,
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 6639,
+      "action": "按份售灰",
+      "targetStack": "ash-6",
+      "observed": {
+        "ash-5": 2,
+        "ash-6": 2,
+        "ash-7": 3,
+        "ash-9": 1
+      },
+      "notice": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 7 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 5 → 6。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6662,
+      "action": "folio-close",
+      "label": "合卷，返回当前事件",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 6691,
+      "action": "market-gear",
+      "label": "查看器物",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 6718,
+      "action": "验货",
+      "name": "ink-shell",
+      "quote": "墨蠹壳。墨蠹固定掉落。狐柜收 2 石。。每份 2 石 × 1，合 2 石；余 8 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。售一份 · 2 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6746,
+      "action": "primary",
+      "label": "售一份 · 2 石",
+      "command": "vend-ink-shell",
+      "phase": "counter"
+    },
+    {
+      "ms": 6749,
+      "action": "成交",
+      "before": 6,
+      "after": 8,
+      "receipt": "砺锋砂。狐关每剑伤害 +4。。付 4 石，余 4 石。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售墨蠹壳 · 灵石 6 → 8。付 4 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6773,
+      "action": "market-cargo",
+      "label": "查看商货",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 6800,
+      "action": "验货",
+      "name": "ash",
+      "quote": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 9 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6829,
+      "action": "primary",
+      "label": "售 1 份　1 石",
+      "command": "vend-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 6830,
+      "action": "成交",
+      "before": 8,
+      "after": 9,
+      "receipt": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 10 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 8 → 9。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6855,
+      "action": "验货",
+      "name": "ash",
+      "quote": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 10 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 8 → 9。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6885,
+      "action": "primary",
+      "label": "售 1 份　1 石",
+      "command": "vend-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 6888,
+      "action": "成交",
+      "before": 9,
+      "after": 10,
+      "receipt": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 11 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 9 → 10。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6912,
+      "action": "验货",
+      "name": "ash",
+      "quote": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 11 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 9 → 10。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6940,
+      "action": "primary",
+      "label": "售 1 份　1 石",
+      "command": "vend-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 6941,
+      "action": "成交",
+      "before": 10,
+      "after": 11,
+      "receipt": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 12 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 10 → 11。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6965,
+      "action": "验货",
+      "name": "ash",
+      "quote": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 12 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 10 → 11。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 6996,
+      "action": "primary",
+      "label": "售 1 份　1 石",
+      "command": "vend-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 6997,
+      "action": "成交",
+      "before": 11,
+      "after": 12,
+      "receipt": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 13 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 11 → 12。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 7021,
+      "action": "验货",
+      "name": "ash",
+      "quote": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 13 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 11 → 12。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 7050,
+      "action": "primary",
+      "label": "售 1 份　1 石",
+      "command": "vend-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 7052,
+      "action": "成交",
+      "before": 12,
+      "after": 13,
+      "receipt": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 14 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 12 → 13。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 7077,
+      "action": "验货",
+      "name": "ash",
+      "quote": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 14 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 12 → 13。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 7107,
+      "action": "primary",
+      "label": "售 1 份　1 石",
+      "command": "vend-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 7108,
+      "action": "成交",
+      "before": 13,
+      "after": 14,
+      "receipt": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 15 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 13 → 14。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 7132,
+      "action": "验货",
+      "name": "ash",
+      "quote": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 15 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 13 → 14。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 7163,
+      "action": "primary",
+      "label": "售 1 份　1 石",
+      "command": "vend-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 7164,
+      "action": "成交",
+      "before": 14,
+      "after": 15,
+      "receipt": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 16 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 14 → 15。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 7188,
+      "action": "验货",
+      "name": "ash",
+      "quote": "灯灰。一格最多叠 3 份。狐柜与末市每份收 1 石。。每份 1 石 × 1，合 1 石；余 16 石。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 14 → 15。售 1 份　1 石。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 7218,
+      "action": "primary",
+      "label": "售 1 份　1 石",
+      "command": "vend-ash",
+      "phase": "counter"
+    },
+    {
+      "ms": 7219,
+      "action": "成交",
+      "before": 15,
+      "after": 16,
+      "receipt": "听泉算盘。以入战余款计，每 4 石使本战首剑增 1 伤，至多 2 伤。。交旧铜铃，原栏佩入算盘。。侧廊已闭 · 已走过侧廊。携当前钱囊和余印入关。已售灯灰 · 灵石 15 → 16。旧铃换算盘。侧廊已闭。闯夜市狐关"
+    },
+    {
+      "ms": 7289,
+      "action": "market-fourth",
+      "label": "闯夜市狐关",
+      "command": "gate",
+      "phase": "idle"
+    },
+    {
+      "ms": 7335,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 8072,
+      "action": "出剑结算",
+      "foeBefore": 19,
+      "foeAfter": 14,
+      "hp": 15
+    },
+    {
+      "ms": 8091,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 8831,
+      "action": "出剑结算",
+      "foeBefore": 14,
+      "foeAfter": 9,
+      "hp": 12
+    },
+    {
+      "ms": 8869,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 9607,
+      "action": "出剑结算",
+      "foeBefore": 9,
+      "foeAfter": 4,
+      "hp": 4
+    },
+    {
+      "ms": 9626,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 10387,
+      "action": "出剑结算",
+      "foeBefore": 4,
+      "foeAfter": 0,
+      "hp": 4
+    },
+    {
+      "ms": 10607,
+      "action": "primary",
+      "label": "查看末市货摊",
+      "command": "",
+      "phase": "counter"
+    },
+    {
+      "ms": 10829,
+      "action": "market-third",
+      "label": "合账离市",
+      "command": "settle",
+      "phase": "receipt"
+    }
+  ],
+  "captures": [
+    "手机离线-原囊-搬仓预告.jpg",
+    "手机离线-原囊-搬仓入囊.jpg",
+    "手机离线-原囊-拆出一份.jpg",
+    "手机离线-原囊-巢货变现.jpg",
+    "手机离线-原囊-结账.jpg"
+  ],
+  "errors": [],
+  "totalAutomationMs": 10881
+}

@@ -1,0 +1,97 @@
+{
+  "bundleSHA256": "bffb9269164dde11e60374c5024d33b2342fbac4f4f9c759e7c0527d6b43074a",
+  "videoSHA256": "56aeed8a513ff1d6d9a1ca56a0b5d2b8e2850108ca199d468c360476f9b3ba84",
+  "normalJourneyMs": 493562,
+  "fullRunMs": 500703,
+  "videoPeakDB": -11.752474,
+  "windows": [
+    {
+      "start": 98.099,
+      "end": 109.599,
+      "caption": "第 1 段 · 第 6 处正线路标，走左辙",
+      "stop": "进驿后转道岔市。"
+    },
+    {
+      "start": 120.214,
+      "end": 127.414,
+      "caption": "第 1 处岔市 · 领一份灰，准备往水驿周转。",
+      "stop": "杉桥买入两份灯灰，付 2 石。"
+    },
+    {
+      "still": "caravan-驿1-交易.jpg",
+      "duration": 2.5,
+      "caption": "到站成交画面停帧 · 杉桥买入两份灯灰，付 2 石。",
+      "stop": ""
+    },
+    {
+      "start": 224.935,
+      "end": 236.435,
+      "caption": "第 2 段 · 第 12 处正线路标，护住车厢",
+      "stop": "进驿后转道岔市。"
+    },
+    {
+      "start": 247.059,
+      "end": 254.259,
+      "caption": "第 2 处岔市 · 拿自有灯灰换一件墨蠹壳。",
+      "stop": "水驿卖两份灯灰，收 6 石；进一壳，付 2 石。"
+    },
+    {
+      "still": "caravan-驿2-交易.jpg",
+      "duration": 2.5,
+      "caption": "到站成交画面停帧 · 水驿卖两份灯灰，收 6 石；进一壳，付 2 石。",
+      "stop": ""
+    },
+    {
+      "start": 351.793,
+      "end": 363.293,
+      "caption": "第 3 段 · 第 18 处正线路标，走左辙",
+      "stop": "进驿后转道岔市。"
+    },
+    {
+      "start": 373.911,
+      "end": 381.111,
+      "caption": "第 3 处岔市 · 卖出一份灯灰，现收 3 石。",
+      "stop": "挂铃栈卖墨蠹壳，收 4 石。"
+    },
+    {
+      "still": "caravan-驿3-交易.jpg",
+      "duration": 2.5,
+      "caption": "到站成交画面停帧 · 挂铃栈卖墨蠹壳，收 4 石。",
+      "stop": ""
+    },
+    {
+      "start": 478.59,
+      "end": 490.09,
+      "caption": "第 4 段 · 第 24 处正线路标，护住车厢",
+      "stop": "到镇交货"
+    },
+    {
+      "start": 490.09,
+      "end": 493.591,
+      "caption": "四段交货，回狐柜整备，过关后亲手结清末市账。",
+      "stop": ""
+    },
+    {
+      "still": "caravan-末市总账.jpg",
+      "duration": 3,
+      "caption": "末市合账画面停帧 · 守关 4 手，结余 21 石。",
+      "stop": ""
+    }
+  ],
+  "streams": [
+    {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 1280,
+      "height": 810
+    },
+    {
+      "codec_name": "aac",
+      "codec_type": "audio"
+    }
+  ],
+  "format": {
+    "duration": "81.673021",
+    "size": "13155976"
+  }
+}

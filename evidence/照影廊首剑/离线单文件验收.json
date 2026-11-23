@@ -1,0 +1,13 @@
+{
+  "entry": "照影廊-第一剑.html",
+  "sha256": "f3929f1f53e975e8a27e27d1e632a3882365ff982727303bc21af795451799b1",
+  "browser": "157.0.8103.79",
+  "network": "offline",
+  "requests": 1,
+  "errors": [],
+  "verified": [
+    "9 → 3 on click",
+    "guard heavy at 22 → 20 HP",
+    "kill and replay"
+  ]
+}

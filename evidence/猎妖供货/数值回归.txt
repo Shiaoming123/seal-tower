@@ -1,0 +1,110 @@
+{
+  "rush": {
+    "fulfilled": true,
+    "buyer": "镇灯匠",
+    "paid": 7,
+    "expenses": 0,
+    "sales": 5,
+    "openingCash": 3,
+    "cash": 15,
+    "hp": 7,
+    "reason": "走完三关",
+    "standing": "ash",
+    "ashBurned": 0,
+    "turns": 9,
+    "cleared": 4,
+    "actions": {
+      "strike": 9
+    },
+    "premarket": [
+      {
+        "cash": 3,
+        "hp": 17,
+        "items": {
+          "ash": 2,
+          "clasp": 0,
+          "shell": 1
+        }
+      }
+    ],
+    "itemsTaken": [
+      "ash",
+      "shell",
+      "ash",
+      "shell"
+    ]
+  },
+  "clasp": {
+    "fulfilled": true,
+    "buyer": "绯绡",
+    "paid": 9,
+    "expenses": 3,
+    "sales": 9,
+    "openingCash": 3,
+    "cash": 18,
+    "hp": 2,
+    "reason": "走完三关",
+    "standing": "clasp",
+    "ashBurned": 0,
+    "turns": 17,
+    "cleared": 4,
+    "actions": {
+      "guard": 5,
+      "strike": 12
+    },
+    "premarket": [
+      {
+        "cash": 2,
+        "hp": 12,
+        "items": {
+          "ash": 1,
+          "clasp": 1,
+          "shell": 1
+        }
+      }
+    ],
+    "itemsTaken": [
+      "shell",
+      "clasp",
+      "shell",
+      "clasp"
+    ]
+  },
+  "lamp": {
+    "fulfilled": true,
+    "buyer": "镇灯匠",
+    "paid": 7,
+    "expenses": 5,
+    "sales": 8,
+    "openingCash": 3,
+    "cash": 13,
+    "hp": 11,
+    "reason": "走完三关",
+    "standing": "ash",
+    "ashBurned": 1,
+    "turns": 13,
+    "cleared": 4,
+    "actions": {
+      "guard": 2,
+      "strike": 10,
+      "flare": 1
+    },
+    "premarket": [
+      {
+        "cash": 1,
+        "hp": 16,
+        "items": {
+          "ash": 3,
+          "clasp": 0,
+          "shell": 1
+        }
+      }
+    ],
+    "itemsTaken": [
+      "ash",
+      "shell",
+      "ash",
+      "clasp"
+    ]
+  }
+}

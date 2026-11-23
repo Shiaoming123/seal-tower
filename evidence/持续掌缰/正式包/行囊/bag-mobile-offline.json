@@ -1,0 +1,269 @@
+{
+  "url": "[本机路径略]/rein-bridge.html",
+  "mode": "offline",
+  "kind": "bag",
+  "device": "mobile",
+  "bundleSHA256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "browser": "151.0.7922.34",
+  "final": {
+    "phase": "counter",
+    "seed": "1",
+    "combatKind": "ink-mite",
+    "hp": "19",
+    "foe": "0",
+    "floor": "1",
+    "gold": "7",
+    "seals": "0",
+    "decision": "sell",
+    "lot": "grit",
+    "shelf": "gear",
+    "qty": "1"
+  },
+  "events": [
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "primary",
+      "guide"
+    ],
+    [
+      "primary",
+      "rumor"
+    ],
+    [
+      "primary",
+      "stall"
+    ],
+    [
+      "primary",
+      "quote"
+    ],
+    [
+      "primary",
+      "result"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "验货",
+      "hook"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "market-third",
+      "crossroads"
+    ],
+    [
+      "secondary",
+      "idle"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "market-third",
+      "bloodReceipt"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "profile-open",
+      "counter"
+    ],
+    [
+      "folio-bag-tab",
+      "counter"
+    ],
+    [
+      "囊",
+      "stow"
+    ],
+    [
+      "囊",
+      "move"
+    ],
+    [
+      "囊",
+      "place"
+    ],
+    [
+      "囊",
+      "move"
+    ],
+    [
+      "囊",
+      "place"
+    ],
+    [
+      "行囊选中态 computed style",
+      {
+        "bellOn": {
+          "fill": "rgba(195, 163, 107, 0.57)",
+          "border": "rgb(245, 213, 152)",
+          "shadow": "rgba(246, 213, 145, 0.65) 0px 0px 0px 1px inset"
+        },
+        "bellOff": {
+          "fill": "rgba(174, 152, 123, 0.216)",
+          "border": "rgba(200, 185, 144, 0.424)",
+          "shadow": "rgba(17, 33, 31, 0.36) 1px 1px 0px 0px inset"
+        },
+        "shellOn": {
+          "fill": "rgba(195, 163, 107, 0.57)",
+          "border": "rgb(245, 213, 152)",
+          "shadow": "rgba(246, 213, 145, 0.65) 0px 0px 0px 1px inset"
+        },
+        "shellOff": {
+          "fill": "rgba(174, 152, 123, 0.216)",
+          "border": "rgba(200, 185, 144, 0.424)",
+          "shadow": "rgba(17, 33, 31, 0.36) 1px 1px 0px 0px inset"
+        }
+      }
+    ],
+    [
+      "囊",
+      "move"
+    ],
+    [
+      "囊",
+      "cancel"
+    ],
+    [
+      "囊",
+      "rotate"
+    ],
+    [
+      "囊",
+      "rotate"
+    ],
+    [
+      "囊",
+      "rotate"
+    ],
+    [
+      "囊",
+      "rotate"
+    ],
+    [
+      "囊",
+      "cancel"
+    ],
+    [
+      "四次转向后原占位",
+      [
+        1,
+        2,
+        3,
+        0
+      ],
+      [
+        [
+          0,
+          0,
+          "sword",
+          ""
+        ],
+        [
+          1,
+          0,
+          "sword",
+          ""
+        ],
+        [
+          2,
+          0,
+          "sword",
+          ""
+        ],
+        [
+          3,
+          0,
+          "",
+          ""
+        ],
+        [
+          0,
+          1,
+          "",
+          ""
+        ],
+        [
+          1,
+          1,
+          "bell",
+          ""
+        ],
+        [
+          2,
+          1,
+          "ink-shell",
+          ""
+        ],
+        [
+          3,
+          1,
+          "",
+          ""
+        ],
+        [
+          0,
+          2,
+          "",
+          ""
+        ],
+        [
+          1,
+          2,
+          "ink-shell",
+          ""
+        ],
+        [
+          2,
+          2,
+          "ink-shell",
+          ""
+        ],
+        [
+          3,
+          2,
+          "",
+          ""
+        ]
+      ]
+    ],
+    [
+      "folio-close",
+      "counter"
+    ],
+    [
+      "验货",
+      "ink-shell"
+    ],
+    [
+      "primary",
+      "counter"
+    ]
+  ],
+  "errors": []
+}

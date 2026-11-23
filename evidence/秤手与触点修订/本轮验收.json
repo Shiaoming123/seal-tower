@@ -1,0 +1,264 @@
+{
+  "playable": "../一印两价/一印两价.html",
+  "bytes": 5137259,
+  "SHA256": "3e5a91f976df523732fe8254d2e4997aeadb6e867336ebb48288e02297ae2b0c",
+  "baselineSHA256": "20bab5ffff48e81086977418bde34f2f6ad5907bad3be42e4a6519c71661127b",
+  "input": "正常动效触点验收.json",
+  "earlierReproduction": "改前误触复现.json",
+  "realBrowser": "157.0.8103.79",
+  "emulatedTouch": {
+    "viewportCSS": [
+      390,
+      844
+    ],
+    "deviceScaleFactor": 3
+  },
+  "normalMotionSeenPoses": [
+    {
+      "phone": false,
+      "poses": [
+        "fox-counter",
+        "fox-fold",
+        "fox-offer",
+        "fox-return",
+        "fox-settle"
+      ]
+    },
+    {
+      "phone": true,
+      "poses": [
+        "fox-counter",
+        "fox-fold",
+        "fox-offer",
+        "fox-return",
+        "fox-settle"
+      ]
+    }
+  ],
+  "reports": [
+    "desktop",
+    "mobile",
+    "offline",
+    "source"
+  ],
+  "result": {
+    "whet": {
+      "turns": 2,
+      "hp": 22,
+      "gold": 3,
+      "seals": 0,
+      "receipt": "磨刃破关。灯纹印在首摊售出  ＋4 石    砺锋砂  −4 石。守关 2 手 · 出剑 2 次    气血 22 → 22。行囊结余  3 灵石。回首摊再选。重新入塔"
+    },
+    "keep": {
+      "turns": 4,
+      "hp": 11,
+      "gold": 10,
+      "seals": 0,
+      "receipt": "藏印得价。灯纹印在末市售出  ＋7 石。守关 4 手 · 出剑 4 次    气血 22 → 11。行囊结余  10 灵石。回首摊再选。重新入塔"
+    }
+  },
+  "frames": [
+    {
+      "asset": "fox-offer.webp",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "asset": "fox-fold.webp",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "asset": "fox-return.webp",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "asset": "fox-settle.webp",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "asset": "guide-oracle.webp",
+      "width": 724,
+      "height": 543
+    },
+    {
+      "asset": "fox-counter.webp",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "asset": "hero-ready.webp",
+      "size": [
+        515,
+        636
+      ],
+      "gameplaySize": [
+        175,
+        216
+      ]
+    },
+    {
+      "asset": "hero-thrust.webp",
+      "size": [
+        933,
+        468
+      ],
+      "gameplaySize": [
+        311,
+        156
+      ]
+    },
+    {
+      "asset": "hero-recover.webp",
+      "size": [
+        541,
+        682
+      ],
+      "gameplaySize": [
+        183,
+        231
+      ]
+    },
+    {
+      "asset": "moth.webp",
+      "size": [
+        711,
+        717
+      ],
+      "gameplaySize": [
+        237,
+        239
+      ]
+    },
+    {
+      "asset": "warden.webp",
+      "size": [
+        978,
+        654
+      ],
+      "gameplaySize": [
+        326,
+        218
+      ]
+    }
+  ],
+  "screenshots": {
+    "守关动作对照.png": "8b9abd76e697c0992aa852c2c15e49cec283e39dd2252237e39a60e013685019",
+    "守关命中.png": "79f279f94aa99e2c9903391845d7d743a54ab67f918b47e2f25f9e261632e4b5",
+    "成交收钱.png": "ebd3251a1604126658c0729e8b5af475a1cf151cda75642758287627dfe065bc",
+    "手机-绯绡递秤.png": "1592296eb3bdc081a106832407891f242202353baa6876a5f63460b82de54100",
+    "末市秤盘.png": "233bd990737bed8986c96842bf7ee459ada25e1b76a3ff13670b2a808b8c8484",
+    "留印收秤.png": "fcdaa6c1b09f98415638373721670c679f1179eeb812edf76d4f645eb7da3b28",
+    "绯绡递秤.png": "49c83c26e64b4e7e96dc7b9634ae2588ae3f0fda5f5e95a778c5e37f92a69fbb"
+  },
+  "portraitComparison": "498b71d2fd5d7750aa8f9f87bfcd858dba0e32dd8c19a7630f717b7596e13c79",
+  "limitations": "触摸验证使用桌面 Chromium 的设备模拟；未使用实体手机。",
+  "independentArtReview": [
+    "美术评审/初审.md",
+    "美术评审/复审.md"
+  ],
+  "currentRuntimeImages": {
+    "hero-ready": {
+      "file": "sprites/hero-ready.webp",
+      "sha256": "9e51ccc135ed73893f3f85625c36f1f55301989b52f5359f89ab93fd3719a7d9"
+    },
+    "hero-thrust": {
+      "file": "sprites/hero-thrust.webp",
+      "sha256": "77dd883e3d91d7aed58f0e3af957dc474ab74e4d8e7cf3bed6f777daccd1ed95"
+    },
+    "hero-recover": {
+      "file": "sprites/hero-recover.webp",
+      "sha256": "38717e36505a2a42a4758b5a8668b1b5b0cfeb4ce9c7b5d1a1a542ff8fc37d93"
+    },
+    "moth": {
+      "file": "sprites/moth.webp",
+      "sha256": "edb8f2d64c4a58e46313cd4bda256c2f8c8649fc6aab6affc1c3f5984f38284e"
+    },
+    "lamp-seal": {
+      "file": "sprites/lamp-seal.webp",
+      "sha256": "ad9dfc08b59fdb274ef31ebfb61c38f60928e761053d918914d07477e0acea81"
+    },
+    "warden": {
+      "file": "sprites/warden.webp",
+      "sha256": "1a236d9769362caa333fc822d3a153df12990ea32498acb838c94f40b5503f80"
+    },
+    "fox-offer": {
+      "file": "sprites/fox-offer.webp",
+      "sha256": "58b665a62ec90c3c0975c1174b1a20a776f0408a1dbec410a2857ada43c61af7"
+    },
+    "fox-counter": {
+      "file": "sprites/fox-counter.webp",
+      "sha256": "846db989715bf3cf121de4970b3d5cc5135ff622b1c404aea7ca5b6a1f11af2f"
+    },
+    "fox-fold": {
+      "file": "sprites/fox-fold.webp",
+      "sha256": "b19c2b0f584d0ed138e62f3947845f31a1ab67209757a799866c4bf67d95b961"
+    },
+    "fox-return": {
+      "file": "sprites/fox-return.webp",
+      "sha256": "8ffdbb730063641ea245e460b64b223961045c5e6497c1f9a4c05fc229e2b79b"
+    },
+    "fox-settle": {
+      "file": "sprites/fox-settle.webp",
+      "sha256": "c849c8f3e45f700c3d35b667a26984e093d28e7bf8d57d6d50282ebf07abcaaf"
+    },
+    "guide-oracle": {
+      "file": "sprites/guide-oracle.webp",
+      "sha256": "242762fe7eded8369e27504ad7eecf8e6e5bc670ebea858e01d4711f6a3431a6"
+    },
+    "gate": {
+      "file": "sprites/gate.webp",
+      "sha256": "8b417d3307147243ad2b510cdb128f4f01bf67d80369cf1a767dc7d72c0eb917"
+    },
+    "hall": {
+      "file": "sprites/hall.webp",
+      "sha256": "eb2c097e8383c8212202935871183d96be9067b2a557bc45394769e9eb6f7abd"
+    },
+    "shop-wall": {
+      "file": "sprites/shop-wall.webp",
+      "sha256": "0050bdbae7e401aec30b7dc1dae002d7b85de9dda568802e25c6f4bdd92e2f8d"
+    },
+    "grit": {
+      "file": "sprites/grit.webp",
+      "sha256": "7e530b996f6385d2d1b13fc9ede271a5e47416f4bb35908a111e6c6afe663b29"
+    },
+    "last-market": {
+      "file": "sprites/last-market.webp",
+      "sha256": "cdf24bf5cfed3a80da9e94717e176eb8de6dc613ae7b544f20e3a03a3c3721e0"
+    },
+    "counter": {
+      "file": "sprites/counter.webp",
+      "sha256": "01c58ef4870c02bd68ffaebc6277b3fcb2052957d6360b1088b8fa9d1aecac0c"
+    }
+  },
+  "artCapture": [
+    {
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 810
+      },
+      "browser": "157.0.8103.79",
+      "states": 21,
+      "timedFrames": 24,
+      "sourceIndexSHA256": "acb7c943e81074412bd917d96b420a2346d9766218465746b1012edf43e6852a",
+      "errors": []
+    },
+    {
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "157.0.8103.79",
+      "states": 21,
+      "timedFrames": 24,
+      "sourceIndexSHA256": "0698d2723777251a057210c274086052eb04f25632a083d040e67e566c8bc338",
+      "errors": []
+    }
+  ],
+  "seal": "lamp-seal.webp",
+  "artReviewHash": "9041e186d4f94884212617985710afaa7ec3950d814872c59877cbdc25026e77"
+}

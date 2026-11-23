@@ -1,0 +1,20 @@
+{
+  "url": "http://127.0.0.1:8774/index.html?seed=1",
+  "browser": "157.0.8103.79",
+  "input": "390x844 touch emulation, reduced motion",
+  "receipt": [
+    "22/24",
+    "7",
+    "0"
+  ],
+  "errors": [],
+  "warnings": [],
+  "requests": [
+    "http://127.0.0.1:8774/index.html?seed=1",
+    "http://127.0.0.1:8774/style.css",
+    "http://127.0.0.1:8774/game.js",
+    "http://127.0.0.1:8774/tower-art.js",
+    "http://127.0.0.1:8774/sound.js",
+    "http://127.0.0.1:8774/screen.js"
+  ]
+}

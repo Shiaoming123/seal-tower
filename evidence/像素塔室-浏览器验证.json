@@ -1,0 +1,420 @@
+{
+  "browser": "157.0.8103.79",
+  "note": "Local Chrome headless; mobile is touch viewport emulation. Draw time measures JavaScript draw call duration, not device frame rate.",
+  "runs": [
+    {
+      "mobile": false,
+      "outcome": "won",
+      "name": "shield",
+      "trace": [
+        {
+          "phase": "start",
+          "action": "shield",
+          "floor": 1,
+          "hp": 24,
+          "stones": 3,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 1,
+          "hp": 22,
+          "stones": 3,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "guard",
+          "floor": 1,
+          "hp": 22,
+          "stones": 3,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 1,
+          "hp": 22,
+          "stones": 3,
+          "seals": 0
+        },
+        {
+          "phase": "reward",
+          "action": "take",
+          "floor": 1,
+          "hp": 22,
+          "stones": 3,
+          "seals": 1
+        },
+        {
+          "phase": "route",
+          "action": "guide",
+          "floor": 1,
+          "hp": 22,
+          "stones": 3,
+          "seals": 1
+        },
+        {
+          "phase": "shop",
+          "action": "leave",
+          "floor": 1,
+          "hp": 22,
+          "stones": 3,
+          "seals": 1
+        },
+        {
+          "phase": "prep",
+          "action": "climb",
+          "floor": 1,
+          "hp": 22,
+          "stones": 3,
+          "seals": 1
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 2,
+          "hp": 22,
+          "stones": 3,
+          "seals": 1
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 2,
+          "hp": 19,
+          "stones": 3,
+          "seals": 1
+        },
+        {
+          "phase": "fight",
+          "action": "guard",
+          "floor": 2,
+          "hp": 19,
+          "stones": 3,
+          "seals": 1
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 2,
+          "hp": 19,
+          "stones": 3,
+          "seals": 1
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 2,
+          "hp": 19,
+          "stones": 3,
+          "seals": 1
+        },
+        {
+          "phase": "reward",
+          "action": "take",
+          "floor": 2,
+          "hp": 19,
+          "stones": 3,
+          "seals": 2
+        },
+        {
+          "phase": "route",
+          "action": "guide",
+          "floor": 2,
+          "hp": 19,
+          "stones": 3,
+          "seals": 2
+        },
+        {
+          "phase": "shop",
+          "action": "sell-1",
+          "floor": 2,
+          "hp": 19,
+          "stones": 10,
+          "seals": 1
+        },
+        {
+          "phase": "shop",
+          "action": "mirror",
+          "floor": 2,
+          "hp": 19,
+          "stones": 2,
+          "seals": 1
+        },
+        {
+          "phase": "shop",
+          "action": "leave",
+          "floor": 2,
+          "hp": 19,
+          "stones": 2,
+          "seals": 1
+        },
+        {
+          "phase": "prep",
+          "action": "embed-2",
+          "floor": 2,
+          "hp": 19,
+          "stones": 2,
+          "seals": 0
+        },
+        {
+          "phase": "prep",
+          "action": "climb",
+          "floor": 2,
+          "hp": 19,
+          "stones": 2,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 3,
+          "hp": 19,
+          "stones": 2,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "guard",
+          "floor": 3,
+          "hp": 17,
+          "stones": 2,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 3,
+          "hp": 17,
+          "stones": 2,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 3,
+          "hp": 14,
+          "stones": 2,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "guard",
+          "floor": 3,
+          "hp": 12,
+          "stones": 2,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 3,
+          "hp": 12,
+          "stones": 2,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 3,
+          "hp": 12,
+          "stones": 2,
+          "seals": 0
+        }
+      ],
+      "metrics": {
+        "loadMs": 50,
+        "samples": 310,
+        "drawCpuP95Ms": 0.3999999985098839,
+        "drawCpuMaxMs": 1.1999999955296516,
+        "raster": [
+          680,
+          232
+        ]
+      },
+      "errors": [],
+      "external": []
+    },
+    {
+      "mobile": true,
+      "outcome": "lost",
+      "name": "disc",
+      "trace": [
+        {
+          "phase": "start",
+          "action": "disc",
+          "floor": 1,
+          "hp": 24,
+          "stones": 3,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "cast",
+          "floor": 1,
+          "hp": 22,
+          "stones": 3,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 1,
+          "hp": 22,
+          "stones": 3,
+          "seals": 0
+        },
+        {
+          "phase": "reward",
+          "action": "take",
+          "floor": 1,
+          "hp": 22,
+          "stones": 3,
+          "seals": 1
+        },
+        {
+          "phase": "route",
+          "action": "salvage",
+          "floor": 1,
+          "hp": 19,
+          "stones": 7,
+          "seals": 1
+        },
+        {
+          "phase": "shop",
+          "action": "leave",
+          "floor": 1,
+          "hp": 19,
+          "stones": 7,
+          "seals": 1
+        },
+        {
+          "phase": "prep",
+          "action": "climb",
+          "floor": 1,
+          "hp": 19,
+          "stones": 7,
+          "seals": 1
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 2,
+          "hp": 19,
+          "stones": 7,
+          "seals": 1
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 2,
+          "hp": 16,
+          "stones": 7,
+          "seals": 1
+        },
+        {
+          "phase": "fight",
+          "action": "guard",
+          "floor": 2,
+          "hp": 12,
+          "stones": 7,
+          "seals": 1
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 2,
+          "hp": 12,
+          "stones": 7,
+          "seals": 1
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 2,
+          "hp": 12,
+          "stones": 7,
+          "seals": 1
+        },
+        {
+          "phase": "reward",
+          "action": "take",
+          "floor": 2,
+          "hp": 12,
+          "stones": 7,
+          "seals": 2
+        },
+        {
+          "phase": "route",
+          "action": "salvage",
+          "floor": 2,
+          "hp": 9,
+          "stones": 11,
+          "seals": 2
+        },
+        {
+          "phase": "shop",
+          "action": "sell-1",
+          "floor": 2,
+          "hp": 9,
+          "stones": 18,
+          "seals": 1
+        },
+        {
+          "phase": "shop",
+          "action": "leave",
+          "floor": 2,
+          "hp": 9,
+          "stones": 18,
+          "seals": 1
+        },
+        {
+          "phase": "prep",
+          "action": "embed-2",
+          "floor": 2,
+          "hp": 9,
+          "stones": 18,
+          "seals": 0
+        },
+        {
+          "phase": "prep",
+          "action": "climb",
+          "floor": 2,
+          "hp": 9,
+          "stones": 18,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 3,
+          "hp": 6,
+          "stones": 18,
+          "seals": 0
+        },
+        {
+          "phase": "fight",
+          "action": "strike",
+          "floor": 3,
+          "hp": 0,
+          "stones": 18,
+          "seals": 0
+        }
+      ],
+      "metrics": {
+        "loadMs": 30,
+        "samples": 193,
+        "drawCpuP95Ms": 0.3999999985098839,
+        "drawCpuMaxMs": 1,
+        "raster": [
+          357,
+          232
+        ]
+      },
+      "errors": [],
+      "external": []
+    }
+  ]
+}

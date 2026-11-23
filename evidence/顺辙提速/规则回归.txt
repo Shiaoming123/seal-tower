@@ -1,0 +1,33 @@
+4×3: 14 types; 7320 accepted, 19560 rejected; 4096 free-space patterns per type.
+4×4: 14 types; 10520 accepted, 21736 rejected; 65536 free-space patterns per type.
+PASS 14 registered transparent bag sprites × 4 turns, expanded-source alpha checks, pixel roundtrips, dense real run and rejected negative controls.
+PASS explicit 4/7 disposition, slot limits, payment atomicity, insured original, barter removal, two relics, life costs/clamping, damage/healing order, replenishment bounds, side-fight accounting, reusable quote snapshot.
+现卖带钱 seed1 [血/上限/石/守关手数] 11/24/7/4 256签平均 11/24/7/4 各签血量 11–11
+现卖磨剑 seed1 [血/上限/石/守关手数] 22/24/3/2 256签平均 18.46/24/3/2 各签血量 14–22
+留印直过 seed1 [血/上限/石/守关手数] 11/24/10/4 256签平均 11/24/10/4 各签血量 11–11
+留印换牙 seed1 [血/上限/石/守关手数] 19/24/8/3 256签平均 14.61/24/8/3 各签血量 11–19
+留印换膏 seed1 [血/上限/石/守关手数] 17/24/8/4 256签平均 17/24/8/4 各签血量 17–17
+棘钱换血再磨剑 seed1 [血/上限/石/守关手数] 16/24/11/2 256签平均 11.95/24/11.52/2 各签血量 7–16
+侧战开栏双法宝 seed1 [血/上限/石/守关手数] 20/20/7/3 256签平均 15.92/20/7/3 各签血量 12–20
+PASS true grid rotation, swaps and packing, full bag sale rejection, waiting loot, fixed material prices, order-only rollover and blood build strike/heal.
+佩钩放血 seed1 血/上限/石/守关手数 20/24/7/2 256签平均 血/石/手数 15.95/7.52/2.00
+单佩放血 seed1 血/上限/石/守关手数 19/24/12/3 256签平均 血/石/手数 14.09/12.52/3.00
+单钩直斩 seed1 血/上限/石/守关手数 11/24/2/4 256签平均 血/石/手数 11.00/2.00/4.00
+阙剑守势 seed1 血/上限/石/守关手数 17/24/2/4 256签平均 血/石/手数 17.00/2.00/4.00
+旧剑守势 seed1 血/上限/石/守关手数 15/24/7/4 256签平均 血/石/手数 15.00/7.00/4.00
+PASS full-pack real battles retain the actual drop until collection/discard, order redemption whitelist, blood damage and healing tallies.
+hold wins 256/256 mean gold/HP/gate turns 7.00 14.58 3.00 seed1 {"seed":1,"won":true,"hp":19,"gold":7,"turns":3,"gateNetHpLoss":3,"gateDamageTaken":3,"gateRecovered":0,"ashSold":0,"silkProfit":0,"discarded":0,"lining":false,"first":7,"entryGold":7,"hot":true}
+one wins 256/256 mean gold/HP/gate turns 7.59 14.58 3.00 seed1 {"seed":1,"won":true,"hp":19,"gold":9,"turns":3,"gateNetHpLoss":3,"gateDamageTaken":3,"gateRecovered":0,"ashSold":0,"silkProfit":2,"discarded":0,"lining":false,"first":7,"entryGold":5,"hot":true}
+two wins 256/256 mean gold/HP/gate turns 8.19 11.00 4.00 seed1 {"seed":1,"won":true,"hp":11,"gold":11,"turns":4,"gateNetHpLoss":11,"gateDamageTaken":11,"gateRecovered":0,"ashSold":0,"silkProfit":4,"discarded":0,"lining":false,"first":6,"entryGold":3,"hot":true}
+bag12 wins 256/256 mean gold/HP/gate turns 16.00 4.44 4.00 seed1 {"seed":1,"won":true,"hp":4,"gold":16,"turns":4,"gateNetHpLoss":11,"gateDamageTaken":11,"gateRecovered":0,"ashSold":10,"silkProfit":0,"discarded":4,"lining":false,"gateHp":15,"freightSale":13}
+bag16 wins 256/256 mean gold/HP/gate turns 18.00 4.44 4.00 seed1 {"seed":1,"won":true,"hp":4,"gold":18,"turns":4,"gateNetHpLoss":11,"gateDamageTaken":11,"gateRecovered":0,"ashSold":13,"silkProfit":0,"discarded":0,"lining":true,"gateHp":15,"freightSale":18}
+grit wins 256/256 mean gold/HP/gate turns 3.00 18.45 2.00 seed1 {"seed":1,"won":true,"hp":22,"gold":3,"turns":2,"gateNetHpLoss":0,"gateDamageTaken":0,"gateRecovered":0,"ashSold":0,"silkProfit":0,"discarded":0,"lining":false}
+blood wins 256/256 mean gold/HP/gate turns 7.52 15.93 2.00 seed1 {"seed":1,"won":true,"hp":20,"gold":7,"turns":2,"gateNetHpLoss":-4,"gateDamageTaken":0,"gateRecovered":4,"ashSold":0,"silkProfit":0,"discarded":0,"lining":false}
+Freight same-seed cash after selling: guarded spare 17/18, starter's light load 24/23 (12/16 cells).
+Seed 1: guard and gather 2 ash; guarded fox sold for +5; direct finish +3.
+PASS paired market quotes, guarded first hit, 4/7 seal, cash-flow limits, partial sales, stacking, full-bag choice and real 12/16 freight.
+PASS 256 seeds × 7 routes: three alternative roadside markets, 27 or 24 ordered marks, 3 limited stations, real cargo and purse, single delivery, damaged/empty/replaced crates, abort and no repeat.
+Seed 1 commercial: road +2, delivered +3, sold 10 minus purchases 4, net +11.
+Seed 1 zero-cash arrivals, intact / damaged / lost / replaced. Cash settlements 5 / 4 / 2 / 3; mid-route retreat paid 1 servicing + 1 ash.
+{"paths":324,"bloodEventsWithOverflow":24,"finalMarketsWithOverflow":66}
+[本机路径略]/check-final.html (8338735 bytes)

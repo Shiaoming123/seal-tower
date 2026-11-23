@@ -1,0 +1,95 @@
+{
+  "hash": "f2b3de639981354178b29590e79fb0596052536511e4595d996d8190ffc2dcc7",
+  "mode": "fast-sell",
+  "width": 1280,
+  "events": [
+    {
+      "t": 5819,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 6999,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 8119,
+      "action": "secondary",
+      "text": "连灯灰一并收好"
+    },
+    {
+      "t": 8534,
+      "action": "primary",
+      "text": "递印问行情"
+    },
+    {
+      "t": 8996,
+      "action": "primary",
+      "text": "收下路签，去狐市"
+    },
+    {
+      "t": 9373,
+      "action": "primary",
+      "text": "把灯纹印放上秤"
+    },
+    {
+      "t": 10796,
+      "action": "primary",
+      "text": "成交  ＋4 石"
+    },
+    {
+      "t": 12283,
+      "action": "primary",
+      "text": "俯看货摊"
+    },
+    {
+      "t": 13306,
+      "action": "market-fourth",
+      "text": "闯夜市狐关"
+    },
+    {
+      "t": 13499,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 14331,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 15193,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 16021,
+      "action": "strike",
+      "text": "出剑"
+    },
+    {
+      "t": 17206,
+      "action": "primary",
+      "text": "查看末市货摊"
+    },
+    {
+      "t": 18096,
+      "action": "market-third",
+      "text": "合账离市"
+    }
+  ],
+  "errors": [],
+  "final": {
+    "phase": "receipt",
+    "seed": "1",
+    "combatKind": "gate-fox",
+    "hp": "11",
+    "foe": "0",
+    "floor": "2",
+    "gold": "7",
+    "seals": "0",
+    "decision": "sell"
+  },
+  "ms": 18126
+}

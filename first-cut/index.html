@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101e21"><title>照影廊 · 一印两价｜斩妖塔</title>
+<link rel="icon" href="data:,"><link rel="stylesheet" href="cut.css"><link rel="stylesheet" href="escort.css"><link rel="stylesheet" href="hunt.css"><link rel="stylesheet" href="crawl.css">
+<script defer src="sprite-bank.js"></script><script defer src="../game.js"></script><script defer src="actors.js"></script><script defer src="hall.js"></script>
+<script defer src="font-bank.js"></script><script defer src="ink.js"></script><script defer src="battle-sprites.js"></script><script defer src="trail-creature.js"></script><script defer src="scene.js"></script><script defer src="hud.js"></script><script defer src="voice.js"></script><script defer src="feixiao.js"></script><script defer src="market-portraits.js"></script><script defer src="weigh-gesture.js"></script><script defer src="night-market.js"></script><script defer src="market-ui.js"></script><script defer src="bazaar.js"></script><script defer src="trade-table.js"></script><script defer src="market-play.js"></script><script defer src="bag-art.js"></script><script defer src="bag-ui.js"></script><script defer src="profile.js"></script><script defer src="market-order.js"></script><script defer src="escort-ui.js"></script><script defer src="hunt-rules.js"></script><script defer src="hunt-art.js"></script><script defer src="hunt-scene.js"></script><script defer src="crawl-cards.js"></script><script defer src="crawl-world.js"></script><script defer src="crawl-scene.js"></script><script defer src="hunt-ui.js"></script><script defer src="cut.js"></script></head>
+<body><main id="game" aria-label="照影廊，封妖与开市">
+<div id="loading" role="status">点亮廊灯…</div>
+<a id="hunt-entry" hidden href="?play=crawl">镇灯铺 · 入塔接单</a>
+<h1 class="sr">斩妖塔 · 照影廊</h1>
+<canvas id="world" width="640" height="360" aria-label="固定机位下，斩妖人持剑面对纸灯蛾"></canvas>
+<canvas id="market-art" width="960" height="540" aria-label="妖市与塔中事件" hidden></canvas>
+<canvas id="hud" aria-hidden="true"></canvas>
+<button id="target" class="hitbox" aria-label="向纸灯蛾出剑。点按普通出剑，长按至亮环松手合锋"></button>
+<button id="strike" class="hitbox" aria-label="出剑"></button><button id="guard" class="hitbox" aria-label="守势，架剑格挡"></button><button id="reset" class="hitbox" aria-label="重新试剑"></button>
+<button id="sound" class="hitbox" aria-label="关闭声音" aria-pressed="true"></button>
+<button id="seal-grip" class="hitbox" aria-label="拾起灯纹印，拖到秤盘或点按上秤" hidden></button>
+<button id="object" class="hitbox" hidden></button>
+<button id="primary" class="hitbox" hidden></button><button id="secondary" class="hitbox" hidden></button>
+<button id="market-third" class="hitbox" hidden></button><button id="market-fourth" class="hitbox" hidden></button>
+<output id="item-feedback" aria-live="polite" hidden></output>
+<button id="profile-open" aria-label="查看斩妖手札与行囊" aria-haspopup="dialog" aria-controls="profile" aria-expanded="false"><span>行囊</span></button>
+<dialog id="profile" aria-labelledby="folio-title">
+  <div class="folio-shell">
+    <aside class="folio-portrait" aria-hidden="true"><div class="folio-moon"><canvas id="folio-figure" width="208" height="208"></canvas></div><span class="folio-artist">照影剑</span><span class="folio-location" id="folio-location"></span></aside>
+    <article class="folio-leaf"><header class="folio-head"><h2 id="folio-title">斩妖手札</h2><button id="folio-close" type="button" aria-label="关闭手札，返回当前事件">关闭</button></header><nav class="folio-tabs" aria-label="手札页签"><button id="folio-stats-tab" type="button" aria-pressed="true">角色属性</button><button id="folio-bag-tab" type="button" aria-pressed="false">整理背包</button></nav><div id="folio-body"></div></article>
+  </div>
+</dialog>
+<div class="sr" id="status" role="status" aria-live="polite">点击纸灯蛾或按 J 出剑。长按至亮环后松手，可用一次合锋。按 K 守势，按 R 重试。</div>
+<noscript>照影廊的像素绘制需要启用 JavaScript。</noscript>
+</main></body></html>

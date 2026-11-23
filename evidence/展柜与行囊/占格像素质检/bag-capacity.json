@@ -1,0 +1,219 @@
+{
+  "width": 4,
+  "height": 3,
+  "freePatterns": [
+    1,
+    12,
+    66,
+    220,
+    495,
+    792,
+    924,
+    792,
+    495,
+    220,
+    66,
+    12,
+    1
+  ],
+  "items": {
+    "sword": {
+      "distinctPlacements": 10,
+      "fitsByFreeCount": [
+        0,
+        0,
+        0,
+        10,
+        87,
+        318,
+        618,
+        702,
+        489,
+        220,
+        66,
+        12,
+        1
+      ]
+    },
+    "hook": {
+      "distinctPlacements": 10,
+      "fitsByFreeCount": [
+        0,
+        0,
+        0,
+        10,
+        87,
+        318,
+        618,
+        702,
+        489,
+        220,
+        66,
+        12,
+        1
+      ]
+    },
+    "ward-blade": {
+      "distinctPlacements": 10,
+      "fitsByFreeCount": [
+        0,
+        0,
+        0,
+        10,
+        87,
+        318,
+        618,
+        702,
+        489,
+        220,
+        66,
+        12,
+        1
+      ]
+    },
+    "knot": {
+      "distinctPlacements": 24,
+      "fitsByFreeCount": [
+        0,
+        0,
+        0,
+        24,
+        170,
+        504,
+        803,
+        774,
+        494,
+        220,
+        66,
+        12,
+        1
+      ]
+    },
+    "ink-shell": {
+      "distinctPlacements": 24,
+      "fitsByFreeCount": [
+        0,
+        0,
+        0,
+        24,
+        170,
+        504,
+        803,
+        774,
+        494,
+        220,
+        66,
+        12,
+        1
+      ]
+    },
+    "mirror": {
+      "distinctPlacements": 17,
+      "fitsByFreeCount": [
+        0,
+        0,
+        17,
+        136,
+        434,
+        774,
+        922,
+        792,
+        495,
+        220,
+        66,
+        12,
+        1
+      ]
+    },
+    "bell": {
+      "distinctPlacements": 12,
+      "fitsByFreeCount": [
+        0,
+        12,
+        66,
+        220,
+        495,
+        792,
+        924,
+        792,
+        495,
+        220,
+        66,
+        12,
+        1
+      ]
+    },
+    "fang": {
+      "distinctPlacements": 12,
+      "fitsByFreeCount": [
+        0,
+        12,
+        66,
+        220,
+        495,
+        792,
+        924,
+        792,
+        495,
+        220,
+        66,
+        12,
+        1
+      ]
+    },
+    "salve": {
+      "distinctPlacements": 12,
+      "fitsByFreeCount": [
+        0,
+        12,
+        66,
+        220,
+        495,
+        792,
+        924,
+        792,
+        495,
+        220,
+        66,
+        12,
+        1
+      ]
+    },
+    "seal": {
+      "distinctPlacements": 12,
+      "fitsByFreeCount": [
+        0,
+        12,
+        66,
+        220,
+        495,
+        792,
+        924,
+        792,
+        495,
+        220,
+        66,
+        12,
+        1
+      ]
+    },
+    "fox-clasp": {
+      "distinctPlacements": 12,
+      "fitsByFreeCount": [
+        0,
+        12,
+        66,
+        220,
+        495,
+        792,
+        924,
+        792,
+        495,
+        220,
+        66,
+        12,
+        1
+      ]
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "provider": "Codex built-in imagegen",
+  "created": "2026-11-22",
+  "style": "金色左上缘光，靛青阴影，东方志怪像素肖像",
+  "encoding": "Guide: 2:1 BOX, WebP Q91. Fox hand revision: original RGBA 1448 by 1086, alpha remap 12..240 to 0..255, LANCZOS downsample 1200 by 900, WebP Q93.",
+  "assets": [
+    {
+      "asset": "fox-offer.webp",
+      "source": "art-sources/01a20273-3ed2-79e3-a28e-ecbd06bf1746/exec-3f383935-b785-403f-98b2-d0b2cc228b2f.png",
+      "source_sha256": "a371489f879ebcf969a96fa187deb73ca0fa1074db6177d9360cb56f9bfe9588",
+      "file_sha256": "58b665a62ec90c3c0975c1174b1a20a776f0408a1dbec410a2857ada43c61af7",
+      "width": 1200,
+      "height": 900,
+      "bytes": 322742,
+      "transparent_fraction": 0.3221,
+      "opaque_fraction": 0.6545,
+      "reference": [
+        "fox-return source PNG"
+      ],
+      "eyelet_source_pixels": [
+        149,
+        618
+      ],
+      "source_extent": [
+        1448,
+        1086
+      ],
+      "prompt": "Single transparent game sprite. Keep the original 4:3 canvas and the SAME original adult fox merchant's pose registration, head size, ideal green eyes, face, clothes, gold hairpins and three tails. High-quality richly clustered native pixel-art in the original style. Absolutely transparent background. The scale is an unusually small handheld steelyard. Preserve the small horizontal wood handle with 2 engraved bronze caps and the small ring fixed under that handle. Her hand always physically grasps this grip naturally, palm out in slight profile, wrist aligned, three curled fingertips staggered with the thumb visibly counter-gripping at the side. Hands proportional to her head. No string, no wire, no scale beam, no scale pan; all below-eyelet equipment will be added later. Camera and body centered exactly like this source. No text, no frame, no backdrop. Draw the OFFER key pose: She reaches forward and toward SCREEN LEFT, elbow opening, hand and small handle clearly OUTSIDE her body silhouette. Move the entire grip roughly one and a half hand-widths LEFT and one hand-width UP compared to the source. Put the copper eyelet at about 20% of the picture width and 57% of picture height. You must replace this bent forearm gesture with an outstretched forward offer gesture. The shoulder stays attached behind the upper left sleeve, natural elbow below and slightly right of the extended leftward fist. Wide plum sleeve forms one elegant S-shaped fold around the elbow. Clearly show the visible metal ring protruding into empty transparent background below the partially closed hand so game artists can attach the suspension cord. Delicate but physically real merchant's grasp. Her other hand still rests against the collar, both eyes open. Preserve face and all details outside changed limb."
+    },
+    {
+      "asset": "fox-fold.webp",
+      "source": "art-sources/01a20273-3ed2-79e3-a28e-ecbd06bf1746/exec-01523c5c-13d7-4d31-86db-3c7af7fb9979.png",
+      "source_sha256": "6b3891eb44064e10279d3e3072979d0fa786fe35deff05d9760c705bf2d52b67",
+      "file_sha256": "b19c2b0f584d0ed138e62f3947845f31a1ab67209757a799866c4bf67d95b961",
+      "width": 1200,
+      "height": 900,
+      "bytes": 302222,
+      "transparent_fraction": 0.328,
+      "opaque_fraction": 0.6509,
+      "reference": [
+        "fox-offer source PNG",
+        "fox-return source PNG"
+      ],
+      "eyelet_source_pixels": [
+        274,
+        725
+      ],
+      "source_extent": [
+        1448,
+        1086
+      ],
+      "prompt": "Create ONE meticulously drawn hand-animation INBETWEEN CEL between these two EXACT registered game sprites. The first reference extends the scale handle far left. The second retracts it near her ribs. Draw the median real pose, neither endpoint. Keep head, face, torso register, right hand at collar, crown, tails, outfit, lighting and transparent alpha background from the reference sprites exactly. The horizontal copper-capped wood scale handle in her CLOSED left-side fist should place its small brass bottom eyelet at approximately 22% of image width and 64% of image height (the eyelet should be immediately LEFT of the flower embroidery on the upper arm, with the thumb-curl region lower than her chin and higher than her belt). Bend her elbow partway. Her shoulder stays naturally attached to her torso, her sleeve bunches at elbow, the wrist should be straight and the five digits curl around the grip with one thumb opposing from the far side. The grip should stay the same size as the two references, hand proportionate, fingers stagger naturally as in ref1. No scale pan, rope or string. Complete clean single still of the whole portrait. Crisp HD Chinese folkloric arcade-pixel art consistent with both references. Full original 4:3 canvas, no cropped strips or series of frames, no background."
+    },
+    {
+      "asset": "fox-return.webp",
+      "source": "art-sources/01a20273-3ed2-79e3-a28e-ecbd06bf1746/exec-58cff661-d96e-4f5e-bd92-bbf6140e82a2.png",
+      "source_sha256": "7169062602e6e53f761e7f35da67a8fa4f8bab477e9ad5471c51564e18e4eb51",
+      "file_sha256": "8ffdbb730063641ea245e460b64b223961045c5e6497c1f9a4c05fc229e2b79b",
+      "width": 1200,
+      "height": 900,
+      "bytes": 289452,
+      "transparent_fraction": 0.3271,
+      "opaque_fraction": 0.6492,
+      "reference": [
+        "original offer PNG exec-522e354c-586b-4d71-b2f5-f23e38f0f631.png"
+      ],
+      "eyelet_source_pixels": [
+        460,
+        774
+      ],
+      "source_extent": [
+        1448,
+        1086
+      ],
+      "prompt": "Redraw this reference illustration INTO A NEW ANATOMICALLY CORRECT GAME SPRITE. Same Feixiao, an adult female fox merchant, same emerald eyes, sly smile, black updo, exact gold peony hairpins & maroon brocade Han Chinese robes, three red white-tipped tails at right. Match original detailed pixel-art rendering, light and face scale, 4:3 crop and fully TRANSPARENT ALPHA background. Critical top priority: REPLACE the entire arm visible on the LEFT of the image from her shoulder to fingertips with a plausible, newly staged gesture. She presents a short bronze teapot-lid-shaped HANGING SCALE LIFTING GRIP, held in a relaxed half-fist between thumb and fingers, with a very small closed round copper eyelet visible immediately below her grip; the hanging scale and ropes themselves are OFFSCREEN / not depicted. Design her new palm near 23% from left and 62% down from top (closer to her silk collar than in reference). The wrist is straight, with forearm visibly continuing into the heel of her palm, elbow bent and sleeve drapes downward from the forearm. Her four fingers wrap softly around a small horizontal wooden grip with copper caps, thumb comes from opposite side and rests across index finger. Short tapered nails. Human plausible perfectly constructed grip and knuckles: hand a normal size, relaxed curved fingers with staggered knuckles, only two or three fingertips visible. Show small underside eyelet against transparent space clearly so a game engine can attach a rope from its bottom at runtime. Keep her forearm, wrist and elbow at natural scale with shoulder. Do not use pointed talons, outward-pointing finger, OK sign, loose thread, disconnected knuckles, or folded-over wrist. Original glamorous face, other hand in front of her collar. Tiny deliberately placed pixel clusters, era of premium hand-pixeled Japanese arcade RPG portraiture. Isolated portrait of merchant and grip only, completely transparent outside silhouette, no backdrop, no text, no stand or tabletop, face and right tails fully readable. Plain clear wide transparent zone below the metal eyelet."
+    },
+    {
+      "asset": "fox-settle.webp",
+      "source": "art-sources/01a20273-3ed2-79e3-a28e-ecbd06bf1746/exec-76433edd-ac6a-4814-aadc-05f7c7af8bc0.png",
+      "source_sha256": "c6f1fb218361de211370a6e6bc1c0c399a46c8431741b7115aa4c327468212f3",
+      "file_sha256": "c849c8f3e45f700c3d35b667a26984e093d28e7bf8d57d6d50282ebf07abcaaf",
+      "width": 1200,
+      "height": 900,
+      "bytes": 325968,
+      "transparent_fraction": 0.3444,
+      "opaque_fraction": 0.6329,
+      "reference": [
+        "fox-return source PNG"
+      ],
+      "eyelet_source_pixels": [
+        573,
+        808
+      ],
+      "source_extent": [
+        1448,
+        1086
+      ],
+      "prompt": "Single transparent game sprite. Keep the original 4:3 canvas and the SAME original adult fox merchant's pose registration, head size, ideal green eyes, face, clothes, gold hairpins and three tails. High-quality richly clustered native pixel-art in the original style. Absolutely transparent background. The scale is an unusually small handheld steelyard. Preserve the small horizontal wood handle with 2 engraved bronze caps and the small ring fixed under that handle. Her hand always physically grasps this grip naturally, palm out in slight profile, wrist aligned, three curled fingertips staggered with the thumb visibly counter-gripping at the side. Hands proportional to her head. No string, no wire, no scale beam, no scale pan; all below-eyelet equipment will be added later. Camera and body centered exactly like this source. No text, no frame, no backdrop. Draw her SALE COMPLETED key pose. She has pulled the scale handle back near her chest, her gripping forearm IS LOWER, closer to her ribs and less extended than when she leans in to offer it. Wrist aligned, cupped palm, anatomically normal softly closed short knuckles. Grip oriented so the carved copper ring is fully visible suspended below the handle. She raises a single small ancient Chinese cash coin with a square hole to her cheek with her OTHER hand, winks her far eye and smiles like an amused merchant. Her shoulder rolls back slightly and her tails lift a little. Her near emerald eye stays open and alert. Preserve flattering face and details. Use this natural gesture as the starting point, keep a clear line from her leftward hand through elbow to shoulder."
+    },
+    {
+      "asset": "guide-oracle.webp",
+      "source": "art-sources/01a20273-3ed2-79e3-a28e-ecbd06bf1746/exec-30fed124-3d0b-4522-ae98-1abbb124d3c6.png",
+      "source_sha256": "87c52e0c3043078d4d18c34c93880460c1974a9a80faaa0fe5ee8c813535a811",
+      "file_sha256": "242762fe7eded8369e27504ad7eecf8e6e5bc670ebea858e01d4711f6a3431a6",
+      "width": 724,
+      "height": 543,
+      "bytes": 105280,
+      "transparent_fraction": 0.4482,
+      "opaque_fraction": 0.5272,
+      "prompt": "Original game asset for a premium Chinese folklore pixel-art RPG. Authentic hand-placed arcade pixel art, crisp visible square pixel clusters, subtle pixel dithering, limited near-black deep petrol/pine, cinnabar, muted mulberry, aged gold and ivory palette. Golden upper-left rim light, cool teal cel shadows. Exquisitely drawn stylized arcade concept art with legible facial anatomy and controlled graphic silhouette. Single isolated character on pure transparent background, no scenery, no text no glyphs no frame no floor no second figure. Use all available image and keep the entire silhouette within margins. An older male wandering Chinese xianxia cultivator who knows spirit-market prices. Irregular ivory-white hair and eyebrows swept into a tall knotted topknot, small carved jade-and-wood hairpin, grizzled short pointed beard, weathered angular face, shrewd watchful eyes looking LEFT from three-quarter profile, a faint wry grin. He wears an iron-teal and moss green layered scholar's Daoist robe with old brass leaf clasps and a broad ochre scarf. His right hand extends toward screen LEFT at waist level holding a single wooden divination slip upright between two fingers so players can click it. Sleeve drops in heavy cloth folds, his far left arm carries a compact strapped bamboo scroll case. Head, torso and forearms to his sash; no legs, body fades into solid cropped robe at bottom. Weighted asymmetrical silhouette, quiet dignified pose. Landscape 4:3, all hair, hands and divination slip within margins."
+    },
+    {
+      "asset": "fox-counter.webp",
+      "source": "art-sources/01a20273-3ed2-79e3-a28e-ecbd06bf1746/exec-3cd6a370-4d85-4d62-b757-882cea932385.png",
+      "source_sha256": "d0482dcce6286d398a3bd47d578566c5affd2f3eefa789db3d41bdbf6d32bd18",
+      "file_sha256": "846db989715bf3cf121de4970b3d5cc5135ff622b1c404aea7ca5b6a1f11af2f",
+      "width": 1200,
+      "height": 900,
+      "bytes": 262634,
+      "transparent_fraction": 0.3898,
+      "opaque_fraction": 0.5851,
+      "source_extent": [
+        1448,
+        1086
+      ],
+      "reference": [
+        "fox-return source PNG"
+      ],
+      "registration": "Empty hands. Registered the two hanging gilded pins and tassels from fox-return over the matching bun in the generated counter portrait.",
+      "prompt": "Edit the provided transparent RPG sprite into an EMPTY-HANDED MERCHANT-AT-REST dialogue pose. Same exact character and camera registration, near-identical face, size, light and costume. Same adult Feixiao, half-lidded emerald eyes, engaging closed-mouth little smile, dark Chinese hairbun with old-gold flower pin, two dark fox ears, three large crimson ivory-tipped tails occupying the right. Preserve the 4:3 composition, all original proportions, elegant ink/pixel cluster rendering, golden upper-left light with cool cel shadows. The merchant has SET DOWN her weighing instrument completely and is attentively watching her customer. Both arms are withdrawn CLOSE TO HER TORSO. Her left forearm is folded over her waist behind her other sleeve, the fingers of her other hand rest LIGHTLY on her own upper chest or collar edge. Traditional relaxed Chinese folded-sleeve gesture with plausible elbows and shoulders, one hand fully tucked into the opposite sleeve, the other gently resting without gripping. Her entire left-of-picture lean and the bottom front lower-left silhouette must leave ample NEGATIVE SPACE for a shop counter and objects to be drawn behind/in front in the game. Do not add a counter. Important: BOTH hands are COMPLETELY EMPTY. Remove the wooden handgrip, all handles, hanging hoops, weights, scales and all handheld objects. No coins, paperwork, box, containers or tools in her hands. The only gold objects in this image are her ordinary hair ornaments, earrings and robe embroidery. Use genuinely clear TRANSPARENT ALPHA outside silhouette, no scenery or ground plane or text. Single high-end original pixel-art upper-body portrait, exactly one character in the same three-quarter-left camera angle. Her face should remain near x=640 y=300 on a 1448 by 1086 source-canvas equivalent just like the reference."
+    }
+  ],
+  "superseded_assets": [
+    {
+      "asset": "fox-offer.webp",
+      "source": "art-sources/01a20273-3ed2-79e3-a28e-ecbd06bf1746/exec-522e354c-586b-4d71-b2f5-f23e38f0f631.png",
+      "source_sha256": "d232a9530edf1d4e274d585ce196db4b0d0744d13095a8efd358b62534778e99",
+      "file_sha256": "7b0aa9cc52fd3ad9e537e732a051738ed5e839d5b8a519a0126c79dbdfebb924",
+      "width": 724,
+      "height": 543,
+      "bytes": 122360,
+      "transparent_fraction": 0.2997,
+      "opaque_fraction": 0.677,
+      "prompt": "Original game asset for a premium Chinese folklore pixel-art RPG. Authentic hand-placed arcade pixel art, crisp visible square pixel clusters, subtle pixel dithering, limited near-black deep petrol/pine, cinnabar, muted mulberry, aged gold and ivory palette. Golden upper-left rim light, cool teal cel shadows. Exquisitely drawn stylized arcade concept art with legible facial anatomy and controlled graphic silhouette. Single isolated character on pure transparent background, no scenery, no text no glyphs no frame no floor no second figure. Use all available image and keep the entire silhouette within margins. A gorgeous mature fox spirit merchant, Feixiao, in 3/4 upper-body portrait, leaning forward and turning her face LEFT. Her big head, narrow emerald eyes and the elegant weight of her eyelids are the focus, sly knowing grin; handsome expressive adult anime face. Elaborate high black hair with golden forehead jewel, gold hairpins, two black fox ears with carmine inside. Layered heavy ink-plum and cinnabar Chinese silk brocade with broad gold embroidered cuffs. Three very large plush fox tails, all ON THE RIGHT of her body, with separated lifts and warm white tips. Her right arm extends across her body toward the LEFT beyond the silhouette down to her waist level, thumb and index delicately pinching an imaginary string, pinching BOTH fingertips toward the left. No scales, no actual objects in the pinching hand. Her other hand lightly presses her own collar. Waist to head, two thirds body, three-quarter angled theatrical posture, strong face size, clear individual pixel ink work, RPG boss-dialogue portrait. Landscape ratio 4:3, hands, plumes and ears inside all edges."
+    },
+    {
+      "asset": "fox-settle.webp",
+      "source": "art-sources/01a20273-3ed2-79e3-a28e-ecbd06bf1746/exec-0cb01b8e-db19-4705-a583-4173c30b2b7d.png",
+      "source_sha256": "8af3cbce6e7a7ef366b67a7d18288fdd40406927a8949e8fdf082df0ea9d2083",
+      "file_sha256": "60a9cef817787b7e05780483adcc325aede377b45b7f9f770029ee4ad0ca7ce8",
+      "width": 724,
+      "height": 543,
+      "bytes": 122166,
+      "transparent_fraction": 0.2837,
+      "opaque_fraction": 0.6953,
+      "prompt": "Create the second animation keyframe of THIS EXACT pixel-art character, the fox merchant from the reference image. Critical: preserve EXACT original 4:3 canvas, full outline registration, identical costume design, brush/pixel treatment, camera angle and scale, ear tips and feet/crop, arm on the LEFT of the image must hold exactly the same pose with fingers pinching at the same position; she is holding an invisible hanging scale there, no tools or text. A single isolated portrait on genuinely transparent background. She has just taken a good deal: she winks her far eye, her nearer green eye catches the lantern reflection; her lips open into a small, knowing merchant's smile; her free hand by her chest now raises a single ancient round Chinese copper coin with a square hole up near the base of her chin; the three plush warm ivory-tipped red fox tails lift slightly on the RIGHT only. The coin stays proportional, size of a real bronze coin relative to her eyes, glint pixel. Original 90s offline arcade pixel art, clusters of visible hard pixels, upper-left golden rim/cool deep petrol shadows, ink outlines, character alone. Do not change character identity, proportions, head angle, body position, lighting, or arrange a sheet of sprites. One variant only. This is an animation frame with layered transparent negative space; no background, no ground plane.",
+      "reference": "fox-offer source PNG"
+    }
+  ]
+}

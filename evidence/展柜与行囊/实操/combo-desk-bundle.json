@@ -1,0 +1,197 @@
+{
+  "url": "http://127.0.0.1:5635/%E4%B8%80%E5%8D%B0%E4%B8%A4%E4%BB%B7.html",
+  "mode": "bundle",
+  "kind": "combo",
+  "device": "desk",
+  "bundleSHA256": "6a9370126f09e92659381a6a002b380abe1cf6837682b33fde7c3bc4934f0c4e",
+  "viewport": {
+    "width": 1366,
+    "height": 768
+  },
+  "browser": "151.0.7922.34",
+  "final": {
+    "phase": "idle",
+    "combatKind": "",
+    "hp": "24",
+    "foe": "9",
+    "floor": "1",
+    "gold": "3",
+    "seals": "0"
+  },
+  "events": [
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "primary",
+      "guide"
+    ],
+    [
+      "primary",
+      "rumor"
+    ],
+    [
+      "primary",
+      "stall"
+    ],
+    [
+      "primary",
+      "quote"
+    ],
+    [
+      "secondary",
+      "result"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "验货",
+      "knot"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "market-third",
+      "crossroads"
+    ],
+    [
+      "primary",
+      "wound"
+    ],
+    [
+      "primary",
+      "blood"
+    ],
+    [
+      "primary",
+      "bloodReceipt"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "验货",
+      "hook"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "profile-open",
+      "counter"
+    ],
+    [
+      "folio-close",
+      "counter"
+    ],
+    [
+      "market-fourth",
+      "idle"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "常规两击",
+      {
+        "phase": "idle",
+        "combatKind": "gate-fox",
+        "hp": "16",
+        "foe": "19",
+        "floor": "2",
+        "gold": "0",
+        "seals": "1"
+      },
+      {
+        "phase": "idle",
+        "combatKind": "gate-fox",
+        "hp": "18",
+        "foe": "8",
+        "floor": "2",
+        "gold": "0",
+        "seals": "1"
+      },
+      {
+        "phase": "finalStall",
+        "combatKind": "gate-fox",
+        "hp": "20",
+        "foe": "0",
+        "floor": "2",
+        "gold": "0",
+        "seals": "1",
+        "decision": "keep"
+      }
+    ],
+    [
+      "primary",
+      "finalQuote"
+    ],
+    [
+      "primary",
+      "finalSale"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "验货",
+      "order-hook"
+    ],
+    [
+      "未付款的寄单",
+      "寄锋契",
+      7,
+      "7",
+      "寄单付 7 石"
+    ],
+    [
+      "验货",
+      "order-purse"
+    ],
+    [
+      "未付款的寄单",
+      "开市本钱",
+      4,
+      "7",
+      "寄单付 4 石"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "market-third",
+      "receipt"
+    ],
+    [
+      "同一浏览器中离线文件未领取 HTTP 寄单",
+      "3"
+    ],
+    [
+      "重新打开灵石",
+      "6"
+    ],
+    [
+      "重新打开灵石",
+      "3"
+    ]
+  ],
+  "errors": []
+}

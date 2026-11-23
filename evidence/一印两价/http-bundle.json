@@ -1,0 +1,182 @@
+{
+  "mode": "http-bundle",
+  "manifest": {
+    "game.js": "874f07e1fa4dc9b0ae2d88308d80d75bcab98829b78271e53ba399d0bf662cf4",
+    "first-cut/actors.js": "fc05667c2c58034f10a7570cb67606f7373bdddd0178a050372261c8c3ab06c9",
+    "first-cut/cut.css": "85e6a2dc81a45f9746e599366017f205f16e0dbfeb324a99101c8da8a2e590c9",
+    "first-cut/cut.js": "f0c13c43782b32689a38e0286a37b4e0fd8c81f4889c94d627f1e38ebe9685ac",
+    "first-cut/feixiao.js": "3f32b5b86617465602f62eac560514950406babc955bfab96c3169b9b556912a",
+    "first-cut/hall.js": "0a348442254bc50d7e385b984f1e520eee97ad921505870da63d6b7e9cec2cc9",
+    "first-cut/hud.js": "7caa6f1f0b37492a3b8f87c75132f4a0799674c3b274a244e4609c506546ace1",
+    "first-cut/index.html": "eb8439006a3638254903e5744860eba9d80889fe73463634db57c53faa6923dd",
+    "first-cut/ink.js": "6d965e8086386e9730a07f17ef5969855ca1ed9e249d141f7d2470d364c82c1b",
+    "first-cut/market-play.js": "18c7a22053473492116e51a23388bafb72ab5c51b431dc7dcedfbb5866ea771a",
+    "first-cut/night-market.js": "af664b5bce26578cb1f5809a57833fa78eef614411534785f8150bf3699a62ba",
+    "first-cut/scene.js": "7187c0e2a2b3079a809a5fb82a2cf03d771964c17fcb8649b666f0cfde7a3a81",
+    "first-cut/voice.js": "0898106ce691ae80688892bbc8efe4ff8b8482d6821e8b8c27979c14008dd142"
+  },
+  "payoutFrames": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "faceSounds": [
+    {
+      "from": 0,
+      "to": 1
+    },
+    {
+      "from": 1,
+      "to": 2
+    },
+    {
+      "from": 2,
+      "to": 3
+    },
+    {
+      "from": 3,
+      "to": 4
+    }
+  ],
+  "browser": "157.0.8103.79",
+  "source": "http://127.0.0.1:8774/evidence/%E4%B8%80%E5%8D%B0%E4%B8%A4%E4%BB%B7/%E4%B8%80%E5%8D%B0%E4%B8%A4%E4%BB%B7.html",
+  "steps": [
+    {
+      "id": "target",
+      "time": 69,
+      "state": {
+        "phase": "swing",
+        "hp": "24",
+        "foe": "9"
+      }
+    },
+    {
+      "id": "target",
+      "time": 1609,
+      "state": {
+        "phase": "drop",
+        "hp": "22",
+        "foe": "0",
+        "gold": "3",
+        "seals": "0",
+        "decision": ""
+      }
+    },
+    {
+      "id": "object",
+      "time": 2441,
+      "state": {
+        "phase": "guide",
+        "hp": "22",
+        "foe": "0",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      }
+    },
+    {
+      "id": "primary",
+      "time": 3274,
+      "state": {
+        "phase": "rumor",
+        "hp": "22",
+        "foe": "0",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      }
+    },
+    {
+      "id": "primary",
+      "time": 4107,
+      "state": {
+        "phase": "stall",
+        "hp": "22",
+        "foe": "0",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      }
+    },
+    {
+      "id": "object",
+      "time": 4446,
+      "state": {
+        "phase": "quote",
+        "hp": "22",
+        "foe": "0",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      }
+    },
+    {
+      "id": "primary",
+      "time": 5482,
+      "state": {
+        "phase": "result",
+        "hp": "22",
+        "foe": "0",
+        "gold": "7",
+        "seals": "0",
+        "decision": "sell"
+      }
+    },
+    {
+      "id": "primary",
+      "time": 6731,
+      "state": {
+        "phase": "quote",
+        "hp": "22",
+        "foe": "0",
+        "gold": "3",
+        "seals": "1",
+        "decision": ""
+      }
+    },
+    {
+      "id": "secondary",
+      "time": 8080,
+      "state": {
+        "phase": "result",
+        "hp": "22",
+        "foe": "0",
+        "gold": "3",
+        "seals": "1",
+        "decision": "keep"
+      }
+    },
+    {
+      "id": "secondary",
+      "time": 9364,
+      "state": {
+        "phase": "idle",
+        "hp": "24",
+        "foe": "9"
+      }
+    }
+  ],
+  "sold": {
+    "phase": "result",
+    "hp": "22",
+    "foe": "0",
+    "gold": "7",
+    "seals": "0",
+    "decision": "sell"
+  },
+  "kept": {
+    "phase": "result",
+    "hp": "22",
+    "foe": "0",
+    "gold": "3",
+    "seals": "1",
+    "decision": "keep"
+  },
+  "errors": [],
+  "mediaRequests": [],
+  "requests": [
+    "http://127.0.0.1:8774/evidence/%E4%B8%80%E5%8D%B0%E4%B8%A4%E4%BB%B7/%E4%B8%80%E5%8D%B0%E4%B8%A4%E4%BB%B7.html"
+  ]
+}

@@ -1,0 +1,647 @@
+{
+  "url": "[本机路径略]",
+  "bundle": "e557b4fe6dd9ded03d72335e6a1abf43d05a77b10a9ef3eecd2233bf964a072c",
+  "width": 390,
+  "profile": "touch",
+  "events": [
+    {
+      "op": "order-ash",
+      "before": {
+        "phase": "contract",
+        "leg": "1",
+        "title": "今天替谁进塔？",
+        "text": "父亲伤了腿，今天轮到你进塔给街灯找材料。选一位买主，货不齐也能按散价卖。驿柜备有 1 份灰，每份 2 石。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n尚未接单",
+        "readout": "",
+        "options": [
+          {
+            "id": "order-ash",
+            "label": "给灯匠送灰\n两份灰共 7 石。散卖每份 1 石。",
+            "disabled": false
+          },
+          {
+            "id": "order-clasp",
+            "label": "替绯绡取扣\n一枚完整狐扣 9 石。散卖每枚 4 石。",
+            "disabled": false
+          },
+          {
+            "id": "order-free",
+            "label": "只做现货\n货归自己，不必保留指定货品。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "gear",
+        "leg": "1",
+        "title": "拿一件趁手的",
+        "text": "手上只有一个武器位。路上捡到其他工具，可以当场换用。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gear-knife",
+            "label": "带短铁刀\n免费。出刀快，每刀 5 伤，能挡 2 伤。",
+            "disabled": false
+          },
+          {
+            "id": "gear-hook",
+            "label": "买竹柄钩 · 2 石\n每击 4 伤，挡 3 伤。守住蛾翅，下一击能挑下一份灯灰。",
+            "disabled": false
+          },
+          {
+            "id": "gear-buckler",
+            "label": "买木挡板 · 1 石\n每击 3 伤，挡 5 伤。接下一招后，下次反击多打 3 伤。",
+            "disabled": false
+          },
+          {
+            "id": "gear-plate",
+            "label": "带刀配盘 · 3 石\n留下短铁刀。花光 3 石换引灯盘，扬灰时就能截招。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "gear-knife",
+      "before": {
+        "phase": "gear",
+        "leg": "1",
+        "title": "拿一件趁手的",
+        "text": "手上只有一个武器位。路上捡到其他工具，可以当场换用。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gear-knife",
+            "label": "带短铁刀\n免费。出刀快，每刀 5 伤，能挡 2 伤。",
+            "disabled": false
+          },
+          {
+            "id": "gear-hook",
+            "label": "买竹柄钩 · 2 石\n每击 4 伤，挡 3 伤。守住蛾翅，下一击能挑下一份灯灰。",
+            "disabled": false
+          },
+          {
+            "id": "gear-buckler",
+            "label": "买木挡板 · 1 石\n每击 3 伤，挡 5 伤。接下一招后，下次反击多打 3 伤。",
+            "disabled": false
+          },
+          {
+            "id": "gear-plate",
+            "label": "带刀配盘 · 3 石\n留下短铁刀。花光 3 石换引灯盘，扬灰时就能截招。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "gather",
+        "leg": "1",
+        "title": "清理廊口旧灯",
+        "text": "铺里常年替这里换灯。每次经过，可以收一份灯灰，也可以坐下包扎伤口。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gather-ash",
+            "label": "收灯灰 1 份\n收进货袋。",
+            "disabled": false
+          },
+          {
+            "id": "rest",
+            "label": "歇脚包扎\n恢复最多 3 点气血，留下灯灰。",
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "gather-ash",
+      "before": {
+        "phase": "gather",
+        "leg": "1",
+        "title": "清理廊口旧灯",
+        "text": "铺里常年替这里换灯。每次经过，可以收一份灯灰，也可以坐下包扎伤口。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gather-ash",
+            "label": "收灯灰 1 份\n收进货袋。",
+            "disabled": false
+          },
+          {
+            "id": "rest",
+            "label": "歇脚包扎\n恢复最多 3 点气血，留下灯灰。",
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "route",
+        "leg": "1",
+        "title": "挑一条猎路",
+        "text": "过道尽头有镜狐挡路。驿柜备有 1 份灰，每份 2 石。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "灯灰已收好。",
+        "options": [
+          {
+            "id": "hunt-moth",
+            "label": "走灯架，猎纸灯蛾\n蛾掉灰，钩可多取一份。前方镜狐的扣缺角。可拾竹柄钩。",
+            "disabled": false
+          },
+          {
+            "id": "hunt-rat",
+            "label": "下桥洞，追窃芯鼠\n鼠掉碎壳，会偷灰。前方镜狐的扣完整。可拾木挡板。",
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "hunt-moth",
+      "before": {
+        "phase": "route",
+        "leg": "1",
+        "title": "挑一条猎路",
+        "text": "过道尽头有镜狐挡路。驿柜备有 1 份灰，每份 2 石。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "灯灰已收好。",
+        "options": [
+          {
+            "id": "hunt-moth",
+            "label": "走灯架，猎纸灯蛾\n蛾掉灰，钩可多取一份。前方镜狐的扣缺角。可拾竹柄钩。",
+            "disabled": false
+          },
+          {
+            "id": "hunt-rat",
+            "label": "下桥洞，追窃芯鼠\n鼠掉碎壳，会偷灰。前方镜狐的扣完整。可拾木挡板。",
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "fight",
+        "leg": "1",
+        "title": "纸灯蛾",
+        "text": "扑向灯芯将造成 3 伤。胸前还有灯芯。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "纸灯蛾 7/7\n将出 扑向灯芯 · 3 伤",
+        "stock": "手持 短铁刀\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "strike",
+            "label": "出刀\n打 5 伤。",
+            "disabled": false
+          },
+          {
+            "id": "guard",
+            "label": "守势\n挡 2 伤。",
+            "disabled": false
+          },
+          {
+            "id": "flare",
+            "label": "扬灰照影\n耗 1 灰，下次攻击多打 4 伤。当前敌招仍会落下。",
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "strike",
+      "before": {
+        "phase": "fight",
+        "leg": "1",
+        "title": "纸灯蛾",
+        "text": "扑向灯芯将造成 3 伤。胸前还有灯芯。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "纸灯蛾 7/7\n将出 扑向灯芯 · 3 伤",
+        "stock": "手持 短铁刀\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "strike",
+            "label": "出刀\n打 5 伤。",
+            "disabled": false
+          },
+          {
+            "id": "guard",
+            "label": "守势\n挡 2 伤。",
+            "disabled": false
+          },
+          {
+            "id": "flare",
+            "label": "扬灰照影\n耗 1 灰，下次攻击多打 4 伤。当前敌招仍会落下。",
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "fight",
+        "leg": "1",
+        "title": "纸灯蛾",
+        "text": "扫翅将造成 4 伤。胸前还有灯芯。",
+        "status": "气血 19/22\n灵石 3",
+        "foe": "纸灯蛾 2/7\n将出 扫翅 · 4 伤",
+        "stock": "手持 短铁刀\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "击中 5 伤，受 3 伤。",
+        "options": [
+          {
+            "id": "strike",
+            "label": "出刀\n打 5 伤。",
+            "disabled": false
+          },
+          {
+            "id": "guard",
+            "label": "守势\n挡 2 伤。",
+            "disabled": false
+          },
+          {
+            "id": "flare",
+            "label": "扬灰照影\n耗 1 灰，下次攻击多打 4 伤。当前敌招仍会落下。",
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "strike",
+      "before": {
+        "phase": "fight",
+        "leg": "1",
+        "title": "纸灯蛾",
+        "text": "扫翅将造成 4 伤。胸前还有灯芯。",
+        "status": "气血 19/22\n灵石 3",
+        "foe": "纸灯蛾 2/7\n将出 扫翅 · 4 伤",
+        "stock": "手持 短铁刀\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "击中 5 伤，受 3 伤。",
+        "options": [
+          {
+            "id": "strike",
+            "label": "出刀\n打 5 伤。",
+            "disabled": false
+          },
+          {
+            "id": "guard",
+            "label": "守势\n挡 2 伤。",
+            "disabled": false
+          },
+          {
+            "id": "flare",
+            "label": "扬灰照影\n耗 1 灰，下次攻击多打 4 伤。当前敌招仍会落下。",
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "loot",
+        "leg": "1",
+        "title": "检查掉落",
+        "text": "这一战留下灯灰。路边还有一件竹柄钩。",
+        "status": "气血 19/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "击中 5 伤，敌人倒下。",
+        "options": [
+          {
+            "id": "take-loot",
+            "label": "收灯灰\n占 1 份货位。",
+            "disabled": false
+          },
+          {
+            "id": "take-gear",
+            "label": "换上竹柄钩\n每击 4 伤，挡 3 伤。守住蛾翅，下一击能挑下一份灯灰。 换下的工具留在原地。",
+            "disabled": false
+          },
+          {
+            "id": "onward",
+            "label": "继续赶路\n留在原地的东西不会随行。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "take-loot",
+      "before": {
+        "phase": "loot",
+        "leg": "1",
+        "title": "检查掉落",
+        "text": "这一战留下灯灰。路边还有一件竹柄钩。",
+        "status": "气血 19/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "击中 5 伤，敌人倒下。",
+        "options": [
+          {
+            "id": "take-loot",
+            "label": "收灯灰\n占 1 份货位。",
+            "disabled": false
+          },
+          {
+            "id": "take-gear",
+            "label": "换上竹柄钩\n每击 4 伤，挡 3 伤。守住蛾翅，下一击能挑下一份灯灰。 换下的工具留在原地。",
+            "disabled": false
+          },
+          {
+            "id": "onward",
+            "label": "继续赶路\n留在原地的东西不会随行。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "loot",
+        "leg": "1",
+        "title": "检查掉落",
+        "text": "这一战留下灯灰。路边还有一件竹柄钩。",
+        "status": "气血 19/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 2/5\n灯灰 2\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "已经装好灯灰。",
+        "options": [
+          {
+            "id": "take-gear",
+            "label": "换上竹柄钩\n每击 4 伤，挡 3 伤。守住蛾翅，下一击能挑下一份灯灰。 换下的工具留在原地。",
+            "disabled": false
+          },
+          {
+            "id": "onward",
+            "label": "继续赶路\n留在原地的东西不会随行。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "onward",
+      "before": {
+        "phase": "loot",
+        "leg": "1",
+        "title": "检查掉落",
+        "text": "这一战留下灯灰。路边还有一件竹柄钩。",
+        "status": "气血 19/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 2/5\n灯灰 2\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "已经装好灯灰。",
+        "options": [
+          {
+            "id": "take-gear",
+            "label": "换上竹柄钩\n每击 4 伤，挡 3 伤。守住蛾翅，下一击能挑下一份灯灰。 换下的工具留在原地。",
+            "disabled": false
+          },
+          {
+            "id": "onward",
+            "label": "继续赶路\n留在原地的东西不会随行。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "fight",
+        "leg": "1",
+        "title": "镜狐",
+        "text": "探爪将造成 2 伤。这枚扣缺了角，只能卖碎壳。",
+        "status": "气血 19/22\n灵石 3",
+        "foe": "镜狐 10/10\n将出 探爪 · 2 伤",
+        "stock": "手持 短铁刀\n货袋 2/5\n灯灰 2\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "strike",
+            "label": "出刀\n打 5 伤。",
+            "disabled": false
+          },
+          {
+            "id": "guard",
+            "label": "守势\n挡 2 伤。",
+            "disabled": false
+          },
+          {
+            "id": "flare",
+            "label": "扬灰照影\n耗 1 灰，下次攻击多打 4 伤。当前敌招仍会落下。",
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "retreat",
+      "before": {
+        "phase": "fight",
+        "leg": "1",
+        "title": "镜狐",
+        "text": "探爪将造成 2 伤。这枚扣缺了角，只能卖碎壳。",
+        "status": "气血 19/22\n灵石 3",
+        "foe": "镜狐 10/10\n将出 探爪 · 2 伤",
+        "stock": "手持 短铁刀\n货袋 2/5\n灯灰 2\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "strike",
+            "label": "出刀\n打 5 伤。",
+            "disabled": false
+          },
+          {
+            "id": "guard",
+            "label": "守势\n挡 2 伤。",
+            "disabled": false
+          },
+          {
+            "id": "flare",
+            "label": "扬灰照影\n耗 1 灰，下次攻击多打 4 伤。当前敌招仍会落下。",
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "fight",
+        "leg": "1",
+        "title": "镜狐",
+        "text": "探爪将造成 2 伤。这枚扣缺了角，只能卖碎壳。",
+        "status": "气血 19/22\n灵石 3",
+        "foe": "镜狐 10/10\n将出 探爪 · 2 伤",
+        "stock": "手持 短铁刀\n货袋 2/5\n灯灰 2\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "strike",
+            "label": "出刀\n打 5 伤。",
+            "disabled": false
+          },
+          {
+            "id": "guard",
+            "label": "守势\n挡 2 伤。",
+            "disabled": false
+          },
+          {
+            "id": "flare",
+            "label": "扬灰照影\n耗 1 灰，下次攻击多打 4 伤。当前敌招仍会落下。",
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "disabled": false
+          }
+        ],
+        "dialog": "这就回铺？\n\n带已收好的货回镇灯铺，放弃后面的猎路。回铺后可以查看交货价格，再亲手结账。\n\n继续这一趟\n带货回铺"
+      }
+    },
+    {
+      "op": "commit",
+      "before": {
+        "phase": "settle",
+        "leg": "1",
+        "title": "提前回铺",
+        "text": "货齐了，交账时按约付钱。 灯灰 1 石，碎壳 2 石，完整狐扣 4 石。",
+        "status": "气血 19/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 2/5\n灯灰 2\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "commit",
+            "label": "按约交货并结账\n结账后开始下一趟。",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "done",
+        "leg": "1",
+        "title": "本趟账本",
+        "text": "委托交清。本趟花 0 石，散卖收 0 石，委托收 7 石。",
+        "status": "气血 19/22\n灵石 10",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n已向镇灯匠交货",
+        "readout": "提前回铺 · 入塔 3 石，回铺 10 石，余 19 血",
+        "options": [
+          {
+            "id": "repeat",
+            "label": "再走这张签\n沿用相同货源与路况",
+            "disabled": false
+          },
+          {
+            "id": "next",
+            "label": "换签出发\n新一趟从镇灯铺起行",
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    }
+  ],
+  "screens": [
+    "开场.jpg",
+    "第一关岔路.jpg",
+    "一战回账.jpg"
+  ],
+  "end": {
+    "phase": "done",
+    "leg": "1",
+    "title": "本趟账本",
+    "text": "委托交清。本趟花 0 石，散卖收 0 石，委托收 7 石。",
+    "status": "气血 19/22\n灵石 10",
+    "foe": "",
+    "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n已向镇灯匠交货",
+    "readout": "提前回铺 · 入塔 3 石，回铺 10 石，余 19 血",
+    "options": [
+      {
+        "id": "repeat",
+        "label": "再走这张签\n沿用相同货源与路况",
+        "disabled": false
+      },
+      {
+        "id": "next",
+        "label": "换签出发\n新一趟从镇灯铺起行",
+        "disabled": false
+      }
+    ],
+    "dialog": ""
+  },
+  "errors": []
+}

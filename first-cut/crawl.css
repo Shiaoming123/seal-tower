@@ -1,0 +1,364 @@
+/* Brass-bound spell slips rest on the lip of the first-person viewport. */
+.crawling{--edge:#a38854;--jade:#73b7aa}
+.crawling .hunt-head{background:linear-gradient(90deg,#172a27,#263730 65%,#182421);border-bottom:3px double #987b50}
+.crawl-map{position:absolute;top:12px;right:14px;display:grid;justify-items:center;gap:2px;padding:6px 8px 3px;background:#14201ded;border:1px solid #a88c5b;box-shadow:0 2px 8px #0a0f11b3;font:13px "Tower Script",serif;color:#e5d4a3;cursor:zoom-in;pointer-events:auto}
+.crawl-atlas{position:static;width:min(100%,320px);height:auto;margin:14px auto;border:3px double #947449;background:#14201d;image-rendering:pixelated}
+.crawl-map canvas{position:static;inset:auto;width:72px;height:64px}
+.crawling[data-phase="fight"] .hunt-ledger{position:relative;background:radial-gradient(ellipse at 55% 0%,#38463b,#1d302b 65%,#182520);color:#f1e1bf;border-block:3px double #9a8154;grid-template-columns:minmax(155px,1fr) minmax(460px,3.2fr);gap:18px;padding:12px clamp(16px,3vw,46px) 15px;align-items:center}
+.crawling[data-phase="fight"] .hunt-text h1{color:#f2d49c;font-size:clamp(24px,3vw,39px)}
+.crawling[data-phase="fight"] .hunt-text p{color:#edddbf;font-size:16px}
+.crawling[data-phase="fight"] .hunt-text small{color:#dbc28f}
+.crawling[data-phase="fight"] .hunt-readout{color:#ffdd90}
+.crawling[data-phase="fight"] .hunt-commands{display:flex;gap:6px;align-items:stretch;justify-content:center;flex-wrap:wrap}
+.crawling .crawl-card{--face:#713b31;--glow:#c47d52;position:relative;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;isolation:isolate;width:clamp(84px,9.1vw,138px);min-height:136px;padding:6px 7px!important;gap:4px;border:2px solid #b8985f;border-radius:8px 8px 3px 3px;box-shadow:inset 0 0 0 2px #241f1a,0 3px 0 #0f1817,0 4px 9px #101513aa;background:linear-gradient(155deg,var(--glow) -35%,var(--face) 53%,#302d29 54%,#303b35);transition:transform 130ms ease,border-color 130ms ease}
+.crawling .crawl-card[data-fx="guard"]{--face:#2f524d;--glow:#79a690}
+.crawling .crawl-card[data-fx="flare"]{--face:#875d2f;--glow:#e2b46a}
+.crawling .crawl-card:hover:not(:disabled),.crawling .crawl-card:focus-visible{background:linear-gradient(155deg,var(--glow) -15%,var(--face) 53%,#35372c 54%,#394a3e);transform:translateY(-5px);border-color:#ffdaa2;z-index:1}
+.crawling .crawl-card:disabled{filter:saturate(.32);opacity:.74}
+.crawling .crawl-card canvas{position:static;transform:none;order:1;width:51px;height:51px;margin:1px auto}
+.crawling .crawl-card strong{order:0;align-self:stretch;padding-left:12px;text-align:center;font-size:17px;color:#fff1cb}
+.crawling .crawl-card small{order:2;font-size:12px;text-align:center;line-height:1.32;color:#f5e4c1}
+.crawl-cost{position:absolute;left:-3px;top:-5px;min-width:22px;height:22px;display:grid;place-content:center;background:#253f49;border:2px solid #d7b883;border-radius:50%;font:700 14px/1 "Tower Ledger",sans-serif;color:#ffedc8}
+.crawling[data-phase="fight"] .hunt-commands .hunt-act:not(.crawl-card){align-self:center;width:78px;text-align:center;padding:7px;min-height:53px;background:#283a30}
+.crawling[data-phase="fight"] .hunt-commands .hunt-act:not(.crawl-card) small{font-size:11px}
+.crawling[data-phase="fight"] .hunt-act[data-id="end-turn"]{background:#685036!important}
+.crawling[data-phase="walk"] .hunt-commands{grid-template-columns:repeat(3,minmax(0,1fr))}
+.crawling[data-phase="walk"] .hunt-act[data-id="retreat"]{grid-column:1/-1;min-height:34px;display:flex;justify-content:center;align-items:center;gap:10px;background:#3f463b}
+@media(max-width:849px){
+  .crawling[data-phase="fight"] .hunt-ledger{display:block;padding:9px 12px 14px}
+  .crawling[data-phase="fight"] .hunt-text h1{display:inline;margin-right:8px}
+  .crawling[data-phase="fight"] .hunt-text p{display:inline;font-size:15px}
+  .crawling[data-phase="fight"] .hunt-text small{display:block}
+  .crawling[data-phase="fight"] .hunt-commands{margin-top:12px;gap:5px}
+}
+@media(max-width:680px){
+  .crawling .hunt-stock{gap:4px 10px}
+  .crawling[data-phase="fight"] .hunt-stage{height:clamp(220px,37svh,336px)}
+  .crawling .crawl-map{top:6px;right:7px;padding:4px;font-size:12px}
+  .crawling .crawl-map canvas{width:58px;height:51px}
+  .crawling .crawl-card{width:calc(25% - 4px);min-height:121px;padding:5px 4px!important}
+  .crawling .crawl-card canvas{width:42px;height:42px}.crawling .crawl-card strong{font-size:16px}.crawling .crawl-card small{font-size:12px}
+  .crawling[data-phase="fight"] .hunt-commands .hunt-act:not(.crawl-card){min-height:40px;width:calc(50% - 4px);display:grid;place-content:center}
+  .crawling[data-phase="walk"] .hunt-text p{min-height:46px}
+}
+@media(prefers-reduced-motion:reduce){.crawling .crawl-card{transition:none}.crawling .crawl-card:hover:not(:disabled){transform:none}}
+
+.crawling[data-phase="fight"] .hunt-commands{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:12px;align-items:center}
+.crawl-hand{display:flex;justify-content:center;align-items:stretch;gap:7px;min-height:155px}
+.crawling .crawl-hand .crawl-card{width:min(24%,140px);min-height:155px;justify-content:space-between}
+.crawling .crawl-card canvas{width:62px;height:62px}
+.crawl-controls{display:grid;gap:7px}.crawling[data-phase="fight"] .crawl-controls .hunt-act:not(.crawl-card){width:100%;min-height:45px}
+.crawling .crawl-controls [data-id="retreat"] small{display:none}
+@media(max-width:849px){.crawl-hand{min-height:137px}.crawling .crawl-hand .crawl-card{min-height:137px}.crawling .crawl-card canvas{width:47px;height:47px}}
+@media(max-width:680px){.crawling[data-phase="fight"] .hunt-commands{display:flex;flex-direction:column;gap:8px;align-items:stretch}.crawl-hand{min-height:140px;gap:5px}.crawling .crawl-hand .crawl-card{width:calc(25% - 4px);min-height:140px}.crawl-controls{display:grid;grid-template-columns:1fr 1fr}.crawling[data-phase="fight"] .crawl-controls .hunt-act:not(.crawl-card){width:100%;min-height:38px}}
+
+.crawl-preview{position:fixed;z-index:5;pointer-events:none;width:172px;padding:8px 12px 12px;display:grid;justify-items:center;gap:2px;border:3px double #e2c38a;border-radius:7px;background:linear-gradient(150deg,#684b32,#38473a 62%,#253b35);color:#ffedc5;box-shadow:0 8px 18px #101512bb;text-align:center}
+.crawl-preview small{color:#e0cba3;font:12px "Tower Ledger",sans-serif}
+.crawl-preview strong{font:21px "Tower Script",serif}
+.crawl-preview canvas{position:static;width:72px;height:72px}
+.crawl-preview span{font:14px/1.4 "Tower Script",serif}
+.crawl-card{user-select:none;-webkit-touch-callout:none}
+/* The bridge counter and the field tray share the same goods and tags. */
+.crawling[data-leg="2"]:is([data-phase="market"],[data-phase="loot"]) .hunt-ledger {
+  grid-template-columns:minmax(210px,.82fr) minmax(0,1.88fr);
+  align-items:start;
+  gap:clamp(16px,2.5vw,38px);
+  padding:16px clamp(14px,3vw,46px) 20px;
+  border-top:1px solid #8c7049;
+  border-bottom:4px double #6f5535;
+  background:repeating-linear-gradient(0deg,#ffffff03 0 1px,transparent 1px 4px),
+    radial-gradient(ellipse at 22% 0%,#30362a,#182521 49%,#131e1c 85%);
+  color:#f5e8cd;
+}
+.crawling[data-leg="2"]:is([data-phase="market"],[data-phase="loot"]) .hunt-text small {
+  color:#d4b787;
+}
+.crawling[data-leg="2"]:is([data-phase="market"],[data-phase="loot"]) .hunt-text h1 {
+  color:#f7dcaa;
+  font-size:clamp(28px,3.15vw,48px);
+  margin:4px 0 8px;
+}
+.crawling[data-leg="2"]:is([data-phase="market"],[data-phase="loot"]) .hunt-text p {
+  font:15px/1.55 "Tower Ledger",system-ui,sans-serif;
+  color:#eee3ca;
+}
+.crawling[data-leg="2"]:is([data-phase="market"],[data-phase="loot"]) .hunt-readout {
+  color:#efc888;
+  border-color:#b17f45;
+}
+.crawl-quote,.crawl-quote-detail {
+  display:block;
+}
+.crawl-quote {
+  border-left:2px solid #b58c54;
+  padding:7px 10px;
+  background:linear-gradient(90deg,#75573552,transparent);
+  color:#ffdfa1;
+}
+.crawl-quote-detail {
+  margin-top:7px;
+  color:#ded1b5;
+}
+.crawling[data-leg="2"]:is([data-phase="market"],[data-phase="loot"]) .hunt-commands {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  align-items:stretch;
+}
+.crawl-counter {
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:7px;
+  padding:9px;
+  border:1px solid #a6804f;
+  border-radius:4px;
+  background:
+    radial-gradient(ellipse at 55% -35%,#c28e5460,transparent 66%),
+    repeating-linear-gradient(3deg,#8b624d20 0 1px,transparent 1px 5px),
+    repeating-linear-gradient(0deg,#4e392e 0 12px,#392a23 13px,#674735 15px,#473329 17px);
+  box-shadow:inset 0 0 0 3px #2d251e,inset 0 0 18px #261e16,0 3px 0 #201814,0 4px 12px #0b110daa;
+}
+.crawl-counter[data-count="1"]{grid-template-columns:minmax(0,1fr)}
+.crawl-counter[data-count="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.crawl-counter[data-count="3"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (min-width:1024px){
+  .crawl-counter[data-count="5"]{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .crawl-counter[data-count="6"]{grid-template-columns:repeat(6,minmax(0,1fr))}
+}
+.crawl-counter::after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:3px;
+  pointer-events:none;
+  border-radius:2px;
+  background:
+    radial-gradient(circle at 3px 3px,#e2bb77 0 1px,#7c5737 2px,transparent 3px),
+    radial-gradient(circle at calc(100% - 3px) 3px,#e2bb77 0 1px,#7c5737 2px,transparent 3px),
+    radial-gradient(circle at 3px calc(100% - 3px),#e2bb77 0 1px,#7c5737 2px,transparent 3px),
+    radial-gradient(circle at calc(100% - 3px) calc(100% - 3px),#e2bb77 0 1px,#7c5737 2px,transparent 3px);
+}
+.crawling .crawl-counter-action {
+  display:grid;
+  grid-template-rows:66px auto 1fr;
+  align-items:start;
+  text-align:center;
+  min-width:0;
+  padding:0;
+  gap:0;
+  border:1px solid #876a48;
+  border-radius:2px;
+  background:#26332a;
+  box-shadow:inset 0 0 0 2px #0c1d1a,0 2px 1px #20150e;
+}
+.crawling .crawl-counter-action:disabled {
+  background:#302d25;
+  border-color:#625342;
+}
+.crawling .crawl-counter-action:hover:not(:disabled) {
+  border-color:#ead1a1;
+  background:#425244;
+}
+.crawling .crawl-counter-action:active:not(:disabled) {
+  box-shadow:inset 0 1px 7px #101510;
+}
+.crawling .crawl-counter-action > strong {
+  display:block;
+  padding:4px 5px 0;
+  font:17px/1.2 "Tower Script",serif;
+  color:#ffebbb;
+}
+.crawling .crawl-counter-action > small {
+  display:block;
+  padding:3px 6px 7px;
+  font:12px/1.35 "Tower Ledger",system-ui,sans-serif;
+  color:#e8dbc0;
+}
+.crawling .crawl-counter-action:disabled > strong {
+  color:#d8c8a9;
+}
+.crawl-tray {
+  position:relative;
+  isolation:isolate;
+  display:grid;
+  place-items:center;
+  height:100%;
+  background:
+    radial-gradient(ellipse at 50% 17%,#ad9b5550,transparent 84%),
+    repeating-linear-gradient(46deg,#ffffff05 0 1px,transparent 2px 4px),
+    linear-gradient(145deg,#28463b,#142823 83%);
+  box-shadow:inset 0 0 0 2px #a0794b,inset 0 0 0 4px #191a14,inset 0 2px 16px #091612;
+  text-align:center;
+}
+.crawl-tray::after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:10% 18% 8%;
+  background:radial-gradient(ellipse 56% 32% at 50% 74%,#050e0bdc,transparent 96%);
+  pointer-events:none;
+}
+.crawling .crawl-tray canvas {
+  position:static;
+  inset:auto;
+  transform:none;
+  width:70px;
+  height:66px;
+  object-fit:contain;
+  image-rendering:auto;
+  pointer-events:none;
+  filter:drop-shadow(2px 4px 2px #050a06d0);
+}
+.crawl-tray-tag {
+  position:absolute;
+  top:4px;
+  left:4px;
+  font:11px/1.2 "Tower Ledger",system-ui,sans-serif;
+  padding:2px 5px;
+  background:linear-gradient(150deg,#e5ca96,#b48a55);
+  border-bottom:1px solid #4b3322;
+  color:#2e2318;
+}
+.crawling .crawl-counter-action[data-id="trade-freight"]:not(:disabled) {
+  background:#54362b;
+  border-color:#d1a463;
+}
+.crawling .crawl-counter-action[data-id="trade-freight"]:not(:disabled):hover {
+  background:#684738;
+}
+.crawl-counter-action[data-id="trade-freight"] .crawl-tray-tag {
+  background:linear-gradient(150deg,#a5573d,#773a2c);
+  color:#ffecd0;
+}
+.crawl-tray-receipt {
+  height:auto;
+  grid-template-rows:66px auto 1fr;
+  padding:0 5px 5px;
+  color:#f7e2ab;
+  font:17px/1.25 "Tower Script",serif;
+}
+.crawl-tray-receipt small {
+  color:#bdcca9;
+  font:12px/1.4 "Tower Ledger",system-ui,sans-serif;
+}
+.crawl-counter-follow {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:6px;
+}
+.crawl-counter-follow .hunt-act {
+  padding:6px 9px;
+  min-height:42px;
+  box-shadow:inset 0 0 0 2px #91775232,0 2px 1px #0c1612;
+}
+.crawl-counter-follow .hunt-act strong {
+  font-size:17px;
+}
+.crawl-counter-follow .hunt-act small {
+  font-size:12px;
+}
+.crawl-counter-follow .hunt-act[data-id="early-order"] {
+  background:linear-gradient(141deg,#864c33,#512d25);
+  border:1px solid #c39359;
+}
+.crawl-counter-follow .hunt-act[data-id="early-order"]:disabled {
+  background:#4c392d;
+  border-color:#8c7253;
+}
+.crawl-counter-follow .hunt-act[data-id="early-order"]:not(:disabled):hover {
+  background:#9b5e42;
+}
+.crawl-pouch-trays {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:6px;
+  margin:9px 0 12px;
+}
+.crawl-pouch-trays .crawl-tray {
+  padding-bottom:8px;
+  color:#fae3b0;
+  font:15px/1.2 "Tower Script",serif;
+}
+.crawl-pouch-trays small {
+  color:#e4d4b4;
+  font:13px/1.3 "Tower Ledger",system-ui,sans-serif;
+}
+.crawl-pouch-trays .crawl-tray[data-empty="true"] canvas {
+  opacity:.28;
+  filter:grayscale(.8);
+}
+@media (max-width:680px){
+  .crawling[data-leg="2"]:is([data-phase="market"],[data-phase="loot"]) .hunt-ledger {
+    gap:12px;
+    padding:10px 12px 16px;
+  }
+  .crawling[data-leg="2"]:is([data-phase="market"],[data-phase="loot"]) .hunt-stage {
+    height:clamp(210px,30svh,260px);
+  }
+  .crawl-counter,.crawl-counter:is([data-count="3"],[data-count="4"]){
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .crawl-counter-follow {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .crawl-counter-follow .hunt-act[data-id="early-order"] {
+    grid-column:1/-1;
+  }
+  .crawl-counter-follow .hunt-act {
+    min-height:44px;
+  }
+  .crawling .crawl-tray canvas {
+    width:62px;
+    height:54px;
+  }
+  .crawling .crawl-counter-action,.crawl-tray-receipt {
+    grid-template-rows:54px auto 1fr;
+  }
+}
+
+
+.crawling[data-leg="2"] .crawl-card {
+  --face:#65342b;
+  --glow:#ca8154;
+  border-color:#957650;
+  border-radius:5px 5px 3px 3px;
+  background:
+    repeating-linear-gradient(0deg,#fff5d506 0 1px,transparent 1px 4px),
+    radial-gradient(ellipse at 50% 48%,var(--face),transparent 67%),
+    linear-gradient(168deg,#3e352b,#1f2b29 70%);
+  box-shadow:inset 0 0 0 2px #1a211e,inset 0 0 0 3px #91704455,0 4px 9px #0c1513b3;
+}
+.crawling[data-leg="2"] .crawl-card[data-fx="guard"] {--face:#395c53;--glow:#9ab6a1}
+.crawling[data-leg="2"] .crawl-card[data-fx="flare"] {--face:#805932;--glow:#dfac70}
+.crawling[data-leg="2"] .crawl-card strong {
+  border-bottom:1px solid #cbb28345;
+  padding-bottom:3px;
+  color:#fae5b8;
+}
+.crawling[data-leg="2"] .crawl-card canvas {
+  filter:drop-shadow(1px 3px 2px #0d1717c0);
+}
+.crawling[data-leg="2"] .crawl-card:is(:hover:not(:disabled),:focus-visible) {
+  border-color:var(--glow);
+  box-shadow:inset 0 0 0 2px #1a211e,inset 0 0 0 3px #c8a378,0 5px 12px #0c1513d0;
+}
+
+/* Hold the lens size as the navigation controls give way to a hand of cards. */
+.crawling[data-leg="2"]:is([data-phase="walk"],[data-phase="gather"],[data-phase="fight"],[data-phase="loot"]) .hunt-stage {
+  flex:none;
+  height:clamp(210px,52svh,460px);
+}
+.crawl-threshold {
+  position:fixed;
+  inset:0;
+  z-index:10;
+  pointer-events:none;
+  background:radial-gradient(ellipse at 53% 38%,#132322,#080f13 74%);
+}
+@media(max-width:680px) {
+  .crawling[data-leg="2"]:is([data-phase="walk"],[data-phase="gather"],[data-phase="fight"],[data-phase="loot"]) .hunt-stage {
+    height:clamp(220px,37svh,336px);
+  }
+}

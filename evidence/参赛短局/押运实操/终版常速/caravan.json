@@ -1,0 +1,2187 @@
+{
+  "flow": "caravan",
+  "seed": "1",
+  "bundleSHA256": "bffb9269164dde11e60374c5024d33b2342fbac4f4f9c759e7c0527d6b43074a",
+  "url": "http://127.0.0.1:13862/escort-v5.html?seed=1",
+  "browser": "157.0.8103.79",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "mode": "环回 HTTP · 桌面鼠标",
+  "speed": "常速",
+  "automated": true,
+  "firstSwordStartMs": 626,
+  "fullRunMs": 500703,
+  "contractedMs": 7767,
+  "handInMs": 496888,
+  "settlementMs": 501329,
+  "totalWallMs": 493562,
+  "observedRoadClock": {
+    "movingMs": 488225.80000000005,
+    "waitingAtForkMs": 0,
+    "journalMs": 0,
+    "otherStationaryRoadMs": 174.39999999999418,
+    "roadFrames": 70321
+  },
+  "roadMs": 488520,
+  "stationaryMs": 494,
+  "journalPausedMs": 0,
+  "pauses": [],
+  "otherMs": 4548,
+  "initial": {
+    "phase": "counter",
+    "seed": "1",
+    "combatKind": "",
+    "hp": "22",
+    "foe": "0",
+    "floor": "1",
+    "gold": "7",
+    "seals": "0",
+    "decision": "sell",
+    "lot": "grit",
+    "shelf": "gear",
+    "qty": "1"
+  },
+  "delivery": {
+    "pace": "normal",
+    "stage": "delivery",
+    "leg": "3",
+    "marker": "6",
+    "branchRoad": "false",
+    "cue": "",
+    "completed": "27",
+    "fork": "2",
+    "laneCue": "",
+    "waiting": "false",
+    "selected": "brace",
+    "visible": true,
+    "title": "照影渡交割",
+    "desc": "渡口逐箱验封。自购灯灰和墨壳仍归你。　脚程 2 石，余 3 箱可交。",
+    "notice": "护住车厢，车轮过标，箱封安稳。",
+    "milestone": "第 4 程 · 路标 6/6",
+    "entries": {
+      "应收脚程": "+2 石",
+      "应收箱钱": "+3 石",
+      "进货": "-4 石",
+      "卖货": "+13 石",
+      "沿途采买货利": "+8 石",
+      "自带货售入": "+3 石",
+      "修理": "0 石",
+      "交割后净收": "+14 石"
+    },
+    "stats": {
+      "灵石": "16",
+      "在车": "3 / 3",
+      "封签": "6 / 6"
+    }
+  },
+  "paid": {
+    "pace": "normal",
+    "stage": "done",
+    "leg": "3",
+    "marker": "6",
+    "branchRoad": "false",
+    "cue": "",
+    "completed": "27",
+    "fork": "2",
+    "laneCue": "",
+    "waiting": "false",
+    "selected": "brace",
+    "visible": true,
+    "title": "驿运清账",
+    "desc": "渡口已签收货，车脚与托货逐笔入账。　私货留在囊中，原印仍照旧价验收。",
+    "notice": "领脚程 2 石，托货 3 石。",
+    "milestone": "第 4 程 · 路标 6/6",
+    "entries": {
+      "实收脚程": "+2 石",
+      "实收箱钱": "+3 石",
+      "进货": "-4 石",
+      "卖货": "+13 石",
+      "沿途采买货利": "+8 石",
+      "自带货售入": "+3 石",
+      "修理": "0 石",
+      "净收": "+14 石"
+    },
+    "stats": {
+      "灵石": "21",
+      "实交": "3 / 3",
+      "封签": "已卸"
+    }
+  },
+  "returned": {
+    "phase": "counter",
+    "seed": "1",
+    "combatKind": "",
+    "hp": "22",
+    "foe": "0",
+    "floor": "1",
+    "gold": "21",
+    "seals": "0",
+    "decision": "sell",
+    "lot": "grit",
+    "shelf": "gear",
+    "qty": "1"
+  },
+  "final": {
+    "phase": "receipt",
+    "seed": "1",
+    "combatKind": "gate-fox",
+    "hp": "11",
+    "foe": "0",
+    "floor": "2",
+    "gold": "21",
+    "seals": "0",
+    "decision": "sell"
+  },
+  "hits": 4,
+  "receipt": "携银破关。灯纹印在首摊售出 ＋4 石。守关 4 手 · 出剑 4 次 气血 22 → 11。驿运净收 +14 石 · 交箱 3/3。结余 21 石 · 绢销 0 份 · 绢利 0 石。回首摊再选。开始下一局",
+  "legs": [
+    {
+      "index": 1,
+      "startMs": 7794,
+      "endMs": 116337,
+      "roadWallMs": 108543,
+      "atArrival": {
+        "灵石": "7",
+        "在车": "3 / 3",
+        "封签": "6 / 6"
+      },
+      "sightings": [
+        {
+          "mark": 1,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 7860,
+              "title": "芦根浅滩",
+              "milestone": "第 1 程 · 路标 1/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 13080,
+              "title": "青石堤脚",
+              "milestone": "第 1 程 · 路标 1/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "brace",
+              "choice": "brace",
+              "ms": 19492,
+              "title": "引车上堤",
+              "milestone": "第 1 程 · 路标 1/6",
+              "label": "护住车厢，稳住箱身，防止上下颠动。"
+            }
+          ],
+          "beginMs": 7795,
+          "label": "护住车厢",
+          "endMs": 25879
+        },
+        {
+          "mark": 2,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "right",
+              "choice": "right",
+              "ms": 25901,
+              "title": "芦根浅滩",
+              "milestone": "第 1 程 · 路标 2/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 31181,
+              "title": "青石堤脚",
+              "milestone": "第 1 程 · 路标 2/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "right",
+              "choice": "right",
+              "ms": 37581,
+              "title": "朱栏急弯",
+              "milestone": "第 1 程 · 路标 2/6",
+              "label": "走右辙，靠车道右侧行进。"
+            }
+          ],
+          "beginMs": 25879,
+          "label": "走右辙",
+          "endMs": 43970
+        },
+        {
+          "mark": 3,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 43998,
+              "title": "芦根浅滩",
+              "milestone": "第 1 程 · 路标 3/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 49262,
+              "title": "青石堤脚",
+              "milestone": "第 1 程 · 路标 3/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "left",
+              "choice": "left",
+              "ms": 55672,
+              "title": "撑住短桥",
+              "milestone": "第 1 程 · 路标 3/6",
+              "label": "走左辙，靠车道左侧行进。"
+            }
+          ],
+          "beginMs": 43970,
+          "label": "走左辙",
+          "endMs": 62062
+        },
+        {
+          "mark": 4,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 62112,
+              "title": "芦根浅滩",
+              "milestone": "第 1 程 · 路标 4/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 67352,
+              "title": "青石堤脚",
+              "milestone": "第 1 程 · 路标 4/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "right",
+              "choice": "right",
+              "ms": 73763,
+              "title": "堤下碎石",
+              "milestone": "第 1 程 · 路标 4/6",
+              "label": "走右辙，靠车道右侧行进。"
+            }
+          ],
+          "beginMs": 62062,
+          "label": "走右辙",
+          "endMs": 80151
+        },
+        {
+          "mark": 5,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "right",
+              "choice": "right",
+              "ms": 80173,
+              "title": "芦根浅滩",
+              "milestone": "第 1 程 · 路标 5/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 85444,
+              "title": "青石堤脚",
+              "milestone": "第 1 程 · 路标 5/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "brace",
+              "choice": "brace",
+              "ms": 91854,
+              "title": "芦苇夹径",
+              "milestone": "第 1 程 · 路标 5/6",
+              "label": "护住车厢，稳住箱身，防止上下颠动。"
+            }
+          ],
+          "beginMs": 80151,
+          "label": "护住车厢",
+          "endMs": 98241
+        },
+        {
+          "mark": 6,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "right",
+              "choice": "right",
+              "ms": 98264,
+              "title": "芦根浅滩",
+              "milestone": "第 1 程 · 路标 6/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 103534,
+              "title": "青石堤脚",
+              "milestone": "第 1 程 · 路标 6/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "left",
+              "choice": "left",
+              "ms": 109945,
+              "title": "守住桥头",
+              "milestone": "第 1 程 · 路标 6/6",
+              "label": "走左辙，靠车道左侧行进。"
+            }
+          ],
+          "beginMs": 98241,
+          "label": "走左辙",
+          "endMs": 116337
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "startMs": 134630,
+      "endMs": 243173,
+      "roadWallMs": 108543,
+      "atArrival": {
+        "灵石": "5",
+        "在车": "3 / 3",
+        "封签": "6 / 6"
+      },
+      "sightings": [
+        {
+          "mark": 1,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "right",
+              "choice": "right",
+              "ms": 134654,
+              "title": "松动窑砖",
+              "milestone": "第 2 程 · 路标 1/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 139926,
+              "title": "冷灰车辙",
+              "milestone": "第 2 程 · 路标 1/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "left",
+              "choice": "left",
+              "ms": 146328,
+              "title": "出驿进山",
+              "milestone": "第 2 程 · 路标 1/6",
+              "label": "走左辙，靠车道左侧行进。"
+            }
+          ],
+          "beginMs": 134630,
+          "label": "走左辙",
+          "endMs": 152715
+        },
+        {
+          "mark": 2,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "right",
+              "choice": "right",
+              "ms": 152738,
+              "title": "松动窑砖",
+              "milestone": "第 2 程 · 路标 2/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 158009,
+              "title": "冷灰车辙",
+              "milestone": "第 2 程 · 路标 2/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "brace",
+              "choice": "brace",
+              "ms": 164419,
+              "title": "窑口松砖",
+              "milestone": "第 2 程 · 路标 2/6",
+              "label": "护住车厢，稳住箱身，防止上下颠动。"
+            }
+          ],
+          "beginMs": 152715,
+          "label": "护住车厢",
+          "endMs": 170807
+        },
+        {
+          "mark": 3,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 170837,
+              "title": "松动窑砖",
+              "milestone": "第 2 程 · 路标 3/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 176100,
+              "title": "冷灰车辙",
+              "milestone": "第 2 程 · 路标 3/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "right",
+              "choice": "right",
+              "ms": 182510,
+              "title": "赤崖岔口",
+              "milestone": "第 2 程 · 路标 3/6",
+              "label": "走右辙，靠车道右侧行进。"
+            }
+          ],
+          "beginMs": 170807,
+          "label": "走右辙",
+          "endMs": 188897
+        },
+        {
+          "mark": 4,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 188920,
+              "title": "松动窑砖",
+              "milestone": "第 2 程 · 路标 4/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 194192,
+              "title": "冷灰车辙",
+              "milestone": "第 2 程 · 路标 4/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "left",
+              "choice": "left",
+              "ms": 200601,
+              "title": "石坡浮灰",
+              "milestone": "第 2 程 · 路标 4/6",
+              "label": "走左辙，靠车道左侧行进。"
+            }
+          ],
+          "beginMs": 188897,
+          "label": "走左辙",
+          "endMs": 206989
+        },
+        {
+          "mark": 5,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "right",
+              "choice": "right",
+              "ms": 207011,
+              "title": "松动窑砖",
+              "milestone": "第 2 程 · 路标 5/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 212282,
+              "title": "冷灰车辙",
+              "milestone": "第 2 程 · 路标 5/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "right",
+              "choice": "right",
+              "ms": 218692,
+              "title": "压稳石梁",
+              "milestone": "第 2 程 · 路标 5/6",
+              "label": "走右辙，靠车道右侧行进。"
+            }
+          ],
+          "beginMs": 206989,
+          "label": "走右辙",
+          "endMs": 225079
+        },
+        {
+          "mark": 6,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 225102,
+              "title": "松动窑砖",
+              "milestone": "第 2 程 · 路标 6/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 230373,
+              "title": "冷灰车辙",
+              "milestone": "第 2 程 · 路标 6/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "brace",
+              "choice": "brace",
+              "ms": 236782,
+              "title": "避开落砾",
+              "milestone": "第 2 程 · 路标 6/6",
+              "label": "护住车厢，稳住箱身，防止上下颠动。"
+            }
+          ],
+          "beginMs": 225079,
+          "label": "护住车厢",
+          "endMs": 243173
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "startMs": 261465,
+      "endMs": 370031,
+      "roadWallMs": 108566,
+      "atArrival": {
+        "灵石": "9",
+        "在车": "3 / 3",
+        "封签": "6 / 6"
+      },
+      "sightings": [
+        {
+          "mark": 1,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 261485,
+              "title": "腐木桥板",
+              "milestone": "第 3 程 · 路标 1/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 266749,
+              "title": "索头横梁",
+              "milestone": "第 3 程 · 路标 1/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "brace",
+              "choice": "brace",
+              "ms": 273159,
+              "title": "切入峡口",
+              "milestone": "第 3 程 · 路标 1/6",
+              "label": "护住车厢，稳住箱身，防止上下颠动。"
+            }
+          ],
+          "beginMs": 261465,
+          "label": "护住车厢",
+          "endMs": 279547
+        },
+        {
+          "mark": 2,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "right",
+              "choice": "right",
+              "ms": 279569,
+              "title": "腐木桥板",
+              "milestone": "第 3 程 · 路标 2/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 284847,
+              "title": "索头横梁",
+              "milestone": "第 3 程 · 路标 2/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "right",
+              "choice": "right",
+              "ms": 291257,
+              "title": "铜铃避风",
+              "milestone": "第 3 程 · 路标 2/6",
+              "label": "走右辙，靠车道右侧行进。"
+            }
+          ],
+          "beginMs": 279547,
+          "label": "走右辙",
+          "endMs": 297645
+        },
+        {
+          "mark": 3,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 297667,
+              "title": "腐木桥板",
+              "milestone": "第 3 程 · 路标 3/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 302945,
+              "title": "索头横梁",
+              "milestone": "第 3 程 · 路标 3/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "left",
+              "choice": "left",
+              "ms": 309355,
+              "title": "跨越裂栈",
+              "milestone": "第 3 程 · 路标 3/6",
+              "label": "走左辙，靠车道左侧行进。"
+            }
+          ],
+          "beginMs": 297645,
+          "label": "走左辙",
+          "endMs": 315743
+        },
+        {
+          "mark": 4,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 315765,
+              "title": "腐木桥板",
+              "milestone": "第 3 程 · 路标 4/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 321042,
+              "title": "索头横梁",
+              "milestone": "第 3 程 · 路标 4/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "right",
+              "choice": "right",
+              "ms": 327453,
+              "title": "急转飞廊",
+              "milestone": "第 3 程 · 路标 4/6",
+              "label": "走右辙，靠车道右侧行进。"
+            }
+          ],
+          "beginMs": 315743,
+          "label": "走右辙",
+          "endMs": 333840
+        },
+        {
+          "mark": 5,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "right",
+              "choice": "right",
+              "ms": 333862,
+              "title": "腐木桥板",
+              "milestone": "第 3 程 · 路标 5/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 339141,
+              "title": "索头横梁",
+              "milestone": "第 3 程 · 路标 5/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "brace",
+              "choice": "brace",
+              "ms": 345551,
+              "title": "落叶遮道",
+              "milestone": "第 3 程 · 路标 5/6",
+              "label": "护住车厢，稳住箱身，防止上下颠动。"
+            }
+          ],
+          "beginMs": 333840,
+          "label": "护住车厢",
+          "endMs": 351938
+        },
+        {
+          "mark": 6,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "right",
+              "choice": "right",
+              "ms": 351960,
+              "title": "腐木桥板",
+              "milestone": "第 3 程 · 路标 6/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 357231,
+              "title": "索头横梁",
+              "milestone": "第 3 程 · 路标 6/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "left",
+              "choice": "left",
+              "ms": 363650,
+              "title": "封住风口",
+              "milestone": "第 3 程 · 路标 6/6",
+              "label": "走左辙，靠车道左侧行进。"
+            }
+          ],
+          "beginMs": 351938,
+          "label": "走左辙",
+          "endMs": 370031
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "startMs": 388283,
+      "endMs": 496828,
+      "roadWallMs": 108545,
+      "atArrival": {
+        "灵石": "16",
+        "在车": "3 / 3",
+        "封签": "6 / 6"
+      },
+      "sightings": [
+        {
+          "mark": 1,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 388302,
+              "title": "雨滑城砖",
+              "milestone": "第 4 程 · 路标 1/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 393566,
+              "title": "石灯门槛",
+              "milestone": "第 4 程 · 路标 1/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "right",
+              "choice": "right",
+              "ms": 399976,
+              "title": "拾阶下坡",
+              "milestone": "第 4 程 · 路标 1/6",
+              "label": "走右辙，靠车道右侧行进。"
+            }
+          ],
+          "beginMs": 388283,
+          "label": "走右辙",
+          "endMs": 406364
+        },
+        {
+          "mark": 2,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "right",
+              "choice": "right",
+              "ms": 406386,
+              "title": "雨滑城砖",
+              "milestone": "第 4 程 · 路标 2/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 411664,
+              "title": "石灯门槛",
+              "milestone": "第 4 程 · 路标 2/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "left",
+              "choice": "left",
+              "ms": 418074,
+              "title": "避过潮痕",
+              "milestone": "第 4 程 · 路标 2/6",
+              "label": "走左辙，靠车道左侧行进。"
+            }
+          ],
+          "beginMs": 406364,
+          "label": "走左辙",
+          "endMs": 424462
+        },
+        {
+          "mark": 3,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 424484,
+              "title": "雨滑城砖",
+              "milestone": "第 4 程 · 路标 3/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 429755,
+              "title": "石灯门槛",
+              "milestone": "第 4 程 · 路标 3/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "right",
+              "choice": "right",
+              "ms": 436165,
+              "title": "托住轮轴",
+              "milestone": "第 4 程 · 路标 3/6",
+              "label": "走右辙，靠车道右侧行进。"
+            }
+          ],
+          "beginMs": 424462,
+          "label": "走右辙",
+          "endMs": 442553
+        },
+        {
+          "mark": 4,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 442575,
+              "title": "雨滑城砖",
+              "milestone": "第 4 程 · 路标 4/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 447846,
+              "title": "石灯门槛",
+              "milestone": "第 4 程 · 路标 4/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "brace",
+              "choice": "brace",
+              "ms": 454256,
+              "title": "折入石埠",
+              "milestone": "第 4 程 · 路标 4/6",
+              "label": "护住车厢，稳住箱身，防止上下颠动。"
+            }
+          ],
+          "beginMs": 442553,
+          "label": "护住车厢",
+          "endMs": 460644
+        },
+        {
+          "mark": 5,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 460666,
+              "title": "雨滑城砖",
+              "milestone": "第 4 程 · 路标 5/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "left",
+              "choice": "left",
+              "ms": 465937,
+              "title": "石灯门槛",
+              "milestone": "第 4 程 · 路标 5/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 2,
+              "cue": "left",
+              "choice": "left",
+              "ms": 472347,
+              "title": "灯下窄巷",
+              "milestone": "第 4 程 · 路标 5/6",
+              "label": "走左辙，靠车道左侧行进。"
+            }
+          ],
+          "beginMs": 460644,
+          "label": "走左辙",
+          "endMs": 478735
+        },
+        {
+          "mark": 6,
+          "decisions": [
+            {
+              "fork": 0,
+              "cue": "left",
+              "choice": "left",
+              "ms": 478757,
+              "title": "雨滑城砖",
+              "milestone": "第 4 程 · 路标 6/6",
+              "label": "驶入左道"
+            },
+            {
+              "fork": 1,
+              "cue": "right",
+              "choice": "right",
+              "ms": 484028,
+              "title": "石灯门槛",
+              "milestone": "第 4 程 · 路标 6/6",
+              "label": "驶入右道"
+            },
+            {
+              "fork": 2,
+              "cue": "brace",
+              "choice": "brace",
+              "ms": 490438,
+              "title": "稳车进城",
+              "milestone": "第 4 程 · 路标 6/6",
+              "label": "护住车厢，稳住箱身，防止上下颠动。"
+            }
+          ],
+          "beginMs": 478735,
+          "label": "护住车厢",
+          "endMs": 496828
+        }
+      ]
+    }
+  ],
+  "branches": [
+    {
+      "index": 1,
+      "startMs": 116347,
+      "endMs": 134452,
+      "roadWallMs": 18105,
+      "arrived": {
+        "pace": "normal",
+        "stage": "branchMarket",
+        "leg": "0",
+        "marker": "6",
+        "branchRoad": "false",
+        "cue": "",
+        "completed": "7",
+        "fork": "2",
+        "laneCue": "",
+        "waiting": "false",
+        "selected": "right",
+        "visible": true,
+        "title": "芦汀灰场",
+        "desc": "芦汀有捡灯人，可领一份灯灰。留囊格，下一驿能卖。　只取一项，办完回本驿。",
+        "notice": "走右辙，车轮过标，箱封安稳。",
+        "milestone": "第 1 程 · 支道",
+        "entries": {},
+        "stats": {
+          "灵石": "7",
+          "在车": "3 / 3",
+          "封签": "6 / 6"
+        },
+        "manifest": "车上商货　灯灰 1 份　墨蠹壳 0 件"
+      },
+      "selected": "branch-ash",
+      "settled": {
+        "pace": "normal",
+        "stage": "station",
+        "leg": "0",
+        "marker": "6",
+        "branchRoad": "false",
+        "cue": "",
+        "completed": "7",
+        "fork": "2",
+        "laneCue": "",
+        "waiting": "false",
+        "selected": "right",
+        "visible": true,
+        "title": "杉桥短市",
+        "desc": "桥头有便宜灯灰。下站水驿最多收两份，每份 3 石。　补货用自家灵石，货装进行囊；每个驿站限量。",
+        "notice": "在芦汀收起一份灯灰，已放进锦囊。",
+        "milestone": "第 1 程 · 支道",
+        "entries": {},
+        "stats": {
+          "灵石": "7",
+          "在车": "3 / 3",
+          "封签": "6 / 6"
+        },
+        "manifest": "车上商货　灯灰 2 份　墨蠹壳 0 件"
+      },
+      "sighting": {
+        "mark": 1,
+        "decisions": [
+          {
+            "fork": 0,
+            "cue": "right",
+            "choice": "right",
+            "ms": 116390,
+            "title": "芦根浅滩",
+            "milestone": "第 1 程 · 支道",
+            "label": "驶入右道"
+          },
+          {
+            "fork": 1,
+            "cue": "right",
+            "choice": "right",
+            "ms": 121653,
+            "title": "青石堤脚",
+            "milestone": "第 1 程 · 支道",
+            "label": "驶入右道"
+          },
+          {
+            "fork": 2,
+            "cue": "right",
+            "choice": "right",
+            "ms": 128063,
+            "title": "捡灯人浅渡",
+            "milestone": "第 1 程 · 支道",
+            "label": "走右辙，靠车道右侧行进。"
+          }
+        ],
+        "beginMs": 116368,
+        "label": "走右辙",
+        "endMs": 134452
+      }
+    },
+    {
+      "index": 2,
+      "startMs": 243187,
+      "endMs": 261297,
+      "roadWallMs": 18110,
+      "arrived": {
+        "pace": "normal",
+        "stage": "branchMarket",
+        "leg": "1",
+        "marker": "6",
+        "branchRoad": "false",
+        "cue": "",
+        "completed": "14",
+        "fork": "2",
+        "laneCue": "",
+        "waiting": "false",
+        "selected": "brace",
+        "visible": true,
+        "title": "旧窑偏栈",
+        "desc": "窑工要一份灯灰，肯换一枚墨壳。墨壳要能装进锦囊。　只取一项，办完回本驿。",
+        "notice": "护住车厢，车轮过标，箱封安稳。",
+        "milestone": "第 2 程 · 支道",
+        "entries": {},
+        "stats": {
+          "灵石": "5",
+          "在车": "3 / 3",
+          "封签": "6 / 6"
+        },
+        "manifest": "车上商货　灯灰 4 份　墨蠹壳 0 件"
+      },
+      "selected": "branch-shell",
+      "settled": {
+        "pace": "normal",
+        "stage": "station",
+        "leg": "1",
+        "marker": "6",
+        "branchRoad": "false",
+        "cue": "",
+        "completed": "14",
+        "fork": "2",
+        "laneCue": "",
+        "waiting": "false",
+        "selected": "brace",
+        "visible": true,
+        "title": "砾潮水驿",
+        "desc": "水驿要灯灰。此处墨壳 2 石，下站挂铃栈收一枚 4 石。　补货用自家灵石，货装进行囊；每个驿站限量。",
+        "notice": "留灰一份，带壳一枚回驿。",
+        "milestone": "第 2 程 · 支道",
+        "entries": {},
+        "stats": {
+          "灵石": "5",
+          "在车": "3 / 3",
+          "封签": "6 / 6"
+        },
+        "manifest": "车上商货　灯灰 3 份　墨蠹壳 1 件"
+      },
+      "sighting": {
+        "mark": 1,
+        "decisions": [
+          {
+            "fork": 0,
+            "cue": "right",
+            "choice": "right",
+            "ms": 243234,
+            "title": "松动窑砖",
+            "milestone": "第 2 程 · 支道",
+            "label": "驶入右道"
+          },
+          {
+            "fork": 1,
+            "cue": "right",
+            "choice": "right",
+            "ms": 248498,
+            "title": "冷灰车辙",
+            "milestone": "第 2 程 · 支道",
+            "label": "驶入右道"
+          },
+          {
+            "fork": 2,
+            "cue": "brace",
+            "choice": "brace",
+            "ms": 254908,
+            "title": "窑尾窄坡",
+            "milestone": "第 2 程 · 支道",
+            "label": "护住车厢，稳住箱身，防止上下颠动。"
+          }
+        ],
+        "beginMs": 243212,
+        "label": "护住车厢",
+        "endMs": 261297
+      }
+    },
+    {
+      "index": 3,
+      "startMs": 370041,
+      "endMs": 388149,
+      "roadWallMs": 18108,
+      "arrived": {
+        "pace": "normal",
+        "stage": "branchMarket",
+        "leg": "2",
+        "marker": "6",
+        "branchRoad": "false",
+        "cue": "",
+        "completed": "21",
+        "fork": "2",
+        "laneCue": "",
+        "waiting": "false",
+        "selected": "right",
+        "visible": true,
+        "title": "桥脚夜摊",
+        "desc": "夜摊收一份灰给三石。也能请匠人补一箱，两者只取其一。　只取一项，办完回本驿。",
+        "notice": "走右辙，车轮过标，箱封安稳。",
+        "milestone": "第 3 程 · 支道",
+        "entries": {},
+        "stats": {
+          "灵石": "9",
+          "在车": "3 / 3",
+          "封签": "6 / 6"
+        },
+        "manifest": "车上商货　灯灰 1 份　墨蠹壳 2 件"
+      },
+      "selected": "branch-sale",
+      "settled": {
+        "pace": "normal",
+        "stage": "station",
+        "leg": "2",
+        "marker": "6",
+        "branchRoad": "false",
+        "cue": "",
+        "completed": "21",
+        "fork": "2",
+        "laneCue": "",
+        "waiting": "false",
+        "selected": "right",
+        "visible": true,
+        "title": "挂铃栈",
+        "desc": "最后一次修车。交割所只验车货，剩下的自购货随你回柜。　补货用自家灵石，货装进行囊；每个驿站限量。",
+        "notice": "夜摊收灰一份，三石入囊。",
+        "milestone": "第 3 程 · 支道",
+        "entries": {},
+        "stats": {
+          "灵石": "12",
+          "在车": "3 / 3",
+          "封签": "6 / 6"
+        },
+        "manifest": "车上商货　灯灰 0 份　墨蠹壳 2 件"
+      },
+      "sighting": {
+        "mark": 1,
+        "decisions": [
+          {
+            "fork": 0,
+            "cue": "right",
+            "choice": "right",
+            "ms": 370086,
+            "title": "腐木桥板",
+            "milestone": "第 3 程 · 支道",
+            "label": "驶入右道"
+          },
+          {
+            "fork": 1,
+            "cue": "right",
+            "choice": "right",
+            "ms": 375350,
+            "title": "索头横梁",
+            "milestone": "第 3 程 · 支道",
+            "label": "驶入右道"
+          },
+          {
+            "fork": 2,
+            "cue": "right",
+            "choice": "right",
+            "ms": 381760,
+            "title": "桥脚下层",
+            "milestone": "第 3 程 · 支道",
+            "label": "走右辙，靠车道右侧行进。"
+          }
+        ],
+        "beginMs": 370063,
+        "label": "走右辙",
+        "endMs": 388149
+      }
+    }
+  ],
+  "branchRoadMs": 54323,
+  "stops": [
+    {
+      "index": 1,
+      "enterMs": 116343,
+      "exitMs": 134630,
+      "before": {
+        "灵石": "7",
+        "在车": "3 / 3",
+        "封签": "6 / 6"
+      },
+      "after": {
+        "灵石": "5",
+        "在车": "3 / 3",
+        "封签": "6 / 6"
+      },
+      "manifest": "车上商货　灯灰 4 份　墨蠹壳 0 件",
+      "tradeText": "杉桥买入两份灯灰，付 2 石。",
+      "trades": [
+        {
+          "id": "branch-ash",
+          "label": "收一份灯灰，不花灵石，占一份灯灰的位置。",
+          "before": {
+            "灵石": "7",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "after": {
+            "灵石": "7",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "notice": "在芦汀收起一份灯灰，已放进锦囊。",
+          "manifest": "车上商货　灯灰 2 份　墨蠹壳 0 件"
+        },
+        {
+          "id": "buy-ash",
+          "label": "购灯灰 · 1 石，每次一份，本站余 3 份。",
+          "before": {
+            "灵石": "7",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "after": {
+            "灵石": "6",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "notice": "买入灯灰一份，灵石 7 → 6。",
+          "manifest": "车上商货　灯灰 3 份　墨蠹壳 0 件"
+        },
+        {
+          "id": "buy-ash",
+          "label": "购灯灰 · 1 石，每次一份，本站余 2 份。",
+          "before": {
+            "灵石": "6",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "after": {
+            "灵石": "5",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "notice": "买入灯灰一份，灵石 6 → 5。",
+          "manifest": "车上商货　灯灰 4 份　墨蠹壳 0 件"
+        }
+      ],
+      "notice": "买入灯灰一份，灵石 6 → 5。"
+    },
+    {
+      "index": 2,
+      "enterMs": 243181,
+      "exitMs": 261465,
+      "before": {
+        "灵石": "5",
+        "在车": "3 / 3",
+        "封签": "6 / 6"
+      },
+      "after": {
+        "灵石": "9",
+        "在车": "3 / 3",
+        "封签": "6 / 6"
+      },
+      "manifest": "车上商货　灯灰 1 份　墨蠹壳 2 件",
+      "tradeText": "水驿卖两份灯灰，收 6 石；进一壳，付 2 石。",
+      "trades": [
+        {
+          "id": "branch-shell",
+          "label": "灯灰换墨壳，付一份灯灰，得一枚真壳；挂铃栈收 4 石。",
+          "before": {
+            "灵石": "5",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "after": {
+            "灵石": "5",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "notice": "留灰一份，带壳一枚回驿。",
+          "manifest": "车上商货　灯灰 3 份　墨蠹壳 1 件"
+        },
+        {
+          "id": "sell-ash",
+          "label": "卖灯灰 · 3 石，每次一份，本站余 2 份。",
+          "before": {
+            "灵石": "5",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "after": {
+            "灵石": "8",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "notice": "售出灯灰一份，灵石 5 → 8。",
+          "manifest": "车上商货　灯灰 2 份　墨蠹壳 1 件"
+        },
+        {
+          "id": "sell-ash",
+          "label": "卖灯灰 · 3 石，每次一份，本站余 1 份。",
+          "before": {
+            "灵石": "8",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "after": {
+            "灵石": "11",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "notice": "售出灯灰一份，灵石 8 → 11。",
+          "manifest": "车上商货　灯灰 1 份　墨蠹壳 1 件"
+        },
+        {
+          "id": "buy-shell",
+          "label": "购墨蠹壳 · 2 石，每次一份，本站余 1 份。",
+          "before": {
+            "灵石": "11",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "after": {
+            "灵石": "9",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "notice": "买入墨蠹壳一份，灵石 11 → 9。",
+          "manifest": "车上商货　灯灰 1 份　墨蠹壳 2 件"
+        }
+      ],
+      "notice": "买入墨蠹壳一份，灵石 11 → 9。"
+    },
+    {
+      "index": 3,
+      "enterMs": 370037,
+      "exitMs": 388283,
+      "before": {
+        "灵石": "9",
+        "在车": "3 / 3",
+        "封签": "6 / 6"
+      },
+      "after": {
+        "灵石": "16",
+        "在车": "3 / 3",
+        "封签": "6 / 6"
+      },
+      "manifest": "车上商货　灯灰 0 份　墨蠹壳 1 件",
+      "tradeText": "挂铃栈卖墨蠹壳，收 4 石。",
+      "trades": [
+        {
+          "id": "branch-sale",
+          "label": "卖一份灯灰 · 3 石，收现钱，付过的进货本钱在账上。",
+          "before": {
+            "灵石": "9",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "after": {
+            "灵石": "12",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "notice": "夜摊收灰一份，三石入囊。",
+          "manifest": "车上商货　灯灰 0 份　墨蠹壳 2 件"
+        },
+        {
+          "id": "sell-shell",
+          "label": "卖墨蠹壳 · 4 石，每次一份，本站余 1 份。",
+          "before": {
+            "灵石": "12",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "after": {
+            "灵石": "16",
+            "在车": "3 / 3",
+            "封签": "6 / 6"
+          },
+          "notice": "售出墨蠹壳一份，灵石 12 → 16。",
+          "manifest": "车上商货　灯灰 0 份　墨蠹壳 1 件"
+        }
+      ],
+      "notice": "售出墨蠹壳一份，灵石 12 → 16。"
+    }
+  ],
+  "actions": [
+    {
+      "ms": 990,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 1760,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 2887,
+      "id": "secondary",
+      "label": "连灯灰一并收好"
+    },
+    {
+      "ms": 3220,
+      "id": "primary",
+      "label": "递印问行情"
+    },
+    {
+      "ms": 3527,
+      "id": "primary",
+      "label": "收下路签，去狐市"
+    },
+    {
+      "ms": 3866,
+      "id": "primary",
+      "label": "把灯纹印放上秤"
+    },
+    {
+      "ms": 5232,
+      "id": "primary",
+      "label": "成交  ＋4 石"
+    },
+    {
+      "ms": 6569,
+      "id": "primary",
+      "label": "俯看货摊"
+    },
+    {
+      "ms": 7455,
+      "id": "market-escort",
+      "label": "接押运，查看护送契约"
+    },
+    {
+      "ms": 7794,
+      "id": "start",
+      "label": "接单起行，免费领三箱。自购货要用现钱和囊格。"
+    },
+    {
+      "ms": 7860,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 13080,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 19492,
+      "id": "应对/brace",
+      "label": "护住车厢，稳住箱身，防止上下颠动。"
+    },
+    {
+      "ms": 25901,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 31181,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 37581,
+      "id": "应对/right",
+      "label": "走右辙，靠车道右侧行进。"
+    },
+    {
+      "ms": 43998,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 49262,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 55672,
+      "id": "应对/left",
+      "label": "走左辙，靠车道左侧行进。"
+    },
+    {
+      "ms": 62112,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 67352,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 73763,
+      "id": "应对/right",
+      "label": "走右辙，靠车道右侧行进。"
+    },
+    {
+      "ms": 80173,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 85444,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 91854,
+      "id": "应对/brace",
+      "label": "护住车厢，稳住箱身，防止上下颠动。"
+    },
+    {
+      "ms": 98264,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 103534,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 109945,
+      "id": "应对/left",
+      "label": "走左辙，靠车道左侧行进。"
+    },
+    {
+      "ms": 116364,
+      "id": "visit-branch",
+      "label": "往芦汀灰场 · 支道一标，芦汀有捡灯人，可领一份灯灰。留囊格，下一驿能卖。"
+    },
+    {
+      "ms": 116390,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 121653,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 128063,
+      "id": "应对/right",
+      "label": "走右辙，靠车道右侧行进。"
+    },
+    {
+      "ms": 134509,
+      "id": "branch-ash",
+      "label": "收一份灯灰，不花灵石，占一份灯灰的位置。"
+    },
+    {
+      "ms": 134537,
+      "id": "buy-ash",
+      "label": "购灯灰 · 1 石，每次一份，本站余 3 份。"
+    },
+    {
+      "ms": 134564,
+      "id": "buy-ash",
+      "label": "购灯灰 · 1 石，每次一份，本站余 2 份。"
+    },
+    {
+      "ms": 134630,
+      "id": "continue",
+      "label": "上路，前往朱窑古道。"
+    },
+    {
+      "ms": 134654,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 139926,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 146328,
+      "id": "应对/left",
+      "label": "走左辙，靠车道左侧行进。"
+    },
+    {
+      "ms": 152738,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 158009,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 164419,
+      "id": "应对/brace",
+      "label": "护住车厢，稳住箱身，防止上下颠动。"
+    },
+    {
+      "ms": 170837,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 176100,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 182510,
+      "id": "应对/right",
+      "label": "走右辙，靠车道右侧行进。"
+    },
+    {
+      "ms": 188920,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 194192,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 200601,
+      "id": "应对/left",
+      "label": "走左辙，靠车道左侧行进。"
+    },
+    {
+      "ms": 207011,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 212282,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 218692,
+      "id": "应对/right",
+      "label": "走右辙，靠车道右侧行进。"
+    },
+    {
+      "ms": 225102,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 230373,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 236782,
+      "id": "应对/brace",
+      "label": "护住车厢，稳住箱身，防止上下颠动。"
+    },
+    {
+      "ms": 243208,
+      "id": "visit-branch",
+      "label": "往旧窑偏栈 · 支道一标，窑工要一份灯灰，肯换一枚墨壳。墨壳要能装进锦囊。"
+    },
+    {
+      "ms": 243234,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 248498,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 254908,
+      "id": "应对/brace",
+      "label": "护住车厢，稳住箱身，防止上下颠动。"
+    },
+    {
+      "ms": 261347,
+      "id": "branch-shell",
+      "label": "灯灰换墨壳，付一份灯灰，得一枚真壳；挂铃栈收 4 石。"
+    },
+    {
+      "ms": 261374,
+      "id": "sell-ash",
+      "label": "卖灯灰 · 3 石，每次一份，本站余 2 份。"
+    },
+    {
+      "ms": 261395,
+      "id": "sell-ash",
+      "label": "卖灯灰 · 3 石，每次一份，本站余 1 份。"
+    },
+    {
+      "ms": 261416,
+      "id": "buy-shell",
+      "label": "购墨蠹壳 · 2 石，每次一份，本站余 1 份。"
+    },
+    {
+      "ms": 261465,
+      "id": "continue",
+      "label": "上路，前往悬铃峡。"
+    },
+    {
+      "ms": 261485,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 266749,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 273159,
+      "id": "应对/brace",
+      "label": "护住车厢，稳住箱身，防止上下颠动。"
+    },
+    {
+      "ms": 279569,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 284847,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 291257,
+      "id": "应对/right",
+      "label": "走右辙，靠车道右侧行进。"
+    },
+    {
+      "ms": 297667,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 302945,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 309355,
+      "id": "应对/left",
+      "label": "走左辙，靠车道左侧行进。"
+    },
+    {
+      "ms": 315765,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 321042,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 327453,
+      "id": "应对/right",
+      "label": "走右辙，靠车道右侧行进。"
+    },
+    {
+      "ms": 333862,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 339141,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 345551,
+      "id": "应对/brace",
+      "label": "护住车厢，稳住箱身，防止上下颠动。"
+    },
+    {
+      "ms": 351960,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 357231,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 363650,
+      "id": "应对/left",
+      "label": "走左辙，靠车道左侧行进。"
+    },
+    {
+      "ms": 370060,
+      "id": "visit-branch",
+      "label": "往桥脚夜摊 · 支道一标，夜摊收一份灰给三石。也能请匠人补一箱，两者只取其一。"
+    },
+    {
+      "ms": 370086,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 375350,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 381760,
+      "id": "应对/right",
+      "label": "走右辙，靠车道右侧行进。"
+    },
+    {
+      "ms": 388206,
+      "id": "branch-sale",
+      "label": "卖一份灯灰 · 3 石，收现钱，付过的进货本钱在账上。"
+    },
+    {
+      "ms": 388226,
+      "id": "sell-shell",
+      "label": "卖墨蠹壳 · 4 石，每次一份，本站余 1 份。"
+    },
+    {
+      "ms": 388283,
+      "id": "continue",
+      "label": "上路，前往照影渡。"
+    },
+    {
+      "ms": 388302,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 393566,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 399976,
+      "id": "应对/right",
+      "label": "走右辙，靠车道右侧行进。"
+    },
+    {
+      "ms": 406386,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 411664,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 418074,
+      "id": "应对/left",
+      "label": "走左辙，靠车道左侧行进。"
+    },
+    {
+      "ms": 424484,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 429755,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 436165,
+      "id": "应对/right",
+      "label": "走右辙，靠车道右侧行进。"
+    },
+    {
+      "ms": 442575,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 447846,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 454256,
+      "id": "应对/brace",
+      "label": "护住车厢，稳住箱身，防止上下颠动。"
+    },
+    {
+      "ms": 460666,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 465937,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 472347,
+      "id": "应对/left",
+      "label": "走左辙，靠车道左侧行进。"
+    },
+    {
+      "ms": 478757,
+      "id": "择岔/left",
+      "label": "驶入左道"
+    },
+    {
+      "ms": 484028,
+      "id": "择岔/right",
+      "label": "驶入右道"
+    },
+    {
+      "ms": 490438,
+      "id": "应对/brace",
+      "label": "护住车厢，稳住箱身，防止上下颠动。"
+    },
+    {
+      "ms": 496885,
+      "id": "deliver",
+      "label": "验箱收款，本次收入 5 石，脚程与箱钱分别入账。"
+    },
+    {
+      "ms": 496940,
+      "id": "return",
+      "label": "回到狐柜，回首柜整备，依原路线守关与结算。"
+    },
+    {
+      "ms": 496997,
+      "id": "market-fourth",
+      "label": "闯夜市狐关"
+    },
+    {
+      "ms": 497071,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 497848,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 498625,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 499403,
+      "id": "strike",
+      "label": "出剑"
+    },
+    {
+      "ms": 500490,
+      "id": "primary",
+      "label": "查看末市货摊"
+    },
+    {
+      "ms": 501324,
+      "id": "market-third",
+      "label": "合账离市"
+    }
+  ],
+  "readable": [
+    {
+      "phase": "offer",
+      "view": {
+        "pace": "normal",
+        "stage": "offer",
+        "leg": "0",
+        "marker": "0",
+        "branchRoad": "false",
+        "cue": "",
+        "completed": "0",
+        "visible": true,
+        "title": "绯绡的押运单",
+        "desc": "四段驿道，三处沿途市。带三箱托货前往照影渡。　押金 0 石 · 全程脚程 2 石 · 每箱尚存加 1 石",
+        "notice": "",
+        "milestone": "",
+        "entries": {},
+        "stats": {
+          "灵石": "7",
+          "在车": "待领",
+          "封签": "待领"
+        },
+        "manifest": "车上商货　灯灰 1 份　墨蠹壳 0 件"
+      }
+    },
+    {
+      "phase": "done",
+      "view": {
+        "pace": "normal",
+        "stage": "done",
+        "leg": "3",
+        "marker": "6",
+        "branchRoad": "false",
+        "cue": "",
+        "completed": "27",
+        "fork": "2",
+        "laneCue": "",
+        "waiting": "false",
+        "selected": "brace",
+        "visible": true,
+        "title": "驿运清账",
+        "desc": "渡口已签收货，车脚与托货逐笔入账。　私货留在囊中，原印仍照旧价验收。",
+        "notice": "领脚程 2 石，托货 3 石。",
+        "milestone": "第 4 程 · 路标 6/6",
+        "entries": {
+          "实收脚程": "+2 石",
+          "实收箱钱": "+3 石",
+          "进货": "-4 石",
+          "卖货": "+13 石",
+          "沿途采买货利": "+8 石",
+          "自带货售入": "+3 石",
+          "修理": "0 石",
+          "净收": "+14 石"
+        },
+        "stats": {
+          "灵石": "21",
+          "实交": "3 / 3",
+          "封签": "已卸"
+        }
+      }
+    }
+  ],
+  "snapshots": [
+    "caravan-接单.jpg",
+    "caravan-第1程.jpg",
+    "caravan-岔道1.jpg",
+    "caravan-岔市1.jpg",
+    "caravan-驿1-交易.jpg",
+    "caravan-第2程.jpg",
+    "caravan-岔道2.jpg",
+    "caravan-岔市2.jpg",
+    "caravan-驿2-交易.jpg",
+    "caravan-第3程.jpg",
+    "caravan-岔道3.jpg",
+    "caravan-岔市3.jpg",
+    "caravan-驿3-交易.jpg",
+    "caravan-第4程.jpg",
+    "caravan-交货前.jpg",
+    "caravan-镖账.jpg",
+    "caravan-末市总账.jpg"
+  ],
+  "errors": [],
+  "media": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "audioTracks": 1,
+    "displaySurface": "browser",
+    "originMs": 7738
+  },
+  "landmarks": 27,
+  "drivingInputs": 81
+}

@@ -1,0 +1,8 @@
+PASS explicit 4/7 disposition, slot limits, payment atomicity, insured original, barter removal, two relics, life costs/clamping, damage/healing order, replenishment bounds, side-fight accounting, reusable quote snapshot.
+现卖带钱 seed1 [血/上限/石/守关手数] 11/24/7/4 256签平均 11/24/7/4 各签血量 11–11
+现卖磨剑 seed1 [血/上限/石/守关手数] 22/24/3/2 256签平均 18.46/24/3/2 各签血量 14–22
+留印直过 seed1 [血/上限/石/守关手数] 11/24/10/4 256签平均 11/24/10/4 各签血量 11–11
+留印换牙 seed1 [血/上限/石/守关手数] 19/24/8/3 256签平均 14.61/24/8/3 各签血量 11–19
+留印换膏 seed1 [血/上限/石/守关手数] 17/24/8/4 256签平均 17/24/8/4 各签血量 17–17
+棘钱换血再磨剑 seed1 [血/上限/石/守关手数] 16/24/11/2 256签平均 11.95/24/11.52/2 各签血量 7–16
+侧战开栏双法宝 seed1 [血/上限/石/守关手数] 20/20/7/3 256签平均 15.92/20/7/3 各签血量 12–20

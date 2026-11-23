@@ -1,0 +1,162 @@
+{
+  "url": "http://127.0.0.1:8774/evidence/%E4%B8%80%E5%8D%B0%E4%B8%A4%E4%BB%B7/%E4%B8%80%E5%8D%B0%E4%B8%A4%E4%BB%B7.html",
+  "docSHA": "3e5a91f976df523732fe8254d2e4997aeadb6e867336ebb48288e02297ae2b0c",
+  "sourceBattleSha": "1e302df0fb74b4ef8d70dcf100ea28e9275e34328704c6678bde8cbf06dbb23c",
+  "sourceSceneSha": "efadabdf168888c8da639391672a611e9a144d46ad4839a8148b95ba18d2cb4f",
+  "description": "Reach from actual source alpha at 3770 times across shared 62.832s idle cycle, plus analytical all-phase maximum allowing both sine components to peak simultaneously. Pixel scan includes alpha >=1 from uncut production renderer drawn at 4x near its true worst extrema.",
+  "bounds": {
+    "1": {
+      "samples": 3770,
+      "periodSeconds": 62.83185307179586,
+      "maxAlphaEdgeWorldReach": 197.41333333333333,
+      "worstSeconds": 3.783333333333333,
+      "conservativeContinuousWorldReach": 197.41333333333333
+    },
+    "20": {
+      "samples": 3770,
+      "periodSeconds": 62.83185307179586,
+      "maxAlphaEdgeWorldReach": 196.22080436264488,
+      "worstSeconds": 3.8,
+      "conservativeContinuousWorldReach": 196.22080436264488
+    },
+    "48": {
+      "samples": 3770,
+      "periodSeconds": 62.83185307179586,
+      "maxAlphaEdgeWorldReach": 196.22080436264488,
+      "worstSeconds": 3.8,
+      "conservativeContinuousWorldReach": 196.22080436264488
+    }
+  },
+  "table": [
+    {
+      "fit": 0.9461279461279462,
+      "anchor": {
+        "x": 450,
+        "y": 204
+      },
+      "paw": {
+        "y": 273.2717037037037
+      },
+      "point": true,
+      "screenWidth": 1440,
+      "zoom": 2.25,
+      "worldLeft": 0,
+      "conservativeContinuousAlphaOnePxMargin": 7.248888888888814,
+      "oldAlphaOnePxMargin": -16.679999999999836,
+      "actualAtMax": [
+        {
+          "t": 3.783333333333333,
+          "rightEdgeWorld": 636.75,
+          "marginCss": 7.3125
+        },
+        {
+          "t": 3.8,
+          "rightEdgeWorld": 636.5,
+          "marginCss": 7.875
+        },
+        {
+          "t": 0.75,
+          "rightEdgeWorld": 636.75,
+          "marginCss": 7.3125
+        },
+        {
+          "t": 23.4,
+          "rightEdgeWorld": 624.25,
+          "marginCss": 35.4375
+        },
+        {
+          "t": 59.75,
+          "rightEdgeWorld": 626.75,
+          "marginCss": 29.8125
+        }
+      ]
+    },
+    {
+      "fit": 0.9126372685694719,
+      "anchor": {
+        "x": 450,
+        "y": 204
+      },
+      "paw": {
+        "y": 270.8196502555825
+      },
+      "point": true,
+      "screenWidth": 390,
+      "zoom": 0.6456787109375,
+      "worldLeft": -23,
+      "conservativeContinuousAlphaOnePxMargin": 6.1147352973528655,
+      "oldAlphaOnePxMargin": -5.021006510416612,
+      "actualAtMax": [
+        {
+          "t": 3.783333333333333,
+          "rightEdgeWorld": 630.25,
+          "marginCss": 6.0609924316406705
+        },
+        {
+          "t": 3.8,
+          "rightEdgeWorld": 630,
+          "marginCss": 6.222412109375
+        },
+        {
+          "t": 0.75,
+          "rightEdgeWorld": 630.25,
+          "marginCss": 6.0609924316406705
+        },
+        {
+          "t": 23.4,
+          "rightEdgeWorld": 617.75,
+          "marginCss": 14.13197631835942
+        },
+        {
+          "t": 59.75,
+          "rightEdgeWorld": 620.5,
+          "marginCss": 12.356359863281284
+        }
+      ]
+    },
+    {
+      "fit": 0.902386698846876,
+      "anchor": {
+        "x": 450,
+        "y": 204
+      },
+      "paw": {
+        "y": 270.06914454277285
+      },
+      "point": true,
+      "screenWidth": 320,
+      "zoom": 0.52978515625,
+      "worldLeft": -19,
+      "conservativeContinuousAlphaOnePxMargin": 6.2190745605948905,
+      "oldAlphaOnePxMargin": -3.989973958333337,
+      "actualAtMax": [
+        {
+          "t": 3.783333333333333,
+          "rightEdgeWorld": 628.25,
+          "marginCss": 6.1624755859375
+        },
+        {
+          "t": 3.8,
+          "rightEdgeWorld": 627.75,
+          "marginCss": 6.4273681640625
+        },
+        {
+          "t": 0.75,
+          "rightEdgeWorld": 628.25,
+          "marginCss": 6.1624755859375
+        },
+        {
+          "t": 23.4,
+          "rightEdgeWorld": 616.25,
+          "marginCss": 12.5198974609375
+        },
+        {
+          "t": 59.75,
+          "rightEdgeWorld": 618.5,
+          "marginCss": 11.327880859375
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

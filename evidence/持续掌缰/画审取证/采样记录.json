@@ -1,0 +1,92 @@
+{
+  "sha256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+  "bytes": 8338092,
+  "游戏引擎": "Chromium",
+  "操作": "正常入口；桌面环回 HTTP 鼠标，390×844 断网 file 触屏模拟，DPR 2",
+  "场景": {
+    "brdesk/caravan.json": {
+      "sha256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "browser": "157.0.8103.79",
+      "截图数": 48,
+      "errors": [],
+      "landmarks": 27
+    },
+    "brmob/caravan.json": {
+      "sha256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "157.0.8103.79",
+      "截图数": 48,
+      "errors": [],
+      "landmarks": 27
+    },
+    "brsell/手机离线-0份绢-记录.json": {
+      "sha256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "157.0.8103.79",
+      "截图数": 8,
+      "errors": [],
+      "landmarks": null
+    },
+    "brsell/桌面HTTP-0份绢-记录.json": {
+      "sha256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "browser": "157.0.8103.79",
+      "截图数": 8,
+      "errors": [],
+      "landmarks": null
+    },
+    "brkeep/手机-留印零石-记录.json": {
+      "sha256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "157.0.8103.79",
+      "截图数": 6,
+      "errors": [],
+      "landmarks": null
+    },
+    "brkeep/桌面-留印零石-记录.json": {
+      "sha256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "browser": "157.0.8103.79",
+      "截图数": 6,
+      "errors": [],
+      "landmarks": null
+    },
+    "brblood/手机-留印零石.json": {
+      "sha256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "browser": "157.0.8103.79",
+      "errors": []
+    },
+    "brblood/桌面-留印零石.json": {
+      "sha256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "browser": "157.0.8103.79",
+      "errors": []
+    }
+  }
+}

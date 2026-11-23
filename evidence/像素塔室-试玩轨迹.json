@@ -1,0 +1,772 @@
+{
+  "createdAt": "2026-11-22T07:56:45.167Z",
+  "source": "[本机路径略]",
+  "seed": "1",
+  "verifiedPixelsOnStartActionSigils": true,
+  "browser": "Chrome 157.0.8103.79",
+  "viewport": {
+    "width": 1600,
+    "height": 900
+  },
+  "deviceScaleFactor": 1,
+  "sourceSettings": [
+    {
+      "kind": "audio",
+      "sampleRate": 48000,
+      "channelCount": 2
+    },
+    {
+      "kind": "video",
+      "width": 1600,
+      "height": 900,
+      "frameRate": 30,
+      "displaySurface": "browser"
+    }
+  ],
+  "sha256": {
+    "index.html": "a28bc5ed853bc380f5a3e74cd96c6f1e2916d8f9c7f094d57da612057b079f21",
+    "game.js": "e3a6eac8dea19785e8d5262bad978ff57310ac3f52f227484a9af01e8b4a5b66",
+    "screen.js": "ae59f9b7d6aec175e40a8c827004cc72ae3d0904b2c1c8de4c5c34492cce907f",
+    "sound.js": "22114e94e311bbb0af1d22f3e835873b0c7ee4cf0dd1784a5e85e2a450d1159d",
+    "style.css": "d6ed8f5fdd524ba84c0033324fff42317caf562abe80cc35cd962a01d1258d23",
+    "tower-art.js": "4510da13a3dd78e16407332c8c6edb5c756bd2878a9bf27d390850b4e6cce0cc"
+  },
+  "capture": "Chrome tab capture of actual pixels and local Web Audio. Playwright activates visible buttons and item hotspots. No changes to runtime or gameplay state. Audio gain +9dB for export.",
+  "output": {
+    "file": "像素塔室-试玩.mp4",
+    "sha256": "55bdc91ea1e2bd3e854acd4172dd97d897cf930bd471599fae50ff1d4bc6527a",
+    "decodedWithoutErrors": true,
+    "peakDBFS": -10.353801,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1600,
+        "height": 900,
+        "avg_frame_rate": "30/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "48000",
+        "channels": 2,
+        "avg_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "49.966667",
+      "size": "3642668"
+    }
+  },
+  "critical": [],
+  "result": {
+    "phase": "won",
+    "hp": 4,
+    "gold": 2,
+    "sword": 8,
+    "mirror": true
+  },
+  "actions": [
+    {
+      "ms": 2027,
+      "settledMs": 2178,
+      "floor": 1,
+      "phase": "start",
+      "id": "sword",
+      "control": "action-button",
+      "label": "照影剑\n剑伤 6。妖血低于或等于剑伤时可先手封妖。",
+      "enemyIntent": "封住塔顶负钟君 · 开局气血 24，灵石 3",
+      "beforeStats": [
+        "24/24",
+        "3",
+        "0"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "24/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "0"
+        }
+      ],
+      "afterLog": "步入照影廊，遇见纸灯蛾。"
+    },
+    {
+      "ms": 3689,
+      "settledMs": 4108,
+      "floor": 1,
+      "phase": "fight",
+      "id": "strike",
+      "control": "action-button",
+      "label": "出剑\n先斩 6 血，击杀可断招",
+      "enemyIntent": "本手 掠灯 2 伤 → 下手 撞灯 6 伤（重击）",
+      "beforeStats": [
+        "24/24",
+        "3",
+        "0"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "22/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "0"
+        }
+      ],
+      "afterLog": "出剑 6 伤，掠灯造成 2 伤。"
+    },
+    {
+      "ms": 5610,
+      "settledMs": 6026,
+      "floor": 1,
+      "phase": "fight",
+      "id": "strike",
+      "control": "action-button",
+      "label": "出剑\n先斩 6 血，击杀可断招",
+      "enemyIntent": "本手 撞灯 6 伤（重击） → 下手 收翅 0 伤",
+      "beforeStats": [
+        "22/24",
+        "3",
+        "0"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "22/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "0"
+        }
+      ],
+      "afterLog": "出剑 6 伤，封住纸灯蛾。"
+    },
+    {
+      "ms": 7429,
+      "settledMs": 7578,
+      "floor": 1,
+      "phase": "reward",
+      "id": "take",
+      "control": "hotspot",
+      "label": "拾取妖印\n得 1 枚灯纹印，前往岔路",
+      "enemyIntent": "印可售 4–7 石，也可嵌入照影剑",
+      "beforeStats": [
+        "22/24",
+        "3",
+        "0"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "22/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "1"
+        }
+      ],
+      "afterLog": "收下灯纹印。"
+    },
+    {
+      "ms": 8992,
+      "settledMs": 9134,
+      "floor": 1,
+      "phase": "route",
+      "id": "guide",
+      "control": "action-button",
+      "label": "问道友\n免费打听末市高价收哪种印",
+      "enemyIntent": "只走一条 · 下一站是绯绡的摊位",
+      "beforeStats": [
+        "22/24",
+        "3",
+        "1"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "22/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "1"
+        }
+      ],
+      "afterLog": "路签 · 末市以 7 石求灯纹印。"
+    },
+    {
+      "ms": 11542,
+      "ui": "open-market-inspector",
+      "copy": "本摊求鸣纹印 7 石，其他印 4 石 · 路签 · 末市以 7 石求灯纹印"
+    },
+    {
+      "ms": 13755,
+      "ui": "close-market-inspector"
+    },
+    {
+      "ms": 14048,
+      "settledMs": 14192,
+      "floor": 1,
+      "phase": "shop",
+      "id": "leave",
+      "control": "action-button",
+      "label": "离摊整备\n携余印前往器台",
+      "enemyIntent": "本摊求鸣纹印 7 石，其他印 4 石 · 路签 · 末市以 7 石求灯纹印",
+      "beforeStats": [
+        "22/24",
+        "3",
+        "1"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "22/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "1"
+        }
+      ],
+      "afterLog": "离开秤台，余 3 石。"
+    },
+    {
+      "ms": 15603,
+      "settledMs": 15740,
+      "floor": 1,
+      "phase": "prep",
+      "id": "climb",
+      "control": "action-button",
+      "label": "登狐灯市\n带走 1 枚余印",
+      "enemyIntent": "照影剑 · 本局剑伤 +2／枚 · 路签 · 末市以 7 石求灯纹印",
+      "beforeStats": [
+        "22/24",
+        "3",
+        "1"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "22/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "1"
+        }
+      ],
+      "afterLog": "步入狐灯市，遇见夜市狐。"
+    },
+    {
+      "ms": 17235,
+      "settledMs": 17657,
+      "floor": 2,
+      "phase": "fight",
+      "id": "strike",
+      "control": "action-button",
+      "label": "出剑\n先斩 6 血，击杀可断招",
+      "enemyIntent": "本手 虚晃 0 伤 → 下手 探爪 3 伤",
+      "beforeStats": [
+        "22/24",
+        "3",
+        "1"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "22/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "1"
+        }
+      ],
+      "afterLog": "出剑 6 伤，虚晃造成 0 伤。"
+    },
+    {
+      "ms": 19166,
+      "settledMs": 19587,
+      "floor": 2,
+      "phase": "fight",
+      "id": "strike",
+      "control": "action-button",
+      "label": "出剑\n先斩 6 血，击杀可断招",
+      "enemyIntent": "本手 探爪 3 伤 → 下手 噬影 8 伤（重击）",
+      "beforeStats": [
+        "22/24",
+        "3",
+        "1"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "19/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "1"
+        }
+      ],
+      "afterLog": "出剑 6 伤，探爪造成 3 伤。"
+    },
+    {
+      "ms": 21104,
+      "settledMs": 21525,
+      "floor": 2,
+      "phase": "fight",
+      "id": "guard",
+      "control": "action-button",
+      "label": "守势\n挡 4 伤，接重击下剑 +2",
+      "enemyIntent": "本手 噬影 8 伤（重击） → 下手 虚晃 0 伤",
+      "beforeStats": [
+        "19/24",
+        "3",
+        "1"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "15/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "1"
+        }
+      ],
+      "afterLog": "守势挡 4 伤，下剑 +2，噬影造成 4 伤。"
+    },
+    {
+      "ms": 23034,
+      "settledMs": 23456,
+      "floor": 2,
+      "phase": "fight",
+      "id": "strike",
+      "control": "action-button",
+      "label": "出剑\n先斩 8 血，含蓄势 +2",
+      "enemyIntent": "本手 虚晃 0 伤 → 下手 探爪 3 伤",
+      "beforeStats": [
+        "15/24",
+        "3",
+        "1"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "15/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "1"
+        }
+      ],
+      "afterLog": "出剑 8 伤（含蓄势 2），封住夜市狐。"
+    },
+    {
+      "ms": 24867,
+      "settledMs": 25012,
+      "floor": 2,
+      "phase": "reward",
+      "id": "take",
+      "control": "hotspot",
+      "label": "拾取妖印\n得 1 枚灯纹印，前往岔路",
+      "enemyIntent": "印可售 4–7 石，也可嵌入照影剑",
+      "beforeStats": [
+        "15/24",
+        "3",
+        "1"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "15/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "2"
+        }
+      ],
+      "afterLog": "收下灯纹印。"
+    },
+    {
+      "ms": 26409,
+      "settledMs": 26546,
+      "floor": 2,
+      "phase": "route",
+      "id": "guide",
+      "control": "action-button",
+      "label": "问道友\n免费打听塔顶妖物的起手",
+      "enemyIntent": "只走一条 · 下一站是塔顶前末市",
+      "beforeStats": [
+        "15/24",
+        "3",
+        "2"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "15/24"
+        },
+        {
+          "label": "灵石",
+          "value": "3"
+        },
+        {
+          "label": "妖印",
+          "value": "2"
+        }
+      ],
+      "afterLog": "塔顶路签 · 负钟君起手「牵链」3 伤。"
+    },
+    {
+      "ms": 28965,
+      "settledMs": 29234,
+      "floor": 2,
+      "phase": "shop",
+      "id": "sell-1",
+      "control": "action-button",
+      "label": "售灯纹印\n+7 石，售后有 10 石",
+      "enemyIntent": "本摊求灯纹印 7 石，其他印 4 石 · 塔顶路签 · 负钟君起手「牵链」3 伤",
+      "beforeStats": [
+        "15/24",
+        "3",
+        "2"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "15/24"
+        },
+        {
+          "label": "灵石",
+          "value": "10"
+        },
+        {
+          "label": "妖印",
+          "value": "1"
+        }
+      ],
+      "afterLog": "照影廊的灯纹印售 7 石。"
+    },
+    {
+      "ms": 31645,
+      "settledMs": 31915,
+      "floor": 2,
+      "phase": "shop",
+      "id": "mirror",
+      "control": "action-button",
+      "label": "买护心镜\n8 石，每战首次受伤减 6，余 2 石",
+      "enemyIntent": "本摊求灯纹印 7 石，其他印 4 石 · 塔顶路签 · 负钟君起手「牵链」3 伤",
+      "beforeStats": [
+        "15/24",
+        "10",
+        "1"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "15/24"
+        },
+        {
+          "label": "灵石",
+          "value": "2"
+        },
+        {
+          "label": "妖印",
+          "value": "1"
+        }
+      ],
+      "afterLog": "用 8 石系上护心镜。"
+    },
+    {
+      "ms": 34326,
+      "settledMs": 34470,
+      "floor": 2,
+      "phase": "shop",
+      "id": "leave",
+      "control": "action-button",
+      "label": "离摊整备\n携余印前往器台",
+      "enemyIntent": "本摊求灯纹印 7 石，其他印 4 石 · 塔顶路签 · 负钟君起手「牵链」3 伤",
+      "beforeStats": [
+        "15/24",
+        "2",
+        "1"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "15/24"
+        },
+        {
+          "label": "灵石",
+          "value": "2"
+        },
+        {
+          "label": "妖印",
+          "value": "1"
+        }
+      ],
+      "afterLog": "离开秤台，余 2 石。"
+    },
+    {
+      "ms": 35867,
+      "settledMs": 36005,
+      "floor": 2,
+      "phase": "prep",
+      "id": "embed-2",
+      "control": "action-button",
+      "label": "嵌灯纹印\n耗此印，本局剑伤 +2",
+      "enemyIntent": "照影剑 · 本局剑伤 +2／枚 · 塔顶路签 · 负钟君起手「牵链」3 伤",
+      "beforeStats": [
+        "15/24",
+        "2",
+        "1"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "15/24"
+        },
+        {
+          "label": "灵石",
+          "value": "2"
+        },
+        {
+          "label": "妖印",
+          "value": "0"
+        }
+      ],
+      "afterLog": "狐灯市的灯纹印嵌入照影剑，本局剑伤 +2。"
+    },
+    {
+      "ms": 37415,
+      "settledMs": 37560,
+      "floor": 2,
+      "phase": "prep",
+      "id": "climb",
+      "control": "action-button",
+      "label": "登沉钟殿\n携当前佩器入关",
+      "enemyIntent": "照影剑 · 本局剑伤 +2／枚 · 塔顶路签 · 负钟君起手「牵链」3 伤",
+      "beforeStats": [
+        "15/24",
+        "2",
+        "0"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "15/24"
+        },
+        {
+          "label": "灵石",
+          "value": "2"
+        },
+        {
+          "label": "妖印",
+          "value": "0"
+        }
+      ],
+      "afterLog": "步入沉钟殿，遇见负钟君。"
+    },
+    {
+      "ms": 39069,
+      "settledMs": 39485,
+      "floor": 3,
+      "phase": "fight",
+      "id": "strike",
+      "control": "action-button",
+      "label": "出剑\n先斩 8 血，击杀可断招",
+      "enemyIntent": "本手 牵链 3 伤 → 下手 落钟 12 伤（重击）",
+      "beforeStats": [
+        "15/24",
+        "2",
+        "0"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "15/24"
+        },
+        {
+          "label": "灵石",
+          "value": "2"
+        },
+        {
+          "label": "妖印",
+          "value": "0"
+        }
+      ],
+      "afterLog": "出剑 8 伤，护心镜挡 3，牵链造成 0 伤。"
+    },
+    {
+      "ms": 40985,
+      "settledMs": 41408,
+      "floor": 3,
+      "phase": "fight",
+      "id": "guard",
+      "control": "action-button",
+      "label": "守势\n挡 4 伤，接重击下剑 +2",
+      "enemyIntent": "本手 落钟 12 伤（重击） → 下手 收链 0 伤",
+      "beforeStats": [
+        "15/24",
+        "2",
+        "0"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "7/24"
+        },
+        {
+          "label": "灵石",
+          "value": "2"
+        },
+        {
+          "label": "妖印",
+          "value": "0"
+        }
+      ],
+      "afterLog": "守势挡 4 伤，下剑 +2，落钟造成 8 伤。"
+    },
+    {
+      "ms": 42923,
+      "settledMs": 43339,
+      "floor": 3,
+      "phase": "fight",
+      "id": "strike",
+      "control": "action-button",
+      "label": "出剑\n先斩 10 血，含蓄势 +2",
+      "enemyIntent": "本手 收链 0 伤 → 下手 牵链 3 伤",
+      "beforeStats": [
+        "7/24",
+        "2",
+        "0"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "7/24"
+        },
+        {
+          "label": "灵石",
+          "value": "2"
+        },
+        {
+          "label": "妖印",
+          "value": "0"
+        }
+      ],
+      "afterLog": "出剑 10 伤（含蓄势 2），收链造成 0 伤。"
+    },
+    {
+      "ms": 44847,
+      "settledMs": 45269,
+      "floor": 3,
+      "phase": "fight",
+      "id": "strike",
+      "control": "action-button",
+      "label": "出剑\n先斩 8 血，击杀可断招",
+      "enemyIntent": "本手 牵链 3 伤 → 下手 落钟 12 伤（重击）",
+      "beforeStats": [
+        "7/24",
+        "2",
+        "0"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "4/24"
+        },
+        {
+          "label": "灵石",
+          "value": "2"
+        },
+        {
+          "label": "妖印",
+          "value": "0"
+        }
+      ],
+      "afterLog": "出剑 8 伤，牵链造成 3 伤。"
+    },
+    {
+      "ms": 46773,
+      "settledMs": 47193,
+      "floor": 3,
+      "phase": "fight",
+      "id": "strike",
+      "control": "action-button",
+      "label": "出剑\n先斩 8 血，击杀可断招",
+      "enemyIntent": "本手 落钟 12 伤（重击） → 下手 收链 0 伤",
+      "beforeStats": [
+        "4/24",
+        "2",
+        "0"
+      ],
+      "afterStats": [
+        {
+          "label": "气血",
+          "value": "4/24"
+        },
+        {
+          "label": "灵石",
+          "value": "2"
+        },
+        {
+          "label": "妖印",
+          "value": "0"
+        }
+      ],
+      "afterLog": "出剑 8 伤，封住负钟君。"
+    }
+  ]
+}

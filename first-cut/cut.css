@@ -1,0 +1,81 @@
+*{box-sizing:border-box}html,body{margin:0;width:100%;min-height:100%;background:#0d191c;color:#efe2b9}body{min-height:100svh;display:grid;place-items:center;font:16px system-ui,sans-serif}
+#game{width:100%;max-width:1920px;aspect-ratio:16/9;max-height:100svh;position:relative;overflow:hidden;overflow:clip;isolation:isolate;background:#132128;touch-action:pinch-zoom;overscroll-behavior:contain;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+[hidden]{display:none!important}
+#loading{position:absolute;inset:0;z-index:4;display:grid;place-content:center;background:#101b21;color:#e4cf9f;letter-spacing:.14em}canvas{position:absolute;display:block;pointer-events:none;image-rendering:pixelated}#world{z-index:0}#hud{inset:0;width:100%;height:100%;z-index:1}
+.hitbox{position:absolute;z-index:2;color:transparent;border:0;background:transparent;cursor:pointer;padding:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}#target,#strike,#seal-grip{touch-action:none}#seal-grip{z-index:3}#target{cursor:crosshair}
+.hitbox:focus-visible{outline:2px dashed #ffecab;outline-offset:-4px}.hitbox:disabled{cursor:default}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(max-aspect-ratio:1/1){#game{max-width:630px;aspect-ratio:auto;height:100svh;max-height:940px}}
+
+@media(max-aspect-ratio:1/1){#game{height:min(100svh,168vw);min-height:450px}}
+
+#profile-open{position:absolute;z-index:2;border:0;background:none;display:grid;place-items:center;color:#ffe2a5;padding:4px;cursor:pointer;touch-action:manipulation;font-family:"Tower Script",serif}
+#profile-open span{pointer-events:none;display:grid;place-items:center;width:100%;height:100%;min-width:34px;min-height:27px;border:1px solid #b9965b;box-shadow:inset 0 0 0 2px #443229,inset 0 0 0 3px #816842,0 2px 1px #101416;background:linear-gradient(160deg,#634537,#40322d 48%,#322a26);white-space:nowrap;line-height:1}
+#profile-open:hover span,#profile-open:focus-visible span{color:#fff5d6;border-color:#ffe7ad}#profile-open:disabled{opacity:.6;cursor:default}
+#profile{width:min(740px,calc(100vw - 32px));max-height:min(90svh,780px);padding:0;border:2px solid #b29562;background:#44362b;color:#35281f;box-shadow:0 0 0 4px #352925,0 12px 65px #030a0de6;overflow:auto;overscroll-behavior:contain;font:17px/1.45 "Tower Script",serif;touch-action:pan-y}
+#profile::backdrop{background:#091516cc}
+.folio-shell{display:grid;grid-template-columns:31% minmax(0,1fr);min-height:395px;border:4px solid #493c30;position:relative}
+.folio-portrait{position:relative;overflow:hidden;background:repeating-linear-gradient(96deg,#ffffff05 0 1px,transparent 1px 6px),linear-gradient(145deg,#274340,#152c2e 56%,#243131);border-right:4px double #a58a5c}
+.folio-portrait::after{content:"";position:absolute;inset:8px;border:1px solid #bca27066;pointer-events:none}
+.folio-moon{position:absolute;width:86%;aspect-ratio:1;border-radius:50%;left:7%;top:50%;transform:translateY(-50%);overflow:hidden;border:3px double #b6a471;box-shadow:0 0 0 4px #1c3231,0 0 0 5px #6e7459;background:repeating-linear-gradient(6deg,#9da7810b 0 3px,transparent 3px 6px),radial-gradient(circle at 66% 36%,#79836b,#334c49 74%)}
+#folio-figure{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}
+.folio-artist{position:absolute;left:17px;top:19px;writing-mode:vertical-rl;font:30px/1 "Tower Brush","Tower Script",serif;letter-spacing:.13em;color:#e7cca0;text-shadow:2px 2px #192a2a}
+.folio-location{position:absolute;left:0;bottom:0;width:100%;background:#162523db;color:#d7bc83;padding:12px 15px;text-align:center;letter-spacing:.2em;font-size:14px}
+.folio-leaf{min-width:0;padding:clamp(14px,3vw,28px);background:repeating-linear-gradient(1deg,#7a60480b 0 1px,transparent 1px 4px),radial-gradient(ellipse at 72% 21%,#f0e2bf,#dbc69e 91%);box-shadow:inset 7px 0 12px #76563b40}
+.folio-head,.folio-section header{display:flex;align-items:center;justify-content:space-between;gap:7px}
+.folio-head{border-bottom:3px double #896b4c;padding:0 0 9px;margin:0 0 8px}
+.folio-head h2,.folio-section h3{margin:0;font-weight:400}.folio-head h2{font:clamp(30px,4vw,42px)/1.1 "Tower Brush","Tower Script",serif;letter-spacing:.08em}
+#folio-close{border:1px solid #9d7655;color:#653729;background:#cfb88e70;border-radius:1px;min-width:54px;min-height:44px;padding:3px 8px;font:17px "Tower Script",serif;cursor:pointer}
+#folio-close:focus-visible,#profile-open:focus-visible{outline:2px solid #b46637;outline-offset:1px}#folio-close:hover{background:#d0b380}
+.folio-stats{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:3px;margin:12px 0 15px}.folio-stat{padding-left:10px;border-left:1px solid #a68a63}.folio-stat:first-child{border:0;padding-left:0}.folio-stat dt{color:#68533c;font-size:15px}.folio-stat dd{margin:0;font:22px/1.4 "Tower Ledger",sans-serif;color:#332c26;font-variant-numeric:tabular-nums}.folio-stat:first-child dd{color:#883f32}
+.folio-section{margin-top:13px}.folio-section header{border-bottom:1px solid #a58961;padding-bottom:4px}.folio-section h3{font:23px "Tower Brush","Tower Script",serif}.folio-tally{font:13px "Tower Ledger",sans-serif;color:#684e36}.folio-line{display:grid;grid-template-columns:minmax(74px,29%) minmax(0,1fr);gap:6px;padding:6px 0 4px;line-height:1.4}.folio-line strong{font-weight:400;color:#693e28}.folio-line span{color:#4e4234}
+@media(max-width:550px){#profile{width:calc(100vw - 18px);max-height:91svh;font-size:15px}.folio-shell{display:block}.folio-portrait{height:84px;border:0;border-bottom:3px double #ac986a}.folio-portrait::after{inset:4px}.folio-moon{width:66px;left:12%}.folio-artist{writing-mode:horizontal-tb;left:auto;right:13%;top:14px;font-size:27px}.folio-location{width:auto;left:auto;right:12%;bottom:8px;background:none;padding:0;font-size:12px}.folio-leaf{padding:13px 17px 16px}.folio-stat dd{font-size:19px}.folio-section h3{font-size:21px}.folio-section{margin-top:9px}}
+@media(max-height:480px) and (min-width:551px){#profile{max-height:94svh}.folio-shell{min-height:290px}.folio-leaf{padding:10px 18px}.folio-head h2{font-size:28px}.folio-stats,.folio-section{margin:6px 0}.folio-line{padding:2px 0;font-size:15px}}
+
+#item-feedback{position:absolute;z-index:2;pointer-events:none;left:30%;top:29%;transform:translateX(-50%);padding:4px 13px;color:#e9deb2;background:#213831ee;border-top:1px solid #ceba78;border-bottom:1px solid #948357;box-shadow:0 2px 6px #12191aba;font:clamp(15px,1.5vw,22px) "Tower Script",serif;white-space:nowrap}
+@media(max-aspect-ratio:1/1){#item-feedback{top:29%;left:27%;font-size:15px}}
+
+.folio-tabs{display:flex;gap:3px;margin:9px 0 11px;border-bottom:1px solid #a88b61}
+.folio-tabs button,.bag-tool,.bag-pick{font-family:"Tower Script",serif;cursor:pointer;touch-action:manipulation}
+.folio-tabs button{font-size:18px;letter-spacing:.1em;background:transparent;border:0;color:#6a573f;min-height:42px;padding:3px 11px;border-bottom:3px solid transparent}
+.folio-tabs button[aria-pressed=true]{color:#773c2a;border-color:#974e35}
+#profile[data-page=bag]{width:min(790px,calc(100vw - 28px))}
+#profile[data-page=bag] .folio-shell{grid-template-columns:20% minmax(0,1fr)}
+
+.bag-pocket{display:grid;grid-template-columns:minmax(205px,1.55fr) minmax(112px,1fr);gap:15px;align-items:start}
+.bag-tray-title{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.bag-tray-title span,.bag-meta{font:13px "Tower Ledger",sans-serif;color:#6d5740}
+.bag-subhead,.bag-description h3{margin:0;font:22px/1.3 "Tower Brush","Tower Script",serif;font-weight:400;color:#432d24}
+.bag-board{position:relative;display:grid;grid-template-columns:repeat(var(--columns),1fr);grid-template-rows:repeat(var(--rows),1fr);aspect-ratio:4/3;background:repeating-linear-gradient(38deg,#b8ae8507 0 1px,transparent 1px 3px),linear-gradient(150deg,#142e2c,#365047 73%,#253c37);border:4px solid #68513b;outline:1px solid #ac8859;box-shadow:inset 0 0 10px #080e0c9a,0 2px 2px #5c463744;touch-action:none;color:#f0deb5}
+.bag-cell{min-width:0;min-height:0;padding:0;border:1px solid #a2926d50;background:transparent;cursor:pointer;box-shadow:inset 1px 1px #11211f5c;touch-action:none}
+.bag-cell:where([data-owner]:not([data-owner=""])){background:#ae987b37;border-color:#c8b9906c}
+.bag-cell.is-chosen{background:#c3a36b91;border-color:#f5d598;box-shadow:inset 0 0 0 1px #f6d591a6}
+.bag-cell[data-ghost=ok]{background:#83c69180;border-color:#c3f6a9;box-shadow:inset 0 0 0 1px #c3f6a9}
+.bag-cell[data-ghost=bad]{background:repeating-linear-gradient(45deg,#b94d4399 0 5px,#61282499 5px 10px);border-color:#feab85;box-shadow:inset 0 0 0 1px #feab85}
+.bag-cell:focus-visible{outline:2px dashed #fff0a5;outline-offset:-4px}
+.bag-glyphs{position:absolute;inset:0;overflow:hidden;pointer-events:none}.bag-glyphs .bag-icon{position:absolute;image-rendering:auto;pointer-events:none}
+.bag-picks{display:flex;flex-direction:column;gap:4px;margin:5px 0 9px}
+.bag-pick{display:flex;align-items:center;gap:6px;padding:2px 4px;border:1px solid #a38660;background:#d3bc9775;color:#493328;text-align:left;font-size:16px;min-height:40px}
+.bag-pick[aria-pressed=true]{background:#66442f;color:#ffedc1;border-color:#70492d}
+.bag-thumb{width:34px;height:34px;object-fit:contain;pointer-events:none}
+.bag-detail{border-top:3px double #ad926d;margin-top:10px;padding-top:7px;display:grid;grid-template-columns:42px 1fr;align-items:center;gap:3px 4px}.bag-detail .bag-thumb{width:39px;height:39px}.bag-detail p{grid-column:1/-1;margin:3px 0 4px;color:#514132;font-size:16px}
+.bag-actions{display:flex;gap:6px;flex-wrap:wrap}.bag-tool{min-width:58px;min-height:41px;border:1px solid #826241;color:#f8e5b5;background:linear-gradient(#71513a,#563b2d);box-shadow:inset 0 0 0 2px #ab875b4d;font-size:16px;padding:3px 10px}
+.bag-tool:disabled{color:#8e806a;background:#d2bfa0;border-color:#af9879;cursor:default}.bag-notice{color:#6f4230;font-size:14px}.bag-notice:not(:empty){margin-top:8px}
+@media(max-width:550px){#profile[data-page=bag]{width:calc(100vw - 16px)}#profile[data-page=bag] .folio-shell{display:block}#profile[data-page=bag] .folio-portrait{display:none}.bag-pocket{grid-template-columns:minmax(148px,1.65fr) minmax(85px,1fr);gap:9px}.bag-thumb{width:25px;height:25px}.bag-subhead{font-size:19px}.bag-pick{min-height:38px;font-size:14px}.bag-detail p{font-size:15px}.folio-tabs button{min-height:42px}.bag-tray-title span{font-size:12px}.folio-line{word-break:break-word}}
+
+
+@media(min-width:551px) and (max-height:800px){
+  #profile[data-page=bag] .folio-leaf{padding:13px 21px 14px}
+  #profile[data-page=bag] .folio-tabs{margin:4px 0 7px}
+  .bag-work[data-rows="4"] .bag-tray{width:min(100%,36svh)}
+  .bag-work[data-rows="4"] .bag-detail{margin-top:7px;padding-top:4px}
+}
+
+/* Keep the grid and equipped-item list anchored while inspecting different objects. */
+#profile[data-page=bag]{height:min(720px,92svh);box-sizing:border-box;overflow:hidden}
+#profile[data-page=bag] .folio-shell{height:100%;min-height:0;box-sizing:border-box}
+#profile[data-page=bag] .folio-leaf{display:flex;flex-direction:column;height:100%;min-height:0;box-sizing:border-box}
+#profile[data-page=bag] #folio-body{min-height:0;overflow:auto;scrollbar-gutter:stable;flex:1}
+.bag-detail{min-height:82px;align-content:start;box-sizing:border-box}
+.bag-detail p{height:2.85em;line-height:1.4;overflow-y:auto}
+@media(max-width:550px){#profile[data-page=bag]{height:min(720px,91svh)}}

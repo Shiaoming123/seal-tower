@@ -1,0 +1,357 @@
+{
+  "url": "http://127.0.0.1:2821/rein-bridge.html?seed=2",
+  "seed": "2",
+  "device": "desk",
+  "flow": "cold",
+  "bundleSHA256": "c995d9548c13a70bf247274e14461e51617cb05c40021794c065bc58d6c2b7a4",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "browser": "157.0.8103.79",
+  "input": "Chromium 鼠标，环回 HTTP",
+  "automated": true,
+  "entranceToSettlementMs": 6304,
+  "totalAutomationMs": 6341,
+  "videoReadingPauses": false,
+  "media": null,
+  "clip": null,
+  "result": {
+    "quantity": 1,
+    "gateEntryGold": 5,
+    "gateEntryHP": 22,
+    "firstDamage": 7,
+    "hits": 3,
+    "hpAfter": 19,
+    "silkCost": 2,
+    "silkRevenue": 1,
+    "realizedProfit": -1,
+    "receipt": "佩器破关 灯纹印在首摊售出 ＋4 石 守关 3 手 · 出剑 3 次 气血 22 → 19 狐柜取货 · 听泉算盘 结余 6 石 · 绢销 1 份 · 绢利 -1 石 回首摊再选 开始下一局",
+    "guildAfterReload": {
+      "joined": false,
+      "cash": 3,
+      "hp": 24,
+      "welcome": "狐商 · 绯绡 “好轻的一团灯火。放上来吧， 秤砣会告诉你，它在我这里值多少。” 点秤或拖印上秤 把灯纹印放上秤"
+    }
+  },
+  "events": [
+    {
+      "ms": 555,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 1312,
+      "action": "出剑结算",
+      "foeBefore": 9,
+      "foeAfter": 3,
+      "hp": 22
+    },
+    {
+      "ms": 1338,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 2102,
+      "action": "出剑结算",
+      "foeBefore": 3,
+      "foeAfter": 0,
+      "hp": 22
+    },
+    {
+      "ms": 2314,
+      "action": "primary",
+      "label": "拾起灯纹印",
+      "command": "",
+      "phase": "guide"
+    },
+    {
+      "ms": 2511,
+      "action": "primary",
+      "label": "问卖价",
+      "command": "",
+      "phase": "rumor"
+    },
+    {
+      "ms": 2512,
+      "action": "道友开市前报价",
+      "rumor": "先看末市收价 这枚灯纹印在首柜卖 4 石，带过狐关能卖 7 石。 封蜡绢首摊 2 石，末市每份收 1 石。 常市：转卖每份亏 1 石 去找狐商"
+    },
+    {
+      "ms": 2738,
+      "action": "primary",
+      "label": "去找狐商",
+      "command": "",
+      "phase": "stall"
+    },
+    {
+      "ms": 2816,
+      "action": "primary",
+      "label": "把灯纹印放上秤",
+      "command": "",
+      "phase": "quote"
+    },
+    {
+      "ms": 3050,
+      "action": "primary",
+      "label": "成交  ＋4 石",
+      "command": "",
+      "phase": "result"
+    },
+    {
+      "ms": 3179,
+      "action": "primary",
+      "label": "俯看货摊",
+      "command": "",
+      "phase": "counter"
+    },
+    {
+      "ms": 3279,
+      "action": "market-cargo",
+      "label": "查看商货",
+      "command": null,
+      "phase": "counter"
+    },
+    {
+      "ms": 3308,
+      "action": "验货",
+      "name": "abacus",
+      "quote": "听泉算盘 以入战余款计，每 4 石使本战首剑增 1 伤，至多 2 伤。 交旧铜铃，原栏佩入算盘。 墨蠹气血 10，得 3 石与墨蠹壳 携当前钱囊和余印入关 旧铃换算盘 去侧廊 闯夜市狐关"
+    },
+    {
+      "ms": 3332,
+      "action": "primary",
+      "label": "旧铃换算盘",
+      "command": "barter-abacus",
+      "phase": "counter"
+    },
+    {
+      "ms": 3364,
+      "action": "验货",
+      "name": "silk",
+      "quote": "封蜡绢 每叠占两格。首柜每份 2 石，末市依路签验收。 每份 2 石 × 1，合 2 石；余 5 石。 墨蠹气血 10，得 3 石与墨蠹壳 携当前钱囊和余印入关 购 1 份　2 石 去侧廊 闯夜市狐关"
+    },
+    {
+      "ms": 3368,
+      "action": "首柜完整报价",
+      "quantity": 1,
+      "offer": "封蜡绢 每叠占两格。首柜每份 2 石，末市依路签验收。 每份 2 石 × 1，合 2 石；余 5 石。 墨蠹气血 10，得 3 石与墨蠹壳 携当前钱囊和余印入关 购 1 份　2 石 去侧廊 闯夜市狐关"
+    },
+    {
+      "ms": 3441,
+      "action": "primary",
+      "label": "购 1 份　2 石",
+      "command": "buy-silk",
+      "phase": "counter"
+    },
+    {
+      "ms": 3443,
+      "action": "成交",
+      "before": 7,
+      "after": 5,
+      "receipt": "封蜡绢 每叠占两格。首柜每份 2 石，末市依路签验收。 每份 2 石 × 1，合 2 石；余 3 石。 墨蠹气血 10，得 3 石与墨蠹壳 携当前钱囊和余印入关 已取封蜡绢 · 灵石 7 → 5 购 1 份　2 石 去侧廊 闯夜市狐关"
+    },
+    {
+      "ms": 3508,
+      "action": "market-fourth",
+      "label": "闯夜市狐关",
+      "command": "gate",
+      "phase": "idle"
+    },
+    {
+      "ms": 3534,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 4277,
+      "action": "出剑结算",
+      "foeBefore": 19,
+      "foeAfter": 12,
+      "hp": 22
+    },
+    {
+      "ms": 4332,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 5075,
+      "action": "出剑结算",
+      "foeBefore": 12,
+      "foeAfter": 6,
+      "hp": 19
+    },
+    {
+      "ms": 5104,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 5875,
+      "action": "出剑结算",
+      "foeBefore": 6,
+      "foeAfter": 0,
+      "hp": 19
+    },
+    {
+      "ms": 6076,
+      "action": "primary",
+      "label": "查看末市货摊",
+      "command": "",
+      "phase": "counter"
+    },
+    {
+      "ms": 6194,
+      "action": "验货",
+      "name": "silk",
+      "quote": "封蜡绢 每叠占两格。首柜每份 2 石，末市依路签验收。 每份 1 石 × 1，合 1 石；余 6 石。 印价与守关结果入账 售 1 份　1 石 合账离市"
+    },
+    {
+      "ms": 6194,
+      "action": "末市详细估价",
+      "ask": "封蜡绢 每叠占两格。首柜每份 2 石，末市依路签验收。 每份 1 石 × 1，合 1 石；余 6 石。 印价与守关结果入账 售 1 份　1 石 合账离市",
+      "before": 5
+    },
+    {
+      "ms": 6274,
+      "action": "primary",
+      "label": "售 1 份　1 石",
+      "command": "vend-silk",
+      "phase": "counter"
+    },
+    {
+      "ms": 6275,
+      "action": "成交",
+      "before": 5,
+      "after": 6,
+      "receipt": "狐灯扣 夜市狐固定掉落。末市收 3 石。 每份 3 石 × 1，合 3 石；余 9 石。 印价与守关结果入账 已售封蜡绢 · 灵石 5 → 6 售一份 · 3 石 合账离市"
+    },
+    {
+      "ms": 6304,
+      "action": "market-third",
+      "label": "合账离市",
+      "command": "settle",
+      "phase": "receipt"
+    },
+    {
+      "ms": 6341,
+      "action": "末市账本",
+      "gateStart": {
+        "phase": "idle",
+        "seed": "2",
+        "combatKind": "gate-fox",
+        "hp": "22",
+        "foe": "19",
+        "floor": "2",
+        "gold": "5",
+        "seals": "0"
+      },
+      "first": {
+        "phase": "idle",
+        "seed": "2",
+        "combatKind": "gate-fox",
+        "hp": "22",
+        "foe": "12",
+        "floor": "2",
+        "gold": "5",
+        "seals": "0"
+      },
+      "ended": {
+        "phase": "receipt",
+        "seed": "2",
+        "combatKind": "gate-fox",
+        "hp": "19",
+        "foe": "0",
+        "floor": "2",
+        "gold": "6",
+        "seals": "0",
+        "decision": "sell"
+      },
+      "hits": 3,
+      "profit": -1,
+      "receipt": "佩器破关 灯纹印在首摊售出 ＋4 石 守关 3 手 · 出剑 3 次 气血 22 → 19 狐柜取货 · 听泉算盘 结余 6 石 · 绢销 1 份 · 绢利 -1 石 回首摊再选 开始下一局"
+    },
+    {
+      "ms": 6737,
+      "action": "profile-open",
+      "label": "查看斩妖手札与行囊",
+      "command": null,
+      "phase": "idle"
+    },
+    {
+      "ms": 6748,
+      "action": "folio-close",
+      "label": "关闭手札，返回当前事件",
+      "command": null,
+      "phase": "idle"
+    },
+    {
+      "ms": 6788,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 7539,
+      "action": "出剑结算",
+      "foeBefore": 9,
+      "foeAfter": 3,
+      "hp": 22
+    },
+    {
+      "ms": 7570,
+      "action": "strike",
+      "label": "出剑",
+      "command": null,
+      "phase": "swing"
+    },
+    {
+      "ms": 8321,
+      "action": "出剑结算",
+      "foeBefore": 3,
+      "foeAfter": 0,
+      "hp": 22
+    },
+    {
+      "ms": 8517,
+      "action": "primary",
+      "label": "拾起灯纹印",
+      "command": "",
+      "phase": "guide"
+    },
+    {
+      "ms": 8705,
+      "action": "primary",
+      "label": "问卖价",
+      "command": "",
+      "phase": "rumor"
+    },
+    {
+      "ms": 8902,
+      "action": "primary",
+      "label": "去找狐商",
+      "command": "",
+      "phase": "stall"
+    }
+  ],
+  "captures": [
+    "桌面HTTP-常市1份绢-首柜验价.jpg",
+    "桌面HTTP-常市1份绢-首剑后.jpg",
+    "桌面HTTP-常市1份绢-末市未付.jpg",
+    "桌面HTTP-常市1份绢-结账.jpg"
+  ],
+  "errors": []
+}

@@ -1,0 +1,1347 @@
+{
+  "url": "[本机路径略]",
+  "bundle": "55d8bcea0c50137f96194f772de2c9b34d5ac2448b20304a86ceb7421a7b0a93",
+  "width": 1280,
+  "profile": "desktop",
+  "events": [
+    {
+      "op": "order-ash",
+      "before": {
+        "phase": "contract",
+        "leg": "1",
+        "direction": "",
+        "more": "柜台接单　·　路签 1",
+        "title": "今天替谁进塔？",
+        "text": "父亲伤了腿，今天轮到你进塔给街灯找材料。选一位买主，货不齐也能按散价卖。驿柜备有 1 份灰，每份 2 石。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n尚未接单",
+        "readout": "",
+        "options": [
+          {
+            "id": "order-ash",
+            "label": "给灯匠送灰\n两份灰共 7 石。散卖每份 1 石。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "order-clasp",
+            "label": "替绯绡取扣\n一枚完整狐扣 9 石。散卖每枚 4 石。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "order-free",
+            "label": "只做现货\n货归自己，不必保留指定货品。",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "gear",
+        "leg": "1",
+        "direction": "",
+        "more": "出发备货　·　路签 1",
+        "title": "拿一件趁手的",
+        "text": "手上只有一个武器位。路上捡到其他工具，可以当场换用。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gear-knife",
+            "label": "带短铁刀\n免费。牌组多一张 0 点短刺，进击多打 1 伤。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-hook",
+            "label": "买竹柄钩 · 2 石\n牌组多一张回钩。架住蛾翅后，下击可取灯芯。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-buckler",
+            "label": "买木挡板 · 1 石\n多一张盾步。格挡接招后，下击多打 3 伤。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-plate",
+            "label": "带刀配盘 · 3 石\n刀牌加 0 点盘照。扬灰花 1 灰截住本轮敌招。",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "gear-hook",
+      "before": {
+        "phase": "gear",
+        "leg": "1",
+        "direction": "",
+        "more": "出发备货　·　路签 1",
+        "title": "拿一件趁手的",
+        "text": "手上只有一个武器位。路上捡到其他工具，可以当场换用。",
+        "status": "气血 22/22\n灵石 3",
+        "foe": "",
+        "stock": "手持 短铁刀\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gear-knife",
+            "label": "带短铁刀\n免费。牌组多一张 0 点短刺，进击多打 1 伤。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-hook",
+            "label": "买竹柄钩 · 2 石\n牌组多一张回钩。架住蛾翅后，下击可取灯芯。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-buckler",
+            "label": "买木挡板 · 1 石\n多一张盾步。格挡接招后，下击多打 3 伤。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "gear-plate",
+            "label": "带刀配盘 · 3 石\n刀牌加 0 点盘照。扬灰花 1 灰截住本轮敌招。",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "走到灯台",
+        "text": "旧灯台可以收灰或包扎。向前1 格（向北）。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "step",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "走到灯台",
+        "text": "旧灯台可以收灰或包扎。向前1 格（向北）。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "gather",
+        "leg": "1",
+        "direction": "",
+        "more": "沿路取材　·　路签 1",
+        "title": "清理廊口旧灯",
+        "text": "铺里常年替这里换灯。每次经过，可以收一份灯灰，也可以坐下包扎伤口。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gather-ash",
+            "label": "收灯灰 1 份\n收进货袋。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "rest",
+            "label": "歇脚包扎\n恢复最多 3 点气血，留下灯灰。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "gather-ash",
+      "before": {
+        "phase": "gather",
+        "leg": "1",
+        "direction": "",
+        "more": "沿路取材　·　路签 1",
+        "title": "清理廊口旧灯",
+        "text": "铺里常年替这里换灯。每次经过，可以收一份灯灰，也可以坐下包扎伤口。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 0/5\n灯灰 0\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "gather-ash",
+            "label": "收灯灰 1 份\n收进货袋。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "rest",
+            "label": "歇脚包扎\n恢复最多 3 点气血，留下灯灰。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n结束本趟；已到手的货仍能交割。",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前2 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "step",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前2 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前1 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "step",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "先到岔路的木牌前。向前1 格（向北）。西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝北走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n前方是墙",
+            "aria": null,
+            "disabled": true
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "turn-left",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝北 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向西",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n前方是墙",
+            "aria": null,
+            "disabled": true
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向东",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝西 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝西走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "step",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝西 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝西走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝西 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝西走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "step",
+      "before": {
+        "phase": "walk",
+        "leg": "1",
+        "direction": "面朝西 · 看图",
+        "more": "探路　·　路签 1",
+        "title": "在岔口选猎路",
+        "text": "西边灯架，东边鼠洞。猎蛾得灰，但那条路的狐扣缺角；追鼠能遇上带完扣的狐。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石",
+        "readout": "",
+        "options": [
+          {
+            "id": "turn-left",
+            "label": "左转\n转向南",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "step",
+            "label": "向前走\n朝西走一格",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "turn-right",
+            "label": "右转\n转向北",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺\n放弃后续猎路",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 1 回合　·　抽牌 4　弃牌 0",
+        "title": "你来出牌",
+        "text": "扑向灯芯 · 3 伤；结束回合预计受 3 伤。 按 0、1、2 点依次出牌，末牌加 2。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "纸灯蛾 12/12\n将出 扑向灯芯 · 3 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 3/3\n格挡 0",
+        "readout": "",
+        "options": [
+          {
+            "id": "card-0-1-2",
+            "label": "1\n进击\n打 3 伤。",
+            "aria": "进击，1 行动力。打 3 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-1-5",
+            "label": "2\n全力一击\n打 6 伤。",
+            "aria": "全力一击，2 行动力。打 6 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-1-4",
+            "label": "1\n扬灰\n用 1 灰，下击多打 3 伤。敌招仍会落下。",
+            "aria": "扬灰，1 行动力。用 1 灰，下击多打 3 伤。敌招仍会落下。",
+            "fx": "flare",
+            "disabled": false
+          },
+          {
+            "id": "card-0-1-7",
+            "label": "1\n回钩\n打 4 伤。",
+            "aria": "回钩，1 行动力。打 4 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "card-0-1-5",
+      "before": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 1 回合　·　抽牌 4　弃牌 0",
+        "title": "你来出牌",
+        "text": "扑向灯芯 · 3 伤；结束回合预计受 3 伤。 按 0、1、2 点依次出牌，末牌加 2。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "纸灯蛾 12/12\n将出 扑向灯芯 · 3 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 3/3\n格挡 0",
+        "readout": "",
+        "options": [
+          {
+            "id": "card-0-1-2",
+            "label": "1\n进击\n打 3 伤。",
+            "aria": "进击，1 行动力。打 3 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-1-5",
+            "label": "2\n全力一击\n打 6 伤。",
+            "aria": "全力一击，2 行动力。打 6 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-1-4",
+            "label": "1\n扬灰\n用 1 灰，下击多打 3 伤。敌招仍会落下。",
+            "aria": "扬灰，1 行动力。用 1 灰，下击多打 3 伤。敌招仍会落下。",
+            "fx": "flare",
+            "disabled": false
+          },
+          {
+            "id": "card-0-1-7",
+            "label": "1\n回钩\n打 4 伤。",
+            "aria": "回钩，1 行动力。打 4 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 1 回合　·　抽牌 4　弃牌 1",
+        "title": "你来出牌",
+        "text": "扑向灯芯 · 3 伤；结束回合预计受 3 伤。 按 0、1、2 点依次出牌，末牌加 2。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "纸灯蛾 6/12\n将出 扑向灯芯 · 3 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 1/3\n格挡 0",
+        "readout": "击中 6 伤。",
+        "options": [
+          {
+            "id": "card-0-1-2",
+            "label": "1\n进击\n打 3 伤。",
+            "aria": "进击，1 行动力。打 3 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-1-4",
+            "label": "1\n扬灰\n用 1 灰，下击多打 3 伤。敌招仍会落下。",
+            "aria": "扬灰，1 行动力。用 1 灰，下击多打 3 伤。敌招仍会落下。",
+            "fx": "flare",
+            "disabled": false
+          },
+          {
+            "id": "card-0-1-7",
+            "label": "1\n回钩\n打 4 伤。",
+            "aria": "回钩，1 行动力。打 4 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "card-0-1-7",
+      "before": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 1 回合　·　抽牌 4　弃牌 1",
+        "title": "你来出牌",
+        "text": "扑向灯芯 · 3 伤；结束回合预计受 3 伤。 按 0、1、2 点依次出牌，末牌加 2。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "纸灯蛾 6/12\n将出 扑向灯芯 · 3 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 1/3\n格挡 0",
+        "readout": "击中 6 伤。",
+        "options": [
+          {
+            "id": "card-0-1-2",
+            "label": "1\n进击\n打 3 伤。",
+            "aria": "进击，1 行动力。打 3 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-1-4",
+            "label": "1\n扬灰\n用 1 灰，下击多打 3 伤。敌招仍会落下。",
+            "aria": "扬灰，1 行动力。用 1 灰，下击多打 3 伤。敌招仍会落下。",
+            "fx": "flare",
+            "disabled": false
+          },
+          {
+            "id": "card-0-1-7",
+            "label": "1\n回钩\n打 4 伤。",
+            "aria": "回钩，1 行动力。打 4 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 1 回合　·　抽牌 4　弃牌 2",
+        "title": "你来出牌",
+        "text": "扑向灯芯 · 3 伤；结束回合预计受 3 伤。 按 0、1、2 点依次出牌，末牌加 2。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "纸灯蛾 2/12\n将出 扑向灯芯 · 3 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 0/3\n格挡 0",
+        "readout": "击中 4 伤。",
+        "options": [
+          {
+            "id": "card-0-1-2",
+            "label": "1\n进击\n打 3 伤。行动点不足。",
+            "aria": "进击，1 行动力。打 3 伤。行动点不足。",
+            "fx": "strike",
+            "disabled": true
+          },
+          {
+            "id": "card-0-1-4",
+            "label": "1\n扬灰\n用 1 灰，下击多打 3 伤。敌招仍会落下。行动点不足。",
+            "aria": "扬灰，1 行动力。用 1 灰，下击多打 3 伤。敌招仍会落下。行动点不足。",
+            "fx": "flare",
+            "disabled": true
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "end-turn",
+      "before": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 1 回合　·　抽牌 4　弃牌 2",
+        "title": "你来出牌",
+        "text": "扑向灯芯 · 3 伤；结束回合预计受 3 伤。 按 0、1、2 点依次出牌，末牌加 2。",
+        "status": "气血 22/22\n灵石 1",
+        "foe": "纸灯蛾 2/12\n将出 扑向灯芯 · 3 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 0/3\n格挡 0",
+        "readout": "击中 4 伤。",
+        "options": [
+          {
+            "id": "card-0-1-2",
+            "label": "1\n进击\n打 3 伤。行动点不足。",
+            "aria": "进击，1 行动力。打 3 伤。行动点不足。",
+            "fx": "strike",
+            "disabled": true
+          },
+          {
+            "id": "card-0-1-4",
+            "label": "1\n扬灰\n用 1 灰，下击多打 3 伤。敌招仍会落下。行动点不足。",
+            "aria": "扬灰，1 行动力。用 1 灰，下击多打 3 伤。敌招仍会落下。行动点不足。",
+            "fx": "flare",
+            "disabled": true
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 2 回合　·　抽牌 0　弃牌 4",
+        "title": "你来出牌",
+        "text": "扫翅 · 4 伤；结束回合预计受 4 伤。",
+        "status": "气血 19/22\n灵石 1",
+        "foe": "纸灯蛾 2/12\n将出 扫翅 · 4 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 3/3\n格挡 0",
+        "readout": "扑向灯芯，受 3 伤。",
+        "options": [
+          {
+            "id": "card-0-2-3",
+            "label": "1\n架招\n本轮加 4 格挡。接住扑翅可露芯。",
+            "aria": "架招，1 行动力。本轮加 4 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-0",
+            "label": "0\n挑灯试刃\n打 1 伤。",
+            "aria": "挑灯试刃，0 行动力。打 1 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-6",
+            "label": "2\n护住货袋\n本轮加 7 格挡。接住扑翅可露芯。",
+            "aria": "护住货袋，2 行动力。本轮加 7 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-1",
+            "label": "0\n侧身\n本轮加 2 格挡。接住扑翅可露芯。",
+            "aria": "侧身，0 行动力。本轮加 2 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "card-0-2-6",
+      "before": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 2 回合　·　抽牌 0　弃牌 4",
+        "title": "你来出牌",
+        "text": "扫翅 · 4 伤；结束回合预计受 4 伤。",
+        "status": "气血 19/22\n灵石 1",
+        "foe": "纸灯蛾 2/12\n将出 扫翅 · 4 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 3/3\n格挡 0",
+        "readout": "扑向灯芯，受 3 伤。",
+        "options": [
+          {
+            "id": "card-0-2-3",
+            "label": "1\n架招\n本轮加 4 格挡。接住扑翅可露芯。",
+            "aria": "架招，1 行动力。本轮加 4 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-0",
+            "label": "0\n挑灯试刃\n打 1 伤。",
+            "aria": "挑灯试刃，0 行动力。打 1 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-6",
+            "label": "2\n护住货袋\n本轮加 7 格挡。接住扑翅可露芯。",
+            "aria": "护住货袋，2 行动力。本轮加 7 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-1",
+            "label": "0\n侧身\n本轮加 2 格挡。接住扑翅可露芯。",
+            "aria": "侧身，0 行动力。本轮加 2 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 2 回合　·　抽牌 0　弃牌 5",
+        "title": "你来出牌",
+        "text": "扫翅 · 4 伤；结束回合预计受 0 伤。",
+        "status": "气血 19/22\n灵石 1",
+        "foe": "纸灯蛾 2/12\n将出 扫翅 · 4 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 1/3\n格挡 7",
+        "readout": "本轮格挡 7。",
+        "options": [
+          {
+            "id": "card-0-2-3",
+            "label": "1\n架招\n本轮加 4 格挡。接住扑翅可露芯。",
+            "aria": "架招，1 行动力。本轮加 4 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-0",
+            "label": "0\n挑灯试刃\n打 1 伤。",
+            "aria": "挑灯试刃，0 行动力。打 1 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-1",
+            "label": "0\n侧身\n本轮加 2 格挡。接住扑翅可露芯。",
+            "aria": "侧身，0 行动力。本轮加 2 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "card-0-2-3",
+      "before": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 2 回合　·　抽牌 0　弃牌 5",
+        "title": "你来出牌",
+        "text": "扫翅 · 4 伤；结束回合预计受 0 伤。",
+        "status": "气血 19/22\n灵石 1",
+        "foe": "纸灯蛾 2/12\n将出 扫翅 · 4 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 1/3\n格挡 7",
+        "readout": "本轮格挡 7。",
+        "options": [
+          {
+            "id": "card-0-2-3",
+            "label": "1\n架招\n本轮加 4 格挡。接住扑翅可露芯。",
+            "aria": "架招，1 行动力。本轮加 4 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-0",
+            "label": "0\n挑灯试刃\n打 1 伤。",
+            "aria": "挑灯试刃，0 行动力。打 1 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-1",
+            "label": "0\n侧身\n本轮加 2 格挡。接住扑翅可露芯。",
+            "aria": "侧身，0 行动力。本轮加 2 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 2 回合　·　抽牌 0　弃牌 6",
+        "title": "你来出牌",
+        "text": "扫翅 · 4 伤；结束回合预计受 0 伤。",
+        "status": "气血 19/22\n灵石 1",
+        "foe": "纸灯蛾 2/12\n将出 扫翅 · 4 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 0/3\n格挡 11",
+        "readout": "本轮格挡 11。",
+        "options": [
+          {
+            "id": "card-0-2-0",
+            "label": "0\n挑灯试刃\n打 1 伤。",
+            "aria": "挑灯试刃，0 行动力。打 1 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-1",
+            "label": "0\n侧身\n本轮加 2 格挡。接住扑翅可露芯。",
+            "aria": "侧身，0 行动力。本轮加 2 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    },
+    {
+      "op": "card-0-2-0",
+      "before": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 2 回合　·　抽牌 0　弃牌 6",
+        "title": "你来出牌",
+        "text": "扫翅 · 4 伤；结束回合预计受 0 伤。",
+        "status": "气血 19/22\n灵石 1",
+        "foe": "纸灯蛾 2/12\n将出 扫翅 · 4 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 0/3\n格挡 11",
+        "readout": "本轮格挡 11。",
+        "options": [
+          {
+            "id": "card-0-2-0",
+            "label": "0\n挑灯试刃\n打 1 伤。",
+            "aria": "挑灯试刃，0 行动力。打 1 伤。",
+            "fx": "strike",
+            "disabled": false
+          },
+          {
+            "id": "card-0-2-1",
+            "label": "0\n侧身\n本轮加 2 格挡。接住扑翅可露芯。",
+            "aria": "侧身，0 行动力。本轮加 2 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      },
+      "after": {
+        "phase": "fight",
+        "leg": "1",
+        "direction": "",
+        "more": "第 2 回合　·　抽牌 0　弃牌 7",
+        "title": "连招 1/3",
+        "text": "扫翅 · 4 伤；结束回合预计受 0 伤。",
+        "status": "气血 19/22\n灵石 1",
+        "foe": "纸灯蛾 1/12\n将出 扫翅 · 4 伤",
+        "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 0/3\n格挡 11",
+        "readout": "击中 1 伤。",
+        "options": [
+          {
+            "id": "card-0-2-1",
+            "label": "0\n侧身\n本轮加 2 格挡。接住扑翅可露芯。",
+            "aria": "侧身，0 行动力。本轮加 2 格挡。接住扑翅可露芯。",
+            "fx": "guard",
+            "disabled": false
+          },
+          {
+            "id": "end-turn",
+            "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+            "aria": null,
+            "disabled": false
+          },
+          {
+            "id": "retreat",
+            "label": "带货回铺",
+            "aria": null,
+            "disabled": false
+          }
+        ],
+        "dialog": ""
+      }
+    }
+  ],
+  "screens": [
+    "开场.jpg",
+    "逆序结算.jpg"
+  ],
+  "end": {
+    "phase": "fight",
+    "leg": "1",
+    "direction": "",
+    "more": "第 2 回合　·　抽牌 0　弃牌 7",
+    "title": "连招 1/3",
+    "text": "扫翅 · 4 伤；结束回合预计受 0 伤。",
+    "status": "气血 19/22\n灵石 1",
+    "foe": "纸灯蛾 1/12\n将出 扫翅 · 4 伤",
+    "stock": "手持 竹柄钩\n货袋 1/5\n灯灰 1\n镇灯匠收 2 份灯灰，付 7 石\n行动 0/3\n格挡 11",
+    "readout": "击中 1 伤。",
+    "options": [
+      {
+        "id": "card-0-2-1",
+        "label": "0\n侧身\n本轮加 2 格挡。接住扑翅可露芯。",
+        "aria": "侧身，0 行动力。本轮加 2 格挡。接住扑翅可露芯。",
+        "fx": "guard",
+        "disabled": false
+      },
+      {
+        "id": "end-turn",
+        "label": "结束回合\n敌人出招，弃掉余牌，重抽 4 张。",
+        "aria": null,
+        "disabled": false
+      },
+      {
+        "id": "retreat",
+        "label": "带货回铺",
+        "aria": null,
+        "disabled": false
+      }
+    ],
+    "dialog": ""
+  },
+  "errors": []
+}

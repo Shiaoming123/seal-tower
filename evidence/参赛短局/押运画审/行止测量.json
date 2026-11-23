@@ -1,0 +1,90 @@
+{
+  "normal": {
+    "ms": [
+      8779,
+      10050,
+      11371,
+      12647,
+      14112,
+      15413
+    ],
+    "measurements": {
+      "路面": {
+        "box": [
+          343,
+          407,
+          490,
+          512
+        ],
+        "movingChangedPercent": 18.14,
+        "stoppedChangedPercent": 0.0
+      },
+      "石栏": {
+        "box": [
+          102,
+          457,
+          162,
+          482
+        ],
+        "movingChangedPercent": 0.0,
+        "stoppedChangedPercent": 0.0
+      },
+      "远山": {
+        "box": [
+          880,
+          92,
+          1010,
+          161
+        ],
+        "movingChangedPercent": 0.0,
+        "stoppedChangedPercent": 0.0
+      }
+    },
+    "hashes": {
+      "normal-常速0.jpg": "d0b2afeeec6a6543620c5652ea74852e6587159f09fe62f0f6dd5b34b39922d2",
+      "normal-常速3.jpg": "eb1d832cb26dcc522a9e1d37bb7e3aeafe2097cfc0213d8dfef2ce4b09e00e53",
+      "normal-已停0.jpg": "2c876e5099bc057faedd0f6d52ccc91cc4ac7110eed2d59df58a35e260bb97b4",
+      "normal-已停1.jpg": "8b3ecaca289d1476687ba452f1bc1c5f3905852e42e450dd6870b53861a33ca7"
+    },
+    "packageSHA": "bffb9269164dde11e60374c5024d33b2342fbac4f4f9c759e7c0527d6b43074a"
+  },
+  "express": {
+    "ms": [
+      9236,
+      10524,
+      11837,
+      13161,
+      14574,
+      15914
+    ],
+    "measurements": {
+      "路面": {
+        "box": [
+          40,
+          839,
+          181,
+          1008
+        ],
+        "movingChangedPercent": 40.97,
+        "stoppedChangedPercent": 0.0
+      },
+      "远山": {
+        "box": [
+          65,
+          296,
+          194,
+          386
+        ],
+        "movingChangedPercent": 0.0,
+        "stoppedChangedPercent": 0.0
+      }
+    },
+    "hashes": {
+      "express-常速0.jpg": "9395056d12c090a58d6f5c0ecadd0edb9b412b4c908e8064bca3759643a54148",
+      "express-常速3.jpg": "277dc8bd7047acf5acfd21083c527fe9a607d398994646effb6d2dbab5e09197",
+      "express-已停0.jpg": "2c2a5bd5872e561989077038a04d9b5f361ad2afe2aed9a64f172cb63218e9c6",
+      "express-已停1.jpg": "2c2a5bd5872e561989077038a04d9b5f361ad2afe2aed9a64f172cb63218e9c6"
+    },
+    "packageSHA": "bffb9269164dde11e60374c5024d33b2342fbac4f4f9c759e7c0527d6b43074a"
+  }
+}

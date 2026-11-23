@@ -1,0 +1,179 @@
+{
+  "mode": "bundle",
+  "kind": "keep",
+  "url": "http://127.0.0.1:8774/evidence/一印两价/一印两价.html",
+  "bundleSHA256": "07cbe532568198207dfc60c94a7d00f05dc4d81bdf2558bcfff2e3de25033366",
+  "final": {
+    "phase": "receipt",
+    "combatKind": "gate-fox",
+    "hp": "13",
+    "foe": "0",
+    "floor": "2",
+    "gold": "11",
+    "seals": "0",
+    "decision": "keep"
+  },
+  "events": [
+    [
+      "profile-open",
+      "idle"
+    ],
+    [
+      "folio-close",
+      "idle"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "primary",
+      "guide"
+    ],
+    [
+      "primary",
+      "rumor"
+    ],
+    [
+      "primary",
+      "stall"
+    ],
+    [
+      "primary",
+      "quote"
+    ],
+    [
+      "secondary",
+      "result"
+    ],
+    [
+      "secondary",
+      "counter"
+    ],
+    [
+      "secondary",
+      "counter"
+    ],
+    [
+      "primary",
+      "purchase"
+    ],
+    [
+      "primary",
+      "bought"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "market-third",
+      "crossroads"
+    ],
+    [
+      "primary",
+      "wound"
+    ],
+    [
+      "primary",
+      "blood"
+    ],
+    [
+      "primary",
+      "bloodReceipt"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "primary",
+      "purchase"
+    ],
+    [
+      "secondary",
+      "counter"
+    ],
+    [
+      "primary",
+      "purchase"
+    ],
+    [
+      "secondary",
+      "counter"
+    ],
+    [
+      "primary",
+      "purchase"
+    ],
+    [
+      "secondary",
+      "bought"
+    ],
+    [
+      "primary",
+      "counter"
+    ],
+    [
+      "profile-open",
+      "counter"
+    ],
+    [
+      "folio-close",
+      "counter"
+    ],
+    [
+      "market-fourth",
+      "idle"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "strike",
+      "swing"
+    ],
+    [
+      "primary",
+      "finalQuote"
+    ],
+    [
+      "primary",
+      "finalSale"
+    ],
+    [
+      "primary",
+      "receipt"
+    ],
+    [
+      "primary",
+      "quote"
+    ],
+    [
+      "secondary",
+      "result"
+    ],
+    [
+      "secondary",
+      "counter"
+    ],
+    [
+      "profile-open",
+      "counter"
+    ],
+    [
+      "folio-close",
+      "counter"
+    ]
+  ],
+  "errors": []
+}

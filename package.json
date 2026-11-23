@@ -1,0 +1,15 @@
+{
+  "name": "seal-tower",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node first-cut/check-bag-placement.cjs && node first-cut/check-event-exits.cjs && node first-cut/check-hunt-rules.cjs && node first-cut/check-crawl-cards.cjs && node first-cut/check-crawl-world.cjs && node first-cut/economy-balance.cjs && node first-cut/merchant-balance.cjs && node first-cut/escort-balance.cjs",
+    "test:browser": "python first-cut/build_offline.py --output dist/seal-tower.html && node first-cut/check-crawl-play.cjs --bundle dist/seal-tower.html --out dist/browser-proof"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
