@@ -113,13 +113,13 @@ const digest = (data) => createHash("sha256").update(data).digest("hex");
 const paddedSprites = new Set([
   "lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine", "fire-rat", "stele-spirit", "event-cart",
   "fallen", "fallen-strike", "fallen-guard", "fallen-elder", "fallen-elder-strike", "fallen-elder-guard",
-  "paper-matron", "moth-queen", "night-fox", "fake-fox", "event-fake-fox", "map-fake-fox",
+  "paper-matron", "moth-queen", "night-fox", "bell", "bell-heavy", "fake-fox", "event-fake-fox", "map-fake-fox",
   "thorn-stele",
   "bronze-puppet",
   "night-owl",
   "event-den", "event-hunter", "event-pool",
 ]);
-const lungeInsets = { "paper-matron-attack": 17, "night-fox-attack": 9, "fallen-elder-strike": 17 };
+const lungeInsets = { "paper-matron-attack": 17, "night-fox-attack": 9, "fallen-elder-strike": 17, "bell-attack": 13, "bell-heavy-attack": 14 };
 let overrides = 0;
 for (const { id, file } of overridesFromDisk) {
   if (requested.size && !requested.has(id)) continue;

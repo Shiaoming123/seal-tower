@@ -203,5 +203,35 @@
     "file": "night-fox.png",
     "sourceSha256": "6941a2948d74eabc6592f2c4086e27237cf3ea47d14ffd30082a8245b757f0cf",
     "webpSha256": "88d3b5949194c0e339601605169ad985200db6fd884513bd476ef4e1113b2a74"
+  },
+  "bell-attack": {
+    "file": "bell-attack.png",
+    "sourceSha256": "134c3fb3626861d1c025d1306858795ac6b02dc9faa65a69085f392829623ad8",
+    "webpSha256": "ca880c419a7a34115e65f9afcc3c2f3405ecdfb07330e78b303e298c4a394486"
+  },
+  "bell-heavy-attack": {
+    "file": "bell-heavy-attack.png",
+    "sourceSha256": "996289452bfd69b32669bc4201c6ceda01ead805407b8ae29928093908a31a7d",
+    "webpSha256": "a3680c088f9a31c034726da55468c3f02385c905a34d1e58355ad41b7ce0258b"
+  },
+  "bell-heavy-hurt": {
+    "file": "bell-heavy-hurt.png",
+    "sourceSha256": "fedd3cf45b2451b032df9bad5d601e900f1496207ed831952f2ee280b88354b3",
+    "webpSha256": "ec3a987b917511874a2c132663a33f82c05279a1394f96410456ec08e2b6a7af"
+  },
+  "bell-heavy": {
+    "file": "bell-heavy.png",
+    "sourceSha256": "4ab33a32f60d8773e29fdd8c11056627225844a6842c195cf528ddcf22f178f1",
+    "webpSha256": "69e72d5145b3b9700303b8283e0bf88846411b8f0425e1d56e6c7a9e0a37183f"
+  },
+  "bell-hurt": {
+    "file": "bell-hurt.png",
+    "sourceSha256": "c5afd0b0ecad14a38a092e74b5398f807bd3f660cf0cb744db540c18893855a2",
+    "webpSha256": "d8c5e218685bddfe98782113c0390386f0a97e8d5fa8d249f7342b5cc80f8f38"
+  },
+  "bell": {
+    "file": "bell.png",
+    "sourceSha256": "4809f0e00157df163bd7db629550cb8129ec1e8e096e7c06d7d79deb7ecb7980",
+    "webpSha256": "34a24a22a8f80e03348f1d159dbe160a34a541985706d3790787b7bab3204441"
   }
 }
