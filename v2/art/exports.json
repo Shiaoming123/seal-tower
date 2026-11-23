@@ -278,5 +278,25 @@
     "file": "fallen-hurt.png",
     "sourceSha256": "2ffbad2ca3f7d57b80ad636b44d4aaec6d3570a5eca7e1f9cfa86c8f38c38d2a",
     "webpSha256": "0ad5de6c4f541b273acac42484e87be5da0b98ea6099c3e9cd4bc5c032b3d5ad"
+  },
+  "mirror-fox-attack": {
+    "file": "mirror-fox-attack.png",
+    "sourceSha256": "ed3b35288f3d0e309bcf7955cd49b5d9df6da0a08b8b5e8d05cb46fce7d33eef",
+    "webpSha256": "fa9a3ce7d3844af047adf95d1f464061d89a25ba78e319b0aae1c74a3a4ffe68"
+  },
+  "mirror-fox-hurt": {
+    "file": "mirror-fox-hurt.png",
+    "sourceSha256": "0c732eabcd60937a6cd683775d2384ba89f01e35fae76e2c715fb910dade37a8",
+    "webpSha256": "0a03fa80ae7ff474217bda51fa7aa94a53475e565e1cbe857f0a67e53f2e986b"
+  },
+  "warden-attack": {
+    "file": "warden-attack.png",
+    "sourceSha256": "c04e886e4134bf1b0c3c400cfd843d100fe2ea4422d8fbc1a8005986fac07a3f",
+    "webpSha256": "e9930109c8083d20743286ca60f03ef724fb0f476b8c9fe774a59d6f4b1c8496"
+  },
+  "warden-hurt": {
+    "file": "warden-hurt.png",
+    "sourceSha256": "5f2ccc9cf4e2ee774b6073bfac446c3f4ecd6224043f4dfaf1593f725d7f0d57",
+    "webpSha256": "00af7cd6365c75c66c2f2fa1202d39bc92166822c11870d67cf6e1eac6fce597"
   }
 }

@@ -1,0 +1,7031 @@
+{
+  "seed": "gallery",
+  "floor": 2,
+  "candidate": "final",
+  "monsters": {
+    "mirror-fox": {
+      "390": {
+        "before": {
+          "fixture": {
+            "stairs": {
+              "target": {
+                "dir": 0,
+                "x": 5,
+                "y": 8
+              },
+              "id": 20001,
+              "from": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              }
+            },
+            "encounter": {
+              "target": {
+                "dir": 1,
+                "x": 8,
+                "y": 9
+              },
+              "id": 20002,
+              "from": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              }
+            }
+          },
+          "initial": {
+            "seed": 2060279869,
+            "sign": "horde",
+            "floor": 2,
+            "player": {
+              "x": 7,
+              "y": 9,
+              "dir": 1
+            },
+            "hp": 54,
+            "round": 1,
+            "enemyHp": 46,
+            "enemyBlock": 0,
+            "playerBlock": 0,
+            "energy": 3,
+            "intent": "照镜",
+            "incoming": 0,
+            "strength": 0,
+            "dmgAdd": 2,
+            "part": true,
+            "fullBlocks": 0,
+            "stolen": [],
+            "hand": [
+              {
+                "id": "bash",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              }
+            ],
+            "bag": [
+              {
+                "id": "shield",
+                "uid": 1000
+              }
+            ]
+          },
+          "assets": {
+            "mirror-fox": {
+              "width": 318,
+              "height": 320,
+              "bounds": [
+                2,
+                3,
+                315,
+                316
+              ],
+              "webpSha256": "e166e9b104b16431fbdbb0beda2de2af26a69fb805e4b74ce1369ddf178aaa41",
+              "sourceSha256": null
+            }
+          },
+          "pageErrors": [],
+          "regular": 6,
+          "opener": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 1,
+              "enemyHp": 40,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 2,
+              "intent": "照镜",
+              "incoming": 0,
+              "strength": 0,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 40,
+              "enemyBlock": 6,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "飞扑",
+              "damage": 11,
+              "incoming": 15,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0
+          },
+          "guarded": {
+            "enemyHp": [
+              40,
+              40
+            ],
+            "enemyBlock": [
+              6,
+              0
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "guarded-40.jpg",
+                  "ms": 39
+                },
+                {
+                  "file": "guarded-90.jpg",
+                  "ms": 88
+                },
+                {
+                  "file": "guarded-peak.jpg",
+                  "ms": 192
+                }
+              ],
+              "expected": "mirror-fox",
+              "blankOrWrong": 0,
+              "samples": 30,
+              "restored": true,
+              "anchor": [
+                38,
+                273.8,
+                313.9,
+                315.9
+              ],
+              "hud": [
+                15.6,
+                147.7,
+                358.8,
+                123.3
+              ],
+              "endpoint": {
+                "ms": 192,
+                "real": [
+                  40,
+                  276.8,
+                  349.9,
+                  586.7
+                ],
+                "left": 40,
+                "right": 40.1
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  40,
+                  276.8,
+                  349.9,
+                  586.7
+                ],
+                "left": 40,
+                "right": 40.1
+              },
+              "minMargin": 22.7,
+              "heavyMs": null
+            }
+          },
+          "attacks": [
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 54,
+                "round": 2,
+                "enemyHp": 40,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 2,
+                "intent": "飞扑",
+                "damage": 11,
+                "incoming": 15,
+                "strength": 2,
+                "dmgAdd": 2,
+                "part": true,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 39,
+                "round": 3,
+                "enemyHp": 40,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "抓挠",
+                "damage": 4,
+                "incoming": 16,
+                "strength": 2,
+                "dmgAdd": 2,
+                "part": true,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 15,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "pounce-60.jpg",
+                    "ms": 62
+                  },
+                  {
+                    "file": "pounce-128.jpg",
+                    "ms": 125
+                  },
+                  {
+                    "file": "pounce-220.jpg",
+                    "ms": 215
+                  },
+                  {
+                    "file": "pounce-peak.jpg",
+                    "ms": 257
+                  }
+                ],
+                "expected": "mirror-fox",
+                "blankOrWrong": 0,
+                "samples": 38,
+                "restored": true,
+                "anchor": [
+                  38,
+                  273.8,
+                  313.9,
+                  315.9
+                ],
+                "hud": [
+                  15.6,
+                  147.7,
+                  358.8,
+                  123.3
+                ],
+                "endpoint": {
+                  "ms": 257,
+                  "real": [
+                    7.4,
+                    233.4,
+                    382.6,
+                    608.6
+                  ],
+                  "left": 7.4,
+                  "right": 7.4
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    40,
+                    276.8,
+                    349.9,
+                    586.7
+                  ],
+                  "left": 40,
+                  "right": 40.1
+                },
+                "minMargin": 7.4,
+                "heavyMs": null
+              }
+            }
+          ],
+          "ordinary": {
+            "snapshots": [
+              {
+                "file": "hurt-40.jpg",
+                "ms": 37
+              },
+              {
+                "file": "hurt-90.jpg",
+                "ms": 92
+              },
+              {
+                "file": "hurt-peak.jpg",
+                "ms": 197
+              }
+            ],
+            "expected": "mirror-fox",
+            "blankOrWrong": 0,
+            "samples": 30,
+            "restored": true,
+            "anchor": [
+              38,
+              273.8,
+              313.9,
+              315.9
+            ],
+            "hud": [
+              15.6,
+              162,
+              358.8,
+              109
+            ],
+            "endpoint": {
+              "ms": 190,
+              "real": [
+                40.1,
+                276.7,
+                350.1,
+                586.7
+              ],
+              "left": 40.1,
+              "right": 39.9
+            },
+            "stable": {
+              "ms": 0,
+              "real": [
+                40,
+                276.8,
+                349.9,
+                586.7
+              ],
+              "left": 40,
+              "right": 40.1
+            },
+            "minMargin": 22.7,
+            "heavyMs": null
+          },
+          "fullBlock": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 46,
+              "enemyBlock": 6,
+              "playerBlock": 15,
+              "energy": 0,
+              "intent": "飞扑",
+              "damage": 11,
+              "incoming": 15,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 3,
+              "enemyHp": 46,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "抓挠",
+              "damage": 4,
+              "incoming": 16,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 1,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0,
+            "cards": [
+              {
+                "index": 0,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 2,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 0,
+                "replaced": "strike",
+                "upgrade": false
+              }
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "full-block-60.jpg",
+                  "ms": 55
+                },
+                {
+                  "file": "full-block-128.jpg",
+                  "ms": 131
+                },
+                {
+                  "file": "full-block-220.jpg",
+                  "ms": 222
+                },
+                {
+                  "file": "full-block-peak.jpg",
+                  "ms": 256
+                }
+              ],
+              "expected": "mirror-fox",
+              "blankOrWrong": 0,
+              "samples": 38,
+              "restored": true,
+              "anchor": [
+                38,
+                273.8,
+                313.9,
+                315.9
+              ],
+              "hud": [
+                15.6,
+                147.7,
+                358.8,
+                123.3
+              ],
+              "endpoint": {
+                "ms": 256,
+                "real": [
+                  7.4,
+                  233.4,
+                  382.7,
+                  608.7
+                ],
+                "left": 7.4,
+                "right": 7.3
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  40,
+                  276.8,
+                  349.9,
+                  586.7
+                ],
+                "left": 40,
+                "right": 40.1
+              },
+              "minMargin": 7.3,
+              "heavyMs": null
+            }
+          },
+          "clasp": [
+            {
+              "damage": 9,
+              "part": [
+                true,
+                true
+              ],
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "clasp-9-40.jpg",
+                    "ms": 38
+                  },
+                  {
+                    "file": "clasp-9-90.jpg",
+                    "ms": 94
+                  },
+                  {
+                    "file": "clasp-9-peak.jpg",
+                    "ms": 198
+                  }
+                ],
+                "expected": "mirror-fox",
+                "blankOrWrong": 0,
+                "samples": 30,
+                "restored": true,
+                "anchor": [
+                  38,
+                  273.8,
+                  313.9,
+                  315.9
+                ],
+                "hud": [
+                  15.6,
+                  162,
+                  358.8,
+                  109
+                ],
+                "endpoint": {
+                  "ms": 191,
+                  "real": [
+                    40,
+                    276.8,
+                    349.9,
+                    586.7
+                  ],
+                  "left": 40,
+                  "right": 40.1
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    40,
+                    276.8,
+                    349.9,
+                    586.7
+                  ],
+                  "left": 40,
+                  "right": 40.1
+                },
+                "minMargin": 22.7,
+                "heavyMs": null
+              }
+            },
+            {
+              "damage": 10,
+              "part": [
+                true,
+                false
+              ],
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "clasp-10-40.jpg",
+                    "ms": 45
+                  },
+                  {
+                    "file": "clasp-10-90.jpg",
+                    "ms": 87
+                  },
+                  {
+                    "file": "clasp-10-peak.jpg",
+                    "ms": 191
+                  }
+                ],
+                "expected": "mirror-fox",
+                "blankOrWrong": 0,
+                "samples": 29,
+                "restored": true,
+                "anchor": [
+                  38,
+                  273.8,
+                  313.9,
+                  315.9
+                ],
+                "hud": [
+                  15.6,
+                  162,
+                  358.8,
+                  109
+                ],
+                "endpoint": {
+                  "ms": 184,
+                  "real": [
+                    40.2,
+                    276.7,
+                    350.3,
+                    586.8
+                  ],
+                  "left": 40.2,
+                  "right": 39.7
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    40,
+                    276.8,
+                    349.9,
+                    586.7
+                  ],
+                  "left": 40,
+                  "right": 40.1
+                },
+                "minMargin": 22.7,
+                "heavyMs": null
+              }
+            }
+          ],
+          "heavy": {
+            "damage": 14,
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "heavy-40.jpg",
+                  "ms": 35
+                },
+                {
+                  "file": "heavy-90.jpg",
+                  "ms": 91
+                },
+                {
+                  "file": "heavy-peak.jpg",
+                  "ms": 285
+                }
+              ],
+              "expected": "mirror-fox",
+              "blankOrWrong": 0,
+              "samples": 43,
+              "restored": true,
+              "anchor": [
+                38,
+                273.8,
+                313.9,
+                315.9
+              ],
+              "hud": [
+                15.6,
+                162,
+                358.8,
+                109
+              ],
+              "endpoint": {
+                "ms": 285,
+                "real": [
+                  40.1,
+                  276.7,
+                  350.1,
+                  586.7
+                ],
+                "left": 40.1,
+                "right": 39.9
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  44.6,
+                  286.1,
+                  345.3,
+                  586.7
+                ],
+                "left": 44.6,
+                "right": 44.7
+              },
+              "minMargin": 22.7,
+              "heavyMs": 84
+            }
+          }
+        },
+        "after": {
+          "fixture": {
+            "stairs": {
+              "target": {
+                "dir": 0,
+                "x": 5,
+                "y": 8
+              },
+              "id": 20001,
+              "from": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              }
+            },
+            "encounter": {
+              "target": {
+                "dir": 1,
+                "x": 8,
+                "y": 9
+              },
+              "id": 20002,
+              "from": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              }
+            }
+          },
+          "initial": {
+            "seed": 2060279869,
+            "sign": "horde",
+            "floor": 2,
+            "player": {
+              "x": 7,
+              "y": 9,
+              "dir": 1
+            },
+            "hp": 54,
+            "round": 1,
+            "enemyHp": 46,
+            "enemyBlock": 0,
+            "playerBlock": 0,
+            "energy": 3,
+            "intent": "照镜",
+            "incoming": 0,
+            "strength": 0,
+            "dmgAdd": 2,
+            "part": true,
+            "fullBlocks": 0,
+            "stolen": [],
+            "hand": [
+              {
+                "id": "bash",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              }
+            ],
+            "bag": [
+              {
+                "id": "shield",
+                "uid": 1000
+              }
+            ]
+          },
+          "assets": {
+            "mirror-fox": {
+              "width": 318,
+              "height": 320,
+              "bounds": [
+                2,
+                3,
+                315,
+                316
+              ],
+              "webpSha256": "e166e9b104b16431fbdbb0beda2de2af26a69fb805e4b74ce1369ddf178aaa41",
+              "sourceSha256": null
+            },
+            "mirror-fox-hurt": {
+              "width": 318,
+              "height": 320,
+              "bounds": [
+                35,
+                54,
+                305,
+                308
+              ],
+              "webpSha256": "0a03fa80ae7ff474217bda51fa7aa94a53475e565e1cbe857f0a67e53f2e986b",
+              "sourceSha256": "0c732eabcd60937a6cd683775d2384ba89f01e35fae76e2c715fb910dade37a8"
+            },
+            "mirror-fox-attack": {
+              "width": 318,
+              "height": 320,
+              "bounds": [
+                25,
+                59,
+                285,
+                310
+              ],
+              "webpSha256": "fa9a3ce7d3844af047adf95d1f464061d89a25ba78e319b0aae1c74a3a4ffe68",
+              "sourceSha256": "ed3b35288f3d0e309bcf7955cd49b5d9df6da0a08b8b5e8d05cb46fce7d33eef"
+            }
+          },
+          "pageErrors": [],
+          "regular": 6,
+          "opener": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 1,
+              "enemyHp": 40,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 2,
+              "intent": "照镜",
+              "incoming": 0,
+              "strength": 0,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 40,
+              "enemyBlock": 6,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "飞扑",
+              "damage": 11,
+              "incoming": 15,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0
+          },
+          "guarded": {
+            "enemyHp": [
+              40,
+              40
+            ],
+            "enemyBlock": [
+              6,
+              0
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "guarded-40.jpg",
+                  "ms": 38
+                },
+                {
+                  "file": "guarded-90.jpg",
+                  "ms": 94
+                },
+                {
+                  "file": "guarded-peak.jpg",
+                  "ms": 198
+                }
+              ],
+              "expected": "mirror-fox",
+              "blankOrWrong": 0,
+              "samples": 30,
+              "restored": true,
+              "anchor": [
+                38,
+                273.8,
+                313.9,
+                315.9
+              ],
+              "hud": [
+                15.6,
+                147.7,
+                358.8,
+                123.3
+              ],
+              "endpoint": {
+                "ms": 191,
+                "real": [
+                  40.1,
+                  276.7,
+                  350.1,
+                  586.7
+                ],
+                "left": 40.1,
+                "right": 39.9
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  40,
+                  276.8,
+                  349.9,
+                  586.7
+                ],
+                "left": 40,
+                "right": 40.1
+              },
+              "minMargin": 22.7,
+              "heavyMs": null
+            }
+          },
+          "attacks": [
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 54,
+                "round": 2,
+                "enemyHp": 40,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 2,
+                "intent": "飞扑",
+                "damage": 11,
+                "incoming": 15,
+                "strength": 2,
+                "dmgAdd": 2,
+                "part": true,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 39,
+                "round": 3,
+                "enemyHp": 40,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "抓挠",
+                "damage": 4,
+                "incoming": 16,
+                "strength": 2,
+                "dmgAdd": 2,
+                "part": true,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 15,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "pounce-60.jpg",
+                    "ms": 62
+                  },
+                  {
+                    "file": "pounce-128.jpg",
+                    "ms": 125
+                  },
+                  {
+                    "file": "pounce-220.jpg",
+                    "ms": 215
+                  },
+                  {
+                    "file": "pounce-peak.jpg",
+                    "ms": 257
+                  }
+                ],
+                "expected": "mirror-fox-attack",
+                "blankOrWrong": 0,
+                "samples": 38,
+                "restored": true,
+                "anchor": [
+                  38,
+                  273.8,
+                  313.9,
+                  315.9
+                ],
+                "hud": [
+                  15.6,
+                  147.7,
+                  358.8,
+                  123.3
+                ],
+                "endpoint": {
+                  "ms": 257,
+                  "real": [
+                    34.8,
+                    300.3,
+                    346.8,
+                    601.5
+                  ],
+                  "left": 34.8,
+                  "right": 43.2
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    62.7,
+                    332.1,
+                    320.3,
+                    580.8
+                  ],
+                  "left": 62.7,
+                  "right": 69.7
+                },
+                "minMargin": 34.8,
+                "heavyMs": null
+              }
+            }
+          ],
+          "ordinary": {
+            "snapshots": [
+              {
+                "file": "hurt-40.jpg",
+                "ms": 33
+              },
+              {
+                "file": "hurt-90.jpg",
+                "ms": 89
+              },
+              {
+                "file": "hurt-peak.jpg",
+                "ms": 193
+              }
+            ],
+            "expected": "mirror-fox-hurt",
+            "blankOrWrong": 0,
+            "samples": 29,
+            "restored": true,
+            "anchor": [
+              38,
+              273.8,
+              313.9,
+              315.9
+            ],
+            "hud": [
+              15.6,
+              162,
+              358.8,
+              109
+            ],
+            "endpoint": {
+              "ms": 186,
+              "real": [
+                72.7,
+                327,
+                340.3,
+                578.8
+              ],
+              "left": 72.7,
+              "right": 49.7
+            },
+            "stable": {
+              "ms": 0,
+              "real": [
+                72.5,
+                327.1,
+                340.1,
+                578.8
+              ],
+              "left": 72.5,
+              "right": 49.9
+            },
+            "minMargin": 39.4,
+            "heavyMs": null
+          },
+          "fullBlock": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 46,
+              "enemyBlock": 6,
+              "playerBlock": 15,
+              "energy": 0,
+              "intent": "飞扑",
+              "damage": 11,
+              "incoming": 15,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 3,
+              "enemyHp": 46,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "抓挠",
+              "damage": 4,
+              "incoming": 16,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 1,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0,
+            "cards": [
+              {
+                "index": 0,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 2,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 0,
+                "replaced": "strike",
+                "upgrade": false
+              }
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "full-block-60.jpg",
+                  "ms": 62
+                },
+                {
+                  "file": "full-block-128.jpg",
+                  "ms": 125
+                },
+                {
+                  "file": "full-block-220.jpg",
+                  "ms": 222
+                },
+                {
+                  "file": "full-block-peak.jpg",
+                  "ms": 264
+                }
+              ],
+              "expected": "mirror-fox-attack",
+              "blankOrWrong": 0,
+              "samples": 38,
+              "restored": true,
+              "anchor": [
+                38,
+                273.8,
+                313.9,
+                315.9
+              ],
+              "hud": [
+                15.6,
+                147.7,
+                358.8,
+                123.3
+              ],
+              "endpoint": {
+                "ms": 257,
+                "real": [
+                  34.9,
+                  300.3,
+                  346.9,
+                  601.5
+                ],
+                "left": 34.9,
+                "right": 43.1
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  62.7,
+                  332.1,
+                  320.3,
+                  580.8
+                ],
+                "left": 62.7,
+                "right": 69.7
+              },
+              "minMargin": 34.9,
+              "heavyMs": null
+            }
+          },
+          "clasp": [
+            {
+              "damage": 9,
+              "part": [
+                true,
+                true
+              ],
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "clasp-9-40.jpg",
+                    "ms": 39
+                  },
+                  {
+                    "file": "clasp-9-90.jpg",
+                    "ms": 95
+                  },
+                  {
+                    "file": "clasp-9-peak.jpg",
+                    "ms": 185
+                  }
+                ],
+                "expected": "mirror-fox-hurt",
+                "blankOrWrong": 0,
+                "samples": 29,
+                "restored": true,
+                "anchor": [
+                  38,
+                  273.8,
+                  313.9,
+                  315.9
+                ],
+                "hud": [
+                  15.6,
+                  162,
+                  358.8,
+                  109
+                ],
+                "endpoint": {
+                  "ms": 185,
+                  "real": [
+                    72.7,
+                    327,
+                    340.3,
+                    578.8
+                  ],
+                  "left": 72.7,
+                  "right": 49.7
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    72.5,
+                    327.1,
+                    340.1,
+                    578.8
+                  ],
+                  "left": 72.5,
+                  "right": 49.9
+                },
+                "minMargin": 39.4,
+                "heavyMs": null
+              }
+            },
+            {
+              "damage": 10,
+              "part": [
+                true,
+                false
+              ],
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "clasp-10-40.jpg",
+                    "ms": 46
+                  },
+                  {
+                    "file": "clasp-10-90.jpg",
+                    "ms": 87
+                  },
+                  {
+                    "file": "clasp-10-peak.jpg",
+                    "ms": 192
+                  }
+                ],
+                "expected": "mirror-fox-hurt",
+                "blankOrWrong": 0,
+                "samples": 30,
+                "restored": true,
+                "anchor": [
+                  38,
+                  273.8,
+                  313.9,
+                  315.9
+                ],
+                "hud": [
+                  15.6,
+                  162,
+                  358.8,
+                  109
+                ],
+                "endpoint": {
+                  "ms": 192,
+                  "real": [
+                    72.5,
+                    327.1,
+                    340.1,
+                    578.8
+                  ],
+                  "left": 72.5,
+                  "right": 49.9
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    72.5,
+                    327.1,
+                    340.1,
+                    578.8
+                  ],
+                  "left": 72.5,
+                  "right": 49.9
+                },
+                "minMargin": 39.4,
+                "heavyMs": null
+              }
+            }
+          ],
+          "heavy": {
+            "damage": 14,
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "heavy-40.jpg",
+                  "ms": 37
+                },
+                {
+                  "file": "heavy-90.jpg",
+                  "ms": 86
+                },
+                {
+                  "file": "heavy-peak.jpg",
+                  "ms": 287
+                }
+              ],
+              "expected": "mirror-fox-hurt",
+              "blankOrWrong": 0,
+              "samples": 43,
+              "restored": true,
+              "anchor": [
+                38,
+                273.8,
+                313.9,
+                315.9
+              ],
+              "hud": [
+                15.6,
+                162,
+                358.8,
+                109
+              ],
+              "endpoint": {
+                "ms": 281,
+                "real": [
+                  72.8,
+                  327.1,
+                  340.4,
+                  578.9
+                ],
+                "left": 72.8,
+                "right": 49.6
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  76.2,
+                  334.9,
+                  335.7,
+                  579.1
+                ],
+                "left": 76.2,
+                "right": 54.3
+              },
+              "minMargin": 39.4,
+              "heavyMs": 79
+            }
+          }
+        }
+      },
+      "1280": {
+        "before": {
+          "fixture": {
+            "stairs": {
+              "target": {
+                "dir": 0,
+                "x": 5,
+                "y": 8
+              },
+              "id": 20001,
+              "from": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              }
+            },
+            "encounter": {
+              "target": {
+                "dir": 1,
+                "x": 8,
+                "y": 9
+              },
+              "id": 20002,
+              "from": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              }
+            }
+          },
+          "initial": {
+            "seed": 2060279869,
+            "sign": "horde",
+            "floor": 2,
+            "player": {
+              "x": 7,
+              "y": 9,
+              "dir": 1
+            },
+            "hp": 54,
+            "round": 1,
+            "enemyHp": 46,
+            "enemyBlock": 0,
+            "playerBlock": 0,
+            "energy": 3,
+            "intent": "照镜",
+            "incoming": 0,
+            "strength": 0,
+            "dmgAdd": 2,
+            "part": true,
+            "fullBlocks": 0,
+            "stolen": [],
+            "hand": [
+              {
+                "id": "bash",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              }
+            ],
+            "bag": [
+              {
+                "id": "shield",
+                "uid": 1000
+              }
+            ]
+          },
+          "assets": {
+            "mirror-fox": {
+              "width": 318,
+              "height": 320,
+              "bounds": [
+                2,
+                3,
+                315,
+                316
+              ],
+              "webpSha256": "e166e9b104b16431fbdbb0beda2de2af26a69fb805e4b74ce1369ddf178aaa41",
+              "sourceSha256": null
+            }
+          },
+          "pageErrors": [],
+          "regular": 6,
+          "opener": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 1,
+              "enemyHp": 40,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 2,
+              "intent": "照镜",
+              "incoming": 0,
+              "strength": 0,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 40,
+              "enemyBlock": 6,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "飞扑",
+              "damage": 11,
+              "incoming": 15,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0
+          },
+          "guarded": {
+            "enemyHp": [
+              40,
+              40
+            ],
+            "enemyBlock": [
+              6,
+              0
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "guarded-40.jpg",
+                  "ms": 38
+                },
+                {
+                  "file": "guarded-90.jpg",
+                  "ms": 86
+                },
+                {
+                  "file": "guarded-peak.jpg",
+                  "ms": 190
+                }
+              ],
+              "expected": "mirror-fox",
+              "blankOrWrong": 0,
+              "samples": 30,
+              "restored": true,
+              "anchor": [
+                513.2,
+                239,
+                253.7,
+                255.3
+              ],
+              "hud": [
+                380,
+                45,
+                520,
+                189.8
+              ],
+              "endpoint": {
+                "ms": 191,
+                "real": [
+                  514.9,
+                  241.4,
+                  765.4,
+                  491.9
+                ],
+                "left": 514.9,
+                "right": 514.6
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  514.8,
+                  241.4,
+                  765.3,
+                  491.9
+                ],
+                "left": 514.8,
+                "right": 514.7
+              },
+              "minMargin": 496,
+              "heavyMs": null
+            }
+          },
+          "attacks": [
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 54,
+                "round": 2,
+                "enemyHp": 40,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 2,
+                "intent": "飞扑",
+                "damage": 11,
+                "incoming": 15,
+                "strength": 2,
+                "dmgAdd": 2,
+                "part": true,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 39,
+                "round": 3,
+                "enemyHp": 40,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "抓挠",
+                "damage": 4,
+                "incoming": 16,
+                "strength": 2,
+                "dmgAdd": 2,
+                "part": true,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 15,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "pounce-60.jpg",
+                    "ms": 67
+                  },
+                  {
+                    "file": "pounce-128.jpg",
+                    "ms": 129
+                  },
+                  {
+                    "file": "pounce-220.jpg",
+                    "ms": 220
+                  },
+                  {
+                    "file": "pounce-peak.jpg",
+                    "ms": 261
+                  }
+                ],
+                "expected": "mirror-fox",
+                "blankOrWrong": 0,
+                "samples": 39,
+                "restored": true,
+                "anchor": [
+                  513.2,
+                  239,
+                  253.7,
+                  255.3
+                ],
+                "hud": [
+                  380,
+                  45,
+                  520,
+                  189.8
+                ],
+                "endpoint": {
+                  "ms": 261,
+                  "real": [
+                    487.3,
+                    222.3,
+                    792.8,
+                    527.9
+                  ],
+                  "left": 487.3,
+                  "right": 487.2
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    514.8,
+                    241.4,
+                    765.3,
+                    491.9
+                  ],
+                  "left": 514.8,
+                  "right": 514.7
+                },
+                "minMargin": 487.2,
+                "heavyMs": null
+              }
+            }
+          ],
+          "ordinary": {
+            "snapshots": [
+              {
+                "file": "hurt-40.jpg",
+                "ms": 42
+              },
+              {
+                "file": "hurt-90.jpg",
+                "ms": 90
+              },
+              {
+                "file": "hurt-peak.jpg",
+                "ms": 174
+              }
+            ],
+            "expected": "mirror-fox",
+            "blankOrWrong": 0,
+            "samples": 27,
+            "restored": true,
+            "anchor": [
+              502.2,
+              217,
+              275.5,
+              277.3
+            ],
+            "hud": [
+              380,
+              45,
+              520,
+              167.8
+            ],
+            "endpoint": {
+              "ms": 175,
+              "real": [
+                504.6,
+                219.4,
+                776.9,
+                491.8
+              ],
+              "left": 504.6,
+              "right": 503.1
+            },
+            "stable": {
+              "ms": 0,
+              "real": [
+                503.9,
+                219.7,
+                776,
+                491.7
+              ],
+              "left": 503.9,
+              "right": 504
+            },
+            "minMargin": 484.4,
+            "heavyMs": null
+          },
+          "fullBlock": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 46,
+              "enemyBlock": 6,
+              "playerBlock": 15,
+              "energy": 0,
+              "intent": "飞扑",
+              "damage": 11,
+              "incoming": 15,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 3,
+              "enemyHp": 46,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "抓挠",
+              "damage": 4,
+              "incoming": 16,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 1,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0,
+            "cards": [
+              {
+                "index": 0,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 2,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 0,
+                "replaced": "strike",
+                "upgrade": false
+              }
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "full-block-60.jpg",
+                  "ms": 62
+                },
+                {
+                  "file": "full-block-128.jpg",
+                  "ms": 125
+                },
+                {
+                  "file": "full-block-220.jpg",
+                  "ms": 222
+                },
+                {
+                  "file": "full-block-peak.jpg",
+                  "ms": 264
+                }
+              ],
+              "expected": "mirror-fox",
+              "blankOrWrong": 0,
+              "samples": 38,
+              "restored": true,
+              "anchor": [
+                513.2,
+                243,
+                253.7,
+                255.3
+              ],
+              "hud": [
+                380,
+                49,
+                520,
+                189.8
+              ],
+              "endpoint": {
+                "ms": 257,
+                "real": [
+                  488.3,
+                  226.9,
+                  791.6,
+                  530.1
+                ],
+                "left": 488.3,
+                "right": 488.4
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  514.8,
+                  245.4,
+                  765.3,
+                  495.9
+                ],
+                "left": 514.8,
+                "right": 514.7
+              },
+              "minMargin": 488.3,
+              "heavyMs": null
+            }
+          },
+          "clasp": [
+            {
+              "damage": 9,
+              "part": [
+                true,
+                true
+              ],
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "clasp-9-40.jpg",
+                    "ms": 41
+                  },
+                  {
+                    "file": "clasp-9-90.jpg",
+                    "ms": 89
+                  },
+                  {
+                    "file": "clasp-9-peak.jpg",
+                    "ms": 193
+                  }
+                ],
+                "expected": "mirror-fox",
+                "blankOrWrong": 0,
+                "samples": 30,
+                "restored": true,
+                "anchor": [
+                  502.2,
+                  217,
+                  275.5,
+                  277.3
+                ],
+                "hud": [
+                  380,
+                  45,
+                  520,
+                  167.8
+                ],
+                "endpoint": {
+                  "ms": 194,
+                  "real": [
+                    503.9,
+                    219.7,
+                    776,
+                    491.7
+                  ],
+                  "left": 503.9,
+                  "right": 504
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    503.9,
+                    219.7,
+                    776,
+                    491.7
+                  ],
+                  "left": 503.9,
+                  "right": 504
+                },
+                "minMargin": 484.4,
+                "heavyMs": null
+              }
+            },
+            {
+              "damage": 10,
+              "part": [
+                true,
+                false
+              ],
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "clasp-10-40.jpg",
+                    "ms": 46
+                  },
+                  {
+                    "file": "clasp-10-90.jpg",
+                    "ms": 87
+                  },
+                  {
+                    "file": "clasp-10-peak.jpg",
+                    "ms": 192
+                  }
+                ],
+                "expected": "mirror-fox",
+                "blankOrWrong": 0,
+                "samples": 30,
+                "restored": true,
+                "anchor": [
+                  502.2,
+                  217,
+                  275.5,
+                  277.3
+                ],
+                "hud": [
+                  380,
+                  45,
+                  520,
+                  167.8
+                ],
+                "endpoint": {
+                  "ms": 192,
+                  "real": [
+                    504,
+                    219.6,
+                    776.2,
+                    491.7
+                  ],
+                  "left": 504,
+                  "right": 503.8
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    503.9,
+                    219.7,
+                    776,
+                    491.7
+                  ],
+                  "left": 503.9,
+                  "right": 504
+                },
+                "minMargin": 484.4,
+                "heavyMs": null
+              }
+            }
+          ],
+          "heavy": {
+            "damage": 14,
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "heavy-40.jpg",
+                  "ms": 40
+                },
+                {
+                  "file": "heavy-90.jpg",
+                  "ms": 88
+                },
+                {
+                  "file": "heavy-peak.jpg",
+                  "ms": 290
+                }
+              ],
+              "expected": "mirror-fox",
+              "blankOrWrong": 0,
+              "samples": 43,
+              "restored": true,
+              "anchor": [
+                502.2,
+                217,
+                275.5,
+                277.3
+              ],
+              "hud": [
+                380,
+                45,
+                520,
+                167.8
+              ],
+              "endpoint": {
+                "ms": 283,
+                "real": [
+                  504,
+                  219.6,
+                  776.2,
+                  491.7
+                ],
+                "left": 504,
+                "right": 503.8
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  508.1,
+                  227.8,
+                  771.9,
+                  491.7
+                ],
+                "left": 508.1,
+                "right": 508.1
+              },
+              "minMargin": 484.4,
+              "heavyMs": 82
+            }
+          }
+        },
+        "after": {
+          "fixture": {
+            "stairs": {
+              "target": {
+                "dir": 0,
+                "x": 5,
+                "y": 8
+              },
+              "id": 20001,
+              "from": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              }
+            },
+            "encounter": {
+              "target": {
+                "dir": 1,
+                "x": 8,
+                "y": 9
+              },
+              "id": 20002,
+              "from": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              }
+            }
+          },
+          "initial": {
+            "seed": 2060279869,
+            "sign": "horde",
+            "floor": 2,
+            "player": {
+              "x": 7,
+              "y": 9,
+              "dir": 1
+            },
+            "hp": 54,
+            "round": 1,
+            "enemyHp": 46,
+            "enemyBlock": 0,
+            "playerBlock": 0,
+            "energy": 3,
+            "intent": "照镜",
+            "incoming": 0,
+            "strength": 0,
+            "dmgAdd": 2,
+            "part": true,
+            "fullBlocks": 0,
+            "stolen": [],
+            "hand": [
+              {
+                "id": "bash",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              }
+            ],
+            "bag": [
+              {
+                "id": "shield",
+                "uid": 1000
+              }
+            ]
+          },
+          "assets": {
+            "mirror-fox-attack": {
+              "width": 318,
+              "height": 320,
+              "bounds": [
+                25,
+                59,
+                285,
+                310
+              ],
+              "webpSha256": "fa9a3ce7d3844af047adf95d1f464061d89a25ba78e319b0aae1c74a3a4ffe68",
+              "sourceSha256": "ed3b35288f3d0e309bcf7955cd49b5d9df6da0a08b8b5e8d05cb46fce7d33eef"
+            },
+            "mirror-fox-hurt": {
+              "width": 318,
+              "height": 320,
+              "bounds": [
+                35,
+                54,
+                305,
+                308
+              ],
+              "webpSha256": "0a03fa80ae7ff474217bda51fa7aa94a53475e565e1cbe857f0a67e53f2e986b",
+              "sourceSha256": "0c732eabcd60937a6cd683775d2384ba89f01e35fae76e2c715fb910dade37a8"
+            },
+            "mirror-fox": {
+              "width": 318,
+              "height": 320,
+              "bounds": [
+                2,
+                3,
+                315,
+                316
+              ],
+              "webpSha256": "e166e9b104b16431fbdbb0beda2de2af26a69fb805e4b74ce1369ddf178aaa41",
+              "sourceSha256": null
+            }
+          },
+          "pageErrors": [],
+          "regular": 6,
+          "opener": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 1,
+              "enemyHp": 40,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 2,
+              "intent": "照镜",
+              "incoming": 0,
+              "strength": 0,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 40,
+              "enemyBlock": 6,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "飞扑",
+              "damage": 11,
+              "incoming": 15,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0
+          },
+          "guarded": {
+            "enemyHp": [
+              40,
+              40
+            ],
+            "enemyBlock": [
+              6,
+              0
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "guarded-40.jpg",
+                  "ms": 46
+                },
+                {
+                  "file": "guarded-90.jpg",
+                  "ms": 87
+                },
+                {
+                  "file": "guarded-peak.jpg",
+                  "ms": 191
+                }
+              ],
+              "expected": "mirror-fox",
+              "blankOrWrong": 0,
+              "samples": 30,
+              "restored": true,
+              "anchor": [
+                513.2,
+                239,
+                253.7,
+                255.3
+              ],
+              "hud": [
+                380,
+                45,
+                520,
+                189.8
+              ],
+              "endpoint": {
+                "ms": 192,
+                "real": [
+                  514.9,
+                  241.4,
+                  765.4,
+                  491.9
+                ],
+                "left": 514.9,
+                "right": 514.6
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  514.8,
+                  241.4,
+                  765.3,
+                  491.9
+                ],
+                "left": 514.8,
+                "right": 514.7
+              },
+              "minMargin": 496,
+              "heavyMs": null
+            }
+          },
+          "attacks": [
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 54,
+                "round": 2,
+                "enemyHp": 40,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 2,
+                "intent": "飞扑",
+                "damage": 11,
+                "incoming": 15,
+                "strength": 2,
+                "dmgAdd": 2,
+                "part": true,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 39,
+                "round": 3,
+                "enemyHp": 40,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "抓挠",
+                "damage": 4,
+                "incoming": 16,
+                "strength": 2,
+                "dmgAdd": 2,
+                "part": true,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 15,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "pounce-60.jpg",
+                    "ms": 54
+                  },
+                  {
+                    "file": "pounce-128.jpg",
+                    "ms": 130
+                  },
+                  {
+                    "file": "pounce-220.jpg",
+                    "ms": 220
+                  },
+                  {
+                    "file": "pounce-peak.jpg",
+                    "ms": 262
+                  }
+                ],
+                "expected": "mirror-fox-attack",
+                "blankOrWrong": 0,
+                "samples": 39,
+                "restored": true,
+                "anchor": [
+                  513.2,
+                  239,
+                  253.7,
+                  255.3
+                ],
+                "hud": [
+                  380,
+                  45,
+                  520,
+                  189.8
+                ],
+                "endpoint": {
+                  "ms": 262,
+                  "real": [
+                    509.7,
+                    276.8,
+                    763.6,
+                    522
+                  ],
+                  "left": 509.7,
+                  "right": 516.4
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    533.1,
+                    286.1,
+                    741.4,
+                    487.1
+                  ],
+                  "left": 533.1,
+                  "right": 538.6
+                },
+                "minMargin": 509.7,
+                "heavyMs": null
+              }
+            }
+          ],
+          "ordinary": {
+            "snapshots": [
+              {
+                "file": "hurt-40.jpg",
+                "ms": 42
+              },
+              {
+                "file": "hurt-90.jpg",
+                "ms": 91
+              },
+              {
+                "file": "hurt-peak.jpg",
+                "ms": 188
+              }
+            ],
+            "expected": "mirror-fox-hurt",
+            "blankOrWrong": 0,
+            "samples": 29,
+            "restored": true,
+            "anchor": [
+              502.2,
+              217,
+              275.5,
+              277.3
+            ],
+            "hud": [
+              380,
+              45,
+              520,
+              167.8
+            ],
+            "endpoint": {
+              "ms": 188,
+              "real": [
+                532.6,
+                263.8,
+                767.5,
+                484.8
+              ],
+              "left": 532.6,
+              "right": 512.5
+            },
+            "stable": {
+              "ms": 0,
+              "real": [
+                532.5,
+                263.9,
+                767.3,
+                484.8
+              ],
+              "left": 532.5,
+              "right": 512.7
+            },
+            "minMargin": 500.1,
+            "heavyMs": null
+          },
+          "fullBlock": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 46,
+              "enemyBlock": 6,
+              "playerBlock": 15,
+              "energy": 0,
+              "intent": "飞扑",
+              "damage": 11,
+              "incoming": 15,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 3,
+              "enemyHp": 46,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "抓挠",
+              "damage": 4,
+              "incoming": 16,
+              "strength": 2,
+              "dmgAdd": 2,
+              "part": true,
+              "fullBlocks": 1,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0,
+            "cards": [
+              {
+                "index": 0,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 2,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 0,
+                "replaced": "strike",
+                "upgrade": false
+              }
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "full-block-60.jpg",
+                  "ms": 54
+                },
+                {
+                  "file": "full-block-128.jpg",
+                  "ms": 131
+                },
+                {
+                  "file": "full-block-220.jpg",
+                  "ms": 221
+                },
+                {
+                  "file": "full-block-peak.jpg",
+                  "ms": 263
+                }
+              ],
+              "expected": "mirror-fox-attack",
+              "blankOrWrong": 0,
+              "samples": 39,
+              "restored": true,
+              "anchor": [
+                513.2,
+                243,
+                253.7,
+                255.3
+              ],
+              "hud": [
+                380,
+                49,
+                520,
+                189.8
+              ],
+              "endpoint": {
+                "ms": 263,
+                "real": [
+                  509.7,
+                  280.8,
+                  763.6,
+                  526
+                ],
+                "left": 509.7,
+                "right": 516.4
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  533.1,
+                  290.1,
+                  741.4,
+                  491.1
+                ],
+                "left": 533.1,
+                "right": 538.6
+              },
+              "minMargin": 509.7,
+              "heavyMs": null
+            }
+          },
+          "clasp": [
+            {
+              "damage": 9,
+              "part": [
+                true,
+                true
+              ],
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "clasp-9-40.jpg",
+                    "ms": 40
+                  },
+                  {
+                    "file": "clasp-9-90.jpg",
+                    "ms": 88
+                  },
+                  {
+                    "file": "clasp-9-peak.jpg",
+                    "ms": 185
+                  }
+                ],
+                "expected": "mirror-fox-hurt",
+                "blankOrWrong": 0,
+                "samples": 29,
+                "restored": true,
+                "anchor": [
+                  502.2,
+                  217,
+                  275.5,
+                  277.3
+                ],
+                "hud": [
+                  380,
+                  45,
+                  520,
+                  167.8
+                ],
+                "endpoint": {
+                  "ms": 186,
+                  "real": [
+                    532.6,
+                    263.8,
+                    767.5,
+                    484.8
+                  ],
+                  "left": 532.6,
+                  "right": 512.5
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    532.5,
+                    263.9,
+                    767.3,
+                    484.8
+                  ],
+                  "left": 532.5,
+                  "right": 512.7
+                },
+                "minMargin": 500.1,
+                "heavyMs": null
+              }
+            },
+            {
+              "damage": 10,
+              "part": [
+                true,
+                false
+              ],
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "clasp-10-40.jpg",
+                    "ms": 45
+                  },
+                  {
+                    "file": "clasp-10-90.jpg",
+                    "ms": 87
+                  },
+                  {
+                    "file": "clasp-10-peak.jpg",
+                    "ms": 191
+                  }
+                ],
+                "expected": "mirror-fox-hurt",
+                "blankOrWrong": 0,
+                "samples": 29,
+                "restored": true,
+                "anchor": [
+                  502.2,
+                  217,
+                  275.5,
+                  277.3
+                ],
+                "hud": [
+                  380,
+                  45,
+                  520,
+                  167.8
+                ],
+                "endpoint": {
+                  "ms": 184,
+                  "real": [
+                    532.9,
+                    263.7,
+                    767.8,
+                    484.8
+                  ],
+                  "left": 532.9,
+                  "right": 512.2
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    532.5,
+                    263.9,
+                    767.3,
+                    484.8
+                  ],
+                  "left": 532.5,
+                  "right": 512.7
+                },
+                "minMargin": 500.1,
+                "heavyMs": null
+              }
+            }
+          ],
+          "heavy": {
+            "damage": 14,
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "heavy-40.jpg",
+                  "ms": 41
+                },
+                {
+                  "file": "heavy-90.jpg",
+                  "ms": 89
+                },
+                {
+                  "file": "heavy-peak.jpg",
+                  "ms": 291
+                }
+              ],
+              "expected": "mirror-fox-hurt",
+              "blankOrWrong": 0,
+              "samples": 43,
+              "restored": true,
+              "anchor": [
+                502.2,
+                217,
+                275.5,
+                277.3
+              ],
+              "hud": [
+                380,
+                45,
+                520,
+                167.8
+              ],
+              "endpoint": {
+                "ms": 284,
+                "real": [
+                  532.6,
+                  263.8,
+                  767.5,
+                  484.8
+                ],
+                "left": 532.6,
+                "right": 512.5
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  535.8,
+                  270.7,
+                  763.5,
+                  485
+                ],
+                "left": 535.8,
+                "right": 516.5
+              },
+              "minMargin": 500.1,
+              "heavyMs": 83
+            }
+          }
+        }
+      }
+    },
+    "warden": {
+      "390": {
+        "before": {
+          "fixture": {
+            "stairs": {
+              "target": {
+                "dir": 0,
+                "x": 5,
+                "y": 8
+              },
+              "id": 20001,
+              "from": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              }
+            },
+            "encounter": {
+              "target": {
+                "dir": 1,
+                "x": 8,
+                "y": 9
+              },
+              "id": 20002,
+              "from": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              }
+            }
+          },
+          "initial": {
+            "seed": 2060279869,
+            "sign": "horde",
+            "floor": 2,
+            "player": {
+              "x": 7,
+              "y": 9,
+              "dir": 1
+            },
+            "hp": 54,
+            "round": 1,
+            "enemyHp": 76,
+            "enemyBlock": 0,
+            "playerBlock": 0,
+            "energy": 3,
+            "intent": "嚎叫",
+            "incoming": 0,
+            "strength": 0,
+            "dmgAdd": 0,
+            "part": null,
+            "fullBlocks": 0,
+            "stolen": [],
+            "hand": [
+              {
+                "id": "bash",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              }
+            ],
+            "bag": [
+              {
+                "id": "shield",
+                "uid": 1000
+              }
+            ]
+          },
+          "assets": {
+            "warden": {
+              "width": 440,
+              "height": 294,
+              "bounds": [
+                3,
+                1,
+                438,
+                291
+              ],
+              "webpSha256": "508d844ed1cb17c5e0e82f6b7babc458d25d3a0f0d2bf92e66618d3fb65a6e36",
+              "sourceSha256": null
+            }
+          },
+          "pageErrors": [],
+          "regular": 6,
+          "opener": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 1,
+              "enemyHp": 70,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 2,
+              "intent": "嚎叫",
+              "incoming": 0,
+              "strength": 0,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 70,
+              "enemyBlock": 6,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "獠牙",
+              "damage": 13,
+              "incoming": 16,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0
+          },
+          "guarded": {
+            "enemyHp": [
+              70,
+              70
+            ],
+            "enemyBlock": [
+              6,
+              0
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "guarded-40.jpg",
+                  "ms": 45
+                },
+                {
+                  "file": "guarded-90.jpg",
+                  "ms": 87
+                },
+                {
+                  "file": "guarded-peak.jpg",
+                  "ms": 191
+                }
+              ],
+              "expected": "warden",
+              "blankOrWrong": 0,
+              "samples": 29,
+              "restored": true,
+              "anchor": [
+                7.8,
+                339.5,
+                374.4,
+                250.2
+              ],
+              "hud": [
+                15.6,
+                210.8,
+                358.8,
+                125.9
+              ],
+              "endpoint": {
+                "ms": 193,
+                "real": [
+                  10.5,
+                  340.4,
+                  381.5,
+                  588.1
+                ],
+                "left": 10.5,
+                "right": 8.5
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  10.4,
+                  340.4,
+                  381.3,
+                  588
+                ],
+                "left": 10.4,
+                "right": 8.7
+              },
+              "minMargin": -4.7,
+              "heavyMs": null
+            }
+          },
+          "attacks": [
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 54,
+                "round": 2,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 2,
+                "intent": "獠牙",
+                "damage": 13,
+                "incoming": 16,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 38,
+                "round": 3,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "撕咬",
+                "damage": 6,
+                "incoming": 18,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 16,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "fang-60.jpg",
+                    "ms": 62
+                  },
+                  {
+                    "file": "fang-128.jpg",
+                    "ms": 125
+                  },
+                  {
+                    "file": "fang-220.jpg",
+                    "ms": 215
+                  },
+                  {
+                    "file": "fang-peak.jpg",
+                    "ms": 257
+                  }
+                ],
+                "expected": "warden",
+                "blankOrWrong": 0,
+                "samples": 38,
+                "restored": true,
+                "anchor": [
+                  7.8,
+                  339.5,
+                  374.4,
+                  250.2
+                ],
+                "hud": [
+                  15.6,
+                  210.8,
+                  358.8,
+                  125.9
+                ],
+                "endpoint": {
+                  "ms": 257,
+                  "real": [
+                    -28.6,
+                    310.4,
+                    420.6,
+                    610.2
+                  ],
+                  "left": -28.6,
+                  "right": -30.6
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    10.4,
+                    340.4,
+                    381.3,
+                    588
+                  ],
+                  "left": 10.4,
+                  "right": 8.7
+                },
+                "minMargin": -30.6,
+                "heavyMs": null
+              }
+            },
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 38,
+                "round": 3,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "撕咬",
+                "damage": 6,
+                "incoming": 18,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 20,
+                "round": 4,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "护门",
+                "damage": 5,
+                "incoming": 8,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 18,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "maul-60.jpg",
+                    "ms": 62
+                  },
+                  {
+                    "file": "maul-128.jpg",
+                    "ms": 125
+                  },
+                  {
+                    "file": "maul-220.jpg",
+                    "ms": 222
+                  },
+                  {
+                    "file": "maul-peak.jpg",
+                    "ms": 264
+                  }
+                ],
+                "expected": "warden",
+                "blankOrWrong": 0,
+                "samples": 38,
+                "restored": true,
+                "anchor": [
+                  7.8,
+                  339.5,
+                  374.4,
+                  250.2
+                ],
+                "hud": [
+                  15.6,
+                  210.8,
+                  358.8,
+                  125.9
+                ],
+                "endpoint": {
+                  "ms": 257,
+                  "real": [
+                    -28.5,
+                    310.4,
+                    420.6,
+                    610.1
+                  ],
+                  "left": -28.5,
+                  "right": -30.6
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    10.4,
+                    340.4,
+                    381.3,
+                    588
+                  ],
+                  "left": 10.4,
+                  "right": 8.7
+                },
+                "minMargin": -30.6,
+                "heavyMs": null
+              }
+            }
+          ],
+          "ordinary": {
+            "snapshots": [
+              {
+                "file": "hurt-40.jpg",
+                "ms": 38
+              },
+              {
+                "file": "hurt-90.jpg",
+                "ms": 94
+              },
+              {
+                "file": "hurt-peak.jpg",
+                "ms": 198
+              }
+            ],
+            "expected": "warden",
+            "blankOrWrong": 0,
+            "samples": 30,
+            "restored": true,
+            "anchor": [
+              7.8,
+              339.5,
+              374.4,
+              250.2
+            ],
+            "hud": [
+              15.6,
+              225.1,
+              358.8,
+              111.6
+            ],
+            "endpoint": {
+              "ms": 192,
+              "real": [
+                10.4,
+                340.4,
+                381.3,
+                588
+              ],
+              "left": 10.4,
+              "right": 8.7
+            },
+            "stable": {
+              "ms": 0,
+              "real": [
+                10.4,
+                340.4,
+                381.3,
+                588
+              ],
+              "left": 10.4,
+              "right": 8.7
+            },
+            "minMargin": -4.7,
+            "heavyMs": null
+          },
+          "fullBlock": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 20,
+              "round": 4,
+              "enemyHp": 70,
+              "enemyBlock": 0,
+              "playerBlock": 10,
+              "energy": 1,
+              "intent": "护门",
+              "damage": 5,
+              "incoming": 8,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 20,
+              "round": 5,
+              "enemyHp": 70,
+              "enemyBlock": 14,
+              "playerBlock": 2,
+              "energy": 3,
+              "intent": "獠牙",
+              "damage": 13,
+              "incoming": 16,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 1,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0,
+            "cards": [
+              {
+                "index": 1,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 3,
+                "replaced": null,
+                "upgrade": false
+              }
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "full-block-60.jpg",
+                  "ms": 62
+                },
+                {
+                  "file": "full-block-128.jpg",
+                  "ms": 125
+                },
+                {
+                  "file": "full-block-220.jpg",
+                  "ms": 215
+                },
+                {
+                  "file": "full-block-peak.jpg",
+                  "ms": 257
+                }
+              ],
+              "expected": "warden",
+              "blankOrWrong": 0,
+              "samples": 38,
+              "restored": true,
+              "anchor": [
+                7.8,
+                339.5,
+                374.4,
+                250.2
+              ],
+              "hud": [
+                15.6,
+                210.8,
+                358.8,
+                125.9
+              ],
+              "endpoint": {
+                "ms": 257,
+                "real": [
+                  -28.6,
+                  310.4,
+                  420.6,
+                  610.2
+                ],
+                "left": -28.6,
+                "right": -30.6
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  10.4,
+                  340.4,
+                  381.3,
+                  588
+                ],
+                "left": 10.4,
+                "right": 8.7
+              },
+              "minMargin": -30.6,
+              "heavyMs": null
+            }
+          },
+          "clasp": null,
+          "heavy": {
+            "damage": 14,
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "heavy-40.jpg",
+                  "ms": 45
+                },
+                {
+                  "file": "heavy-90.jpg",
+                  "ms": 87
+                },
+                {
+                  "file": "heavy-peak.jpg",
+                  "ms": 282
+                }
+              ],
+              "expected": "warden",
+              "blankOrWrong": 0,
+              "samples": 43,
+              "restored": true,
+              "anchor": [
+                7.8,
+                339.5,
+                374.4,
+                250.2
+              ],
+              "hud": [
+                15.6,
+                225.1,
+                358.8,
+                111.6
+              ],
+              "endpoint": {
+                "ms": 282,
+                "real": [
+                  10.5,
+                  340.4,
+                  381.5,
+                  588.1
+                ],
+                "left": 10.5,
+                "right": 8.5
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  15.9,
+                  347.8,
+                  375.8,
+                  588
+                ],
+                "left": 15.9,
+                "right": 14.2
+              },
+              "minMargin": -4.7,
+              "heavyMs": 80
+            }
+          }
+        },
+        "after": {
+          "fixture": {
+            "stairs": {
+              "target": {
+                "dir": 0,
+                "x": 5,
+                "y": 8
+              },
+              "id": 20001,
+              "from": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              }
+            },
+            "encounter": {
+              "target": {
+                "dir": 1,
+                "x": 8,
+                "y": 9
+              },
+              "id": 20002,
+              "from": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              }
+            }
+          },
+          "initial": {
+            "seed": 2060279869,
+            "sign": "horde",
+            "floor": 2,
+            "player": {
+              "x": 7,
+              "y": 9,
+              "dir": 1
+            },
+            "hp": 54,
+            "round": 1,
+            "enemyHp": 76,
+            "enemyBlock": 0,
+            "playerBlock": 0,
+            "energy": 3,
+            "intent": "嚎叫",
+            "incoming": 0,
+            "strength": 0,
+            "dmgAdd": 0,
+            "part": null,
+            "fullBlocks": 0,
+            "stolen": [],
+            "hand": [
+              {
+                "id": "bash",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              }
+            ],
+            "bag": [
+              {
+                "id": "shield",
+                "uid": 1000
+              }
+            ]
+          },
+          "assets": {
+            "warden-attack": {
+              "width": 440,
+              "height": 294,
+              "bounds": [
+                43,
+                76,
+                396,
+                278
+              ],
+              "webpSha256": "e9930109c8083d20743286ca60f03ef724fb0f476b8c9fe774a59d6f4b1c8496",
+              "sourceSha256": "c04e886e4134bf1b0c3c400cfd843d100fe2ea4422d8fbc1a8005986fac07a3f"
+            },
+            "warden-hurt": {
+              "width": 440,
+              "height": 294,
+              "bounds": [
+                36,
+                23,
+                414,
+                263
+              ],
+              "webpSha256": "00af7cd6365c75c66c2f2fa1202d39bc92166822c11870d67cf6e1eac6fce597",
+              "sourceSha256": "5f2ccc9cf4e2ee774b6073bfac446c3f4ecd6224043f4dfaf1593f725d7f0d57"
+            },
+            "warden": {
+              "width": 440,
+              "height": 294,
+              "bounds": [
+                3,
+                1,
+                438,
+                291
+              ],
+              "webpSha256": "508d844ed1cb17c5e0e82f6b7babc458d25d3a0f0d2bf92e66618d3fb65a6e36",
+              "sourceSha256": null
+            }
+          },
+          "pageErrors": [],
+          "regular": 6,
+          "opener": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 1,
+              "enemyHp": 70,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 2,
+              "intent": "嚎叫",
+              "incoming": 0,
+              "strength": 0,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 70,
+              "enemyBlock": 6,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "獠牙",
+              "damage": 13,
+              "incoming": 16,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0
+          },
+          "guarded": {
+            "enemyHp": [
+              70,
+              70
+            ],
+            "enemyBlock": [
+              6,
+              0
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "guarded-40.jpg",
+                  "ms": 33
+                },
+                {
+                  "file": "guarded-90.jpg",
+                  "ms": 89
+                },
+                {
+                  "file": "guarded-peak.jpg",
+                  "ms": 193
+                }
+              ],
+              "expected": "warden",
+              "blankOrWrong": 0,
+              "samples": 30,
+              "restored": true,
+              "anchor": [
+                7.8,
+                339.5,
+                374.4,
+                250.2
+              ],
+              "hud": [
+                15.6,
+                210.8,
+                358.8,
+                125.9
+              ],
+              "endpoint": {
+                "ms": 193,
+                "real": [
+                  10.4,
+                  340.4,
+                  381.3,
+                  588
+                ],
+                "left": 10.4,
+                "right": 8.7
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  10.4,
+                  340.4,
+                  381.3,
+                  588
+                ],
+                "left": 10.4,
+                "right": 8.7
+              },
+              "minMargin": -4.7,
+              "heavyMs": null
+            }
+          },
+          "attacks": [
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 54,
+                "round": 2,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 2,
+                "intent": "獠牙",
+                "damage": 13,
+                "incoming": 16,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 38,
+                "round": 3,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "撕咬",
+                "damage": 6,
+                "incoming": 18,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 16,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "fang-60.jpg",
+                    "ms": 55
+                  },
+                  {
+                    "file": "fang-128.jpg",
+                    "ms": 132
+                  },
+                  {
+                    "file": "fang-220.jpg",
+                    "ms": 222
+                  },
+                  {
+                    "file": "fang-peak.jpg",
+                    "ms": 257
+                  }
+                ],
+                "expected": "warden-attack",
+                "blankOrWrong": 0,
+                "samples": 38,
+                "restored": true,
+                "anchor": [
+                  7.8,
+                  339.5,
+                  374.4,
+                  250.2
+                ],
+                "hud": [
+                  15.6,
+                  210.8,
+                  358.8,
+                  125.9
+                ],
+                "endpoint": {
+                  "ms": 257,
+                  "real": [
+                    12.6,
+                    387.7,
+                    377.3,
+                    596.8
+                  ],
+                  "left": 12.6,
+                  "right": 12.7
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    44.4,
+                    404.2,
+                    345.6,
+                    576.9
+                  ],
+                  "left": 44.4,
+                  "right": 44.4
+                },
+                "minMargin": 12.6,
+                "heavyMs": null
+              }
+            },
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 38,
+                "round": 3,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "撕咬",
+                "damage": 6,
+                "incoming": 18,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 20,
+                "round": 4,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "护门",
+                "damage": 5,
+                "incoming": 8,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 18,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "maul-60.jpg",
+                    "ms": 55
+                  },
+                  {
+                    "file": "maul-128.jpg",
+                    "ms": 132
+                  },
+                  {
+                    "file": "maul-220.jpg",
+                    "ms": 222
+                  },
+                  {
+                    "file": "maul-peak.jpg",
+                    "ms": 257
+                  }
+                ],
+                "expected": "warden-attack",
+                "blankOrWrong": 0,
+                "samples": 38,
+                "restored": true,
+                "anchor": [
+                  7.8,
+                  339.5,
+                  374.4,
+                  250.2
+                ],
+                "hud": [
+                  15.6,
+                  210.8,
+                  358.8,
+                  125.9
+                ],
+                "endpoint": {
+                  "ms": 257,
+                  "real": [
+                    12.7,
+                    387.7,
+                    377.4,
+                    596.8
+                  ],
+                  "left": 12.7,
+                  "right": 12.6
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    44.4,
+                    404.2,
+                    345.6,
+                    576.9
+                  ],
+                  "left": 44.4,
+                  "right": 44.4
+                },
+                "minMargin": 12.6,
+                "heavyMs": null
+              }
+            }
+          ],
+          "ordinary": {
+            "snapshots": [
+              {
+                "file": "hurt-40.jpg",
+                "ms": 43
+              },
+              {
+                "file": "hurt-90.jpg",
+                "ms": 85
+              },
+              {
+                "file": "hurt-peak.jpg",
+                "ms": 189
+              }
+            ],
+            "expected": "warden-hurt",
+            "blankOrWrong": 0,
+            "samples": 29,
+            "restored": true,
+            "anchor": [
+              7.8,
+              339.5,
+              374.4,
+              250.2
+            ],
+            "hud": [
+              15.6,
+              225.1,
+              358.8,
+              111.6
+            ],
+            "endpoint": {
+              "ms": 189,
+              "real": [
+                38.5,
+                359.1,
+                361.1,
+                564.3
+              ],
+              "left": 38.5,
+              "right": 28.9
+            },
+            "stable": {
+              "ms": 0,
+              "real": [
+                38.4,
+                359.1,
+                360.9,
+                564.2
+              ],
+              "left": 38.4,
+              "right": 29.1
+            },
+            "minMargin": 19.8,
+            "heavyMs": null
+          },
+          "fullBlock": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 20,
+              "round": 4,
+              "enemyHp": 70,
+              "enemyBlock": 0,
+              "playerBlock": 10,
+              "energy": 1,
+              "intent": "护门",
+              "damage": 5,
+              "incoming": 8,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 20,
+              "round": 5,
+              "enemyHp": 70,
+              "enemyBlock": 14,
+              "playerBlock": 2,
+              "energy": 3,
+              "intent": "獠牙",
+              "damage": 13,
+              "incoming": 16,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 1,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0,
+            "cards": [
+              {
+                "index": 1,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 3,
+                "replaced": null,
+                "upgrade": false
+              }
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "full-block-60.jpg",
+                  "ms": 62
+                },
+                {
+                  "file": "full-block-128.jpg",
+                  "ms": 125
+                },
+                {
+                  "file": "full-block-220.jpg",
+                  "ms": 215
+                },
+                {
+                  "file": "full-block-peak.jpg",
+                  "ms": 257
+                }
+              ],
+              "expected": "warden-attack",
+              "blankOrWrong": 0,
+              "samples": 38,
+              "restored": true,
+              "anchor": [
+                7.8,
+                339.5,
+                374.4,
+                250.2
+              ],
+              "hud": [
+                15.6,
+                210.8,
+                358.8,
+                125.9
+              ],
+              "endpoint": {
+                "ms": 257,
+                "real": [
+                  12.6,
+                  387.7,
+                  377.4,
+                  596.8
+                ],
+                "left": 12.6,
+                "right": 12.6
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  44.4,
+                  404.2,
+                  345.6,
+                  576.9
+                ],
+                "left": 44.4,
+                "right": 44.4
+              },
+              "minMargin": 12.6,
+              "heavyMs": null
+            }
+          },
+          "clasp": null,
+          "heavy": {
+            "damage": 14,
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "heavy-40.jpg",
+                  "ms": 37
+                },
+                {
+                  "file": "heavy-90.jpg",
+                  "ms": 93
+                },
+                {
+                  "file": "heavy-peak.jpg",
+                  "ms": 280
+                }
+              ],
+              "expected": "warden-hurt",
+              "blankOrWrong": 0,
+              "samples": 43,
+              "restored": true,
+              "anchor": [
+                7.8,
+                339.5,
+                374.4,
+                250.2
+              ],
+              "hud": [
+                15.6,
+                225.1,
+                358.8,
+                111.6
+              ],
+              "endpoint": {
+                "ms": 280,
+                "real": [
+                  38.6,
+                  359.1,
+                  361.3,
+                  564.3
+                ],
+                "left": 38.6,
+                "right": 28.7
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  43.1,
+                  366,
+                  356,
+                  564.9
+                ],
+                "left": 43.1,
+                "right": 34
+              },
+              "minMargin": 19.8,
+              "heavyMs": 79
+            }
+          }
+        }
+      },
+      "1280": {
+        "before": {
+          "fixture": {
+            "stairs": {
+              "target": {
+                "dir": 0,
+                "x": 5,
+                "y": 8
+              },
+              "id": 20001,
+              "from": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              }
+            },
+            "encounter": {
+              "target": {
+                "dir": 1,
+                "x": 8,
+                "y": 9
+              },
+              "id": 20002,
+              "from": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              }
+            }
+          },
+          "initial": {
+            "seed": 2060279869,
+            "sign": "horde",
+            "floor": 2,
+            "player": {
+              "x": 7,
+              "y": 9,
+              "dir": 1
+            },
+            "hp": 54,
+            "round": 1,
+            "enemyHp": 76,
+            "enemyBlock": 0,
+            "playerBlock": 0,
+            "energy": 3,
+            "intent": "嚎叫",
+            "incoming": 0,
+            "strength": 0,
+            "dmgAdd": 0,
+            "part": null,
+            "fullBlocks": 0,
+            "stolen": [],
+            "hand": [
+              {
+                "id": "bash",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              }
+            ],
+            "bag": [
+              {
+                "id": "shield",
+                "uid": 1000
+              }
+            ]
+          },
+          "assets": {
+            "warden": {
+              "width": 440,
+              "height": 294,
+              "bounds": [
+                3,
+                1,
+                438,
+                291
+              ],
+              "webpSha256": "508d844ed1cb17c5e0e82f6b7babc458d25d3a0f0d2bf92e66618d3fb65a6e36",
+              "sourceSha256": null
+            }
+          },
+          "pageErrors": [],
+          "regular": 6,
+          "opener": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 1,
+              "enemyHp": 70,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 2,
+              "intent": "嚎叫",
+              "incoming": 0,
+              "strength": 0,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 70,
+              "enemyBlock": 6,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "獠牙",
+              "damage": 13,
+              "incoming": 16,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0
+          },
+          "guarded": {
+            "enemyHp": [
+              70,
+              70
+            ],
+            "enemyBlock": [
+              6,
+              0
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "guarded-40.jpg",
+                  "ms": 42
+                },
+                {
+                  "file": "guarded-90.jpg",
+                  "ms": 90
+                },
+                {
+                  "file": "guarded-peak.jpg",
+                  "ms": 195
+                }
+              ],
+              "expected": "warden",
+              "blankOrWrong": 0,
+              "samples": 30,
+              "restored": true,
+              "anchor": [
+                452,
+                243,
+                376,
+                251.3
+              ],
+              "hud": [
+                380,
+                45,
+                520,
+                193.8
+              ],
+              "endpoint": {
+                "ms": 195,
+                "real": [
+                  454.6,
+                  243.9,
+                  827.2,
+                  492.6
+                ],
+                "left": 454.6,
+                "right": 452.8
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  454.6,
+                  243.9,
+                  827.1,
+                  492.6
+                ],
+                "left": 454.6,
+                "right": 452.9
+              },
+              "minMargin": 435.9,
+              "heavyMs": null
+            }
+          },
+          "attacks": [
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 54,
+                "round": 2,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 2,
+                "intent": "獠牙",
+                "damage": 13,
+                "incoming": 16,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 38,
+                "round": 3,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "撕咬",
+                "damage": 6,
+                "incoming": 18,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 16,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "fang-60.jpg",
+                    "ms": 61
+                  },
+                  {
+                    "file": "fang-128.jpg",
+                    "ms": 130
+                  },
+                  {
+                    "file": "fang-220.jpg",
+                    "ms": 214
+                  },
+                  {
+                    "file": "fang-peak.jpg",
+                    "ms": 269
+                  }
+                ],
+                "expected": "warden",
+                "blankOrWrong": 0,
+                "samples": 39,
+                "restored": true,
+                "anchor": [
+                  452,
+                  243,
+                  376,
+                  251.3
+                ],
+                "hud": [
+                  380,
+                  45,
+                  520,
+                  193.8
+                ],
+                "endpoint": {
+                  "ms": 263,
+                  "real": [
+                    413.8,
+                    225.3,
+                    868.3,
+                    528.7
+                  ],
+                  "left": 413.8,
+                  "right": 411.7
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    454.6,
+                    243.9,
+                    827.1,
+                    492.6
+                  ],
+                  "left": 454.6,
+                  "right": 452.9
+                },
+                "minMargin": 411.7,
+                "heavyMs": null
+              }
+            },
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 38,
+                "round": 3,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "撕咬",
+                "damage": 6,
+                "incoming": 18,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 20,
+                "round": 4,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "护门",
+                "damage": 5,
+                "incoming": 8,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 18,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "maul-60.jpg",
+                    "ms": 62
+                  },
+                  {
+                    "file": "maul-128.jpg",
+                    "ms": 125
+                  },
+                  {
+                    "file": "maul-220.jpg",
+                    "ms": 215
+                  },
+                  {
+                    "file": "maul-peak.jpg",
+                    "ms": 257
+                  }
+                ],
+                "expected": "warden",
+                "blankOrWrong": 0,
+                "samples": 38,
+                "restored": true,
+                "anchor": [
+                  452,
+                  243,
+                  376,
+                  251.3
+                ],
+                "hud": [
+                  380,
+                  45,
+                  520,
+                  193.8
+                ],
+                "endpoint": {
+                  "ms": 257,
+                  "real": [
+                    415.4,
+                    225.8,
+                    866.5,
+                    526.9
+                  ],
+                  "left": 415.4,
+                  "right": 413.5
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    454.6,
+                    243.9,
+                    827.1,
+                    492.6
+                  ],
+                  "left": 454.6,
+                  "right": 452.9
+                },
+                "minMargin": 413.5,
+                "heavyMs": null
+              }
+            }
+          ],
+          "ordinary": {
+            "snapshots": [
+              {
+                "file": "hurt-40.jpg",
+                "ms": 42
+              },
+              {
+                "file": "hurt-90.jpg",
+                "ms": 91
+              },
+              {
+                "file": "hurt-peak.jpg",
+                "ms": 188
+              }
+            ],
+            "expected": "warden",
+            "blankOrWrong": 0,
+            "samples": 29,
+            "restored": true,
+            "anchor": [
+              435.5,
+              221,
+              409,
+              273.3
+            ],
+            "hud": [
+              380,
+              45,
+              520,
+              171.8
+            ],
+            "endpoint": {
+              "ms": 189,
+              "real": [
+                438.4,
+                221.9,
+                843.7,
+                492.4
+              ],
+              "left": 438.4,
+              "right": 436.3
+            },
+            "stable": {
+              "ms": 0,
+              "real": [
+                438.3,
+                221.9,
+                843.6,
+                492.4
+              ],
+              "left": 438.3,
+              "right": 436.4
+            },
+            "minMargin": 419,
+            "heavyMs": null
+          },
+          "fullBlock": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 20,
+              "round": 4,
+              "enemyHp": 70,
+              "enemyBlock": 0,
+              "playerBlock": 10,
+              "energy": 1,
+              "intent": "护门",
+              "damage": 5,
+              "incoming": 8,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 20,
+              "round": 5,
+              "enemyHp": 70,
+              "enemyBlock": 14,
+              "playerBlock": 2,
+              "energy": 3,
+              "intent": "獠牙",
+              "damage": 13,
+              "incoming": 16,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 1,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0,
+            "cards": [
+              {
+                "index": 1,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 3,
+                "replaced": null,
+                "upgrade": false
+              }
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "full-block-60.jpg",
+                  "ms": 60
+                },
+                {
+                  "file": "full-block-128.jpg",
+                  "ms": 130
+                },
+                {
+                  "file": "full-block-220.jpg",
+                  "ms": 213
+                },
+                {
+                  "file": "full-block-peak.jpg",
+                  "ms": 255
+                }
+              ],
+              "expected": "warden",
+              "blankOrWrong": 0,
+              "samples": 38,
+              "restored": true,
+              "anchor": [
+                452,
+                243,
+                376,
+                251.3
+              ],
+              "hud": [
+                380,
+                45,
+                520,
+                193.8
+              ],
+              "endpoint": {
+                "ms": 255,
+                "real": [
+                  415.4,
+                  225.8,
+                  866.5,
+                  526.9
+                ],
+                "left": 415.4,
+                "right": 413.5
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  454.6,
+                  243.9,
+                  827.1,
+                  492.6
+                ],
+                "left": 454.6,
+                "right": 452.9
+              },
+              "minMargin": 413.5,
+              "heavyMs": null
+            }
+          },
+          "clasp": null,
+          "heavy": {
+            "damage": 14,
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "heavy-40.jpg",
+                  "ms": 40
+                },
+                {
+                  "file": "heavy-90.jpg",
+                  "ms": 88
+                },
+                {
+                  "file": "heavy-peak.jpg",
+                  "ms": 290
+                }
+              ],
+              "expected": "warden",
+              "blankOrWrong": 0,
+              "samples": 43,
+              "restored": true,
+              "anchor": [
+                435.5,
+                221,
+                409,
+                273.3
+              ],
+              "hud": [
+                380,
+                45,
+                520,
+                171.8
+              ],
+              "endpoint": {
+                "ms": 283,
+                "real": [
+                  438.4,
+                  221.9,
+                  843.7,
+                  492.4
+                ],
+                "left": 438.4,
+                "right": 436.3
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  444.3,
+                  230.1,
+                  837.5,
+                  492.5
+                ],
+                "left": 444.3,
+                "right": 442.5
+              },
+              "minMargin": 419,
+              "heavyMs": 82
+            }
+          }
+        },
+        "after": {
+          "fixture": {
+            "stairs": {
+              "target": {
+                "dir": 0,
+                "x": 5,
+                "y": 8
+              },
+              "id": 20001,
+              "from": {
+                "x": 5,
+                "y": 9,
+                "dir": 0
+              }
+            },
+            "encounter": {
+              "target": {
+                "dir": 1,
+                "x": 8,
+                "y": 9
+              },
+              "id": 20002,
+              "from": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              }
+            }
+          },
+          "initial": {
+            "seed": 2060279869,
+            "sign": "horde",
+            "floor": 2,
+            "player": {
+              "x": 7,
+              "y": 9,
+              "dir": 1
+            },
+            "hp": 54,
+            "round": 1,
+            "enemyHp": 76,
+            "enemyBlock": 0,
+            "playerBlock": 0,
+            "energy": 3,
+            "intent": "嚎叫",
+            "incoming": 0,
+            "strength": 0,
+            "dmgAdd": 0,
+            "part": null,
+            "fullBlocks": 0,
+            "stolen": [],
+            "hand": [
+              {
+                "id": "bash",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "defend",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              },
+              {
+                "id": "strike",
+                "up": false
+              }
+            ],
+            "bag": [
+              {
+                "id": "shield",
+                "uid": 1000
+              }
+            ]
+          },
+          "assets": {
+            "warden-attack": {
+              "width": 440,
+              "height": 294,
+              "bounds": [
+                43,
+                76,
+                396,
+                278
+              ],
+              "webpSha256": "e9930109c8083d20743286ca60f03ef724fb0f476b8c9fe774a59d6f4b1c8496",
+              "sourceSha256": "c04e886e4134bf1b0c3c400cfd843d100fe2ea4422d8fbc1a8005986fac07a3f"
+            },
+            "warden-hurt": {
+              "width": 440,
+              "height": 294,
+              "bounds": [
+                36,
+                23,
+                414,
+                263
+              ],
+              "webpSha256": "00af7cd6365c75c66c2f2fa1202d39bc92166822c11870d67cf6e1eac6fce597",
+              "sourceSha256": "5f2ccc9cf4e2ee774b6073bfac446c3f4ecd6224043f4dfaf1593f725d7f0d57"
+            },
+            "warden": {
+              "width": 440,
+              "height": 294,
+              "bounds": [
+                3,
+                1,
+                438,
+                291
+              ],
+              "webpSha256": "508d844ed1cb17c5e0e82f6b7babc458d25d3a0f0d2bf92e66618d3fb65a6e36",
+              "sourceSha256": null
+            }
+          },
+          "pageErrors": [],
+          "regular": 6,
+          "opener": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 1,
+              "enemyHp": 70,
+              "enemyBlock": 0,
+              "playerBlock": 0,
+              "energy": 2,
+              "intent": "嚎叫",
+              "incoming": 0,
+              "strength": 0,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 54,
+              "round": 2,
+              "enemyHp": 70,
+              "enemyBlock": 6,
+              "playerBlock": 0,
+              "energy": 3,
+              "intent": "獠牙",
+              "damage": 13,
+              "incoming": 16,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0
+          },
+          "guarded": {
+            "enemyHp": [
+              70,
+              70
+            ],
+            "enemyBlock": [
+              6,
+              0
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "guarded-40.jpg",
+                  "ms": 42
+                },
+                {
+                  "file": "guarded-90.jpg",
+                  "ms": 90
+                },
+                {
+                  "file": "guarded-peak.jpg",
+                  "ms": 194
+                }
+              ],
+              "expected": "warden",
+              "blankOrWrong": 0,
+              "samples": 30,
+              "restored": true,
+              "anchor": [
+                452,
+                243,
+                376,
+                251.3
+              ],
+              "hud": [
+                380,
+                45,
+                520,
+                193.8
+              ],
+              "endpoint": {
+                "ms": 195,
+                "real": [
+                  454.6,
+                  243.9,
+                  827.2,
+                  492.6
+                ],
+                "left": 454.6,
+                "right": 452.8
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  454.6,
+                  243.9,
+                  827.1,
+                  492.6
+                ],
+                "left": 454.6,
+                "right": 452.9
+              },
+              "minMargin": 435.9,
+              "heavyMs": null
+            }
+          },
+          "attacks": [
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 54,
+                "round": 2,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 2,
+                "intent": "獠牙",
+                "damage": 13,
+                "incoming": 16,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 38,
+                "round": 3,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "撕咬",
+                "damage": 6,
+                "incoming": 18,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 16,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "fang-60.jpg",
+                    "ms": 62
+                  },
+                  {
+                    "file": "fang-128.jpg",
+                    "ms": 125
+                  },
+                  {
+                    "file": "fang-220.jpg",
+                    "ms": 222
+                  },
+                  {
+                    "file": "fang-peak.jpg",
+                    "ms": 264
+                  }
+                ],
+                "expected": "warden-attack",
+                "blankOrWrong": 0,
+                "samples": 38,
+                "restored": true,
+                "anchor": [
+                  452,
+                  243,
+                  376,
+                  251.3
+                ],
+                "hud": [
+                  380,
+                  45,
+                  520,
+                  193.8
+                ],
+                "endpoint": {
+                  "ms": 257,
+                  "real": [
+                    456.9,
+                    303.6,
+                    823.1,
+                    513.6
+                  ],
+                  "left": 456.9,
+                  "right": 456.9
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    488.7,
+                    308,
+                    791.3,
+                    481.5
+                  ],
+                  "left": 488.7,
+                  "right": 488.7
+                },
+                "minMargin": 456.9,
+                "heavyMs": null
+              }
+            },
+            {
+              "before": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 38,
+                "round": 3,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "撕咬",
+                "damage": 6,
+                "incoming": 18,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "spikes",
+                    "up": false
+                  },
+                  {
+                    "id": "bash",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "after": {
+                "seed": 2060279869,
+                "sign": "horde",
+                "floor": 2,
+                "player": {
+                  "x": 7,
+                  "y": 9,
+                  "dir": 1
+                },
+                "hp": 20,
+                "round": 4,
+                "enemyHp": 70,
+                "enemyBlock": 0,
+                "playerBlock": 0,
+                "energy": 3,
+                "intent": "护门",
+                "damage": 5,
+                "incoming": 8,
+                "strength": 3,
+                "dmgAdd": 0,
+                "part": null,
+                "fullBlocks": 0,
+                "stolen": [],
+                "hand": [
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "strike",
+                    "up": false
+                  },
+                  {
+                    "id": "defend",
+                    "up": false
+                  }
+                ],
+                "bag": [
+                  {
+                    "id": "shield",
+                    "uid": 1000
+                  }
+                ]
+              },
+              "dmg": 18,
+              "motion": {
+                "snapshots": [
+                  {
+                    "file": "maul-60.jpg",
+                    "ms": 55
+                  },
+                  {
+                    "file": "maul-128.jpg",
+                    "ms": 131
+                  },
+                  {
+                    "file": "maul-220.jpg",
+                    "ms": 222
+                  },
+                  {
+                    "file": "maul-peak.jpg",
+                    "ms": 263
+                  }
+                ],
+                "expected": "warden-attack",
+                "blankOrWrong": 0,
+                "samples": 39,
+                "restored": true,
+                "anchor": [
+                  452,
+                  243,
+                  376,
+                  251.3
+                ],
+                "hud": [
+                  380,
+                  45,
+                  520,
+                  193.8
+                ],
+                "endpoint": {
+                  "ms": 263,
+                  "real": [
+                    455.5,
+                    303.5,
+                    824.5,
+                    515.2
+                  ],
+                  "left": 455.5,
+                  "right": 455.5
+                },
+                "stable": {
+                  "ms": 0,
+                  "real": [
+                    488.7,
+                    308,
+                    791.3,
+                    481.5
+                  ],
+                  "left": 488.7,
+                  "right": 488.7
+                },
+                "minMargin": 455.5,
+                "heavyMs": null
+              }
+            }
+          ],
+          "ordinary": {
+            "snapshots": [
+              {
+                "file": "hurt-40.jpg",
+                "ms": 38
+              },
+              {
+                "file": "hurt-90.jpg",
+                "ms": 87
+              },
+              {
+                "file": "hurt-peak.jpg",
+                "ms": 184
+              }
+            ],
+            "expected": "warden-hurt",
+            "blankOrWrong": 0,
+            "samples": 29,
+            "restored": true,
+            "anchor": [
+              435.5,
+              221,
+              409,
+              273.3
+            ],
+            "hud": [
+              380,
+              45,
+              520,
+              171.8
+            ],
+            "endpoint": {
+              "ms": 185,
+              "real": [
+                469.3,
+                242.4,
+                821.7,
+                466.5
+              ],
+              "left": 469.3,
+              "right": 458.3
+            },
+            "stable": {
+              "ms": 0,
+              "real": [
+                469,
+                242.4,
+                821.3,
+                466.4
+              ],
+              "left": 469,
+              "right": 458.7
+            },
+            "minMargin": 446.3,
+            "heavyMs": null
+          },
+          "fullBlock": {
+            "before": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 20,
+              "round": 4,
+              "enemyHp": 70,
+              "enemyBlock": 0,
+              "playerBlock": 10,
+              "energy": 1,
+              "intent": "护门",
+              "damage": 5,
+              "incoming": 8,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 0,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "after": {
+              "seed": 2060279869,
+              "sign": "horde",
+              "floor": 2,
+              "player": {
+                "x": 7,
+                "y": 9,
+                "dir": 1
+              },
+              "hp": 20,
+              "round": 5,
+              "enemyHp": 70,
+              "enemyBlock": 14,
+              "playerBlock": 2,
+              "energy": 3,
+              "intent": "獠牙",
+              "damage": 13,
+              "incoming": 16,
+              "strength": 3,
+              "dmgAdd": 0,
+              "part": null,
+              "fullBlocks": 1,
+              "stolen": [],
+              "hand": [
+                {
+                  "id": "spikes",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                },
+                {
+                  "id": "bash",
+                  "up": false
+                },
+                {
+                  "id": "strike",
+                  "up": false
+                },
+                {
+                  "id": "defend",
+                  "up": false
+                }
+              ],
+              "bag": [
+                {
+                  "id": "shield",
+                  "uid": 1000
+                }
+              ]
+            },
+            "dmg": 0,
+            "cards": [
+              {
+                "index": 1,
+                "replaced": null,
+                "upgrade": false
+              },
+              {
+                "index": 3,
+                "replaced": null,
+                "upgrade": false
+              }
+            ],
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "full-block-60.jpg",
+                  "ms": 60
+                },
+                {
+                  "file": "full-block-128.jpg",
+                  "ms": 129
+                },
+                {
+                  "file": "full-block-220.jpg",
+                  "ms": 226
+                },
+                {
+                  "file": "full-block-peak.jpg",
+                  "ms": 268
+                }
+              ],
+              "expected": "warden-attack",
+              "blankOrWrong": 0,
+              "samples": 39,
+              "restored": true,
+              "anchor": [
+                452,
+                243,
+                376,
+                251.3
+              ],
+              "hud": [
+                380,
+                45,
+                520,
+                193.8
+              ],
+              "endpoint": {
+                "ms": 262,
+                "real": [
+                  455.5,
+                  303.5,
+                  824.5,
+                  515.2
+                ],
+                "left": 455.5,
+                "right": 455.5
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  488.7,
+                  308,
+                  791.3,
+                  481.5
+                ],
+                "left": 488.7,
+                "right": 488.7
+              },
+              "minMargin": 455.5,
+              "heavyMs": null
+            }
+          },
+          "clasp": null,
+          "heavy": {
+            "damage": 14,
+            "motion": {
+              "snapshots": [
+                {
+                  "file": "heavy-40.jpg",
+                  "ms": 34
+                },
+                {
+                  "file": "heavy-90.jpg",
+                  "ms": 89
+                },
+                {
+                  "file": "heavy-peak.jpg",
+                  "ms": 284
+                }
+              ],
+              "expected": "warden-hurt",
+              "blankOrWrong": 0,
+              "samples": 43,
+              "restored": true,
+              "anchor": [
+                435.5,
+                221,
+                409,
+                273.3
+              ],
+              "hud": [
+                380,
+                45,
+                520,
+                171.8
+              ],
+              "endpoint": {
+                "ms": 284,
+                "real": [
+                  469.1,
+                  242.4,
+                  821.4,
+                  466.4
+                ],
+                "left": 469.1,
+                "right": 458.6
+              },
+              "stable": {
+                "ms": 0,
+                "real": [
+                  474.1,
+                  249.9,
+                  815.8,
+                  467.2
+                ],
+                "left": 474.1,
+                "right": 464.2
+              },
+              "minMargin": 446.3,
+              "heavyMs": 83
+            }
+          }
+        }
+      }
+    }
+  }
+}

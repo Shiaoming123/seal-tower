@@ -475,11 +475,12 @@
       "file": "icon-pearl",
       "category": "物品图标",
       "usedBy": [
-        "货物·水珠"
+        "货物·水珠",
+        "货物·裂水珠"
       ],
       "wanted": [],
       "status": "placeholder-tint",
-      "shared": false,
+      "shared": true,
       "note": "现在是旧图改色",
       "priority": "P1"
     },
@@ -548,6 +549,7 @@
       "category": "物品图标",
       "usedBy": [
         "货物·钟铜",
+        "货物·裂钟铜",
         "装备·铜铃",
         "卡牌·不动"
       ],
@@ -1811,7 +1813,7 @@
       "category": "敌怪姿态",
       "usedBy": "mirror-fox 扑击/出招",
       "fallback": "mirror-fox",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1819,7 +1821,7 @@
       "category": "敌怪姿态",
       "usedBy": "mirror-fox 受击",
       "fallback": "mirror-fox",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1843,7 +1845,7 @@
       "category": "敌怪姿态",
       "usedBy": "warden 扑击/出招",
       "fallback": "warden",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -1851,7 +1853,7 @@
       "category": "敌怪姿态",
       "usedBy": "warden 受击",
       "fallback": "warden",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {

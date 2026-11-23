@@ -124,8 +124,10 @@ const poseFrames = {
   moth: { size: [320, 290], crops: { attack: [0, 48, 1254, 1136], hurt: [0, 48, 1254, 1136] } },
   rat: { size: [320, 241], crops: { attack: [0, 144, 1254, 945], hurt: [0, 120, 1254, 945] } },
   louse: { size: [420, 154], crops: { attack: [0, 351, 1254, 533], hurt: [0, 371, 1254, 533] } },
+  "mirror-fox": { size: [318, 320], crops: { attack: [0, 16, 1254, 1170], hurt: [0, 30, 1254, 1100] } },
+  warden: { size: [440, 294], crops: { attack: [0, 54, 1388, 928], hurt: [0, 0, 1536, 1024] } },
 };
-const lungeInsets = { "paper-matron-attack": 17, "night-fox-attack": 9, "fallen-elder-strike": 17, "bell-attack": 13, "bell-heavy-attack": 14, "rat-attack": 28, "fake-fox-attack": 13, "fallen-strike": 6 };
+const lungeInsets = { "paper-matron-attack": 17, "night-fox-attack": 9, "fallen-elder-strike": 17, "bell-attack": 13, "bell-heavy-attack": 14, "rat-attack": 28, "mirror-fox-attack": 13, "warden-attack": 33, "fake-fox-attack": 13, "fallen-strike": 6 };
 let overrides = 0;
 for (const { id, file } of overridesFromDisk) {
   if (requested.size && !requested.has(id)) continue;
