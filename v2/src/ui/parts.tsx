@@ -68,6 +68,7 @@ export function Bar({ value, max, kind, block = 0, label }: { value: number; max
   const pct = Math.max(0, Math.min(100, (value / max) * 100));
   return (
     <div class={`bar bar-${kind}`}>
+      <div class="trail" style={{ width: `${pct}%` }} />
       <div class="fill" style={{ width: `${pct}%` }} />
       <span class="num">{label ?? `${value} / ${max}`}</span>
       {block > 0 && <span class="shield">{block}</span>}

@@ -9,6 +9,7 @@ import * as R from "../game/run";
 import type { CombatState, RunState } from "../game/types";
 import { ART, artId, image } from "../render/assets";
 import { VIEW_H, VIEW_W } from "../render/raycaster";
+import { fx as fxLayer } from "../render/fx";
 import { enemyStage, useView, view } from "./Explore";
 import { Bar, CardView, Statuses } from "./parts";
 import { commit, markTip, overlay, runSig, say, seenTip, useRun } from "./store";
@@ -78,8 +79,10 @@ export function Combat() {
   const foe = R.currentEntity(run);
   useView(ref, run, { combatEntity: foe?.id, dim: 0.08 });
   const enemyRef = useRef<HTMLDivElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
   const headRef = useRef<HTMLDivElement>(null);
   const anchorPt = useRef({ x: 50, y: 34 });
+  const anchorPx = useRef({ x: 0, y: 0 });
   useEffect(() => {
     // Pull the camera back and tilt it down so the whole monster stands on the floor above your hand.
     const r0 = runSig.value!;
@@ -131,11 +134,16 @@ export function Combat() {
         head.style.left = `${center}px`;
         head.style.top = `${Math.max(6, top - indicatorHeight - 4)}px`;
       }
+      anchorPx.current = { x: left + w / 2, y: top + h * 0.45 };
       vp.style.setProperty("--ex", `${left + w / 2}px`);
       vp.style.setProperty("--ey", `${top + h * 0.45}px`);
     };
     view.onFrame = anchor;
     anchor();
+    // Encounter: a flash and the monster's name, like stepping into a fight.
+    fxLayer.pulse("255,240,210", 0.45);
+    const name = runSig.value!.combat?.enemy.name;
+    if (name) setBanner(`遭遇 · ${name}`);
     const ro = new ResizeObserver(anchor);
     if (ref.current) ro.observe(ref.current);
     return () => { view.onFrame = null; view.setDolly(0, 0); ro.disconnect(); };
@@ -153,12 +161,20 @@ export function Combat() {
     for (const e of events) {
       if (e.t === "hit") {
         if (e.target === "enemy") {
-          if (e.amount > 0) { e.amount >= 12 ? sfx.heavy() : sfx.hit(); float(`-${e.amount}`, "dmg", "enemy"); setSlash((n) => n + 1); }
+          if (e.amount > 0) {
+            const heavy = e.amount >= 12;
+            heavy ? sfx.heavy() : sfx.hit();
+            float(`-${e.amount}`, heavy ? "dmg crit" : "dmg", "enemy");
+            setSlash((n) => n + 1);
+            fxLayer.burst(anchorPx.current.x, anchorPx.current.y, { power: heavy ? 1.6 : 1, n: heavy ? 26 : 14 });
+            // Hit-stop: a heavy blow freezes the moment for a beat.
+            if (heavy) { setFx("enemy-hit hitstop"); fxLayer.pulse("255,255,255", 0.25); await wait(90); }
+          }
           if (e.blocked) { sfx.block(); float(`挡 ${e.blocked}`, "blocked", "enemy"); }
           if (e.part === "broke") { float(`${ENEMIES[c.enemy.id].part!.label}碎了`, "warn", "enemy"); }
           void flash("enemy-hit", 200);
         } else {
-          if (e.amount > 0) { sfx.hurt(); float(`-${e.amount}`, "hurt", "player"); void flash("player-hit", 300); }
+          if (e.amount > 0) { sfx.hurt(); float(`-${e.amount}`, "hurt", "player"); fxLayer.pulse("200,30,20", Math.min(0.45, 0.15 + e.amount / 40)); void flash("player-hit", 300); }
           if (e.blocked) { sfx.block(); float(`挡住 ${e.blocked}`, "blocked", "player"); }
         }
         await wait(170);
@@ -212,11 +228,33 @@ export function Combat() {
     if (reason) { say(reason); return; }
     busy.current = true;
     sfx.card();
+    flyCard(i);
     const res = playCard(run, i);
     commit();
     await show(res.events);
     busy.current = false;
     commit();
+  };
+
+  /** The played card flies from your hand to the monster and fades out. */
+  const flyCard = (i: number) => {
+    const root = rootRef.current;
+    const el = root?.querySelectorAll(".hand .card")[i] as HTMLElement | undefined;
+    if (!root || !el) return;
+    const rr = root.getBoundingClientRect(), r = el.getBoundingClientRect();
+    const k = root.offsetWidth / rr.width;
+    const ghost = el.cloneNode(true) as HTMLElement;
+    ghost.classList.add("card-ghost");
+    Object.assign(ghost.style, { left: `${(r.left - rr.left) * k}px`, top: `${(r.top - rr.top) * k}px`, width: `${r.width * k}px`, height: `${r.height * k}px` });
+    root.appendChild(ghost);
+    const dx = anchorPx.current.x - ((r.left - rr.left) * k + (r.width * k) / 2);
+    const dy = anchorPx.current.y + 60 - ((r.top - rr.top) * k + (r.height * k) / 2);
+    const anim = ghost.animate([
+      { transform: "translate(0,0) scale(1) rotate(0deg)", opacity: 1 },
+      { transform: `translate(${dx * 0.6}px, ${dy * 0.6 - 40}px) scale(0.7) rotate(-6deg)`, opacity: 0.95, offset: 0.6 },
+      { transform: `translate(${dx}px, ${dy}px) scale(0.25) rotate(8deg)`, opacity: 0 },
+    ], { duration: 320, easing: "cubic-bezier(.3,.7,.4,1)" });
+    anim.onfinish = () => ghost.remove();
   };
 
   const finishTurn = async () => {
@@ -269,7 +307,7 @@ export function Combat() {
   };
 
   return (
-    <div class={`combat ${fx}`} data-enemy={c.enemy.id}>
+    <div class={`combat combat-enter ${fx}`} data-enemy={c.enemy.id} ref={rootRef}>
       <div class="viewport" ref={ref}>
         <div class={`enemy kind-${c.kind} ${foe && enemyStage(foe).lift ? "flyer" : ""}`} ref={enemyRef} style={{ visibility: "hidden" }}>
           <img class="enemy-sprite" src={ART[enemyPose(c, def, fx)]} alt={c.enemy.name} draggable={false} />

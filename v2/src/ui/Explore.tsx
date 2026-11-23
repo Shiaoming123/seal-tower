@@ -7,6 +7,7 @@ import * as R from "../game/run";
 import type { Entity, RunState } from "../game/types";
 import { type Billboard, Raycaster } from "../render/raycaster";
 import { theme } from "../render/textures";
+import { fx } from "../render/fx";
 import { OMEN } from "../data/omens";
 import { ART, artId } from "../render/assets";
 import { commit, markTip, overlay, runSig, say, seenTip, useRun } from "./store";
@@ -68,11 +69,14 @@ export function billboards(run: RunState, opts: { shadowOnly?: number } = {}): B
 /** Mounts the shared 3D canvas into a container. */
 export function useView(ref: { current: HTMLDivElement | null }, run: RunState, opts: { hideAll?: boolean; dim?: number; combatEntity?: number } = {}) {
   useEffect(() => {
-    ref.current?.appendChild(view.canvas);
+    if (!ref.current) return;
+    ref.current.appendChild(view.canvas);
+    fx.mount(ref.current);
   }, []);
   useEffect(() => {
     view.dim = opts.dim ?? 0;
     view.lamp = run.oil <= 0 ? 0 : Math.min(1, 0.45 + run.oil / 50);
+    fx.setMode({ floor: run.floor, omen: run.omen, combat: opts.combatEntity !== undefined });
     view.setScene(run.dungeon, theme(run.floor), opts.hideAll ? [] : billboards(run, { shadowOnly: opts.combatEntity }));
   });
 }
@@ -139,6 +143,9 @@ export function Explore() {
     if (walking) { cancelWalk.current = true; return; }
     if (busy.current) { queued.current = () => void turn(delta); return; }
     busy.current = true;
+    // A slight roll into the turn makes the head-turn feel physical.
+    const vp = ref.current;
+    if (vp) { vp.classList.remove("tilt-l", "tilt-r"); void vp.offsetWidth; vp.classList.add(delta < 0 ? "tilt-l" : "tilt-r"); }
     const dir = (run.pos.dir + delta + 4) % 4;
     run.pos.dir = dir;
     await view.moveTo(run.pos.x, run.pos.y, dir, 150);
@@ -212,6 +219,7 @@ export function Explore() {
     <div class="explore">
       <div class="viewport" ref={ref}>
         <div class="compass">面朝{DIR_NAMES[run.pos.dir]}</div>
+        <FloorCard />
         {showTip && (
           <div class="tip">
             <p><b>W</b> 前进　<b>A</b> / <b>D</b> 转身　<b>S</b> 后退。也可以直接<b>点右边小地图上的格子</b>，会自动走过去。</p>
@@ -247,6 +255,29 @@ export function Explore() {
         <button type="button" class="btn pad-btn" onClick={() => turn(1)} aria-label="右转">右转 ↷</button>
         <button type="button" class="btn pad-btn ghost" onClick={() => move(true)} aria-label="后退">↓ 后退</button>
       </div>
+    </div>
+  );
+}
+
+// Shown once each time you arrive on a floor: fade in from black with the floor's name.
+let lastFloorCard = "";
+function FloorCard() {
+  const run = useRun();
+  const key = `${run.seed}:${run.floor}`;
+  const [show, setShow] = useState(() => lastFloorCard !== key);
+  useEffect(() => {
+    if (lastFloorCard === key) { setShow(false); return; }
+    lastFloorCard = key;
+    setShow(true);
+    const t = setTimeout(() => setShow(false), 2200);
+    return () => clearTimeout(t);
+  }, [key]);
+  if (!show) return null;
+  const names = ["", "照影廊", "桥驿", "钟楼"];
+  return (
+    <div class="floor-card" key={key}>
+      <span class="floor-no">第{"一二三"[run.floor - 1]}层</span>
+      <h2>{names[run.floor]}</h2>
     </div>
   );
 }

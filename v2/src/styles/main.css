@@ -538,3 +538,25 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .result-box .renown .ach { color: #ffcf5a; }
 .seed { font-size: 12px; color: var(--ink-dim); }
 .portrait .result { grid-template-columns: 1fr; grid-template-rows: 360px 1fr; padding: 20px; }
+
+/* ---------------------------------------------------------------- UI-003 immersion */
+.fx-layer { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 4; }
+.main > * { animation: screen-in 0.32s ease-out; }
+@keyframes screen-in { from { opacity: 0; } }
+.bar .trail { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 2px; background: rgba(255, 236, 190, 0.85); transition: width 0.55s ease-in 0.35s; }
+.floor-card { position: absolute; inset: 0; z-index: 9; display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.6)); animation: floor-card 2.2s ease-in-out forwards; }
+.floor-card .floor-no { font-size: 20px; letter-spacing: 8px; color: #e8d6ae; text-shadow: 0 2px 4px #000; }
+.floor-card h2 { margin: 4px 0 0; font-family: var(--font-title); font-weight: normal; font-size: 96px; letter-spacing: 18px; color: #f6e2b0;
+  text-shadow: 0 0 30px rgba(226, 72, 59, 0.6), 4px 4px 0 #3a0c08; }
+@keyframes floor-card { 0% { opacity: 1; background-color: #000; } 15% { opacity: 1; } 70% { opacity: 1; } 100% { opacity: 0; } }
+.viewport.tilt-l .view3d { animation: tilt-l 0.32s ease-out; }
+.viewport.tilt-r .view3d { animation: tilt-r 0.32s ease-out; }
+@keyframes tilt-l { 40% { transform: rotate(-0.9deg) scale(1.025); } }
+@keyframes tilt-r { 40% { transform: rotate(0.9deg) scale(1.025); } }
+.combat-enter .viewport { animation: combat-enter 0.5s ease-out; }
+@keyframes combat-enter { from { transform: scale(1.08); filter: brightness(1.6); } }
+.combat.hitstop .enemy-sprite { animation: none; transform: scale(1.03, 0.97); filter: brightness(3) drop-shadow(0 0 8px #fff); }
+.floater.crit { font-size: 54px; color: #ffcf5a; text-shadow: 3px 3px 0 #5a1a08, 0 0 10px rgba(255, 140, 40, 0.8); }
+.card-ghost { position: absolute !important; z-index: 30; margin: 0 !important; pointer-events: none; transform-origin: 50% 50%; }
+.floor-card ~ .omen-card { animation: intent-in 0.35s ease-out 1.9s both; }
