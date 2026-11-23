@@ -9,9 +9,9 @@ import { MAX_FAVOR, UPGRADES } from "../data/town";
 import { seedFromString } from "../game/rng";
 import type { WeaponId } from "../game/types";
 import { previewFor } from "../game/combat";
-import { ART } from "../render/assets";
-import { Art, CardView } from "./parts";
-import { clearRun, commit, page, profileSig, runSig, savedRun } from "./store";
+import { ART, artId } from "../render/assets";
+import { Art, CardView, portraitOf } from "./parts";
+import { clearRun, commit, dailyMode, page, profileSig, runSig, savedRun, today } from "./store";
 
 export function Title() {
   const saved = savedRun();
@@ -29,12 +29,18 @@ export function Title() {
               继续上一趟 <small>第 {saved.floor} 层 · 气血 {saved.hp}</small>
             </button>
           )}
-          <button type="button" class={`btn big ${saved ? "" : "primary"}`} onClick={() => { sfx.click(); page.value = "town"; }}>
+          <button type="button" class="btn" onClick={() => { sfx.click(); dailyMode.value = true; page.value = "town"; }}
+            title="今天所有人进的都是同一座塔">
+            每日签 · {new Date().getMonth() + 1}月{new Date().getDate()}日
+            {p.daily?.date === today() && <small>今日最好：{p.daily.win ? "登顶" : `第 ${p.daily.floor} 层`}</small>}
+          </button>
+          <button type="button" class={`btn big ${saved ? "" : "primary"}`} onClick={() => { sfx.click(); dailyMode.value = false; page.value = "town"; }}>
             {saved ? "放弃上一趟，重新接单" : "去镇灯铺接单"}
           </button>
           <div class="row">
             <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "help"; }}>怎么玩</button>
             <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "achievements"; }}>成就 {p.achievements.length}/{ACHIEVEMENTS.length}</button>
+            <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "codex"; }}>图鉴</button>
           </div>
         </div>
         <p class="profile-line">声望 {p.renown} · 进塔 {p.runs} 次 · 登顶 {p.wins} 次</p>
@@ -69,9 +75,11 @@ export function Town() {
   const start = () => {
     sfx.bell();
     const params = new URLSearchParams(location.search);
-    const seed = params.get("seed") ? seedFromString(params.get("seed")!) : (Math.random() * 2 ** 32) >>> 0;
+    const seed = params.get("seed") ? seedFromString(params.get("seed")!)
+      : dailyMode.value ? seedFromString("daily-" + today()) : (Math.random() * 2 ** 32) >>> 0;
     clearRun();
     runSig.value = createRun(seed, weapon, orders, diff, { favor: p.favor, upgrades: p.upgrades });
+    if (dailyMode.value) runSig.value.flags.push("daily");
     profileSig.value = { ...p, runs: p.runs + 1 };
     page.value = "game";
     commit();
@@ -82,7 +90,7 @@ export function Town() {
       <div class="town-bg" style={{ backgroundImage: `url(${artUrl("shop-wall")})` }} />
       <header class="town-head">
         <button type="button" class="btn small ghost" onClick={() => (page.value = "title")}>← 返回</button>
-        <h2>镇灯铺</h2>
+        <h2>镇灯铺{dailyMode.value && <small class="daily-tag">每日签</small>}</h2>
         <div class="town-tabs">
           <button type="button" class={`btn small ${tab === "go" ? "primary" : "ghost"}`} onClick={() => setTab("go")}>接单出发</button>
           <button type="button" class={`btn small ${tab === "build" ? "primary" : "ghost"}`} onClick={() => setTab("build")}>营建铺子</button>
@@ -101,7 +109,7 @@ export function Town() {
                 const needs = orderNeeds(ord);
                 return (
                   <button type="button" class={`order-card ${orders.includes(o.id) ? "selected" : ""}`} onClick={() => toggleOrder(o.id)}>
-                    <div class="order-top"><Art id={o.portrait} class="portrait" /><div><b>{o.client}</b><span>{o.title}</span></div></div>
+                    <div class="order-top"><Art id={portraitOf(o.id, o.portrait)} class="portrait" /><div><b>{o.client}</b><span>{o.title}</span></div></div>
                     <p class="favor" title="交情越高，要的货越多、给的报酬越多">交情 {"●".repeat(level)}{"○".repeat(MAX_FAVOR - level)}</p>
                     <p>要：{Object.entries(needs).map(([g, n]) => `${GOODS[g as keyof typeof GOODS].name}×${n}`).join("、")}</p>
                     <p class="order-reward">报酬：{orderRewardText(ord)}</p>
@@ -169,7 +177,7 @@ function Build() {
           const next = u.levels[lv];
           return (
             <div class={`build-card ${lv ? "owned" : ""}`}>
-              <Art id={u.icon} class="build-icon" />
+              <Art id={artId(`build-${u.id}`, u.icon)} class="build-icon" />
               <div class="build-body">
                 <b>{u.name} <small>{lv ? `${lv} / ${u.levels.length} 级` : "未建"}</small></b>
                 {u.levels.map((l, i) => <p class={i < lv ? "done" : i === lv ? "next" : "later"}>{i + 1} 级：{l.text}</p>)}

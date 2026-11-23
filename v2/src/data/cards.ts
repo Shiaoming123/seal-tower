@@ -117,7 +117,7 @@ const list: CardDef[] = [
     play: (c, v) => { c.consume("ash"); c.attack(v.dmg); c.enemyStatus("weak", 1); } },
   { id: "reveal", name: "照妖", cost: 1, type: "skill", rarity: "common", pool: "lamp", v: [{ vuln: 2 }, { vuln: 3 }],
     text: (v) => `施加 ${v.vuln} 层破绽（受到伤害 +50%），抽 1 张牌。`, play: (c, v) => { c.enemyStatus("vuln", v.vuln); c.draw(1); } },
-  { id: "flame", name: "灯火", cost: 1, type: "attack", rarity: "common", pool: "lamp", tags: ["fire"], v: [{ dmg: 5, per: 3 }, { dmg: 6, per: 4 }],
+  { id: "flame", name: "灯火", cost: 1, type: "attack", rarity: "common", pool: "lamp", tags: ["fire"], v: [{ dmg: 6, per: 3 }, { dmg: 7, per: 4 }],
     text: (v, p) => `造成 ${d(p, v.dmg + v.per * p.ash)} 伤害。行囊里每有 1 份灯灰，伤害 +${v.per}（不消耗）。`,
     play: (c, v) => { c.attack(v.dmg + v.per * c.goods("ash")); } },
   { id: "burnwick", name: "燃芯", cost: 0, type: "skill", rarity: "uncommon", pool: "lamp", v: [{ e: 2, draw: 2 }, { e: 3, draw: 2 }], tags: ["goods"],

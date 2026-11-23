@@ -3,7 +3,7 @@ import { CARDS, type Preview, RARITY_LABEL, TYPE_LABEL, cardCost, cardVals } fro
 import { GOODS } from "../data/goods";
 import { RELICS } from "../data/relics";
 import type { GoodId, StatusId } from "../game/types";
-import { ART } from "../render/assets";
+import { ART, artId } from "../render/assets";
 import { say } from "./store";
 
 export const CARD_ART: Record<string, string> = {
@@ -36,6 +36,9 @@ export const STATUS_INFO: Record<StatusId, { name: string; text: (n: number) => 
   blind: { name: "墨糊眼", text: (n) => `下回合少抽 1 张牌（还剩 ${n} 回合）。`, bad: true },
 };
 
+export const relicIcon = (id: string) => artId(`relic-${id}`, RELICS[id].icon);
+export const portraitOf = (id: string, fallback: string) => artId(`portrait-${id}`, fallback);
+
 export function Art({ id, class: cls = "", alt = "" }: { id: string; class?: string; alt?: string }) {
   return <img class={`art ${cls}`} src={ART[id]} alt={alt} draggable={false} />;
 }
@@ -51,7 +54,7 @@ export function CardView({ id, up, preview, onClick, disabled, reason, small, se
       onClick={onClick} aria-disabled={disabled} title={reason ?? undefined}>
       <span class="cost">{cost}</span>
       <span class="name">{def.name}{up ? "+" : ""}</span>
-      <span class="pic"><Art id={CARD_ART[id] ?? "sword"} /></span>
+      <span class="pic"><Art id={artId(`card-${id}`, CARD_ART[id] ?? "sword")} /></span>
       <span class="type">{TYPE_LABEL[def.type]} · {RARITY_LABEL[def.rarity]}</span>
       <span class="text">{def.text(cardVals(def, up, bonus), preview)}</span>
       {bonus && (bonus.dmg || bonus.blk) ? <span class="bonus-tag">{bonus.dmg ? `磨刀 +${bonus.dmg}` : ""}{bonus.blk ? ` 护符 +${bonus.blk}` : ""}</span> : null}
@@ -94,7 +97,7 @@ export function RelicRow({ relics }: { relics: string[] }) {
     <div class="relics">
       {relics.map((id) => (
         <button type="button" class="relic" title={`${RELICS[id].name}：${RELICS[id].text}`} onClick={() => say(`${RELICS[id].name}：${RELICS[id].text}`, 3600)}>
-          <Art id={RELICS[id].icon} />
+          <Art id={relicIcon(id)} />
         </button>
       ))}
     </div>

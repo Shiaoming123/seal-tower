@@ -42,7 +42,7 @@ export interface EnemyDef {
   dmgMod?: (oil: number) => number;
   /** Only shows up through events. */
   eventOnly?: boolean;
-  phase2?: { at: number; sprite: string; str: number; text: string; ai: (e: EnemyState, r: RngState) => string };
+  phase2?: { at: number; sprite: string; str: number; text: string; ai: (e: EnemyState, r: RngState) => string; heal?: number; block?: number };
   scale?: number;
 }
 
@@ -274,27 +274,62 @@ export const ENEMIES: Record<string, EnemyDef> = {
     harvest: { label: "白狐尾", good: "tail", text: "一个石头都别让它收走",
       state: (c) => (c.goldStolen > 0 ? "failed" : "open"), got: (c) => c.goldStolen === 0 },
   },
+
+  // ================= alternate floor guardians =================
+  "paper-matron": {
+    id: "paper-matron", name: "纸扎娘娘", sprite: "paper-matron", hp: [60, 60], gold: [30, 30], scale: 1.3, weakTo: "fire",
+    drops: [{ good: "redpaper", chance: 1 }, { good: "wick", chance: 1 }],
+    moves: {
+      paste: { name: "糊纸身", block: 12, str: 1 }, lunge: { name: "纸人扑", dmg: 9 },
+      call: { name: "唤纸童", dmg: 4, apply: { status: "weak", n: 2 } },
+      fold: { name: "剪纸刀阵", charge: { threshold: 12, then: "storm" }, text: "满屋的纸刀浮了起来。本回合打出 12 点伤害可以打断它。" },
+      storm: { name: "万纸齐飞", dmg: 5, hits: 4 },
+    },
+    ai: cycle(["lunge", "fold", "paste", "call", "fold", "lunge"]),
+    phase2: { at: 0.5, sprite: "paper-matron", str: 2, heal: 12, block: 10, text: "纸扎娘娘把破掉的身子重新糊了一遍：回复 12 气血，力量 +2。",
+      ai: (e) => ["fold", "lunge", "call", "fold", "paste"][e.history.length % 5] },
+    blurb: "纸扎铺的老板娘，死后被自己扎的纸人供进了塔里。怕火，半血时会把自己重新糊好。",
+    harvest: { label: "多一张红纸", good: "redpaper", text: "别用带火的牌打出最后一下",
+      state: (c) => (c.lastTags.includes("fire") ? "risk" : "open"), got: (c) => !c.lastTags.includes("fire") },
+  },
+  "fallen-elder": {
+    id: "fallen-elder", name: "堕道首座", sprite: "fallen-elder", spriteAttack: "fallen-elder-strike", spriteStance: "fallen-elder-guard",
+    hp: [88, 88], gold: [40, 40], scale: 1.3,
+    drops: [{ good: "token", chance: 1 }, { good: "knot", chance: 1 }],
+    moves: {
+      array: { name: "剑阵", block: 12, counter: 4, text: "剑阵护体。这回合你每打它一下，自己挨 4 点。" },
+      cut: { name: "斩", dmg: 15 }, twin: { name: "连斩", dmg: 6, hits: 2 },
+      gather: { name: "蓄刀", charge: { threshold: 18, then: "sever" }, text: "首座的剑在嗡鸣。本回合打出 18 点伤害可以打断它。" },
+      sever: { name: "断魂", dmg: 27 },
+    },
+    ai: cycle(["array", "cut", "gather", "twin", "array", "twin"]),
+    phase2: { at: 0.5, sprite: "fallen-elder", str: 3, text: "堕道首座彻底入魔：力量 +3，剑阵和蓄刀来得更快。",
+      ai: (e) => ["gather", "array", "twin", "gather", "cut"][e.history.length % 5] },
+    blurb: "当年带队进塔的斩妖人首座，没能出来。剑阵回合硬打会被反伤，半血后入魔。",
+    harvest: { label: "多一块斩妖令", good: "token", text: "别在它剑阵的回合出手攻击",
+      state: (c) => (c.guardHits > 0 ? "failed" : c.enemy.intent.counter ? "risk" : "open"), got: (c) => c.guardHits === 0 },
+  },
 };
 
 /** Which enemies show up on each floor, with tuning. */
 export interface Spawn { id: string; hp: number; dmg: number }
-export const FLOOR_SPAWNS: Record<1 | 2 | 3, { normal: Spawn[]; elite: Spawn[]; guardian: Spawn }> = {
+export const FLOOR_SPAWNS: Record<1 | 2 | 3, { normal: Spawn[]; elite: Spawn[]; guardian: Spawn[] }> = {
   1: {
     normal: [{ id: "moth", hp: 1, dmg: 0 }, { id: "rat", hp: 1, dmg: 0 }, { id: "louse", hp: 1, dmg: 0 },
       { id: "lantern-spirit", hp: 1, dmg: 0 }, { id: "paper-doll", hp: 1, dmg: 0 }],
     elite: [{ id: "mirror-fox", hp: 1, dmg: 0 }],
-    guardian: { id: "moth-queen", hp: 1, dmg: 0 },
+    guardian: [{ id: "moth-queen", hp: 1, dmg: 0 }, { id: "paper-matron", hp: 1, dmg: 0 }],
   },
   2: {
     normal: [{ id: "rat", hp: 2.1, dmg: 3 }, { id: "louse", hp: 1.8, dmg: 3 }, { id: "moth", hp: 2.1, dmg: 3 }, { id: "mirror-fox", hp: 0.95, dmg: 2 },
       { id: "fire-rat", hp: 2, dmg: 3 }, { id: "ink-moth", hp: 2, dmg: 3 }, { id: "water-ghost", hp: 1.6, dmg: 2 }, { id: "stele-spirit", hp: 1.1, dmg: 2 }],
     elite: [{ id: "warden", hp: 1, dmg: 0 }, { id: "fallen", hp: 1, dmg: 0 }],
-    guardian: { id: "night-fox", hp: 1, dmg: 0 },
+    guardian: [{ id: "night-fox", hp: 1, dmg: 0 }, { id: "fallen-elder", hp: 1, dmg: 0 }],
   },
   3: {
     normal: [{ id: "mirror-fox", hp: 1.35, dmg: 5 }, { id: "louse", hp: 2.7, dmg: 6 }, { id: "rat", hp: 3.2, dmg: 6 }, { id: "warden", hp: 0.9, dmg: 2 },
       { id: "thorn-stele", hp: 1.2, dmg: 3 }, { id: "bronze-puppet", hp: 1.2, dmg: 3 }, { id: "night-owl", hp: 1.3, dmg: 3 }, { id: "ink-moth", hp: 3, dmg: 6 }],
     elite: [{ id: "night-fox", hp: 1, dmg: 4 }, { id: "warden", hp: 1.5, dmg: 5 }, { id: "fallen", hp: 1.3, dmg: 4 }],
-    guardian: { id: "bell", hp: 1, dmg: 0 },
+    guardian: [{ id: "bell", hp: 1, dmg: 0 }],
   },
 };

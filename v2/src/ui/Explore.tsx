@@ -7,6 +7,8 @@ import * as R from "../game/run";
 import type { Entity, RunState } from "../game/types";
 import { type Billboard, Raycaster } from "../render/raycaster";
 import { theme } from "../render/textures";
+import { OMEN } from "../data/omens";
+import { ART } from "../render/assets";
 import { commit, markTip, overlay, runSig, seenTip, useRun } from "./store";
 
 // One renderer for the whole session; screens mount its canvas where they need it.
@@ -160,6 +162,16 @@ export function Explore() {
           </div>
         )}
         {onStairs && <StairsPrompt />}
+        {!run.omenSeen && !showTip && (
+          <div class="omen-card">
+            <span class="omen-tag">本层签文</span>
+            {ART[`omen-${run.omen}`] && <img class="omen-art" src={ART[`omen-${run.omen}`]} alt="" />}
+            <h3>{OMEN[run.omen].name}</h3>
+            <p class="verse">{OMEN[run.omen].verse}</p>
+            <p>{OMEN[run.omen].text}</p>
+            <button type="button" class="btn small primary" onClick={() => { run.omenSeen = true; commit(); }}>知道了</button>
+          </div>
+        )}
         {run.oil <= 0 ? <div class="dark-warn">灯灭了：小地图不再自动探路，妖趁黑每下多打 {R.DARK_DAMAGE} 点。去狐市买灯油、在灯台添油，或在行囊里烧灯灰。</div>
           : run.oil <= 15 ? <div class="dark-warn soft">灯油只剩 {run.oil} 步了。</div> : null}
       </div>

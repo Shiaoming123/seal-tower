@@ -5,6 +5,9 @@ for (const [path, url] of Object.entries(urls)) ART[path.split("/").pop()!.repla
 
 const images: Record<string, HTMLImageElement> = {};
 
+/** Use dedicated art when it has been added (see docs/美术需求.md), otherwise the placeholder. */
+export const artId = (preferred: string, fallback: string) => (ART[preferred] ? preferred : fallback);
+
 /** The teleport array is drawn in code: a ring of runes on the floor with a column of light. */
 function portalSprite(): string {
   const c = document.createElement("canvas");

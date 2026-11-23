@@ -90,7 +90,7 @@ function placeEntities(d: Dungeon, floor: FloorNo, r: RngState) {
 
   // Guardian on the farthest cell, prefer dead ends.
   const far = [...cells].sort((a, b) => (b.dist + (b.dead ? 2 : 0)) - (a.dist + (a.dead ? 2 : 0)))[0];
-  add("guardian", far, { enemy: spawns.guardian.id });
+  add("guardian", far, { enemy: pick(r, spawns.guardian).id });
   const guardDist = distances(d, far);
   const gd = (c: { x: number; y: number }) => guardDist[idx(d, c.x, c.y)];
 

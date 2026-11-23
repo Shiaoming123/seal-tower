@@ -277,7 +277,7 @@ describe("long game", () => {
     const run = createRun(42, "sword", "lamp");
     run.floor = 2;
     run.flags.push("clasp");
-    const profile = { renown: 0, runs: 1, wins: 0, bestFloor: 0, ordersDone: [], seenTips: [], achievements: [], treasury: 0, upgrades: {}, favor: {}, sound: true };
+    const profile = { renown: 0, runs: 1, wins: 0, bestFloor: 0, ordersDone: [], seenTips: [], achievements: [], treasury: 0, upgrades: {}, favor: {}, codex: [], daily: null, sound: true };
     const got = ACHIEVEMENTS.filter((a) => a.check(run, profile)).map((a) => a.id);
     expect(got).toEqual(expect.arrayContaining(["floor2", "clasp"]));
     expect(got).not.toContain("win");
@@ -453,5 +453,36 @@ describe("combos", () => {
     const hp = c.enemy.hp;
     playCard(run, 0);
     expect(hp - c.enemy.hp).toBe(6 + 2);
+  });
+});
+
+describe("round four", () => {
+  it("every floor has an omen, and market day raises sale prices", async () => {
+    const { OMEN } = await import("../src/data/omens");
+    const { sellPrice } = await import("../src/game/inventory");
+    const run = createRun(91, "sword", "lamp");
+    expect(OMEN[run.omen]).toBeTruthy();
+    run.omen = "calm";
+    const calm = sellPrice(run, "shell");
+    run.omen = "market";
+    expect(sellPrice(run, "shell")).toBeGreaterThan(calm);
+  });
+  it("floors 1 and 2 roll between two guardians", () => {
+    const seen = new Set<string>();
+    for (let s = 1; s <= 40; s++) seen.add(generate(1, makeRng(s)).entities.find((e) => e.kind === "guardian")!.enemy!);
+    expect([...seen].sort()).toEqual(["moth-queen", "paper-matron"]);
+  });
+  it("meeting things records them for the codex", () => {
+    const run = createRun(92, "sword", "clasp");
+    fightWith(run, "ink-moth");
+    expect(run.discovered).toEqual(expect.arrayContaining(["e:ink-moth", "g:sword", "c:feixiao"]));
+  });
+  it("paper matron rebuilds herself at half health", () => {
+    const run = createRun(93, "sword", "lamp");
+    const c = fightWith(run, "paper-matron", "guardian");
+    c.enemy.block = 0; c.enemy.hp = 31;
+    handOf(run, ["strike"]); playCard(run, 0);
+    expect(c.enemy.phase).toBe(2);
+    expect(c.enemy.hp).toBeGreaterThan(31 - 8);
   });
 });

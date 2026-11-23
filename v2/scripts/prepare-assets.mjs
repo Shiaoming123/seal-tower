@@ -51,6 +51,10 @@ const tints = [
   ["water-ghost", S("guide-oracle"), 420, 180, 0.6, 0.7],
   ["bronze-puppet", A("bell-heavy"), 380, 30, 0.7, 1.1],
   ["night-owl", A("moth"), 360, 25, 0.8, 0.6],
+  ["paper-matron", S("blood-broker"), 460, 350, 1.4, 1.1],
+  ["fallen-elder", A("hunter"), 460, 250, 0.5, 0.7],
+  ["fallen-elder-strike", A("hunter-strike"), 500, 250, 0.5, 0.7],
+  ["fallen-elder-guard", A("hunter-guard"), 460, 250, 0.5, 0.7],
   // placeholder icons for the new goods
   ["icon-redpaper", S("merch-silk"), 128, 340, 1.6, 1],
   ["icon-fur", S("merch-knot"), 128, 30, 1.3, 1.1],
@@ -84,7 +88,10 @@ let overrides = 0;
 for (const file of await readdir(artDir).catch(() => [])) {
   const m = file.match(/^(.+)\.(png|webp|jpg)$/i);
   if (!m) continue;
-  const edge = edges[m[1]] ?? 400;
+  // New art for ids the game looks up with a fallback (cards, relics, portraits…) gets a size by prefix.
+  const prefixEdge = [["card-", 256], ["relic-", 192], ["build-", 192], ["icon-", 128], ["portrait-", 480], ["event-", 420], ["omen-", 480]]
+    .find(([p]) => m[1].startsWith(p))?.[1];
+  const edge = edges[m[1]] ?? prefixEdge ?? 440;
   await sharp(path.join(artDir, file)).resize(edge, edge, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" })
     .webp({ quality: 84, alphaQuality: 90, effort: 6 }).toFile(path.join(out, m[1] + ".webp"));
   overrides++;

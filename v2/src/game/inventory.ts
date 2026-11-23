@@ -1,11 +1,13 @@
 import { RELICS, RELIC_POOL } from "../data/relics";
 import { pick } from "./rng";
 import { GOODS } from "../data/goods";
+import { discover } from "./discover";
 import * as bag from "./bag";
 import type { GoodId, RunState } from "./types";
 
 /** Put a good into the bag if it fits, otherwise into the pending pile the player sorts out later. */
 export function addGood(run: RunState, id: GoodId): boolean {
+  discover(run, "g:" + id);
   const spot = bag.findSpot(run.bag, id);
   if (spot) {
     run.bag.items.push({ uid: run.nextUid++, id, ...spot });
@@ -22,8 +24,12 @@ export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floo
   const pin = (run.relics.includes("pin") ? 1 : 0) + (item && g.kind === "goods" ? bag.auraOn(run.bag, item, "sell") : 0);
   if (g.kind !== "goods") return Math.max(1, Math.floor(g.price / 2)) + pin;
   const m = run.markets[floor];
-  const raw = Math.round(g.price * (m.mult[id] ?? 1) * (m.wanted === id ? 2 : 1));
-  return Math.max(1, raw - sold) + pin;
+  // This floor's 签文 only applies to the floor you're on (rumours about the next floor ignore it).
+  const omen = floor === run.floor ? run.omen : "calm";
+  const festival = omen === "festival" && id === "ash" ? 2 : 1;
+  const market = omen === "market" ? 1.25 : 1;
+  const raw = Math.round(g.price * (m.mult[id] ?? 1) * (m.wanted === id ? 2 : 1) * festival * market);
+  return Math.max(1, raw - sold) + pin + (omen === "rain" ? 1 : 0);
 }
 
 export function sellItem(run: RunState, uid: number): number {
@@ -94,6 +100,7 @@ export function autoPackPending(run: RunState) {
 export function gainRelic(run: RunState, id: string) {
   if (run.relics.includes(id)) return;
   run.relics.push(id);
+  discover(run, "r:" + id);
 }
 
 /** A relic the player doesn't own yet. */

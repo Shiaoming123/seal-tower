@@ -1,6 +1,7 @@
 // Small Web Audio synth. Nothing plays until the first user gesture.
 let ctx: AudioContext | null = null;
 let master: GainNode | null = null;
+let music: GainNode | null = null;
 let enabled = true;
 
 export function setSound(on: boolean) { enabled = on; if (master) master.gain.value = on ? 0.5 : 0; }
@@ -13,11 +14,18 @@ function ac(): AudioContext | null {
       master = ctx.createGain();
       master.gain.value = 0.5;
       master.connect(ctx.destination);
+      music = ctx.createGain();
+      music.gain.value = 0.55;
+      music.connect(master);
     } catch { return null; }
   }
   if (ctx.state === "suspended") void ctx.resume();
   return ctx;
 }
+
+/** Shared context for the music module (null while sound is off). */
+export function audioContext(): AudioContext | null { return ac(); }
+export function musicBus(): GainNode | null { ac(); return music; }
 
 function tone(freq: number, dur: number, type: OscillatorType, vol: number, slide = 0, delay = 0) {
   const a = ac(); if (!a || !master) return;

@@ -7,7 +7,7 @@ import { DIRS } from "../game/dungeon";
 import { useItem } from "../game/inventory";
 import * as R from "../game/run";
 import type { CombatState, RunState } from "../game/types";
-import { ART } from "../render/assets";
+import { ART, artId } from "../render/assets";
 import { useView } from "./Explore";
 import { Bar, CardView, Statuses } from "./parts";
 import { commit, markTip, overlay, say, seenTip, useRun } from "./store";
@@ -210,7 +210,7 @@ export function Combat() {
             </div>
             <div class="intent-name">{c.enemy.intent.name}</div>
           </div>
-          <img class="enemy-sprite" src={ART[fx === "enemy-lunge" && def.spriteAttack ? def.spriteAttack : c.enemy.intent.counter && def.spriteStance ? def.spriteStance : c.enemy.sprite]} alt={c.enemy.name} draggable={false} style={{ height: `${Math.round(232 * (def.scale ?? 1))}px` }} />
+          <img class="enemy-sprite" src={ART[enemyPose(c, def, fx)]} alt={c.enemy.name} draggable={false} style={{ height: `${Math.round(232 * (def.scale ?? 1))}px` }} />
           <div class="enemy-info">
             <div class="enemy-name">{c.enemy.name}</div>
             <Bar value={c.enemy.hp} max={c.enemy.maxHp} kind="enemy" block={c.enemy.block} />
@@ -285,4 +285,13 @@ function HarvestTag({ c }: { c: CombatState }) {
       <i>{HARVEST_STATE[st]}</i>
     </div>
   );
+}
+
+/** Which picture to show: attack pose while lunging, hurt pose when hit, stance pose during a guard stance. */
+function enemyPose(c: CombatState, def: (typeof ENEMIES)[string], fx: string): string {
+  const base = c.enemy.sprite;
+  if (fx === "enemy-lunge") return artId(`${base}-attack`, def.spriteAttack ?? base);
+  if (fx === "enemy-hit") return artId(`${base}-hurt`, base);
+  if (c.enemy.intent.counter && def.spriteStance) return def.spriteStance;
+  return base;
 }

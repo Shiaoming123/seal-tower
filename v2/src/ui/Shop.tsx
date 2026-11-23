@@ -10,7 +10,7 @@ import { sellPrice } from "../game/inventory";
 import type { GoodId } from "../game/types";
 import { ART } from "../render/assets";
 import { BagGrid } from "./Bag";
-import { Art, CardView, GoodChip } from "./parts";
+import { Art, CardView, GoodChip, relicIcon } from "./parts";
 import { commit, say, useRun } from "./store";
 
 const LINES = [
@@ -73,7 +73,7 @@ export function Shop() {
           <div class="wares items">
             {s.relics.map((w, i) => (
               <button type="button" class={`ware item-ware ${w.sold ? "sold" : ""}`} onClick={() => !w.sold && buy(R.buyRelic(run, i), RELICS[w.id].name)}>
-                <Art id={RELICS[w.id].icon} />
+                <Art id={relicIcon(w.id)} />
                 <b>{RELICS[w.id].name}</b>
                 <span class="desc">{RELICS[w.id].text}</span>
                 <span class={`tag-price ${run.gold < w.price ? "poor" : ""}`}>{w.sold ? "已售" : `${w.price} 石`}</span>

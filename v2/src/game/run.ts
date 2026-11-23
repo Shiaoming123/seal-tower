@@ -7,6 +7,8 @@ import { RELICS } from "../data/relics";
 import * as bag from "./bag";
 import { combatDeck, has, startCombat } from "./combat";
 import { DIRS, entityAt, generate, isWall, reveal, revealAll, revealNear } from "./dungeon";
+import { OMENS } from "../data/omens";
+import { ORDER_CHARACTER, discover } from "./discover";
 import { addGood, autoPackPending, gainRelic, randomRelic } from "./inventory";
 import { type RngState, chance, int, makeRng, pick, weighted } from "./rng";
 import type { Entity, FloorNo, GoodId, Market, RewardState, RunOrder, RunState, ShopState, WeaponId } from "./types";
@@ -48,9 +50,10 @@ export function createRun(seed: number, weapon: WeaponId, orders: string | strin
     screen: "explore", combat: null, pending: [], reward: null, event: null, shop: null, at: null,
     stats: { steps: 0, harvests: 0, kills: 0, goldEarned: 0, goodsSold: 0, goodsUsed: 0, damageTaken: 0, turns: 0 },
     nextUid: 1000, outcome: null, mapRevealed: false, markets: makeMarkets(rng), rumor: false,
-    oil: START_OIL + extraOil, maxOil: MAX_OIL + extraOil, bossIntel: false, cardPick: null, log: [], flags: [], eventFight: null, warp: 0,
+    oil: START_OIL + extraOil, maxOil: MAX_OIL + extraOil, bossIntel: false, cardPick: null, log: [], flags: [], eventFight: null, warp: 0, omen: "calm", omenSeen: false, discovered: [],
   };
   enterFloor(run, 1);
+  for (const ord of run.orders) discover(run, "c:" + ORDER_CHARACTER[ord.id]);
   addGood(run, STARTER_GEAR[weapon]);
   if (weapon === "lamp") for (let i = 0; i < 4; i++) addGood(run, "ash");
   for (const ord of run.orders) if (ord.level >= 1) {
@@ -74,6 +77,8 @@ export function createRun(seed: number, weapon: WeaponId, orders: string | strin
 function enterFloor(run: RunState, floor: FloorNo) {
   run.floor = floor;
   if (floor > 1) run.dungeon = generate(floor, run.rng);
+  run.omen = weighted(run.rng, OMENS, (o) => o.weight)[0].id;
+  run.omenSeen = false;
   const s = run.dungeon.start;
   // Face the first open corridor so the floor doesn't start staring at a wall.
   const dir = [0, 1, 3, 2].find((d) => !isWall(run.dungeon, s.x + DIRS[d][0], s.y + DIRS[d][1])) ?? 0;
@@ -82,8 +87,13 @@ function enterFloor(run: RunState, floor: FloorNo) {
   run.bossIntel = false;
   run.rumor = false;
   run.shop = null;
-  reveal(run.dungeon, s.x, s.y);
+  if (run.omen === "festival") { run.maxOil += 20; run.oil = run.maxOil; }
+  if (run.omen === "moon") revealAll(run.dungeon);
+  else if (run.omen === "fog") revealNear(run.dungeon, s.x, s.y);
+  else reveal(run.dungeon, s.x, s.y);
 }
+
+export const omenIs = (run: RunState, id: string) => run.omen === id;
 
 export function flag(run: RunState, f: string) { if (!run.flags.includes(f)) run.flags.push(f); }
 
@@ -93,10 +103,11 @@ export const currentEntity = (run: RunState): Entity | null => run.dungeon.entit
 export function arrive(run: RunState, x: number, y: number, dir: number, deliberate: boolean): boolean {
   run.pos = { x, y, dir };
   run.stats.steps++;
-  run.oil = Math.max(0, run.oil - 1);
+  run.omenSeen = true; // walking on means you've read the floor's 签文
+  run.oil = Math.max(0, run.oil - 1 - (run.omen === "rain" && run.stats.steps % 3 === 0 ? 1 : 0));
   if (run.oil === 0) flag(run, "dark");
-  // In the dark you only see the tiles right next to you.
-  if (run.oil > 0) reveal(run.dungeon, x, y);
+  // In the dark (or the fog) you only see the tiles right next to you.
+  if (run.oil > 0 && run.omen !== "fog") reveal(run.dungeon, x, y);
   else revealNear(run.dungeon, x, y);
   if (run.mapRevealed) revealAll(run.dungeon);
   const e = entityAt(run.dungeon, x, y);
@@ -113,11 +124,14 @@ export function openEntity(run: RunState, e: Entity): boolean {
       run.screen = "combat";
       return true;
     case "shop":
+      discover(run, "c:feixiao");
       if (!run.shop) run.shop = makeShop(run);
       e.done = true;
       run.screen = "shop";
       return true;
     case "event":
+      discover(run, "v:" + e.event);
+      if (e.event === "guide" || e.event === "broker") discover(run, "c:" + e.event);
       run.event = { id: e.event!, step: 0, result: null };
       run.screen = "event";
       return true;
@@ -151,6 +165,7 @@ export function winCombat(run: RunState) {
     note = c.enemy.partIntact ? `${def.part.label}完好无损。` : `${def.part.label}被重击打碎了。`;
   }
   if (has(run, "lamp")) goods.push("ash");
+  if (run.omen === "horde" && c.kind === "fight") goods.push(def.drops[0].good);
   if (has(run, "fangcharm")) run.hp = Math.min(run.maxHp, run.hp + 4);
   // Normal fights sometimes drop a piece of basic gear; elites always drop tier-2 gear or better.
   const gearPool = GEAR_IDS.filter((id) => !["sword", "shield", "lamp"].includes(id));
@@ -163,13 +178,15 @@ export function winCombat(run: RunState) {
         goods.push(def.harvest.good);
         note += ` 取材成功：多拿到${GOODS[def.harvest.good].name}。`;
         if (def.harvest.good === "token") flag(run, "token");
+        if (run.omen === "bloodmoon") goods.push(def.harvest.good);
         if (has(run, "butcher")) { goods.push(def.harvest.good); run.gold += 5; run.stats.goldEarned += 5; note += " 庖丁刀又多割下一份，外加 5 石。"; }
       }
       run.stats.harvests++;
     } else if (def.harvest.good !== "stolen") note += ` 没能取到${def.harvest.label}（${def.harvest.text}）。`;
   }
   if (c.stolen.length && def.harvest?.good !== "stolen") note += ` 被抢走的${c.stolen.map((g) => GOODS[g].name).join("、")}被它毁了。`;
-  const gold = c.kind === "guardian" && run.floor === 3 ? 0 : int(c.rng, def.gold[0], def.gold[1]);
+  const gold = (c.kind === "guardian" && run.floor === 3 ? 0 : int(c.rng, def.gold[0], def.gold[1]))
+    + (run.omen === "fog" ? 6 : 0) + (run.omen === "patrol" && c.kind === "elite" ? 20 : 0);
   const reward: RewardState = {
     gold, goods, from: c.kind, note: note.trim(),
     cards: cardChoices(run, c.kind === "fight" ? "normal" : "elite"),
@@ -268,7 +285,7 @@ export function closeReward(run: RunState) {
 // ---------------------------------------------------------------- shop
 
 function makeShop(run: RunState): ShopState {
-  const off = run.relics.includes("pin") ? 0.8 : 1;
+  const off = (run.relics.includes("pin") ? 0.8 : 1) * (run.omen === "market" ? 0.75 : 1);
   const price = (n: number) => Math.round(n * off * (1 + 0.15 * (run.floor - 1)));
   const cardPrice = (id: string) => price({ common: 14, uncommon: 22, rare: 34, basic: 10 }[CARDS[id].rarity] + int(run.rng, -2, 2));
   const relics = [randomRelic(run, "common"), randomRelic(run)].filter((id, i, a): id is string => !!id && a.indexOf(id) === i);
@@ -419,6 +436,7 @@ export function chooseEvent(run: RunState, i: number): boolean {
 /** Leave the event. If it turned into a fight, the fight starts here. */
 export function closeEvent(run: RunState) {
   const e = currentEntity(run);
+  if (run.omen === "incense") run.hp = Math.min(run.maxHp, run.hp + 5);
   run.event = null;
   run.pending = [];
   if (e && run.eventFight) {

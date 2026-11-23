@@ -3,6 +3,7 @@ import { ENEMIES } from "../data/enemies";
 import { GOODS } from "../data/goods";
 import * as bag from "./bag";
 import { addGood } from "./inventory";
+import { discover } from "./discover";
 import { type RngState, int, makeRng, shuffle } from "./rng";
 import type { CardInst, CombatState, EnemyState, Entity, FightKind, GoodId, Intent, RunState, StatusId } from "./types";
 
@@ -55,6 +56,11 @@ export function startCombat(run: RunState, entity: Entity, kind: FightKind): Com
   const r = makeRng((run.seed ^ (entity.id * 2654435761) ^ (run.floor * 97)) >>> 0);
   const enemy = makeEnemy(entity.enemy!, entity.hpMul ?? 1, entity.dmgAdd ?? 0, run.difficulty, r);
   if (ENEMIES[enemy.id].thorns) enemy.status.thorns = ENEMIES[enemy.id].thorns;
+  discover(run, "e:" + enemy.id);
+  // 签文 that touch fights.
+  const hpUp = (run.omen === "horde" && kind === "fight" ? 1.15 : 1) * (run.omen === "patrol" && kind === "elite" ? 1.15 : 1);
+  if (hpUp > 1) { enemy.hp = enemy.maxHp = Math.round(enemy.maxHp * hpUp); }
+  enemy.dmgAdd += (run.omen === "bloodmoon" ? 1 : 0) + (run.omen === "moon" && kind === "fight" ? 1 : 0);
   const c: CombatState = {
     kind, enemy, energy: 3, maxEnergy: 3, block: 0, status: {},
     draw: shuffle(r, combatDeck(run)), hand: [], discard: [], exhaust: [],
@@ -137,6 +143,8 @@ function damageEnemy(run: RunState, c: CombatState, dmg: number, events: CombatE
     e.phase = 2;
     e.sprite = def.phase2.sprite;
     e.status.str = (e.status.str ?? 0) + def.phase2.str;
+    if (def.phase2.heal) e.hp = Math.min(e.maxHp, e.hp + def.phase2.heal);
+    if (def.phase2.block) e.block += def.phase2.block;
     e.queued = null;
     e.intent = { key: "", name: "" };
     chooseIntent(e, c.rng);

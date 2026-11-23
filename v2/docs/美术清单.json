@@ -1,0 +1,2126 @@
+{
+  "generatedBy": "scripts/art-audit.mjs",
+  "howToAdd": "把图放进 v2/art/<file>.png，在 v2/ 下运行 npm run assets。file 不带扩展名，必须和下表一致。",
+  "current": [
+    {
+      "file": "moth",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·纸灯蛾"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "rat",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·灯鼠"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "rat-swipe",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·灯鼠·出招",
+        "敌怪·火鼠·出招"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "louse",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·书虱"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "mirror-fox",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·镜狐"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "moth-queen",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·灯蛾娘"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "warden",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·守门黑狐"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "night-fox",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·夜市狐"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "bell",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·负钟君"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "bell-heavy",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·负钟君·二阶段"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "lantern-spirit",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·引魂灯"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：旧灯纹印挂灯",
+      "priority": "P0"
+    },
+    {
+      "file": "paper-doll",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·纸人童"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P0"
+    },
+    {
+      "file": "fire-rat",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·火鼠"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P0"
+    },
+    {
+      "file": "ink-moth",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·墨蛾"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P0"
+    },
+    {
+      "file": "water-ghost",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·水鬼"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P0"
+    },
+    {
+      "file": "stele-spirit",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·碑灵"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：旧墨碑",
+      "priority": "P0"
+    },
+    {
+      "file": "fallen",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·堕道者"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：旧斩妖人",
+      "priority": "P0"
+    },
+    {
+      "file": "fallen-strike",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·堕道者·出招"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：旧斩妖人出剑",
+      "priority": "P0"
+    },
+    {
+      "file": "fallen-guard",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·堕道者·架势"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：旧斩妖人架势",
+      "priority": "P0"
+    },
+    {
+      "file": "thorn-stele",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·棘碑"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：旧荆棘碑",
+      "priority": "P0"
+    },
+    {
+      "file": "bronze-puppet",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·铜傀"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P0"
+    },
+    {
+      "file": "night-owl",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·夜枭"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P0"
+    },
+    {
+      "file": "fake-fox",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·假狐商",
+        "事件·可疑的白狐摊"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": true,
+      "note": "现在借用：旧白狐商",
+      "priority": "P0"
+    },
+    {
+      "file": "paper-matron",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·纸扎娘娘"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P0"
+    },
+    {
+      "file": "fallen-elder",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·堕道首座"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P0"
+    },
+    {
+      "file": "fallen-elder-strike",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·堕道首座·出招"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P0"
+    },
+    {
+      "file": "fallen-elder-guard",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·堕道首座·架势"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P0"
+    },
+    {
+      "file": "ash",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·灯灰",
+        "卡牌·扬灰",
+        "卡牌·灯火",
+        "卡牌·收灰",
+        "卡牌·拨灯",
+        "卡牌·烧尽",
+        "卡牌·清仓"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "fang",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·鼠牙",
+        "法宝·鼠牙坠"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "silk",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·蛾丝卷",
+        "法宝·蛾丝扇",
+        "法宝·剑谱残页",
+        "卡牌·行云",
+        "卡牌·喘息",
+        "营建·学堂"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "shell",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·墨壳"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "knot",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·狐毛结",
+        "法宝·狐毛护身结",
+        "卡牌·蓄势",
+        "卡牌·稳步"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "seal",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·灯芯",
+        "装备·引灯盘",
+        "法宝·灯芯剪",
+        "卡牌·照妖",
+        "卡牌·燃芯",
+        "卡牌·灯阵",
+        "卡牌·引火"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "clasp",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·完整狐扣",
+        "货物·碎狐扣",
+        "卡牌·挑材"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "icon-redpaper",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·红纸"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-fur",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·火鼠毛"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-inkdust",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·墨粉"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-pearl",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·水珠"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-rubbing",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·碑拓"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-token",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·斩妖令"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-shard",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·铜片"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-feather",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·枭羽"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-tail",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·白狐尾"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "bell-item",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·钟铜",
+        "装备·铜铃",
+        "卡牌·不动"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "sword",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·照影剑",
+        "卡牌·斩",
+        "卡牌·合锋",
+        "卡牌·连斩",
+        "卡牌·收剑"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "plank",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·木挡板",
+        "卡牌·固守"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": true,
+      "note": "现在借用：桥上的木板障碍",
+      "priority": "P1"
+    },
+    {
+      "file": "ward-blade",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·铁剑",
+        "法宝·镇妖剑穗",
+        "卡牌·破势",
+        "卡牌·斩铁",
+        "卡牌·剑气纵横",
+        "营建·货架"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "hook",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·竹柄钩",
+        "法宝·棘环",
+        "法宝·庖丁刀",
+        "卡牌·回锋",
+        "卡牌·反震",
+        "卡牌·以守为攻"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "mirror",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·护心镜",
+        "卡牌·架",
+        "卡牌·盾击",
+        "卡牌·铁壁",
+        "卡牌·守中",
+        "卡牌·顶盾",
+        "卡牌·铁布衫"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "abacus",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·算盘",
+        "卡牌·撒钱",
+        "卡牌·本利",
+        "卡牌·盘算",
+        "卡牌·生息",
+        "卡牌·一掷千金",
+        "营建·账房"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "order-purse",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·货郎钱袋",
+        "法宝·绯绡的账本",
+        "卡牌·护货",
+        "卡牌·以货挡灾",
+        "卡牌·打点",
+        "营建·订单柜"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "icon-whetstone",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·磨刀石"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-amulet",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·护身符"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-oilpot",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·灯油壶"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-luckybag",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·招财袋"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "icon-wardcharm",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·镇货符"
+      ],
+      "wanted": [],
+      "status": "placeholder-tint",
+      "shared": false,
+      "note": "现在是旧图改色",
+      "priority": "P1"
+    },
+    {
+      "file": "salve",
+      "category": "物品图标",
+      "usedBy": [
+        "消耗品·金疮药",
+        "卡牌·火上浇油",
+        "卡牌·包扎",
+        "营建·药柜"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "pouch",
+      "category": "物品图标",
+      "usedBy": [
+        "消耗品·养元丹",
+        "法宝·封口锦囊",
+        "法宝·万宝囊",
+        "卡牌·囤货"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "lining",
+      "category": "物品图标",
+      "usedBy": [
+        "消耗品·扩囊衬布",
+        "营建·行囊匠"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "pin",
+      "category": "物品图标",
+      "usedBy": [
+        "法宝·狐扣针",
+        "卡牌·见缝",
+        "卡牌·三连刺",
+        "卡牌·疾风",
+        "卡牌·定身符",
+        "营建·狐市分号"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "grit",
+      "category": "物品图标",
+      "usedBy": [
+        "法宝·灯纹印",
+        "卡牌·剑意"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "lamp",
+      "category": "事件",
+      "usedBy": [
+        "事件·没人管的灯台",
+        "营建·灯油坊",
+        "迷宫里的灯台"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "broker",
+      "category": "事件",
+      "usedBy": [
+        "事件·血客",
+        "人物·药铺阿蘅",
+        "人物·血客"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "guide",
+      "category": "事件",
+      "usedBy": [
+        "事件·歇脚的道友",
+        "人物·灯匠老周",
+        "人物·书院先生",
+        "人物·歇脚的道友"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "stele",
+      "category": "事件",
+      "usedBy": [
+        "事件·断碑"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "purse",
+      "category": "事件",
+      "usedBy": [
+        "事件·遗落的货袋",
+        "迷宫里的宝箱"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "rock",
+      "category": "事件",
+      "usedBy": [
+        "事件·鼠窝"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "stele-thorn",
+      "category": "事件",
+      "usedBy": [
+        "事件·荆棘碑"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "portal",
+      "category": "事件",
+      "usedBy": [
+        "事件·传送阵"
+      ],
+      "wanted": [],
+      "status": "code-drawn",
+      "shared": false,
+      "note": "",
+      "priority": "P0"
+    },
+    {
+      "file": "event-den",
+      "category": "事件",
+      "usedBy": [
+        "事件·妖窝拾荒"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：碎石",
+      "priority": "P0"
+    },
+    {
+      "file": "event-peddler",
+      "category": "事件",
+      "usedBy": [
+        "事件·灯鼠货郎"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：灯鼠",
+      "priority": "P0"
+    },
+    {
+      "file": "event-cart",
+      "category": "事件",
+      "usedBy": [
+        "事件·翻倒的货车"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：押运货车",
+      "priority": "P0"
+    },
+    {
+      "file": "event-hunter",
+      "category": "事件",
+      "usedBy": [
+        "事件·受伤的斩妖人"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：斩妖人架势",
+      "priority": "P0"
+    },
+    {
+      "file": "event-shrine",
+      "category": "事件",
+      "usedBy": [
+        "事件·灯神龛"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：描金盒",
+      "priority": "P0"
+    },
+    {
+      "file": "event-pool",
+      "category": "事件",
+      "usedBy": [
+        "事件·照影池"
+      ],
+      "wanted": [],
+      "status": "placeholder-borrowed",
+      "shared": false,
+      "note": "现在借用：水洼",
+      "priority": "P0"
+    },
+    {
+      "file": "feixiao",
+      "category": "人物",
+      "usedBy": [
+        "人物·绯绡",
+        "狐市·绯绡"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "hero",
+      "category": "人物",
+      "usedBy": [
+        "人物·镇长",
+        "标题主角 / 结算"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "",
+      "priority": "P2"
+    },
+    {
+      "file": "shop",
+      "category": "场景",
+      "usedBy": [
+        "标题背景"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "shop-wall",
+      "category": "场景",
+      "usedBy": [
+        "镇灯铺背景"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "market",
+      "category": "场景",
+      "usedBy": [
+        "狐市背景"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "court",
+      "category": "场景",
+      "usedBy": [
+        "第一层事件背景"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "gate",
+      "category": "场景",
+      "usedBy": [
+        "第二层事件背景"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "belfry",
+      "category": "场景",
+      "usedBy": [
+        "第三层事件背景"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "last-market",
+      "category": "场景",
+      "usedBy": [
+        "结算背景"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "hunter-guard",
+      "category": "场景",
+      "usedBy": [
+        "败北结算"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "feixiao-settle",
+      "category": "场景",
+      "usedBy": [
+        "狐市·绯绡成交"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "trader",
+      "category": "场景",
+      "usedBy": [
+        "迷宫里的狐市摊位"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "sign-turn",
+      "category": "场景",
+      "usedBy": [
+        "迷宫里的楼梯"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    }
+  ],
+  "wanted": [
+    {
+      "file": "card-strike",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·斩",
+      "fallback": "sword",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-defend",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·架",
+      "fallback": "mirror",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-unison",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·合锋",
+      "fallback": "sword",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-twin",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·连斩",
+      "fallback": "sword",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-riposte",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·回锋",
+      "fallback": "hook",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-gap",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·见缝",
+      "fallback": "pin",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-breach",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·破势",
+      "fallback": "ward-blade",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-gather",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·蓄势",
+      "fallback": "knot",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-flurry",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·三连刺",
+      "fallback": "pin",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-intent",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·剑意",
+      "fallback": "grit",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-cleave",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·斩铁",
+      "fallback": "ward-blade",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-flow",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·行云",
+      "fallback": "silk",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-bash",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·盾击",
+      "fallback": "mirror",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-wall",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·铁壁",
+      "fallback": "mirror",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-spikes",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·反震",
+      "fallback": "hook",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-center",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·守中",
+      "fallback": "mirror",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-guardgoods",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·护货",
+      "fallback": "order-purse",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-ram",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·顶盾",
+      "fallback": "mirror",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-rooted",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·不动",
+      "fallback": "bell-item",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-bulwark",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·以守为攻",
+      "fallback": "hook",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-dust",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·扬灰",
+      "fallback": "ash",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-reveal",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·照妖",
+      "fallback": "seal",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-flame",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·灯火",
+      "fallback": "ash",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-burnwick",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·燃芯",
+      "fallback": "seal",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-barter",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·以货挡灾",
+      "fallback": "order-purse",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-scatter",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·撒钱",
+      "fallback": "abacus",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-reap",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·收灰",
+      "fallback": "ash",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-lamparray",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·灯阵",
+      "fallback": "seal",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-stoke",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·拨灯",
+      "fallback": "ash",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-gale",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·疾风",
+      "fallback": "pin",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-sheathe",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·收剑",
+      "fallback": "sword",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-swordqi",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·剑气纵横",
+      "fallback": "ward-blade",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-ironshirt",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·铁布衫",
+      "fallback": "mirror",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-hold",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·固守",
+      "fallback": "plank",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-ignite",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·引火",
+      "fallback": "seal",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-burnout",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·烧尽",
+      "fallback": "ash",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-fuel",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·火上浇油",
+      "fallback": "salve",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-clearance",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·清仓",
+      "fallback": "ash",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-principal",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·本利",
+      "fallback": "abacus",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-hoard",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·囤货",
+      "fallback": "pouch",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-reckon",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·盘算",
+      "fallback": "abacus",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-bribe",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·打点",
+      "fallback": "order-purse",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-interest",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·生息",
+      "fallback": "abacus",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-windfall",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·一掷千金",
+      "fallback": "abacus",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-bandage",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·包扎",
+      "fallback": "salve",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-breath",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·喘息",
+      "fallback": "silk",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-talisman",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·定身符",
+      "fallback": "pin",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-pluck",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·挑材",
+      "fallback": "clasp",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "card-steady",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·稳步",
+      "fallback": "knot",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-pin",
+      "category": "法宝图标",
+      "usedBy": "法宝·狐扣针",
+      "fallback": "pin",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-sealbag",
+      "category": "法宝图标",
+      "usedBy": "法宝·封口锦囊",
+      "fallback": "pouch",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-thorn",
+      "category": "法宝图标",
+      "usedBy": "法宝·棘环",
+      "fallback": "hook",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-fangcharm",
+      "category": "法宝图标",
+      "usedBy": "法宝·鼠牙坠",
+      "fallback": "fang",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-silkfan",
+      "category": "法宝图标",
+      "usedBy": "法宝·蛾丝扇",
+      "fallback": "silk",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-knotcharm",
+      "category": "法宝图标",
+      "usedBy": "法宝·狐毛护身结",
+      "fallback": "knot",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-seal",
+      "category": "法宝图标",
+      "usedBy": "法宝·灯纹印",
+      "fallback": "grit",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-tassel",
+      "category": "法宝图标",
+      "usedBy": "法宝·镇妖剑穗",
+      "fallback": "ward-blade",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-butcher",
+      "category": "法宝图标",
+      "usedBy": "法宝·庖丁刀",
+      "fallback": "hook",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-treasurebag",
+      "category": "法宝图标",
+      "usedBy": "法宝·万宝囊",
+      "fallback": "pouch",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-wickcutter",
+      "category": "法宝图标",
+      "usedBy": "法宝·灯芯剪",
+      "fallback": "seal",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-swordmanual",
+      "category": "法宝图标",
+      "usedBy": "法宝·剑谱残页",
+      "fallback": "silk",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "relic-ledger",
+      "category": "法宝图标",
+      "usedBy": "法宝·绯绡的账本",
+      "fallback": "order-purse",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "portrait-lamp",
+      "category": "人物立绘",
+      "usedBy": "人物·灯匠老周",
+      "fallback": "guide",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "portrait-herbs",
+      "category": "人物立绘",
+      "usedBy": "人物·药铺阿蘅",
+      "fallback": "broker",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "portrait-scholar",
+      "category": "人物立绘",
+      "usedBy": "人物·书院先生",
+      "fallback": "guide",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "portrait-mayor",
+      "category": "人物立绘",
+      "usedBy": "人物·镇长",
+      "fallback": "hero",
+      "status": "missing",
+      "priority": "P1"
+    },
+    {
+      "file": "build-ledger",
+      "category": "营建图标",
+      "usedBy": "营建·账房",
+      "fallback": "abacus",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "build-oil",
+      "category": "营建图标",
+      "usedBy": "营建·灯油坊",
+      "fallback": "lamp",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "build-medicine",
+      "category": "营建图标",
+      "usedBy": "营建·药柜",
+      "fallback": "salve",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "build-shelf",
+      "category": "营建图标",
+      "usedBy": "营建·货架",
+      "fallback": "ward-blade",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "build-school",
+      "category": "营建图标",
+      "usedBy": "营建·学堂",
+      "fallback": "silk",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "build-bagsmith",
+      "category": "营建图标",
+      "usedBy": "营建·行囊匠",
+      "fallback": "lining",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "build-counter",
+      "category": "营建图标",
+      "usedBy": "营建·订单柜",
+      "fallback": "order-purse",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "build-branch",
+      "category": "营建图标",
+      "usedBy": "营建·狐市分号",
+      "fallback": "pin",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "moth-attack",
+      "category": "敌怪姿态",
+      "usedBy": "moth 扑击/出招",
+      "fallback": "moth",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "moth-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "moth 受击",
+      "fallback": "moth",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "rat-attack",
+      "category": "敌怪姿态",
+      "usedBy": "rat 扑击/出招",
+      "fallback": "rat-swipe",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "rat-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "rat 受击",
+      "fallback": "rat",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "louse-attack",
+      "category": "敌怪姿态",
+      "usedBy": "louse 扑击/出招",
+      "fallback": "louse",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "louse-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "louse 受击",
+      "fallback": "louse",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "mirror-fox-attack",
+      "category": "敌怪姿态",
+      "usedBy": "mirror-fox 扑击/出招",
+      "fallback": "mirror-fox",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "mirror-fox-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "mirror-fox 受击",
+      "fallback": "mirror-fox",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "moth-queen-attack",
+      "category": "敌怪姿态",
+      "usedBy": "moth-queen 扑击/出招",
+      "fallback": "moth-queen",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "moth-queen-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "moth-queen 受击",
+      "fallback": "moth-queen",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "warden-attack",
+      "category": "敌怪姿态",
+      "usedBy": "warden 扑击/出招",
+      "fallback": "warden",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "warden-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "warden 受击",
+      "fallback": "warden",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "night-fox-attack",
+      "category": "敌怪姿态",
+      "usedBy": "night-fox 扑击/出招",
+      "fallback": "night-fox",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "night-fox-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "night-fox 受击",
+      "fallback": "night-fox",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "bell-attack",
+      "category": "敌怪姿态",
+      "usedBy": "bell 扑击/出招",
+      "fallback": "bell",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "bell-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "bell 受击",
+      "fallback": "bell",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "lantern-spirit-attack",
+      "category": "敌怪姿态",
+      "usedBy": "lantern-spirit 扑击/出招",
+      "fallback": "lantern-spirit",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "lantern-spirit-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "lantern-spirit 受击",
+      "fallback": "lantern-spirit",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "paper-doll-attack",
+      "category": "敌怪姿态",
+      "usedBy": "paper-doll 扑击/出招",
+      "fallback": "paper-doll",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "paper-doll-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "paper-doll 受击",
+      "fallback": "paper-doll",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "fire-rat-attack",
+      "category": "敌怪姿态",
+      "usedBy": "fire-rat 扑击/出招",
+      "fallback": "rat-swipe",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "fire-rat-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "fire-rat 受击",
+      "fallback": "fire-rat",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "ink-moth-attack",
+      "category": "敌怪姿态",
+      "usedBy": "ink-moth 扑击/出招",
+      "fallback": "ink-moth",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "ink-moth-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "ink-moth 受击",
+      "fallback": "ink-moth",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "water-ghost-attack",
+      "category": "敌怪姿态",
+      "usedBy": "water-ghost 扑击/出招",
+      "fallback": "water-ghost",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "water-ghost-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "water-ghost 受击",
+      "fallback": "water-ghost",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "stele-spirit-attack",
+      "category": "敌怪姿态",
+      "usedBy": "stele-spirit 扑击/出招",
+      "fallback": "stele-spirit",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "stele-spirit-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "stele-spirit 受击",
+      "fallback": "stele-spirit",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "fallen-attack",
+      "category": "敌怪姿态",
+      "usedBy": "fallen 扑击/出招",
+      "fallback": "fallen-strike",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "fallen-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "fallen 受击",
+      "fallback": "fallen",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "thorn-stele-attack",
+      "category": "敌怪姿态",
+      "usedBy": "thorn-stele 扑击/出招",
+      "fallback": "thorn-stele",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "thorn-stele-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "thorn-stele 受击",
+      "fallback": "thorn-stele",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "bronze-puppet-attack",
+      "category": "敌怪姿态",
+      "usedBy": "bronze-puppet 扑击/出招",
+      "fallback": "bronze-puppet",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "bronze-puppet-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "bronze-puppet 受击",
+      "fallback": "bronze-puppet",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "night-owl-attack",
+      "category": "敌怪姿态",
+      "usedBy": "night-owl 扑击/出招",
+      "fallback": "night-owl",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "night-owl-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "night-owl 受击",
+      "fallback": "night-owl",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "fake-fox-attack",
+      "category": "敌怪姿态",
+      "usedBy": "fake-fox 扑击/出招",
+      "fallback": "fake-fox",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "fake-fox-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "fake-fox 受击",
+      "fallback": "fake-fox",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "paper-matron-attack",
+      "category": "敌怪姿态",
+      "usedBy": "paper-matron 扑击/出招",
+      "fallback": "paper-matron",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "paper-matron-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "paper-matron 受击",
+      "fallback": "paper-matron",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "fallen-elder-attack",
+      "category": "敌怪姿态",
+      "usedBy": "fallen-elder 扑击/出招",
+      "fallback": "fallen-elder-strike",
+      "status": "missing",
+      "priority": "P2"
+    },
+    {
+      "file": "fallen-elder-hurt",
+      "category": "敌怪姿态",
+      "usedBy": "fallen-elder 受击",
+      "fallback": "fallen-elder",
+      "status": "missing",
+      "priority": "P2"
+    }
+  ],
+  "omens": [
+    {
+      "file": "omen-calm",
+      "name": "太平",
+      "status": "optional"
+    },
+    {
+      "file": "omen-rain",
+      "name": "雨夜",
+      "status": "optional"
+    },
+    {
+      "file": "omen-market",
+      "name": "集市日",
+      "status": "optional"
+    },
+    {
+      "file": "omen-horde",
+      "name": "妖潮",
+      "status": "optional"
+    },
+    {
+      "file": "omen-moon",
+      "name": "月明",
+      "status": "optional"
+    },
+    {
+      "file": "omen-fog",
+      "name": "迷雾",
+      "status": "optional"
+    },
+    {
+      "file": "omen-festival",
+      "name": "灯会",
+      "status": "optional"
+    },
+    {
+      "file": "omen-bloodmoon",
+      "name": "血月",
+      "status": "optional"
+    },
+    {
+      "file": "omen-incense",
+      "name": "香火旺",
+      "status": "optional"
+    },
+    {
+      "file": "omen-patrol",
+      "name": "精英巡夜",
+      "status": "optional"
+    }
+  ]
+}

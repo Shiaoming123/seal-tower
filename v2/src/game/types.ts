@@ -225,6 +225,11 @@ export interface RunState {
   eventFight: { enemy: string; kind: "fight" | "elite"; hpMul: number; dmgAdd: number } | null;
   /** Bumped on teleport so the 3D view snaps to the new spot. */
   warp: number;
+  /** This floor's 签文 and whether its card has been read. */
+  omen: string;
+  omenSeen: boolean;
+  /** 图鉴 entries met this run (merged into the profile on save). */
+  discovered: string[];
 }
 
 export interface Profile {
@@ -241,5 +246,9 @@ export interface Profile {
   upgrades: Record<string, number>;
   /** 交情 with each client (order id), 0–5. */
   favor: Record<string, number>;
+  /** 图鉴 entries ever met. */
+  codex: string[];
+  /** 每日签: best result per day. */
+  daily: { date: string; floor: number; win: boolean } | null;
   sound: boolean;
 }

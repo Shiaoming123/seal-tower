@@ -4,7 +4,7 @@ import { ACHIEVEMENTS } from "../data/achievements";
 import { MAX_FAVOR } from "../data/town";
 import * as R from "../game/run";
 import { ART } from "../render/assets";
-import { clearRun, commit, page, profileSig, runSig, useRun } from "./store";
+import { clearRun, commit, page, profileSig, runSig, today, useRun } from "./store";
 
 export function Result() {
   const run = useRun();
@@ -26,6 +26,7 @@ export function Result() {
       ...p, renown: p.renown + settled.renown, wins: p.wins + (run.outcome === "win" ? 1 : 0),
       bestFloor: Math.max(p.bestFloor, R.floorsCleared(run)), ordersDone: settled.ordersDone,
       favor: settled.favor, treasury: p.treasury + settled.carried,
+      daily: run.flags.includes("daily") ? bestDaily(p.daily, R.floorsCleared(run), run.outcome === "win") : p.daily,
       achievements: [...p.achievements, ...settled.fresh.map((a) => a.id)],
     };
     clearRun();
@@ -67,4 +68,11 @@ export function Result() {
       </div>
     </div>
   );
+}
+
+/** Keep today's best 每日签 result. */
+function bestDaily(prev: { date: string; floor: number; win: boolean } | null, floor: number, win: boolean) {
+  const date = today();
+  if (!prev || prev.date !== date) return { date, floor, win };
+  return { date, floor: Math.max(prev.floor, floor), win: prev.win || win };
 }

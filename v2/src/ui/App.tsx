@@ -1,6 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 import { setSound, sfx } from "../audio/sfx";
+import { setMusic } from "../audio/music";
 import { ORDERS } from "../data/orders";
+import { OMEN } from "../data/omens";
 import { orderProgress } from "../game/run";
 import { BagOverlay } from "./Bag";
 import { CardPicker, DeckOverlay } from "./Deck";
@@ -11,8 +13,9 @@ import { Shop } from "./Shop";
 import { EventScreen, RestScreen } from "./Event";
 import { Result } from "./Result";
 import { Achievements, Help, Title, Town } from "./Title";
+import { Codex } from "./Codex";
 import { Bar, GoodChip, RelicRow } from "./parts";
-import { commit, overlay, page, profileSig, runSig, tick, toast, useRun } from "./store";
+import { commit, overlay, page, profileSig, runSig, say, tick, toast, useRun } from "./store";
 
 /** Fixed-size stage scaled to fit the window, so nothing reflows or jumps while playing. */
 function useStage() {
@@ -37,10 +40,14 @@ export function App() {
   tick.value; // subscribe
   useEffect(() => { setSound(profileSig.value.sound); }, []);
   const run = runSig.value;
+  // Background music follows where you are.
+  const mood = page.value === "game" && run ? (run.screen === "result" ? "town" : `f${run.floor}`) : "town";
+  useEffect(() => { setMusic(profileSig.value.sound ? mood : "", run?.screen === "combat"); }, [mood, run?.screen, profileSig.value.sound]);
   let body;
   if (page.value === "title") body = <Title />;
   else if (page.value === "help") body = <Help />;
   else if (page.value === "achievements") body = <Achievements />;
+  else if (page.value === "codex") body = <Codex />;
   else if (page.value === "town" || !run) body = <Town />;
   else body = <Game />;
   return (
@@ -89,6 +96,7 @@ function Hud() {
           <i style={{ height: `${Math.round((run.oil / run.maxOil) * 100)}%` }} />灯油 {run.oil}
         </span>
       </div>
+      <button type="button" class="omen-chip" title={`${OMEN[run.omen].name}：${OMEN[run.omen].text}`} onClick={() => say(`本层签文「${OMEN[run.omen].name}」：${OMEN[run.omen].text}`, 4000)}>签·{OMEN[run.omen].name}</button>
       <RelicRow relics={run.relics} />
       <div class="hud-orders">
         {run.orders.map((_, i) => {

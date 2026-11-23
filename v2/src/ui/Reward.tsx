@@ -3,7 +3,7 @@ import { RELICS } from "../data/relics";
 import { previewFor } from "../game/combat";
 import * as R from "../game/run";
 import { BagGrid } from "./Bag";
-import { Art, CardView, GoodChip, countGoods } from "./parts";
+import { Art, CardView, GoodChip, countGoods, relicIcon } from "./parts";
 import { useRef } from "preact/hooks";
 import { useView } from "./Explore";
 import { commit, useRun } from "./store";
@@ -28,7 +28,7 @@ export function Reward() {
         )}
         {rw.relic && (
           <div class="relic-offer">
-            <Art id={RELICS[rw.relic].icon} class="relic-big" />
+            <Art id={relicIcon(rw.relic)} class="relic-big" />
             <div><b>法宝 · {RELICS[rw.relic].name}</b><p>{RELICS[rw.relic].text}</p></div>
             <button type="button" class="btn primary" onClick={() => { sfx.coin(); R.takeRewardRelic(run, rw.relic!); commit(); }}>拿走</button>
           </div>
@@ -38,7 +38,7 @@ export function Reward() {
             <h3>选一件法宝</h3>
             {rw.relicChoices.map((id) => (
               <button type="button" class="relic-choice" onClick={() => { sfx.coin(); R.takeRewardRelic(run, id); commit(); }}>
-                <Art id={RELICS[id].icon} /><b>{RELICS[id].name}</b><span>{RELICS[id].text}</span>
+                <Art id={relicIcon(id)} /><b>{RELICS[id].name}</b><span>{RELICS[id].text}</span>
               </button>
             ))}
           </div>

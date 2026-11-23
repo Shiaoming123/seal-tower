@@ -105,6 +105,7 @@ for (let step = 0; step < Number(process.env.STEPS ?? 60) && seen.size < 11; ste
     const stairs = await page.locator(".stairs-prompt").count();
     if (stairs) { await first("15-stairs"); await page.getByRole("button", { name: "上楼" }).click(); await page.waitForTimeout(800); await first("16-floor2"); continue; }
     await first("03-explore");
+    if (await page.locator(".omen-card").count()) await page.locator(".omen-card .btn").click();
     await walkToKind(["shop", "event", "rest", "chest", "fight", "elite", "guardian"]);
   }
 }
