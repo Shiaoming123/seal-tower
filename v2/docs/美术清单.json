@@ -154,10 +154,10 @@
         "敌怪·火鼠"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "ink-moth",
@@ -190,10 +190,10 @@
         "敌怪·碑灵"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：旧墨碑",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "fallen",
@@ -941,10 +941,10 @@
         "事件·翻倒的货车"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：押运货车",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "event-hunter",
@@ -1899,7 +1899,7 @@
       "category": "敌怪姿态",
       "usedBy": "fire-rat 扑击/出招",
       "fallback": "rat-swipe",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {

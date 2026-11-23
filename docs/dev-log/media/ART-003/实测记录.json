@@ -1,0 +1,1588 @@
+[
+  {
+    "viewport": [
+      1280,
+      720
+    ],
+    "floor": 2,
+    "entityOrPose": "fire-rat",
+    "runtimeAsset": "fire-rat.webp",
+    "sourceSha256": "6418de1585af891753ba13ba260b96b62578ada8ffc73c6b8fe901e740c46c0b",
+    "requestedWebpSha256": "ba9fcf527a567c8c868817c2507b412ddfebca65a4218d5e185743f980778c10",
+    "exportPixels": [
+      320,
+      276
+    ],
+    "opaqueBoundingBox": [
+      25,
+      19,
+      297,
+      249
+    ],
+    "positionCss": [
+      504.63189697265625,
+      121.3525390625,
+      270.7205810546875,
+      230.50250244140625
+    ],
+    "paintedSizeCss": [
+      227,
+      192
+    ],
+    "paintedRectCss": [
+      527,
+      137,
+      227,
+      192
+    ],
+    "panelCss": [
+      14,
+      628,
+      349.375,
+      78
+    ],
+    "enemyInfoTopCss": 343,
+    "browserErrors": [],
+    "screenshot": "1280/fire-rat.jpg"
+  },
+  {
+    "viewport": [
+      1280,
+      720
+    ],
+    "floor": 2,
+    "entityOrPose": "fire-rat-attack",
+    "runtimeAsset": "fire-rat-attack.webp",
+    "sourceSha256": "1ae82556a80007503203a72f73f56cf3c2b2efd284568ecf896b3f854980c993",
+    "requestedWebpSha256": "c29cb9ab05df884c20700cdbece341f14b33119874eabecd0d937038973116b1",
+    "exportPixels": [
+      320,
+      276
+    ],
+    "opaqueBoundingBox": [
+      24,
+      19,
+      298,
+      257
+    ],
+    "positionCss": [
+      512.4446411132812,
+      124.46916198730469,
+      255.0950927734375,
+      220.02040100097656
+    ],
+    "paintedSizeCss": [
+      218,
+      190
+    ],
+    "paintedRectCss": [
+      532,
+      140,
+      218,
+      190
+    ],
+    "panelCss": [
+      14,
+      628,
+      349.375,
+      78
+    ],
+    "enemyInfoTopCss": 343,
+    "browserErrors": [],
+    "screenshot": "1280/fire-rat-attack.jpg",
+    "captureAnimationTimeMs": 125,
+    "realFirstTurnTrace": [
+      {
+        "ms": 0,
+        "key": "fire-rat.webp",
+        "motion": "breathe",
+        "imgTime": 618.0320000124162,
+        "frame": [
+          504.57672119140625,
+          121.50173950195312,
+          270.8309326171875,
+          230.40731811523438
+        ],
+        "current": "fire-rat.webp",
+        "loaded": true
+      },
+      {
+        "ms": 21,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 0,
+        "frame": [
+          505.5,
+          119,
+          268.984375,
+          232
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 28,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 6.865000006183841,
+        "frame": [
+          505.5618896484375,
+          119.04545593261719,
+          268.860595703125,
+          231.89320373535156
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 35,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 13.865000006183958,
+        "frame": [
+          505.7366943359375,
+          119.17405700683594,
+          268.510986328125,
+          231.59169006347656
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 42,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 20.865000006184076,
+        "frame": [
+          506.0054931640625,
+          119.37271118164062,
+          267.973388671875,
+          231.1280517578125
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 49,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 27.765000006183982,
+        "frame": [
+          506.348876953125,
+          119.6280517578125,
+          267.28662109375,
+          230.53570556640625
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 56,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 34.765000006184096,
+        "frame": [
+          506.7664794921875,
+          119.94094848632812,
+          266.451416015625,
+          229.8153076171875
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 63,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 41.565000006183794,
+        "frame": [
+          507.2312927246094,
+          120.29222106933594,
+          265.5217590332031,
+          229.0135040283203
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 70,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 48.56500000618391,
+        "frame": [
+          507.7644348144531,
+          120.69905090332031,
+          264.4555358886719,
+          228.0938262939453
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 76,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 55.465000006183814,
+        "frame": [
+          508.33935546875,
+          121.1424560546875,
+          263.3056640625,
+          227.10205078125
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 83,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 62.465000006183935,
+        "frame": [
+          508.9688415527344,
+          121.63352966308594,
+          262.0466613769531,
+          226.01622009277344
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 90,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 69.36500000618383,
+        "frame": [
+          509.6319274902344,
+          122.15711975097656,
+          260.7204895019531,
+          224.87242126464844
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 97,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 76.36500000618396,
+        "frame": [
+          510.34564208984375,
+          122.72795104980469,
+          259.2930908203125,
+          223.64125061035156
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 104,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 83.26500000618387,
+        "frame": [
+          511.08831787109375,
+          123.32994079589844,
+          257.8077392578125,
+          222.3600616455078
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 111,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 90.26500000618398,
+        "frame": [
+          511.8814392089844,
+          123.98175048828125,
+          256.2214660644531,
+          220.99197387695312
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 118,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 97.16500000618389,
+        "frame": [
+          512.7042846679688,
+          124.66780090332031,
+          254.5758056640625,
+          219.5725555419922
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 125,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 104.165000006184,
+        "frame": [
+          513.5694580078125,
+          125.39993286132812,
+          252.845458984375,
+          218.08013916015625
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 132,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 111.06500000618391,
+        "frame": [
+          513.4306030273438,
+          125.28401184082031,
+          253.1231689453125,
+          218.3196258544922
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 139,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 118.06500000618402,
+        "frame": [
+          513.0433349609375,
+          124.96220397949219,
+          253.897705078125,
+          218.98768615722656
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 146,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 124.96500000618394,
+        "frame": [
+          512.4481811523438,
+          124.47203063964844,
+          255.0880126953125,
+          220.0143585205078
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 153,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 131.96500000618406,
+        "frame": [
+          511.6519775390625,
+          123.82460021972656,
+          256.680419921875,
+          221.38780212402344
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 160,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 138.86500000618395,
+        "frame": [
+          510.69671630859375,
+          123.06039428710938,
+          258.5909423828125,
+          223.03564453125
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 167,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 145.86500000618406,
+        "frame": [
+          509.5709533691406,
+          122.1773681640625,
+          260.8424987792969,
+          224.97756958007812
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 174,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 152.76500000618398,
+        "frame": [
+          508.3201904296875,
+          121.21856689453125,
+          263.343994140625,
+          227.13519287109375
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 181,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 159.6650000061839,
+        "frame": [
+          506.9404296875,
+          120.1881103515625,
+          266.103515625,
+          229.5152587890625
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 188,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 166.66500000618402,
+        "frame": [
+          505.4185791015625,
+          119.08470153808594,
+          269.147216796875,
+          232.1404571533203
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 195,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 173.66500000618413,
+        "frame": [
+          503.7821044921875,
+          117.93695068359375,
+          272.420166015625,
+          234.96337890625
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 202,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 180.56500000618402,
+        "frame": [
+          502.06378173828125,
+          116.77505493164062,
+          275.8568115234375,
+          237.92745971679688
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 208,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 187.46500000618394,
+        "frame": [
+          500.2469482421875,
+          115.59469604492188,
+          279.490478515625,
+          241.06158447265625
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 215,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 194.46500000618406,
+        "frame": [
+          498.30816650390625,
+          114.3897705078125,
+          283.3680419921875,
+          244.406005859375
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 222,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 201.36500000618395,
+        "frame": [
+          496.3070983886719,
+          113.205322265625,
+          287.3701477050781,
+          247.85781860351562
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 229,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 208.26500000618387,
+        "frame": [
+          494.2201843261719,
+          112.03402709960938,
+          291.5439758300781,
+          251.457763671875
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 236,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 215.26500000618398,
+        "frame": [
+          492.01806640625,
+          110.86892700195312,
+          295.9482421875,
+          255.25643920898438
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 243,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 222.2650000061841,
+        "frame": [
+          489.7323913574219,
+          109.73663330078125,
+          300.5195617675781,
+          259.19921875
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 250,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 229.0650000061838,
+        "frame": [
+          487.43304443359375,
+          108.67662048339844,
+          305.1182861328125,
+          263.16558837890625
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 257,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 236.0650000061839,
+        "frame": [
+          484.984619140625,
+          107.63510131835938,
+          310.01513671875,
+          267.3891906738281
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 264,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 242.96500000618383,
+        "frame": [
+          482.4883728027344,
+          106.6658935546875,
+          315.0075988769531,
+          271.6952209472656
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 271,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 249.96500000618394,
+        "frame": [
+          479.86663818359375,
+          105.74856567382812,
+          320.2510986328125,
+          276.2177429199219
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 278,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 256.965000006184,
+        "frame": [
+          477.1402893066406,
+          104.90408325195312,
+          325.7038269042969,
+          280.92071533203125
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 285,
+        "key": "fire-rat.webp",
+        "motion": "breathe",
+        "imgTime": 0,
+        "frame": [
+          505.5,
+          119,
+          268.984375,
+          232
+        ],
+        "current": "fire-rat.webp",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "viewport": [
+      1280,
+      720
+    ],
+    "floor": 2,
+    "entityOrPose": "stele-spirit",
+    "runtimeAsset": "stele-spirit.webp",
+    "sourceSha256": "67833ce80a73811ac1a5a141d23e440a28c4bd2c3127f23d98efdf8be9ecd4dc",
+    "requestedWebpSha256": "08b3c6753cc2c902dab9c65e170cca9b969426d9aa295b54c4d47c5d5940ff5b",
+    "exportPixels": [
+      300,
+      300
+    ],
+    "opaqueBoundingBox": [
+      32,
+      22,
+      272,
+      280
+    ],
+    "positionCss": [
+      511.7967529296875,
+      121.13783264160156,
+      256.406494140625,
+      253.59352111816406
+    ],
+    "paintedSizeCss": [
+      203,
+      218
+    ],
+    "paintedRectCss": [
+      540,
+      140,
+      203,
+      218
+    ],
+    "panelCss": [
+      14,
+      628,
+      349.375,
+      78
+    ],
+    "enemyInfoTopCss": 366,
+    "browserErrors": [],
+    "screenshot": "1280/stele-spirit.jpg"
+  },
+  {
+    "viewport": [
+      1280,
+      720
+    ],
+    "floor": 2,
+    "entityOrPose": "thorn-stele",
+    "runtimeAsset": "thorn-stele.webp",
+    "sourceSha256": null,
+    "requestedWebpSha256": "ba7af85c11020af6181edd841350b43590200c792cb0ba3f9ce45e1884a76de2",
+    "exportPixels": [
+      177,
+      280
+    ],
+    "opaqueBoundingBox": [
+      0,
+      0,
+      177,
+      279
+    ],
+    "positionCss": [
+      558.9619140625,
+      121.13702392578125,
+      162.076171875,
+      253.59405517578125
+    ],
+    "paintedSizeCss": [
+      160,
+      253
+    ],
+    "paintedRectCss": [
+      560,
+      121,
+      160,
+      253
+    ],
+    "panelCss": [
+      14,
+      628,
+      349.375,
+      78
+    ],
+    "enemyInfoTopCss": 366,
+    "browserErrors": [],
+    "screenshot": "1280/thorn-stele.jpg"
+  },
+  {
+    "viewport": [
+      1280,
+      720
+    ],
+    "floor": 2,
+    "entityOrPose": "event-cart",
+    "runtimeAsset": "event-cart.webp",
+    "sourceSha256": "383b24c90c94dc8b0904e46553e7981a94c55cf49a30f4a955b6871fb003727b",
+    "requestedWebpSha256": "0a3c80427c77cb294c78b91dbac1343b356b05d2e768c81be3821f3bdf7ae781",
+    "exportPixels": [
+      360,
+      360
+    ],
+    "opaqueBoundingBox": [
+      24,
+      41,
+      336,
+      331
+    ],
+    "positionCss": [
+      40,
+      167.953125,
+      580,
+      442.078125
+    ],
+    "paintedSizeCss": [
+      383,
+      356
+    ],
+    "paintedRectCss": [
+      138,
+      218,
+      383,
+      356
+    ],
+    "panelCss": [
+      640,
+      194.703125,
+      600,
+      388.59375
+    ],
+    "enemyInfoTopCss": null,
+    "browserErrors": [],
+    "screenshot": "1280/event-cart.jpg"
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "floor": 2,
+    "entityOrPose": "fire-rat",
+    "runtimeAsset": "fire-rat.webp",
+    "sourceSha256": "6418de1585af891753ba13ba260b96b62578ada8ffc73c6b8fe901e740c46c0b",
+    "requestedWebpSha256": "ba9fcf527a567c8c868817c2507b412ddfebca65a4218d5e185743f980778c10",
+    "exportPixels": [
+      320,
+      276
+    ],
+    "opaqueBoundingBox": [
+      25,
+      19,
+      297,
+      249
+    ],
+    "positionCss": [
+      107.11141967773438,
+      95.0068588256836,
+      175.76699829101562,
+      150.00030517578125
+    ],
+    "paintedSizeCss": [
+      148,
+      125
+    ],
+    "paintedRectCss": [
+      122,
+      105,
+      148,
+      125
+    ],
+    "panelCss": [
+      9.09999942779541,
+      784.0499877929688,
+      227.09373474121094,
+      50.70001220703125
+    ],
+    "enemyInfoTopCss": 239.3500213623047,
+    "browserErrors": [],
+    "screenshot": "390/fire-rat.jpg"
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "floor": 2,
+    "entityOrPose": "fire-rat-attack",
+    "runtimeAsset": "fire-rat-attack.webp",
+    "sourceSha256": "1ae82556a80007503203a72f73f56cf3c2b2efd284568ecf896b3f854980c993",
+    "requestedWebpSha256": "c29cb9ab05df884c20700cdbece341f14b33119874eabecd0d937038973116b1",
+    "exportPixels": [
+      320,
+      276
+    ],
+    "opaqueBoundingBox": [
+      24,
+      19,
+      298,
+      257
+    ],
+    "positionCss": [
+      112.08901977539062,
+      97.30497741699219,
+      165.81179809570312,
+      143.0132598876953
+    ],
+    "paintedSizeCss": [
+      142,
+      123
+    ],
+    "paintedRectCss": [
+      125,
+      107,
+      142,
+      123
+    ],
+    "panelCss": [
+      9.09999942779541,
+      784.0499877929688,
+      227.09373474121094,
+      50.70001220703125
+    ],
+    "enemyInfoTopCss": 239.3500213623047,
+    "browserErrors": [],
+    "screenshot": "390/fire-rat-attack.jpg",
+    "captureAnimationTimeMs": 125,
+    "realFirstTurnTrace": [
+      {
+        "ms": 0,
+        "key": "fire-rat.webp",
+        "motion": "breathe",
+        "imgTime": 555.5810000125784,
+        "frame": [
+          107.08137512207031,
+          95.088134765625,
+          175.8270721435547,
+          149.948486328125
+        ],
+        "current": "fire-rat.webp",
+        "loaded": true
+      },
+      {
+        "ms": 21,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 0,
+        "frame": [
+          107.57499694824219,
+          93.7500228881836,
+          174.83982849121094,
+          150.79998779296875
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 28,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 6.977000020397917,
+        "frame": [
+          107.61651611328125,
+          93.78050231933594,
+          174.75680541992188,
+          150.72837829589844
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 35,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 13.977000020398034,
+        "frame": [
+          107.73118591308594,
+          93.86488342285156,
+          174.52745056152344,
+          150.5305633544922
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 42,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 20.87700002039794,
+        "frame": [
+          107.90389251708984,
+          93.9925308227539,
+          174.18203735351562,
+          150.23263549804688
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 49,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 27.777000020397846,
+        "frame": [
+          108.12718963623047,
+          94.15858459472656,
+          173.73544311523438,
+          149.8474578857422
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 56,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 34.677000020397756,
+        "frame": [
+          108.39453887939453,
+          94.35887145996094,
+          173.20077514648438,
+          149.3862762451172
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 63,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 41.67700002039787,
+        "frame": [
+          108.70561218261719,
+          94.59396362304688,
+          172.57859802246094,
+          148.84967041015625
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 69,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 48.577000020397776,
+        "frame": [
+          109.04750061035156,
+          94.8548812866211,
+          171.8948211669922,
+          148.25991821289062
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 76,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 55.57700002039789,
+        "frame": [
+          109.4269027709961,
+          95.14751434326172,
+          171.13601684570312,
+          147.60543823242188
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 83,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 62.57700002039801,
+        "frame": [
+          109.8365249633789,
+          95.46713256835938,
+          170.3167724609375,
+          146.8988494873047
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 90,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 69.47700002039792,
+        "frame": [
+          110.26795959472656,
+          95.8078842163086,
+          169.4539337158203,
+          146.15463256835938
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 97,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 76.37700002039782,
+        "frame": [
+          110.72547912597656,
+          96.17384338378906,
+          168.5388641357422,
+          145.3654022216797
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 104,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 83.27700002039774,
+        "frame": [
+          111.2082748413086,
+          96.565185546875,
+          167.57327270507812,
+          144.53256225585938
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 111,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 90.27700002039785,
+        "frame": [
+          111.72383117675781,
+          96.9889144897461,
+          166.5421600341797,
+          143.64321899414062
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 118,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 97.17700002039776,
+        "frame": [
+          112.25873565673828,
+          97.43490600585938,
+          165.47238159179688,
+          142.7205047607422
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 125,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 104.17700002039787,
+        "frame": [
+          112.82013702392578,
+          97.90998077392578,
+          164.34954833984375,
+          141.75210571289062
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 132,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 111.07700002039778,
+        "frame": [
+          112.7295913696289,
+          97.8343734741211,
+          164.53067016601562,
+          141.90829467773438
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 139,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 118.07700002039789,
+        "frame": [
+          112.47760772705078,
+          97.625,
+          165.03460693359375,
+          142.34295654296875
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 146,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 124.9770000203978,
+        "frame": [
+          112.09052276611328,
+          97.30619812011719,
+          165.80880737304688,
+          143.01068115234375
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 153,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 131.97700002039792,
+        "frame": [
+          111.5727767944336,
+          96.88521575927734,
+          166.84426879882812,
+          143.90377807617188
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 160,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 138.87700002039782,
+        "frame": [
+          110.9516830444336,
+          96.38834381103516,
+          168.08645629882812,
+          144.97518920898438
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 167,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 145.77700002039774,
+        "frame": [
+          110.23091125488281,
+          95.82290649414062,
+          169.5279998779297,
+          146.21852111816406
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 174,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 152.77700002039785,
+        "frame": [
+          109.40660858154297,
+          95.19094848632812,
+          171.17660522460938,
+          147.64044189453125
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 181,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 159.77700002039796,
+        "frame": [
+          108.49606323242188,
+          94.5111083984375,
+          172.99771118164062,
+          149.2111358642578
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 188,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 166.67700002039788,
+        "frame": [
+          107.52031707763672,
+          93.80382537841797,
+          174.94918823242188,
+          150.89431762695312
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 194,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 173.57700002039778,
+        "frame": [
+          106.4721908569336,
+          93.06857299804688,
+          177.04544067382812,
+          152.70233154296875
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 201,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 180.5770000203979,
+        "frame": [
+          105.33946990966797,
+          92.30247497558594,
+          179.31088256835938,
+          154.6562957763672
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 208,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 187.577000020398,
+        "frame": [
+          104.14082336425781,
+          91.52406311035156,
+          181.7081756591797,
+          156.72398376464844
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 215,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 194.3770000203977,
+        "frame": [
+          102.91651153564453,
+          90.76322174072266,
+          184.15682983398438,
+          158.83590698242188
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 222,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 201.37700002039782,
+        "frame": [
+          101.59729766845703,
+          89.98213195800781,
+          186.79525756835938,
+          161.11155700683594
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 229,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 208.37700002039793,
+        "frame": [
+          100.22064208984375,
+          89.20989227294922,
+          189.54855346679688,
+          163.48629760742188
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 236,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 215.27700002039785,
+        "frame": [
+          98.80924224853516,
+          88.46355438232422,
+          192.37136840820312,
+          165.92098999023438
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 243,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 222.27700002039796,
+        "frame": [
+          97.3234634399414,
+          87.72758483886719,
+          195.34292602539062,
+          168.4839630126953
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 250,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 229.17700002039788,
+        "frame": [
+          95.80644226074219,
+          87.0287094116211,
+          198.37693786621094,
+          171.100830078125
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 257,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 236.177000020398,
+        "frame": [
+          94.21409606933594,
+          86.35230255126953,
+          201.56163024902344,
+          173.84765625
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 264,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 243.0770000203979,
+        "frame": [
+          92.59063720703125,
+          85.72295379638672,
+          204.80856323242188,
+          176.64810180664062
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 271,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 249.9770000203978,
+        "frame": [
+          90.91033935546875,
+          85.13563537597656,
+          208.16915893554688,
+          179.54664611816406
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 278,
+        "key": "fire-rat-attack.webp",
+        "motion": "lunge",
+        "imgTime": 256.9770000203979,
+        "frame": [
+          89.13806915283203,
+          84.58676147460938,
+          211.71368408203125,
+          182.60382080078125
+        ],
+        "current": "fire-rat-attack.webp",
+        "loaded": true
+      },
+      {
+        "ms": 285,
+        "key": "fire-rat.webp",
+        "motion": "breathe",
+        "imgTime": 0,
+        "frame": [
+          107.57499694824219,
+          93.7500228881836,
+          174.83982849121094,
+          150.79998779296875
+        ],
+        "current": "fire-rat.webp",
+        "loaded": true
+      }
+    ]
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "floor": 2,
+    "entityOrPose": "stele-spirit",
+    "runtimeAsset": "stele-spirit.webp",
+    "sourceSha256": "67833ce80a73811ac1a5a141d23e440a28c4bd2c3127f23d98efdf8be9ecd4dc",
+    "requestedWebpSha256": "08b3c6753cc2c902dab9c65e170cca9b969426d9aa295b54c4d47c5d5940ff5b",
+    "exportPixels": [
+      300,
+      300
+    ],
+    "opaqueBoundingBox": [
+      32,
+      22,
+      272,
+      280
+    ],
+    "positionCss": [
+      111.71099090576172,
+      95.00882720947266,
+      166.5780029296875,
+      164.9219970703125
+    ],
+    "paintedSizeCss": [
+      132,
+      142
+    ],
+    "paintedRectCss": [
+      130,
+      107,
+      132,
+      142
+    ],
+    "panelCss": [
+      9.09999942779541,
+      784.0499877929688,
+      227.09373474121094,
+      50.70001220703125
+    ],
+    "enemyInfoTopCss": 254.30001831054688,
+    "browserErrors": [],
+    "screenshot": "390/stele-spirit.jpg"
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "floor": 2,
+    "entityOrPose": "thorn-stele",
+    "runtimeAsset": "thorn-stele.webp",
+    "sourceSha256": null,
+    "requestedWebpSha256": "ba7af85c11020af6181edd841350b43590200c792cb0ba3f9ce45e1884a76de2",
+    "exportPixels": [
+      177,
+      280
+    ],
+    "opaqueBoundingBox": [
+      0,
+      0,
+      177,
+      279
+    ],
+    "positionCss": [
+      142.3387908935547,
+      95.07398223876953,
+      105.32240295410156,
+      164.87905883789062
+    ],
+    "paintedSizeCss": [
+      104,
+      164
+    ],
+    "paintedRectCss": [
+      143,
+      95,
+      104,
+      164
+    ],
+    "panelCss": [
+      9.09999942779541,
+      784.0499877929688,
+      227.09373474121094,
+      50.70001220703125
+    ],
+    "enemyInfoTopCss": 254.30001831054688,
+    "browserErrors": [],
+    "screenshot": "390/thorn-stele.jpg"
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "floor": 2,
+    "entityOrPose": "event-cart",
+    "runtimeAsset": "event-cart.webp",
+    "sourceSha256": "383b24c90c94dc8b0904e46553e7981a94c55cf49a30f4a955b6871fb003727b",
+    "requestedWebpSha256": "0a3c80427c77cb294c78b91dbac1343b356b05d2e768c81be3821f3bdf7ae781",
+    "exportPixels": [
+      360,
+      360
+    ],
+    "opaqueBoundingBox": [
+      24,
+      41,
+      336,
+      331
+    ],
+    "positionCss": [
+      10.399999618530273,
+      116.18517303466797,
+      369.1999816894531,
+      265.81951904296875
+    ],
+    "paintedSizeCss": [
+      230,
+      214
+    ],
+    "paintedRectCss": [
+      80,
+      146,
+      230,
+      214
+    ],
+    "panelCss": [
+      10.399999618530273,
+      442.73907470703125,
+      369.1999816894531,
+      272.47186279296875
+    ],
+    "enemyInfoTopCss": null,
+    "browserErrors": [],
+    "screenshot": "390/event-cart.jpg"
+  }
+]

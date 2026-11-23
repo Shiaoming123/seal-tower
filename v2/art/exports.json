@@ -28,5 +28,25 @@
     "file": "paper-doll.png",
     "sourceSha256": "f36fcda2ae2a51657080969d53890ef4912fb72cfaa73c29b17184e9d6472bb4",
     "webpSha256": "1bdaf31f7df59970648e9ff83a96f07b9e7f809f25531e5fda264bbc02d82ddc"
+  },
+  "fire-rat-attack": {
+    "file": "fire-rat-attack.png",
+    "sourceSha256": "1ae82556a80007503203a72f73f56cf3c2b2efd284568ecf896b3f854980c993",
+    "webpSha256": "c29cb9ab05df884c20700cdbece341f14b33119874eabecd0d937038973116b1"
+  },
+  "fire-rat": {
+    "file": "fire-rat.png",
+    "sourceSha256": "6418de1585af891753ba13ba260b96b62578ada8ffc73c6b8fe901e740c46c0b",
+    "webpSha256": "ba9fcf527a567c8c868817c2507b412ddfebca65a4218d5e185743f980778c10"
+  },
+  "stele-spirit": {
+    "file": "stele-spirit.png",
+    "sourceSha256": "67833ce80a73811ac1a5a141d23e440a28c4bd2c3127f23d98efdf8be9ecd4dc",
+    "webpSha256": "08b3c6753cc2c902dab9c65e170cca9b969426d9aa295b54c4d47c5d5940ff5b"
+  },
+  "event-cart": {
+    "file": "event-cart.png",
+    "sourceSha256": "383b24c90c94dc8b0904e46553e7981a94c55cf49a30f4a955b6871fb003727b",
+    "webpSha256": "0a3c80427c77cb294c78b91dbac1343b356b05d2e768c81be3821f3bdf7ae781"
   }
 }

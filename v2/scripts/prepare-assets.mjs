@@ -99,6 +99,8 @@ if (!requested.size) {
 }
 // Real art dropped into v2/art takes precedence over legacy sources.
 const edges = Object.fromEntries([...Object.entries(manifest).map(([id, [, e]]) => [id, e]), ...tints.map(([id, , e]) => [id, e])]);
+// Match the two fire-rat keyframes so Combat can swap them without a change in scale.
+edges["fire-rat-attack"] = edges["fire-rat"];
 const exportFile = path.join(artDir, "exports.json");
 const previousExports = await readFile(exportFile, "utf8").then(JSON.parse, (err) => {
   if (err.code !== "ENOENT") throw err;
@@ -107,7 +109,7 @@ const previousExports = await readFile(exportFile, "utf8").then(JSON.parse, (err
 const exports = requested.size ? { ...previousExports } : {};
 const digest = (data) => createHash("sha256").update(data).digest("hex");
 // Reserve space around tightly framed transparent cutouts without changing the export limit.
-const paddedSprites = new Set(["lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine"]);
+const paddedSprites = new Set(["lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine", "fire-rat", "fire-rat-attack", "stele-spirit", "event-cart"]);
 let overrides = 0;
 for (const { id, file } of overridesFromDisk) {
   if (requested.size && !requested.has(id)) continue;
@@ -122,6 +124,10 @@ for (const { id, file } of overridesFromDisk) {
   // Its in-game scale is height-based, so trim that surplus before applying the shared safety edge.
   const sprite = sharp(source);
   if (id === "ink-moth") sprite.trim({ background: "#00000000", threshold: 20 });
+  // Shared frame of both 1254×1254 fire-rat masters, keeping the paws and tail aligned.
+  if (id === "fire-rat" || id === "fire-rat-attack") {
+    sprite.extract({ left: 0, top: 120, width: 1254, height: 1062 });
+  }
   sprite.resize(extent, extent, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" });
   if (margin) sprite.extend({ top: margin, right: margin, bottom: margin, left: margin, background: "#00000000" });
   const output = await sprite.webp({ quality: 84, alphaQuality: 90, effort: 6 }).toBuffer();
