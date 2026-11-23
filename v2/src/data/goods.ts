@@ -28,6 +28,8 @@ export interface GoodDef {
   tags?: TagId[];
   use?: { label: string; heal?: number; maxHp?: number; bagRow?: boolean; oil?: number; inCombat: boolean };
   dim?: boolean;
+  /** Fragile goods: taking a hit with this in the bag may crack it into this cheaper good. */
+  fragile?: GoodId;
 }
 
 const V3: [number, number][] = [[0, 0], [0, 1], [0, 2]];
@@ -47,18 +49,20 @@ const list: GoodDef[] = [
   { id: "shell", tags: ["material"], kind: "goods", name: "墨壳", icon: "shell", shape: H2, price: 5, text: "书虱褪下的硬壳，刻印匠抢着要。" },
   { id: "knot", tags: ["material"], kind: "goods", name: "狐毛结", icon: "knot", shape: V2, price: 6, text: "黑狐身上扯下的毛结，能编护身绳。" },
   { id: "wick", tags: ["lamp"], kind: "goods", name: "灯芯", icon: "seal", shape: ONE, price: 6, text: "大妖体内还亮着的一截灯芯。燃芯的招式能把它烧成力气。" },
-  { id: "clasp", tags: ["material"], kind: "goods", name: "完整狐扣", icon: "clasp", shape: ONE, price: 10, text: "狐妖颈下的铜扣，完好无损。绯绡出高价收。" },
+  { id: "clasp", tags: ["material"], kind: "goods", name: "完整狐扣", icon: "clasp", shape: ONE, price: 10, fragile: "clasp-broken", text: "狐妖颈下的铜扣，完好无损。绯绡出高价收。易碎：挨打时可能磕碎。" },
   { id: "clasp-broken", kind: "goods", name: "碎狐扣", icon: "clasp", shape: ONE, price: 3, dim: true, text: "被重击打裂的狐扣，只能当废铜卖。" },
   { id: "redpaper", tags: ["material"], kind: "goods", name: "红纸", icon: "icon-redpaper", shape: ONE, price: 5, text: "纸人童身上没烧着的红纸。纸扎铺拿它扎新的灯笼。" },
   { id: "fur", tags: ["material"], kind: "goods", name: "火鼠毛", icon: "icon-fur", shape: ONE, price: 7, text: "火鼠背上的毛，烧不坏。裁缝拿来缝灯罩的里衬。" },
   { id: "inkdust", tags: ["material"], kind: "goods", name: "墨粉", icon: "icon-inkdust", shape: ONE, price: 6, text: "墨蛾翅上抖下来的粉，书院拿它研墨。" },
-  { id: "pearl", tags: ["material"], kind: "goods", name: "水珠", icon: "icon-pearl", shape: ONE, price: 9, text: "水鬼含在嘴里的珠子，夜里会发光。" },
+  { id: "pearl", tags: ["material"], kind: "goods", name: "水珠", icon: "icon-pearl", shape: ONE, price: 9, fragile: "pearl-cracked", text: "水鬼含在嘴里的珠子，夜里会发光。易碎：挨打时可能磕裂。" },
+  { id: "pearl-cracked", kind: "goods", name: "裂水珠", icon: "icon-pearl", shape: ONE, price: 4, dim: true, text: "磕出裂纹的水珠，光也暗了，只能便宜卖。" },
   { id: "rubbing", tags: ["material"], kind: "goods", name: "碑拓", icon: "icon-rubbing", shape: V2, price: 8, text: "从活过来的石碑上拓下的字。书院先生收。" },
   { id: "token", tags: ["material"], kind: "goods", name: "斩妖令", icon: "icon-token", shape: ONE, price: 12, text: "堕道者腰间的令牌。上面的名字，是一位失踪的斩妖人。" },
   { id: "shard", tags: ["material"], kind: "goods", name: "铜片", icon: "icon-shard", shape: ONE, price: 6, text: "铜傀身上掉下的铜片，铁匠拿它补锅。" },
   { id: "feather", tags: ["material"], kind: "goods", name: "枭羽", icon: "icon-feather", shape: V2, price: 8, text: "夜枭的翎羽。做成箭羽，射得又快又准。" },
   { id: "tail", tags: ["material"], kind: "goods", name: "白狐尾", icon: "icon-tail", shape: H2, price: 14, text: "假狐商的一条尾巴。绯绡说，这本来就不该长在它身上。" },
-  { id: "copper", kind: "goods", name: "钟铜", icon: "bell-item", shape: SQ, price: 16, text: "负钟君的碎钟片。镇长要它重铸镇塔钟。" },
+  { id: "copper", kind: "goods", name: "钟铜", icon: "bell-item", shape: SQ, price: 16, fragile: "copper-cracked", text: "负钟君的碎钟片。镇长要它重铸镇塔钟。易碎：挨打时可能磕裂。" },
+  { id: "copper-cracked", kind: "goods", name: "裂钟铜", icon: "bell-item", shape: SQ, price: 8, dim: true, text: "裂成两半的钟片，铸不了钟，只能当铜卖。" },
 
   // ---------- gear ----------
   { id: "sword", tags: ["blade"], kind: "gear", tier: 2, name: "照影剑", icon: "sword", tilt: [-45, 1.6], shape: V3, price: 14, cards: ["unison", "twin"],
@@ -98,7 +102,7 @@ const list: GoodDef[] = [
   { id: "pill", kind: "consumable", name: "养元丹", icon: "pouch", shape: ONE, price: 8,
     text: "吃下后最大气血 +5，并回复 5 气血。", use: { label: "服下 · 最大气血 +5", maxHp: 5, heal: 5, inCombat: false } },
   { id: "lining", kind: "consumable", name: "扩囊衬布", icon: "lining", shape: H2, price: 9,
-    text: "缝进行囊里，行囊多一行格子（最多 6 行）。", use: { label: "缝进行囊 · 多一行", bagRow: true, inCombat: false } },
+    text: "缝进行囊：选一块 4 格的形状（一字、拐角或方块），拼到行囊外沿你想要的位置。行囊最大 8×7、36 格。", use: { label: "缝进行囊 · 扩 4 格", bagRow: true, inCombat: false } },
 ];
 
 export type TagId = "blade" | "guard" | "lamp" | "coin" | "material";

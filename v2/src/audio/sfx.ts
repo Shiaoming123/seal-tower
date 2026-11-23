@@ -105,6 +105,13 @@ export const sfx = {
   harvest: () => { const s = fx(0.35); if (!s) return; pluck(s.d, s.t, 784, 0.35, "pipa"); pluck(s.d, s.t + 0.09, 1175, 0.3, "pipa"); },
   /** Oil drained / ash eaten: a bubbling gulp. */
   drain: () => { const s = fx(0.1); if (!s) return; for (let i = 0; i < 3; i++) osc(s.d, s.t + i * 0.06, { freq: rand(300, 500), slideTo: rand(700, 900), dur: 0.06, vol: 0.06 }); },
+  /** A fragile good cracks: a sharp tick and a falling glassy ring. */
+  crack: () => {
+    const s = fx(0.2); if (!s) return;
+    noiseHit(s.d, s.t, { dur: 0.04, vol: 0.2, type: "highpass", f0: 4000 });
+    metal(s.d, s.t + 0.01, rand(2200, 2600), [[1, 0.05, 0.3], [1.41, 0.03, 0.22], [2.3, 0.02, 0.15]]);
+    osc(s.d, s.t + 0.02, { freq: 1800, slideTo: 700, dur: 0.18, vol: 0.03, type: "triangle" });
+  },
   /** Burn tick: a crackle. */
   burn: () => { const s = fx(0.1); if (!s) return; for (let i = 0; i < 4; i++) noiseHit(s.d, s.t + i * rand(0.02, 0.05), { dur: 0.04, vol: 0.12, f0: rand(2000, 5000), q: 3 }); },
 };

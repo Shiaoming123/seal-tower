@@ -46,7 +46,20 @@ export function sellItem(run: RunState, uid: number): number {
   return price;
 }
 
-export const MAX_BAG_ROWS = 6;
+// ---------------------------------------------------------------- expansion (扩囊衬布)
+
+/** Can a 扩囊衬布 still add anything? */
+export const canExpand = (run: RunState) => !!bag.autoPiece(run.bag, "square") || !!bag.autoPiece(run.bag, "line") || !!bag.autoPiece(run.bag, "ell");
+
+/** Sew a lining piece onto the bag at the given cells (from bag.pieceCells), using up the lining item. */
+export function sewPiece(run: RunState, uid: number, cells: [number, number][]): string | null {
+  const it = run.bag.items.find((i) => i.uid === uid);
+  if (!it || !GOODS[it.id].use?.bagRow || run.combat) return null;
+  // The cloth itself comes out of the bag first, so its own cells are free when checking the piece.
+  bag.removeUid(run.bag, uid);
+  if (!bag.expand(run.bag, cells)) { run.bag.items.push(it); return null; }
+  return `行囊多了 ${cells.length} 格（现在 ${bag.cellCount(run.bag)} 格）。`;
+}
 
 // ---------------------------------------------------------------- side pouch (侧袋)
 
@@ -98,13 +111,16 @@ export function useItem(run: RunState, uid: number): string | null {
   const item = run.bag.items.find((it) => it.uid === uid);
   const use = item && GOODS[item.id].use;
   if (!item || !use) return null;
-  if (use.bagRow && run.bag.h >= MAX_BAG_ROWS) return null;
+  if (use.bagRow) {
+    // Without a chosen spot (the bot, old buttons), sew the first piece that fits along the bottom.
+    const cells = bag.autoPiece(run.bag, "line") ?? bag.autoPiece(run.bag, "square") ?? bag.autoPiece(run.bag, "ell");
+    return cells ? sewPiece(run, uid, cells) : null;
+  }
   if (use.oil && run.oil >= run.maxOil) return null;
   bag.removeUid(run.bag, uid);
   const lines: string[] = [];
   if (use.maxHp) { run.maxHp += use.maxHp; lines.push(`最大气血 +${use.maxHp}`); }
   if (use.heal) { const a = Math.min(use.heal, run.maxHp - run.hp); run.hp += a; lines.push(`回复 ${a} 气血`); }
-  if (use.bagRow) { run.bag.h += 1; lines.push("行囊多了一行"); }
   if (use.oil) { const a = Math.min(use.oil, run.maxOil - run.oil); run.oil += a; lines.push(`灯油 +${a}`); }
   return lines.join("，") + "。";
 }

@@ -29,11 +29,21 @@ export function occupancy(bag: Bag, ignoreUid = -1): number[] {
   return grid;
 }
 
+/** Is this cell part of the bag (inside the box and not a hole)? */
+export function usable(bag: Pick<Bag, "w" | "h" | "holes">, x: number, y: number): boolean {
+  return x >= 0 && y >= 0 && x < bag.w && y < bag.h && !bag.holes?.includes(y * bag.w + x);
+}
+
+/** Number of cells in the bag. */
+export function cellCount(bag: Pick<Bag, "w" | "h" | "holes">): number {
+  return bag.w * bag.h - (bag.holes?.length ?? 0);
+}
+
 export function fits(bag: Bag, id: GoodId, x: number, y: number, rot: number, ignoreUid = -1): boolean {
   const grid = occupancy(bag, ignoreUid);
   return shapeOf(id, rot).every(([dx, dy]) => {
     const cx = x + dx, cy = y + dy;
-    return cx >= 0 && cy >= 0 && cx < bag.w && cy < bag.h && grid[cy * bag.w + cx] === 0;
+    return usable(bag, cx, cy) && grid[cy * bag.w + cx] === 0;
   });
 }
 
@@ -97,7 +107,7 @@ export function cheapest(bag: Bag): PlacedGood | null {
 /** Try every item in a fresh layout (largest first). Used by "auto pack". Returns false if not all fit. */
 export function autoPack(bag: Bag): boolean {
   const items = [...bag.items].sort((a, b) => GOODS[b.id].shape.length - GOODS[a.id].shape.length);
-  const fresh: Bag = { w: bag.w, h: bag.h, items: [] };
+  const fresh: Bag = { w: bag.w, h: bag.h, holes: bag.holes, items: [] };
   for (const it of items) {
     const spot = findSpot(fresh, it.id);
     if (!spot) return false;
@@ -121,12 +131,73 @@ export function tagLevel(bag: Bag, tag: TagId): number {
 }
 
 /** Cells an accessory reaches when its footprint sits at the given cells (the 8 around it, inside the bag). */
-export function auraCells(bag: Pick<Bag, "w" | "h">, cells: [number, number][]): [number, number][] {
+export function auraCells(bag: Pick<Bag, "w" | "h" | "holes">, cells: [number, number][]): [number, number][] {
   const own = new Set(cells.map(([x, y]) => `${x},${y}`));
   const out = new Map<string, [number, number]>();
   for (const [x, y] of cells) for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
     const cx = x + dx, cy = y + dy, k = `${cx},${cy}`;
-    if (cx >= 0 && cy >= 0 && cx < bag.w && cy < bag.h && !own.has(k)) out.set(k, [cx, cy]);
+    if (usable(bag, cx, cy) && !own.has(k)) out.set(k, [cx, cy]);
   }
   return [...out.values()];
+}
+
+// ---------------------------------------------------------------- free-form expansion (扩囊衬布)
+
+/** Expansion pieces: four cells each, rotated like items. */
+export const EXPAND_SHAPES: Record<"line" | "ell" | "square", { name: string; cells: [number, number][] }> = {
+  line: { name: "一字", cells: [[0, 0], [1, 0], [2, 0], [3, 0]] },
+  ell: { name: "拐角", cells: [[0, 0], [0, 1], [0, 2], [1, 2]] },
+  square: { name: "方块", cells: [[0, 0], [1, 0], [0, 1], [1, 1]] },
+};
+export type ExpandShape = keyof typeof EXPAND_SHAPES;
+/** The bag can't grow past this box or this many cells. */
+export const MAX_W = 8, MAX_H = 7, MAX_CELLS = 36;
+
+/** Cells of an expansion piece placed with its top-left at (x, y) after `rot` quarter turns (may be outside the box). */
+export function pieceCells(shape: ExpandShape, rot: number, x: number, y: number): [number, number][] {
+  let cells = EXPAND_SHAPES[shape].cells.map(([cx, cy]) => [cx, cy] as [number, number]);
+  for (let i = 0; i < ((rot % 4) + 4) % 4; i++) cells = cells.map(([cx, cy]) => [-cy, cx] as [number, number]);
+  const minX = Math.min(...cells.map((c) => c[0])), minY = Math.min(...cells.map((c) => c[1]));
+  return cells.map(([cx, cy]) => [cx - minX + x, cy - minY + y]);
+}
+
+/**
+ * Why a piece can't go there, or null if it can: every cell must be new (outside the bag or filling a hole),
+ * at least one must touch the bag edge-on, and the bag must stay within MAX_W × MAX_H and MAX_CELLS.
+ */
+export function expandProblem(bag: Bag, cells: [number, number][]): string | null {
+  if (cells.some(([x, y]) => usable(bag, x, y))) return "要拼在行囊外面，不能盖住已有的格子";
+  const touches = cells.some(([x, y]) => [[1, 0], [-1, 0], [0, 1], [0, -1]].some(([dx, dy]) => usable(bag, x + dx, y + dy)));
+  if (!touches) return "要贴着行囊的边缝上去";
+  const xs = [0, bag.w - 1, ...cells.map((c) => c[0])], ys = [0, bag.h - 1, ...cells.map((c) => c[1])];
+  if (Math.max(...xs) - Math.min(...xs) + 1 > MAX_W || Math.max(...ys) - Math.min(...ys) + 1 > MAX_H) return `行囊最大 ${MAX_W}×${MAX_H}，这里放不开`;
+  if (cellCount(bag) + cells.length > MAX_CELLS) return `行囊最多 ${MAX_CELLS} 格`;
+  return null;
+}
+
+/** Sew a piece on. Grows the box (shifting items if it grew left or up) and records the new holes. */
+export function expand(bag: Bag, cells: [number, number][]): boolean {
+  if (expandProblem(bag, cells)) return false;
+  const minX = Math.min(0, ...cells.map((c) => c[0])), minY = Math.min(0, ...cells.map((c) => c[1]));
+  const maxX = Math.max(bag.w - 1, ...cells.map((c) => c[0])), maxY = Math.max(bag.h - 1, ...cells.map((c) => c[1]));
+  const w = maxX - minX + 1, h = maxY - minY + 1;
+  const added = new Set(cells.map(([x, y]) => `${x},${y}`));
+  const holes: number[] = [];
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    const ox = x + minX, oy = y + minY;
+    if (!usable(bag, ox, oy) && !added.has(`${ox},${oy}`)) holes.push(y * w + x);
+  }
+  for (const it of bag.items) { it.x -= minX; it.y -= minY; }
+  bag.w = w; bag.h = h;
+  if (holes.length) bag.holes = holes; else delete bag.holes;
+  return true;
+}
+
+/** First legal placement of a piece, preferring the bottom edge (used by the bot and "auto sew"). */
+export function autoPiece(bag: Bag, shape: ExpandShape = "line"): [number, number][] | null {
+  for (let y = bag.h; y >= -3; y--) for (const rot of [0, 1, 2, 3]) for (let x = -3; x <= bag.w; x++) {
+    const cells = pieceCells(shape, rot, x, y);
+    if (!expandProblem(bag, cells)) return cells;
+  }
+  return null;
 }

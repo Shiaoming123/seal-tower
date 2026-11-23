@@ -4,7 +4,7 @@ import { GOODS } from "../data/goods";
 import * as bag from "./bag";
 import { addGood } from "./inventory";
 import { discover } from "./discover";
-import { type RngState, int, makeRng, shuffle } from "./rng";
+import { type RngState, chance, int, makeRng, shuffle } from "./rng";
 import type { CardInst, CombatState, EnemyState, Entity, FightKind, GoodId, Intent, RunState, StatusId } from "./types";
 
 export type CombatEvent =
@@ -17,6 +17,7 @@ export type CombatEvent =
   | { t: "phase"; text: string }
   | { t: "heal"; amount: number }
   | { t: "goods"; good: GoodId; gained: boolean }
+  | { t: "crack"; good: GoodId; into: GoodId }
   | { t: "thorns"; amount: number; target?: "player" }
   | { t: "intent" }
   | { t: "fled" }
@@ -374,6 +375,7 @@ export function endTurn(run: RunState): CombatEvent[] {
       if (through === 0 && !c.over) c.fullBlocks++;
       if (through > 0 && !c.over) drain(run, c, i, events);
       if (i.steal && through > 0 && !c.over) steal(run, c, events);
+      if (through > 0 && !c.over) crack(run, c, events);
     }
     if (i.apply && !c.over) {
       c.status[i.apply.status] = (c.status[i.apply.status] ?? 0) + i.apply.n;
@@ -389,6 +391,21 @@ export function endTurn(run: RunState): CombatEvent[] {
   events.push({ t: "intent" });
   startTurn(run, events);
   return events;
+}
+
+/**
+ * Fragile goods (完整狐扣, 水珠, 钟铜) may crack when a hit gets through: each one has a 25% chance, unless it
+ * sits next to a 镇货符 or you played 护货 this turn. Cracked goods keep their place in the bag.
+ */
+export const CRACK_CHANCE = 0.25;
+function crack(run: RunState, c: CombatState, events: CombatEvent[]) {
+  if (c.status.ward) return;
+  for (const it of run.bag.items) {
+    const into = GOODS[it.id].fragile;
+    if (!into || bag.auraOn(run.bag, it, "ward") || !chance(c.rng, CRACK_CHANCE)) continue;
+    events.push({ t: "crack", good: it.id, into });
+    it.id = into;
+  }
 }
 
 /** Oil, ash and coin thieves take their cut when an attack gets through. */

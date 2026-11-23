@@ -5,7 +5,7 @@ import { EVENTS } from "../src/data/events";
 import * as bag from "../src/game/bag";
 import { endTurn, playCard, startCombat } from "../src/game/combat";
 import { distances, findPath, generate, idx, revealAll } from "../src/game/dungeon";
-import { addGood, fromPouch, sellPouch, toPouch } from "../src/game/inventory";
+import { addGood, fromPouch, sellPouch, sewPiece, toPouch, useItem } from "../src/game/inventory";
 import { createRun, winCombat } from "../src/game/run";
 import { makeRng } from "../src/game/rng";
 import type { Entity, FloorNo, RunState } from "../src/game/types";
@@ -578,5 +578,96 @@ describe("bag sets and side pouch (GAME-003A)", () => {
     expect(bag.auraCells({ w: 5, h: 4 }, [[0, 0]]).length).toBe(3);
     expect(bag.auraCells({ w: 5, h: 4 }, [[2, 1]]).length).toBe(8);
     expect(bag.auraCells({ w: 5, h: 4 }, [[2, 1], [2, 2]]).length).toBe(10);
+  });
+});
+
+describe("free-form bag and fragile goods (GAME-003C)", () => {
+  const fresh = () => ({ w: 5, h: 4, items: [] as RunState["bag"]["items"] });
+
+  it("items can't go into holes", () => {
+    const b = { ...fresh(), holes: [0] };
+    expect(bag.usable(b, 0, 0)).toBe(false);
+    expect(bag.fits(b, "ash", 0, 0, 0)).toBe(false);
+    expect(bag.fits(b, "ash", 1, 0, 0)).toBe(true);
+    expect(bag.findSpot(b, "ash")).toEqual({ x: 1, y: 0, rot: 0 });
+    expect(bag.cellCount(b)).toBe(19);
+  });
+
+  it("a piece sewn to the right grows the bag and leaves holes where nothing was added", () => {
+    const b = fresh();
+    const cells = bag.pieceCells("square", 0, 5, 1);
+    expect(bag.expandProblem(b, cells)).toBeNull();
+    expect(bag.expand(b, cells)).toBe(true);
+    expect([b.w, b.h]).toEqual([7, 4]);
+    expect(bag.cellCount(b)).toBe(24);
+    expect(bag.usable(b, 5, 0)).toBe(false);
+    expect(bag.usable(b, 6, 2)).toBe(true);
+  });
+
+  it("growing left or up shifts the items so they stay put relative to the bag", () => {
+    const b = fresh();
+    b.items.push({ uid: 1, id: "ash", x: 0, y: 0, rot: 0 });
+    expect(bag.expand(b, bag.pieceCells("line", 0, 0, -1))).toBe(true);
+    expect([b.w, b.h]).toEqual([5, 5]);
+    expect(b.items[0]).toMatchObject({ x: 0, y: 1 });
+    expect(bag.usable(b, 4, 0)).toBe(false);
+    expect(bag.expand(b, bag.pieceCells("ell", 0, -1, 1))).toBe(false); // its last cell would cover (0, 3)
+    expect(bag.expand(b, bag.pieceCells("ell", 0, -2, 1))).toBe(true);
+    expect(b.w).toBe(7);
+    expect(b.items[0]).toMatchObject({ x: 2, y: 1 });
+  });
+
+  it("refuses pieces that overlap, float free or make the bag too big", () => {
+    const b = fresh();
+    expect(bag.expandProblem(b, bag.pieceCells("line", 0, 1, 0))).toMatch(/盖住/);
+    expect(bag.expandProblem(b, bag.pieceCells("line", 0, 0, 6))).toMatch(/贴着/);
+    expect(bag.expandProblem(b, bag.pieceCells("line", 0, 5, 0))).toMatch(/最大/);
+  });
+
+  it("the lining sews four cells on (auto placement when no spot is chosen)", () => {
+    const run = createRun(31, "sword", "lamp");
+    addGood(run, "lining");
+    const before = bag.cellCount(run.bag);
+    const uid = run.bag.items.find((i) => i.id === "lining")!.uid;
+    expect(useItem(run, uid)).toMatch(/多了 4 格/);
+    expect(bag.cellCount(run.bag)).toBe(before + 4);
+    expect(run.bag.items.some((i) => i.id === "lining")).toBe(false);
+  });
+
+  it("a chosen spot is used as given, and a bad one leaves the lining in the bag", () => {
+    const run = createRun(32, "sword", "lamp");
+    addGood(run, "lining");
+    const uid = run.bag.items.find((i) => i.id === "lining")!.uid;
+    expect(sewPiece(run, uid, bag.pieceCells("line", 0, 1, 0))).toBeNull();
+    expect(run.bag.items.some((i) => i.uid === uid)).toBe(true);
+    expect(sewPiece(run, uid, bag.pieceCells("line", 1, 5, 0))).toMatch(/多了 4 格/);
+    expect([run.bag.w, run.bag.h]).toEqual([6, 4]);
+  });
+
+  it("fragile goods may crack when a hit gets through, but not under 护货", () => {
+    const hit = (ward: boolean) => {
+      const run = createRun(34, "sword", "lamp");
+      for (let i = 0; i < 8; i++) addGood(run, "pearl");
+      const c = fightWith(run, "louse");
+      handOf(run, []);
+      c.block = 0;
+      if (ward) c.status.ward = 1;
+      // Make sure the louse attacks this turn.
+      c.enemy.intent = { key: "bite", name: "咬", dmg: 5 };
+      endTurn(run);
+      return bag.count(run.bag, "pearl-cracked");
+    };
+    expect(hit(false)).toBeGreaterThan(0);
+    expect(hit(true)).toBe(0);
+  });
+
+  it("orders only take intact goods", async () => {
+    const { orderProgress } = await import("../src/game/run");
+    const run = createRun(34, "sword", "lamp");
+    run.orders = [{ id: "clasp", level: 0, done: false }];
+    addGood(run, "clasp-broken");
+    expect(orderProgress(run).ready).toBe(false);
+    addGood(run, "clasp");
+    expect(orderProgress(run).ready).toBe(true);
   });
 });

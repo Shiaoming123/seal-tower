@@ -193,6 +193,7 @@ export function Combat() {
       else if (e.t === "interrupt") { sfx.interrupt(); setBanner(`打断了！${c.enemy.name}的蓄力落空。`); float("打断", "warn", "enemy"); await wait(300); }
       else if (e.t === "phase") { sfx.gong(); setBanner(e.text); await wait(700); }
       else if (e.t === "heal") { if (e.amount) float(`+${e.amount}`, "heal", "player"); }
+      else if (e.t === "crack") { sfx.crack(); float(`${GOODS[e.good].name}磕坏了`, "warn", "player"); }
       else if (e.t === "goods") float(`${e.gained ? "+" : "烧掉 "}${GOODS[e.good].name}`, e.gained ? "heal" : "status", "player");
       else if (e.t === "thorns") { if (e.target === "player") float(`被扎 ${e.amount}`, "hurt", "player"); else float(`回敬 ${e.amount}`, "status-self", "enemy"); }
       else if (e.t === "drain") { sfx.drain(); float(e.what === "oil" ? `灯油 -${e.amount}` : e.what === "ash" ? `被吃掉 ${e.amount} 份灯灰` : `被收走 ${e.amount} 石`, "warn", "player"); }

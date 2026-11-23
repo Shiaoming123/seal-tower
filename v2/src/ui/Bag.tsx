@@ -3,7 +3,7 @@ import { sfx } from "../audio/sfx";
 import { CARDS } from "../data/cards";
 import { GOODS, KIND_LABEL, TAGS, TAG_IDS } from "../data/goods";
 import * as bag from "../game/bag";
-import { MAX_BAG_ROWS, POUCH_SLOTS, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
+import { POUCH_SLOTS, canExpand, sewPiece, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
 import type { GoodId, RunState } from "../game/types";
 import { ART } from "../render/assets";
 import { commit, overlay, say, useRun } from "./store";
@@ -37,6 +37,8 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
   const [ghost, setGhost] = useState<{ x: number; y: number } | null>(null);
   const moved = useRef(false);
   const [confirmSell, setConfirmSell] = useState<number | null>(null);
+  /** Sewing a 扩囊衬布 on: the lining item's uid while the expander is open. */
+  const [sewing, setSewing] = useState<number | null>(null);
 
   const cellAt = (cx: number, cy: number) => {
     const r = gridRef.current!.getBoundingClientRect();
@@ -103,11 +105,15 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
     say("这里转不开，先挪一挪别的东西");
   };
 
+  if (sewing !== null && run.bag.items.some((i) => i.uid === sewing)) {
+    return <div class={`bag-wrap mode-${mode}`}><BagExpander run={run} uid={sewing} onDone={() => { setSewing(null); setSelected(null); }} /></div>;
+  }
+
   return (
     <div class={`bag-wrap mode-${mode}`}>
-      <div class="bag-grid" ref={gridRef} style={{ width: `${b.w * cell}px`, height: `${b.h * cell}px`, "--cell": `${cell}px` } as never}
+      <div class={`bag-grid ${b.holes?.length ? "irregular" : ""}`} ref={gridRef} style={{ width: `${b.w * cell}px`, height: `${b.h * cell}px`, "--cell": `${cell}px` } as never}
         onContextMenu={(e) => { e.preventDefault(); if (held) setHeld({ ...held, rot: (held.rot + 1) % 4 }); else rotateSelected(); }}>
-        {Array.from({ length: b.w * b.h }, (_, i) => <div class="cell" style={{ left: `${(i % b.w) * cell}px`, top: `${Math.floor(i / b.w) * cell}px` }} />)}
+        {Array.from({ length: b.w * b.h }, (_, i) => bag.usable(b, i % b.w, Math.floor(i / b.w)) && <div class="cell" style={{ left: `${(i % b.w) * cell}px`, top: `${Math.floor(i / b.w) * cell}px` }} />)}
         {reach.map(([x, y]) => <div class="cell reach" style={{ left: `${x * cell}px`, top: `${y * cell}px` }} />)}
         {preview && preview.cells.map(([x, y]) => <div class={`cell preview ${preview.ok ? "ok" : "bad"}`} style={{ left: `${x * cell}px`, top: `${y * cell}px` }} />)}
         {b.items.map((it) => {
@@ -145,7 +151,7 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
           <span>R 旋转</span>
         </div>
       )}
-      {mode === "manage" && <ItemDetails run={run} uid={sel?.uid ?? null} onRotate={rotateSelected} onDone={() => setSelected(null)} />}
+      {mode === "manage" && <ItemDetails run={run} uid={sel?.uid ?? null} onRotate={rotateSelected} onDone={() => setSelected(null)} onSew={setSewing} />}
       <div class="bag-side">
         {mode !== "sell" && <TagSets run={run} />}
         {(mode !== "sell" || run.pouch.length > 0) && <Pouch run={run} mode={mode} held={held} onDrag={(index, e) => startDrag({ from: "pouch", index, id: run.pouch[index], rot: 0 }, e)} />}
@@ -170,12 +176,12 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
   );
 }
 
-function ItemDetails({ run, uid, onRotate, onDone }: { run: RunState; uid: number | null; onRotate: () => void; onDone: () => void }) {
+function ItemDetails({ run, uid, onRotate, onDone, onSew }: { run: RunState; uid: number | null; onRotate: () => void; onDone: () => void; onSew: (uid: number) => void }) {
   const it = run.bag.items.find((i) => i.uid === uid);
   if (!it) return <div class="item-details empty"><p>点一件东西看详情。拖动可以挪位置，右键或 R 旋转。</p></div>;
   const g = GOODS[it.id];
   const inCombat = run.screen === "combat";
-  const canUse = g.use && (g.use.inCombat || !inCombat) && !(g.use.bagRow && run.bag.h >= MAX_BAG_ROWS);
+  const canUse = g.use && (g.use.inCombat || !inCombat) && !(g.use.bagRow && !canExpand(run));
   return (
     <div class="item-details">
       <div class="det-head"><img src={ART[g.icon]} alt="" /><div><b>{g.name}</b><span>{KIND_LABEL[g.kind]} · 售价 {g.price} 石</span></div></div>
@@ -186,7 +192,11 @@ function ItemDetails({ run, uid, onRotate, onDone }: { run: RunState; uid: numbe
       {!g.aura && <AuraLine run={run} uid={it.uid} />}
       {g.tags && <p class="det-tags">{g.tags.map((t) => `「${TAGS[t].name}」${TAGS[t].at[0]} 件：${TAGS[t].text[0]}；${TAGS[t].at[1]} 件：${TAGS[t].text[1]}`).join("　")}</p>}
       <div class="row">
-        {canUse && <button type="button" class="btn small primary" onClick={() => { const r = useItem(run, it.uid); if (r) { sfx.coin(); say(r); onDone(); commit(); } }}>{g.use!.label}</button>}
+        {canUse && <button type="button" class="btn small primary" onClick={() => {
+          if (g.use!.bagRow) { onSew(it.uid); return; }
+          const r = useItem(run, it.uid); if (r) { sfx.coin(); say(r); onDone(); commit(); }
+        }}>{g.use!.label}</button>}
+        {g.use?.bagRow && !canExpand(run) && <span class="muted">行囊已经到最大了</span>}
         <button type="button" class="btn small" onClick={onRotate}>旋转</button>
         {!inCombat && <button type="button" class="btn small" disabled={pouchFull(run)} onClick={() => { if (toPouch(run, it.uid)) { sfx.click(); onDone(); commit(); } }}>放进侧袋</button>}
         <button type="button" class="btn small ghost" onClick={() => { unpack(run, it.uid); onDone(); commit(); }}>拿出来</button>
@@ -200,10 +210,11 @@ export function BagOverlay() {
   return (
     <div class="overlay" onClick={(e) => { if (e.target === e.currentTarget) overlay.value = null; }}>
       <div class="overlay-box bag-box">
-        <header><h2>行囊 <small>{run.bag.w}×{run.bag.h} 格 · 货值 {bag.value(run.bag)} 石</small></h2>
+        <header><h2>行囊 <small>{bag.cellCount(run.bag)} 格 · 货值 {bag.value(run.bag)} 石</small></h2>
           <button type="button" class="btn small" onClick={() => (overlay.value = null)}>关闭 <kbd>Esc</kbd></button></header>
         <p class="muted">装备（青框）放在行囊里，它的牌就会进入牌组。货物（金框）可以卖、交委托，或被某些牌烧掉。</p>
-        <BagGrid mode="manage" />
+        {/* Tall bags (after sewing on pieces) use slightly smaller cells so the overlay still fits. */}
+        <BagGrid mode="manage" cell={run.bag.h > 6 ? 56 : 64} />
       </div>
     </div>
   );
@@ -292,6 +303,70 @@ function Pouch({ run, mode, held, onDrag }: { run: RunState; mode: "manage" | "s
           );
         })}
       </div>
+    </div>
+  );
+}
+
+const SEW_CELL = 36;
+
+/**
+ * Sewing a 扩囊衬布 on: pick a 4-cell piece, rotate it, and put it anywhere on the bag's outside edge.
+ * Hover (or tap) shows where it would go; click (or tap the same spot again) sews it on.
+ */
+function BagExpander({ run, uid, onDone }: { run: RunState; uid: number; onDone: () => void }) {
+  const b = run.bag;
+  const [shape, setShape] = useState<bag.ExpandShape>("line");
+  const [rot, setRot] = useState(0);
+  const [at, setAt] = useState<{ x: number; y: number } | null>(null);
+  // The area you can sew into: as far as the bag may grow in every direction.
+  const x0 = b.w - bag.MAX_W, y0 = b.h - bag.MAX_H, rw = 2 * bag.MAX_W - b.w, rh = 2 * bag.MAX_H - b.h;
+  const cells = at ? bag.pieceCells(shape, rot, at.x, at.y) : [];
+  // The lining itself leaves the bag when sewn, so check against the bag without it.
+  const without = { ...b, items: b.items.filter((i) => i.uid !== uid) };
+  const problem = at ? bag.expandProblem(without, cells) : null;
+  const sew = () => {
+    if (!at || problem) return;
+    const r = sewPiece(run, uid, cells);
+    if (r) { sfx.coin(); say(r); commit(); onDone(); }
+  };
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "r" || e.key === "R") setRot((r) => (r + 1) % 4);
+      if (e.key === "Escape") { e.stopImmediatePropagation(); onDone(); }
+    };
+    window.addEventListener("keydown", onKey, true);
+    return () => window.removeEventListener("keydown", onKey, true);
+  }, []);
+  const pos = (x: number, y: number) => ({ left: `${(x - x0) * SEW_CELL}px`, top: `${(y - y0) * SEW_CELL}px` });
+  return (
+    <div class="bag-expander">
+      <div class="sew-head">
+        <b>缝扩囊衬布</b>
+        <span>选一块形状，拼到行囊外沿。行囊最大 {bag.MAX_W}×{bag.MAX_H}、{bag.MAX_CELLS} 格（现在 {bag.cellCount(b)} 格）。</span>
+      </div>
+      <div class="row sew-tools">
+        {(Object.keys(bag.EXPAND_SHAPES) as bag.ExpandShape[]).map((k) => (
+          <button type="button" class={`btn small ${shape === k ? "primary" : ""}`} onClick={() => setShape(k)}>{bag.EXPAND_SHAPES[k].name}</button>
+        ))}
+        <button type="button" class="btn small" onClick={() => setRot((r) => (r + 1) % 4)}>旋转 <kbd>R</kbd></button>
+        <button type="button" class="btn small ghost" onClick={onDone}>先不缝</button>
+      </div>
+      <div class="sew-area" style={{ width: `${rw * SEW_CELL}px`, height: `${rh * SEW_CELL}px` }}
+        onContextMenu={(e) => { e.preventDefault(); setRot((r) => (r + 1) % 4); }}>
+        {Array.from({ length: rw * rh }, (_, i) => {
+          const x = x0 + (i % rw), y = y0 + Math.floor(i / rw);
+          const inBag = bag.usable(b, x, y);
+          return <div class={`sew-cell ${inBag ? "in" : "out"}`} style={pos(x, y)}
+            onPointerEnter={() => setAt({ x, y })}
+            onClick={() => { if (at && at.x === x && at.y === y) sew(); else setAt({ x, y }); }} />;
+        })}
+        {b.items.filter((i) => i.uid !== uid).map((it) => {
+          const size = bag.sizeOf(it.id, it.rot);
+          return <img class="sew-item" src={ART[GOODS[it.id].icon]} alt="" style={{ ...pos(it.x, it.y), width: `${size.w * SEW_CELL}px`, height: `${size.h * SEW_CELL}px` }} />;
+        })}
+        {cells.map(([x, y]) => <div class={`sew-cell piece ${problem ? "bad" : "ok"}`} style={pos(x, y)} />)}
+      </div>
+      <p class={`sew-hint ${problem ? "bad" : ""}`}>{!at ? "把鼠标移到行囊外面看看能拼在哪；手机上点一下预览，再点一下缝上。" : problem ?? "可以缝在这里：点一下缝上。"}</p>
     </div>
   );
 }

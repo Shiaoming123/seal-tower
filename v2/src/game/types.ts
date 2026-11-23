@@ -2,7 +2,7 @@ import type { RngState } from "./rng";
 
 export type WeaponId = "sword" | "shield" | "lamp" | "abacus";
 export type GoodId =
-  | "ash" | "fang" | "silk" | "shell" | "knot" | "wick" | "clasp" | "clasp-broken" | "copper"
+  | "ash" | "fang" | "silk" | "shell" | "knot" | "wick" | "clasp" | "clasp-broken" | "copper" | "copper-cracked" | "pearl-cracked"
   | "redpaper" | "fur" | "inkdust" | "pearl" | "rubbing" | "token" | "shard" | "feather" | "tail"
   | "sword" | "shield" | "lamp" | "ironsword" | "hook" | "mirror" | "abacus" | "bell" | "purse"
   | "whetstone" | "amulet" | "oilpot" | "luckybag" | "wardcharm"
@@ -20,7 +20,12 @@ export interface CardInst {
 }
 
 export interface PlacedGood { uid: number; id: GoodId; x: number; y: number; rot: number }
-export interface Bag { w: number; h: number; items: PlacedGood[] }
+/**
+ * The bag is a w×h box; `holes` lists cells inside it that aren't part of the bag (y * w + x). A plain
+ * rectangle has none. Sewing in expansion pieces grows the box and leaves holes where nothing was added.
+ */
+export interface Bag { w: number; h: number; items: PlacedGood[]; holes?: number[] }
+
 
 /** One enemy action. Every field is optional so a move can mix attack, block, buff and debuff. */
 export interface Intent {
