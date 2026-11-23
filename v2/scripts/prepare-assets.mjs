@@ -107,7 +107,7 @@ const previousExports = await readFile(exportFile, "utf8").then(JSON.parse, (err
 const exports = requested.size ? { ...previousExports } : {};
 const digest = (data) => createHash("sha256").update(data).digest("hex");
 // Reserve space around tightly framed transparent cutouts without changing the export limit.
-const paddedSprites = new Set(["lantern-spirit", "water-ghost", "event-peddler"]);
+const paddedSprites = new Set(["lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine"]);
 let overrides = 0;
 for (const { id, file } of overridesFromDisk) {
   if (requested.size && !requested.has(id)) continue;
@@ -118,7 +118,11 @@ for (const { id, file } of overridesFromDisk) {
   const source = await readFile(path.join(artDir, file));
   const margin = paddedSprites.has(id) ? Math.round(edge * .05) : 0;
   const extent = edge - margin * 2;
-  const sprite = sharp(source).resize(extent, extent, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" });
+  // The square ink-moth master has large transparent top and bottom margins.
+  // Its in-game scale is height-based, so trim that surplus before applying the shared safety edge.
+  const sprite = sharp(source);
+  if (id === "ink-moth") sprite.trim({ background: "#00000000", threshold: 20 });
+  sprite.resize(extent, extent, { fit: "inside", withoutEnlargement: true, kernel: "lanczos3" });
   if (margin) sprite.extend({ top: margin, right: margin, bottom: margin, left: margin, background: "#00000000" });
   const output = await sprite.webp({ quality: 84, alphaQuality: 90, effort: 6 }).toBuffer();
   await writeFile(path.join(out, id + ".webp"), output);

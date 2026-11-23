@@ -13,5 +13,20 @@
     "file": "water-ghost.png",
     "sourceSha256": "468cf8231066353c715792185149ed4a70f7805e871d3aaa2fa9bb5475e29f8d",
     "webpSha256": "8e5c99c7bbf30294d013f64117d316c0564c4432a7df44e94508352c8e6a25bc"
+  },
+  "event-shrine": {
+    "file": "event-shrine.png",
+    "sourceSha256": "4a3f08d8cfad544295a02b5c95551f30197e0650fda5b7b35ad7794785b6c8a4",
+    "webpSha256": "90a9bff81edca3cbe9dc318999325abf1b52e39e99c02802faf1b57ec161bc21"
+  },
+  "ink-moth": {
+    "file": "ink-moth.png",
+    "sourceSha256": "5aa04be933475f788a22fb027fd7cf4a2e9b6cb3b421d0f8fac55a88e2db586a",
+    "webpSha256": "296753c1fe235919c59dc5823de07438b8374b897d3fb71441cf1fd4d67cffec"
+  },
+  "paper-doll": {
+    "file": "paper-doll.png",
+    "sourceSha256": "f36fcda2ae2a51657080969d53890ef4912fb72cfaa73c29b17184e9d6472bb4",
+    "webpSha256": "1bdaf31f7df59970648e9ff83a96f07b9e7f809f25531e5fda264bbc02d82ddc"
   }
 }

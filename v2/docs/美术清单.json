@@ -142,10 +142,10 @@
         "敌怪·纸人童"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "fire-rat",
@@ -166,10 +166,10 @@
         "敌怪·墨蛾"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "water-ghost",
@@ -965,10 +965,10 @@
         "事件·灯神龛"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：描金盒",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "event-pool",

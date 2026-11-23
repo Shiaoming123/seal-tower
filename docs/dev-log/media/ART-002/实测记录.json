@@ -1,0 +1,176 @@
+[
+  {
+    "viewport": [
+      1280,
+      720
+    ],
+    "floor": 1,
+    "entity": "paper-doll",
+    "asset": "paper-doll",
+    "sourceSha256": "f36fcda2ae2a51657080969d53890ef4912fb72cfaa73c29b17184e9d6472bb4",
+    "requestedWebpSha256": "1bdaf31f7df59970648e9ff83a96f07b9e7f809f25531e5fda264bbc02d82ddc",
+    "exportPixels": [
+      369,
+      400
+    ],
+    "opaqueBoundingBox": [
+      28,
+      26,
+      341,
+      373
+    ],
+    "positionCss": [
+      532.5556640625,
+      120.46144104003906,
+      214.873046875,
+      231.07057189941406
+    ],
+    "browserErrors": [],
+    "screenshot": "1280/paper-doll.jpg"
+  },
+  {
+    "viewport": [
+      1280,
+      720
+    ],
+    "floor": 2,
+    "entity": "ink-moth",
+    "asset": "ink-moth",
+    "sourceSha256": "5aa04be933475f788a22fb027fd7cf4a2e9b6cb3b421d0f8fac55a88e2db586a",
+    "requestedWebpSha256": "296753c1fe235919c59dc5823de07438b8374b897d3fb71441cf1fd4d67cffec",
+    "exportPixels": [
+      320,
+      238
+    ],
+    "opaqueBoundingBox": [
+      16,
+      16,
+      304,
+      222
+    ],
+    "positionCss": [
+      483.38031005859375,
+      120.5224609375,
+      313.2237548828125,
+      231.03170776367188
+    ],
+    "browserErrors": [],
+    "screenshot": "1280/ink-moth.jpg"
+  },
+  {
+    "viewport": [
+      1280,
+      720
+    ],
+    "floor": 1,
+    "entity": "oilshrine",
+    "asset": "event-shrine",
+    "sourceSha256": "4a3f08d8cfad544295a02b5c95551f30197e0650fda5b7b35ad7794785b6c8a4",
+    "requestedWebpSha256": "90a9bff81edca3cbe9dc318999325abf1b52e39e99c02802faf1b57ec161bc21",
+    "exportPixels": [
+      300,
+      278
+    ],
+    "opaqueBoundingBox": [
+      34,
+      18,
+      266,
+      260
+    ],
+    "positionCss": [
+      40,
+      167.953125,
+      580,
+      442.078125
+    ],
+    "browserErrors": [],
+    "screenshot": "1280/oilshrine.jpg"
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "floor": 1,
+    "entity": "paper-doll",
+    "asset": "paper-doll",
+    "sourceSha256": "f36fcda2ae2a51657080969d53890ef4912fb72cfaa73c29b17184e9d6472bb4",
+    "requestedWebpSha256": "1bdaf31f7df59970648e9ff83a96f07b9e7f809f25531e5fda264bbc02d82ddc",
+    "exportPixels": [
+      369,
+      400
+    ],
+    "opaqueBoundingBox": [
+      28,
+      26,
+      341,
+      373
+    ],
+    "positionCss": [
+      125.16932678222656,
+      94.67223358154297,
+      139.6511688232422,
+      150.21353149414062
+    ],
+    "browserErrors": [],
+    "screenshot": "390/paper-doll.jpg"
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "floor": 2,
+    "entity": "ink-moth",
+    "asset": "ink-moth",
+    "sourceSha256": "5aa04be933475f788a22fb027fd7cf4a2e9b6cb3b421d0f8fac55a88e2db586a",
+    "requestedWebpSha256": "296753c1fe235919c59dc5823de07438b8374b897d3fb71441cf1fd4d67cffec",
+    "exportPixels": [
+      320,
+      238
+    ],
+    "opaqueBoundingBox": [
+      16,
+      16,
+      304,
+      222
+    ],
+    "positionCss": [
+      93.22591400146484,
+      94.67259216308594,
+      203.53799438476562,
+      150.21328735351562
+    ],
+    "browserErrors": [],
+    "screenshot": "390/ink-moth.jpg"
+  },
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "floor": 1,
+    "entity": "oilshrine",
+    "asset": "event-shrine",
+    "sourceSha256": "4a3f08d8cfad544295a02b5c95551f30197e0650fda5b7b35ad7794785b6c8a4",
+    "requestedWebpSha256": "90a9bff81edca3cbe9dc318999325abf1b52e39e99c02802faf1b57ec161bc21",
+    "exportPixels": [
+      300,
+      278
+    ],
+    "opaqueBoundingBox": [
+      34,
+      18,
+      266,
+      260
+    ],
+    "positionCss": [
+      10.399999618530273,
+      112.39689636230469,
+      369.1999816894531,
+      246.3195343017578
+    ],
+    "browserErrors": [],
+    "screenshot": "390/oilshrine.jpg"
+  }
+]
