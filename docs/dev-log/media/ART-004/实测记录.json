@@ -1,0 +1,2881 @@
+{
+  "app": "http://127.0.0.1:5178/",
+  "records": [
+    {
+      "id": "fallen-guard",
+      "viewport": [
+        1280,
+        720
+      ],
+      "floor": 2,
+      "intent": "起势",
+      "runtimeAsset": "fallen-guard.webp",
+      "requestedWebpSha256": "5b2e43de21fe6c32cc8760462d325c1f8f6476fa60eedd89af715c21e2fd58e1",
+      "sourceSha256": "2b233a86fa3e31651d7bd0c706c68e2cdba91ed9f919c5f2e57da10841d88035",
+      "exportPixels": [
+        420,
+        420
+      ],
+      "bounds": [
+        113,
+        30,
+        346,
+        394
+      ],
+      "alphaFill": 0.229,
+      "bottomContactPixels": [
+        124,
+        287
+      ],
+      "frame": [
+        500,
+        121,
+        279,
+        277
+      ],
+      "painted": [
+        576,
+        141,
+        154,
+        240
+      ],
+      "clearanceToInfo": 8,
+      "enemyInfo": [
+        410,
+        389,
+        460,
+        79
+      ],
+      "intentBox": [
+        575,
+        68,
+        130,
+        57
+      ],
+      "panel": [
+        14,
+        628,
+        349,
+        78
+      ],
+      "screenshot": "1280/fallen-guard.jpg",
+      "browserErrors": [],
+      "turn": 1
+    },
+    {
+      "id": "fallen",
+      "viewport": [
+        1280,
+        720
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen.webp",
+      "requestedWebpSha256": "e17bd5a342ea2bd1c7908d42743049c13070a47e965916ca8e09edc88693b560",
+      "sourceSha256": "4d629d413a4b4ee6e6502234cb03e3d57cf542876d20d0e8f431cb897ac2ce72",
+      "exportPixels": [
+        420,
+        420
+      ],
+      "bounds": [
+        76,
+        24,
+        289,
+        396
+      ],
+      "alphaFill": 0.209,
+      "bottomContactPixels": [
+        146,
+        278
+      ],
+      "frame": [
+        499,
+        124,
+        281,
+        275
+      ],
+      "painted": [
+        552,
+        139,
+        139,
+        243
+      ],
+      "clearanceToInfo": 7,
+      "enemyInfo": [
+        410,
+        389,
+        460,
+        79
+      ],
+      "intentBox": [
+        606,
+        68,
+        68,
+        57
+      ],
+      "panel": [
+        14,
+        628,
+        349,
+        78
+      ],
+      "screenshot": "1280/fallen.jpg",
+      "browserErrors": [],
+      "turn": 2
+    },
+    {
+      "id": "fallen-strike",
+      "viewport": [
+        1280,
+        720
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen-strike.webp",
+      "requestedWebpSha256": "e34200114cfc2f75044bfdcb76fbb2bbd6c3bef1a1679119be5e933c13d8b3da",
+      "sourceSha256": "b1bb4d3cce6313cd770fca244d48f11bc92a8a6729bfbd20bac3cd66dc609b17",
+      "exportPixels": [
+        420,
+        420
+      ],
+      "bounds": [
+        79,
+        46,
+        370,
+        395
+      ],
+      "alphaFill": 0.225,
+      "bottomContactPixels": [
+        120,
+        153
+      ],
+      "frame": [
+        508,
+        127,
+        264,
+        264
+      ],
+      "painted": [
+        558,
+        156,
+        183,
+        219
+      ],
+      "clearanceToInfo": 14,
+      "enemyInfo": [
+        410,
+        389,
+        460,
+        79
+      ],
+      "intentBox": [
+        606,
+        68,
+        68,
+        57
+      ],
+      "panel": [
+        14,
+        628,
+        349,
+        78
+      ],
+      "screenshot": "1280/fallen-strike.jpg",
+      "browserErrors": [],
+      "turn": 2,
+      "realTurnTrace": [
+        {
+          "ms": 4,
+          "attack": false,
+          "key": "fallen.webp",
+          "visible": "fallen.webp",
+          "loaded": true,
+          "box": [
+            499,
+            124,
+            281,
+            275
+          ]
+        },
+        {
+          "ms": 17,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            501,
+            119,
+            278,
+            278
+          ]
+        },
+        {
+          "ms": 24,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            501,
+            119,
+            278,
+            278
+          ]
+        },
+        {
+          "ms": 31,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            501,
+            119,
+            278,
+            278
+          ]
+        },
+        {
+          "ms": 38,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            502,
+            120,
+            277,
+            277
+          ]
+        },
+        {
+          "ms": 45,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            502,
+            120,
+            276,
+            276
+          ]
+        },
+        {
+          "ms": 52,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            502,
+            120,
+            275,
+            275
+          ]
+        },
+        {
+          "ms": 59,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            503,
+            121,
+            274,
+            274
+          ]
+        },
+        {
+          "ms": 66,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            503,
+            121,
+            273,
+            273
+          ]
+        },
+        {
+          "ms": 73,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            504,
+            122,
+            272,
+            272
+          ]
+        },
+        {
+          "ms": 80,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            505,
+            123,
+            271,
+            271
+          ]
+        },
+        {
+          "ms": 87,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            505,
+            124,
+            269,
+            269
+          ]
+        },
+        {
+          "ms": 94,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            506,
+            124,
+            268,
+            268
+          ]
+        },
+        {
+          "ms": 101,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            507,
+            125,
+            266,
+            266
+          ]
+        },
+        {
+          "ms": 108,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            508,
+            126,
+            265,
+            265
+          ]
+        },
+        {
+          "ms": 115,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            508,
+            127,
+            263,
+            263
+          ]
+        },
+        {
+          "ms": 122,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            509,
+            128,
+            261,
+            261
+          ]
+        },
+        {
+          "ms": 129,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            509,
+            128,
+            262,
+            262
+          ]
+        },
+        {
+          "ms": 135,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            509,
+            128,
+            262,
+            262
+          ]
+        },
+        {
+          "ms": 142,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            508,
+            127,
+            264,
+            264
+          ]
+        },
+        {
+          "ms": 149,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            507,
+            126,
+            265,
+            265
+          ]
+        },
+        {
+          "ms": 156,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            506,
+            125,
+            267,
+            267
+          ]
+        },
+        {
+          "ms": 163,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            505,
+            124,
+            270,
+            270
+          ]
+        },
+        {
+          "ms": 170,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            504,
+            122,
+            272,
+            272
+          ]
+        },
+        {
+          "ms": 177,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            502,
+            121,
+            275,
+            275
+          ]
+        },
+        {
+          "ms": 184,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            501,
+            119,
+            278,
+            278
+          ]
+        },
+        {
+          "ms": 191,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            499,
+            117,
+            282,
+            282
+          ]
+        },
+        {
+          "ms": 198,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            497,
+            116,
+            285,
+            285
+          ]
+        },
+        {
+          "ms": 205,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            496,
+            114,
+            289,
+            289
+          ]
+        },
+        {
+          "ms": 212,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            494,
+            112,
+            293,
+            293
+          ]
+        },
+        {
+          "ms": 219,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            491,
+            110,
+            297,
+            297
+          ]
+        },
+        {
+          "ms": 226,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            489,
+            108,
+            301,
+            301
+          ]
+        },
+        {
+          "ms": 233,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            487,
+            106,
+            306,
+            306
+          ]
+        },
+        {
+          "ms": 240,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            485,
+            104,
+            311,
+            311
+          ]
+        },
+        {
+          "ms": 247,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            482,
+            102,
+            315,
+            315
+          ]
+        },
+        {
+          "ms": 254,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            480,
+            101,
+            320,
+            320
+          ]
+        },
+        {
+          "ms": 260,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            477,
+            99,
+            326,
+            326
+          ]
+        },
+        {
+          "ms": 267,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            475,
+            97,
+            331,
+            331
+          ]
+        },
+        {
+          "ms": 274,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            472,
+            95,
+            337,
+            337
+          ]
+        },
+        {
+          "ms": 281,
+          "attack": false,
+          "key": "fallen.webp",
+          "visible": "fallen.webp",
+          "loaded": true,
+          "box": [
+            501,
+            119,
+            278,
+            278
+          ]
+        },
+        {
+          "ms": 747,
+          "attack": false,
+          "key": "fallen.webp",
+          "visible": "fallen.webp",
+          "loaded": true,
+          "box": [
+            500,
+            121,
+            279,
+            277
+          ]
+        }
+      ],
+      "captureAnimationTimeMs": 125
+    },
+    {
+      "id": "fallen-elder-guard",
+      "viewport": [
+        1280,
+        720
+      ],
+      "floor": 2,
+      "intent": "剑阵",
+      "runtimeAsset": "fallen-elder-guard.webp",
+      "requestedWebpSha256": "d16b31b74b7e94d80b9394f78420cdf89b06f5b494f8dd618f862cf9338beab5",
+      "sourceSha256": "497eda199baffd4e1068f665e425ae3c836c59a51400352f9288780654a3f984",
+      "exportPixels": [
+        460,
+        460
+      ],
+      "bounds": [
+        46,
+        26,
+        414,
+        427
+      ],
+      "alphaFill": 0.219,
+      "bottomContactPixels": [
+        153,
+        304
+      ],
+      "frame": [
+        488,
+        121,
+        303,
+        301
+      ],
+      "painted": [
+        520,
+        138,
+        241,
+        262
+      ],
+      "clearanceToInfo": 13,
+      "enemyInfo": [
+        410,
+        413,
+        460,
+        79
+      ],
+      "intentBox": [
+        575,
+        68,
+        130,
+        57
+      ],
+      "panel": [
+        14,
+        628,
+        349,
+        78
+      ],
+      "screenshot": "1280/fallen-elder-guard.jpg",
+      "browserErrors": [],
+      "turn": 1
+    },
+    {
+      "id": "fallen-elder",
+      "viewport": [
+        1280,
+        720
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen-elder.webp",
+      "requestedWebpSha256": "a37f44087e5efc7c044cbef7b61c58cbb7e5767c9a6ffd593e4b6aadd26292cf",
+      "sourceSha256": "d1a81505886b8c3f3d554b3293f4a59589d060a04933e4ff6e69b2cb59caaf0f",
+      "exportPixels": [
+        460,
+        460
+      ],
+      "bounds": [
+        67,
+        26,
+        393,
+        429
+      ],
+      "alphaFill": 0.206,
+      "bottomContactPixels": [
+        95,
+        279
+      ],
+      "frame": [
+        487,
+        124,
+        305,
+        299
+      ],
+      "painted": [
+        534,
+        141,
+        212,
+        262
+      ],
+      "clearanceToInfo": 10,
+      "enemyInfo": [
+        410,
+        413,
+        460,
+        79
+      ],
+      "intentBox": [
+        606,
+        68,
+        68,
+        57
+      ],
+      "panel": [
+        14,
+        628,
+        349,
+        78
+      ],
+      "screenshot": "1280/fallen-elder.jpg",
+      "browserErrors": [],
+      "turn": 2
+    },
+    {
+      "id": "fallen-elder-strike",
+      "viewport": [
+        1280,
+        720
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen-elder-strike.webp",
+      "requestedWebpSha256": "e8434739c6c1b32b7cfa8dde6397ff1b1f07fcc6f2c097a9e008f77b01f98aad",
+      "sourceSha256": "076da0e7893926cdf4ba532b68987cb000d87ab99e16d8901c144b6b104c7da5",
+      "exportPixels": [
+        460,
+        460
+      ],
+      "bounds": [
+        33,
+        28,
+        428,
+        431
+      ],
+      "alphaFill": 0.293,
+      "bottomContactPixels": [
+        127,
+        314
+      ],
+      "frame": [
+        497,
+        128,
+        286,
+        286
+      ],
+      "painted": [
+        517,
+        146,
+        246,
+        251
+      ],
+      "clearanceToInfo": 16,
+      "enemyInfo": [
+        410,
+        413,
+        460,
+        79
+      ],
+      "intentBox": [
+        606,
+        68,
+        68,
+        57
+      ],
+      "panel": [
+        14,
+        628,
+        349,
+        78
+      ],
+      "screenshot": "1280/fallen-elder-strike.jpg",
+      "browserErrors": [],
+      "turn": 2,
+      "realTurnTrace": [
+        {
+          "ms": 1,
+          "attack": false,
+          "key": "fallen-elder.webp",
+          "visible": "fallen-elder.webp",
+          "loaded": true,
+          "box": [
+            487,
+            124,
+            305,
+            299
+          ]
+        },
+        {
+          "ms": 22,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            489,
+            119,
+            302,
+            302
+          ]
+        },
+        {
+          "ms": 29,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            489,
+            119,
+            302,
+            302
+          ]
+        },
+        {
+          "ms": 36,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            489,
+            119,
+            302,
+            302
+          ]
+        },
+        {
+          "ms": 43,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            489,
+            119,
+            301,
+            301
+          ]
+        },
+        {
+          "ms": 50,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            490,
+            120,
+            301,
+            301
+          ]
+        },
+        {
+          "ms": 57,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            490,
+            120,
+            300,
+            300
+          ]
+        },
+        {
+          "ms": 64,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            490,
+            121,
+            299,
+            299
+          ]
+        },
+        {
+          "ms": 71,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            491,
+            121,
+            298,
+            298
+          ]
+        },
+        {
+          "ms": 77,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            492,
+            122,
+            297,
+            297
+          ]
+        },
+        {
+          "ms": 84,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            492,
+            123,
+            296,
+            296
+          ]
+        },
+        {
+          "ms": 91,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            493,
+            123,
+            294,
+            294
+          ]
+        },
+        {
+          "ms": 98,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            494,
+            124,
+            293,
+            293
+          ]
+        },
+        {
+          "ms": 105,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            494,
+            125,
+            291,
+            291
+          ]
+        },
+        {
+          "ms": 112,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            495,
+            126,
+            289,
+            289
+          ]
+        },
+        {
+          "ms": 119,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            496,
+            127,
+            288,
+            288
+          ]
+        },
+        {
+          "ms": 126,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            497,
+            128,
+            286,
+            286
+          ]
+        },
+        {
+          "ms": 133,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            498,
+            130,
+            284,
+            284
+          ]
+        },
+        {
+          "ms": 140,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            498,
+            129,
+            284,
+            284
+          ]
+        },
+        {
+          "ms": 147,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            497,
+            129,
+            285,
+            285
+          ]
+        },
+        {
+          "ms": 154,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            497,
+            128,
+            286,
+            286
+          ]
+        },
+        {
+          "ms": 161,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            496,
+            127,
+            288,
+            288
+          ]
+        },
+        {
+          "ms": 168,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            495,
+            126,
+            290,
+            290
+          ]
+        },
+        {
+          "ms": 175,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            494,
+            124,
+            293,
+            293
+          ]
+        },
+        {
+          "ms": 182,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            492,
+            123,
+            296,
+            296
+          ]
+        },
+        {
+          "ms": 189,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            491,
+            121,
+            299,
+            299
+          ]
+        },
+        {
+          "ms": 196,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            489,
+            119,
+            302,
+            302
+          ]
+        },
+        {
+          "ms": 202,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            487,
+            117,
+            306,
+            306
+          ]
+        },
+        {
+          "ms": 209,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            485,
+            115,
+            310,
+            310
+          ]
+        },
+        {
+          "ms": 216,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            483,
+            113,
+            314,
+            314
+          ]
+        },
+        {
+          "ms": 223,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            481,
+            111,
+            318,
+            318
+          ]
+        },
+        {
+          "ms": 230,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            479,
+            108,
+            323,
+            323
+          ]
+        },
+        {
+          "ms": 237,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            476,
+            106,
+            327,
+            327
+          ]
+        },
+        {
+          "ms": 244,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            474,
+            104,
+            332,
+            332
+          ]
+        },
+        {
+          "ms": 251,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            471,
+            102,
+            337,
+            337
+          ]
+        },
+        {
+          "ms": 258,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            469,
+            99,
+            343,
+            343
+          ]
+        },
+        {
+          "ms": 265,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            466,
+            97,
+            348,
+            348
+          ]
+        },
+        {
+          "ms": 272,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            463,
+            95,
+            354,
+            354
+          ]
+        },
+        {
+          "ms": 279,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            460,
+            92,
+            360,
+            360
+          ]
+        },
+        {
+          "ms": 286,
+          "attack": false,
+          "key": "fallen-elder.webp",
+          "visible": "fallen-elder.webp",
+          "loaded": true,
+          "box": [
+            489,
+            119,
+            302,
+            302
+          ]
+        },
+        {
+          "ms": 758,
+          "attack": false,
+          "key": "fallen-elder.webp",
+          "visible": "fallen-elder.webp",
+          "loaded": true,
+          "box": [
+            488,
+            121,
+            303,
+            301
+          ]
+        }
+      ],
+      "captureAnimationTimeMs": 125
+    },
+    {
+      "id": "fallen-guard",
+      "viewport": [
+        390,
+        844
+      ],
+      "floor": 2,
+      "intent": "起势",
+      "runtimeAsset": "fallen-guard.webp",
+      "requestedWebpSha256": "5b2e43de21fe6c32cc8760462d325c1f8f6476fa60eedd89af715c21e2fd58e1",
+      "sourceSha256": "2b233a86fa3e31651d7bd0c706c68e2cdba91ed9f919c5f2e57da10841d88035",
+      "exportPixels": [
+        420,
+        420
+      ],
+      "bounds": [
+        113,
+        30,
+        346,
+        394
+      ],
+      "alphaFill": 0.229,
+      "bottomContactPixels": [
+        124,
+        287
+      ],
+      "frame": [
+        104,
+        95,
+        181,
+        180
+      ],
+      "painted": [
+        153,
+        108,
+        100,
+        156
+      ],
+      "clearanceToInfo": 5,
+      "enemyInfo": [
+        46,
+        269,
+        299,
+        51
+      ],
+      "intentBox": [
+        153,
+        61,
+        84,
+        37
+      ],
+      "panel": [
+        9,
+        784,
+        227,
+        51
+      ],
+      "screenshot": "390/fallen-guard.jpg",
+      "browserErrors": [],
+      "turn": 1
+    },
+    {
+      "id": "fallen",
+      "viewport": [
+        390,
+        844
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen.webp",
+      "requestedWebpSha256": "e17bd5a342ea2bd1c7908d42743049c13070a47e965916ca8e09edc88693b560",
+      "sourceSha256": "4d629d413a4b4ee6e6502234cb03e3d57cf542876d20d0e8f431cb897ac2ce72",
+      "exportPixels": [
+        420,
+        420
+      ],
+      "bounds": [
+        76,
+        24,
+        289,
+        396
+      ],
+      "alphaFill": 0.209,
+      "bottomContactPixels": [
+        146,
+        278
+      ],
+      "frame": [
+        104,
+        97,
+        183,
+        179
+      ],
+      "painted": [
+        138,
+        107,
+        91,
+        158
+      ],
+      "clearanceToInfo": 4,
+      "enemyInfo": [
+        46,
+        269,
+        299,
+        51
+      ],
+      "intentBox": [
+        173,
+        61,
+        44,
+        37
+      ],
+      "panel": [
+        9,
+        784,
+        227,
+        51
+      ],
+      "screenshot": "390/fallen.jpg",
+      "browserErrors": [],
+      "turn": 2
+    },
+    {
+      "id": "fallen-strike",
+      "viewport": [
+        390,
+        844
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen-strike.webp",
+      "requestedWebpSha256": "e34200114cfc2f75044bfdcb76fbb2bbd6c3bef1a1679119be5e933c13d8b3da",
+      "sourceSha256": "b1bb4d3cce6313cd770fca244d48f11bc92a8a6729bfbd20bac3cd66dc609b17",
+      "exportPixels": [
+        420,
+        420
+      ],
+      "bounds": [
+        79,
+        46,
+        370,
+        395
+      ],
+      "alphaFill": 0.225,
+      "bottomContactPixels": [
+        120,
+        153
+      ],
+      "frame": [
+        109,
+        99,
+        171,
+        171
+      ],
+      "painted": [
+        142,
+        118,
+        119,
+        142
+      ],
+      "clearanceToInfo": 9,
+      "enemyInfo": [
+        46,
+        269,
+        299,
+        51
+      ],
+      "intentBox": [
+        173,
+        61,
+        44,
+        37
+      ],
+      "panel": [
+        9,
+        784,
+        227,
+        51
+      ],
+      "screenshot": "390/fallen-strike.jpg",
+      "browserErrors": [],
+      "turn": 2,
+      "realTurnTrace": [
+        {
+          "ms": 5,
+          "attack": false,
+          "key": "fallen.webp",
+          "visible": "fallen.webp",
+          "loaded": true,
+          "box": [
+            104,
+            97,
+            183,
+            179
+          ]
+        },
+        {
+          "ms": 26,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            105,
+            94,
+            181,
+            181
+          ]
+        },
+        {
+          "ms": 33,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            105,
+            94,
+            181,
+            181
+          ]
+        },
+        {
+          "ms": 40,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            105,
+            94,
+            180,
+            180
+          ]
+        },
+        {
+          "ms": 47,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            105,
+            94,
+            180,
+            180
+          ]
+        },
+        {
+          "ms": 54,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            105,
+            94,
+            180,
+            180
+          ]
+        },
+        {
+          "ms": 61,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            105,
+            95,
+            179,
+            179
+          ]
+        },
+        {
+          "ms": 68,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            106,
+            95,
+            178,
+            178
+          ]
+        },
+        {
+          "ms": 74,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            106,
+            95,
+            178,
+            178
+          ]
+        },
+        {
+          "ms": 81,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            107,
+            96,
+            177,
+            177
+          ]
+        },
+        {
+          "ms": 88,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            107,
+            96,
+            176,
+            176
+          ]
+        },
+        {
+          "ms": 95,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            107,
+            97,
+            175,
+            175
+          ]
+        },
+        {
+          "ms": 102,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            108,
+            97,
+            174,
+            174
+          ]
+        },
+        {
+          "ms": 109,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            108,
+            98,
+            173,
+            173
+          ]
+        },
+        {
+          "ms": 116,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            109,
+            98,
+            172,
+            172
+          ]
+        },
+        {
+          "ms": 123,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            109,
+            99,
+            171,
+            171
+          ]
+        },
+        {
+          "ms": 130,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            110,
+            100,
+            170,
+            170
+          ]
+        },
+        {
+          "ms": 137,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            110,
+            100,
+            170,
+            170
+          ]
+        },
+        {
+          "ms": 144,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            110,
+            99,
+            171,
+            171
+          ]
+        },
+        {
+          "ms": 151,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            109,
+            99,
+            171,
+            171
+          ]
+        },
+        {
+          "ms": 158,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            109,
+            98,
+            172,
+            172
+          ]
+        },
+        {
+          "ms": 165,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            108,
+            98,
+            174,
+            174
+          ]
+        },
+        {
+          "ms": 172,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            107,
+            97,
+            175,
+            175
+          ]
+        },
+        {
+          "ms": 179,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            107,
+            96,
+            177,
+            177
+          ]
+        },
+        {
+          "ms": 186,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            106,
+            95,
+            179,
+            179
+          ]
+        },
+        {
+          "ms": 193,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            105,
+            94,
+            181,
+            181
+          ]
+        },
+        {
+          "ms": 200,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            103,
+            93,
+            183,
+            183
+          ]
+        },
+        {
+          "ms": 206,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            102,
+            92,
+            185,
+            185
+          ]
+        },
+        {
+          "ms": 213,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            101,
+            90,
+            188,
+            188
+          ]
+        },
+        {
+          "ms": 220,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            100,
+            89,
+            190,
+            190
+          ]
+        },
+        {
+          "ms": 227,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            98,
+            88,
+            193,
+            193
+          ]
+        },
+        {
+          "ms": 234,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            97,
+            87,
+            196,
+            196
+          ]
+        },
+        {
+          "ms": 241,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            96,
+            85,
+            199,
+            199
+          ]
+        },
+        {
+          "ms": 248,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            94,
+            84,
+            202,
+            202
+          ]
+        },
+        {
+          "ms": 255,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            92,
+            83,
+            205,
+            205
+          ]
+        },
+        {
+          "ms": 262,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            91,
+            82,
+            208,
+            208
+          ]
+        },
+        {
+          "ms": 269,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            89,
+            81,
+            212,
+            212
+          ]
+        },
+        {
+          "ms": 276,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            87,
+            79,
+            215,
+            215
+          ]
+        },
+        {
+          "ms": 283,
+          "attack": true,
+          "key": "fallen-strike.webp",
+          "visible": "fallen-strike.webp",
+          "loaded": true,
+          "box": [
+            86,
+            78,
+            219,
+            219
+          ]
+        },
+        {
+          "ms": 290,
+          "attack": false,
+          "key": "fallen.webp",
+          "visible": "fallen.webp",
+          "loaded": true,
+          "box": [
+            105,
+            94,
+            181,
+            181
+          ]
+        },
+        {
+          "ms": 755,
+          "attack": false,
+          "key": "fallen.webp",
+          "visible": "fallen.webp",
+          "loaded": true,
+          "box": [
+            104,
+            95,
+            181,
+            180
+          ]
+        }
+      ],
+      "captureAnimationTimeMs": 125
+    },
+    {
+      "id": "fallen-elder-guard",
+      "viewport": [
+        390,
+        844
+      ],
+      "floor": 2,
+      "intent": "剑阵",
+      "runtimeAsset": "fallen-elder-guard.webp",
+      "requestedWebpSha256": "d16b31b74b7e94d80b9394f78420cdf89b06f5b494f8dd618f862cf9338beab5",
+      "sourceSha256": "497eda199baffd4e1068f665e425ae3c836c59a51400352f9288780654a3f984",
+      "exportPixels": [
+        460,
+        460
+      ],
+      "bounds": [
+        46,
+        26,
+        414,
+        427
+      ],
+      "alphaFill": 0.219,
+      "bottomContactPixels": [
+        153,
+        304
+      ],
+      "frame": [
+        97,
+        95,
+        197,
+        196
+      ],
+      "painted": [
+        117,
+        106,
+        157,
+        171
+      ],
+      "clearanceToInfo": 8,
+      "enemyInfo": [
+        46,
+        285,
+        299,
+        51
+      ],
+      "intentBox": [
+        153,
+        61,
+        84,
+        37
+      ],
+      "panel": [
+        9,
+        784,
+        227,
+        51
+      ],
+      "screenshot": "390/fallen-elder-guard.jpg",
+      "browserErrors": [],
+      "turn": 1
+    },
+    {
+      "id": "fallen-elder",
+      "viewport": [
+        390,
+        844
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen-elder.webp",
+      "requestedWebpSha256": "a37f44087e5efc7c044cbef7b61c58cbb7e5767c9a6ffd593e4b6aadd26292cf",
+      "sourceSha256": "d1a81505886b8c3f3d554b3293f4a59589d060a04933e4ff6e69b2cb59caaf0f",
+      "exportPixels": [
+        460,
+        460
+      ],
+      "bounds": [
+        67,
+        26,
+        393,
+        429
+      ],
+      "alphaFill": 0.206,
+      "bottomContactPixels": [
+        95,
+        279
+      ],
+      "frame": [
+        96,
+        97,
+        198,
+        194
+      ],
+      "painted": [
+        126,
+        108,
+        138,
+        170
+      ],
+      "clearanceToInfo": 7,
+      "enemyInfo": [
+        46,
+        285,
+        299,
+        51
+      ],
+      "intentBox": [
+        173,
+        61,
+        44,
+        37
+      ],
+      "panel": [
+        9,
+        784,
+        227,
+        51
+      ],
+      "screenshot": "390/fallen-elder.jpg",
+      "browserErrors": [],
+      "turn": 2
+    },
+    {
+      "id": "fallen-elder-strike",
+      "viewport": [
+        390,
+        844
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen-elder-strike.webp",
+      "requestedWebpSha256": "e8434739c6c1b32b7cfa8dde6397ff1b1f07fcc6f2c097a9e008f77b01f98aad",
+      "sourceSha256": "076da0e7893926cdf4ba532b68987cb000d87ab99e16d8901c144b6b104c7da5",
+      "exportPixels": [
+        460,
+        460
+      ],
+      "bounds": [
+        33,
+        28,
+        428,
+        431
+      ],
+      "alphaFill": 0.293,
+      "bottomContactPixels": [
+        127,
+        314
+      ],
+      "frame": [
+        102,
+        100,
+        186,
+        186
+      ],
+      "painted": [
+        115,
+        111,
+        160,
+        163
+      ],
+      "clearanceToInfo": 11,
+      "enemyInfo": [
+        46,
+        285,
+        299,
+        51
+      ],
+      "intentBox": [
+        173,
+        61,
+        44,
+        37
+      ],
+      "panel": [
+        9,
+        784,
+        227,
+        51
+      ],
+      "screenshot": "390/fallen-elder-strike.jpg",
+      "browserErrors": [],
+      "turn": 2,
+      "realTurnTrace": [
+        {
+          "ms": 1,
+          "attack": false,
+          "key": "fallen-elder.webp",
+          "visible": "fallen-elder.webp",
+          "loaded": true,
+          "box": [
+            96,
+            97,
+            198,
+            194
+          ]
+        },
+        {
+          "ms": 29,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            97,
+            94,
+            196,
+            196
+          ]
+        },
+        {
+          "ms": 36,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            97,
+            94,
+            196,
+            196
+          ]
+        },
+        {
+          "ms": 43,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            97,
+            94,
+            196,
+            196
+          ]
+        },
+        {
+          "ms": 50,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            97,
+            94,
+            196,
+            196
+          ]
+        },
+        {
+          "ms": 57,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            97,
+            94,
+            196,
+            196
+          ]
+        },
+        {
+          "ms": 63,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            97,
+            94,
+            195,
+            195
+          ]
+        },
+        {
+          "ms": 70,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            98,
+            95,
+            194,
+            194
+          ]
+        },
+        {
+          "ms": 77,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            98,
+            95,
+            194,
+            194
+          ]
+        },
+        {
+          "ms": 84,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            99,
+            96,
+            193,
+            193
+          ]
+        },
+        {
+          "ms": 91,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            99,
+            96,
+            192,
+            192
+          ]
+        },
+        {
+          "ms": 98,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            99,
+            97,
+            191,
+            191
+          ]
+        },
+        {
+          "ms": 105,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            100,
+            97,
+            190,
+            190
+          ]
+        },
+        {
+          "ms": 112,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            100,
+            98,
+            189,
+            189
+          ]
+        },
+        {
+          "ms": 119,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            101,
+            98,
+            188,
+            188
+          ]
+        },
+        {
+          "ms": 126,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            102,
+            99,
+            187,
+            187
+          ]
+        },
+        {
+          "ms": 133,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            102,
+            100,
+            186,
+            186
+          ]
+        },
+        {
+          "ms": 140,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            103,
+            101,
+            185,
+            185
+          ]
+        },
+        {
+          "ms": 147,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            103,
+            101,
+            185,
+            185
+          ]
+        },
+        {
+          "ms": 154,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            102,
+            100,
+            185,
+            185
+          ]
+        },
+        {
+          "ms": 161,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            102,
+            100,
+            186,
+            186
+          ]
+        },
+        {
+          "ms": 168,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            101,
+            99,
+            187,
+            187
+          ]
+        },
+        {
+          "ms": 175,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            101,
+            98,
+            189,
+            189
+          ]
+        },
+        {
+          "ms": 182,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            100,
+            97,
+            190,
+            190
+          ]
+        },
+        {
+          "ms": 188,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            99,
+            96,
+            192,
+            192
+          ]
+        },
+        {
+          "ms": 195,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            98,
+            95,
+            194,
+            194
+          ]
+        },
+        {
+          "ms": 202,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            97,
+            94,
+            196,
+            196
+          ]
+        },
+        {
+          "ms": 209,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            96,
+            92,
+            199,
+            199
+          ]
+        },
+        {
+          "ms": 216,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            94,
+            91,
+            201,
+            201
+          ]
+        },
+        {
+          "ms": 223,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            93,
+            90,
+            204,
+            204
+          ]
+        },
+        {
+          "ms": 230,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            92,
+            88,
+            207,
+            207
+          ]
+        },
+        {
+          "ms": 237,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            90,
+            87,
+            210,
+            210
+          ]
+        },
+        {
+          "ms": 244,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            89,
+            85,
+            213,
+            213
+          ]
+        },
+        {
+          "ms": 251,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            87,
+            84,
+            216,
+            216
+          ]
+        },
+        {
+          "ms": 258,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            85,
+            82,
+            219,
+            219
+          ]
+        },
+        {
+          "ms": 265,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            84,
+            81,
+            223,
+            223
+          ]
+        },
+        {
+          "ms": 272,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            82,
+            79,
+            226,
+            226
+          ]
+        },
+        {
+          "ms": 279,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            80,
+            78,
+            230,
+            230
+          ]
+        },
+        {
+          "ms": 286,
+          "attack": true,
+          "key": "fallen-elder-strike.webp",
+          "visible": "fallen-elder-strike.webp",
+          "loaded": true,
+          "box": [
+            78,
+            76,
+            234,
+            234
+          ]
+        },
+        {
+          "ms": 293,
+          "attack": false,
+          "key": "fallen-elder.webp",
+          "visible": "fallen-elder.webp",
+          "loaded": true,
+          "box": [
+            97,
+            94,
+            196,
+            196
+          ]
+        },
+        {
+          "ms": 751,
+          "attack": false,
+          "key": "fallen-elder.webp",
+          "visible": "fallen-elder.webp",
+          "loaded": true,
+          "box": [
+            96,
+            95,
+            197,
+            196
+          ]
+        }
+      ],
+      "captureAnimationTimeMs": 125
+    }
+  ]
+}

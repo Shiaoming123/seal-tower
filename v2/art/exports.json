@@ -48,5 +48,35 @@
     "file": "event-cart.png",
     "sourceSha256": "383b24c90c94dc8b0904e46553e7981a94c55cf49a30f4a955b6871fb003727b",
     "webpSha256": "0a3c80427c77cb294c78b91dbac1343b356b05d2e768c81be3821f3bdf7ae781"
+  },
+  "fallen-elder-guard": {
+    "file": "fallen-elder-guard.png",
+    "sourceSha256": "497eda199baffd4e1068f665e425ae3c836c59a51400352f9288780654a3f984",
+    "webpSha256": "d16b31b74b7e94d80b9394f78420cdf89b06f5b494f8dd618f862cf9338beab5"
+  },
+  "fallen-elder-strike": {
+    "file": "fallen-elder-strike.png",
+    "sourceSha256": "076da0e7893926cdf4ba532b68987cb000d87ab99e16d8901c144b6b104c7da5",
+    "webpSha256": "e8434739c6c1b32b7cfa8dde6397ff1b1f07fcc6f2c097a9e008f77b01f98aad"
+  },
+  "fallen-elder": {
+    "file": "fallen-elder.png",
+    "sourceSha256": "d1a81505886b8c3f3d554b3293f4a59589d060a04933e4ff6e69b2cb59caaf0f",
+    "webpSha256": "a37f44087e5efc7c044cbef7b61c58cbb7e5767c9a6ffd593e4b6aadd26292cf"
+  },
+  "fallen-guard": {
+    "file": "fallen-guard.png",
+    "sourceSha256": "2b233a86fa3e31651d7bd0c706c68e2cdba91ed9f919c5f2e57da10841d88035",
+    "webpSha256": "5b2e43de21fe6c32cc8760462d325c1f8f6476fa60eedd89af715c21e2fd58e1"
+  },
+  "fallen-strike": {
+    "file": "fallen-strike.png",
+    "sourceSha256": "b1bb4d3cce6313cd770fca244d48f11bc92a8a6729bfbd20bac3cd66dc609b17",
+    "webpSha256": "e34200114cfc2f75044bfdcb76fbb2bbd6c3bef1a1679119be5e933c13d8b3da"
+  },
+  "fallen": {
+    "file": "fallen.png",
+    "sourceSha256": "4d629d413a4b4ee6e6502234cb03e3d57cf542876d20d0e8f431cb897ac2ce72",
+    "webpSha256": "e17bd5a342ea2bd1c7908d42743049c13070a47e965916ca8e09edc88693b560"
   }
 }

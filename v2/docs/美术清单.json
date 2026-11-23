@@ -202,10 +202,10 @@
         "敌怪·堕道者"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：旧斩妖人",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "fallen-strike",
@@ -214,10 +214,10 @@
         "敌怪·堕道者·出招"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：旧斩妖人出剑",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "fallen-guard",
@@ -226,10 +226,10 @@
         "敌怪·堕道者·架势"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
+      "status": "ok",
       "shared": false,
-      "note": "现在借用：旧斩妖人架势",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "thorn-stele",
@@ -299,10 +299,10 @@
         "敌怪·堕道首座"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "fallen-elder-strike",
@@ -311,10 +311,10 @@
         "敌怪·堕道首座·出招"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "fallen-elder-guard",
@@ -323,10 +323,10 @@
         "敌怪·堕道首座·架势"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P0"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "ash",
@@ -1959,11 +1959,11 @@
       "priority": "P2"
     },
     {
-      "file": "fallen-attack",
+      "file": "fallen-strike",
       "category": "敌怪姿态",
       "usedBy": "fallen 扑击/出招",
-      "fallback": "fallen-strike",
-      "status": "missing",
+      "fallback": "fallen",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2055,11 +2055,11 @@
       "priority": "P2"
     },
     {
-      "file": "fallen-elder-attack",
+      "file": "fallen-elder-strike",
       "category": "敌怪姿态",
       "usedBy": "fallen-elder 扑击/出招",
-      "fallback": "fallen-elder-strike",
-      "status": "missing",
+      "fallback": "fallen-elder",
+      "status": "ok",
       "priority": "P2"
     },
     {

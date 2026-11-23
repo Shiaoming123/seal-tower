@@ -76,10 +76,17 @@ const wantRelics = Object.values(RELICS).map((r) => ({ file: `relic-${r.id}`, ca
 const wantPortraits = CHARACTERS.filter((c) => ["lamp", "herbs", "scholar", "mayor"].includes(c.id)).map((c) => ({ file: `portrait-${c.id}`, category: "人物立绘", usedBy: `人物·${c.name}`, fallback: c.portrait }));
 const wantBuilds = UPGRADES.map((u) => ({ file: `build-${u.id}`, category: "营建图标", usedBy: `营建·${u.name}`, fallback: u.icon }));
 const enemyIds = [...new Set(Object.values(ENEMIES).map((e) => e.sprite))];
-const wantPoses = enemyIds.flatMap((s) => [
-  { file: `${s}-attack`, category: "敌怪姿态", usedBy: `${s} 扑击/出招`, fallback: Object.values(ENEMIES).find((e) => e.sprite === s).spriteAttack ?? s },
-  { file: `${s}-hurt`, category: "敌怪姿态", usedBy: `${s} 受击`, fallback: s },
-]);
+const wantPoses = enemyIds.flatMap((s) => {
+  const attack = `${s}-attack`;
+  const fallback = Object.values(ENEMIES).find((e) => e.sprite === s).spriteAttack ?? s;
+  // Combat can use a named strike frame. A verified exclusive fallback already covers that pose.
+  const hasDedicatedFallback = overrides.has(fallback) && fallback !== s && items.get(fallback)?.usedBy.length === 1;
+  const attackFile = !have.has(attack) && hasDedicatedFallback ? fallback : attack;
+  return [
+    { file: attackFile, category: "敌怪姿态", usedBy: `${s} 扑击/出招`, fallback: attackFile === attack ? fallback : s },
+    { file: `${s}-hurt`, category: "敌怪姿态", usedBy: `${s} 受击`, fallback: s },
+  ];
+});
 const wanted = [...wantCards, ...wantRelics, ...wantPortraits, ...wantBuilds, ...wantPoses].map((w) => ({ ...w, status: have.has(w.file) ? "ok" : "missing" }));
 
 const current = [...items.values()].map((e) => ({

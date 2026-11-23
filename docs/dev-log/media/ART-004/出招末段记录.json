@@ -1,0 +1,253 @@
+{
+  "app": "http://127.0.0.1:5178/",
+  "records": [
+    {
+      "id": "fallen-strike",
+      "viewport": [
+        1280,
+        720
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen-strike.webp",
+      "requestedWebpSha256": "e34200114cfc2f75044bfdcb76fbb2bbd6c3bef1a1679119be5e933c13d8b3da",
+      "sourceSha256": "b1bb4d3cce6313cd770fca244d48f11bc92a8a6729bfbd20bac3cd66dc609b17",
+      "exportPixels": [
+        420,
+        420
+      ],
+      "bounds": [
+        79,
+        46,
+        370,
+        395
+      ],
+      "alphaFill": 0.225,
+      "bottomContactPixels": [
+        120,
+        153
+      ],
+      "frame": [
+        475,
+        97,
+        329,
+        329
+      ],
+      "painted": [
+        537,
+        134,
+        228,
+        274
+      ],
+      "clearanceToInfo": -19,
+      "enemyInfo": [
+        410,
+        389,
+        460,
+        79
+      ],
+      "intentBox": [
+        606,
+        68,
+        68,
+        57
+      ],
+      "panel": [
+        14,
+        628,
+        349,
+        78
+      ],
+      "screenshot": "1280/fallen-strike-248ms.jpg",
+      "browserErrors": [],
+      "turn": 2,
+      "captureAnimationTimeMs": 248
+    },
+    {
+      "id": "fallen-elder-strike",
+      "viewport": [
+        1280,
+        720
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen-elder-strike.webp",
+      "requestedWebpSha256": "e8434739c6c1b32b7cfa8dde6397ff1b1f07fcc6f2c097a9e008f77b01f98aad",
+      "sourceSha256": "076da0e7893926cdf4ba532b68987cb000d87ab99e16d8901c144b6b104c7da5",
+      "exportPixels": [
+        460,
+        460
+      ],
+      "bounds": [
+        33,
+        28,
+        428,
+        431
+      ],
+      "alphaFill": 0.293,
+      "bottomContactPixels": [
+        127,
+        314
+      ],
+      "frame": [
+        461,
+        93,
+        358,
+        358
+      ],
+      "painted": [
+        487,
+        115,
+        307,
+        314
+      ],
+      "clearanceToInfo": -16,
+      "enemyInfo": [
+        410,
+        413,
+        460,
+        79
+      ],
+      "intentBox": [
+        606,
+        68,
+        68,
+        57
+      ],
+      "panel": [
+        14,
+        628,
+        349,
+        78
+      ],
+      "screenshot": "1280/fallen-elder-strike-248ms.jpg",
+      "browserErrors": [],
+      "turn": 2,
+      "captureAnimationTimeMs": 248
+    },
+    {
+      "id": "fallen-strike",
+      "viewport": [
+        390,
+        844
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen-strike.webp",
+      "requestedWebpSha256": "e34200114cfc2f75044bfdcb76fbb2bbd6c3bef1a1679119be5e933c13d8b3da",
+      "sourceSha256": "b1bb4d3cce6313cd770fca244d48f11bc92a8a6729bfbd20bac3cd66dc609b17",
+      "exportPixels": [
+        420,
+        420
+      ],
+      "bounds": [
+        79,
+        46,
+        370,
+        395
+      ],
+      "alphaFill": 0.225,
+      "bottomContactPixels": [
+        120,
+        153
+      ],
+      "frame": [
+        88,
+        80,
+        214,
+        214
+      ],
+      "painted": [
+        128,
+        103,
+        148,
+        178
+      ],
+      "clearanceToInfo": -12,
+      "enemyInfo": [
+        46,
+        269,
+        299,
+        51
+      ],
+      "intentBox": [
+        173,
+        61,
+        44,
+        37
+      ],
+      "panel": [
+        9,
+        784,
+        227,
+        51
+      ],
+      "screenshot": "390/fallen-strike-248ms.jpg",
+      "browserErrors": [],
+      "turn": 2,
+      "captureAnimationTimeMs": 248
+    },
+    {
+      "id": "fallen-elder-strike",
+      "viewport": [
+        390,
+        844
+      ],
+      "floor": 2,
+      "intent": "斩",
+      "runtimeAsset": "fallen-elder-strike.webp",
+      "requestedWebpSha256": "e8434739c6c1b32b7cfa8dde6397ff1b1f07fcc6f2c097a9e008f77b01f98aad",
+      "sourceSha256": "076da0e7893926cdf4ba532b68987cb000d87ab99e16d8901c144b6b104c7da5",
+      "exportPixels": [
+        460,
+        460
+      ],
+      "bounds": [
+        33,
+        28,
+        428,
+        431
+      ],
+      "alphaFill": 0.293,
+      "bottomContactPixels": [
+        127,
+        314
+      ],
+      "frame": [
+        79,
+        77,
+        233,
+        233
+      ],
+      "painted": [
+        95,
+        91,
+        200,
+        204
+      ],
+      "clearanceToInfo": -10,
+      "enemyInfo": [
+        46,
+        285,
+        299,
+        51
+      ],
+      "intentBox": [
+        173,
+        61,
+        44,
+        37
+      ],
+      "panel": [
+        9,
+        784,
+        227,
+        51
+      ],
+      "screenshot": "390/fallen-elder-strike-248ms.jpg",
+      "browserErrors": [],
+      "turn": 2,
+      "captureAnimationTimeMs": 248
+    }
+  ]
+}

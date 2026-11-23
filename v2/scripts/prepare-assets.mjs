@@ -101,6 +101,8 @@ if (!requested.size) {
 const edges = Object.fromEntries([...Object.entries(manifest).map(([id, [, e]]) => [id, e]), ...tints.map(([id, , e]) => [id, e])]);
 // Match the two fire-rat keyframes so Combat can swap them without a change in scale.
 edges["fire-rat-attack"] = edges["fire-rat"];
+edges["fallen-strike"] = edges.fallen;
+edges["fallen-elder-strike"] = edges["fallen-elder"];
 const exportFile = path.join(artDir, "exports.json");
 const previousExports = await readFile(exportFile, "utf8").then(JSON.parse, (err) => {
   if (err.code !== "ENOENT") throw err;
@@ -109,7 +111,10 @@ const previousExports = await readFile(exportFile, "utf8").then(JSON.parse, (err
 const exports = requested.size ? { ...previousExports } : {};
 const digest = (data) => createHash("sha256").update(data).digest("hex");
 // Reserve space around tightly framed transparent cutouts without changing the export limit.
-const paddedSprites = new Set(["lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine", "fire-rat", "fire-rat-attack", "stele-spirit", "event-cart"]);
+const paddedSprites = new Set([
+  "lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine", "fire-rat", "fire-rat-attack", "stele-spirit", "event-cart",
+  "fallen", "fallen-strike", "fallen-guard", "fallen-elder", "fallen-elder-strike", "fallen-elder-guard",
+]);
 let overrides = 0;
 for (const { id, file } of overridesFromDisk) {
   if (requested.size && !requested.has(id)) continue;
