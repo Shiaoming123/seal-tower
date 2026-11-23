@@ -8,16 +8,34 @@ export function setSound(on: boolean) { setEnabled(on); }
 const fx = (wet = 0.15) => { const a = ac(); const d = out("sfx", wet); return a && d ? { a, d, t: a.currentTime + 0.005 } : null; };
 const rand = (lo: number, hi: number) => lo + Math.random() * (hi - lo);
 let stepSide = false;
+export type Surface = "wood" | "stone" | "wet";
+/** What the floor of each level is made of. */
+export const SURFACE: Record<number, Surface> = { 1: "wood", 2: "wet", 3: "stone" };
 
 export const sfx = {
   /** UI tap: a small wooden tick. */
   click: () => { const s = fx(0.05); if (!s) return; woodblock(s.d, s.t, 0.05, true); },
-  /** Footstep on stone: a soft thud with a scuff, alternating feet. */
-  step: () => {
+  /**
+   * Footstep, alternating feet, by surface: "wood" boards that give a little, "stone" with a gritty scuff,
+   * "wet" stone with a splash. `rain` adds a splash on any floor.
+   */
+  step: (surface: Surface = "stone", rain = false) => {
     const s = fx(0.2); if (!s) return;
     stepSide = !stepSide;
-    noiseHit(s.d, s.t, { dur: 0.09, vol: 0.18, type: "lowpass", f0: stepSide ? 520 : 440, q: 0.7 });
-    noiseHit(s.d, s.t + 0.02, { dur: 0.05, vol: 0.05, f0: 2400, q: 1.5 });
+    const side = stepSide ? 1 : 0.85;
+    if (surface === "wood") {
+      osc(s.d, s.t, { freq: rand(105, 125) * side, slideTo: 70, dur: 0.12, vol: 0.14, type: "triangle" });
+      noiseHit(s.d, s.t, { dur: 0.08, vol: 0.12, type: "bandpass", f0: rand(380, 460), q: 2.5 });
+      if (Math.random() < 0.18) osc(s.d, s.t + 0.05, { freq: rand(260, 340), slideTo: rand(220, 400), dur: 0.3, vol: 0.02, type: "sawtooth", attack: 0.06 });
+    } else {
+      noiseHit(s.d, s.t, { dur: 0.1, vol: 0.3, type: "lowpass", f0: 560 * side, q: 0.7 });
+      osc(s.d, s.t, { freq: rand(70, 85), slideTo: 50, dur: 0.08, vol: 0.08 });
+      noiseHit(s.d, s.t + 0.02, { dur: 0.07, vol: surface === "stone" ? 0.11 : 0.05, f0: rand(2200, 3000), q: 1.5 });
+    }
+    if (surface === "wet" || rain) {
+      noiseHit(s.d, s.t + 0.015, { dur: 0.16, vol: 0.08, type: "bandpass", f0: rand(1200, 1700), f1: 2600, q: 1.2, attack: 0.01 });
+      for (let i = 0; i < 3; i++) osc(s.d, s.t + 0.04 + i * rand(0.02, 0.05), { freq: rand(900, 1600), slideTo: rand(1800, 2600), dur: 0.035, vol: 0.02 });
+    }
   },
   bump: () => { const s = fx(0.2); if (!s) return; osc(s.d, s.t, { freq: 80, slideTo: 50, dur: 0.15, vol: 0.25 }); noiseHit(s.d, s.t, { dur: 0.08, vol: 0.15, type: "lowpass", f0: 600 }); },
   /** Card leaves the hand: a paper swish. */
@@ -76,6 +94,11 @@ export const sfx = {
   /** Victory flourish: a rising pipa run. */
   win: () => { const s = fx(0.35); if (!s) return; [0, 4, 7, 12].forEach((n, i) => pluck(s.d, s.t + i * 0.08, 392 * Math.pow(2, n / 12), 0.4, "pipa")); },
   lose: () => { const s = fx(0.4); if (!s) return; pluck(s.d, s.t, 98, 0.6, "guqin", -3); noiseHit(s.d, s.t + 0.1, { dur: 1, vol: 0.08, type: "lowpass", f0: 400 }); },
+  /** Drawing a hand: quick paper flicks, one per card. */
+  draw: (n = 5) => {
+    const s = fx(0.05); if (!s) return;
+    for (let i = 0; i < Math.min(n, 8); i++) noiseHit(s.d, s.t + i * rand(0.045, 0.07), { dur: 0.06, vol: 0.06, type: "bandpass", f0: rand(3000, 4200), f1: rand(5000, 7000), q: 1.5, attack: 0.01 });
+  },
   /** Your turn starts: one soft woodblock. */
   turn: () => { const s = fx(0.1); if (!s) return; woodblock(s.d, s.t, 0.08); },
   /** Harvest succeeded: a bright pipa chime. */

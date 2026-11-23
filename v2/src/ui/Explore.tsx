@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
-import { sfx } from "../audio/sfx";
+import { SURFACE, sfx } from "../audio/sfx";
+import { creatureCall } from "../audio/voices";
 import { ENEMIES } from "../data/enemies";
 import { EVENTS } from "../data/events";
 import { DIRS, DIR_NAMES, entityAt, findPath, isWall, newlySighted, sightedIds } from "../game/dungeon";
@@ -10,7 +11,7 @@ import { theme } from "../render/textures";
 import { fx } from "../render/fx";
 import { OMEN } from "../data/omens";
 import { ART, artId } from "../render/assets";
-import { commit, markTip, overlay, runSig, say, seenTip, useRun } from "./store";
+import { commit, markTip, overlay, runSig, say, seenTip, tick, useRun } from "./store";
 
 // One renderer for the whole session; screens mount its canvas where they need it.
 export const view = new Raycaster();
@@ -99,6 +100,45 @@ function lookAhead(run: RunState): string {
   return "前面是一条长廊。";
 }
 
+/** Where a tile is relative to the player: stereo pan (-1 left … 1 right), distance, and whether it is behind. */
+function relative(run: RunState, x: number, y: number) {
+  const [fx_, fy] = DIRS[run.pos.dir], [rx, ry] = DIRS[(run.pos.dir + 1) % 4];
+  const dx = x - run.pos.x, dy = y - run.pos.y;
+  const dist = Math.hypot(dx, dy) || 1;
+  return { pan: (dx * rx + dy * ry) / dist, dist, behind: dx * fx_ + dy * fy < 0 };
+}
+
+const lastCall = new Map<number, number>();
+/**
+ * Nearby monsters make themselves heard every few seconds, from the direction they are in — and right away
+ * when you first spot one. Only monsters within 5 tiles call; each waits at least 7 s between calls.
+ */
+function useCreatureCalls() {
+  const prev = useRef<Set<number>>(new Set());
+  useEffect(() => {
+    const call = (fresh: boolean) => {
+      const run = runSig.value;
+      if (!run || run.screen !== "explore" || overlay.value) return;
+      const now = performance.now();
+      const near = run.dungeon.entities
+        .filter((e) => !e.done && e.enemy && isFight(e))
+        .map((e) => ({ e, ...relative(run, e.x, e.y) }))
+        .filter((c) => c.dist <= 5 && now - (lastCall.get(c.e.id) ?? -1e9) > 7000);
+      const seen = new Set(sightedIds(run.dungeon));
+      const spotted = near.filter((c) => seen.has(c.e.id) && !prev.current.has(c.e.id));
+      prev.current = seen;
+      const pick = fresh && spotted.length ? spotted[0] : !fresh && near.length && Math.random() < 0.45 ? near[Math.floor(Math.random() * near.length)] : null;
+      if (!pick) return;
+      lastCall.set(pick.e.id, now);
+      creatureCall(pick.e.enemy!, pick.pan, pick.dist, pick.behind || !seen.has(pick.e.id));
+    };
+    call(true);
+    const iv = window.setInterval(() => call(false), 2600);
+    const unsub = tick.subscribe(() => call(true));
+    return () => { clearInterval(iv); unsub(); };
+  }, []);
+}
+
 export function Explore() {
   const run = useRun();
   const ref = useRef<HTMLDivElement>(null);
@@ -121,6 +161,7 @@ export function Explore() {
   };
   const closeOmen = () => { run.omenSeen = true; sfx.click(); commit(); };
   useView(ref, run);
+  useCreatureCalls();
   useLayoutEffect(() => { view.place(run.pos.x, run.pos.y, run.pos.dir); }, [run.floor, run.warp]);
 
   const stepTo = async (x: number, y: number, dir: number, deliberate: boolean) => {
@@ -132,7 +173,7 @@ export function Explore() {
       commit();
       return true;
     }
-    sfx.step();
+    sfx.step(SURFACE[run.floor], run.omen === "rain");
     await view.moveTo(x, y, dir);
     const opened = R.arrive(run, x, y, dir, deliberate);
     commit();

@@ -106,10 +106,19 @@ function battleSong(floorSong: Song, boss: boolean): Song {
     ] },
     second: { voice: "flute", vol: 0.13, octave: 1, phrases: [[[null, 16]], [[8, 8], [7, 8]], [[null, 16]], [[6, 8], [5, 8]]] },
     accomp: (i, bar, pos, p) => {
+      // Layer 0: the basic march. Layer 1 (the fight is close): off-beat drums, busier woodblock, a low
+      // zheng bass. Layer 2 (someone is about to fall, or the boss's second phase): driving double drums,
+      // a gong every two bars and the ostinato doubled an octave down.
+      const lv = intensity;
       if (pos === 0 || pos === 3 || (pos === 6 && bar % 2 === 1)) p.drum(pos === 0 ? 0.42 : 0.28);
-      if (pos % 2 === 1) p.block(0.07, pos === 7);
+      if (lv >= 1 && (pos === 5 || (pos === 7 && bar % 2 === 0))) p.drum(0.22);
+      if (lv >= 2 && (pos === 1 || pos === 2)) p.drum(0.16);
+      if (pos % 2 === 1 || (lv >= 1 && pos === 4)) p.block(0.07, pos === 7);
       p.note([0, 0, 3, 0, 5, 3, 0, 2][pos] - 5, 0.16, "pipa");
+      if (lv >= 1 && pos % 4 === 0) p.note([0, 3, -1, 0][bar % 4] - 10, 0.3, "zheng");
+      if (lv >= 2) p.note([0, 0, 3, 0, 5, 3, 0, 2][pos] - 10, 0.1, "pipa");
       if (boss && i % 64 === 0) p.gong(0.35);
+      else if (lv >= 2 && i % 16 === 0) p.gong(0.16);
     },
   };
 }
@@ -125,6 +134,12 @@ let nextTime = 0;
 let leadLine: { at: number; deg: number | null; len: number }[] = [];
 let secondLine: { at: number; deg: number | null; len: number }[] = [];
 let leadLen = 1, secondLen = 1;
+/** Combat intensity 0..2: adds layers and a little tempo (see battleSong). */
+let intensity = 0;
+const tempo = () => 1 + intensity * 0.04;
+
+/** How tense the fight is: 0 calm, 1 close, 2 desperate. Only affects battle music. */
+export function setIntensity(level: number) { intensity = Math.max(0, Math.min(2, Math.round(level))); }
 
 function flatten(phrases: Note[][]) {
   const line: { at: number; deg: number | null; len: number }[] = [];
@@ -140,7 +155,7 @@ function freqOf(s: Song, deg: number, octave = 0) {
 
 function schedule(i: number, t: number) {
   const s = song!, dest = songOut!;
-  const eighth = 30 / s.bpm;
+  const eighth = 30 / (s.bpm * tempo());
   const bar = Math.floor(i / 8), pos = i % 8;
   const play: Play = {
     note: (deg, vol, voice = "zheng", octave = 0) => pluck(dest, t, freqOf(s, deg, octave), vol, voice, 0, (Math.random() - 0.5) * 0.5),
@@ -167,7 +182,7 @@ function pump() {
   const a = ac();
   if (!a || !song || !songOut) return;
   if (!running()) { nextTime = a.currentTime + 0.1; return; }
-  const eighth = 30 / song.bpm;
+  const eighth = 30 / (song.bpm * tempo());
   if (nextTime < a.currentTime) nextTime = a.currentTime + 0.05;
   while (nextTime < a.currentTime + 0.25) {
     schedule(step, nextTime);

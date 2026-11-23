@@ -7,6 +7,7 @@ let master: GainNode;
 let musicBus: GainNode;
 let sfxBus: GainNode;
 let reverbIn: GainNode;
+let verbOut: GainNode | null = null;
 let enabled = true;
 let musicVol = 0.7;
 let sfxVol = 0.8;
@@ -17,8 +18,8 @@ export function setVolumes(music: number, sfx: number) {
   if (ctx) { musicBus.gain.setTargetAtTime(music * 0.55, ctx.currentTime, 0.05); sfxBus.gain.setTargetAtTime(sfx, ctx.currentTime, 0.05); }
 }
 
-/** Generated impulse response: early reflections then a long dark tail (a wooden hall). */
-function hallImpulse(a: AudioContext, seconds = 2.6): AudioBuffer {
+/** Generated impulse response: early reflections then a dark tail. `dark` 0..1, `early` = density of first reflections. */
+function hallImpulse(a: AudioContext, seconds = 2.6, dark = 0.5, early = 0.004): AudioBuffer {
   const len = Math.floor(a.sampleRate * seconds);
   const buf = a.createBuffer(2, len, a.sampleRate);
   for (let ch = 0; ch < 2; ch++) {
@@ -26,8 +27,9 @@ function hallImpulse(a: AudioContext, seconds = 2.6): AudioBuffer {
     let lp = 0;
     for (let i = 0; i < len; i++) {
       const t = i / a.sampleRate;
-      const env = Math.pow(1 - i / len, 3.2) * (t < 0.08 ? 0.6 + (Math.random() < 0.004 ? 2 : 0) : 1);
-      lp += (Math.random() * 2 - 1 - lp) * (0.35 - 0.25 * (i / len)); // darker as it decays
+      const env = Math.pow(1 - i / len, 3.2) * (t < 0.08 ? 0.6 + (Math.random() < early ? 2 : 0) : 1);
+      const bright = 0.55 - 0.4 * dark;
+      lp += (Math.random() * 2 - 1 - lp) * (bright - (bright - 0.06) * (i / len)); // darker as it decays
       d[i] = lp * env * 0.6;
     }
   }
@@ -43,11 +45,8 @@ export function ac(): AudioContext | null {
       comp.threshold.value = -16; comp.ratio.value = 3.5; comp.attack.value = 0.004; comp.release.value = 0.2;
       master = ctx.createGain(); master.gain.value = 0.9;
       master.connect(comp).connect(ctx.destination);
-      const verb = ctx.createConvolver();
-      verb.buffer = hallImpulse(ctx);
       reverbIn = ctx.createGain(); reverbIn.gain.value = 1;
-      const verbOut = ctx.createGain(); verbOut.gain.value = 0.32;
-      reverbIn.connect(verb).connect(verbOut).connect(master);
+      swapRoom(ctx, room, 0);
       musicBus = ctx.createGain(); musicBus.gain.value = musicVol * 0.55;
       sfxBus = ctx.createGain(); sfxBus.gain.value = sfxVol;
       musicBus.connect(master); sfxBus.connect(master);
@@ -55,6 +54,37 @@ export function ac(): AudioContext | null {
   }
   if (ctx.state === "suspended") void ctx.resume();
   return ctx;
+}
+
+// ---------------------------------------------------------------- rooms
+
+/** Each place has its own acoustic: the town street is open, the bridge damp and short, the belfry huge. */
+const ROOMS: Record<string, { seconds: number; dark: number; early: number; level: number }> = {
+  town: { seconds: 1.5, dark: 0.35, early: 0.002, level: 0.22 },
+  f1: { seconds: 2.4, dark: 0.45, early: 0.006, level: 0.32 },
+  f2: { seconds: 1.6, dark: 0.75, early: 0.01, level: 0.3 },
+  f3: { seconds: 4.2, dark: 0.3, early: 0.003, level: 0.42 },
+};
+let room = "f1";
+
+function swapRoom(a: AudioContext, key: string, fade: number) {
+  const r = ROOMS[key] ?? ROOMS.f1;
+  const verb = a.createConvolver();
+  verb.buffer = hallImpulse(a, r.seconds, r.dark, r.early);
+  const g = a.createGain();
+  g.gain.setValueAtTime(fade ? 0.0001 : r.level, a.currentTime);
+  if (fade) g.gain.exponentialRampToValueAtTime(r.level, a.currentTime + fade);
+  reverbIn.connect(verb).connect(g).connect(master);
+  const old = verbOut;
+  if (old) { old.gain.setTargetAtTime(0.0001, a.currentTime, fade / 3 || 0.01); setTimeout(() => old.disconnect(), (fade + 1) * 1000); }
+  verbOut = g;
+}
+
+/** Change the reverb to suit the place ("town" | "f1" | "f2" | "f3"), crossfading over a second. */
+export function setRoom(key: string) {
+  if (!ROOMS[key] || key === room) return;
+  room = key;
+  if (ctx) swapRoom(ctx, key, 1.2);
 }
 
 export const running = () => !!ctx && ctx.state === "running" && enabled;
@@ -65,6 +95,22 @@ export function out(bus: "music" | "sfx", wet = 0.3): AudioNode | null {
   const g = a.createGain();
   g.connect(bus === "music" ? musicBus : sfxBus);
   if (wet > 0) { const s = a.createGain(); s.gain.value = wet; g.connect(s).connect(reverbIn); }
+  return g;
+}
+
+/**
+ * A positioned voice output: panned left/right, quieter and duller with distance (`dist` in tiles), and more
+ * of it in the reverb when far away. `muffle` adds extra dulling (behind a wall, in fog).
+ */
+export function spatial(pan: number, dist: number, muffle = 0): AudioNode | null {
+  const a = ac(); if (!a) return null;
+  const d = Math.max(0.6, dist);
+  const dest = out("sfx", Math.min(0.9, 0.2 + d * 0.15));
+  if (!dest) return null;
+  const g = a.createGain(); g.gain.value = Math.min(1, 1.4 / (0.4 + d));
+  const lp = a.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = Math.max(500, 9000 / (1 + (d - 1) * 0.7) * (1 - muffle * 0.7)); lp.Q.value = 0.5;
+  const p = a.createStereoPanner(); p.pan.value = Math.max(-1, Math.min(1, pan));
+  g.connect(lp).connect(p).connect(dest);
   return g;
 }
 

@@ -1,6 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 import { setSound, setVolumes, sfx } from "../audio/sfx";
 import { setMusic } from "../audio/music";
+import { setAmbience } from "../audio/ambience";
+import { setRoom } from "../audio/engine";
 import { ORDERS } from "../data/orders";
 import { OMEN } from "../data/omens";
 import { orderProgress } from "../game/run";
@@ -44,6 +46,9 @@ export function App() {
   const mood = page.value === "game" && run ? (run.screen === "result" ? "town" : `f${run.floor}`) : "town";
   const fight = run?.screen === "combat" ? (run.combat?.kind === "guardian" ? "boss" : "fight") : null;
   useEffect(() => { setMusic(profileSig.value.sound ? mood : "", fight); }, [mood, fight, profileSig.value.sound]);
+  // Ambience and reverb follow the place too; the floor's omen colours the ambience.
+  const omen = page.value === "game" && run && run.screen !== "result" ? run.omen : "calm";
+  useEffect(() => { setRoom(mood); setAmbience(profileSig.value.sound ? mood : "", omen, !!fight); }, [mood, omen, fight, profileSig.value.sound]);
   let body;
   if (page.value === "title") body = <Title />;
   else if (page.value === "help") body = <Help />;

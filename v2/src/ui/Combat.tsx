@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import { sfx } from "../audio/sfx";
+import { setIntensity } from "../audio/music";
+import { creatureCall } from "../audio/voices";
 import { ENEMIES } from "../data/enemies";
 import { GOODS } from "../data/goods";
 import { type CombatEvent, blockedReason, endTurn, enemyHitDamage, incomingDamage, playCard, previewFor, stealTarget } from "../game/combat";
@@ -144,9 +146,12 @@ export function Combat() {
     fxLayer.pulse("255,240,210", 0.45);
     const name = runSig.value!.combat?.enemy.name;
     if (name) setBanner(`遭遇 · ${name}`);
+    // The monster announces itself, then you draw your opening hand.
+    const c0 = runSig.value!.combat;
+    if (c0) { creatureCall(c0.enemy.id, 0, 1.2); setTimeout(() => sfx.draw(c0.hand.length), 450); }
     const ro = new ResizeObserver(anchor);
     if (ref.current) ro.observe(ref.current);
-    return () => { view.onFrame = null; view.setDolly(0, 0); ro.disconnect(); };
+    return () => { view.onFrame = null; view.setDolly(0, 0); ro.disconnect(); setIntensity(0); };
   }, []);
 
   const float = (text: string, kind: string, target: "enemy" | "player") => {
@@ -269,7 +274,7 @@ export function Combat() {
     setFx("");
     commit();
     await show(events);
-    if (!c.over) { sfx.turn(); }
+    if (!c.over) { sfx.turn(); sfx.draw(c.hand.length); }
     busy.current = false;
     commit();
   };
@@ -291,6 +296,12 @@ export function Combat() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   });
+
+  // Battle music gets busier as the fight comes down to the wire.
+  const tension = c.over ? 0
+    : c.enemy.phase === 2 || c.enemy.hp <= c.enemy.maxHp * 0.3 || run.hp <= run.maxHp * 0.3 ? 2
+    : c.enemy.hp <= c.enemy.maxHp * 0.6 || run.hp <= run.maxHp * 0.55 || c.turn >= 6 ? 1 : 0;
+  useEffect(() => { setIntensity(tension); }, [tension]);
 
   const def = ENEMIES[c.enemy.id];
   const intent = intentSummary(run, c);
