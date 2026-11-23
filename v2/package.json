@@ -1,0 +1,33 @@
+{
+  "name": "seal-tower-v2",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "build:offline": "tsc --noEmit && vite build --mode offline",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "sim": "vitest run tests/balance.test.ts --reporter=verbose",
+    "assets": "node scripts/prepare-assets.mjs",
+    "fonts": "node scripts/build-fonts.mjs",
+    "test:e2e": "node tests/e2e.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.65.1",
+    "sharp": "^0.35.5",
+    "subset-font": "^2.9.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.8",
+    "vite-plugin-singlefile": "^2.3.4",
+    "vitest": "^5.1.1"
+  },
+  "dependencies": {
+    "@preact/signals": "^2.11.4",
+    "preact": "^11.2.0"
+  }
+}

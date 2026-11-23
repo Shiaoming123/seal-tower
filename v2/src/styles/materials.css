@@ -1,0 +1,158 @@
+/* Skeuomorphic skin: every box is an object — a lacquered board, a sheet of rice paper,
+   a wooden plaque or a cloth-lined case. Textures come from ui/materials.ts. */
+
+/* ---------- lacquered boards (panels, overlays) ---------- */
+.panel, .overlay-box, .stairs-prompt {
+  position: relative;
+  background:
+    radial-gradient(circle at 12px 12px, #f6d98a 0 2px, #9a7430 3px, #4a3010 4.5px, transparent 5px),
+    radial-gradient(circle at calc(100% - 12px) 12px, #f6d98a 0 2px, #9a7430 3px, #4a3010 4.5px, transparent 5px),
+    radial-gradient(circle at 12px calc(100% - 12px), #f6d98a 0 2px, #9a7430 3px, #4a3010 4.5px, transparent 5px),
+    radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), #f6d98a 0 2px, #9a7430 3px, #4a3010 4.5px, transparent 5px),
+    linear-gradient(rgba(30, 10, 6, 0.35), rgba(10, 4, 2, 0.55)),
+    var(--tex-lacquer) center / 512px 256px;
+  border: 0;
+  border-radius: 3px;
+  box-shadow:
+    inset 0 0 0 2px #1a0905,
+    inset 0 0 0 4px #b08a3c,
+    inset 0 0 0 5px #3a2008,
+    inset 0 2px 24px rgba(0, 0, 0, 0.6),
+    0 2px 0 #0a0402,
+    0 12px 30px rgba(0, 0, 0, 0.7);
+  padding: 20px 22px;
+}
+.panel::before, .overlay-box::before {
+  content: ""; position: absolute; left: 22px; right: 22px; top: 7px; height: 12px; pointer-events: none;
+  background: var(--tex-fret) repeat-x center / 24px 12px; opacity: 0.55;
+}
+.panel h2, .overlay-box h2 { text-shadow: 0 2px 0 #1a0905, 0 0 12px rgba(217, 180, 90, 0.35); margin-top: 6px; }
+
+/* ---------- rice paper ---------- */
+.tip, .ahead, .item-details, .option, .order-card, .speech, .help-box, .item-ware, .relic-choice, .weapon-detail, .order-box, .intel {
+  background: var(--tex-paper) center / 256px, linear-gradient(170deg, #f4e8cc 0%, #e8d6ae 60%, #dcc69a 100%);
+  color: var(--paper-ink);
+}
+.weapon-detail, .order-box, .intel, .relic-choice { box-shadow: inset 0 0 0 1px #8a6a3a, inset 0 0 18px rgba(120, 80, 30, 0.25), 0 4px 10px rgba(0, 0, 0, 0.45); border-radius: 2px; }
+.weapon-detail .card-row { margin: 4px 0; }
+.intel h4, .order-box b { color: #8a2a1a; }
+.order-box .done { color: #2f6f3a; }
+.muted { color: inherit; opacity: 0.72; }
+.tip { border-left: 0; box-shadow: inset 6px 0 0 #b8322a, inset 0 0 24px rgba(120, 80, 30, 0.3), 0 8px 22px rgba(0, 0, 0, 0.55); }
+.tip::after { /* red seal stamp */
+  content: "提示"; position: absolute; right: 10px; top: -10px; font-family: var(--font-title); font-size: 15px; color: #fff3e0;
+  background: #b8322a; padding: 2px 6px; transform: rotate(6deg); box-shadow: 0 0 0 2px #f4e8cc, 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.ahead { box-shadow: inset 0 0 0 1px #8a6a3a, inset 0 0 20px rgba(120, 80, 30, 0.3), 0 4px 10px rgba(0, 0, 0, 0.5); border-radius: 2px; }
+.speech { box-shadow: inset 0 0 0 1px #8a6a3a, 0 6px 16px rgba(0, 0, 0, 0.6); }
+.speech::before { content: ""; position: absolute; left: 30px; top: -9px; border: 9px solid transparent; border-bottom-color: #f0e2c2; border-top: 0; }
+.card { background: var(--tex-paper) center / 256px, linear-gradient(#f3e6c8, #dccaa0); }
+
+/* event & rest boxes are unrolled scrolls */
+.event-box {
+  background: var(--tex-paper) center / 256px, linear-gradient(90deg, #d8c290 0%, #f4e8cc 8%, #f2e4c4 92%, #d8c290 100%);
+  color: var(--paper-ink); border-radius: 0; padding: 34px 34px 30px; margin: 18px 0;
+  box-shadow: inset 0 0 30px rgba(120, 80, 30, 0.35), 0 14px 30px rgba(0, 0, 0, 0.7);
+}
+.event-box::before, .event-box::after {
+  content: ""; position: absolute; left: -14px; right: -14px; height: 18px; border-radius: 9px; opacity: 1;
+  background: linear-gradient(#7a3a20, #3a160c 60%, #200a04); box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6), inset 0 2px 0 rgba(255, 200, 150, 0.25);
+}
+.event-box::before { top: -9px; }
+.event-box::after { bottom: -9px; }
+.event-box h2 { color: #8a1f14; text-shadow: none; }
+.event-box .result-text { color: #8a3a10; }
+.event-box .option { box-shadow: inset 0 0 0 1px #8a6a3a, 0 3px 0 rgba(58, 36, 16, 0.6); }
+
+/* ---------- wooden plaques (buttons) ---------- */
+.btn {
+  background: linear-gradient(rgba(255, 220, 170, 0.12), rgba(0, 0, 0, 0.25)), var(--tex-wood) center / 512px 256px;
+  color: #fbecc8; text-shadow: 0 1px 0 #1a0905, 0 0 6px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 0 0 1px #2a1006, inset 0 0 0 2px rgba(214, 170, 90, 0.55), inset 0 2px 0 rgba(255, 230, 180, 0.35), inset 0 -3px 0 rgba(0, 0, 0, 0.35), 0 3px 0 #120602, 0 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+}
+.btn.primary {
+  background:
+    radial-gradient(circle at 9px 50%, #f6d98a 0 1.5px, #8a6420 2.5px, transparent 3.5px),
+    radial-gradient(circle at calc(100% - 9px) 50%, #f6d98a 0 1.5px, #8a6420 2.5px, transparent 3.5px),
+    linear-gradient(rgba(255, 180, 140, 0.18), rgba(60, 0, 0, 0.3)), var(--tex-lacquer) center / 512px 256px, #8e2418;
+  background-blend-mode: normal, normal, normal, overlay, normal;
+  box-shadow: inset 0 0 0 1px #3a0804, inset 0 0 0 2.5px #e2b860, inset 0 2px 0 rgba(255, 220, 170, 0.4), inset 0 -3px 0 rgba(0, 0, 0, 0.35), 0 3px 0 #2a0402, 0 6px 12px rgba(0, 0, 0, 0.55);
+}
+.btn.ghost { background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), var(--tex-wood) center / 512px 256px; }
+.btn kbd { border-color: rgba(251, 236, 200, 0.5); }
+
+/* ---------- HUD: a carved beam with brass nails ---------- */
+.hud {
+  background:
+    radial-gradient(circle, #f2d488 0 1.2px, #7a5a20 2px, transparent 2.8px) 6px 0 / 64px 8px repeat-x,
+    linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.45)), var(--tex-wood) center / 512px 256px;
+  border-bottom: 0;
+  box-shadow: inset 0 -3px 0 #b08a3c, inset 0 -4px 0 #2a1006, inset 0 2px 0 rgba(255, 220, 170, 0.18), 0 4px 14px rgba(0, 0, 0, 0.7);
+}
+.portrait .hud { background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.45)), var(--tex-wood) center / 512px 256px; }
+.bar { box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8), 0 0 0 1px #b08a3c, 0 0 0 2px #2a1006; }
+.relic { box-shadow: inset 0 0 0 1px #2a1006, 0 0 0 2px #b08a3c, 0 2px 4px rgba(0, 0, 0, 0.6); }
+
+/* ---------- combat furniture ---------- */
+.intent-line {
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)), var(--tex-wood) center / 512px 256px;
+  border: 0; color: #fbecc8;
+  box-shadow: inset 0 0 0 1px #2a1006, inset 0 0 0 2px rgba(214, 170, 90, 0.5), 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+.intent-line::before, .intent-line::after { /* hanging cords */
+  content: ""; position: absolute; top: -14px; width: 2px; height: 14px; background: #b8322a;
+}
+.intent-line::before { left: 18%; }
+.intent-line::after { right: 18%; }
+.ib { background: var(--tex-paper) center / 256px, #efe2c2; color: var(--paper-ink); box-shadow: 0 0 0 1px #8a6a3a, 0 3px 6px rgba(0, 0, 0, 0.6); }
+.ib i { border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35); }
+.intent-name { font-family: var(--font-title); font-size: 20px; }
+.player-stats, .piles span {
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)), var(--tex-wood) center / 512px 256px;
+  border: 0; box-shadow: inset 0 0 0 1px #2a1006, inset 0 0 0 2px rgba(214, 170, 90, 0.45), 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.energy { box-shadow: 0 0 0 3px #3a1a08, 0 0 0 5px #b08a3c, 0 0 0 6px #2a1006, 0 0 24px rgba(255, 190, 90, 0.6); }
+.chip { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.6); }
+
+/* ---------- map, bag, shop ---------- */
+.minimap {
+  background: var(--tex-paper) center / 256px, linear-gradient(#e8d6ae, #d6c094);
+  border: 0; border-radius: 2px;
+  box-shadow: inset 0 0 0 1px #6a4a20, inset 0 0 30px rgba(120, 80, 30, 0.4), 0 0 0 4px #4a2a14, 0 0 0 5px #b08a3c, 0 8px 18px rgba(0, 0, 0, 0.6);
+}
+.minimap .legend { color: var(--paper-ink); }
+
+.bag-grid {
+  background: var(--tex-cloth) 0 0 / 64px;
+  border: 0; border-radius: 2px;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.75), 0 0 0 6px #4a2414, 0 0 0 7px #b08a3c, 0 0 0 9px #2a1006, 0 8px 18px rgba(0, 0, 0, 0.6);
+  margin: 9px;
+}
+.bag-grid .cell { border: 1px dashed rgba(220, 180, 120, 0.18); background: transparent; }
+.pending { background: rgba(0, 0, 0, 0.25); border: 1px dashed #c9a24e; }
+.pending-item { background: var(--tex-paper) center / 256px, #efe2c2; color: var(--paper-ink); border: 0; box-shadow: 0 0 0 1px #8a6a3a, 0 3px 6px rgba(0, 0, 0, 0.5); }
+.shop-table {
+  background: radial-gradient(ellipse at 50% 40%, rgba(255, 120, 80, 0.12), transparent 70%), var(--tex-cloth) 0 0 / 64px, #6a1810;
+  box-shadow: inset 0 0 0 3px #2a0804, inset 0 0 0 5px #b08a3c, inset 0 0 50px rgba(0, 0, 0, 0.6), 0 10px 26px rgba(0, 0, 0, 0.6);
+}
+.shop-row h3 { font-family: var(--font-title); font-size: 22px; text-shadow: 0 2px 0 #1a0905; }
+.tag-price { background: linear-gradient(#f6d98a, #c9a24e); box-shadow: 0 0 0 1px #6a4a10, 0 2px 3px rgba(0, 0, 0, 0.5); border-radius: 1px; }
+.shop-keeper img { box-shadow: 0 0 0 4px #4a2414, 0 0 0 5px #b08a3c, 0 10px 24px rgba(0, 0, 0, 0.7); border: 0; }
+
+/* ---------- town board ---------- */
+.order-card { box-shadow: inset 0 0 0 1px #8a6a3a, inset 0 0 22px rgba(120, 80, 30, 0.3), 0 5px 12px rgba(0, 0, 0, 0.55); border-radius: 1px; position: relative; }
+.order-card::before { /* pinned with a brass tack */
+  content: ""; position: absolute; left: 50%; top: 5px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fbe7a8, #a07a2a 60%, #4a3010); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.order-card.selected { box-shadow: inset 0 0 0 3px #b8322a, inset 0 0 22px rgba(120, 80, 30, 0.3), 0 0 18px rgba(226, 72, 59, 0.55); }
+.order-card.selected::after { content: "已接"; position: absolute; right: 10px; top: 10px; font-family: var(--font-title); font-size: 18px; color: #b8322a; border: 2px solid #b8322a; padding: 0 6px; transform: rotate(-12deg); opacity: 0.85; }
+.weapon-card { background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), var(--tex-wood) center / 512px 256px; box-shadow: inset 0 0 0 1px #2a1006, inset 0 0 0 2px rgba(214, 170, 90, 0.45), 0 4px 10px rgba(0, 0, 0, 0.5); }
+.weapon-card.selected { box-shadow: inset 0 0 0 1px #2a1006, inset 0 0 0 3px #f2c14e, 0 0 18px rgba(242, 193, 78, 0.5); }
+.town-head h2, .town-orders h3, .town-weapons h3 { text-shadow: 0 2px 0 #1a0905; }
+.town-orders h3, .town-weapons h3 { font-family: var(--font-title); font-size: 24px; }
+.diff select { background: var(--tex-paper) center / 256px, #efe2c2; color: var(--paper-ink); border: 1px solid #8a6a3a; }
+
+/* floating panels keep their absolute placement */
+.stairs-prompt { position: absolute; }
