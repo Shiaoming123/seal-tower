@@ -11,6 +11,7 @@ import type { WeaponId } from "../game/types";
 import { previewFor } from "../game/combat";
 import { ART, artId } from "../render/assets";
 import { Art, CardView, portraitOf } from "./parts";
+import { SoundButton } from "./App";
 import { clearRun, commit, dailyMode, page, profileSig, runSig, savedRun, today } from "./store";
 
 export function Title() {
@@ -38,6 +39,7 @@ export function Title() {
             {saved ? "放弃上一趟，重新接单" : "去镇灯铺接单"}
           </button>
           <div class="row">
+            <SoundButton />
             <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "help"; }}>怎么玩</button>
             <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "achievements"; }}>成就 {p.achievements.length}/{ACHIEVEMENTS.length}</button>
             <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "codex"; }}>图鉴</button>

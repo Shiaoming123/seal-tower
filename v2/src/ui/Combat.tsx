@@ -96,17 +96,18 @@ export function Combat() {
         }
         await wait(170);
       } else if (e.t === "block") { if (e.target === "player") float(`+${e.amount} 格挡`, "block", "player"); else float(`+${e.amount} 格挡`, "block", "enemy"); }
+      else if (e.t === "status" && e.id === "burn" && e.n < 0) { sfx.burn(); }
       else if (e.t === "status") float(`${e.n > 0 ? "" : ""}${statusName(e.id)} ${e.n}`, e.target === "enemy" ? "status" : "status-self", e.target);
       else if (e.t === "steal") {
         if (e.saved) { float("货护住了", "block", "player"); }
         else if (e.good) { sfx.steal(); setBanner(`${c.enemy.name}抢走了「${GOODS[e.good].name}」！`); float(`被抢：${GOODS[e.good].name}`, "warn", "player"); await wait(400); }
       }
       else if (e.t === "interrupt") { sfx.interrupt(); setBanner(`打断了！${c.enemy.name}的蓄力落空。`); float("打断", "warn", "enemy"); await wait(300); }
-      else if (e.t === "phase") { sfx.bell(); setBanner(e.text); await wait(600); }
+      else if (e.t === "phase") { sfx.gong(); setBanner(e.text); await wait(700); }
       else if (e.t === "heal") { if (e.amount) float(`+${e.amount}`, "heal", "player"); }
       else if (e.t === "goods") float(`${e.gained ? "+" : "烧掉 "}${GOODS[e.good].name}`, e.gained ? "heal" : "status", "player");
       else if (e.t === "thorns") { if (e.target === "player") float(`被扎 ${e.amount}`, "hurt", "player"); else float(`回敬 ${e.amount}`, "status-self", "enemy"); }
-      else if (e.t === "drain") { sfx.steal(); float(e.what === "oil" ? `灯油 -${e.amount}` : e.what === "ash" ? `被吃掉 ${e.amount} 份灯灰` : `被收走 ${e.amount} 石`, "warn", "player"); }
+      else if (e.t === "drain") { sfx.drain(); float(e.what === "oil" ? `灯油 -${e.amount}` : e.what === "ash" ? `被吃掉 ${e.amount} 份灯灰` : `被收走 ${e.amount} 石`, "warn", "player"); }
       else if (e.t === "enemy-move") { setBanner(`${c.enemy.name}：${e.name}`); }
       else if (e.t === "fled") { sfx.steal(); setBanner(`${c.enemy.name}钻进洞里跑了！`); await wait(700); }
     }

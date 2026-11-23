@@ -1,74 +1,87 @@
-// Small Web Audio synth. Nothing plays until the first user gesture.
-let ctx: AudioContext | null = null;
-let master: GainNode | null = null;
-let music: GainNode | null = null;
-let enabled = true;
+// Sound effects, layered from the engine's building blocks: noise sweeps for swishes and impacts,
+// inharmonic partials for metal, plucked strings for the musical cues.
+import { ac, bigDrum, gong, metal, noiseHit, osc, out, pluck, setEnabled, setVolumes, templeBell, woodblock } from "./engine";
 
-export function setSound(on: boolean) { enabled = on; if (master) master.gain.value = on ? 0.5 : 0; }
+export { setVolumes };
+export function setSound(on: boolean) { setEnabled(on); }
 
-function ac(): AudioContext | null {
-  if (!enabled) return null;
-  if (!ctx) {
-    try {
-      ctx = new AudioContext();
-      master = ctx.createGain();
-      master.gain.value = 0.5;
-      master.connect(ctx.destination);
-      music = ctx.createGain();
-      music.gain.value = 0.55;
-      music.connect(master);
-    } catch { return null; }
-  }
-  if (ctx.state === "suspended") void ctx.resume();
-  return ctx;
-}
-
-/** Shared context for the music module (null while sound is off). */
-export function audioContext(): AudioContext | null { return ac(); }
-export function musicBus(): GainNode | null { ac(); return music; }
-
-function tone(freq: number, dur: number, type: OscillatorType, vol: number, slide = 0, delay = 0) {
-  const a = ac(); if (!a || !master) return;
-  const t = a.currentTime + delay;
-  const o = a.createOscillator(), g = a.createGain();
-  o.type = type;
-  o.frequency.setValueAtTime(freq, t);
-  if (slide) o.frequency.exponentialRampToValueAtTime(Math.max(30, freq * slide), t + dur);
-  g.gain.setValueAtTime(0.0001, t);
-  g.gain.exponentialRampToValueAtTime(vol, t + 0.008);
-  g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
-  o.connect(g).connect(master);
-  o.start(t); o.stop(t + dur + 0.02);
-}
-
-function noise(dur: number, vol: number, freq: number, delay = 0) {
-  const a = ac(); if (!a || !master) return;
-  const t = a.currentTime + delay;
-  const len = Math.floor(a.sampleRate * dur);
-  const b = a.createBuffer(1, len, a.sampleRate);
-  const data = b.getChannelData(0);
-  for (let i = 0; i < len; i++) data[i] = (Math.random() * 2 - 1) * (1 - i / len);
-  const src = a.createBufferSource(), f = a.createBiquadFilter(), g = a.createGain();
-  src.buffer = b; f.type = "bandpass"; f.frequency.value = freq; f.Q.value = 0.8;
-  g.gain.value = vol;
-  src.connect(f).connect(g).connect(master);
-  src.start(t);
-}
+const fx = (wet = 0.15) => { const a = ac(); const d = out("sfx", wet); return a && d ? { a, d, t: a.currentTime + 0.005 } : null; };
+const rand = (lo: number, hi: number) => lo + Math.random() * (hi - lo);
+let stepSide = false;
 
 export const sfx = {
-  click: () => tone(660, 0.05, "triangle", 0.08),
-  step: () => noise(0.08, 0.12, 380),
-  bump: () => { noise(0.06, 0.15, 160); tone(90, 0.08, "sine", 0.1); },
-  card: () => { noise(0.05, 0.08, 2400); tone(520, 0.06, "triangle", 0.05, 1.4); },
-  hit: () => { noise(0.12, 0.35, 1200); tone(180, 0.12, "square", 0.08, 0.5); },
-  heavy: () => { noise(0.2, 0.45, 700); tone(110, 0.22, "sawtooth", 0.12, 0.4); },
-  hurt: () => { noise(0.16, 0.3, 500); tone(140, 0.2, "sawtooth", 0.1, 0.6); },
-  block: () => { tone(880, 0.09, "square", 0.05, 0.7); noise(0.06, 0.12, 3000); },
-  coin: () => { tone(1320, 0.08, "triangle", 0.08); tone(1760, 0.12, "triangle", 0.06, 1, 0.06); },
-  steal: () => { tone(500, 0.18, "square", 0.07, 0.4); noise(0.1, 0.2, 900, 0.05); },
-  interrupt: () => { tone(300, 0.08, "square", 0.1, 2.5); tone(1200, 0.25, "triangle", 0.08, 0.6, 0.06); },
-  bell: () => { tone(220, 1.4, "sine", 0.15, 0.98); tone(440, 1.0, "sine", 0.06, 0.99); tone(663, 0.8, "sine", 0.04); },
-  win: () => [523, 659, 784, 1046].forEach((f, i) => tone(f, 0.25, "triangle", 0.08, 1, i * 0.1)),
-  lose: () => [392, 330, 262, 196].forEach((f, i) => tone(f, 0.35, "sine", 0.1, 1, i * 0.16)),
-  turn: () => tone(330, 0.12, "sine", 0.06, 1.5),
+  /** UI tap: a small wooden tick. */
+  click: () => { const s = fx(0.05); if (!s) return; woodblock(s.d, s.t, 0.05, true); },
+  /** Footstep on stone: a soft thud with a scuff, alternating feet. */
+  step: () => {
+    const s = fx(0.2); if (!s) return;
+    stepSide = !stepSide;
+    noiseHit(s.d, s.t, { dur: 0.09, vol: 0.18, type: "lowpass", f0: stepSide ? 520 : 440, q: 0.7 });
+    noiseHit(s.d, s.t + 0.02, { dur: 0.05, vol: 0.05, f0: 2400, q: 1.5 });
+  },
+  bump: () => { const s = fx(0.2); if (!s) return; osc(s.d, s.t, { freq: 80, slideTo: 50, dur: 0.15, vol: 0.25 }); noiseHit(s.d, s.t, { dur: 0.08, vol: 0.15, type: "lowpass", f0: 600 }); },
+  /** Card leaves the hand: a paper swish. */
+  card: () => { const s = fx(0.05); if (!s) return; noiseHit(s.d, s.t, { dur: 0.14, vol: 0.12, type: "bandpass", f0: 2800, f1: 6500, q: 1.2, attack: 0.03 }); },
+  /** Sword hit: whoosh, impact, a short ring of steel. */
+  hit: () => {
+    const s = fx(0.2); if (!s) return;
+    noiseHit(s.d, s.t, { dur: 0.12, vol: 0.16, type: "highpass", f0: 5000, f1: 1500, attack: 0.02 });
+    noiseHit(s.d, s.t + 0.05, { dur: 0.1, vol: 0.32, type: "lowpass", f0: 1400 });
+    osc(s.d, s.t + 0.05, { freq: 160, slideTo: 70, dur: 0.14, vol: 0.22 });
+    metal(s.d, s.t + 0.05, rand(1700, 2000), [[1, 0.05, 0.25], [1.48, 0.03, 0.18]]);
+  },
+  /** Heavy hit: bigger impact, crunch and a low boom. */
+  heavy: () => {
+    const s = fx(0.3); if (!s) return;
+    noiseHit(s.d, s.t, { dur: 0.16, vol: 0.2, type: "highpass", f0: 4000, f1: 900, attack: 0.03 });
+    noiseHit(s.d, s.t + 0.07, { dur: 0.22, vol: 0.45, type: "lowpass", f0: 1100 });
+    bigDrum(s.d, s.t + 0.07, 0.4);
+    metal(s.d, s.t + 0.07, rand(1100, 1300), [[1, 0.07, 0.4], [1.62, 0.04, 0.3]]);
+  },
+  /** You take damage: body thud and a dull crack. */
+  hurt: () => {
+    const s = fx(0.15); if (!s) return;
+    noiseHit(s.d, s.t, { dur: 0.18, vol: 0.35, type: "lowpass", f0: 700 });
+    osc(s.d, s.t, { freq: 120, slideTo: 60, dur: 0.22, vol: 0.25, type: "triangle" });
+    noiseHit(s.d, s.t + 0.01, { dur: 0.05, vol: 0.12, f0: 3000, q: 2 });
+  },
+  /** Block: a bright metal clang. */
+  block: () => {
+    const s = fx(0.25); if (!s) return;
+    metal(s.d, s.t, rand(500, 560), [[1, 0.12, 0.5], [2.52, 0.08, 0.35], [4.1, 0.05, 0.25], [6.3, 0.03, 0.15]]);
+    noiseHit(s.d, s.t, { dur: 0.05, vol: 0.18, f0: 4000, q: 1 });
+  },
+  /** Coins on a counter. */
+  coin: () => {
+    const s = fx(0.2); if (!s) return;
+    for (let i = 0; i < 3; i++) metal(s.d, s.t + i * rand(0.04, 0.07), rand(2600, 3400), [[1, 0.05, 0.25], [1.34, 0.03, 0.2], [2.1, 0.015, 0.12]]);
+  },
+  /** A thief strikes: a squeak and a rustle. */
+  steal: () => {
+    const s = fx(0.1); if (!s) return;
+    osc(s.d, s.t, { freq: 1800, slideTo: 3200, dur: 0.08, vol: 0.06, type: "sine" });
+    osc(s.d, s.t + 0.09, { freq: 2800, slideTo: 1600, dur: 0.1, vol: 0.05, type: "sine" });
+    noiseHit(s.d, s.t, { dur: 0.25, vol: 0.12, f0: 1800, f1: 900, q: 0.8 });
+  },
+  /** Interrupt: a cracking chime and a falling tone. */
+  interrupt: () => {
+    const s = fx(0.35); if (!s) return;
+    metal(s.d, s.t, 1320, [[1, 0.09, 0.6], [1.5, 0.06, 0.5], [2.7, 0.04, 0.35]]);
+    noiseHit(s.d, s.t, { dur: 0.2, vol: 0.2, type: "highpass", f0: 6000, f1: 2000 });
+    osc(s.d, s.t + 0.05, { freq: 600, slideTo: 150, dur: 0.4, vol: 0.08, type: "triangle" });
+  },
+  /** Temple bell: entering a floor, phase changes. */
+  bell: () => { const s = fx(0.6); if (!s) return; templeBell(s.d, s.t, 196, 0.4); },
+  gong: () => { const s = fx(0.5); if (!s) return; gong(s.d, s.t, 0.45); },
+  /** Victory flourish: a rising pipa run. */
+  win: () => { const s = fx(0.35); if (!s) return; [0, 4, 7, 12].forEach((n, i) => pluck(s.d, s.t + i * 0.08, 392 * Math.pow(2, n / 12), 0.4, "pipa")); },
+  lose: () => { const s = fx(0.4); if (!s) return; pluck(s.d, s.t, 98, 0.6, "guqin", -3); noiseHit(s.d, s.t + 0.1, { dur: 1, vol: 0.08, type: "lowpass", f0: 400 }); },
+  /** Your turn starts: one soft woodblock. */
+  turn: () => { const s = fx(0.1); if (!s) return; woodblock(s.d, s.t, 0.08); },
+  /** Harvest succeeded: a bright pipa chime. */
+  harvest: () => { const s = fx(0.35); if (!s) return; pluck(s.d, s.t, 784, 0.35, "pipa"); pluck(s.d, s.t + 0.09, 1175, 0.3, "pipa"); },
+  /** Oil drained / ash eaten: a bubbling gulp. */
+  drain: () => { const s = fx(0.1); if (!s) return; for (let i = 0; i < 3; i++) osc(s.d, s.t + i * 0.06, { freq: rand(300, 500), slideTo: rand(700, 900), dur: 0.06, vol: 0.06 }); },
+  /** Burn tick: a crackle. */
+  burn: () => { const s = fx(0.1); if (!s) return; for (let i = 0; i < 4; i++) noiseHit(s.d, s.t + i * rand(0.02, 0.05), { dur: 0.04, vol: 0.12, f0: rand(2000, 5000), q: 3 }); },
 };

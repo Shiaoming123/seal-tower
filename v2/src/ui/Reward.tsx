@@ -4,7 +4,7 @@ import { previewFor } from "../game/combat";
 import * as R from "../game/run";
 import { BagGrid } from "./Bag";
 import { Art, CardView, GoodChip, countGoods, relicIcon } from "./parts";
-import { useRef } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 import { useView } from "./Explore";
 import { commit, useRun } from "./store";
 
@@ -15,6 +15,7 @@ export function Reward() {
   const title = rw.from === "chest" ? "打开宝箱" : rw.from === "guardian" ? "守关妖倒下了" : rw.from === "elite" ? "精英妖倒下了" : "妖倒下了";
   const pending = run.pending.length;
   const bg = useRef<HTMLDivElement>(null);
+  useEffect(() => { if (rw.note.includes("取材成功") || rw.note.includes("追回")) sfx.harvest(); }, []);
   useView(bg, run, { hideAll: true, dim: 0.65 });
   return (
     <div class="reward">

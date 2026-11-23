@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
-import { setSound, sfx } from "../audio/sfx";
+import { setSound, setVolumes, sfx } from "../audio/sfx";
 import { setMusic } from "../audio/music";
 import { ORDERS } from "../data/orders";
 import { OMEN } from "../data/omens";
@@ -38,11 +38,12 @@ function useStage() {
 export function App() {
   const { portrait, scale, w, h } = useStage();
   tick.value; // subscribe
-  useEffect(() => { setSound(profileSig.value.sound); }, []);
+  useEffect(() => { setSound(profileSig.value.sound); setVolumes(profileSig.value.musicVol ?? 0.7, profileSig.value.sfxVol ?? 0.8); }, []);
   const run = runSig.value;
   // Background music follows where you are.
   const mood = page.value === "game" && run ? (run.screen === "result" ? "town" : `f${run.floor}`) : "town";
-  useEffect(() => { setMusic(profileSig.value.sound ? mood : "", run?.screen === "combat"); }, [mood, run?.screen, profileSig.value.sound]);
+  const fight = run?.screen === "combat" ? (run.combat?.kind === "guardian" ? "boss" : "fight") : null;
+  useEffect(() => { setMusic(profileSig.value.sound ? mood : "", fight); }, [mood, fight, profileSig.value.sound]);
   let body;
   if (page.value === "title") body = <Title />;
   else if (page.value === "help") body = <Help />;
@@ -114,11 +115,7 @@ function Hud() {
       <div class="hud-buttons">
         <button type="button" class={`btn small ${pending ? "alert" : ""}`} onClick={() => toggle("bag")}>行囊{pending ? ` · ${pending} 件没装` : ""} <kbd>B</kbd></button>
         <button type="button" class="btn small" onClick={() => toggle("deck")}>牌组 {run.deck.length} <kbd>C</kbd></button>
-        <button type="button" class="btn small ghost" onClick={() => {
-          profileSig.value = { ...profileSig.value, sound: !profileSig.value.sound };
-          setSound(profileSig.value.sound);
-          commit();
-        }}>{profileSig.value.sound ? "声音开" : "声音关"}</button>
+        <SoundButton />
       </div>
     </header>
   );
@@ -142,3 +139,28 @@ export function useOverlayKeys() {
 }
 
 export const orderTitle = (id: string) => `${ORDERS[id].client}：${ORDERS[id].title}`;
+
+/** Sound menu: mute plus separate music and effect volumes, saved in the profile. */
+export function SoundButton() {
+  const [open, setOpen] = useState(false);
+  const p = profileSig.value;
+  const update = (patch: Partial<typeof p>) => {
+    profileSig.value = { ...profileSig.value, ...patch };
+    const q = profileSig.value;
+    setSound(q.sound);
+    setVolumes(q.musicVol ?? 0.7, q.sfxVol ?? 0.8);
+    commit();
+  };
+  return (
+    <div class="sound-menu">
+      <button type="button" class="btn small ghost" onClick={() => { sfx.click(); setOpen(!open); }}>{p.sound ? "声音" : "静音"}</button>
+      {open && (
+        <div class="sound-panel">
+          <label class="row"><input type="checkbox" checked={p.sound} onChange={(e) => update({ sound: (e.target as HTMLInputElement).checked })} /> 开启声音</label>
+          <label>配乐<input type="range" min="0" max="1" step="0.05" value={p.musicVol ?? 0.7} onInput={(e) => update({ musicVol: Number((e.target as HTMLInputElement).value) })} /></label>
+          <label>音效<input type="range" min="0" max="1" step="0.05" value={p.sfxVol ?? 0.8} onInput={(e) => update({ sfxVol: Number((e.target as HTMLInputElement).value) })} onChange={() => sfx.coin()} /></label>
+        </div>
+      )}
+    </div>
+  );
+}

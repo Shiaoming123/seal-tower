@@ -251,4 +251,7 @@ export interface Profile {
   /** 每日签: best result per day. */
   daily: { date: string; floor: number; win: boolean } | null;
   sound: boolean;
+  /** 0..1 */
+  musicVol?: number;
+  sfxVol?: number;
 }
