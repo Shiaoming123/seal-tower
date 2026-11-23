@@ -1,0 +1,398 @@
+[
+  {
+    "id": "event-fake-fox",
+    "view": "event",
+    "viewport": [
+      1280,
+      720
+    ],
+    "runtimeAsset": "event-fake-fox.webp",
+    "requestedWebpSha256": "7e5303ae7c12051329fbbb857699eb95264aa16915db4d23a8f3d6726934aea0",
+    "sourceSha256": "348e0f14473cc66e0008c7681ac274f3199249818d5fb2d587b92129d0a68ada",
+    "exportsShaVerified": true,
+    "bounds": [
+      40,
+      36,
+      381,
+      391
+    ],
+    "alphaFill": 0.414,
+    "painted": [
+      151,
+      206,
+      359,
+      374
+    ],
+    "screenshot": "1280/fake-fox-event.jpg",
+    "browserErrors": [],
+    "frame": [
+      40,
+      167.953125,
+      580,
+      442.078125
+    ],
+    "intrinsic": [
+      420,
+      420
+    ],
+    "state": "event",
+    "floor": 2,
+    "panel": [
+      640,
+      179.40625,
+      600,
+      419.1875
+    ],
+    "enemyInfo": null,
+    "intent": null,
+    "heading": "可疑的白狐摊",
+    "actions": [
+      {
+        "text": "买便宜货",
+        "box": [
+          674,
+          350.59375,
+          532,
+          66
+        ],
+        "disabled": false
+      },
+      {
+        "text": "揭穿它",
+        "box": [
+          674,
+          426.59375,
+          532,
+          66
+        ],
+        "disabled": false
+      },
+      {
+        "text": "离开",
+        "box": [
+          674,
+          502.59375,
+          532,
+          66
+        ],
+        "disabled": false
+      }
+    ],
+    "dpr": 1,
+    "exploration": {
+      "setup": "place event on adjacent tile; press forward",
+      "mapSprite": "map-fake-fox",
+      "requestedWebpSha256": "09f9e799ff4c66d33c475a94a03dd4398e61f78e2000a9118f49195d4d61416e",
+      "sourceSha256": "b9a57682679bdeb5c91283a209881554bd54d7c4819bac37c7fc973100ec17ee",
+      "screenshot": "1280/fake-fox-map.jpg"
+    }
+  },
+  {
+    "id": "fake-fox",
+    "view": "event",
+    "viewport": [
+      1280,
+      720
+    ],
+    "runtimeAsset": "fake-fox.webp",
+    "requestedWebpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+    "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+    "exportsShaVerified": true,
+    "bounds": [
+      56,
+      23,
+      337,
+      378
+    ],
+    "alphaFill": 0.396,
+    "painted": [
+      171,
+      193,
+      311,
+      392
+    ],
+    "screenshot": "1280/fake-fox-expose.jpg",
+    "browserErrors": [],
+    "frame": [
+      40,
+      167.953125,
+      580,
+      442.078125
+    ],
+    "intrinsic": [
+      400,
+      400
+    ],
+    "state": "event",
+    "floor": 2,
+    "panel": [
+      640,
+      240.40625,
+      600,
+      297.1875
+    ],
+    "enemyInfo": null,
+    "intent": null,
+    "heading": "可疑的白狐摊",
+    "actions": [],
+    "dpr": 1
+  },
+  {
+    "id": "fake-fox",
+    "view": "combat",
+    "viewport": [
+      1280,
+      720
+    ],
+    "runtimeAsset": "fake-fox.webp",
+    "requestedWebpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+    "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+    "exportsShaVerified": true,
+    "bounds": [
+      56,
+      23,
+      337,
+      378
+    ],
+    "alphaFill": 0.396,
+    "painted": [
+      542,
+      262,
+      191,
+      241
+    ],
+    "screenshot": "1280/fake-fox-combat.jpg",
+    "browserErrors": [],
+    "frame": [
+      502.6943664550781,
+      245.97579956054688,
+      274.5956726074219,
+      271.9355773925781
+    ],
+    "intrinsic": [
+      400,
+      400
+    ],
+    "state": "combat",
+    "floor": 2,
+    "panel": [
+      14,
+      628,
+      349.375,
+      78
+    ],
+    "enemyInfo": [
+      490,
+      121,
+      300,
+      77
+    ],
+    "intent": [
+      581.796875,
+      68,
+      116.40625,
+      57
+    ],
+    "heading": "假狐商77 / 77取材 · 白狐尾一个石头都别让它收走能取",
+    "actions": [],
+    "dpr": 1
+  },
+  {
+    "id": "event-fake-fox",
+    "view": "event",
+    "viewport": [
+      390,
+      844
+    ],
+    "runtimeAsset": "event-fake-fox.webp",
+    "requestedWebpSha256": "7e5303ae7c12051329fbbb857699eb95264aa16915db4d23a8f3d6726934aea0",
+    "sourceSha256": "348e0f14473cc66e0008c7681ac274f3199249818d5fb2d587b92129d0a68ada",
+    "exportsShaVerified": true,
+    "bounds": [
+      40,
+      36,
+      381,
+      391
+    ],
+    "alphaFill": 0.414,
+    "painted": [
+      87,
+      139,
+      216,
+      225
+    ],
+    "screenshot": "390/fake-fox-event.jpg",
+    "browserErrors": [],
+    "frame": [
+      10.399999618530273,
+      116.18517303466797,
+      369.1999816894531,
+      265.81951904296875
+    ],
+    "intrinsic": [
+      420,
+      420
+    ],
+    "state": "event",
+    "floor": 2,
+    "panel": [
+      10.399999618530273,
+      442.73907470703125,
+      369.1999816894531,
+      272.47186279296875
+    ],
+    "enemyInfo": null,
+    "intent": null,
+    "heading": "可疑的白狐摊",
+    "actions": [
+      {
+        "text": "买便宜货",
+        "box": [
+          32.5,
+          554.0109252929688,
+          325,
+          42.9000244140625
+        ],
+        "disabled": false
+      },
+      {
+        "text": "揭穿它",
+        "box": [
+          32.5,
+          603.4109497070312,
+          325,
+          42.89996337890625
+        ],
+        "disabled": false
+      },
+      {
+        "text": "离开",
+        "box": [
+          32.5,
+          652.8109130859375,
+          325,
+          42.9000244140625
+        ],
+        "disabled": false
+      }
+    ],
+    "dpr": 1,
+    "exploration": {
+      "setup": "place event on adjacent tile; press forward",
+      "mapSprite": "map-fake-fox",
+      "requestedWebpSha256": "09f9e799ff4c66d33c475a94a03dd4398e61f78e2000a9118f49195d4d61416e",
+      "sourceSha256": "b9a57682679bdeb5c91283a209881554bd54d7c4819bac37c7fc973100ec17ee",
+      "screenshot": "390/fake-fox-map.jpg"
+    }
+  },
+  {
+    "id": "fake-fox",
+    "view": "event",
+    "viewport": [
+      390,
+      844
+    ],
+    "runtimeAsset": "fake-fox.webp",
+    "requestedWebpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+    "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+    "exportsShaVerified": true,
+    "bounds": [
+      56,
+      23,
+      337,
+      378
+    ],
+    "alphaFill": 0.396,
+    "painted": [
+      99,
+      131,
+      187,
+      236
+    ],
+    "screenshot": "390/fake-fox-expose.jpg",
+    "browserErrors": [],
+    "frame": [
+      10.399999618530273,
+      116.18517303466797,
+      369.1999816894531,
+      265.81951904296875
+    ],
+    "intrinsic": [
+      400,
+      400
+    ],
+    "state": "event",
+    "floor": 2,
+    "panel": [
+      10.399999618530273,
+      482.3890686035156,
+      369.1999816894531,
+      193.17184448242188
+    ],
+    "enemyInfo": null,
+    "intent": null,
+    "heading": "可疑的白狐摊",
+    "actions": [],
+    "dpr": 1
+  },
+  {
+    "id": "fake-fox",
+    "view": "combat",
+    "viewport": [
+      390,
+      844
+    ],
+    "runtimeAsset": "fake-fox.webp",
+    "requestedWebpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+    "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+    "exportsShaVerified": true,
+    "bounds": [
+      56,
+      23,
+      337,
+      378
+    ],
+    "alphaFill": 0.396,
+    "painted": [
+      61,
+      239,
+      262,
+      331
+    ],
+    "screenshot": "390/fake-fox-combat.jpg",
+    "browserErrors": [],
+    "frame": [
+      7.0232648849487305,
+      217.18113708496094,
+      375.9534606933594,
+      372.84649658203125
+    ],
+    "intrinsic": [
+      400,
+      400
+    ],
+    "state": "combat",
+    "floor": 2,
+    "panel": [
+      9.09999942779541,
+      784.0499877929688,
+      227.09373474121094,
+      50.70001220703125
+    ],
+    "enemyInfo": [
+      97.5,
+      135.31954956054688,
+      195,
+      50.05000305175781
+    ],
+    "intent": [
+      157.16796875,
+      100.86955261230469,
+      75.66404724121094,
+      37.05000305175781
+    ],
+    "heading": "假狐商77 / 77取材 · 白狐尾一个石头都别让它收走能取",
+    "actions": [],
+    "dpr": 1
+  }
+]
