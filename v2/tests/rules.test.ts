@@ -5,7 +5,7 @@ import { EVENTS } from "../src/data/events";
 import * as bag from "../src/game/bag";
 import { endTurn, playCard, startCombat } from "../src/game/combat";
 import { distances, findPath, generate, idx, revealAll } from "../src/game/dungeon";
-import { addGood } from "../src/game/inventory";
+import { addGood, fromPouch, sellPouch, toPouch } from "../src/game/inventory";
 import { createRun, winCombat } from "../src/game/run";
 import { makeRng } from "../src/game/rng";
 import type { Entity, FloorNo, RunState } from "../src/game/types";
@@ -428,7 +428,7 @@ describe("combos", () => {
     const hp = c.enemy.hp;
     c.hand = [{ ...unison }];
     playCard(run, 0);
-    expect(hp - c.enemy.hp).toBe(6 + 2 + 2); // base + whetstone + sword's first-attack bonus
+    expect(hp - c.enemy.hp).toBe(6 + 2 + 2 + 1); // base + whetstone + sword passive + 刃 pair (sword and whetstone)
   });
   it("a ward charm keeps its neighbours from being stolen", () => {
     const run = createRun(82, "sword", "lamp");
@@ -499,5 +499,84 @@ describe("UI-001 navigation helpers", () => {
     const fresh = newlySighted(d, before);
     expect(fresh.length).toBe(d.entities.filter((e) => !e.done && e.kind !== "stairs").length - before.size);
     expect(fresh.every((e) => !before.has(e.id))).toBe(true);
+  });
+});
+
+describe("bag sets and side pouch (GAME-003A)", () => {
+  const uidOf = (run: RunState, id: string) => run.bag.items.find((i) => i.id === id)!.uid;
+
+  it("counts tags anywhere in the bag and turns sets on at their thresholds", () => {
+    const run = createRun(21, "sword", "lamp");
+    expect(bag.tagCounts(run.bag).blade).toBe(1);
+    expect(bag.tagLevel(run.bag, "blade")).toBe(0);
+    addGood(run, "ironsword");
+    expect(bag.tagLevel(run.bag, "blade")).toBe(1);
+    addGood(run, "hook"); addGood(run, "whetstone");
+    expect(bag.tagCounts(run.bag).blade).toBe(4);
+    expect(bag.tagLevel(run.bag, "blade")).toBe(2);
+  });
+
+  it("a 刃 pair adds 1 damage to hits", () => {
+    const run = createRun(22, "shield", "lamp");
+    addGood(run, "ironsword"); addGood(run, "hook");
+    const c = fightWith(run, "louse");
+    const hp = c.enemy.hp;
+    handOf(run, ["defend"]);
+    run.combat!.hand = [{ uid: 900, id: "strike", up: false }];
+    playCard(run, 0);
+    expect(c.enemy.hp).toBe(hp - 7);
+  });
+
+  it("a 盾 pair gives block at the start of every fight", () => {
+    const run = createRun(23, "shield", "lamp");
+    expect(fightWith(run, "louse").block).toBe(0);
+    const run2 = createRun(23, "shield", "lamp");
+    addGood(run2, "amulet");
+    expect(fightWith(run2, "louse").block).toBe(4);
+  });
+
+  it("items in the side pouch give no cards, boosts or tags", async () => {
+    const { combatDeck } = await import("../src/game/combat");
+    const run = createRun(24, "sword", "lamp");
+    addGood(run, "ironsword");
+    expect(bag.tagLevel(run.bag, "blade")).toBe(1);
+    expect(toPouch(run, uidOf(run, "ironsword"))).toBe(true);
+    expect(run.pouch).toEqual(["ironsword"]);
+    expect(bag.tagLevel(run.bag, "blade")).toBe(0);
+    expect(combatDeck(run).map((c) => c.id)).not.toContain("gap");
+    expect(fromPouch(run, 0)).toBe(true);
+    expect(run.pouch).toEqual([]);
+    expect(combatDeck(run).map((c) => c.id)).toContain("gap");
+  });
+
+  it("thieves can't reach the side pouch, and it can't be used mid-fight", () => {
+    const run = createRun(25, "sword", "lamp");
+    addGood(run, "clasp");
+    toPouch(run, uidOf(run, "clasp"));
+    const c = fightWith(run, "rat");
+    handOf(run, []);
+    c.block = 0;
+    endTurn(run);
+    expect(c.stolen).toEqual([]);
+    expect(run.pouch).toEqual(["clasp"]);
+    expect(fromPouch(run, 0)).toBe(false);
+  });
+
+  it("the pouch holds three things and its goods can be sold", () => {
+    const run = createRun(26, "sword", "lamp");
+    for (const g of ["fang", "silk", "shell", "knot"] as const) addGood(run, g);
+    for (const g of ["fang", "silk", "shell", "knot"]) toPouch(run, uidOf(run, g));
+    expect(run.pouch).toEqual(["fang", "silk", "shell"]);
+    const gold = run.gold;
+    const p = sellPouch(run, 0);
+    expect(p).toBeGreaterThan(0);
+    expect(run.gold).toBe(gold + p);
+    expect(run.pouch).toEqual(["silk", "shell"]);
+  });
+
+  it("an accessory reaches the 8 cells around it, clipped to the bag", () => {
+    expect(bag.auraCells({ w: 5, h: 4 }, [[0, 0]]).length).toBe(3);
+    expect(bag.auraCells({ w: 5, h: 4 }, [[2, 1]]).length).toBe(8);
+    expect(bag.auraCells({ w: 5, h: 4 }, [[2, 1], [2, 2]]).length).toBe(10);
   });
 });

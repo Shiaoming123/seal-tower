@@ -29,7 +29,8 @@ export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floo
   const festival = omen === "festival" && id === "ash" ? 2 : 1;
   const market = omen === "market" ? 1.25 : 1;
   const raw = Math.round(g.price * (m.mult[id] ?? 1) * (m.wanted === id ? 2 : 1) * festival * market);
-  return Math.max(1, raw - sold) + pin + (omen === "rain" ? 1 : 0);
+  const material = g.tags?.includes("material") && bag.tagLevel(run.bag, "material") >= 1 ? 1 : 0;
+  return Math.max(1, raw - sold) + pin + material + (omen === "rain" ? 1 : 0);
 }
 
 export function sellItem(run: RunState, uid: number): number {
@@ -46,6 +47,51 @@ export function sellItem(run: RunState, uid: number): number {
 }
 
 export const MAX_BAG_ROWS = 6;
+
+// ---------------------------------------------------------------- side pouch (侧袋)
+
+export const POUCH_SLOTS = 3;
+export const pouchFull = (run: RunState) => run.pouch.length >= POUCH_SLOTS;
+
+/** Move a packed item into the side pouch. Not during a fight. */
+export function toPouch(run: RunState, uid: number): boolean {
+  if (run.combat || pouchFull(run)) return false;
+  const it = bag.removeUid(run.bag, uid);
+  if (!it) return false;
+  run.pouch.push(it.id);
+  return true;
+}
+
+/** Move a not-yet-packed good straight into the side pouch. */
+export function pendingToPouch(run: RunState, index: number): boolean {
+  if (run.combat || pouchFull(run) || run.pending[index] === undefined) return false;
+  run.pouch.push(run.pending.splice(index, 1)[0]);
+  return true;
+}
+
+/** Take an item out of the pouch into the bag: at a given spot, or the first free one. */
+export function fromPouch(run: RunState, i: number, at?: { x: number; y: number; rot: number }): boolean {
+  const id = run.pouch[i];
+  if (run.combat || id === undefined) return false;
+  const spot = at && bag.fits(run.bag, id, at.x, at.y, at.rot) ? at : at ? null : bag.findSpot(run.bag, id);
+  if (!spot) return false;
+  run.bag.items.push({ uid: run.nextUid++, id, ...spot });
+  run.pouch.splice(i, 1);
+  return true;
+}
+
+export function sellPouch(run: RunState, i: number): number {
+  const id = run.pouch[i];
+  if (id === undefined) return 0;
+  const price = sellPrice(run, id);
+  run.pouch.splice(i, 1);
+  if (run.shop && GOODS[id].kind === "goods") run.shop.sold[id] = (run.shop.sold[id] ?? 0) + 1;
+  run.gold += price;
+  run.stats.goldEarned += price;
+  run.stats.goodsSold++;
+  if (run.relics.includes("ledger")) run.hp = Math.min(run.maxHp, run.hp + 1);
+  return price;
+}
 
 /** Use a consumable. Returns the result line, or null if it can't be used. */
 export function useItem(run: RunState, uid: number): string | null {

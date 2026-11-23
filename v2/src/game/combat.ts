@@ -70,6 +70,8 @@ export function startCombat(run: RunState, entity: Entity, kind: FightKind): Com
   };
   run.combat = c;
   if (has(run, "mirror")) c.block += 6;
+  if (bag.tagLevel(run.bag, "guard") >= 1) c.block += 4;
+  if (bag.tagLevel(run.bag, "coin") >= 2) { run.gold += 3; run.stats.goldEarned += 3; }
   if (has(run, "thorn")) c.status.thorns = (c.status.thorns ?? 0) + 2;
   if (has(run, "abacus")) { const s = Math.min(3, Math.floor(run.gold / 15)); if (s) c.status.str = s; }
   if (has(run, "treasurebag")) { const s = Math.min(3, Math.floor(bag.count(run.bag) / 4)); if (s) c.status.str = (c.status.str ?? 0) + s; }
@@ -188,16 +190,19 @@ function drawCards(c: CombatState, n: number) {
 }
 
 function makeCtx(run: RunState, c: CombatState, events: CombatEvent[], card: { first: boolean; isAttack: boolean; tags?: readonly string[] }): Ctx {
+  const blade = bag.tagLevel(run.bag, "blade");
   const ctx: Ctx = {
     lastConsumedPrice: 0,
     attack(n, hits = 1) {
       let total = 0;
       for (let h = 0; h < hits && !c.over; h++) {
-        let bonus = 0;
+        // 刃 set: +1 to every hit; at 4 blades the first attack each turn hits 3 harder.
+        let bonus = blade >= 1 ? 1 : 0;
         if (card.first) {
           card.first = false;
           if (c.status.focus) { bonus += c.status.focus; delete c.status.focus; }
           if (card.isAttack && c.attacksThisTurn === 0 && has(run, "sword")) bonus += 2;
+          if (card.isAttack && c.attacksThisTurn === 0 && blade >= 2) bonus += 3;
         }
         total += damageEnemy(run, c, playerHit(c, n, bonus, card.tags), events, { tags: card.tags ?? [] });
       }
@@ -240,7 +245,7 @@ function makeCtx(run: RunState, c: CombatState, events: CombatEvent[], card: { f
 export function previewFor(run: RunState, c: CombatState | null): Preview {
   return {
     inCombat: !!c,
-    dmg: (n) => (c ? playerHit(c, n, c.status.focus ?? 0) : n),
+    dmg: (n) => (c ? playerHit(c, n, (c.status.focus ?? 0) + (bag.tagLevel(run.bag, "blade") >= 1 ? 1 : 0)) : n),
     // note: fire weakness / dive / caps are applied in the shared formula above
     ash: bag.count(run.bag, "ash") + bag.ashBonus(run.bag),
     gold: run.gold,
@@ -291,7 +296,10 @@ function startTurn(run: RunState, events: CombatEvent[]) {
   const c = run.combat!;
   c.turn++;
   run.stats.turns++;
-  if (!c.status.barricade) c.block = has(run, "shield") ? Math.min(2, c.block) : 0;
+  // Block you keep between turns: 木挡板 keeps 2, a full 盾 set 3 more.
+  const keep = (has(run, "shield") ? 2 : 0) + (bag.tagLevel(run.bag, "guard") >= 2 ? 3 : 0);
+  // (Not on turn 1: block granted at the start of a fight — 护心镜, the 盾 set — must survive into it.)
+  if (!c.status.barricade && c.turn > 1) c.block = Math.min(keep, c.block);
   c.energy = c.maxEnergy + (c.turn === 1 && has(run, "bell") ? 1 : 0);
   c.attacksThisTurn = 0;
   c.cardsThisTurn = 0;
@@ -326,7 +334,7 @@ export function endTurn(run: RunState): CombatEvent[] {
   // Burn ticks before the enemy acts and ignores block.
   const e = c.enemy;
   if (e.status.burn) {
-    const dmg = Math.min(e.hp, e.status.burn + (has(run, "wickcutter") ? 2 : 0));
+    const dmg = Math.min(e.hp, e.status.burn + (has(run, "wickcutter") ? 2 : 0) + (bag.tagLevel(run.bag, "lamp") >= 1 ? 1 : 0));
     e.hp -= dmg;
     events.push({ t: "hit", target: "enemy", amount: dmg, blocked: 0 });
     events.push({ t: "status", target: "enemy", id: "burn", n: -1 });

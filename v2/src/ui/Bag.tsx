@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import { sfx } from "../audio/sfx";
 import { CARDS } from "../data/cards";
-import { GOODS, KIND_LABEL } from "../data/goods";
+import { GOODS, KIND_LABEL, TAGS, TAG_IDS } from "../data/goods";
 import * as bag from "../game/bag";
-import { MAX_BAG_ROWS, autoPackPending, moveItem, packPending, sellItem, sellPrice, unpack, useItem } from "../game/inventory";
+import { MAX_BAG_ROWS, POUCH_SLOTS, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
 import type { GoodId, RunState } from "../game/types";
 import { ART } from "../render/assets";
 import { commit, overlay, say, useRun } from "./store";
 
-type Held = { from: "bag"; uid: number; id: GoodId; rot: number } | { from: "pending"; index: number; id: GoodId; rot: number };
+type Held = { from: "bag"; uid: number; id: GoodId; rot: number } | { from: "pending" | "pouch"; index: number; id: GoodId; rot: number };
+
+/** Is the pointer over the side pouch? */
+const overPouch = (e: PointerEvent) => !!document.elementFromPoint(e.clientX, e.clientY)?.closest(".pouch");
 
 const CELL = 64;
 
@@ -44,7 +47,9 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
   // Place the held item so the cell under the pointer is its first cell.
   const drop = (h: Held, at: { x: number; y: number } | null) => {
     if (!at) return false;
-    const ok = h.from === "bag" ? moveItem(run, h.uid, at.x, at.y, h.rot) : packPending(run, h.index, at.x, at.y, h.rot);
+    const ok = h.from === "bag" ? moveItem(run, h.uid, at.x, at.y, h.rot)
+      : h.from === "pouch" ? fromPouch(run, h.index, { x: at.x, y: at.y, rot: h.rot })
+      : packPending(run, h.index, at.x, at.y, h.rot);
     if (ok) { sfx.click(); commit(); }
     return ok;
   };
@@ -54,7 +59,13 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
     const onMove = (e: PointerEvent) => { moved.current = true; setGhost(stagePoint(e)); setHover(cellAt(e.clientX, e.clientY)); };
     const onUp = (e: PointerEvent) => {
       const at = cellAt(e.clientX, e.clientY);
-      if (moved.current && !drop(held, at) && at) say("放不下：换个位置或先旋转（R）");
+      if (moved.current && held.from !== "pouch" && overPouch(e)) {
+        // Dropped on the side pouch.
+        const ok = run.combat ? false : held.from === "bag" ? toPouch(run, held.uid) : pendingToPouch(run, held.index);
+        if (ok) { sfx.click(); setSelected(null); commit(); }
+        else say(run.combat ? "打架的时候腾不出手整理侧袋" : `侧袋只有 ${POUCH_SLOTS} 格，已经满了`);
+      }
+      else if (moved.current && !drop(held, at) && at) say("放不下：换个位置或先旋转（R）");
       setHeld(null); setHover(null); setGhost(null);
     };
     const onKey = (e: KeyboardEvent) => { if (e.key === "r" || e.key === "R") setHeld((h) => (h ? { ...h, rot: (h.rot + 1) % 4 } : h)); };
@@ -69,13 +80,18 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
     moved.current = false;
     setHeld(h);
     setGhost(stagePoint(e));
+    // A quick tap can release before the drag listeners below are attached; don't leave the item stuck in hand.
+    window.addEventListener("pointerup", () => { if (!moved.current) { setHeld(null); setHover(null); setGhost(null); } }, { once: true });
     if (h.from === "bag") setSelected(h.uid);
   };
 
   const sel = run.bag.items.find((it) => it.uid === selected) ?? null;
   // Items lit up by the selected accessory (or the accessories boosting the selected item).
   const linked = new Set(sel ? bag.neighbours(b, sel).filter((o) => GOODS[sel.id].aura || GOODS[o.id].aura).map((o) => o.uid) : []);
-  const preview = held && hover ? { cells: bag.shapeOf(held.id, held.rot).map(([x, y]) => [x + hover.x, y + hover.y]), ok: bag.fits(b, held.id, hover.x, hover.y, held.rot, held.from === "bag" ? held.uid : -1) } : null;
+  const preview = held && hover ? { cells: bag.shapeOf(held.id, held.rot).map(([x, y]) => [x + hover.x, y + hover.y] as [number, number]), ok: bag.fits(b, held.id, hover.x, hover.y, held.rot, held.from === "bag" ? held.uid : -1) } : null;
+  // Gold cells: where an accessory's boost reaches — for the one being dragged (at the drop spot) or the one selected.
+  const reach = held && GOODS[held.id].aura ? (preview ? bag.auraCells(b, preview.cells) : [])
+    : !held && sel && GOODS[sel.id].aura ? bag.auraCells(b, bag.footprint(sel)) : [];
 
   const rotateSelected = () => {
     if (!sel) return;
@@ -92,6 +108,7 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
       <div class="bag-grid" ref={gridRef} style={{ width: `${b.w * cell}px`, height: `${b.h * cell}px`, "--cell": `${cell}px` } as never}
         onContextMenu={(e) => { e.preventDefault(); if (held) setHeld({ ...held, rot: (held.rot + 1) % 4 }); else rotateSelected(); }}>
         {Array.from({ length: b.w * b.h }, (_, i) => <div class="cell" style={{ left: `${(i % b.w) * cell}px`, top: `${Math.floor(i / b.w) * cell}px` }} />)}
+        {reach.map(([x, y]) => <div class="cell reach" style={{ left: `${x * cell}px`, top: `${y * cell}px` }} />)}
         {preview && preview.cells.map(([x, y]) => <div class={`cell preview ${preview.ok ? "ok" : "bad"}`} style={{ left: `${x * cell}px`, top: `${y * cell}px` }} />)}
         {b.items.map((it) => {
           const size = bag.sizeOf(it.id, it.rot);
@@ -129,6 +146,10 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
         </div>
       )}
       {mode === "manage" && <ItemDetails run={run} uid={sel?.uid ?? null} onRotate={rotateSelected} onDone={() => setSelected(null)} />}
+      <div class="bag-side">
+        {mode !== "sell" && <TagSets run={run} />}
+        {(mode !== "sell" || run.pouch.length > 0) && <Pouch run={run} mode={mode} held={held} onDrag={(index, e) => startDrag({ from: "pouch", index, id: run.pouch[index], rot: 0 }, e)} />}
+      </div>
       {run.pending.length > 0 && (
         <div class="pending">
           <h4>没装下的东西 · {run.pending.length} 件 <small>拖进格子，或点「自动装」。离开时没装的会留在原地。</small></h4>
@@ -163,9 +184,11 @@ function ItemDetails({ run, uid, onRotate, onDone }: { run: RunState; uid: numbe
       {g.cards && <p class="det-cards">牌组多出：{g.cards.map((c) => `「${CARDS[c].name}」`).join("")}</p>}
       {g.aura && <p class="det-aura">配件：{g.aura.text}。现在挨着：{bag.neighbours(run.bag, it).map((o) => GOODS[o.id].name).join("、") || "什么也没有"}</p>}
       {!g.aura && <AuraLine run={run} uid={it.uid} />}
+      {g.tags && <p class="det-tags">{g.tags.map((t) => `「${TAGS[t].name}」${TAGS[t].at[0]} 件：${TAGS[t].text[0]}；${TAGS[t].at[1]} 件：${TAGS[t].text[1]}`).join("　")}</p>}
       <div class="row">
         {canUse && <button type="button" class="btn small primary" onClick={() => { const r = useItem(run, it.uid); if (r) { sfx.coin(); say(r); onDone(); commit(); } }}>{g.use!.label}</button>}
         <button type="button" class="btn small" onClick={onRotate}>旋转</button>
+        {!inCombat && <button type="button" class="btn small" disabled={pouchFull(run)} onClick={() => { if (toPouch(run, it.uid)) { sfx.click(); onDone(); commit(); } }}>放进侧袋</button>}
         <button type="button" class="btn small ghost" onClick={() => { unpack(run, it.uid); onDone(); commit(); }}>拿出来</button>
       </div>
     </div>
@@ -210,4 +233,65 @@ function AuraLine({ run, uid }: { run: RunState; uid: number }) {
   const from = bag.neighbours(run.bag, it).filter((o) => GOODS[o.id].aura);
   if (!from.length) return null;
   return <p class="det-aura">受到加成：{from.map((o) => `${GOODS[o.id].name}（${GOODS[o.id].aura!.text}）`).join("；")}</p>;
+}
+
+/** Set progress: 「刃 2/4」 for every tag you carry at least one of. Lit when a set is on. */
+function TagSets({ run }: { run: RunState }) {
+  const counts = bag.tagCounts(run.bag);
+  const shown = TAG_IDS.filter((t) => counts[t] > 0);
+  if (!shown.length) return <div class="tag-sets empty"><span>套装：带同一类的东西凑够数量会生效（刃、盾、灯、钱、妖材）</span></div>;
+  return (
+    <div class="tag-sets">
+      {shown.map((t) => {
+        const d = TAGS[t], n = counts[t], lv = bag.tagLevel(run.bag, t);
+        const next = lv < 2 ? d.at[lv] : d.at[1];
+        return (
+          <span class={`tag-set lv${lv}`} title={`${d.at[0]} 件：${d.text[0]}\n${d.at[1]} 件：${d.text[1]}`}>
+            <b>{d.name}</b> {n}/{next}
+            <small>{lv === 0 ? `再 ${d.at[0] - n} 件：${d.text[0]}` : lv === 1 ? `${d.text[0]}；再 ${d.at[1] - n} 件：${d.text[1]}` : `${d.text[0]}；${d.text[1]}`}</small>
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+
+/**
+ * 侧袋: three slots outside the bag. Things here don't count (no cards, boosts or set tags) but can't be
+ * stolen. Drag items in and out, or use the buttons. Locked during a fight.
+ */
+function Pouch({ run, mode, held, onDrag }: { run: RunState; mode: "manage" | "sell"; held: Held | null; onDrag: (index: number, e: PointerEvent) => void }) {
+  const locked = !!run.combat;
+  const [confirm, setConfirm] = useState<number | null>(null);
+  const take = (i: number) => {
+    if (locked) return;
+    if (mode === "sell") {
+      const id = run.pouch[i];
+      if (GOODS[id].kind === "gear" && confirm !== i) { setConfirm(i); say(`再点一次，${sellPrice(run, id)} 石卖掉${GOODS[id].name}`, 3000); return; }
+      const p = sellPouch(run, i); sfx.coin(); say(`卖出${GOODS[id].name}，得 ${p} 石`); setConfirm(null); commit(); return;
+    }
+    if (fromPouch(run, i)) { sfx.click(); commit(); }
+    else say("行囊里没有放得下它的地方，先腾一腾");
+  };
+  return (
+    <div class={`pouch ${locked ? "locked" : ""} ${held && held.from !== "pouch" ? "target" : ""}`}>
+      <h4>侧袋 <small>{locked ? "打完再整理" : mode === "sell" ? "点一下卖掉" : "不生效，但不会被抢。点一下放回行囊"}</small></h4>
+      <div class="pouch-slots">
+        {Array.from({ length: POUCH_SLOTS }, (_, i) => {
+          const id = run.pouch[i];
+          if (!id) return <div class="pouch-slot empty" />;
+          const g = GOODS[id];
+          return (
+            <div class={`pouch-slot kind-${g.kind} ${held?.from === "pouch" && held.index === i ? "held" : ""}`} title={`${g.name}：${g.text}`}
+              onPointerDown={(e) => { if (!locked) onDrag(i, e as unknown as PointerEvent); }}
+              onClick={() => take(i)}>
+              <img src={ART[g.icon]} alt={g.name} draggable={false} />
+              <span>{g.name}</span>
+              {mode === "sell" && <span class={`price ${confirm === i ? "confirm" : ""}`}>{sellPrice(run, id)}</span>}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 }

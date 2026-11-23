@@ -26,6 +26,7 @@ export const toast = signal<{ text: string; id: number } | null>(null);
 
 export function savedRun(): RunState | null {
   const r = read<RunState>(RUN_KEY);
+  if (r && !r.pouch) r.pouch = []; // saves from before the side pouch
   return r && r.version === 2 && !r.outcome ? r : null;
 }
 

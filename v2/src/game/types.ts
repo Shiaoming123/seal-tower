@@ -200,6 +200,8 @@ export interface RunState {
   combat: CombatState | null;
   /** Goods waiting to be packed (loot, event gifts). Never blocks progress: leaving drops them. */
   pending: GoodId[];
+  /** 侧袋: a few slots outside the bag. Items here do nothing (no cards, no boosts, no set tags) but can't be stolen. */
+  pouch: GoodId[];
   reward: RewardState | null;
   event: EventState | null;
   shop: ShopState | null;

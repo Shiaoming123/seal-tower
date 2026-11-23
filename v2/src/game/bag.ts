@@ -1,4 +1,4 @@
-import { GOODS } from "../data/goods";
+import { GOODS, TAGS, TAG_IDS, type TagId } from "../data/goods";
 import type { Bag, GoodId, PlacedGood } from "./types";
 
 /** Cells an item covers after rotating `rot` quarter turns clockwise, normalised to start at 0,0. */
@@ -105,4 +105,28 @@ export function autoPack(bag: Bag): boolean {
   }
   bag.items = fresh.items;
   return true;
+}
+
+/** How many packed items carry each tag. */
+export function tagCounts(bag: Bag): Record<TagId, number> {
+  const out = Object.fromEntries(TAG_IDS.map((t) => [t, 0])) as Record<TagId, number>;
+  for (const it of bag.items) for (const t of GOODS[it.id].tags ?? []) out[t]++;
+  return out;
+}
+
+/** Set level for a tag: 0 (off), 1 (first threshold) or 2 (second). */
+export function tagLevel(bag: Bag, tag: TagId): number {
+  const n = tagCounts(bag)[tag], [a, b] = TAGS[tag].at;
+  return n >= b ? 2 : n >= a ? 1 : 0;
+}
+
+/** Cells an accessory reaches when its footprint sits at the given cells (the 8 around it, inside the bag). */
+export function auraCells(bag: Pick<Bag, "w" | "h">, cells: [number, number][]): [number, number][] {
+  const own = new Set(cells.map(([x, y]) => `${x},${y}`));
+  const out = new Map<string, [number, number]>();
+  for (const [x, y] of cells) for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+    const cx = x + dx, cy = y + dy, k = `${cx},${cy}`;
+    if (cx >= 0 && cy >= 0 && cx < bag.w && cy < bag.h && !own.has(k)) out.set(k, [cx, cy]);
+  }
+  return [...out.values()];
 }

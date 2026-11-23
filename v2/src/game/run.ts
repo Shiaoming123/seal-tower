@@ -47,7 +47,7 @@ export function createRun(seed: number, weapon: WeaponId, orders: string | strin
     floor: 1,
     dungeon: generate(1, rng),
     pos: { x: 0, y: 0, dir: 0 },
-    screen: "explore", combat: null, pending: [], reward: null, event: null, shop: null, at: null,
+    screen: "explore", combat: null, pending: [], pouch: [], reward: null, event: null, shop: null, at: null,
     stats: { steps: 0, harvests: 0, kills: 0, goldEarned: 0, goodsSold: 0, goodsUsed: 0, damageTaken: 0, turns: 0 },
     nextUid: 1000, outcome: null, mapRevealed: false, markets: makeMarkets(rng), rumor: false,
     oil: START_OIL + extraOil, maxOil: MAX_OIL + extraOil, bossIntel: false, cardPick: null, log: [], flags: [], eventFight: null, warp: 0, omen: "calm", omenSeen: false, discovered: [],
@@ -165,6 +165,7 @@ export function winCombat(run: RunState) {
     note = c.enemy.partIntact ? `${def.part.label}完好无损。` : `${def.part.label}被重击打碎了。`;
   }
   if (has(run, "lamp")) goods.push("ash");
+  if (bag.tagLevel(run.bag, "lamp") >= 2) goods.push("ash");
   if (run.omen === "horde" && c.kind === "fight") goods.push(def.drops[0].good);
   if (has(run, "fangcharm")) run.hp = Math.min(run.maxHp, run.hp + 4);
   // Normal fights sometimes drop a piece of basic gear; elites always drop tier-2 gear or better.
@@ -179,6 +180,7 @@ export function winCombat(run: RunState) {
         note += ` 取材成功：多拿到${GOODS[def.harvest.good].name}。`;
         if (def.harvest.good === "token") flag(run, "token");
         if (run.omen === "bloodmoon") goods.push(def.harvest.good);
+        if (bag.tagLevel(run.bag, "material") >= 2) { goods.push(def.harvest.good); note += " 妖材凑齐了六件，又多割下一份。"; }
         if (has(run, "butcher")) { goods.push(def.harvest.good); run.gold += 5; run.stats.goldEarned += 5; note += " 庖丁刀又多割下一份，外加 5 石。"; }
       }
       run.stats.harvests++;
@@ -285,7 +287,7 @@ export function closeReward(run: RunState) {
 // ---------------------------------------------------------------- shop
 
 function makeShop(run: RunState): ShopState {
-  const off = (run.relics.includes("pin") ? 0.8 : 1) * (run.omen === "market" ? 0.75 : 1);
+  const off = (run.relics.includes("pin") ? 0.8 : 1) * (run.omen === "market" ? 0.75 : 1) * (bag.tagLevel(run.bag, "coin") >= 1 ? 0.9 : 1);
   const price = (n: number) => Math.round(n * off * (1 + 0.15 * (run.floor - 1)));
   const cardPrice = (id: string) => price({ common: 14, uncommon: 22, rare: 34, basic: 10 }[CARDS[id].rarity] + int(run.rng, -2, 2));
   const relics = [randomRelic(run, "common"), randomRelic(run)].filter((id, i, a): id is string => !!id && a.indexOf(id) === i);
@@ -400,7 +402,7 @@ export function orderRewardText(ord: RunOrder): string {
 export function orderProgress(run: RunState, i = 0) {
   const ord = run.orders[i];
   const order = ORDERS[ord.id];
-  const parts = Object.entries(orderNeeds(ord)).map(([id, n]) => ({ id: id as GoodId, need: n!, have: bag.count(run.bag, id as GoodId) }));
+  const parts = Object.entries(orderNeeds(ord)).map(([id, n]) => ({ id: id as GoodId, need: n!, have: bag.count(run.bag, id as GoodId) + run.pouch.filter((g) => g === id).length }));
   return { ord, order, parts, ready: !ord.done && parts.every((p) => p.have >= p.need) };
 }
 
@@ -408,7 +410,8 @@ export function orderProgress(run: RunState, i = 0) {
 export function deliverOrder(run: RunState, i = 0): string | null {
   const { ord, order, parts, ready } = orderProgress(run, i);
   if (!ready) return null;
-  for (const p of parts) for (let k = 0; k < p.need; k++) bag.removeOne(run.bag, p.id);
+  // Hand over packed goods first, then any in the side pouch.
+  for (const p of parts) for (let k = 0; k < p.need; k++) if (!bag.removeOne(run.bag, p.id)) run.pouch.splice(run.pouch.indexOf(p.id), 1);
   ord.done = true;
   const r = orderReward(ord);
   const lines: string[] = [];
@@ -529,7 +532,7 @@ export function settle(run: RunState): { renown: number; lines: string[]; carrie
   });
   if (cleared) { renown += cleared; lines.push(`打通 ${cleared} 层 +${cleared}`); }
   if (run.outcome === "win") { renown += 2; lines.push("击败负钟君 +2"); }
-  const goodsValue = run.bag.items.reduce((s, it) => s + townValue(it.id), 0);
+  const goodsValue = run.bag.items.reduce((s, it) => s + townValue(it.id), 0) + run.pouch.reduce((s, id) => s + townValue(id), 0);
   const carried = alive ? run.gold + goodsValue : 0;
   const carriedLines = alive
     ? [`身上的石 ${run.gold}`, `行囊里的东西折价 ${goodsValue}`]
