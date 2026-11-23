@@ -22,7 +22,7 @@ export interface GoodDef {
   tier?: 1 | 2 | 3;
   /** Rotate a diagonal icon so it lies along the item's long side (degrees) and enlarge it. */
   tilt?: [number, number];
-  use?: { label: string; heal?: number; maxHp?: number; bagRow?: boolean; inCombat: boolean };
+  use?: { label: string; heal?: number; maxHp?: number; bagRow?: boolean; oil?: number; inCombat: boolean };
   dim?: boolean;
 }
 
@@ -36,7 +36,8 @@ const ONE: [number, number][] = [[0, 0]];
 const list: GoodDef[] = [
   // ---------- goods ----------
   { id: "ash", kind: "goods", name: "灯灰", icon: "ash", shape: ONE, price: 2,
-    text: "妖物偷吃灯油后剩下的灰。镇上的灯匠收它补灯，引灯的招式也要烧它。" },
+    text: "妖物偷吃灯油后剩下的灰。镇上的灯匠收它补灯，引灯的招式也要烧它，实在没油了还能烧来照路。",
+    use: { label: "烧来照路 · 灯油 +8", oil: 8, inCombat: false } },
   { id: "fang", kind: "goods", name: "鼠牙", icon: "fang", tilt: [-45, 1.25], shape: V2, price: 3, text: "灯鼠的门牙，药铺收去磨粉。" },
   { id: "silk", kind: "goods", name: "蛾丝卷", icon: "silk", shape: V2, price: 4, text: "纸灯蛾吐的丝，裁缝拿来糊灯罩。" },
   { id: "shell", kind: "goods", name: "墨壳", icon: "shell", shape: H2, price: 5, text: "书虱褪下的硬壳，刻印匠抢着要。" },
@@ -51,7 +52,7 @@ const list: GoodDef[] = [
     passive: "每回合第一张攻击牌伤害 +2。", text: "斩妖人家传的剑。快、准，适合连续出招。" },
   { id: "shield", kind: "gear", tier: 1, name: "木挡板", icon: "plank", shape: H2, price: 10, cards: ["bash", "spikes"],
     passive: "回合结束时最多保留 2 点格挡。", text: "桥驿常见的厚木板，挡得住鼠牙也挡得住狐爪。" },
-  { id: "lamp", kind: "gear", tier: 2, name: "引灯盘", icon: "seal", shape: V2, price: 12, cards: ["dust", "reveal"],
+  { id: "lamp", kind: "gear", tier: 2, name: "引灯盘", icon: "seal", shape: V2, price: 12, cards: ["dust", "flame"],
     passive: "每场战斗胜利后多得 1 份灯灰。", text: "镇灯铺的引火盘。能把灯灰烧成照妖的火。" },
   { id: "ironsword", kind: "gear", tier: 1, name: "铁剑", icon: "ward-blade", tilt: [-45, 1.6], shape: V3, price: 8, cards: ["strike", "gap"],
     text: "铁匠铺的大路货。多一把剑，就多两招。" },
@@ -59,7 +60,7 @@ const list: GoodDef[] = [
     text: "取材用的弯钩，顺手也能刺一下。" },
   { id: "mirror", kind: "gear", tier: 2, name: "护心镜", icon: "mirror", shape: SQ, price: 14, cards: ["wall"],
     passive: "每场战斗开始时获得 6 点格挡。", text: "挂在胸前的铜镜，很重，但真能救命。" },
-  { id: "abacus", kind: "gear", tier: 2, name: "算盘", icon: "abacus", shape: SQ, price: 14, cards: ["scatter"],
+  { id: "abacus", kind: "gear", tier: 2, name: "算盘", icon: "abacus", shape: SQ, price: 14, cards: ["scatter", "reckon"],
     passive: "战斗开始时，身上每有 15 石，获得 1 点力量（最多 3）。", text: "账房先生的算盘。钱越多，底气越足。" },
   { id: "bell", kind: "gear", tier: 2, name: "铜铃", icon: "bell-item", shape: SQ, price: 15,
     passive: "每场战斗第一回合多 1 点能量。", text: "摇一下，先手就是你的。" },

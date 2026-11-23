@@ -31,6 +31,7 @@ export const EVENTS: Record<string, EventDef> = {
     options: [
       { label: "包扎", detail: "回复 12 气血。", apply: (r) => { const a = Math.min(12, r.maxHp - r.hp); r.hp += a; return `你包扎好伤口，回复了 ${a} 气血。`; } },
       { label: "刮灯灰", detail: "得到 2 份灯灰。", apply: (r) => { addGood(r, "ash"); addGood(r, "ash"); return "你刮下两份灯灰，灯也灭了。"; } },
+      { label: "倒灯油", detail: "把剩下的灯油倒进你的灯里，灯油 +30。", apply: (r) => { const a = Math.min(30, r.maxOil - r.oil); r.oil += a; return `灯油 +${a}。`; } },
     ],
   },
   broker: {
@@ -52,6 +53,8 @@ export const EVENTS: Record<string, EventDef> = {
         apply: (r) => { r.gold -= 8; r.mapRevealed = true; return "道友在你的地图上画出了整层的路。"; } },
       { label: "问守关妖", detail: "免费。之后在地图上能看到守关妖的招式。",
         apply: (r) => { r.bossIntel = true; return "道友把守关妖的招式一招一招讲给你听。打开地图上的守关标记就能看到。"; } },
+      { label: "打听行情", detail: "付 3 石，知道下一层狐市每种货收多少钱。", locked: (r) => (r.floor >= 3 ? "这已经是最高层了" : r.gold < 3 ? "石不够" : null),
+        apply: (r) => { r.gold -= 3; r.rumor = true; return "道友把上一层狐市的行情一样一样告诉你。到狐市时可以对照着卖。"; } },
       { label: "以货换牌", detail: "给他一件货，他帮你升级 1 张牌。", locked: (r) => (bag.count(r.bag) ? null : "行囊里没有货"),
         apply: (r) => {
           const item = bag.cheapest(r.bag)!;

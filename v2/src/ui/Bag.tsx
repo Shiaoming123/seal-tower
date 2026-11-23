@@ -33,6 +33,7 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
   const [selected, setSelected] = useState<number | null>(null);
   const [ghost, setGhost] = useState<{ x: number; y: number } | null>(null);
   const moved = useRef(false);
+  const [confirmSell, setConfirmSell] = useState<number | null>(null);
 
   const cellAt = (cx: number, cy: number) => {
     const r = gridRef.current!.getBoundingClientRect();
@@ -100,13 +101,20 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
               onPointerDown={(e) => startDrag({ from: "bag", uid: it.uid, id: it.id, rot: it.rot }, e as unknown as PointerEvent)}
               onClick={() => {
                 if (moved.current) return;
-                if (mode === "sell" && g.kind !== "gear") { const p = sellItem(run, it.uid); sfx.coin(); say(`卖出${g.name}，得 ${p} 石`); setSelected(null); commit(); }
+                if (mode === "sell") {
+                  if (g.kind === "gear" && confirmSell !== it.uid) {
+                    setConfirmSell(it.uid);
+                    say(`再点一次，${sellPrice(run, it.id)} 石卖掉${g.name}（它的牌也会离开牌组）`, 3000);
+                    return;
+                  }
+                  const p = sellItem(run, it.uid); sfx.coin(); say(`卖出${g.name}，得 ${p} 石`); setSelected(null); setConfirmSell(null); commit();
+                }
                 else setSelected(it.uid);
               }}>
               {bag.footprint(it).map(([x, y]) => <span class="foot" style={{ left: `${(x - it.x) * cell}px`, top: `${(y - it.y) * cell}px` }} />)}
               <img src={ART[g.icon]} alt={g.name} draggable={false} class="item-img"
                 style={{ width: `${(it.rot % 2 ? size.h : size.w) * cell}px`, height: `${(it.rot % 2 ? size.w : size.h) * cell}px`, transform: `translate(-50%, -50%) rotate(${it.rot * 90 + (g.tilt?.[0] ?? 0)}deg) scale(${g.tilt?.[1] ?? 1})` }} />
-              {mode === "sell" && g.kind !== "gear" && <span class="price">{sellPrice(run, it.id)}</span>}
+              {mode === "sell" && <span class={`price ${confirmSell === it.uid ? "confirm" : ""}`}>{confirmSell === it.uid ? `卖?${sellPrice(run, it.id)}` : sellPrice(run, it.id)}</span>}
             </div>
           );
         })}

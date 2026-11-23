@@ -5,10 +5,10 @@ import { createRun } from "../src/game/run";
 import type { WeaponId } from "../src/game/types";
 import { playRun } from "./bot";
 
-const SEEDS = 150;
+const SEEDS = Number(process.env.SEEDS ?? 150);
 
 describe("balance", () => {
-  for (const weapon of ["sword", "shield", "lamp"] as WeaponId[]) {
+  for (const weapon of ["sword", "shield", "lamp", "abacus"] as WeaponId[]) {
     it(`${weapon}: runs finish and difficulty is in a sane band`, () => {
       const floors = [0, 0, 0, 0];
       let wins = 0, stuck = 0;

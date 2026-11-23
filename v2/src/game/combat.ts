@@ -18,6 +18,7 @@ export type CombatEvent =
   | { t: "goods"; good: GoodId; gained: boolean }
   | { t: "thorns"; amount: number }
   | { t: "intent" }
+  | { t: "fled" }
   | { t: "enemy-move"; name: string };
 
 const HAND = 5;
@@ -50,7 +51,7 @@ export function startCombat(run: RunState, entity: Entity, kind: FightKind): Com
     kind, enemy, energy: 3, maxEnergy: 3, block: 0, status: {},
     draw: shuffle(r, combatDeck(run)), hand: [], discard: [], exhaust: [],
     turn: 0, attacksThisTurn: 0, cardsThisTurn: 0, dmgThisTurn: 0, goodsUsed: 0, stolen: [], harvest: 0, drawBonusNext: 0,
-    over: null, rng: r, purseUsed: false,
+    over: null, rng: r, purseUsed: false, fullBlocks: 0, interrupts: 0, dark: run.oil <= 0,
   };
   run.combat = c;
   if (has(run, "mirror")) c.block += 6;
@@ -74,7 +75,7 @@ function chooseIntent(e: EnemyState, r: RngState) {
 /** Damage an enemy intent would deal per hit to the player right now. */
 export function enemyHitDamage(_run: RunState, c: CombatState, intent: Intent = c.enemy.intent): number {
   if (!intent.dmg) return 0;
-  let dmg = intent.dmg + c.enemy.dmgAdd + (c.enemy.status.str ?? 0);
+  let dmg = intent.dmg + c.enemy.dmgAdd + (c.enemy.status.str ?? 0) + (c.dark ? 3 : 0);
   if (c.enemy.status.weak) dmg = Math.floor(dmg * 0.75);
   if (c.status.vuln) dmg = Math.floor(dmg * 1.5);
   return Math.max(0, dmg);
@@ -190,6 +191,7 @@ function makeCtx(run: RunState, c: CombatState, events: CombatEvent[], card: { f
       const i = c.enemy.intent;
       if (!i.charge) return false;
       c.enemy.intent = { key: "stunned", name: "被打断", stunned: true, text: "蓄力被打断，这回合什么也做不了。" };
+      c.interrupts++;
       events.push({ t: "interrupt" });
       return true;
     },
@@ -257,6 +259,7 @@ function startTurn(run: RunState, events: CombatEvent[]) {
   delete c.status.counter;
   drawCards(c, HAND + c.drawBonusNext + (c.turn === 1 && has(run, "silkfan") ? 2 : 0));
   c.drawBonusNext = 0;
+  if (c.status.interest) { run.gold += c.status.interest; run.stats.goldEarned += c.status.interest; }
   if (c.status.bulwark) { c.block += c.status.bulwark; events.push({ t: "block", target: "player", amount: c.status.bulwark }); }
   if (c.status.lampArray && bag.count(run.bag, "ash") > 0) {
     consumeGood(run, c, "ash", events);
@@ -284,8 +287,13 @@ export function endTurn(run: RunState): CombatEvent[] {
   events.push({ t: "enemy-move", name: i.name });
   if (i.stunned) {
     events.push({ t: "stunned" });
+  } else if (i.flee) {
+    c.over = "fled";
+    events.push({ t: "fled" });
+    return events;
   } else if (i.charge && c.dmgThisTurn >= i.charge.threshold) {
     e.intent = { key: "stunned", name: "被打断", stunned: true };
+    c.interrupts++;
     events.push({ t: "interrupt" });
   } else {
     if (i.block) { e.block += i.block; events.push({ t: "block", target: "enemy", amount: i.block }); }
@@ -300,6 +308,7 @@ export function endTurn(run: RunState): CombatEvent[] {
           damageEnemy(run, c, back, events);
         }
       }
+      if (through === 0 && !c.over) c.fullBlocks++;
       if (i.steal && through > 0 && !c.over) steal(run, c, events);
     }
     if (i.apply && !c.over) { c.status[i.apply.status] = (c.status[i.apply.status] ?? 0) + i.apply.n; events.push({ t: "status", target: "player", id: i.apply.status, n: i.apply.n }); }
@@ -326,6 +335,8 @@ function steal(run: RunState, c: CombatState, events: CombatEvent[]) {
   bag.removeUid(run.bag, item.uid);
   c.stolen.push(item.id);
   events.push({ t: "steal", good: item.id, saved: false });
+  // Thieves that keep what they grab try to run for it next turn.
+  if (ENEMIES[c.enemy.id].stealFlees) c.enemy.queued = "flee";
 }
 
 /** Weak / vulnerable wear off by one at the end of the owner's turn. */

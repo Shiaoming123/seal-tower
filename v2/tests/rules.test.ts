@@ -176,3 +176,106 @@ describe("gear", () => {
     expect(bag.mostValuable(run.bag)).toBeNull();
   });
 });
+
+describe("harvest", () => {
+  it("rat that steals runs away next turn unless killed, and killing it recovers the goods", () => {
+    const run = createRun(3, "sword", "lamp");
+    addGood(run, "clasp");
+    const c = fightWith(run, "rat");
+    handOf(run, []);
+    endTurn(run);
+    expect(c.stolen).toEqual(["clasp"]);
+    expect(c.enemy.intent.flee).toBe(true);
+    // kill it before it escapes
+    c.enemy.hp = 1;
+    handOf(run, ["strike"]);
+    playCard(run, 0);
+    winCombat(run);
+    expect(run.reward!.goods).toContain("clasp");
+  });
+  it("a rat left alive escapes with the goods", () => {
+    const run = createRun(3, "sword", "lamp");
+    addGood(run, "clasp");
+    const c = fightWith(run, "rat");
+    handOf(run, []); endTurn(run);
+    handOf(run, []); endTurn(run);
+    expect(c.over).toBe("fled");
+  });
+  it("moth gives a wick only if one attack was fully blocked", () => {
+    const run = createRun(11, "sword", "lamp");
+    const c = fightWith(run, "moth");
+    c.block = 50;
+    handOf(run, []); endTurn(run);
+    expect(c.fullBlocks).toBe(1);
+    c.enemy.hp = 1; handOf(run, ["strike"]); playCard(run, 0);
+    winCombat(run);
+    expect(run.reward!.goods).toContain("wick");
+  });
+  it("louse killed during its curl turn cracks its shell", () => {
+    const run = createRun(12, "sword", "lamp");
+    const c = fightWith(run, "louse");
+    expect(c.enemy.intent.key).toBe("curl");
+    c.enemy.hp = 1; c.enemy.block = 0; handOf(run, ["strike"]); playCard(run, 0);
+    winCombat(run);
+    expect(run.reward!.note).toContain("没能取到");
+  });
+});
+
+describe("market", () => {
+  it("each sale of the same good lowers its price at that shop", async () => {
+    const { sellItem, sellPrice } = await import("../src/game/inventory");
+    const run = createRun(21, "sword", "lamp");
+    run.shop = { cards: [], relics: [], gear: [], consumables: [], removePrice: 0, removed: false, oil: { amount: 25, price: 6, bought: 0 }, wanted: run.markets[1].wanted, sold: {} };
+    addGood(run, "shell"); addGood(run, "shell");
+    const p1 = sellPrice(run, "shell");
+    sellItem(run, run.bag.items.find((i) => i.id === "shell")!.uid);
+    expect(sellPrice(run, "shell")).toBe(Math.max(1, p1 - 1));
+  });
+  it("markets are fixed per run so a rumour about the next floor is true", () => {
+    const a = createRun(22, "sword", "lamp"), b = createRun(22, "sword", "lamp");
+    expect(a.markets).toEqual(b.markets);
+  });
+});
+
+describe("lamp oil", () => {
+  it("each step burns oil; with the lamp out enemies hit 3 harder and you only see next to you", async () => {
+    const { arrive, DARK_DAMAGE } = await import("../src/game/run");
+    const { enemyHitDamage } = await import("../src/game/combat");
+    const run = createRun(31, "sword", "lamp");
+    const before = run.oil;
+    const [dx, dy] = [[0, -1], [1, 0], [0, 1], [-1, 0]][run.pos.dir];
+    arrive(run, run.pos.x + dx, run.pos.y + dy, run.pos.dir, true);
+    expect(run.oil).toBe(before - 1);
+    run.oil = 0;
+    const lit = fightWith(createRun(32, "sword", "lamp"), "moth");
+    const darkRun = createRun(32, "sword", "lamp");
+    darkRun.oil = 0;
+    const dark = fightWith(darkRun, "moth");
+    expect(enemyHitDamage(darkRun, dark, { key: "x", name: "x", dmg: 6 })).toBe(enemyHitDamage(darkRun, lit, { key: "x", name: "x", dmg: 6 }) + DARK_DAMAGE);
+  });
+  it("ash can be burned for oil from the bag", async () => {
+    const { useItem } = await import("../src/game/inventory");
+    const run = createRun(33, "sword", "lamp");
+    run.oil = 10;
+    addGood(run, "ash");
+    expect(useItem(run, run.bag.items.find((i) => i.id === "ash")!.uid)).toContain("灯油");
+    expect(run.oil).toBe(18);
+  });
+});
+
+describe("long game", () => {
+  it("regulars get their client's gift at the start", () => {
+    const run = createRun(41, "sword", "herbs", 0, true);
+    expect(bag.count(run.bag, "salve")).toBe(1);
+  });
+  it("achievements are checked against the finished run", async () => {
+    const { ACHIEVEMENTS } = await import("../src/data/achievements");
+    const run = createRun(42, "sword", "lamp");
+    run.floor = 2;
+    run.flags.push("clasp");
+    const profile = { renown: 0, runs: 1, wins: 0, bestFloor: 0, ordersDone: [], seenTips: [], achievements: [], sound: true };
+    const got = ACHIEVEMENTS.filter((a) => a.check(run, profile)).map((a) => a.id);
+    expect(got).toEqual(expect.arrayContaining(["floor2", "clasp"]));
+    expect(got).not.toContain("win");
+  });
+});

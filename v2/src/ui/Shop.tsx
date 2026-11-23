@@ -6,6 +6,8 @@ import { RELICS } from "../data/relics";
 import { previewFor } from "../game/combat";
 import * as bag from "../game/bag";
 import * as R from "../game/run";
+import { sellPrice } from "../game/inventory";
+import type { GoodId } from "../game/types";
 import { ART } from "../render/assets";
 import { BagGrid } from "./Bag";
 import { Art, CardView, GoodChip } from "./parts";
@@ -33,6 +35,7 @@ export function Shop() {
     <div class="shop" style={{ backgroundImage: `linear-gradient(rgba(10,5,4,0.55), rgba(10,5,4,0.85)), url(${ART.market})` }}>
       <div class="shop-keeper">
         <img src={ART[pose]} alt="绯绡" draggable={false} />
+        <MarketBoard />
         <div class="speech">{line}</div>
       </div>
       <div class="shop-table">
@@ -77,6 +80,12 @@ export function Shop() {
                 <span class={`tag-price ${run.gold < w.price ? "poor" : ""}`}>{w.sold ? "已售" : `${w.price} 石`}</span>
               </button>
             ))}
+            <button type="button" class="ware item-ware service" onClick={() => buy(R.buyOil(run), "灯油")} title="每买一次贵 2 石">
+              <Art id="lamp" />
+              <b>灯油 +{s.oil.amount}</b>
+              <span class="desc">每走一步烧 1 点。你现在有 {run.oil} / {run.maxOil}。</span>
+              <span class={`tag-price ${run.gold < R.oilCost(run) ? "poor" : ""}`}>{R.oilCost(run)} 石</span>
+            </button>
             <button type="button" class={`ware item-ware service ${s.removed ? "sold" : ""}`} onClick={() => !s.removed && (R.startRemove(run) ? commit() : say("石不够"))}>
               <Art id="grit" />
               <b>删一张牌</b>
@@ -87,7 +96,7 @@ export function Shop() {
         </div>
       </div>
       <div class="shop-sell panel">
-        <h3>卖货 <small>点行囊里的货直接卖出（装备不在这里卖）</small></h3>
+        <h3>卖货 <small>点货物直接卖出；同一种卖得越多越便宜。装备半价回收，要点两下</small></h3>
         <p class="wanted">今天高价收：<GoodChip id={s.wanted} /> 价格翻倍</p>
         <BagGrid mode="sell" cell={44} />
         <div class="order-box">
@@ -103,6 +112,32 @@ export function Shop() {
         </div>
         <button type="button" class="btn big leave" onClick={() => { sfx.click(); run.at = null; run.screen = "explore"; commit(); }}>离开狐市</button>
       </div>
+    </div>
+  );
+}
+
+/** 行情牌: what this shop pays for each good right now, and the next floor's prices if a 道友 told you. */
+function MarketBoard() {
+  const run = useRun();
+  const held = new Set(run.bag.items.map((i) => i.id));
+  const goods = R.TRADE_GOODS.filter((g) => g !== "clasp-broken");
+  return (
+    <div class="market-board">
+      <h4>行情牌{run.rumor && run.floor < 3 ? <small> · 括号里是上一层的价</small> : null}</h4>
+      <ul>
+        {goods.map((g: GoodId) => {
+          const now = sellPrice(run, g);
+          const up = run.rumor && run.floor < 3 ? sellPrice(run, g, (run.floor + 1) as 2 | 3, 0) : null;
+          return (
+            <li class={`${held.has(g) ? "held" : ""} ${run.shop?.wanted === g ? "wanted" : ""}`}>
+              <img src={ART[GOODS[g].icon]} alt="" />
+              <span>{GOODS[g].name}</span>
+              <b>{now}</b>
+              {up !== null && <em class={up > now ? "up" : up < now ? "down" : ""}>({up})</em>}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

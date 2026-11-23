@@ -15,10 +15,14 @@ export function addGood(run: RunState, id: GoodId): boolean {
   return false;
 }
 
-export function sellPrice(run: RunState, id: GoodId): number {
-  const base = GOODS[id].price;
-  const wanted = run.shop?.wanted === id ? 2 : 1;
-  return base * wanted + (run.relics.includes("pin") ? 1 : 0);
+/** What a good would fetch at a floor's shop (defaults to the shop you're in). Gear sells back at half price. */
+export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floor, sold = run.shop?.sold[id] ?? 0): number {
+  const g = GOODS[id];
+  const pin = run.relics.includes("pin") ? 1 : 0;
+  if (g.kind !== "goods") return Math.max(1, Math.floor(g.price / 2)) + pin;
+  const m = run.markets[floor];
+  const raw = Math.round(g.price * (m.mult[id] ?? 1) * (m.wanted === id ? 2 : 1));
+  return Math.max(1, raw - sold) + pin;
 }
 
 export function sellItem(run: RunState, uid: number): number {
@@ -26,6 +30,7 @@ export function sellItem(run: RunState, uid: number): number {
   if (!item) return 0;
   const price = sellPrice(run, item.id);
   bag.removeUid(run.bag, uid);
+  if (run.shop && GOODS[item.id].kind === "goods") run.shop.sold[item.id] = (run.shop.sold[item.id] ?? 0) + 1;
   run.gold += price;
   run.stats.goldEarned += price;
   run.stats.goodsSold++;
@@ -41,11 +46,13 @@ export function useItem(run: RunState, uid: number): string | null {
   const use = item && GOODS[item.id].use;
   if (!item || !use) return null;
   if (use.bagRow && run.bag.h >= MAX_BAG_ROWS) return null;
+  if (use.oil && run.oil >= run.maxOil) return null;
   bag.removeUid(run.bag, uid);
   const lines: string[] = [];
   if (use.maxHp) { run.maxHp += use.maxHp; lines.push(`最大气血 +${use.maxHp}`); }
   if (use.heal) { const a = Math.min(use.heal, run.maxHp - run.hp); run.hp += a; lines.push(`回复 ${a} 气血`); }
   if (use.bagRow) { run.bag.h += 1; lines.push("行囊多了一行"); }
+  if (use.oil) { const a = Math.min(use.oil, run.maxOil - run.oil); run.oil += a; lines.push(`灯油 +${a}`); }
   return lines.join("，") + "。";
 }
 

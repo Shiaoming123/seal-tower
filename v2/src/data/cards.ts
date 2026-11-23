@@ -108,12 +108,12 @@ const list: CardDef[] = [
     text: (v) => `获得 ${v.th} 层反震。每回合开始获得 3 格挡。`, play: (c, v) => { c.selfStatus("thorns", v.th); c.selfStatus("bulwark", 3); } },
 
   // ---------- 引灯盘 ----------
-  { id: "dust", name: "扬灰", cost: 0, type: "attack", rarity: "basic", pool: "lamp", v: [{ dmg: 7, ash: 1 }, { dmg: 10, ash: 1 }], tags: ["goods"],
+  { id: "dust", name: "扬灰", cost: 0, type: "attack", rarity: "basic", pool: "lamp", v: [{ dmg: 8, ash: 1 }, { dmg: 11, ash: 1 }], tags: ["goods"],
     text: (v, p) => `烧掉 1 份灯灰：造成 ${d(p, v.dmg)} 伤害，施加 1 层虚弱。`, needs: needAsh,
     play: (c, v) => { c.consume("ash"); c.attack(v.dmg); c.enemyStatus("weak", 1); } },
   { id: "reveal", name: "照妖", cost: 1, type: "skill", rarity: "common", pool: "lamp", v: [{ vuln: 2 }, { vuln: 3 }],
     text: (v) => `施加 ${v.vuln} 层破绽（受到伤害 +50%），抽 1 张牌。`, play: (c, v) => { c.enemyStatus("vuln", v.vuln); c.draw(1); } },
-  { id: "flame", name: "灯火", cost: 1, type: "attack", rarity: "common", pool: "lamp", v: [{ dmg: 4, per: 2 }, { dmg: 5, per: 3 }],
+  { id: "flame", name: "灯火", cost: 1, type: "attack", rarity: "common", pool: "lamp", v: [{ dmg: 5, per: 3 }, { dmg: 6, per: 4 }],
     text: (v, p) => `造成 ${d(p, v.dmg + v.per * p.ash)} 伤害。行囊里每有 1 份灯灰，伤害 +${v.per}（不消耗）。`,
     play: (c, v) => { c.attack(v.dmg + v.per * c.goods("ash")); } },
   { id: "burnwick", name: "燃芯", cost: 0, type: "skill", rarity: "uncommon", pool: "lamp", v: [{ e: 2, draw: 2 }, { e: 3, draw: 2 }], tags: ["goods"],
@@ -124,7 +124,7 @@ const list: CardDef[] = [
     text: (v) => `丢掉行囊里最便宜的一件货：获得它售价 ×${v.mul} 的格挡。`,
     needs: (c) => (c.goods() < 1 ? "行囊里没有货" : null),
     play: (c, v) => { c.consume("cheapest"); c.block(Math.max(4, c.lastConsumedPrice * v.mul)); } },
-  { id: "scatter", name: "撒钱", cost: 1, type: "attack", rarity: "uncommon", pool: "lamp", v: [{ dmg: 13, cost: 5 }, { dmg: 18, cost: 5 }], tags: ["money"],
+  { id: "scatter", name: "撒钱", cost: 1, type: "attack", rarity: "common", pool: "abacus", v: [{ dmg: 11, cost: 5 }, { dmg: 16, cost: 5 }], tags: ["money"],
     text: (v, p) => `花 ${v.cost} 石：造成 ${d(p, v.dmg)} 伤害。`,
     needs: (c, v) => (c.gold() < v.cost ? `需要 ${v.cost} 石` : null),
     play: (c, v) => { c.spendGold(v.cost); c.attack(v.dmg); } },
@@ -134,6 +134,21 @@ const list: CardDef[] = [
     text: (v) => `每回合开始，若有灯灰，烧掉 1 份：造成 ${v.dmg} 伤害并获得 ${v.dmg} 格挡。`, play: (c, v) => c.selfStatus("lampArray", v.dmg) },
   { id: "stoke", name: "拨灯", cost: 0, type: "skill", rarity: "common", pool: "lamp", v: [{ n: 1 }, { n: 2 }], exhaust: true,
     text: (v) => `得到 ${v.n} 份灯灰。消耗。`, play: (c, v) => { for (let i = 0; i < v.n; i++) c.gainGood("ash"); } },
+
+  // ---------- 算盘（花钱流） ----------
+  { id: "reckon", name: "盘算", cost: 1, type: "skill", rarity: "common", pool: "abacus", v: [{ cap: 12 }, { cap: 16 }], tags: ["money"],
+    text: (v, p) => `获得 ${p.inCombat ? `${Math.min(v.cap, Math.floor(p.gold / 4))} 点` : "等同身上石数 ÷4 的"}格挡（最多 ${v.cap}）。`,
+    play: (c, v) => c.block(Math.min(v.cap, Math.floor(c.gold() / 4))) },
+  { id: "bribe", name: "打点", cost: 0, type: "skill", rarity: "common", pool: "abacus", v: [{ cost: 6, n: 2 }, { cost: 4, n: 2 }], tags: ["money"],
+    text: (v) => `花 ${v.cost} 石：施加 ${v.n} 层虚弱（敌人伤害 -25%）。`,
+    needs: (c, v) => (c.gold() < v.cost ? `需要 ${v.cost} 石` : null),
+    play: (c, v) => { c.spendGold(v.cost); c.enemyStatus("weak", v.n); } },
+  { id: "interest", name: "生息", cost: [1, 0], type: "power", rarity: "uncommon", pool: "abacus", v: [{ n: 3 }, { n: 3 }],
+    text: (v) => `每回合开始获得 ${v.n} 石。`, play: (c, v) => c.selfStatus("interest", v.n) },
+  { id: "windfall", name: "一掷千金", cost: 2, type: "attack", rarity: "rare", pool: "abacus", v: [{ div: 2 }, { div: 1.5 }], tags: ["money"],
+    text: (v, p) => `花光身上一半的石：每花 ${v.div === 2 ? "2" : "1.5"} 石造成 1 点伤害${p.inCombat ? `（现在 ${p.dmg(Math.floor(Math.floor(p.gold / 2) / v.div))}）` : ""}。`,
+    needs: (c) => (c.gold() < 2 ? "身上没钱" : null),
+    play: (c, v) => { const spend = Math.floor(c.gold() / 2); c.spendGold(spend); c.attack(Math.floor(spend / v.div)); } },
 
   // ---------- 通用 ----------
   { id: "bandage", name: "包扎", cost: 1, type: "skill", rarity: "common", pool: "neutral", v: [{ heal: 5 }, { heal: 8 }], exhaust: true,
@@ -160,7 +175,7 @@ export const cardVals = (def: CardDef, up: boolean) => def.v[up ? 1 : 0];
 
 /** Cards you know by heart. Weapons in the bag add their own cards on top. */
 export const BASE_DECK = ["strike", "strike", "strike", "strike", "defend", "defend", "defend", "defend"];
-export const STARTER_GEAR: Record<WeaponId, "sword" | "shield" | "lamp"> = { sword: "sword", shield: "shield", lamp: "lamp" };
+export const STARTER_GEAR: Record<WeaponId, "sword" | "shield" | "lamp" | "abacus"> = { sword: "sword", shield: "shield", lamp: "lamp", abacus: "abacus" };
 
 export const TYPE_LABEL = { attack: "攻击", skill: "技法", power: "心法" } as const;
 export const RARITY_LABEL = { basic: "基础", common: "常见", uncommon: "少见", rare: "稀有" } as const;

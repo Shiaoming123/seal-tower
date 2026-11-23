@@ -5,21 +5,25 @@ import { GEAR_IDS, GOODS } from "../data/goods";
 import { ORDERS } from "../data/orders";
 import { RELICS } from "../data/relics";
 import * as bag from "./bag";
-import { has, startCombat } from "./combat";
-import { DIRS, entityAt, generate, isWall, reveal, revealAll } from "./dungeon";
+import { combatDeck, has, startCombat } from "./combat";
+import { DIRS, entityAt, generate, isWall, reveal, revealAll, revealNear } from "./dungeon";
 import { addGood, autoPackPending, gainRelic, randomRelic } from "./inventory";
-import { chance, int, makeRng, pick, weighted } from "./rng";
-import type { Entity, FloorNo, GoodId, RewardState, RunState, ShopState, WeaponId } from "./types";
+import { type RngState, chance, int, makeRng, pick, weighted } from "./rng";
+import type { Entity, FloorNo, GoodId, Market, RewardState, RunState, ShopState, WeaponId } from "./types";
 
 export const START_HP = 50;
 export const START_GOLD = 20;
+export const START_OIL = 90;
+export const MAX_OIL = 120;
+/** Extra damage per enemy hit while your lamp is out. */
+export const DARK_DAMAGE = 3;
 
-export function createRun(seed: number, weapon: WeaponId, order: string, difficulty = 0): RunState {
+export function createRun(seed: number, weapon: WeaponId, order: string, difficulty = 0, regular = false): RunState {
   const rng = makeRng(seed);
   let uid = 1;
   const run: RunState = {
-    version: 2, seed, rng, difficulty, weapon, order, orderDone: false,
-    hp: START_HP - difficulty * 3, maxHp: START_HP - difficulty * 3, gold: START_GOLD,
+    version: 2, seed, rng, difficulty, weapon, order, orderDone: false, regular,
+    hp: START_HP - difficulty * 3, maxHp: START_HP - difficulty * 3, gold: weapon === "abacus" ? 32 : START_GOLD,
     deck: BASE_DECK.map((id) => ({ uid: uid++, id, up: false })),
     relics: [],
     bag: { w: 5, h: 4, items: [] },
@@ -27,12 +31,17 @@ export function createRun(seed: number, weapon: WeaponId, order: string, difficu
     dungeon: generate(1, rng),
     pos: { x: 0, y: 0, dir: 0 },
     screen: "explore", combat: null, pending: [], reward: null, event: null, shop: null, at: null,
-    stats: { kills: 0, goldEarned: 0, goodsSold: 0, goodsUsed: 0, damageTaken: 0, turns: 0 },
-    nextUid: 1000, outcome: null, mapRevealed: false, bossIntel: false, cardPick: null, log: [],
+    stats: { steps: 0, harvests: 0, kills: 0, goldEarned: 0, goodsSold: 0, goodsUsed: 0, damageTaken: 0, turns: 0 },
+    nextUid: 1000, outcome: null, mapRevealed: false, markets: makeMarkets(rng), rumor: false, oil: START_OIL, maxOil: MAX_OIL, bossIntel: false, cardPick: null, log: [], flags: [],
   };
   enterFloor(run, 1);
   addGood(run, STARTER_GEAR[weapon]);
-  if (weapon === "lamp") for (let i = 0; i < 3; i++) addGood(run, "ash");
+  if (weapon === "lamp") for (let i = 0; i < 4; i++) addGood(run, "ash");
+  if (regular) {
+    const r = ORDERS[order].regular;
+    for (const g of r.gift) addGood(run, g);
+    if (r.relic) gainRelic(run, r.relic);
+  }
   return run;
 }
 
@@ -45,16 +54,24 @@ function enterFloor(run: RunState, floor: FloorNo) {
   run.pos = { x: s.x, y: s.y, dir };
   run.mapRevealed = false;
   run.bossIntel = false;
+  run.rumor = false;
   run.shop = null;
   reveal(run.dungeon, s.x, s.y);
 }
+
+export function flag(run: RunState, f: string) { if (!run.flags.includes(f)) run.flags.push(f); }
 
 export const currentEntity = (run: RunState): Entity | null => run.dungeon.entities.find((e) => e.id === run.at) ?? null;
 
 /** Called after every step. Opens whatever is on the tile. Returns true if a screen opened. */
 export function arrive(run: RunState, x: number, y: number, dir: number, deliberate: boolean): boolean {
   run.pos = { x, y, dir };
-  reveal(run.dungeon, x, y);
+  run.stats.steps++;
+  run.oil = Math.max(0, run.oil - 1);
+  if (run.oil === 0) flag(run, "dark");
+  // In the dark you only see the tiles right next to you.
+  if (run.oil > 0) reveal(run.dungeon, x, y);
+  else revealNear(run.dungeon, x, y);
   if (run.mapRevealed) revealAll(run.dungeon);
   const e = entityAt(run.dungeon, x, y);
   if (!e) return false;
@@ -104,6 +121,7 @@ export function winCombat(run: RunState) {
   let note = "";
   if (def.part) {
     goods.push(c.enemy.partIntact ? def.part.good : def.part.broken);
+    if (c.enemy.partIntact && def.part.good === "clasp") flag(run, "clasp");
     note = c.enemy.partIntact ? `${def.part.label}完好无损。` : `${def.part.label}被重击打碎了。`;
   }
   if (has(run, "lamp")) goods.push("ash");
@@ -112,7 +130,14 @@ export function winCombat(run: RunState) {
   const gearPool = GEAR_IDS.filter((id) => !["sword", "shield", "lamp"].includes(id));
   if (c.kind === "fight" && chance(c.rng, 0.3)) goods.push(pick(c.rng, gearPool.filter((id) => GOODS[id].tier === 1)));
   if (c.kind === "elite") goods.push(pick(c.rng, gearPool.filter((id) => GOODS[id].tier === 2)));
-  if (c.stolen.length) note += ` 被抢走的${c.stolen.map((g) => GOODS[g].name).join("、")}找不回来了。`;
+  if (def.harvest) {
+    if (def.harvest.got(c)) {
+      if (def.harvest.good === "stolen") { flag(run, "recover"); goods.push(...c.stolen); note += ` 追回了被抢的${c.stolen.map((g) => GOODS[g].name).join("、")}。`; }
+      else { goods.push(def.harvest.good); note += ` 取材成功：多拿到${GOODS[def.harvest.good].name}。`; }
+      run.stats.harvests++;
+    } else if (def.harvest.good !== "stolen") note += ` 没能取到${def.harvest.label}（${def.harvest.text}）。`;
+  }
+  if (c.stolen.length && def.harvest?.good !== "stolen") note += ` 被抢走的${c.stolen.map((g) => GOODS[g].name).join("、")}被它毁了。`;
   const gold = c.kind === "guardian" && run.floor === 3 ? 0 : int(c.rng, def.gold[0], def.gold[1]);
   const reward: RewardState = {
     gold, goods, from: c.kind, note: note.trim(),
@@ -125,12 +150,23 @@ export function winCombat(run: RunState) {
   run.gold += gold;
   run.stats.goldEarned += gold;
   for (const g of goods) addGood(run, g);
+  if (c.enemy.id === "bell" && c.interrupts > 0) flag(run, "bell-break");
+  if (c.enemy.id === "bell" && combatDeck(run).length <= 14) flag(run, "lean");
   if (e.kind === "guardian") {
     e.kind = "stairs";
     e.done = false;
     if (run.floor === 3) { run.outcome = "win"; }
   } else e.done = true;
   run.screen = "reward";
+}
+
+/** A thief got away with your goods. No reward; the way is clear. */
+export function fledCombat(run: RunState) {
+  const e = currentEntity(run);
+  if (e) e.done = true;
+  run.combat = null;
+  run.at = null;
+  run.screen = "explore";
 }
 
 export function loseCombat(run: RunState) {
@@ -205,7 +241,6 @@ function makeShop(run: RunState): ShopState {
   const price = (n: number) => Math.round(n * off * (1 + 0.15 * (run.floor - 1)));
   const cardPrice = (id: string) => price({ common: 14, uncommon: 22, rare: 34, basic: 10 }[CARDS[id].rarity] + int(run.rng, -2, 2));
   const relics = [randomRelic(run, "common"), randomRelic(run)].filter((id, i, a): id is string => !!id && a.indexOf(id) === i);
-  const wantedPool: GoodId[] = run.floor === 1 ? ["silk", "fang", "shell"] : run.floor === 2 ? ["shell", "knot", "fang"] : ["knot", "wick", "shell"];
   return {
     cards: cardChoices(run, "shop", 3).map((id) => ({ id, price: cardPrice(id), sold: false })),
     relics: relics.map((id) => ({ id, price: price(RELICS[id].price ?? 30), sold: false })),
@@ -214,8 +249,32 @@ function makeShop(run: RunState): ShopState {
     consumables: (["salve", "pill", "lining"] as GoodId[]).map((id) => ({ id, price: price(GOODS[id].price * 2), sold: false })),
     removePrice: price(18),
     removed: false,
-    wanted: wantedPool[int(run.rng, 0, wantedPool.length - 1)],
+    oil: { amount: 25, price: price(6), bought: 0 },
+    wanted: run.markets[run.floor].wanted,
+    sold: {},
   };
+}
+
+export const TRADE_GOODS: GoodId[] = ["ash", "fang", "silk", "shell", "knot", "wick", "clasp", "clasp-broken", "copper"];
+
+/**
+ * Each floor's shop pays its own prices, fixed when the run starts so rumours can be true.
+ * Goods from the lower floors get scarcer (and dearer) the higher you climb.
+ */
+function makeMarkets(r: RngState): Record<FloorNo, Market> {
+  const steps = [0.6, 0.8, 1, 1, 1.2, 1.4, 1.6];
+  const lowGoods: GoodId[] = ["ash", "silk", "fang"];
+  const out = {} as Record<FloorNo, Market>;
+  for (const f of [1, 2, 3] as FloorNo[]) {
+    const mult: Partial<Record<GoodId, number>> = {};
+    for (const g of TRADE_GOODS) {
+      const trend = lowGoods.includes(g) ? 0.15 * (f - 1) : 0;
+      mult[g] = g === "copper" || g === "clasp-broken" ? 1 : Math.round((steps[int(r, 0, steps.length - 1)] + trend) * 10) / 10;
+    }
+    const wantedPool: GoodId[] = f === 1 ? ["silk", "fang", "shell"] : f === 2 ? ["shell", "knot", "fang", "ash"] : ["knot", "wick", "shell", "ash"];
+    out[f] = { mult, wanted: wantedPool[int(r, 0, wantedPool.length - 1)] };
+  }
+  return out;
 }
 
 export function buyCard(run: RunState, i: number): boolean {
@@ -248,6 +307,20 @@ export function buyItem(run: RunState, list: "gear" | "consumables", i: number):
   return null;
 }
 
+/** Top up the lamp. Each purchase costs 2 more than the last. */
+export function buyOil(run: RunState): string | null {
+  const s = run.shop!.oil;
+  const cost = s.price + s.bought * 2;
+  if (run.oil >= run.maxOil) return "灯已经满了";
+  if (run.gold < cost) return "石不够";
+  run.gold -= cost;
+  s.bought++;
+  run.oil = Math.min(run.maxOil, run.oil + s.amount);
+  return null;
+}
+
+export const oilCost = (run: RunState) => run.shop!.oil.price + run.shop!.oil.bought * 2;
+
 export function startRemove(run: RunState): boolean {
   const s = run.shop!;
   if (s.removed || run.gold < s.removePrice) return false;
@@ -271,7 +344,8 @@ export function deliverOrder(run: RunState): string | null {
   run.orderDone = true;
   const r = order.reward;
   const lines: string[] = [];
-  if (r.gold) { run.gold += r.gold; run.stats.goldEarned += r.gold; lines.push(`${r.gold} 石`); }
+  const gold = (r.gold ?? 0) + (run.regular ? order.regular.bonusGold ?? 0 : 0);
+  if (gold) { run.gold += gold; run.stats.goldEarned += gold; lines.push(`${gold} 石`); }
   if (r.salve) for (let i = 0; i < r.salve; i++) addGood(run, "salve");
   if (r.salve) lines.push(`${r.salve} 瓶金疮药`);
   if (r.relic) { const id = randomRelic(run, "rare"); if (id) { gainRelic(run, id); lines.push(`法宝「${RELICS[id].name}」`); } }
@@ -297,14 +371,16 @@ export function closeEvent(run: RunState) {
   run.screen = "explore";
 }
 
-export function rest(run: RunState, choice: "heal" | "upgrade") {
+export const REST_OIL = 40;
+
+export function rest(run: RunState, choice: "heal" | "upgrade" | "oil") {
   const e = currentEntity(run);
-  if (choice === "heal") {
-    run.hp = Math.min(run.maxHp, run.hp + Math.round(run.maxHp * 0.3));
-    if (e) e.done = true;
-    run.at = null;
-    run.screen = "explore";
-  } else run.cardPick = { mode: "upgrade", source: "rest" };
+  if (choice === "upgrade") { run.cardPick = { mode: "upgrade", source: "rest" }; return; }
+  if (choice === "heal") run.hp = Math.min(run.maxHp, run.hp + Math.round(run.maxHp * 0.3));
+  else run.oil = Math.min(run.maxOil, run.oil + REST_OIL);
+  if (e) e.done = true;
+  run.at = null;
+  run.screen = "explore";
 }
 
 export function applyCardPick(run: RunState, uid: number | null) {

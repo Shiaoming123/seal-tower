@@ -20,6 +20,7 @@ export function intentSummary(run: RunState, c: CombatState) {
   const i = c.enemy.intent;
   const parts: { icon: string; label: string; cls: string }[] = [];
   if (i.stunned) parts.push({ icon: "晕", label: "", cls: "stun" });
+  if (i.flee) parts.push({ icon: "逃", label: "", cls: "steal" });
   if (i.charge) parts.push({ icon: "蓄", label: `${Math.min(c.dmgThisTurn, i.charge.threshold)}/${i.charge.threshold}`, cls: "charge" });
   if (i.dmg && !i.stunned) parts.push({ icon: "攻", label: `${enemyHitDamage(run, c)}${(i.hits ?? 1) > 1 ? `×${i.hits}` : ""}`, cls: "atk" });
   if (i.steal) parts.push({ icon: "抢", label: "", cls: "steal" });
@@ -38,7 +39,8 @@ export function intentSummary(run: RunState, c: CombatState) {
   }
   if (i.steal) {
     const t = stealTarget(run);
-    line += c.status.ward ? " 你已经护住了货。" : t ? ` 只要有伤害打穿格挡，就会抢走「${GOODS[t].name}」。` : " 你的行囊里没有能抢的货。";
+    const how = ENEMIES[c.enemy.id].stealFlees ? "叼走" : "抢走并毁掉";
+    line += c.status.ward ? " 你已经护住了货。" : t ? ` 只要有伤害打穿格挡，就会${how}「${GOODS[t].name}」。` : " 你的行囊里没有能抢的货。";
   }
   if (i.charge) {
     const next = ENEMIES[c.enemy.id].moves[i.charge.then];
@@ -90,6 +92,7 @@ export function Combat() {
       else if (e.t === "goods") float(`${e.gained ? "+" : "烧掉 "}${GOODS[e.good].name}`, e.gained ? "heal" : "status", "player");
       else if (e.t === "thorns") float(`回敬 ${e.amount}`, "status-self", "enemy");
       else if (e.t === "enemy-move") { setBanner(`${c.enemy.name}：${e.name}`); }
+      else if (e.t === "fled") { sfx.steal(); setBanner(`${c.enemy.name}钻进洞里跑了！`); await wait(700); }
     }
     await settle();
   };
@@ -102,6 +105,13 @@ export function Combat() {
       await wait(900);
       R.winCombat(run);
       commit();
+    } else if (c.over === "fled") {
+      busy.current = true;
+      setFx("enemy-die");
+      await wait(900);
+      R.fledCombat(run);
+      commit();
+      say(`${c.enemy.name}带着${c.stolen.map((g) => GOODS[g].name).join("、")}跑了。`, 3200);
     } else if (c.over === "lose") {
       busy.current = true;
       sfx.lose();
@@ -189,6 +199,7 @@ export function Combat() {
             <div class="enemy-name">{c.enemy.name}</div>
             <Bar value={c.enemy.hp} max={c.enemy.maxHp} kind="enemy" block={c.enemy.block} />
             <Statuses status={c.enemy.status} />
+            {def.harvest && <HarvestTag c={c} />}
             {def.part && (
               <div class={`part ${c.enemy.partIntact ? "ok" : "broken"}`}>
                 {def.part.label}：{c.enemy.partIntact ? `完好（单次 ≥${def.part.threshold} 伤害会碎）` : "已碎"}
@@ -245,3 +256,17 @@ export function Combat() {
 }
 
 const statusName = (id: string) => ({ str: "力量", weak: "虚弱", vuln: "破绽", thorns: "反震", counter: "回敬", focus: "蓄势", ward: "护货", barricade: "不动", lampArray: "灯阵", swordIntent: "行云", bulwark: "以守为攻" } as Record<string, string>)[id] ?? id;
+
+const HARVEST_STATE = { done: "已达成", open: "能取", risk: "注意", failed: "取不了了" } as const;
+
+function HarvestTag({ c }: { c: CombatState }) {
+  const h = ENEMIES[c.enemy.id].harvest!;
+  const st = h.state(c);
+  return (
+    <div class={`harvest ${st}`} title={h.text}>
+      <b>取材 · {h.label}</b>
+      <span>{h.text}</span>
+      <i>{HARVEST_STATE[st]}</i>
+    </div>
+  );
+}

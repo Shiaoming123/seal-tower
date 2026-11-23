@@ -37,11 +37,12 @@ export function fight(run: RunState, maxTurns = 60) {
     if (!c.over) endTurn(run);
   }
   if (c.over === "win") R.winCombat(run);
+  else if (c.over === "fled") R.fledCombat(run);
   else R.loseCombat(run);
 }
 
 /** Play a whole run with simple rules. Returns the floor reached and the outcome. */
-export function playRun(run: RunState, opts: { elites?: boolean } = {}) {
+export function playRun(run: RunState, opts: { elites?: boolean; onFloor?: () => void } = {}) {
   for (let step = 0; step < 400 && !run.outcome; step++) {
     if (run.screen === "combat") { fight(run); continue; }
     if (run.screen === "reward") {
@@ -61,25 +62,27 @@ export function playRun(run: RunState, opts: { elites?: boolean } = {}) {
       continue;
     }
     if (run.screen === "rest") {
-      if (run.hp < run.maxHp * 0.6) R.rest(run, "heal");
+      if (run.oil < 25) R.rest(run, "oil");
+      else if (run.hp < run.maxHp * 0.6) R.rest(run, "heal");
       else { R.rest(run, "upgrade"); R.applyCardPick(run, run.deck.find((c) => !c.up && c.id !== "strike" && c.id !== "defend")?.uid ?? run.deck[0].uid); }
       continue;
     }
     if (run.screen === "shop") {
       R.deliverOrder(run);
       if (run.hp < run.maxHp * 0.5) R.buyItem(run, "consumables", 0);
+      while (run.oil < 70 && run.gold >= R.oilCost(run) + 10 && !R.buyOil(run)) { /* top up */ }
       run.shop!.cards.forEach((_, i) => { if (run.gold > 30) R.buyCard(run, i); });
       run.at = null;
       run.screen = "explore";
       continue;
     }
     if (run.screen === "result") break;
-    for (const it of [...run.bag.items]) if (it.id === "pill" || it.id === "lining") useItem(run, it.uid);
+    for (const it of [...run.bag.items]) if (it.id === "pill" || it.id === "lining" || (it.id === "ash" && run.oil < 8)) useItem(run, it.uid);
     // explore: go to the nearest unfinished entity, guardian last
     revealAll(run.dungeon);
     const targets = run.dungeon.entities.filter((e) => !e.done && e.kind !== "stairs" && (opts.elites !== false || e.kind !== "elite"));
     const stairs = run.dungeon.entities.find((e) => e.kind === "stairs");
-    if (stairs) { if (run.floor === 3) break; R.climb(run); continue; }
+    if (stairs) { if (run.floor === 3) break; opts.onFloor?.(); R.climb(run); continue; }
     const others = targets.filter((e) => e.kind !== "guardian");
     const order = (others.length ? others : targets)
       .map((e) => ({ e, p: findPath(run.dungeon, run.pos, e) }))

@@ -1,18 +1,27 @@
 import { useEffect, useState } from "preact/hooks";
 import { ORDERS } from "../data/orders";
+import { ACHIEVEMENTS } from "../data/achievements";
 import * as R from "../game/run";
 import { ART } from "../render/assets";
 import { clearRun, commit, page, profileSig, runSig, useRun } from "./store";
 
 export function Result() {
   const run = useRun();
-  const [settled] = useState(() => R.settle(run));
-  useEffect(() => {
+  // Settle once: renown, orders and newly earned achievements.
+  const [settled] = useState(() => {
+    const base = R.settle(run);
     const p = profileSig.value;
     const ordersDone = run.orderDone && !p.ordersDone.includes(run.order) ? [...p.ordersDone, run.order] : p.ordersDone;
+    const next = { ...p, ordersDone };
+    const fresh = ACHIEVEMENTS.filter((a) => !p.achievements.includes(a.id) && a.check(run, next));
+    return { ...base, ordersDone, fresh, renown: base.renown + fresh.reduce((s, a) => s + a.renown, 0) };
+  });
+  useEffect(() => {
+    const p = profileSig.value;
     profileSig.value = {
       ...p, renown: p.renown + settled.renown, wins: p.wins + (run.outcome === "win" ? 1 : 0),
-      bestFloor: Math.max(p.bestFloor, R.floorsCleared(run)), ordersDone,
+      bestFloor: Math.max(p.bestFloor, R.floorsCleared(run)), ordersDone: settled.ordersDone,
+      achievements: [...p.achievements, ...settled.fresh.map((a) => a.id)],
     };
     clearRun();
     commit();
@@ -32,11 +41,16 @@ export function Result() {
           <li>到达 <b>第 {run.floor} 层</b>，打通 {R.floorsCleared(run)} 层</li>
           <li>打倒 <b>{s.kills}</b> 只妖，共 {s.turns} 回合</li>
           <li>赚到 <b>{s.goldEarned}</b> 石，卖出 {s.goodsSold} 件货，战斗里烧掉 {s.goodsUsed} 件</li>
+          <li>取材成功 <b>{s.harvests}</b> 次，走了 {s.steps} 步</li>
           <li>委托「{ORDERS[run.order].title}」：{run.orderDone ? "已完成" : "没完成"}</li>
         </ul>
         <h3>声望 +{settled.renown}</h3>
-        <ul class="renown">{settled.lines.map((l) => <li>{l}</li>)}{!settled.lines.length && <li>这趟没挣到声望。</li>}</ul>
-        <p class="muted">总声望 {profileSig.value.renown}。声望到 3、7、12 会解锁更难的签。</p>
+        <ul class="renown">
+          {settled.lines.map((l) => <li>{l}</li>)}
+          {settled.fresh.map((a) => <li class="ach">新成就「{a.name}」：{a.text} +{a.renown}</li>)}
+          {!settled.lines.length && !settled.fresh.length && <li>这趟没挣到声望。</li>}
+        </ul>
+        <p class="muted">总声望 {profileSig.value.renown}。声望到 4 解锁「算盘」兵器；到 3、7、12 解锁更难的签。</p>
         <div class="row">
           <button type="button" class="btn big primary" onClick={() => { runSig.value = null; page.value = "town"; commit(); }}>再进一趟</button>
           <button type="button" class="btn" onClick={() => { runSig.value = null; page.value = "title"; commit(); }}>回标题</button>

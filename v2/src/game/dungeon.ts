@@ -147,6 +147,14 @@ export function reveal(d: Dungeon, x: number, y: number) {
 
 export function revealAll(d: Dungeon) { d.seen.fill(true); }
 
+/** With the lamp out: only the eight tiles around you. */
+export function revealNear(d: Dungeon, x: number, y: number) {
+  for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+    const tx = x + dx, ty = y + dy;
+    if (tx >= 0 && ty >= 0 && tx < d.w && ty < d.h) d.seen[idx(d, tx, ty)] = true;
+  }
+}
+
 /** BFS over seen floor tiles. Entities that are still active block the path unless they are the goal. */
 export function findPath(d: Dungeon, from: { x: number; y: number }, to: { x: number; y: number }, ignoreEntities = false): { x: number; y: number }[] | null {
   if (isWall(d, to.x, to.y) || !d.seen[idx(d, to.x, to.y)]) return null;

@@ -11,6 +11,7 @@ export const CARD_ART: Record<string, string> = {
   gather: "knot", flurry: "pin", intent: "grit", cleave: "ward-blade", flow: "silk",
   bash: "mirror", wall: "mirror", spikes: "hook", center: "mirror", guardgoods: "order-purse", ram: "mirror", rooted: "bell-item", bulwark: "hook",
   dust: "ash", reveal: "seal", flame: "ash", burnwick: "seal", barter: "order-purse", scatter: "abacus", reap: "ash", lamparray: "seal", stoke: "ash",
+  reckon: "abacus", bribe: "order-purse", interest: "abacus", windfall: "abacus",
   bandage: "salve", breath: "silk", talisman: "pin", pluck: "clasp", steady: "knot",
 };
 
@@ -26,6 +27,7 @@ export const STATUS_INFO: Record<StatusId, { name: string; text: (n: number) => 
   lampArray: { name: "灯阵", text: (n) => `每回合开始烧 1 份灯灰，造成 ${n} 伤害并获得 ${n} 格挡。` },
   swordIntent: { name: "行云", text: () => "每回合第一张攻击牌后抽 1 张、能量 +1。" },
   bulwark: { name: "以守为攻", text: (n) => `每回合开始获得 ${n} 格挡。` },
+  interest: { name: "生息", text: (n) => `每回合开始获得 ${n} 石。` },
 };
 
 export function Art({ id, class: cls = "", alt = "" }: { id: string; class?: string; alt?: string }) {

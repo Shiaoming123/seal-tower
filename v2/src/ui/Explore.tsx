@@ -52,6 +52,7 @@ export function useView(ref: { current: HTMLDivElement | null }, run: RunState, 
   }, []);
   useEffect(() => {
     view.dim = opts.dim ?? 0;
+    view.lamp = run.oil <= 0 ? 0 : Math.min(1, 0.45 + run.oil / 50);
     view.setScene(run.dungeon, theme(run.floor), opts.hideAll ? [] : billboards(run));
   });
 }
@@ -63,7 +64,12 @@ function lookAhead(run: RunState): string {
     const x = run.pos.x + dx * i, y = run.pos.y + dy * i;
     if (isWall(d, x, y)) return i === 1 ? "前面是墙。" : `前面 ${i - 1} 格后是墙。`;
     const e = entityAt(d, x, y);
-    if (e) return `前面 ${i} 格：${entityName(e)}。`;
+    if (e) {
+      const h = e.enemy && ENEMIES[e.enemy].harvest;
+      const part = e.enemy && ENEMIES[e.enemy].part;
+      const tip = h ? ` 取材：${h.text}，可多拿${h.label}。` : part ? ` 取材：单次伤害别超过 ${part.threshold - 1}，${part.label}才不会碎。` : "";
+      return `前面 ${i} 格：${entityName(e)}。${tip}`;
+    }
   }
   return "前面是一条长廊。";
 }
@@ -150,6 +156,8 @@ export function Explore() {
           </div>
         )}
         {onStairs && <StairsPrompt />}
+        {run.oil <= 0 ? <div class="dark-warn">灯灭了：小地图不再自动探路，妖趁黑每下多打 {R.DARK_DAMAGE} 点。去狐市买灯油、在灯台添油，或在行囊里烧灯灰。</div>
+          : run.oil <= 15 ? <div class="dark-warn soft">灯油只剩 {run.oil} 步了。</div> : null}
       </div>
       <aside class="side">
         <Minimap onPick={walkTo} />

@@ -28,6 +28,8 @@ export class Raycaster {
   private bob = 0;
   private skyCache: Uint32Array | null = null;
   dim = 0;
+  /** 0..1 lamp strength (lamp oil). Low oil darkens the view. */
+  lamp = 1;
 
   constructor() {
     this.canvas = document.createElement("canvas");
@@ -129,7 +131,7 @@ export class Raycaster {
     const horizon = (H >> 1) + pitch;
     const flicker = 0.96 + Math.sin(now / 230) * 0.025 + Math.sin(now / 97) * 0.015;
     const [fr, fg, fb] = th.fog;
-    const light = th.light * flicker;
+    const light = th.light * flicker * (0.35 + 0.65 * this.lamp);
     const shadeOf = (dist: number) => Math.min(1.05, (1.5 / (1 + dist * dist * 0.11)) * light);
     const put = (i: number, c: number, b: number) => {
       const r = c & 255, g = (c >> 8) & 255, bl = (c >> 16) & 255;

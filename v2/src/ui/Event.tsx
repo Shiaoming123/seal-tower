@@ -51,13 +51,16 @@ export function RestScreen() {
       <div class="event-art"><img src={ART.lamp} alt="" draggable={false} /></div>
       <div class="event-box panel">
         <h2>旧灯台</h2>
-        <p class="event-text">守关妖就在不远处。灯台下还算安全，只够做一件事。</p>
+        <p class="event-text">守关妖就在不远处。灯台下还算安全，只够做一件事：歇口气、磨剑，或者把灯台的油倒进自己的灯里。</p>
         <div class="options">
           <button type="button" class="option" onClick={() => { sfx.click(); R.rest(run, "heal"); commit(); }}>
             <b>歇一会</b><span>回复 {heal} 气血（最大气血的 30%）。</span>
           </button>
           <button type="button" class="option" onClick={() => { sfx.click(); R.rest(run, "upgrade"); commit(); }}>
             <b>磨剑</b><span>升级 1 张牌。</span>
+          </button>
+          <button type="button" class="option" onClick={() => { sfx.click(); R.rest(run, "oil"); commit(); }}>
+            <b>添灯油</b><span>灯油 +{Math.min(R.REST_OIL, run.maxOil - run.oil)}（现在 {run.oil} / {run.maxOil}）。</span>
           </button>
           <button type="button" class="option" onClick={() => { run.at = null; run.screen = "explore"; commit(); }}>
             <b>先不用</b><span>以后还能回来。</span>

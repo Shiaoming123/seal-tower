@@ -10,7 +10,7 @@ import { Reward } from "./Reward";
 import { Shop } from "./Shop";
 import { EventScreen, RestScreen } from "./Event";
 import { Result } from "./Result";
-import { Help, Title, Town } from "./Title";
+import { Achievements, Help, Title, Town } from "./Title";
 import { Bar, GoodChip, RelicRow } from "./parts";
 import { commit, overlay, page, profileSig, runSig, tick, toast, useRun } from "./store";
 
@@ -40,6 +40,7 @@ export function App() {
   let body;
   if (page.value === "title") body = <Title />;
   else if (page.value === "help") body = <Help />;
+  else if (page.value === "achievements") body = <Achievements />;
   else if (page.value === "town" || !run) body = <Town />;
   else body = <Game />;
   return (
@@ -85,6 +86,9 @@ function Hud() {
         <span class="floor-name">{FLOOR_NAMES[run.floor]}</span>
         <Bar value={run.hp} max={run.maxHp} kind="hp" block={run.combat?.block ?? 0} />
         <span class="gold" title="灵石">{run.gold} 石</span>
+        <span class={`oil ${run.oil <= 15 ? "low" : ""} ${run.oil <= 0 ? "out" : ""}`} title="灯油：每走一步烧 1 点。灯灭了会很危险。">
+          <i style={{ height: `${Math.round((run.oil / run.maxOil) * 100)}%` }} />灯油 {run.oil}
+        </span>
       </div>
       <RelicRow relics={run.relics} />
       <div class="hud-order" title={order.story}>

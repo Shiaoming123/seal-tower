@@ -1,4 +1,4 @@
-import type { EnemyState, GoodId, Intent } from "../game/types";
+import type { CombatState, EnemyState, GoodId, Intent } from "../game/types";
 import type { RngState } from "../game/rng";
 import { next } from "../game/rng";
 
@@ -20,6 +20,16 @@ export interface EnemyDef {
   ai: (e: EnemyState, r: RngState) => string;
   /** One line shown before and during the fight: what it does, in plain words. */
   blurb: string;
+  /** Extra loot for fighting a certain way. `state` drives the live label, `got` is checked on the kill. */
+  harvest?: {
+    label: string;
+    text: string;
+    good: GoodId | "stolen";
+    state: (c: CombatState) => "done" | "open" | "risk" | "failed";
+    got: (c: CombatState) => boolean;
+  };
+  /** Steals then runs: kill it before it gets away to get the goods back. */
+  stealFlees?: boolean;
   phase2?: { at: number; sprite: string; str: number; text: string; ai: (e: EnemyState, r: RngState) => string };
   scale?: number;
 }
@@ -34,13 +44,20 @@ export const ENEMIES: Record<string, EnemyDef> = {
     moves: { swoop: { name: "扑火", dmg: 6 }, dust: { name: "撒鳞粉", dmg: 3, apply: { status: "weak", n: 1 } } },
     ai: (e, r) => (last(e) === "swoop" ? "dust" : last(e) === "dust" ? "swoop" : next(r) < 0.5 ? "swoop" : "dust"),
     blurb: "偷灯油的纸蛾。撒的鳞粉会让你虚弱（伤害 -25%）。",
+    harvest: { label: "灯芯", good: "wick", text: "完整挡下它一次攻击，再击倒它",
+      state: (c) => (c.fullBlocks > 0 ? "done" : "open"), got: (c) => c.fullBlocks > 0 },
   },
   rat: {
-    id: "rat", name: "灯鼠", sprite: "rat", spriteAttack: "rat-swipe", hp: [13, 16], gold: [7, 10],
+    id: "rat", name: "灯鼠", sprite: "rat", spriteAttack: "rat-swipe", stealFlees: true, hp: [13, 16], gold: [7, 10],
     drops: [{ good: "fang", chance: 0.7 }, { good: "ash", chance: 0.5 }],
-    moves: { grab: { name: "掀货筐", dmg: 5, steal: true }, bite: { name: "啃咬", dmg: 3, hits: 2 } },
+    moves: {
+      grab: { name: "掀货筐", dmg: 5, steal: true }, bite: { name: "啃咬", dmg: 3, hits: 2 },
+      flee: { name: "钻洞逃跑", flee: true, text: "叼着货往洞里钻。这回合不打死它，它就带着货跑了。" },
+    },
     ai: cycle(["grab", "bite", "bite"]),
-    blurb: "专抢货的鼠妖。掀货筐时只要有伤害打穿格挡，就会叼走你行囊里最值钱的一件货。",
+    blurb: "专抢货的鼠妖。掀货筐时只要有伤害打穿格挡，就会叼走你行囊里最值钱的一件货，下回合钻洞逃跑。",
+    harvest: { label: "追回货物", good: "stolen", text: "被抢了也别慌：在它钻进洞之前打死它，货就能拿回来",
+      state: (c) => (c.stolen.length ? "risk" : "open"), got: (c) => c.stolen.length > 0 },
   },
   louse: {
     id: "louse", name: "书虱", sprite: "louse", hp: [20, 24], gold: [7, 11], scale: 1.1,
@@ -48,6 +65,8 @@ export const ENEMIES: Record<string, EnemyDef> = {
     moves: { curl: { name: "缩壳", block: 7, dmg: 3 }, chew: { name: "啃书", dmg: 9 } },
     ai: cycle(["curl", "chew"]),
     blurb: "皮厚的长虫。缩壳回合格挡很高，留着大招等它啃书时再打。",
+    harvest: { label: "完整墨壳", good: "shell", text: "别在它「缩壳」的回合打死它，壳会裂",
+      state: (c) => (c.enemy.intent.key === "curl" ? "risk" : "open"), got: (c) => c.enemy.intent.key !== "curl" },
   },
   "mirror-fox": {
     id: "mirror-fox", name: "镜狐", sprite: "mirror-fox", hp: [38, 42], gold: [16, 22],
@@ -68,6 +87,8 @@ export const ENEMIES: Record<string, EnemyDef> = {
     },
     ai: cycle(["flutter", "ignite", "call", "dust", "ignite", "flutter"]),
     blurb: "照影廊的守关妖。焚翅之后会放出 20 点烈焰——蓄力那回合打够伤害就能打断。",
+    harvest: { label: "多一截灯芯", good: "wick", text: "至少打断一次「焚翅」",
+      state: (c) => (c.interrupts > 0 ? "done" : "open"), got: (c) => c.interrupts > 0 },
   },
   warden: {
     id: "warden", name: "守门黑狐", sprite: "warden", hp: [72, 76], gold: [24, 30], scale: 1.2,
@@ -80,6 +101,8 @@ export const ENEMIES: Record<string, EnemyDef> = {
       return seq[e.history.length % seq.length];
     },
     blurb: "守桥的黑狐，力量会一层层叠上去。拖得越久，獠牙越疼。",
+    harvest: { label: "完整狐毛结", good: "knot", text: "在它力量叠到 6 层之前打倒它",
+      state: (c) => ((c.enemy.status.str ?? 0) >= 6 ? "failed" : "open"), got: (c) => (c.enemy.status.str ?? 0) < 6 },
   },
   "night-fox": {
     id: "night-fox", name: "夜市狐", sprite: "night-fox", hp: [108, 108], gold: [40, 40], scale: 1.3,
@@ -107,6 +130,8 @@ export const ENEMIES: Record<string, EnemyDef> = {
       ai: (e) => ["crack", "wind", "quake", "wind", "ring"][e.history.length % 5],
     },
     blurb: "塔顶的钟妖。蓄钟后的钟落有 32 点伤害；半血后会撞碎外壳，变得更凶。",
+    harvest: { label: "多一片钟铜", good: "copper", text: "至少打断一次「蓄钟」",
+      state: (c) => (c.interrupts > 0 ? "done" : "open"), got: (c) => c.interrupts > 0 },
   },
 };
 
