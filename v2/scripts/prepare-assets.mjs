@@ -103,6 +103,8 @@ const edges = Object.fromEntries([...Object.entries(manifest).map(([id, [, e]]) 
 edges["fire-rat-attack"] = edges["fire-rat"];
 edges["fallen-strike"] = edges.fallen;
 edges["fallen-elder-strike"] = edges["fallen-elder"];
+edges["bronze-puppet-attack"] = edges["bronze-puppet"];
+edges["bronze-puppet-hurt"] = edges["bronze-puppet"];
 const exportFile = path.join(artDir, "exports.json");
 const previousExports = await readFile(exportFile, "utf8").then(JSON.parse, (err) => {
   if (err.code !== "ENOENT") throw err;
@@ -115,7 +117,7 @@ const paddedSprites = new Set([
   "lantern-spirit", "water-ghost", "event-peddler", "paper-doll", "ink-moth", "event-shrine", "fire-rat", "fire-rat-attack", "stele-spirit", "event-cart",
   "fallen", "fallen-strike", "fallen-guard", "fallen-elder", "fallen-elder-strike", "fallen-elder-guard",
   "paper-matron", "fake-fox", "event-fake-fox", "map-fake-fox",
-  "thorn-stele", "bronze-puppet", "night-owl",
+  "thorn-stele", "bronze-puppet", "bronze-puppet-attack", "bronze-puppet-hurt", "night-owl",
   "event-den", "event-hunter", "event-pool",
 ]);
 let overrides = 0;

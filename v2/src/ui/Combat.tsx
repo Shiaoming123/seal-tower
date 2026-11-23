@@ -172,7 +172,7 @@ export function Combat() {
           }
           if (e.blocked) { sfx.block(); float(`挡 ${e.blocked}`, "blocked", "enemy"); }
           if (e.part === "broke") { float(`${ENEMIES[c.enemy.id].part!.label}碎了`, "warn", "enemy"); }
-          void flash("enemy-hit", 200);
+          void flash(e.amount > 0 ? "enemy-hit" : "enemy-hit guarded", 200);
         } else {
           if (e.amount > 0) { sfx.hurt(); float(`-${e.amount}`, "hurt", "player"); fxLayer.pulse("200,30,20", Math.min(0.45, 0.15 + e.amount / 40)); void flash("player-hit", 300); }
           if (e.blocked) { sfx.block(); float(`挡住 ${e.blocked}`, "blocked", "player"); }
@@ -399,7 +399,7 @@ function HarvestTag({ c }: { c: CombatState }) {
 function enemyPose(c: CombatState, def: (typeof ENEMIES)[string], fx: string): string {
   const base = c.enemy.sprite;
   if (fx === "enemy-lunge") return artId(`${base}-attack`, def.spriteAttack ?? base);
-  if (fx === "enemy-hit") return artId(`${base}-hurt`, base);
+  if (fx === "enemy-hit" || fx === "enemy-hit hitstop") return artId(`${base}-hurt`, base);
   if (c.enemy.intent.counter && def.spriteStance) return def.spriteStance;
   return base;
 }

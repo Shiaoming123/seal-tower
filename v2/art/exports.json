@@ -128,5 +128,15 @@
     "file": "event-pool.png",
     "sourceSha256": "797b411c6cde68aec926162725f89b1f0a7902f16f7cbd10801b849eec8c1be2",
     "webpSha256": "767931ddd1b1713644f5838a2c4e1ceb2494a674ba1afac9f12075ec823ec1c1"
+  },
+  "bronze-puppet-attack": {
+    "file": "bronze-puppet-attack.png",
+    "sourceSha256": "989ff8703a01c527537cb3293e63984ed11704bc0dd84db4fd415cd6e0861da1",
+    "webpSha256": "751de1d16e2b29d075d0cab305bbd2b8033c5f96ea5a560d2112a76eb9a9d3bb"
+  },
+  "bronze-puppet-hurt": {
+    "file": "bronze-puppet-hurt.png",
+    "sourceSha256": "60d806624153262b02603ba1662500483f9d200b585705244fca34c1eea18655",
+    "webpSha256": "08e07f30b83cfbbbcf96f16b334919929c72cd3c9014d168149d1211ea26dc00"
   }
 }

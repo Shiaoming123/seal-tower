@@ -1,0 +1,7091 @@
+{
+  "mode": "final",
+  "seed": "gallery",
+  "baselineMethod": null,
+  "fixture": "从正常入口实点进塔，测试脚本预置楼梯和固定邻格铜傀后实点前进、上楼及开战。伤害实验只设置对手 0/8 格挡；缺少斩时将首牌替换为斩，仍由玩家实点。",
+  "rows": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      },
+      "start": {
+        "floor": 3,
+        "player": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        },
+        "playerHealth": 54,
+        "turn": 1,
+        "enemyHealth": 44,
+        "enemyBlock": 0,
+        "intent": "抡臂",
+        "hand": [
+          "bash",
+          "defend",
+          "defend",
+          "defend",
+          "strike"
+        ],
+        "energy": 3
+      },
+      "afterAttack": {
+        "floor": 3,
+        "player": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        },
+        "playerHealth": 40,
+        "turn": 2,
+        "enemyHealth": 44,
+        "enemyBlock": 0,
+        "intent": "上弦",
+        "hand": [
+          "strike",
+          "spikes",
+          "defend",
+          "strike",
+          "strike"
+        ],
+        "energy": 3
+      },
+      "attack": {
+        "expected": "bronze-puppet-attack",
+        "count": 38,
+        "firstLoadedMs": 0,
+        "firstDesired": "bronze-puppet-attack",
+        "firstCurrent": "bronze-puppet-attack",
+        "firstVisible": true,
+        "pictures": [
+          {
+            "path": "1280/attack-38.jpg",
+            "screenshotMs": 35
+          },
+          {
+            "path": "1280/attack-95.jpg",
+            "screenshotMs": 97
+          },
+          {
+            "path": "1280/attack-155.jpg",
+            "screenshotMs": 160
+          },
+          {
+            "path": "1280/attack-235.jpg",
+            "screenshotMs": 229
+          }
+        ],
+        "idleBefore": [
+          503.4,
+          244,
+          273.3,
+          273.3
+        ],
+        "idleAfter": [
+          514.4,
+          266,
+          251.3,
+          251.3
+        ],
+        "frames": [
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 0
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              503.4,
+              244.1,
+              273.1,
+              273.1
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 7
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              503.6,
+              244.2,
+              272.8,
+              272.8
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 14
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              503.9,
+              244.5,
+              272.2,
+              272.2
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 21
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              504.2,
+              244.9,
+              271.5,
+              271.5
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 28
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              504.6,
+              245.3,
+              270.7,
+              270.7
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 35
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              505.1,
+              245.8,
+              269.7,
+              269.7
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 42
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              505.7,
+              246.4,
+              268.7,
+              268.7
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 49
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              506.2,
+              247,
+              267.5,
+              267.5
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 56
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              506.9,
+              247.7,
+              266.2,
+              266.2
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 62
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              507.6,
+              248.4,
+              264.8,
+              264.8
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 69
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              508.3,
+              249.2,
+              263.4,
+              263.4
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 76
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              509,
+              250,
+              261.9,
+              261.9
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 83
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              509.8,
+              250.9,
+              260.3,
+              260.3
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 90
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              510.7,
+              251.9,
+              258.6,
+              258.6
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 97
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              511.6,
+              252.9,
+              256.9,
+              256.9
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 104
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              511.4,
+              252.7,
+              257.2,
+              257.2
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 111
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              511,
+              252.3,
+              257.9,
+              257.9
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 118
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              510.4,
+              251.6,
+              259.2,
+              259.2
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 125
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              509.6,
+              250.7,
+              260.7,
+              260.7
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 132
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              508.6,
+              249.6,
+              262.7,
+              262.7
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 139
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              507.5,
+              248.4,
+              265,
+              265
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 146
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              506.2,
+              247.1,
+              267.5,
+              267.5
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 153
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              504.8,
+              245.6,
+              270.4,
+              270.4
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 160
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              503.3,
+              244.1,
+              273.4,
+              273.4
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 167
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              501.6,
+              242.4,
+              276.7,
+              276.7
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 174
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              499.9,
+              240.7,
+              280.3,
+              280.3
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 180
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              498,
+              239,
+              284,
+              284
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 187
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              496.1,
+              237.2,
+              287.8,
+              287.8
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 194
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              494,
+              235.4,
+              292,
+              292
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 201
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              491.9,
+              233.5,
+              296.3,
+              296.3
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 208
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              489.7,
+              231.7,
+              300.7,
+              300.7
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 215
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              487.3,
+              229.9,
+              305.3,
+              305.3
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 222
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              485,
+              228.1,
+              310.1,
+              310.1
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 229
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              482.5,
+              226.3,
+              315,
+              315
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 236
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              479.9,
+              224.6,
+              320.1,
+              320.1
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 243
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              477.3,
+              222.9,
+              325.4,
+              325.4
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 250
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              474.6,
+              221.2,
+              330.8,
+              330.8
+            ],
+            "anchor": [
+              503.4,
+              244,
+              273.3,
+              273.3
+            ],
+            "hud": [
+              380,
+              68,
+              520,
+              171.8
+            ],
+            "hand": [
+              330,
+              494,
+              730,
+              240
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 257
+          }
+        ]
+      },
+      "damage": {
+        "before": {
+          "floor": 3,
+          "player": {
+            "x": 7,
+            "y": 11,
+            "dir": 0
+          },
+          "playerHealth": 40,
+          "turn": 2,
+          "enemyHealth": 44,
+          "enemyBlock": 0,
+          "intent": "上弦",
+          "hand": [
+            "strike",
+            "spikes",
+            "defend",
+            "strike",
+            "strike"
+          ],
+          "energy": 3
+        },
+        "after": {
+          "floor": 3,
+          "player": {
+            "x": 7,
+            "y": 11,
+            "dir": 0
+          },
+          "playerHealth": 40,
+          "turn": 2,
+          "enemyHealth": 38,
+          "enemyBlock": 0,
+          "intent": "上弦",
+          "hand": [
+            "spikes",
+            "defend",
+            "strike",
+            "strike"
+          ],
+          "energy": 2
+        },
+        "motion": {
+          "expected": "bronze-puppet-hurt",
+          "count": 29,
+          "firstLoadedMs": 0,
+          "firstDesired": "bronze-puppet-hurt",
+          "firstCurrent": "bronze-puppet-hurt",
+          "firstVisible": true,
+          "pictures": [
+            {
+              "path": "1280/hurt-38.jpg",
+              "screenshotMs": 38
+            },
+            {
+              "path": "1280/hurt-95.jpg",
+              "screenshotMs": 94
+            },
+            {
+              "path": "1280/hurt-155.jpg",
+              "screenshotMs": 156
+            }
+          ],
+          "idleBefore": [
+            514.4,
+            266,
+            251.3,
+            251.3
+          ],
+          "idleAfter": [
+            514.4,
+            238,
+            251.3,
+            251.3
+          ],
+          "frames": [
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                514.4,
+                234,
+                251.3,
+                251.3
+              ],
+              "anchor": [
+                514.4,
+                234,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                36,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                462,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 0
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                514.4,
+                234,
+                251.3,
+                251.3
+              ],
+              "anchor": [
+                514.4,
+                234,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                36,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                462,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 2
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                514.4,
+                234,
+                251.3,
+                251.3
+              ],
+              "anchor": [
+                514.4,
+                234,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                36,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                462,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 4
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                511.3,
+                233.3,
+                252.7,
+                252.7
+              ],
+              "anchor": [
+                514.4,
+                234,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                36,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                462,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 11
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                505.6,
+                232,
+                255.3,
+                255.3
+              ],
+              "anchor": [
+                514.4,
+                234,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                36,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                462,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 18
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                501.2,
+                231,
+                257.4,
+                257.4
+              ],
+              "anchor": [
+                514.4,
+                234,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                36,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                462,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 25
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                498.4,
+                231.4,
+                258.6,
+                258.6
+              ],
+              "anchor": [
+                514.4,
+                235,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                37,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                463,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 32
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                496.8,
+                231,
+                259.4,
+                259.4
+              ],
+              "anchor": [
+                514.4,
+                235,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                37,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                463,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 38
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                496,
+                231.8,
+                259.7,
+                259.7
+              ],
+              "anchor": [
+                514.4,
+                236,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                38,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                464,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 45
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                495.7,
+                231.8,
+                259.9,
+                259.9
+              ],
+              "anchor": [
+                514.4,
+                236,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                38,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                464,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 52
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                497.7,
+                233.2,
+                259,
+                259
+              ],
+              "anchor": [
+                514.4,
+                237,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                39,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                465,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 59
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                503.3,
+                234.3,
+                256.7,
+                256.7
+              ],
+              "anchor": [
+                514.4,
+                237,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                39,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                465,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 66
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                510.2,
+                235.7,
+                253.8,
+                253.8
+              ],
+              "anchor": [
+                514.4,
+                237,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                39,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                465,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 73
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                515.8,
+                236.9,
+                251.5,
+                251.5
+              ],
+              "anchor": [
+                514.4,
+                237,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                39,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                465,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 80
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                518.3,
+                237.3,
+                252.7,
+                252.7
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 87
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                520,
+                236.7,
+                253.9,
+                253.9
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 94
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                521.1,
+                236.3,
+                254.7,
+                254.7
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 101
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                521.8,
+                236,
+                255.2,
+                255.2
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 108
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                522.2,
+                235.9,
+                255.5,
+                255.5
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 115
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                522.4,
+                235.8,
+                255.6,
+                255.6
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 122
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                522,
+                235.9,
+                255.4,
+                255.4
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 129
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                520.9,
+                236.2,
+                254.8,
+                254.8
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 136
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                519.3,
+                236.7,
+                254,
+                254
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 142
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                517.9,
+                237,
+                253.2,
+                253.2
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 149
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                516.8,
+                237.3,
+                252.6,
+                252.6
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 156
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                516,
+                237.6,
+                252.1,
+                252.1
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 163
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                515.4,
+                237.7,
+                251.8,
+                251.8
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 171
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                514.9,
+                237.8,
+                251.6,
+                251.6
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 177
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                514.7,
+                237.9,
+                251.4,
+                251.4
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 184
+            }
+          ]
+        }
+      },
+      "guarded": {
+        "before": {
+          "floor": 3,
+          "player": {
+            "x": 7,
+            "y": 11,
+            "dir": 0
+          },
+          "playerHealth": 40,
+          "turn": 2,
+          "enemyHealth": 38,
+          "enemyBlock": 8,
+          "intent": "上弦",
+          "hand": [
+            "spikes",
+            "defend",
+            "strike",
+            "strike"
+          ],
+          "energy": 2
+        },
+        "after": {
+          "floor": 3,
+          "player": {
+            "x": 7,
+            "y": 11,
+            "dir": 0
+          },
+          "playerHealth": 40,
+          "turn": 2,
+          "enemyHealth": 38,
+          "enemyBlock": 2,
+          "intent": "上弦",
+          "hand": [
+            "spikes",
+            "defend",
+            "strike"
+          ],
+          "energy": 1
+        },
+        "motion": {
+          "expected": "bronze-puppet",
+          "count": 30,
+          "firstLoadedMs": 0,
+          "firstDesired": "bronze-puppet",
+          "firstCurrent": "bronze-puppet",
+          "firstVisible": true,
+          "pictures": [
+            {
+              "path": "1280/guarded-38.jpg",
+              "screenshotMs": 37
+            },
+            {
+              "path": "1280/guarded-95.jpg",
+              "screenshotMs": 99
+            },
+            {
+              "path": "1280/guarded-155.jpg",
+              "screenshotMs": 162
+            }
+          ],
+          "idleBefore": [
+            514.4,
+            238,
+            251.3,
+            251.3
+          ],
+          "idleAfter": [
+            514.4,
+            243,
+            251.3,
+            251.3
+          ],
+          "frames": [
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 0
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 1
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "anchor": [
+                514.4,
+                238,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                40,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                466,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 2
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                511.3,
+                239.3,
+                252.7,
+                252.7
+              ],
+              "anchor": [
+                514.4,
+                240,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                42,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                468,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 9
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                505.6,
+                241,
+                255.3,
+                255.3
+              ],
+              "anchor": [
+                514.4,
+                243,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                45,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                471,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 16
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                501.2,
+                245,
+                257.4,
+                257.4
+              ],
+              "anchor": [
+                514.4,
+                248,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                50,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                476,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 23
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                498.4,
+                245.4,
+                258.6,
+                258.6
+              ],
+              "anchor": [
+                514.4,
+                249,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                51,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                477,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 30
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                496.8,
+                245,
+                259.4,
+                259.4
+              ],
+              "anchor": [
+                514.4,
+                249,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                51,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                477,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 37
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                496,
+                245.8,
+                259.7,
+                259.7
+              ],
+              "anchor": [
+                514.4,
+                250,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                52,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                478,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 44
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                495.7,
+                245.8,
+                259.9,
+                259.9
+              ],
+              "anchor": [
+                514.4,
+                250,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                52,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                478,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 51
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                497.7,
+                246.2,
+                259.1,
+                259.1
+              ],
+              "anchor": [
+                514.4,
+                250,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                52,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                478,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 58
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                503.2,
+                248.3,
+                256.8,
+                256.8
+              ],
+              "anchor": [
+                514.4,
+                251,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                53,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                479,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 64
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                510,
+                249.7,
+                253.9,
+                253.9
+              ],
+              "anchor": [
+                514.4,
+                251,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                53,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                479,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 71
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                515.7,
+                250.9,
+                251.5,
+                251.5
+              ],
+              "anchor": [
+                514.4,
+                251,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                53,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                479,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 78
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                518.3,
+                250.3,
+                252.7,
+                252.7
+              ],
+              "anchor": [
+                514.4,
+                251,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                53,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                479,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 85
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                520,
+                249.7,
+                253.9,
+                253.9
+              ],
+              "anchor": [
+                514.4,
+                251,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                53,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                479,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 92
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                521.1,
+                249.3,
+                254.7,
+                254.7
+              ],
+              "anchor": [
+                514.4,
+                251,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                53,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                479,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 99
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                521.8,
+                249,
+                255.2,
+                255.2
+              ],
+              "anchor": [
+                514.4,
+                251,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                53,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                479,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 106
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                522.2,
+                248.9,
+                255.5,
+                255.5
+              ],
+              "anchor": [
+                514.4,
+                251,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                53,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                479,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 113
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                522.4,
+                248.8,
+                255.6,
+                255.6
+              ],
+              "anchor": [
+                514.4,
+                251,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                53,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                479,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 120
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                522,
+                241.9,
+                255.4,
+                255.4
+              ],
+              "anchor": [
+                514.4,
+                244,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                46,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                472,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 127
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                520.9,
+                242.2,
+                254.8,
+                254.8
+              ],
+              "anchor": [
+                514.4,
+                244,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                46,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                472,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 134
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                519.4,
+                242.6,
+                254,
+                254
+              ],
+              "anchor": [
+                514.4,
+                244,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                46,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                472,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 141
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                517.9,
+                243,
+                253.2,
+                253.2
+              ],
+              "anchor": [
+                514.4,
+                244,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                46,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                472,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 148
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                516.8,
+                243.3,
+                252.6,
+                252.6
+              ],
+              "anchor": [
+                514.4,
+                244,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                46,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                472,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 155
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                516,
+                243.6,
+                252.2,
+                252.2
+              ],
+              "anchor": [
+                514.4,
+                244,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                46,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                472,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 161
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                515.4,
+                243.7,
+                251.8,
+                251.8
+              ],
+              "anchor": [
+                514.4,
+                244,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                46,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                472,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 168
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                514.9,
+                243.8,
+                251.6,
+                251.6
+              ],
+              "anchor": [
+                514.4,
+                244,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                46,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                472,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 176
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                514.7,
+                243.9,
+                251.4,
+                251.4
+              ],
+              "anchor": [
+                514.4,
+                244,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                46,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                472,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 183
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                514.5,
+                244,
+                251.3,
+                251.3
+              ],
+              "anchor": [
+                514.4,
+                244,
+                251.3,
+                251.3
+              ],
+              "hud": [
+                380,
+                46,
+                520,
+                193.5
+              ],
+              "hand": [
+                330,
+                472,
+                730,
+                240
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 189
+            }
+          ]
+        }
+      },
+      "assets": {
+        "bronze-puppet-attack": {
+          "webpSha256": "751de1d16e2b29d075d0cab305bbd2b8033c5f96ea5a560d2112a76eb9a9d3bb",
+          "sourceSha256": "989ff8703a01c527537cb3293e63984ed11704bc0dd84db4fd415cd6e0861da1",
+          "width": 380,
+          "height": 380,
+          "bounds": [
+            34,
+            24,
+            356,
+            352
+          ]
+        },
+        "bronze-puppet-hurt": {
+          "webpSha256": "08e07f30b83cfbbbcf96f16b334919929c72cd3c9014d168149d1211ea26dc00",
+          "sourceSha256": "60d806624153262b02603ba1662500483f9d200b585705244fca34c1eea18655",
+          "width": 380,
+          "height": 380,
+          "bounds": [
+            59,
+            32,
+            356,
+            352
+          ]
+        },
+        "bronze-puppet": {
+          "webpSha256": "16dcb5f153e7de0fc71dd10d8dceec230ea8d7a23bb1cedce2c13c985858c52c",
+          "sourceSha256": "d4f153bae69a0dc2a1f07fc4153d60b7920c524fa05fb6487f78edf43894b259",
+          "width": 380,
+          "height": 380,
+          "bounds": [
+            22,
+            24,
+            356,
+            352
+          ]
+        }
+      },
+      "errors": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "stairs": [
+        {
+          "target": {
+            "x": 5,
+            "y": 8,
+            "dir": 0
+          },
+          "id": 20001,
+          "from": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          }
+        },
+        {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        }
+      ],
+      "fixture": {
+        "target": {
+          "x": 7,
+          "y": 10,
+          "dir": 0
+        },
+        "id": 20003,
+        "from": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        }
+      },
+      "start": {
+        "floor": 3,
+        "player": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        },
+        "playerHealth": 54,
+        "turn": 1,
+        "enemyHealth": 44,
+        "enemyBlock": 0,
+        "intent": "抡臂",
+        "hand": [
+          "bash",
+          "defend",
+          "defend",
+          "defend",
+          "strike"
+        ],
+        "energy": 3
+      },
+      "afterAttack": {
+        "floor": 3,
+        "player": {
+          "x": 7,
+          "y": 11,
+          "dir": 0
+        },
+        "playerHealth": 40,
+        "turn": 2,
+        "enemyHealth": 44,
+        "enemyBlock": 0,
+        "intent": "上弦",
+        "hand": [
+          "strike",
+          "spikes",
+          "defend",
+          "strike",
+          "strike"
+        ],
+        "energy": 3
+      },
+      "attack": {
+        "expected": "bronze-puppet-attack",
+        "count": 38,
+        "firstLoadedMs": 0,
+        "firstDesired": "bronze-puppet-attack",
+        "firstCurrent": "bronze-puppet-attack",
+        "firstVisible": true,
+        "pictures": [
+          {
+            "path": "390/attack-38.jpg",
+            "screenshotMs": 35
+          },
+          {
+            "path": "390/attack-95.jpg",
+            "screenshotMs": 97
+          },
+          {
+            "path": "390/attack-155.jpg",
+            "screenshotMs": 160
+          },
+          {
+            "path": "390/attack-235.jpg",
+            "screenshotMs": 229
+          }
+        ],
+        "idleBefore": [
+          13.4,
+          226.4,
+          363.3,
+          363.3
+        ],
+        "idleAfter": [
+          13.4,
+          226.4,
+          363.3,
+          363.3
+        ],
+        "frames": [
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 0
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              13.4,
+              226.5,
+              363.1,
+              363.1
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 7
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              13.7,
+              226.9,
+              362.6,
+              362.6
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 14
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              14,
+              227.4,
+              361.9,
+              361.9
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 21
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              14.5,
+              228.1,
+              361,
+              361
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 28
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              15.1,
+              229,
+              359.9,
+              359.9
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 35
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              15.7,
+              230,
+              358.6,
+              358.6
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 42
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              16.4,
+              231.1,
+              357.2,
+              357.2
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 49
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              17.2,
+              232.3,
+              355.6,
+              355.6
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 56
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              18.1,
+              233.6,
+              353.9,
+              353.9
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 63
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              19,
+              235,
+              352.1,
+              352.1
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 69
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              19.9,
+              236.5,
+              350.2,
+              350.2
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 76
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              20.9,
+              238,
+              348.2,
+              348.2
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 83
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              22,
+              239.7,
+              346.1,
+              346.1
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 90
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              23.1,
+              241.5,
+              343.8,
+              343.8
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 97
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              24.3,
+              243.3,
+              341.5,
+              341.5
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 104
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              24.1,
+              243,
+              341.9,
+              341.9
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 111
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              23.5,
+              242.2,
+              342.9,
+              342.9
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 118
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              22.7,
+              240.9,
+              344.5,
+              344.5
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 125
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              21.7,
+              239.3,
+              346.6,
+              346.6
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 132
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              20.4,
+              237.2,
+              349.3,
+              349.3
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 139
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              18.9,
+              234.9,
+              352.3,
+              352.3
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 146
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              17.2,
+              232.3,
+              355.7,
+              355.7
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 153
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              15.3,
+              229.4,
+              359.5,
+              359.5
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 160
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              13.3,
+              226.3,
+              363.5,
+              363.5
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 167
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              11,
+              223,
+              367.9,
+              367.9
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 174
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              8.7,
+              219.5,
+              372.6,
+              372.6
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 181
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              6.2,
+              215.9,
+              377.5,
+              377.5
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 188
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              3.7,
+              212.1,
+              382.7,
+              382.7
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 194
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              0.9,
+              208.1,
+              388.1,
+              388.1
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 201
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              -1.9,
+              204,
+              393.8,
+              393.8
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 208
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              -4.9,
+              199.8,
+              399.7,
+              399.7
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 215
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              -8,
+              195.4,
+              405.9,
+              405.9
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 222
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              -11.1,
+              191,
+              412.2,
+              412.2
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 229
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              -14.4,
+              186.6,
+              418.7,
+              418.7
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 236
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              -17.8,
+              181.9,
+              425.6,
+              425.6
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 243
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              -21.3,
+              177.3,
+              432.6,
+              432.6
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 250
+          },
+          {
+            "phase": "attack",
+            "className": "combat combat-enter enemy-lunge",
+            "current": "bronze-puppet-attack",
+            "desired": "bronze-puppet-attack",
+            "visible": true,
+            "body": [
+              -24.9,
+              172.5,
+              439.8,
+              439.8
+            ],
+            "anchor": [
+              13.4,
+              226.4,
+              363.3,
+              363.3
+            ],
+            "hud": [
+              15.6,
+              112,
+              358.8,
+              111.6
+            ],
+            "hand": [
+              0,
+              616.3,
+              390,
+              156
+            ],
+            "filter": "brightness(1.08) sepia(0.0925) drop-shadow(rgba(255, 220, 160, 0.45) 0px 0px 2px)",
+            "ms": 257
+          }
+        ]
+      },
+      "damage": {
+        "before": {
+          "floor": 3,
+          "player": {
+            "x": 7,
+            "y": 11,
+            "dir": 0
+          },
+          "playerHealth": 40,
+          "turn": 2,
+          "enemyHealth": 44,
+          "enemyBlock": 0,
+          "intent": "上弦",
+          "hand": [
+            "strike",
+            "spikes",
+            "defend",
+            "strike",
+            "strike"
+          ],
+          "energy": 3
+        },
+        "after": {
+          "floor": 3,
+          "player": {
+            "x": 7,
+            "y": 11,
+            "dir": 0
+          },
+          "playerHealth": 40,
+          "turn": 2,
+          "enemyHealth": 38,
+          "enemyBlock": 0,
+          "intent": "上弦",
+          "hand": [
+            "spikes",
+            "defend",
+            "strike",
+            "strike"
+          ],
+          "energy": 2
+        },
+        "motion": {
+          "expected": "bronze-puppet-hurt",
+          "count": 30,
+          "firstLoadedMs": 0,
+          "firstDesired": "bronze-puppet-hurt",
+          "firstCurrent": "bronze-puppet-hurt",
+          "firstVisible": true,
+          "pictures": [
+            {
+              "path": "390/hurt-38.jpg",
+              "screenshotMs": 40
+            },
+            {
+              "path": "390/hurt-95.jpg",
+              "screenshotMs": 95
+            },
+            {
+              "path": "390/hurt-155.jpg",
+              "screenshotMs": 158
+            }
+          ],
+          "idleBefore": [
+            13.4,
+            226.4,
+            363.3,
+            363.3
+          ],
+          "idleAfter": [
+            13.4,
+            226.4,
+            363.3,
+            363.3
+          ],
+          "frames": [
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 0
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 2
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                10.2,
+                225.4,
+                365.4,
+                365.4
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 5
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                4.4,
+                223.5,
+                369.2,
+                369.2
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 12
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                -0.1,
+                222,
+                372.1,
+                372.1
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 19
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                -2.9,
+                221.1,
+                373.9,
+                373.9
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 26
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                -4.5,
+                220.6,
+                375,
+                375
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 33
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                -5.4,
+                220.4,
+                375.5,
+                375.5
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 40
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                -5.7,
+                220.3,
+                375.7,
+                375.7
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 47
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                -3.7,
+                220.9,
+                374.5,
+                374.5
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 54
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                1.8,
+                222.5,
+                371.2,
+                371.2
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 61
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                8.5,
+                224.5,
+                367.1,
+                367.1
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 68
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                14.1,
+                226.2,
+                363.6,
+                363.6
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 75
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                15.9,
+                225.3,
+                365.4,
+                365.4
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 82
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                17,
+                224.5,
+                367.1,
+                367.1
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 89
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                17.7,
+                223.9,
+                368.2,
+                368.2
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 96
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                18.2,
+                223.6,
+                369,
+                369
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 102
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                18.5,
+                223.4,
+                369.4,
+                369.4
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 109
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                18.6,
+                223.3,
+                369.6,
+                369.6
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 116
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                18.3,
+                223.4,
+                369.3,
+                369.3
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 123
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                17.6,
+                223.8,
+                368.4,
+                368.4
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 130
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                16.6,
+                224.4,
+                367.2,
+                367.2
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 137
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                15.7,
+                225,
+                366.1,
+                366.1
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 144
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                14.9,
+                225.4,
+                365.2,
+                365.2
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 151
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                14.4,
+                225.8,
+                364.6,
+                364.6
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 158
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                14,
+                226,
+                364.1,
+                364.1
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 165
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                13.7,
+                226.2,
+                363.7,
+                363.7
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 172
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                13.6,
+                226.3,
+                363.5,
+                363.5
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 179
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                13.4,
+                226.3,
+                363.4,
+                363.4
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 186
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit",
+              "current": "bronze-puppet-hurt",
+              "desired": "bronze-puppet-hurt",
+              "visible": true,
+              "body": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 193
+            }
+          ]
+        }
+      },
+      "guarded": {
+        "before": {
+          "floor": 3,
+          "player": {
+            "x": 7,
+            "y": 11,
+            "dir": 0
+          },
+          "playerHealth": 40,
+          "turn": 2,
+          "enemyHealth": 38,
+          "enemyBlock": 8,
+          "intent": "上弦",
+          "hand": [
+            "spikes",
+            "defend",
+            "strike",
+            "strike"
+          ],
+          "energy": 2
+        },
+        "after": {
+          "floor": 3,
+          "player": {
+            "x": 7,
+            "y": 11,
+            "dir": 0
+          },
+          "playerHealth": 40,
+          "turn": 2,
+          "enemyHealth": 38,
+          "enemyBlock": 2,
+          "intent": "上弦",
+          "hand": [
+            "spikes",
+            "defend",
+            "strike"
+          ],
+          "energy": 1
+        },
+        "motion": {
+          "expected": "bronze-puppet",
+          "count": 30,
+          "firstLoadedMs": 0,
+          "firstDesired": "bronze-puppet",
+          "firstCurrent": "bronze-puppet",
+          "firstVisible": true,
+          "pictures": [
+            {
+              "path": "390/guarded-38.jpg",
+              "screenshotMs": 34
+            },
+            {
+              "path": "390/guarded-95.jpg",
+              "screenshotMs": 96
+            },
+            {
+              "path": "390/guarded-155.jpg",
+              "screenshotMs": 152
+            }
+          ],
+          "idleBefore": [
+            13.4,
+            226.4,
+            363.3,
+            363.3
+          ],
+          "idleAfter": [
+            13.4,
+            226.4,
+            363.3,
+            363.3
+          ],
+          "frames": [
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 0
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 1
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                10.3,
+                225.4,
+                365.3,
+                365.3
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 6
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                4.4,
+                223.5,
+                369.2,
+                369.2
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 13
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                -0.1,
+                222,
+                372.1,
+                372.1
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 20
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                -2.9,
+                221.1,
+                373.9,
+                373.9
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 27
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                -4.5,
+                220.6,
+                375,
+                375
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 34
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                -5.4,
+                220.4,
+                375.5,
+                375.5
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 41
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                -5.7,
+                220.3,
+                375.7,
+                375.7
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 48
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                -3.7,
+                220.9,
+                374.5,
+                374.5
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 55
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                1.8,
+                222.5,
+                371.2,
+                371.2
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 62
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                8.5,
+                224.5,
+                367.1,
+                367.1
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 69
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                14.1,
+                226.2,
+                363.6,
+                363.6
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 76
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                16,
+                225.3,
+                365.4,
+                365.4
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 83
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                17,
+                224.5,
+                367.1,
+                367.1
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 90
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                17.7,
+                223.9,
+                368.2,
+                368.2
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 97
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                18.2,
+                223.6,
+                369,
+                369
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 104
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                18.5,
+                223.4,
+                369.4,
+                369.4
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 111
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                18.6,
+                223.3,
+                369.6,
+                369.6
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 118
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                18.3,
+                223.4,
+                369.3,
+                369.3
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 125
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                17.6,
+                223.8,
+                368.4,
+                368.4
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 131
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                16.6,
+                224.4,
+                367.2,
+                367.2
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 138
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                15.7,
+                225,
+                366.1,
+                366.1
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 145
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                14.9,
+                225.4,
+                365.2,
+                365.2
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 152
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                14.4,
+                225.8,
+                364.5,
+                364.5
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 159
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                14,
+                226,
+                364.1,
+                364.1
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 166
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                13.7,
+                226.2,
+                363.7,
+                363.7
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 173
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                13.5,
+                226.3,
+                363.5,
+                363.5
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 180
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                13.4,
+                226.3,
+                363.4,
+                363.4
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 187
+            },
+            {
+              "phase": "hurt",
+              "className": "combat combat-enter enemy-hit guarded",
+              "current": "bronze-puppet",
+              "desired": "bronze-puppet",
+              "visible": true,
+              "body": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "anchor": [
+                13.4,
+                226.4,
+                363.3,
+                363.3
+              ],
+              "hud": [
+                15.6,
+                97.7,
+                358.8,
+                125.8
+              ],
+              "hand": [
+                0,
+                616.3,
+                390,
+                156
+              ],
+              "filter": "brightness(2.2) drop-shadow(rgb(255, 255, 255) 0px 0px 6px)",
+              "ms": 194
+            }
+          ]
+        }
+      },
+      "assets": {
+        "bronze-puppet-hurt": {
+          "webpSha256": "08e07f30b83cfbbbcf96f16b334919929c72cd3c9014d168149d1211ea26dc00",
+          "sourceSha256": "60d806624153262b02603ba1662500483f9d200b585705244fca34c1eea18655",
+          "width": 380,
+          "height": 380,
+          "bounds": [
+            59,
+            32,
+            356,
+            352
+          ]
+        },
+        "bronze-puppet-attack": {
+          "webpSha256": "751de1d16e2b29d075d0cab305bbd2b8033c5f96ea5a560d2112a76eb9a9d3bb",
+          "sourceSha256": "989ff8703a01c527537cb3293e63984ed11704bc0dd84db4fd415cd6e0861da1",
+          "width": 380,
+          "height": 380,
+          "bounds": [
+            34,
+            24,
+            356,
+            352
+          ]
+        },
+        "bronze-puppet": {
+          "webpSha256": "16dcb5f153e7de0fc71dd10d8dceec230ea8d7a23bb1cedce2c13c985858c52c",
+          "sourceSha256": "d4f153bae69a0dc2a1f07fc4153d60b7920c524fa05fb6487f78edf43894b259",
+          "width": 380,
+          "height": 380,
+          "bounds": [
+            22,
+            24,
+            356,
+            352
+          ]
+        }
+      },
+      "errors": []
+    }
+  ]
+}
