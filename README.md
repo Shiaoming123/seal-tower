@@ -2,7 +2,7 @@
 
 一款中式像素风网页 Roguelike 原型。你在镇灯铺接单，进塔打牌猎妖，选择消耗灯灰挡招、卖货换装备，或带货回铺完成委托。当前主线是第一人称的「镇灯铺 · 猎妖供货」。固定机位的斩妖塔、一印两价和押运也保存在项目中。
 
-[下载离线版与开发归档](https://github.com/Shiaoming123/seal-tower/releases/tag/v0.1.0) · [设计背景与对话决策](docs/项目对话与决策.md) · [继续开发](docs/继续开发.md) · [历史归档索引](docs/开发归档.md)
+[下载离线版与开发归档](https://github.com/Shiaoming123/seal-tower/releases/tag/v0.1.0) · [设计背景与对话决策](docs/项目对话与决策.md) · [继续开发](docs/继续开发.md) · [历史归档索引](docs/开发归档.md) · [逐字对话和原附件](docs/conversation/README.md)
 
 ## 试玩
 
