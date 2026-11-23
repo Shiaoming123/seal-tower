@@ -13,6 +13,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "sim": "vitest run tests/balance.test.ts --reporter=verbose",
+    "docs:check": "node scripts/check-doc-trace.mjs",
     "assets": "node scripts/prepare-assets.mjs",
     "fonts": "node scripts/build-fonts.mjs",
     "test:e2e": "node tests/e2e.mjs"

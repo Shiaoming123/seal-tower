@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "groups": [
+    {
+      "id": "project",
+      "entry": "README.md",
+      "files": [
+        "README.md",
+        "AGENTS.md",
+        "GLOSSARY.md",
+        "docs/开发导航.md",
+        "docs/资料索引.json"
+      ]
+    },
+    {
+      "id": "collaboration",
+      "entry": "docs/Agent协作规范.md",
+      "files": [
+        "docs/Agent协作规范.md",
+        "docs/协作任务.md"
+      ]
+    },
+    {
+      "id": "v2-design",
+      "entry": "v2/README.md",
+      "files": [
+        "v2/README.md",
+        "v2/docs/重构说明.md",
+        "v2/docs/玩法优化方案.md",
+        "v2/docs/长线经营与构筑方案.md",
+        "v2/docs/行囊重设计.md"
+      ]
+    },
+    {
+      "id": "v2-art",
+      "entry": "v2/docs/美术需求.md",
+      "files": [
+        "v2/docs/美术需求.md",
+        "v2/docs/美术首批记录.md",
+        "v2/docs/美术清单.json",
+        "docs/素材与许可.md"
+      ],
+      "directories": [
+        "v2/art/",
+        "v2/src/assets/",
+        "v2/public/",
+        "v2/src/fonts/"
+      ]
+    },
+    {
+      "id": "task-records",
+      "entry": "docs/dev-log/README.md",
+      "directories": [
+        "docs/dev-log/"
+      ]
+    },
+    {
+      "id": "audio-review",
+      "entry": "docs/dev-log/2026-11-23-AUDIO-001.md",
+      "directories": [
+        "v2/docs/audio-demo/"
+      ]
+    },
+    {
+      "id": "history",
+      "entry": "docs/开发归档.md",
+      "files": [
+        "docs/开发归档.md",
+        "docs/继续开发.md",
+        "docs/项目对话与决策.md",
+        "first-cut/行囊物件入库规范.md",
+        "favicon.ico",
+        "像素美术与动作制作计划.md",
+        "创作手记-工作底稿.md",
+        "参赛与开发计划.md",
+        "呈现与试玩研究.md",
+        "报名构想帖-草稿.md",
+        "赛前技术调研.md"
+      ],
+      "directories": [
+        "evidence/",
+        "docs/conversation/"
+      ]
+    },
+    {
+      "id": "shared-sources",
+      "entry": "first-cut/type/README.md",
+      "directories": [
+        "assets/",
+        "first-cut/sprites/",
+        "first-cut/type/"
+      ]
+    }
+  ],
+  "mechanics": {
+    "bag": "v2/docs/行囊重设计.md",
+    "merchant-prices": "v2/docs/长线经营与构筑方案.md",
+    "turn-combat": "v2/docs/玩法优化方案.md"
+  },
+  "requiredTraces": [
+    "ART-007A",
+    "ART-007B",
+    "ART-007C"
+  ]
+}
