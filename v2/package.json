@@ -17,7 +17,7 @@
     "assets": "node scripts/prepare-assets.mjs",
     "fonts": "node scripts/build-fonts.mjs",
     "test:e2e": "node tests/e2e.mjs",
-    "pack:studio": "npm run build && node scripts/pack-studio.mjs"
+    "pack:studio": "npm run build && node scripts/pack-studio.mjs --flat"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

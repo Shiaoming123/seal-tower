@@ -7,7 +7,7 @@ import { createServer } from "node:http";
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 
-const root = new URL("../dist-studio/", import.meta.url).pathname;
+const root = process.env.STUDIO_DIR ? new URL(`../${process.env.STUDIO_DIR}/`, import.meta.url).pathname : new URL("../dist-studio/", import.meta.url).pathname;
 const out = process.argv[2] ?? ".cache/studio-check";
 await mkdir(out, { recursive: true });
 const types = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".webp": "image/webp", ".woff2": "font/woff2", ".txt": "text/plain; charset=utf-8", ".md": "text/markdown; charset=utf-8", ".png": "image/png", ".ico": "image/x-icon" };
