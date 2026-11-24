@@ -401,7 +401,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 @keyframes deal { from { opacity: 0; transform: translate(-200px, 60px) rotate(-20deg); } }
 .combat-actions { position: absolute; right: 16px; bottom: 16px; z-index: 6; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
 .portrait .hand { left: 0; right: 0; bottom: 110px; }
-.portrait .hand-slot { margin: 0 calc(-14px - var(--n) * 4px); }
+.portrait .hand-slot { margin: 0 calc(-18px - var(--n) * 4.5px); } /* UI-012: the 540-wide stage needs a tighter fan */
 .portrait .player-panel { bottom: 14px; }
 .portrait .enemy-head { width: 92%; }
 .portrait .combat-tip { bottom: 480px; }
@@ -497,7 +497,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .det-tags { color: #7a5010; font-size: 12px !important; }
 .portrait .bag-side { grid-template-columns: 1fr; }
 /* Portrait: the bag overlay is one column (grid, details, sets, pouch) inside the 600-wide stage. */
-.portrait .bag-box { width: 576px; max-height: 96%; overflow-y: auto; }
+.portrait .bag-box { width: 516px; max-height: 96%; overflow-y: auto; }
 .portrait .bag-wrap { grid-template-columns: 1fr; justify-items: center; }
 .portrait .bag-wrap > .item-details, .portrait .bag-wrap > .bag-side, .portrait .bag-wrap > .pending { width: 100%; box-sizing: border-box; }
 .portrait .item-details { height: auto; min-height: 190px; overflow: visible; }
@@ -905,3 +905,5 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .pick-confirm { justify-content: center; margin: 4px 0 8px; }
 /* The rest screen has no scrolling area of its own; on a short phone its last option fell off the stage. */
 .event.rest .event-box { overflow-y: auto; }
+/* UI-012: town build cards two to a row on the 540-wide portrait stage (four overflowed it). */
+.portrait .build-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }

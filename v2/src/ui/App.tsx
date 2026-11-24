@@ -26,8 +26,10 @@ function useStage() {
     const fit = () => {
       const w = window.innerWidth, h = window.innerHeight;
       const portrait = h > w * 1.15;
-      // Portrait phones: a 600-wide stage whose height follows the screen, so text stays readable.
-      const [sw, sh] = portrait ? [600, Math.max(1000, Math.min(1400, Math.round((600 * h) / w)))] : [1280, 720];
+      // Portrait phones: a 540-wide stage whose height follows the screen. 540 (was 600) draws everything about 11%
+      // bigger on a 390-wide phone (UI-012); the height range keeps the width, not the height, deciding the scale.
+      const PW = 540;
+      const [sw, sh] = portrait ? [PW, Math.max(880, Math.min(1260, Math.round((PW * h) / w)))] : [1280, 720];
       setLayout({ portrait, scale: Math.min(w / sw, h / sh), w: sw, h: sh });
     };
     fit();
