@@ -315,9 +315,13 @@ export function Combat() {
   const net = Math.max(0, incoming - c.block);
   const preview = previewFor(run, c);
   const salve = run.bag.items.find((it) => GOODS[it.id].use?.inCombat);
+  // Same rule as twoStep(): phones pick a card first, then play it.
+  const phoneHand = !!document.querySelector(".stage.portrait") || matchMedia("(hover: none)").matches;
   const tipId = c.enemy.intent.steal ? "steal" : c.enemy.intent.charge ? "charge" : def.part ? "part" : "combat";
   const tips: Record<string, string> = {
-    combat: "敌人头上写着它下回合要做什么。每回合 3 点能量，点牌就能打出。打不过可以先架起格挡。按 E 结束回合。",
+    combat: phoneHand
+      ? "敌人头上写着它下回合要做什么。每回合 3 点能量。点一张牌会放大，再点一次才打出。打不过可以先架起格挡，最后点「结束回合」。"
+      : "敌人头上写着它下回合要做什么。每回合 3 点能量，点牌就能打出。打不过可以先架起格挡。按 E 结束回合。",
     steal: "这只妖要抢货：它这一下只要有伤害打穿你的格挡，就会叼走你行囊里最值钱的货。格挡够了就抢不走。",
     charge: "它在蓄力。这回合内打出够多的伤害（看「蓄」后面的数字）就能打断，下回合的大招就不会来。",
     part: `${def.part?.label ?? ""}很脆：单次伤害到 ${def.part?.threshold ?? 0} 点就会碎，只能卖废铜价。想要完整的，就用多段小伤害收尾。`,

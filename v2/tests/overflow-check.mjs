@@ -51,7 +51,7 @@ const scan = () => {
     const b = (box ?? document.body).getBoundingClientRect();
     const rects = [...range.getClientRects()].filter((r) => r.width >= 1 && r.height >= 1);
     // For the overlap check: only the part of the text you can see (scrolling and clipping boxes cut it), and the
-    // layer it is drawn in (nearest absolutely or fixed positioned ancestor) — overlays sitting on the game don't count.
+    // layer it is drawn in (nearest absolute, fixed or sticky ancestor) — overlays and sticky footers over scrolling content don't count.
     let layer = n.parentElement, seen = rects.map((r) => ({ left: r.left, right: r.right, top: r.top, bottom: r.bottom }));
     for (let a = n.parentElement; a && a !== document.body; a = a.parentElement) {
       const st = getComputedStyle(a);
@@ -60,7 +60,7 @@ const scan = () => {
         seen = seen.map((r) => ({ left: Math.max(r.left, c.left), right: Math.min(r.right, c.right), top: Math.max(r.top, c.top), bottom: Math.min(r.bottom, c.bottom) }));
       }
     }
-    for (layer = n.parentElement; layer && layer !== document.body; layer = layer.parentElement) if (/absolute|fixed/.test(getComputedStyle(layer).position)) break;
+    for (layer = n.parentElement; layer && layer !== document.body; layer = layer.parentElement) if (/absolute|fixed|sticky/.test(getComputedStyle(layer).position)) break;
     seen = seen.filter((r) => r.right - r.left >= 1 && r.bottom - r.top >= 1).map((r) => ({ ...r, width: r.right - r.left, height: r.bottom - r.top }));
     runs.push({ el: n.parentElement, text: t, rects: seen, layer });
     for (const r of rects) {

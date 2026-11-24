@@ -91,7 +91,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
   text-shadow: 0 0 24px rgba(226, 72, 59, 0.55), 4px 4px 0 #3a0c08; letter-spacing: 12px; }
 .tagline { font-size: 24px; margin: 0 0 18px; color: var(--ink); letter-spacing: 3px; }
 .title-buttons { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
-.profile-line { color: var(--ink-dim); margin-top: 18px; }
+.profile-line { color: var(--ink-dim); margin-top: 18px; text-shadow: 0 0 4px #000, 1px 1px 0 #000; } /* sits over the hero art on phones */
 /* An explicit width: centred with left 50%, the box could only grow to half the stage and the logo wrapped. */
 .portrait .title-box { left: 50%; top: 30%; transform: translate(-50%, -50%); align-items: center; text-align: center; width: 92%; }
 .portrait .title-buttons { align-items: center; }
@@ -268,7 +268,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .intel p { margin: 0 0 4px; }
 .stairs-prompt { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 5; width: 420px; text-align: center; }
 .stairs-prompt .row { justify-content: center; }
-.portrait .explore { grid-template-columns: 1fr; grid-template-rows: 330px 70px 1fr; }
+/* The 3D view takes whatever height is left on taller phones; the map and the look-ahead line size to their content. */
+.portrait .explore { grid-template-columns: 1fr; grid-template-rows: minmax(330px, 1fr) 70px auto; }
 .portrait .explore .viewport { grid-row: 1; }
 .portrait .explore .pad { grid-row: 2; }
 .portrait .explore .side { grid-row: 3; grid-column: 1; flex-direction: row; flex-wrap: wrap; align-content: flex-start; }
@@ -593,7 +594,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .order-box { display: flex; flex-direction: column; gap: 4px; background: rgba(0, 0, 0, 0.3); padding: 8px; border-radius: 4px; font-size: 14px; }
 .order-box .done { color: #8fe0a0; }
 .leave { margin-top: auto; }
-.portrait .shop { grid-template-columns: 1fr 1fr; grid-template-rows: 380px 1fr; }
+/* The sell panel (bag, open order, leave button) needs about 530: at 380 the sticky leave button sat on the bag. */
+.portrait .shop { grid-template-columns: 1fr 1fr; grid-template-rows: clamp(380px, 52%, 560px) 1fr; }
 .portrait .shop-sell { overflow-y: auto; }
 .shop-sell .leave { position: sticky; bottom: 0; flex: none; }
 .portrait .shop-table { grid-column: 1 / -1; grid-row: 2; }
@@ -655,3 +657,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .floater.crit { font-size: 54px; color: #ffcf5a; text-shadow: 3px 3px 0 #5a1a08, 0 0 10px rgba(255, 140, 40, 0.8); }
 .card-ghost { position: absolute !important; z-index: 30; margin: 0 !important; pointer-events: none; transform-origin: 50% 50%; }
 .floor-card ~ .omen-card { animation: intent-in 0.35s ease-out 1.9s both; }
+
+/* UI-007: keyboard hints for mouse-and-keyboard devices, button hints on touch screens. */
+.tip-touch { display: none; }
+@media (pointer: coarse) { .tip-keys { display: none; } .tip-touch { display: block; } }
+@media (pointer: coarse) { kbd, .keys-only, .card .hotkey { display: none; } } /* no keyboard on a phone: hide shortcut hints */

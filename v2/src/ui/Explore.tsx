@@ -278,7 +278,8 @@ export function Explore() {
         <FloorCard />
         {showTip && (
           <div class="tip">
-            <p><b>W</b> 前进　<b>A</b> / <b>D</b> 转身　<b>S</b> 后退。也可以直接<b>点右边小地图上的格子</b>，会自动走过去。</p>
+            <p class="tip-keys"><b>W</b> 前进　<b>A</b> / <b>D</b> 转身　<b>S</b> 后退。也可以直接<b>点小地图上的格子</b>，会自动走过去。</p>
+            <p class="tip-touch">点<b>前进</b>、<b>左转</b>、<b>右转</b>按钮走路。也可以直接<b>点小地图上的格子</b>，会自动走过去。</p>
             <p>红点是妖，金点是狐市，绿点是灯台，紫点是事件。最远处的大红点是守关妖。</p>
             <button type="button" class="btn small" onClick={() => markTip("move")}>知道了</button>
           </div>
@@ -292,7 +293,7 @@ export function Explore() {
             <p class="verse">{OMEN[run.omen].verse}</p>
             <p>{OMEN[run.omen].text}</p>
             <button type="button" class="btn small primary" onClick={closeOmen}>知道了 <kbd>Enter</kbd></button>
-            {nudge > 0 && <p class="omen-hint">看完签文再出发：点「知道了」或按 Enter。</p>}
+            {nudge > 0 && <p class="omen-hint">看完签文再出发：点「知道了」<span class="keys-only">或按 Enter</span>。</p>}
           </div>
         )}
         {run.oil <= 0 ? <div class="dark-warn">灯灭了：小地图不再自动探路，妖趁黑每下多打 {R.DARK_DAMAGE} 点。去狐市买灯油、在灯台添油，或在行囊里烧灯灰。</div>

@@ -67,7 +67,7 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
         if (ok) { sfx.click(); setSelected(null); commit(); }
         else say(run.combat ? "打架的时候腾不出手整理侧袋" : `侧袋只有 ${POUCH_SLOTS} 格，已经满了`);
       }
-      else if (moved.current && !drop(held, at) && at) say("放不下：换个位置或先旋转（R）");
+      else if (moved.current && !drop(held, at) && at) say("放不下：换个位置或先旋转");
       setHeld(null); setHover(null); setGhost(null);
     };
     const onKey = (e: KeyboardEvent) => { if (e.key === "r" || e.key === "R") setHeld((h) => (h ? { ...h, rot: (h.rot + 1) % 4 } : h)); };
@@ -153,7 +153,7 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
       {held && ghost && (
         <div class="drag-ghost" style={{ left: `${ghost.x}px`, top: `${ghost.y}px` }}>
           <img src={ART[GOODS[held.id].icon]} alt="" />
-          <span>R 旋转</span>
+          <span class="keys-only">R 旋转</span>
         </div>
       )}
       {mode === "manage" && <ItemDetails run={run} uid={sel?.uid ?? null} onRotate={rotateSelected} onDone={() => setSelected(null)} onSew={setSewing} />}
@@ -183,7 +183,7 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
 
 function ItemDetails({ run, uid, onRotate, onDone, onSew }: { run: RunState; uid: number | null; onRotate: () => void; onDone: () => void; onSew: (uid: number) => void }) {
   const it = run.bag.items.find((i) => i.uid === uid);
-  if (!it) return <div class="item-details empty"><p>点一件东西看详情。拖动可以挪位置，右键或 R 旋转。</p></div>;
+  if (!it) return <div class="item-details empty"><p>点一件东西看详情。拖动可以挪位置<span class="keys-only">，右键或 R 旋转</span>。</p></div>;
   const g = GOODS[it.id];
   const inCombat = run.screen === "combat";
   const canUse = g.use && (g.use.inCombat || !inCombat) && !(g.use.bagRow && !canExpand(run));
