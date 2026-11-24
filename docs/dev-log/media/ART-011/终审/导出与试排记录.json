@@ -1,0 +1,396 @@
+{
+  "records": [
+    {
+      "id": "feixiao-r1",
+      "export": {
+        "id": "feixiao-r1",
+        "kind": "portrait",
+        "native": {
+          "width": 1086,
+          "height": 1448,
+          "sha256": "23adee3a159073ab525b61e6e7f47fea190126091a163d3e0cdca12aafac913b"
+        },
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 1086,
+          "height": 1448
+        },
+        "scale": 2,
+        "master": {
+          "width": 2172,
+          "height": 2896,
+          "sha256": "8b8865dc366a78174df3fcbefa33cd110c140e73cdb1a1352051d74ad5daba85",
+          "bytes": 4039467
+        },
+        "thumbnail": {
+          "width": 300,
+          "height": 400,
+          "sha256": "7ffb431d0bcc696cc78e661cd2f7e5b87c3f33d754242bf0c4b9c2f465093d3a"
+        },
+        "scaleKernel": "nearest",
+        "thumbnailKernel": "lanczos3"
+      },
+      "layout": {
+        "digest": "8b8865dc366a78174df3fcbefa33cd110c140e73cdb1a1352051d74ad5daba85",
+        "source": {
+          "width": 2172,
+          "height": 2896,
+          "format": "png",
+          "alpha": false
+        },
+        "targetFit": [
+          300,
+          400
+        ],
+        "meetsSourceResolution": true,
+        "charCrop": [
+          0.27,
+          0.19,
+          0.54,
+          0.58
+        ],
+        "regions": [
+          {
+            "id": "title",
+            "rect": [
+              0,
+              0,
+              1,
+              0.22
+            ],
+            "median": 17,
+            "upper90": 28,
+            "upper95": 46,
+            "upper99": 126
+          },
+          {
+            "id": "tag",
+            "rect": [
+              0,
+              0.8,
+              1,
+              0.2
+            ],
+            "median": 24,
+            "upper90": 33,
+            "upper95": 59,
+            "upper99": 120
+          }
+        ],
+        "typography": [
+          {
+            "text": "斩妖塔",
+            "rect": [
+              88.5,
+              11.703125,
+              123,
+              41
+            ]
+          },
+          {
+            "text": "富婆狐商救救我！",
+            "rect": [
+              78,
+              54.703125,
+              144,
+              21.59375
+            ]
+          },
+          {
+            "text": "这枚狐扣，卖不卖？",
+            "rect": [
+              91.5,
+              342.5,
+              117,
+              17
+            ]
+          },
+          {
+            "text": "第一人称爬塔 · 卡牌 · 背包 · 跑商",
+            "rect": [
+              81.8125,
+              364.5,
+              136.359375,
+              13
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "fake-r1",
+      "export": {
+        "id": "fake-r1",
+        "kind": "portrait",
+        "native": {
+          "width": 1086,
+          "height": 1448,
+          "sha256": "bdbe21698e8d55e883d516f758538da7fc38f4e5af60fea2071e1dc1641414ee"
+        },
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "width": 1086,
+          "height": 1448
+        },
+        "scale": 2,
+        "master": {
+          "width": 2172,
+          "height": 2896,
+          "sha256": "0709a55bb310de41a22d68cafc6f94a11bc2bb0c59385068c7934fbc6166b083",
+          "bytes": 4110285
+        },
+        "thumbnail": {
+          "width": 300,
+          "height": 400,
+          "sha256": "049389b768058d9950e0ed594140bd7b0516a38a0b6f6ed80c7fe171fb6f696f"
+        },
+        "scaleKernel": "nearest",
+        "thumbnailKernel": "lanczos3"
+      },
+      "layout": {
+        "digest": "0709a55bb310de41a22d68cafc6f94a11bc2bb0c59385068c7934fbc6166b083",
+        "source": {
+          "width": 2172,
+          "height": 2896,
+          "format": "png",
+          "alpha": false
+        },
+        "targetFit": [
+          300,
+          400
+        ],
+        "meetsSourceResolution": true,
+        "charCrop": [
+          0.29,
+          0.16,
+          0.68,
+          0.65
+        ],
+        "regions": [
+          {
+            "id": "title",
+            "rect": [
+              0,
+              0,
+              1,
+              0.22
+            ],
+            "median": 22,
+            "upper90": 36,
+            "upper95": 49,
+            "upper99": 193
+          },
+          {
+            "id": "tag",
+            "rect": [
+              0,
+              0.8,
+              1,
+              0.2
+            ],
+            "median": 26,
+            "upper90": 33,
+            "upper95": 67,
+            "upper99": 140
+          }
+        ],
+        "typography": [
+          {
+            "text": "斩妖塔",
+            "rect": [
+              88.5,
+              11.703125,
+              123,
+              41
+            ]
+          },
+          {
+            "text": "富婆狐商救救我！",
+            "rect": [
+              78,
+              54.703125,
+              144,
+              21.59375
+            ]
+          },
+          {
+            "text": "绯绡说过，塔里只有她一家狐市。",
+            "rect": [
+              52.5,
+              343,
+              195,
+              17
+            ]
+          },
+          {
+            "text": "那这位白尾巴的，又是谁？",
+            "rect": [
+              96,
+              365,
+              108,
+              12
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "banner",
+      "export": {
+        "id": "banner",
+        "kind": "banner",
+        "native": {
+          "width": 1672,
+          "height": 941,
+          "sha256": "66d90a435db30fea49890dbbc72cfdf70377a251e2a7f2b1c7108b2ab4a517f2"
+        },
+        "crop": {
+          "left": 4,
+          "top": 2,
+          "width": 1664,
+          "height": 936
+        },
+        "scale": 2,
+        "master": {
+          "width": 3328,
+          "height": 1872,
+          "sha256": "1ca7bc33960fc14eaab24ef665bc534b97be825473dcb716b0581353ebe28589",
+          "bytes": 4602775
+        },
+        "thumbnail": {
+          "width": 640,
+          "height": 360,
+          "sha256": "5c88f0237edd7123ff5ffe3677cd40ebb1f4c0058e726ed21e6ff3eac39721bb"
+        },
+        "scaleKernel": "nearest",
+        "thumbnailKernel": "lanczos3"
+      },
+      "layout": {
+        "dimensions": [
+          3328,
+          1872
+        ],
+        "alpha": false,
+        "format": "png",
+        "sha": "1ca7bc33960fc14eaab24ef665bc534b97be825473dcb716b0581353ebe28589",
+        "rects": [
+          {
+            "text": "斩妖塔",
+            "rect": [
+              18,
+              17,
+              180,
+              63.796875
+            ]
+          },
+          {
+            "text": "富婆狐商救救我！",
+            "rect": [
+              18,
+              85.796875,
+              128,
+              22
+            ]
+          },
+          {
+            "text": "第一人称爬塔 · 卡牌 · 背包 · 跑商",
+            "rect": [
+              18,
+              111.796875,
+              166.65625,
+              15
+            ]
+          }
+        ],
+        "records": [
+          {
+            "key": "left-zone",
+            "box": {
+              "left": 0,
+              "top": 0,
+              "width": 256,
+              "height": 126
+            },
+            "q50": 23,
+            "q95": 92,
+            "q99": 184
+          },
+          {
+            "key": "actual-text",
+            "box": {
+              "left": 12,
+              "top": 10,
+              "width": 205,
+              "height": 116
+            },
+            "q50": 23,
+            "q95": 55,
+            "q99": 140
+          }
+        ]
+      }
+    }
+  ],
+  "flags": {
+    "source": "fake-r1",
+    "coordinates": "300x400 canonical preview, [tip x, tip y, label x, label y]",
+    "points": [
+      [
+        239,
+        80,
+        244,
+        70
+      ],
+      [
+        264,
+        99,
+        270,
+        89
+      ],
+      [
+        283,
+        135,
+        289,
+        121
+      ],
+      [
+        291,
+        170,
+        292,
+        156
+      ],
+      [
+        286,
+        199,
+        273,
+        190
+      ],
+      [
+        235,
+        312,
+        233,
+        323
+      ],
+      [
+        254,
+        312,
+        253,
+        323
+      ],
+      [
+        269,
+        312,
+        269,
+        323
+      ],
+      [
+        288,
+        310,
+        289,
+        323
+      ]
+    ]
+  }
+}

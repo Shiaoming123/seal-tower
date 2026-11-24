@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "taskId": "ART-011",
+  "sourceRevision": "b02774f",
+  "generator": "OpenAI ImageGen (built-in)",
+  "assets": [
+    {
+      "id": "promo-feixiao",
+      "caption": "绯绡封面",
+      "file": "docs/contest/media/promo/promo-feixiao.png",
+      "preview": "docs/dev-log/media/ART-011/绯绡门审/300×400无字.png",
+      "kind": "portrait",
+      "designNotes": "两狐耳、人物右眼眨，保留三条红白尾。",
+      "referenceFiles": [
+        "first-cut/sprites/fox-settle-hands.webp",
+        "first-cut/sprites/fox-offer-hands.webp",
+        "v2/src/assets/clasp.webp",
+        "v2/src/assets/market.webp"
+      ],
+      "native": {
+        "width": 1086,
+        "height": 1448,
+        "sha256": "23adee3a159073ab525b61e6e7f47fea190126091a163d3e0cdca12aafac913b",
+        "file": "docs/contest/media/promo/native/promo-feixiao.png"
+      },
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 1086,
+        "height": 1448
+      },
+      "scale": 2,
+      "scaleKernel": "nearest",
+      "thumbnailKernel": "lanczos3",
+      "master": {
+        "width": 2172,
+        "height": 2896,
+        "sha256": "8b8865dc366a78174df3fcbefa33cd110c140e73cdb1a1352051d74ad5daba85",
+        "bytes": 4039467
+      },
+      "thumbnail": {
+        "width": 300,
+        "height": 400,
+        "sha256": "7ffb431d0bcc696cc78e661cd2f7e5b87c3f33d754242bf0c4b9c2f465093d3a"
+      }
+    },
+    {
+      "id": "promo-fakefox",
+      "caption": "白狐反转",
+      "file": "docs/contest/media/promo/promo-fakefox.png",
+      "preview": "docs/dev-log/media/ART-011/终审/白狐-300×400无字.png",
+      "kind": "portrait",
+      "designNotes": "白狐选 B 稿，同机位改用冷光。B 的低位尾束被摊布掩住尾尖，局修后布上五尖、布下四尖，蓝眼和空价签保留。300×400 的前后对照收录了可逐一核对的九个端点。",
+      "referenceFiles": [
+        "docs/contest/media/promo/promo-feixiao.png",
+        "v2/art/event-fake-fox.png"
+      ],
+      "native": {
+        "width": 1086,
+        "height": 1448,
+        "sha256": "bdbe21698e8d55e883d516f758538da7fc38f4e5af60fea2071e1dc1641414ee",
+        "file": "docs/contest/media/promo/native/promo-fakefox.png"
+      },
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 1086,
+        "height": 1448
+      },
+      "scale": 2,
+      "scaleKernel": "nearest",
+      "thumbnailKernel": "lanczos3",
+      "master": {
+        "width": 2172,
+        "height": 2896,
+        "sha256": "0709a55bb310de41a22d68cafc6f94a11bc2bb0c59385068c7934fbc6166b083",
+        "bytes": 4110285
+      },
+      "thumbnail": {
+        "width": 300,
+        "height": 400,
+        "sha256": "049389b768058d9950e0ed594140bd7b0516a38a0b6f6ed80c7fe171fb6f696f"
+      }
+    },
+    {
+      "id": "promo-banner",
+      "caption": "横版主视觉",
+      "file": "docs/contest/media/promo/promo-banner.png",
+      "preview": "docs/dev-log/media/ART-011/终审/横版-640×360无字.png",
+      "kind": "banner",
+      "designNotes": "横版用同签照影廊的红柱和青砖作为透视参考。640×360 可辨第一人称手牌、包内铜狐扣与灰包、纸灯蛾和绯绡。左上真实试排中标题右缘与亮灯保留约 34 像素间距。",
+      "referenceFiles": [
+        "docs/contest/media/promo/promo-feixiao.png",
+        "docs/dev-log/media/ART-011/照影廊视角参考.jpg",
+        "v2/src/assets/moth.webp",
+        "v2/src/assets/clasp.webp"
+      ],
+      "native": {
+        "width": 1672,
+        "height": 941,
+        "sha256": "66d90a435db30fea49890dbbc72cfdf70377a251e2a7f2b1c7108b2ab4a517f2",
+        "file": "docs/contest/media/promo/native/promo-banner.png"
+      },
+      "crop": {
+        "left": 4,
+        "top": 2,
+        "width": 1664,
+        "height": 936
+      },
+      "scale": 2,
+      "scaleKernel": "nearest",
+      "thumbnailKernel": "lanczos3",
+      "master": {
+        "width": 3328,
+        "height": 1872,
+        "sha256": "1ca7bc33960fc14eaab24ef665bc534b97be825473dcb716b0581353ebe28589",
+        "bytes": 4602775
+      },
+      "thumbnail": {
+        "width": 640,
+        "height": 360,
+        "sha256": "5c88f0237edd7123ff5ffe3677cd40ebb1f4c0058e726ed21e6ff3eac39721bb"
+      }
+    }
+  ]
+}

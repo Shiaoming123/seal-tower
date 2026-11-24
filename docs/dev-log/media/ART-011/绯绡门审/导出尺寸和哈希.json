@@ -1,0 +1,29 @@
+{
+  "id": "feixiao-r1",
+  "kind": "portrait",
+  "native": {
+    "width": 1086,
+    "height": 1448,
+    "sha256": "23adee3a159073ab525b61e6e7f47fea190126091a163d3e0cdca12aafac913b"
+  },
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1086,
+    "height": 1448
+  },
+  "scale": 2,
+  "master": {
+    "width": 2172,
+    "height": 2896,
+    "sha256": "8b8865dc366a78174df3fcbefa33cd110c140e73cdb1a1352051d74ad5daba85",
+    "bytes": 4039467
+  },
+  "thumbnail": {
+    "width": 300,
+    "height": 400,
+    "sha256": "7ffb431d0bcc696cc78e661cd2f7e5b87c3f33d754242bf0c4b9c2f465093d3a"
+  },
+  "scaleKernel": "nearest",
+  "thumbnailKernel": "lanczos3"
+}
