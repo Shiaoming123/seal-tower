@@ -18,8 +18,8 @@
 | # | 交付物 | 状态 | 谁来做 | 文件 |
 | --- | --- | --- | --- | --- |
 | 1 | 报名构想帖 | ✅ 11-24 已发布在小红书 | 已完成 | [报名构想帖-v2.md](报名构想帖-v2.md) · [发帖步骤.md](发帖步骤.md) · 配图 [media/post/](media/post/) |
-| 2 | 帖子封面和配图 | ✅ 两张封面（绯绡、假狐商），用现有立绘合成；实机截图由验收脚本生成 | 我们已做；你挑图 | [media/](media/) · 重新生成：`node v2/scripts/make-covers.mjs` |
-| 2b | 宣传主视觉（重画） | ⏳ 已提需求，待 Codex 生成 | Codex 生成，Claude 审图、加字、替换 | [宣传美术需求.md](宣传美术需求.md)（ART-011） |
+| 2 | 帖子封面和配图 | ✅ 帖子用的是旧封面（游戏立绘拼图，已发布）；新加字封面待你确认 | 你：看 [封面预审](media/cover-review/README.md) | 旧封面 [media/](media/) · 新封面 [media/cover-review/](media/cover-review/)（`node v2/scripts/make-covers.mjs` 生成） |
+| 2b | 宣传主视觉（重画） | ✅ Codex 已交付三张无字图（ART-011），Claude 审过并加好字（CONTEST-002） | **你**：确认新封面 | [宣传美术需求](宣传美术需求.md) · [无字图](media/promo/) · [封面预审](media/cover-review/README.md) |
 | 3 | 报名审核 | ⏳ **11-24 已提交报名，待审核**。小红书帖子已公开（[链接](https://xhslink.cn/o/ABLiArehEAG)，含 5 个话题、@Qoder CN、@魔搭ModelScope社区，带「含 AI 生成内容」声明） | 主办方审核；**你**：留意审核结果，被退回就按理由改帖再交 | 官网报名页显示「您已报名」（截图含真实姓名，不进公开仓库） |
 | 4 | 创空间部署包 | ✅ 已生成，本地 iframe 验收通过 | 我们已做 | `cd v2 && npm run pack:studio` → `v2/dist-studio/`、`v2/dist-studio.zip` |
 | 5 | 创空间上线 | ⏳ 待做 | **你**：建 Static 空间、上传、设公开（或明确同意后由我们代做） | [创空间上传步骤.md](创空间上传步骤.md) |
