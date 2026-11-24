@@ -181,7 +181,12 @@ export interface EventState { id: string; step: number; result: string | null }
 
 export interface RunOrder { id: string; level: number; done: boolean }
 
-export interface RunStats { steps: number; harvests: number; kills: number; goldEarned: number; goodsSold: number; goodsUsed: number; damageTaken: number; turns: number }
+export interface RunStats {
+  steps: number; harvests: number; kills: number; goldEarned: number; goodsSold: number; goodsUsed: number; damageTaken: number; turns: number;
+  // Playtest counters (GAME-001). Optional so older saves load; see game/stats.ts.
+  startedAt?: number; elitesFought?: number; elitesSkipped?: number; soldValue?: number; refines?: number; cracks?: number;
+  pouchStash?: number; sews?: number; ordersDone?: number; hpAtFloorEnd?: number[]; killedBy?: string;
+}
 
 export interface RunState {
   version: 2;

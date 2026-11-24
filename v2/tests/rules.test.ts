@@ -749,3 +749,34 @@ describe("refining (GAME-003B)", () => {
     expect(GEAR_IDS.some((id) => id.endsWith("-fine"))).toBe(false);
   });
 });
+
+describe("playtest record (GAME-001)", () => {
+  it("counts elites left unfought, 气血 at each floor's end, and what was sold", async () => {
+    const { sellItem, toPouch } = await import("../src/game/inventory");
+    const { playtestRecord } = await import("../src/game/stats");
+    const run = createRun(31, "sword", "lamp");
+    run.shop = { cards: [], relics: [], gear: [], consumables: [], removePrice: 0, removed: false, oil: { amount: 25, price: 6, bought: 0 }, wanted: run.markets[1].wanted, sold: {} };
+    addGood(run, "shell"); addGood(run, "silk");
+    const got = sellItem(run, run.bag.items.find((i) => i.id === "shell")!.uid);
+    toPouch(run, run.bag.items.find((i) => i.id === "silk")!.uid);
+    const elites = run.dungeon.entities.filter((e) => e.kind === "elite").length;
+    run.hp = 40;
+    climb(run);
+    expect(run.stats.elitesSkipped).toBe(elites);
+    expect(run.stats.hpAtFloorEnd).toEqual([40]);
+    expect(run.stats.soldValue).toBe(got);
+    expect(run.stats.pouchStash).toBe(1);
+    run.outcome = "retreat";
+    const text = playtestRecord(run, 12, 3);
+    expect(text).toContain("本机第 3 局");
+    expect(text).toContain(`没打就离开 ${elites}`);
+    expect(text).toContain("带回镇上折库银 12 石");
+  });
+  it("old saves without the counters still make a record", async () => {
+    const { playtestRecord } = await import("../src/game/stats");
+    const run = createRun(32, "sword", "lamp");
+    run.stats = { steps: 1, harvests: 0, kills: 0, goldEarned: 0, goodsSold: 0, goodsUsed: 0, damageTaken: 0, turns: 0 };
+    run.outcome = "dead";
+    expect(playtestRecord(run, 0, 1)).toContain("精英：打了 0，没打就离开 0");
+  });
+});

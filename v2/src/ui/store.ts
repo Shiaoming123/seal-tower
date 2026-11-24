@@ -3,6 +3,15 @@ import type { Profile, RunState } from "../game/types";
 
 const RUN_KEY = "seal-tower.v2.run";
 const PROFILE_KEY = "seal-tower.v2.profile";
+const PLAYTEST_KEY = "seal-tower.v2.playtest";
+
+/** Playtest mode (GAME-001): open the game once with ?playtest=1 and the result screen offers to copy a run record. */
+export const playtest = (() => {
+  try {
+    if (new URLSearchParams(location.search).has("playtest")) localStorage.setItem(PLAYTEST_KEY, "1");
+    return localStorage.getItem(PLAYTEST_KEY) === "1";
+  } catch { return false; }
+})();
 
 const defaultProfile: Profile = { renown: 0, runs: 0, wins: 0, bestFloor: 0, ordersDone: [], seenTips: [], achievements: [], treasury: 0, upgrades: {}, favor: {}, codex: [], daily: null, sound: true };
 

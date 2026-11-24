@@ -58,6 +58,13 @@
       ]
     },
     {
+      "id": "playtest",
+      "entry": "docs/playtest/README.md",
+      "directories": [
+        "docs/playtest/"
+      ]
+    },
+    {
       "id": "task-records",
       "entry": "docs/dev-log/README.md",
       "directories": [

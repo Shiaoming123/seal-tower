@@ -3,8 +3,9 @@ import { ORDERS } from "../data/orders";
 import { ACHIEVEMENTS } from "../data/achievements";
 import { MAX_FAVOR } from "../data/town";
 import * as R from "../game/run";
+import { playtestRecord } from "../game/stats";
 import { ART } from "../render/assets";
-import { clearRun, commit, page, profileSig, runSig, today, useRun } from "./store";
+import { clearRun, commit, page, playtest, profileSig, runSig, today, useRun } from "./store";
 
 export function Result() {
   const run = useRun();
@@ -37,6 +38,7 @@ export function Result() {
     ? "负钟君倒下，塔里的妖散了大半。镇上的灯会一盏盏重新亮起来。"
     : run.outcome === "dead" ? "道友把你拖了出来。货丢了，但塔还在，下次换个打法。" : "活着回来就有下一趟。";
   const s = run.stats;
+  const [record] = useState(() => playtestRecord(run, settled.carried, profileSig.value.runs));
   return (
     <div class={`result outcome-${run.outcome}`} style={{ backgroundImage: `linear-gradient(rgba(10,5,4,0.5), rgba(10,5,4,0.85)), url(${ART["last-market"]})` }}>
       <div class="result-art"><img src={ART[run.outcome === "dead" ? "hunter-guard" : "hero"]} alt="" /></div>
@@ -68,7 +70,22 @@ export function Result() {
           <button type="button" class="btn" onClick={() => { runSig.value = null; page.value = "title"; commit(); }}>回标题</button>
         </div>
         <p class="seed">本趟签号 {run.seed}（网址加 ?seed= 可重走同一座塔）</p>
+        {playtest && <PlaytestRecord text={record} />}
       </div>
+    </div>
+  );
+}
+
+/** Playtest mode: the run record to copy and send back, with a select-all box if the clipboard is blocked. */
+function PlaytestRecord({ text }: { text: string }) {
+  const [state, setState] = useState<"" | "ok" | "manual">("");
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(text); setState("ok"); } catch { setState("manual"); }
+  };
+  return (
+    <div class="playtest-record">
+      <button type="button" class="btn" onClick={copy}>{state === "ok" ? "已复制，发给我们就行" : "复制本局试玩记录"}</button>
+      {state === "manual" && <textarea readOnly rows={9} value={text} onFocus={(e) => (e.target as HTMLTextAreaElement).select()} />}
     </div>
   );
 }

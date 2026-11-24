@@ -92,7 +92,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .tagline { font-size: 24px; margin: 0 0 18px; color: var(--ink); letter-spacing: 3px; }
 .title-buttons { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .profile-line { color: var(--ink-dim); margin-top: 18px; }
-.portrait .title-box { left: 50%; top: 30%; transform: translate(-50%, -50%); align-items: center; text-align: center; }
+/* An explicit width: centred with left 50%, the box could only grow to half the stage and the logo wrapped. */
+.portrait .title-box { left: 50%; top: 30%; transform: translate(-50%, -50%); align-items: center; text-align: center; width: 92%; }
 .portrait .title-buttons { align-items: center; }
 .portrait .title-hero { right: 50%; transform: translateX(50%); height: 55%; }
 .portrait .logo { font-size: 120px; }
@@ -618,6 +619,9 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .result-box .renown { color: #8fe0a0; }
 .result-box .renown .ach { color: #ffcf5a; }
 .seed { font-size: 12px; color: var(--ink-dim); }
+/* GAME-001 playtest mode */
+.playtest-record { margin-top: 6px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.playtest-record textarea { width: 100%; font-size: 12px; background: rgba(0, 0, 0, 0.4); color: var(--ink); border: 1px solid rgba(217, 180, 90, 0.4); }
 .portrait .result { grid-template-columns: 1fr; grid-template-rows: 360px minmax(0, 1fr); padding: 20px; }
 
 /* ---------------------------------------------------------------- UI-003 immersion */

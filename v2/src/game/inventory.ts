@@ -2,6 +2,7 @@ import { RELICS, RELIC_POOL } from "../data/relics";
 import { pick } from "./rng";
 import { GOODS } from "../data/goods";
 import { discover } from "./discover";
+import { bump } from "./stats";
 import * as bag from "./bag";
 import type { GoodId, RunState } from "./types";
 
@@ -49,6 +50,7 @@ export function sellItem(run: RunState, uid: number): number {
   run.gold += price;
   run.stats.goldEarned += price;
   run.stats.goodsSold++;
+  bump(run, "soldValue", price);
   if (run.relics.includes("ledger")) run.hp = Math.min(run.maxHp, run.hp + 1);
   return price;
 }
@@ -65,6 +67,7 @@ export function sewPiece(run: RunState, uid: number, cells: [number, number][]):
   // The cloth itself comes out of the bag first, so its own cells are free when checking the piece.
   bag.removeUid(run.bag, uid);
   if (!bag.expand(run.bag, cells)) { run.bag.items.push(it); return null; }
+  bump(run, "sews");
   return `行囊多了 ${cells.length} 格（现在 ${bag.cellCount(run.bag)} 格）。`;
 }
 
@@ -79,6 +82,7 @@ export function toPouch(run: RunState, uid: number): boolean {
   const it = bag.removeUid(run.bag, uid);
   if (!it) return false;
   run.pouch.push(it.id);
+  bump(run, "pouchStash");
   return true;
 }
 
@@ -86,6 +90,7 @@ export function toPouch(run: RunState, uid: number): boolean {
 export function pendingToPouch(run: RunState, index: number): boolean {
   if (run.combat || pouchFull(run) || run.pending[index] === undefined) return false;
   run.pouch.push(run.pending.splice(index, 1)[0]);
+  bump(run, "pouchStash");
   return true;
 }
 
@@ -109,6 +114,7 @@ export function sellPouch(run: RunState, i: number): number {
   run.gold += price;
   run.stats.goldEarned += price;
   run.stats.goodsSold++;
+  bump(run, "soldValue", price);
   if (run.relics.includes("ledger")) run.hp = Math.min(run.maxHp, run.hp + 1);
   return price;
 }

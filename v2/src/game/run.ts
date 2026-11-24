@@ -1,3 +1,4 @@
+import { bump, noteFloorEnd } from "./stats";
 import { BASE_DECK, CARDS, type CardDef, STARTER_GEAR } from "../data/cards";
 import { ENEMIES } from "../data/enemies";
 import { eventOptions } from "../data/events";
@@ -48,7 +49,7 @@ export function createRun(seed: number, weapon: WeaponId, orders: string | strin
     dungeon: generate(1, rng),
     pos: { x: 0, y: 0, dir: 0 },
     screen: "explore", combat: null, pending: [], pouch: [], reward: null, event: null, shop: null, at: null,
-    stats: { steps: 0, harvests: 0, kills: 0, goldEarned: 0, goodsSold: 0, goodsUsed: 0, damageTaken: 0, turns: 0 },
+    stats: { steps: 0, harvests: 0, kills: 0, goldEarned: 0, goodsSold: 0, goodsUsed: 0, damageTaken: 0, turns: 0, startedAt: Date.now() },
     nextUid: 1000, outcome: null, mapRevealed: false, markets: makeMarkets(rng), rumor: false,
     oil: START_OIL + extraOil, maxOil: MAX_OIL + extraOil, bossIntel: false, cardPick: null, log: [], flags: [], eventFight: null, warp: 0, omen: "calm", omenSeen: false, discovered: [],
   };
@@ -120,6 +121,7 @@ export function openEntity(run: RunState, e: Entity): boolean {
   run.at = e.id;
   switch (e.kind) {
     case "fight": case "elite": case "guardian":
+      if (e.kind === "elite") bump(run, "elitesFought");
       startCombat(run, e, e.kind);
       run.screen = "combat";
       return true;
@@ -193,6 +195,7 @@ export function winCombat(run: RunState) {
     note += ` 淬炼：${GOODS[r.gear.id].name}和${GOODS[r.with.id].name}炼成了${GOODS[r.into].name}。`;
     bag.removeUid(run.bag, r.with.uid);
     r.gear.id = r.into;
+    bump(run, "refines");
     discover(run, "g:" + r.into);
   }
   if (c.stolen.length && def.harvest?.good !== "stolen") note += ` 被抢走的${c.stolen.map((g) => GOODS[g].name).join("、")}被它毁了。`;
@@ -214,7 +217,7 @@ export function winCombat(run: RunState) {
   if (e.kind === "guardian") {
     e.kind = "stairs";
     e.done = false;
-    if (run.floor === 3) { run.outcome = "win"; }
+    if (run.floor === 3) { run.outcome = "win"; noteFloorEnd(run); }
   } else e.done = true;
   run.screen = "reward";
 }
@@ -229,6 +232,7 @@ export function fledCombat(run: RunState) {
 }
 
 export function loseCombat(run: RunState) {
+  if (run.combat) run.stats.killedBy = run.combat.enemy.id;
   run.outcome = "dead";
   run.combat = null;
   run.screen = "result";
@@ -425,6 +429,7 @@ export function deliverOrder(run: RunState, i = 0): string | null {
   // Hand over packed goods first, then any in the side pouch.
   for (const p of parts) for (let k = 0; k < p.need; k++) if (!bag.removeOne(run.bag, p.id)) run.pouch.splice(run.pouch.indexOf(p.id), 1);
   ord.done = true;
+  bump(run, "ordersDone");
   const r = orderReward(ord);
   const lines: string[] = [];
   if (r.gold) { run.gold += r.gold; run.stats.goldEarned += r.gold; lines.push(`${r.gold} 石`); }
@@ -504,6 +509,7 @@ export const CLIMB_HEAL = 0.4;
 
 export function climb(run: RunState) {
   if (run.floor >= 3) return;
+  noteFloorEnd(run);
   const healed = Math.round((run.maxHp - run.hp) * CLIMB_HEAL);
   run.hp += healed;
   enterFloor(run, (run.floor + 1) as FloorNo);
@@ -512,6 +518,7 @@ export function climb(run: RunState) {
 
 /** Leave the tower early with what you carry. */
 export function goHome(run: RunState) {
+  if (!run.outcome) noteFloorEnd(run); // after the final win the floor was already counted
   run.outcome = run.outcome ?? "retreat";
   run.screen = "result";
 }

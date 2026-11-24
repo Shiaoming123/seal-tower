@@ -4,6 +4,7 @@ import { GOODS } from "../data/goods";
 import * as bag from "./bag";
 import { addGood } from "./inventory";
 import { discover } from "./discover";
+import { bump } from "./stats";
 import { type RngState, chance, int, makeRng, shuffle } from "./rng";
 import type { CardInst, CombatState, EnemyState, Entity, FightKind, GoodId, Intent, RunState, StatusId } from "./types";
 
@@ -405,6 +406,7 @@ function crack(run: RunState, c: CombatState, events: CombatEvent[]) {
     const into = GOODS[it.id].fragile;
     if (!into || bag.auraOn(run.bag, it, "ward") || !chance(c.rng, CRACK_CHANCE)) continue;
     events.push({ t: "crack", good: it.id, into });
+    bump(run, "cracks");
     it.id = into;
     discover(run, "g:" + into);
   }
