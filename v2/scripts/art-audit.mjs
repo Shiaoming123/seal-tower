@@ -82,7 +82,11 @@ for (const c of CHARACTERS) use(parts.portraitOf(c.id, c.portrait), "人物", `�
 for (const order of Object.values(ORDERS)) {
   use(parts.portraitOf(ORDER_CHARACTER[order.id] ?? order.id, order.portrait), "人物", `接单·${order.client}`);
 }
-for (const u of UPGRADES) use(u.icon, "物品图标", `营建·${u.name}`);
+for (const u of UPGRADES) {
+  const id = `build-${u.id}`;
+  const icon = artId(id, u.icon);
+  use(icon, icon === id ? "营建图标" : "物品图标", `营建·${u.name}`);
+}
 for (const [file, what] of [["shop", "标题背景"], ["shop-wall", "镇灯铺背景"], ["market", "狐市背景"], ["court", "第一层事件背景"], ["gate", "第二层事件背景"],
   ["belfry", "第三层事件背景"], ["last-market", "结算背景"], ["hero", "标题主角 / 结算"], ["hunter-guard", "败北结算"], ["feixiao", "狐市·绯绡"],
   ["feixiao-settle", "狐市·绯绡成交"], ["trader", "迷宫里的狐市摊位"], ["lamp", "迷宫里的灯台"], ["purse", "迷宫里的宝箱"], ["sign-turn", "迷宫里的楼梯"]])

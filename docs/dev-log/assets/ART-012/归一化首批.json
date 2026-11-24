@@ -1,0 +1,50 @@
+{
+  "ledger": {
+    "originalFile": "exec-722f190c-7837-43b1-b375-d3bbe79daf40.png",
+    "originalSha256": "e7b2f20b46081b4b0844bca62bd4e26d6d2092d436155b5493c765685a9cb7da",
+    "sourceSize": [
+      1536,
+      1024
+    ],
+    "crop": {
+      "left": 38,
+      "top": 175,
+      "width": 1464,
+      "height": 823
+    },
+    "motherFile": "art/build-ledger.png",
+    "motherSha256": "f0f6e25374aa1d3ca0db96cdd3bdb9e5c52b157ac1c04731937d61bc3903970e"
+  },
+  "oil": {
+    "originalFile": "exec-16ad70cd-095e-4a54-96c3-893ebe0dcc98.png",
+    "originalSha256": "4fa6a4445fffbe473254dea85832a6abee78d1e3fb1eb9df00652aec5a442d1a",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "crop": {
+      "left": 121,
+      "top": 36,
+      "width": 1096,
+      "height": 1197
+    },
+    "motherFile": "art/build-oil.png",
+    "motherSha256": "aa7dcfc67645c0ed1dac654001eb8976d1e69edfa180876401743aec92f11ef6"
+  },
+  "medicine": {
+    "originalFile": "exec-4aabbfbd-1ead-4c94-b2b6-d0de4231c218.png",
+    "originalSha256": "6a12aa740c02c2caf5d75a10b697a7d725cb8f81fe92761bca628bc6a9f04ba3",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "crop": {
+      "left": 149,
+      "top": 94,
+      "width": 928,
+      "height": 1116
+    },
+    "motherFile": "art/build-medicine.png",
+    "motherSha256": "60a69b5463e47851960625ece47bf37fe247137e56e0f726f33b82b698b98c72"
+  }
+}

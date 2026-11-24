@@ -1,0 +1,82 @@
+{
+  "shelf": {
+    "originalFile": "exec-ede509ca-638b-4d72-8dd5-67855eca68d1.png",
+    "originalSha256": "489b36e7581f97feadc1c225a57e127d2feb4318ddd4bd99d186adc08af94963",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "crop": {
+      "left": 114,
+      "top": 13,
+      "width": 1015,
+      "height": 1240
+    },
+    "motherFile": "art/build-shelf.png",
+    "motherSha256": "0e824a020d9065d8cd40dfe06eeff4db366c0088718e30d3be99838a603e7f95"
+  },
+  "school": {
+    "originalFile": "exec-6863733d-3022-4c83-ab1f-0f193b271cac.png",
+    "originalSha256": "774ef20dca49f0447d8f3675bcd0debd382e1286811fba96343fba19c0723a00",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "crop": {
+      "left": 34,
+      "top": 80,
+      "width": 1191,
+      "height": 1114
+    },
+    "motherFile": "art/build-school.png",
+    "motherSha256": "ce3173cb9b11ac23492f9104b59772f6ab05cf6081d9f4e0002581322b69de1d"
+  },
+  "bagsmith": {
+    "originalFile": "exec-6a41f88a-77d6-4dfc-b005-2cf155200690.png",
+    "originalSha256": "f1144d7c57676358d9cc006997ad6f77052dc8f4fca4f7b12d29fc0de38968e7",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "crop": {
+      "left": 51,
+      "top": 179,
+      "width": 1175,
+      "height": 963
+    },
+    "motherFile": "art/build-bagsmith.png",
+    "motherSha256": "16f920e6f1660897a6678d5b136f5ddc30170085d1554f64aaee4f03ee58c508"
+  },
+  "counter": {
+    "originalFile": "exec-374abad8-82c3-41fa-b2d1-fdd0204d1350.png",
+    "originalSha256": "eb40396c3281508336778a4f05d325082d0b2be40c205dbd52d17906e0f545e3",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "crop": {
+      "left": 122,
+      "top": 112,
+      "width": 1031,
+      "height": 1105
+    },
+    "motherFile": "art/build-counter.png",
+    "motherSha256": "c2b10d84a5246b0685cc1397811db483788bb2482c0304cb5ab289d94f5336da"
+  },
+  "branch": {
+    "originalFile": "exec-d04ea4e7-984f-465d-be43-182f5af402d4.png",
+    "originalSha256": "25b603618c1bf18d9ccc7e70786d22c6127273643e0e769447f0f03923b812cf",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "crop": {
+      "left": 65,
+      "top": 96,
+      "width": 1124,
+      "height": 1061
+    },
+    "motherFile": "art/build-branch.png",
+    "motherSha256": "13d311bf23bf00f688bdb5e1bd33964085c68734660971c9360ff7e1a0a6eadb"
+  }
+}

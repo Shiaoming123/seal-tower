@@ -683,5 +683,45 @@
     "file": "relic-wickcutter.png",
     "sourceSha256": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
     "webpSha256": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2"
+  },
+  "build-ledger": {
+    "file": "build-ledger.png",
+    "sourceSha256": "f0f6e25374aa1d3ca0db96cdd3bdb9e5c52b157ac1c04731937d61bc3903970e",
+    "webpSha256": "a74bf527ab6a1ed1fea32e80711352be662d346aa6b7922736748da5048b5b79"
+  },
+  "build-medicine": {
+    "file": "build-medicine.png",
+    "sourceSha256": "60a69b5463e47851960625ece47bf37fe247137e56e0f726f33b82b698b98c72",
+    "webpSha256": "efdf20f60867194f305f82ad467cafb70fe0fb0e6058dd2e3fc5f81c4f14f857"
+  },
+  "build-oil": {
+    "file": "build-oil.png",
+    "sourceSha256": "aa7dcfc67645c0ed1dac654001eb8976d1e69edfa180876401743aec92f11ef6",
+    "webpSha256": "6de9af5341e5af06819485de659b7dd370795c8a4dfd117eeeaa7ebf4cdb7ac9"
+  },
+  "build-bagsmith": {
+    "file": "build-bagsmith.png",
+    "sourceSha256": "16f920e6f1660897a6678d5b136f5ddc30170085d1554f64aaee4f03ee58c508",
+    "webpSha256": "eae799d18ff3fc0dc3b0f090244a460f47c206a4572e8584be2e4c1c27f30ade"
+  },
+  "build-branch": {
+    "file": "build-branch.png",
+    "sourceSha256": "13d311bf23bf00f688bdb5e1bd33964085c68734660971c9360ff7e1a0a6eadb",
+    "webpSha256": "0710e20d256f42da7212a37a69470613032b10fa7a2122b36625b42a35864e4d"
+  },
+  "build-counter": {
+    "file": "build-counter.png",
+    "sourceSha256": "c2b10d84a5246b0685cc1397811db483788bb2482c0304cb5ab289d94f5336da",
+    "webpSha256": "1ebb93f79a8566aecfbfd59a89de57ddd648318bb02e5b66178c55fe224fc195"
+  },
+  "build-school": {
+    "file": "build-school.png",
+    "sourceSha256": "ce3173cb9b11ac23492f9104b59772f6ab05cf6081d9f4e0002581322b69de1d",
+    "webpSha256": "ba0c05da37e618a2db92ffe9ac12a45aa396547554c29cca63f71ce477afaf47"
+  },
+  "build-shelf": {
+    "file": "build-shelf.png",
+    "sourceSha256": "0e824a020d9065d8cd40dfe06eeff4db366c0088718e30d3be99838a603e7f95",
+    "webpSha256": "5061406ef2efc2664c204b8a2113ef8946d813da04f8f80ddd13ac4d695bd1d2"
   }
 }

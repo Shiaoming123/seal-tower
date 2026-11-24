@@ -356,14 +356,13 @@
       "file": "silk",
       "category": "物品图标",
       "usedBy": [
-        "货物·蛾丝卷",
-        "营建·学堂"
+        "货物·蛾丝卷"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "shell",
@@ -569,8 +568,7 @@
       "category": "物品图标",
       "usedBy": [
         "装备·铁剑",
-        "装备·精铁剑",
-        "营建·货架"
+        "装备·精铁剑"
       ],
       "wanted": [],
       "status": "ok",
@@ -606,22 +604,20 @@
       "file": "abacus",
       "category": "物品图标",
       "usedBy": [
-        "装备·算盘",
-        "营建·账房"
+        "装备·算盘"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "order-purse",
       "category": "物品图标",
       "usedBy": [
         "装备·货郎钱袋",
-        "装备·精钱袋",
-        "营建·订单柜"
+        "装备·精钱袋"
       ],
       "wanted": [],
       "status": "ok",
@@ -693,14 +689,13 @@
       "file": "salve",
       "category": "物品图标",
       "usedBy": [
-        "消耗品·金疮药",
-        "营建·药柜"
+        "消耗品·金疮药"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "pouch",
@@ -718,14 +713,13 @@
       "file": "lining",
       "category": "物品图标",
       "usedBy": [
-        "消耗品·扩囊衬布",
-        "营建·行囊匠"
+        "消耗品·扩囊衬布"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "relic-pin",
@@ -1476,7 +1470,6 @@
       "category": "事件",
       "usedBy": [
         "事件·没人管的灯台",
-        "营建·灯油坊",
         "迷宫里的灯台"
       ],
       "wanted": [],
@@ -1561,16 +1554,17 @@
       "priority": "-"
     },
     {
-      "file": "portal",
+      "file": "event-pool",
       "category": "事件",
       "usedBy": [
-        "事件·传送阵"
+        "事件·传送阵",
+        "事件·照影池"
       ],
       "wanted": [],
-      "status": "code-drawn",
-      "shared": false,
-      "note": "",
-      "priority": "P0"
+      "status": "ok",
+      "shared": true,
+      "note": "已采用 v2/art 原图",
+      "priority": "P2"
     },
     {
       "file": "event-den",
@@ -1657,18 +1651,6 @@
       "priority": "-"
     },
     {
-      "file": "event-pool",
-      "category": "事件",
-      "usedBy": [
-        "事件·照影池"
-      ],
-      "wanted": [],
-      "status": "ok",
-      "shared": false,
-      "note": "已采用 v2/art 原图",
-      "priority": "-"
-    },
-    {
       "file": "feixiao",
       "category": "人物",
       "usedBy": [
@@ -1735,15 +1717,99 @@
       "priority": "P2"
     },
     {
-      "file": "pin",
-      "category": "物品图标",
+      "file": "build-ledger",
+      "category": "营建图标",
+      "usedBy": [
+        "营建·账房"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "build-oil",
+      "category": "营建图标",
+      "usedBy": [
+        "营建·灯油坊"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "build-medicine",
+      "category": "营建图标",
+      "usedBy": [
+        "营建·药柜"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "build-shelf",
+      "category": "营建图标",
+      "usedBy": [
+        "营建·货架"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "build-school",
+      "category": "营建图标",
+      "usedBy": [
+        "营建·学堂"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "build-bagsmith",
+      "category": "营建图标",
+      "usedBy": [
+        "营建·行囊匠"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "build-counter",
+      "category": "营建图标",
+      "usedBy": [
+        "营建·订单柜"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "build-branch",
+      "category": "营建图标",
       "usedBy": [
         "营建·狐市分号"
       ],
       "wanted": [],
       "status": "ok",
       "shared": false,
-      "note": "",
+      "note": "已采用 v2/art 原图",
       "priority": "-"
     },
     {
@@ -2425,7 +2491,7 @@
       "category": "营建图标",
       "usedBy": "营建·账房",
       "fallback": "abacus",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2433,7 +2499,7 @@
       "category": "营建图标",
       "usedBy": "营建·灯油坊",
       "fallback": "lamp",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2441,7 +2507,7 @@
       "category": "营建图标",
       "usedBy": "营建·药柜",
       "fallback": "salve",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2449,7 +2515,7 @@
       "category": "营建图标",
       "usedBy": "营建·货架",
       "fallback": "ward-blade",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2457,7 +2523,7 @@
       "category": "营建图标",
       "usedBy": "营建·学堂",
       "fallback": "silk",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2465,7 +2531,7 @@
       "category": "营建图标",
       "usedBy": "营建·行囊匠",
       "fallback": "lining",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2473,7 +2539,7 @@
       "category": "营建图标",
       "usedBy": "营建·订单柜",
       "fallback": "order-purse",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
@@ -2481,7 +2547,7 @@
       "category": "营建图标",
       "usedBy": "营建·狐市分号",
       "fallback": "pin",
-      "status": "missing",
+      "status": "ok",
       "priority": "P2"
     },
     {
