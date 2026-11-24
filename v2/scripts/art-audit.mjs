@@ -14,8 +14,8 @@ const [{ ENEMIES, FLOOR_SPAWNS }, { GOODS }, { RELICS }, { CARDS }, { EVENTS }, 
   load("/src/data/enemies.ts"), load("/src/data/goods.ts"), load("/src/data/relics.ts"), load("/src/data/cards.ts"), load("/src/data/events.ts"),
   load("/src/data/codex.ts"), load("/src/data/orders.ts"), load("/src/data/town.ts"), load("/src/data/omens.ts"), load("/src/game/discover.ts"), load("/src/ui/parts.tsx"),
 ]);
+const { artId } = await load("/src/render/assets.ts");
 await server.close();
-
 const have = new Set((await readdir(path.join(root, "src/assets"))).map((f) => f.replace(/\.webp$/, "")));
 const artDir = path.join(root, "art");
 const recorded = await readFile(path.join(artDir, "exports.json"), "utf8").then(JSON.parse, (err) => {
@@ -61,7 +61,13 @@ for (const e of Object.values(ENEMIES)) {
 }
 for (const g of Object.values(GOODS)) use(g.icon, "物品图标", `${{ goods: "货物", gear: "装备", consumable: "消耗品" }[g.kind]}·${g.name}`);
 for (const r of Object.values(RELICS)) use(r.icon, "物品图标", `法宝·${r.name}`);
-for (const [id, icon] of Object.entries(parts.CARD_ART)) use(icon, "物品图标", `卡牌·${CARDS[id]?.name ?? id}`);
+const wantCards = Object.values(CARDS).map(({ id, name }) => ({
+  file: `card-${id}`, category: "卡牌插图", usedBy: `卡牌·${name}`, fallback: parts.CARD_ART[id] ?? "sword",
+}));
+for (const card of wantCards) {
+  const asset = artId(card.file, card.fallback);
+  use(asset, asset === card.file ? card.category : "物品图标", card.usedBy);
+}
 for (const ev of Object.values(EVENTS)) {
   use(ev.sprite, "事件", `事件·${ev.title}`);
   const closeUp = `event-${ev.sprite}`;
@@ -80,7 +86,6 @@ for (const [file, what] of [["shop", "标题背景"], ["shop-wall", "镇灯铺�
   use(file, "场景", what);
 
 // Dedicated art the game already looks for (with a fallback): each should be its own picture.
-const wantCards = Object.keys(parts.CARD_ART).map((id) => ({ file: `card-${id}`, category: "卡牌插图", usedBy: `卡牌·${CARDS[id].name}`, fallback: parts.CARD_ART[id] }));
 const wantRelics = Object.values(RELICS).map((r) => ({ file: `relic-${r.id}`, category: "法宝图标", usedBy: `法宝·${r.name}`, fallback: r.icon }));
 const wantPortraits = CHARACTERS.filter((c) => ["lamp", "herbs", "scholar", "mayor"].includes(c.id)).map((c) => ({ file: `portrait-${c.id}`, category: "人物立绘", usedBy: `人物·${c.name}`, fallback: c.portrait }));
 const wantBuilds = UPGRADES.map((u) => ({ file: `build-${u.id}`, category: "营建图标", usedBy: `营建·${u.name}`, fallback: u.icon }));

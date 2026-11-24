@@ -332,19 +332,13 @@
       "file": "ash",
       "category": "物品图标",
       "usedBy": [
-        "货物·灯灰",
-        "卡牌·扬灰",
-        "卡牌·灯火",
-        "卡牌·收灰",
-        "卡牌·拨灯",
-        "卡牌·烧尽",
-        "卡牌·清仓"
+        "货物·灯灰"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "fang",
@@ -366,8 +360,6 @@
         "货物·蛾丝卷",
         "法宝·蛾丝扇",
         "法宝·剑谱残页",
-        "卡牌·行云",
-        "卡牌·喘息",
         "营建·学堂"
       ],
       "wanted": [],
@@ -393,9 +385,7 @@
       "category": "物品图标",
       "usedBy": [
         "货物·狐毛结",
-        "法宝·狐毛护身结",
-        "卡牌·蓄势",
-        "卡牌·稳步"
+        "法宝·狐毛护身结"
       ],
       "wanted": [],
       "status": "ok",
@@ -410,11 +400,7 @@
         "货物·灯芯",
         "装备·引灯盘",
         "装备·精引灯盘",
-        "法宝·灯芯剪",
-        "卡牌·照妖",
-        "卡牌·燃芯",
-        "卡牌·灯阵",
-        "卡牌·引火"
+        "法宝·灯芯剪"
       ],
       "wanted": [],
       "status": "ok",
@@ -427,8 +413,7 @@
       "category": "物品图标",
       "usedBy": [
         "货物·完整狐扣",
-        "货物·碎狐扣",
-        "卡牌·挑材"
+        "货物·碎狐扣"
       ],
       "wanted": [],
       "status": "ok",
@@ -551,8 +536,7 @@
       "usedBy": [
         "货物·钟铜",
         "货物·裂钟铜",
-        "装备·铜铃",
-        "卡牌·不动"
+        "装备·铜铃"
       ],
       "wanted": [],
       "status": "ok",
@@ -564,25 +548,20 @@
       "file": "sword",
       "category": "物品图标",
       "usedBy": [
-        "装备·照影剑",
-        "卡牌·斩",
-        "卡牌·合锋",
-        "卡牌·连斩",
-        "卡牌·收剑"
+        "装备·照影剑"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "plank",
       "category": "物品图标",
       "usedBy": [
         "装备·木挡板",
-        "装备·精木挡板",
-        "卡牌·固守"
+        "装备·精木挡板"
       ],
       "wanted": [],
       "status": "placeholder-borrowed",
@@ -597,9 +576,6 @@
         "装备·铁剑",
         "装备·精铁剑",
         "法宝·镇妖剑穗",
-        "卡牌·破势",
-        "卡牌·斩铁",
-        "卡牌·剑气纵横",
         "营建·货架"
       ],
       "wanted": [],
@@ -614,10 +590,7 @@
       "usedBy": [
         "装备·竹柄钩",
         "法宝·棘环",
-        "法宝·庖丁刀",
-        "卡牌·回锋",
-        "卡牌·反震",
-        "卡牌·以守为攻"
+        "法宝·庖丁刀"
       ],
       "wanted": [],
       "status": "ok",
@@ -629,30 +602,19 @@
       "file": "mirror",
       "category": "物品图标",
       "usedBy": [
-        "装备·护心镜",
-        "卡牌·架",
-        "卡牌·盾击",
-        "卡牌·铁壁",
-        "卡牌·守中",
-        "卡牌·顶盾",
-        "卡牌·铁布衫"
+        "装备·护心镜"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "abacus",
       "category": "物品图标",
       "usedBy": [
         "装备·算盘",
-        "卡牌·撒钱",
-        "卡牌·本利",
-        "卡牌·盘算",
-        "卡牌·生息",
-        "卡牌·一掷千金",
         "营建·账房"
       ],
       "wanted": [],
@@ -668,9 +630,6 @@
         "装备·货郎钱袋",
         "装备·精钱袋",
         "法宝·绯绡的账本",
-        "卡牌·护货",
-        "卡牌·以货挡灾",
-        "卡牌·打点",
         "营建·订单柜"
       ],
       "wanted": [],
@@ -744,8 +703,6 @@
       "category": "物品图标",
       "usedBy": [
         "消耗品·金疮药",
-        "卡牌·火上浇油",
-        "卡牌·包扎",
         "营建·药柜"
       ],
       "wanted": [],
@@ -760,8 +717,7 @@
       "usedBy": [
         "消耗品·养元丹",
         "法宝·封口锦囊",
-        "法宝·万宝囊",
-        "卡牌·囤货"
+        "法宝·万宝囊"
       ],
       "wanted": [],
       "status": "ok",
@@ -787,10 +743,6 @@
       "category": "物品图标",
       "usedBy": [
         "法宝·狐扣针",
-        "卡牌·见缝",
-        "卡牌·三连刺",
-        "卡牌·疾风",
-        "卡牌·定身符",
         "营建·狐市分号"
       ],
       "wanted": [],
@@ -803,14 +755,601 @@
       "file": "grit",
       "category": "物品图标",
       "usedBy": [
-        "法宝·灯纹印",
+        "法宝·灯纹印"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "card-strike",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·斩"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-defend",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·架"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-unison",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·合锋"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-twin",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·连斩"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-riposte",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·回锋"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-gap",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·见缝"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-breach",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·破势"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-gather",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·蓄势"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-flurry",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·三连刺"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-intent",
+      "category": "卡牌插图",
+      "usedBy": [
         "卡牌·剑意"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
-      "note": "",
-      "priority": "P2"
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-cleave",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·斩铁"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-flow",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·行云"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-bash",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·盾击"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-wall",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·铁壁"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-spikes",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·反震"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-center",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·守中"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-guardgoods",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·护货"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-ram",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·顶盾"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-rooted",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·不动"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-bulwark",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·以守为攻"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-dust",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·扬灰"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-reveal",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·照妖"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-flame",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·灯火"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-burnwick",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·燃芯"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-barter",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·以货挡灾"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-scatter",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·撒钱"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-reap",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·收灰"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-lamparray",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·灯阵"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-stoke",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·拨灯"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-reckon",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·盘算"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-bribe",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·打点"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-interest",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·生息"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-windfall",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·一掷千金"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-gale",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·疾风"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-sheathe",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·收剑"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-swordqi",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·剑气纵横"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-ironshirt",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·铁布衫"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-hold",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·固守"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-ignite",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·引火"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-burnout",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·烧尽"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-fuel",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·火上浇油"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-clearance",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·清仓"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-principal",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·本利"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-hoard",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·囤货"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-bandage",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·包扎"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-breath",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·喘息"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-talisman",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·定身符"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-pluck",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·挑材"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "card-steady",
+      "category": "卡牌插图",
+      "usedBy": [
+        "卡牌·稳步"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "lamp",
@@ -1226,7 +1765,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·斩",
       "fallback": "sword",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1234,7 +1773,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·架",
       "fallback": "mirror",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1242,7 +1781,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·合锋",
       "fallback": "sword",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1250,7 +1789,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·连斩",
       "fallback": "sword",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1258,7 +1797,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·回锋",
       "fallback": "hook",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1266,7 +1805,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·见缝",
       "fallback": "pin",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1274,7 +1813,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·破势",
       "fallback": "ward-blade",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1282,7 +1821,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·蓄势",
       "fallback": "knot",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1290,7 +1829,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·三连刺",
       "fallback": "pin",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1298,7 +1837,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·剑意",
       "fallback": "grit",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1306,7 +1845,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·斩铁",
       "fallback": "ward-blade",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1314,7 +1853,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·行云",
       "fallback": "silk",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1322,7 +1861,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·盾击",
       "fallback": "mirror",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1330,7 +1869,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·铁壁",
       "fallback": "mirror",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1338,7 +1877,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·反震",
       "fallback": "hook",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1346,7 +1885,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·守中",
       "fallback": "mirror",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1354,7 +1893,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·护货",
       "fallback": "order-purse",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1362,7 +1901,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·顶盾",
       "fallback": "mirror",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1370,7 +1909,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·不动",
       "fallback": "bell-item",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1378,7 +1917,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·以守为攻",
       "fallback": "hook",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1386,7 +1925,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·扬灰",
       "fallback": "ash",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1394,7 +1933,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·照妖",
       "fallback": "seal",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1402,7 +1941,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·灯火",
       "fallback": "ash",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1410,7 +1949,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·燃芯",
       "fallback": "seal",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1418,7 +1957,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·以货挡灾",
       "fallback": "order-purse",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1426,7 +1965,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·撒钱",
       "fallback": "abacus",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1434,7 +1973,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·收灰",
       "fallback": "ash",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1442,7 +1981,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·灯阵",
       "fallback": "seal",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1450,95 +1989,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·拨灯",
       "fallback": "ash",
-      "status": "missing",
-      "priority": "P1"
-    },
-    {
-      "file": "card-gale",
-      "category": "卡牌插图",
-      "usedBy": "卡牌·疾风",
-      "fallback": "pin",
-      "status": "missing",
-      "priority": "P1"
-    },
-    {
-      "file": "card-sheathe",
-      "category": "卡牌插图",
-      "usedBy": "卡牌·收剑",
-      "fallback": "sword",
-      "status": "missing",
-      "priority": "P1"
-    },
-    {
-      "file": "card-swordqi",
-      "category": "卡牌插图",
-      "usedBy": "卡牌·剑气纵横",
-      "fallback": "ward-blade",
-      "status": "missing",
-      "priority": "P1"
-    },
-    {
-      "file": "card-ironshirt",
-      "category": "卡牌插图",
-      "usedBy": "卡牌·铁布衫",
-      "fallback": "mirror",
-      "status": "missing",
-      "priority": "P1"
-    },
-    {
-      "file": "card-hold",
-      "category": "卡牌插图",
-      "usedBy": "卡牌·固守",
-      "fallback": "plank",
-      "status": "missing",
-      "priority": "P1"
-    },
-    {
-      "file": "card-ignite",
-      "category": "卡牌插图",
-      "usedBy": "卡牌·引火",
-      "fallback": "seal",
-      "status": "missing",
-      "priority": "P1"
-    },
-    {
-      "file": "card-burnout",
-      "category": "卡牌插图",
-      "usedBy": "卡牌·烧尽",
-      "fallback": "ash",
-      "status": "missing",
-      "priority": "P1"
-    },
-    {
-      "file": "card-fuel",
-      "category": "卡牌插图",
-      "usedBy": "卡牌·火上浇油",
-      "fallback": "salve",
-      "status": "missing",
-      "priority": "P1"
-    },
-    {
-      "file": "card-clearance",
-      "category": "卡牌插图",
-      "usedBy": "卡牌·清仓",
-      "fallback": "ash",
-      "status": "missing",
-      "priority": "P1"
-    },
-    {
-      "file": "card-principal",
-      "category": "卡牌插图",
-      "usedBy": "卡牌·本利",
-      "fallback": "abacus",
-      "status": "missing",
-      "priority": "P1"
-    },
-    {
-      "file": "card-hoard",
-      "category": "卡牌插图",
-      "usedBy": "卡牌·囤货",
-      "fallback": "pouch",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1546,7 +1997,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·盘算",
       "fallback": "abacus",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1554,7 +2005,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·打点",
       "fallback": "order-purse",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1562,7 +2013,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·生息",
       "fallback": "abacus",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1570,7 +2021,95 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·一掷千金",
       "fallback": "abacus",
-      "status": "missing",
+      "status": "ok",
+      "priority": "P1"
+    },
+    {
+      "file": "card-gale",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·疾风",
+      "fallback": "pin",
+      "status": "ok",
+      "priority": "P1"
+    },
+    {
+      "file": "card-sheathe",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·收剑",
+      "fallback": "sword",
+      "status": "ok",
+      "priority": "P1"
+    },
+    {
+      "file": "card-swordqi",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·剑气纵横",
+      "fallback": "ward-blade",
+      "status": "ok",
+      "priority": "P1"
+    },
+    {
+      "file": "card-ironshirt",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·铁布衫",
+      "fallback": "mirror",
+      "status": "ok",
+      "priority": "P1"
+    },
+    {
+      "file": "card-hold",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·固守",
+      "fallback": "plank",
+      "status": "ok",
+      "priority": "P1"
+    },
+    {
+      "file": "card-ignite",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·引火",
+      "fallback": "seal",
+      "status": "ok",
+      "priority": "P1"
+    },
+    {
+      "file": "card-burnout",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·烧尽",
+      "fallback": "ash",
+      "status": "ok",
+      "priority": "P1"
+    },
+    {
+      "file": "card-fuel",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·火上浇油",
+      "fallback": "salve",
+      "status": "ok",
+      "priority": "P1"
+    },
+    {
+      "file": "card-clearance",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·清仓",
+      "fallback": "ash",
+      "status": "ok",
+      "priority": "P1"
+    },
+    {
+      "file": "card-principal",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·本利",
+      "fallback": "abacus",
+      "status": "ok",
+      "priority": "P1"
+    },
+    {
+      "file": "card-hoard",
+      "category": "卡牌插图",
+      "usedBy": "卡牌·囤货",
+      "fallback": "pouch",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1578,7 +2117,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·包扎",
       "fallback": "salve",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1586,7 +2125,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·喘息",
       "fallback": "silk",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1594,7 +2133,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·定身符",
       "fallback": "pin",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1602,7 +2141,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·挑材",
       "fallback": "clasp",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1610,7 +2149,7 @@
       "category": "卡牌插图",
       "usedBy": "卡牌·稳步",
       "fallback": "knot",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {

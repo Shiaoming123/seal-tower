@@ -1,0 +1,76 @@
+[
+  {
+    "view": {
+      "width": 1280,
+      "height": 720
+    },
+    "seed": "gallery",
+    "battle": {
+      "natural": true,
+      "fightId": 10,
+      "initialCards": [
+        "dust",
+        "defend",
+        "strike",
+        "defend",
+        "strike"
+      ],
+      "allCardsDecoded": 49
+    },
+    "checks": [
+      "town preview",
+      "physical fight entry",
+      "initial hand",
+      "played strike ghost",
+      "all card artwork in battle hand",
+      "deck",
+      "reward",
+      "shop",
+      "upgrade"
+    ],
+    "testFixtures": [
+      "additional groups injected in existing fight",
+      "deck opened via test handle",
+      "reward, shop and upgrade configured via test handle"
+    ],
+    "network": [],
+    "errors": []
+  },
+  {
+    "view": {
+      "width": 390,
+      "height": 844
+    },
+    "seed": "gallery",
+    "battle": {
+      "natural": true,
+      "fightId": 10,
+      "initialCards": [
+        "dust",
+        "defend",
+        "strike",
+        "defend",
+        "strike"
+      ],
+      "allCardsDecoded": 49
+    },
+    "checks": [
+      "town preview",
+      "physical fight entry",
+      "initial hand",
+      "played strike ghost",
+      "all card artwork in battle hand",
+      "deck",
+      "reward",
+      "shop",
+      "upgrade"
+    ],
+    "testFixtures": [
+      "additional groups injected in existing fight",
+      "deck opened via test handle",
+      "reward, shop and upgrade configured via test handle"
+    ],
+    "network": [],
+    "errors": []
+  }
+]

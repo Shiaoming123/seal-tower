@@ -1,0 +1,4185 @@
+{
+  "base": "a6abed9",
+  "url": "http://127.0.0.1:5178/?seed=gallery",
+  "sample": "alpha>=128 points projected into real .pic, with document.elementFromPoint to distinguish overlay by neighboring cards and clipping within .pic",
+  "summary": {
+    "strike": {
+      "baseline": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "sword",
+            "width": 128,
+            "height": 127,
+            "rawBounds": [
+              1,
+              2,
+              126,
+              125
+            ],
+            "visible": 1751,
+            "edgePixels": 0,
+            "stride": 2,
+            "runtime": "ec4f766a1e1cd1130e169f0a28775656c0da210156c925ff3dfe56449b3bd323",
+            "disk": "ec4f766a1e1cd1130e169f0a28775656c0da210156c925ff3dfe56449b3bd323",
+            "source": null,
+            "hasManifest": false
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              98.25
+            ],
+            "imageScreenBox": [
+              638.72,
+              553.48,
+              112.55,
+              98.25
+            ],
+            "picture": [
+              631.05,
+              546.78,
+              127.91,
+              62.39
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 2,
+            "hovered": false,
+            "card": [
+              617,
+              512.48,
+              156,
+              221.52
+            ],
+            "contentBeforeRotation": [
+              99.02,
+              98.25
+            ],
+            "visibleBounds": [
+              666.76,
+              556.19,
+              742.57,
+              608.8
+            ],
+            "counts": {
+              "visible": 235,
+              "neighbor": 0,
+              "ownClip": 201,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 53.9,
+            "neighborPercent": 0,
+            "transform": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1
+            }
+          },
+          "hover": {
+            "imageBox": [
+              112.55,
+              98.25
+            ],
+            "imageScreenBox": [
+              631.97,
+              479.79,
+              126.05,
+              110.04
+            ],
+            "picture": [
+              623.37,
+              472.28,
+              143.25,
+              69.88
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 2,
+            "hovered": true,
+            "card": [
+              607.64,
+              433.87,
+              174.72,
+              248.1
+            ],
+            "contentBeforeRotation": [
+              110.91,
+              110.04
+            ],
+            "visibleBounds": [
+              663.37,
+              482.82,
+              748.28,
+              540
+            ],
+            "counts": {
+              "visible": 222,
+              "neighbor": 0,
+              "ownClip": 214,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 50.92,
+            "neighborPercent": 0,
+            "transform": {
+              "a": 1.12,
+              "b": 0,
+              "c": 0,
+              "d": 1.12
+            }
+          },
+          "tapOrClick": {
+            "x": 697,
+            "y": 503,
+            "distance": 4.000489333511889
+          },
+          "ghost": {
+            "samples": 44,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/sword.webp",
+              "shown": true,
+              "rect": [
+                630.07,
+                464.42,
+                123.85,
+                108.37
+              ],
+              "opacity": 0.995846,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/sword.webp",
+              "shown": true,
+              "rect": [
+                623.41,
+                346.05,
+                35.04,
+                31.63
+              ],
+              "opacity": 0.00000295897,
+              "ms": 312
+            }
+          },
+          "effect": {
+            "hpLoss": 6,
+            "blockGain": 0,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 18,
+            "block": 0,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "sword",
+            "width": 128,
+            "height": 127,
+            "rawBounds": [
+              1,
+              2,
+              126,
+              125
+            ],
+            "visible": 1751,
+            "edgePixels": 0,
+            "stride": 2,
+            "runtime": "ec4f766a1e1cd1130e169f0a28775656c0da210156c925ff3dfe56449b3bd323",
+            "disk": "ec4f766a1e1cd1130e169f0a28775656c0da210156c925ff3dfe56449b3bd323",
+            "source": null,
+            "hasManifest": false
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              98.25
+            ],
+            "imageScreenBox": [
+              158.42,
+              655.01,
+              73.16,
+              63.86
+            ],
+            "picture": [
+              153.43,
+              650.66,
+              83.14,
+              40.55
+            ],
+            "viewport": [
+              390,
+              844,
+              1
+            ],
+            "slot": 2,
+            "hovered": false,
+            "card": [
+              144.3,
+              628.36,
+              101.4,
+              143.99
+            ],
+            "contentBeforeRotation": [
+              64.37,
+              63.86
+            ],
+            "visibleBounds": [
+              176.64,
+              669.85,
+              206.81,
+              690.97
+            ],
+            "counts": {
+              "visible": 147,
+              "neighbor": 88,
+              "ownClip": 201,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 33.72,
+            "neighborPercent": 20.18,
+            "transform": {
+              "a": 0.65,
+              "b": 0,
+              "c": 0,
+              "d": 0.65
+            }
+          },
+          "hover": null,
+          "tapOrClick": {
+            "x": 194,
+            "y": 668,
+            "distance": 1.251537437646207
+          },
+          "ghost": {
+            "samples": 46,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/sword.webp",
+              "shown": true,
+              "rect": [
+                158.94,
+                635.32,
+                71.85,
+                62.87
+              ],
+              "opacity": 0.99578,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/sword.webp",
+              "shown": true,
+              "rect": [
+                185.29,
+                325.73,
+                20.33,
+                18.36
+              ],
+              "opacity": 0.00000208951,
+              "ms": 312
+            }
+          },
+          "effect": {
+            "hpLoss": 6,
+            "blockGain": 0,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 18,
+            "block": 0,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        }
+      ],
+      "final": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "card-strike",
+            "width": 256,
+            "height": 128,
+            "rawBounds": [
+              0,
+              0,
+              256,
+              128
+            ],
+            "visible": 32768,
+            "edgePixels": 764,
+            "stride": 2,
+            "runtime": "1233223d86cc705b296c261a91023acdcf26f520d0f2299d750561b45bf20236",
+            "disk": "1233223d86cc705b296c261a91023acdcf26f520d0f2299d750561b45bf20236",
+            "source": "44c1d30465d90da04eec273b319a5456f18661dbe6a7a597d465610d4b00abc8",
+            "hasManifest": true
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              638.72,
+              550.53,
+              112.55,
+              54.89
+            ],
+            "picture": [
+              631.05,
+              546.78,
+              127.91,
+              62.39
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 2,
+            "hovered": false,
+            "card": [
+              617,
+              512.48,
+              156,
+              221.52
+            ],
+            "contentBeforeRotation": [
+              109.78,
+              54.89
+            ],
+            "visibleBounds": [
+              640.74,
+              551.17,
+              743.66,
+              605.21
+            ],
+            "counts": {
+              "visible": 7610,
+              "neighbor": 582,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 92.9,
+            "neighborPercent": 7.1,
+            "transform": {
+              "a": 1,
+              "b": 0,
+              "c": 0,
+              "d": 1
+            }
+          },
+          "hover": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              631.97,
+              476.48,
+              126.05,
+              61.48
+            ],
+            "picture": [
+              623.37,
+              472.28,
+              143.25,
+              69.88
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 2,
+            "hovered": true,
+            "card": [
+              607.64,
+              433.87,
+              174.72,
+              248.1
+            ],
+            "contentBeforeRotation": [
+              122.95,
+              61.48
+            ],
+            "visibleBounds": [
+              634.23,
+              477.2,
+              756.23,
+              537.72
+            ],
+            "counts": {
+              "visible": 8192,
+              "neighbor": 0,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 100,
+            "neighborPercent": 0,
+            "transform": {
+              "a": 1.12,
+              "b": 0,
+              "c": 0,
+              "d": 1.12
+            }
+          },
+          "tapOrClick": {
+            "x": 697,
+            "y": 503,
+            "distance": 4.000489333511889
+          },
+          "ghost": {
+            "samples": 43,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/card-strike.webp",
+              "shown": true,
+              "rect": [
+                629.99,
+                460.49,
+                123.31,
+                55.13
+              ],
+              "opacity": 0.995735,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/card-strike.webp",
+              "shown": true,
+              "rect": [
+                625.44,
+                345.13,
+                33.14,
+                18.11
+              ],
+              "opacity": 0.00000157461,
+              "ms": 311
+            }
+          },
+          "effect": {
+            "hpLoss": 6,
+            "blockGain": 0,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 18,
+            "block": 0,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "card-strike",
+            "width": 256,
+            "height": 128,
+            "rawBounds": [
+              0,
+              0,
+              256,
+              128
+            ],
+            "visible": 32768,
+            "edgePixels": 764,
+            "stride": 2,
+            "runtime": "1233223d86cc705b296c261a91023acdcf26f520d0f2299d750561b45bf20236",
+            "disk": "1233223d86cc705b296c261a91023acdcf26f520d0f2299d750561b45bf20236",
+            "source": "44c1d30465d90da04eec273b319a5456f18661dbe6a7a597d465610d4b00abc8",
+            "hasManifest": true
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              158.42,
+              653.1,
+              73.16,
+              35.68
+            ],
+            "picture": [
+              153.43,
+              650.66,
+              83.14,
+              40.55
+            ],
+            "viewport": [
+              390,
+              844,
+              1
+            ],
+            "slot": 2,
+            "hovered": false,
+            "card": [
+              144.3,
+              628.36,
+              101.4,
+              143.99
+            ],
+            "contentBeforeRotation": [
+              71.36,
+              35.68
+            ],
+            "visibleBounds": [
+              159.73,
+              653.51,
+              207.68,
+              688.63
+            ],
+            "counts": {
+              "visible": 5478,
+              "neighbor": 2714,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 66.87,
+            "neighborPercent": 33.13,
+            "transform": {
+              "a": 0.65,
+              "b": 0,
+              "c": 0,
+              "d": 0.65
+            }
+          },
+          "hover": null,
+          "tapOrClick": {
+            "x": 194,
+            "y": 668,
+            "distance": 1.251537437646207
+          },
+          "ghost": {
+            "samples": 47,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/card-strike.webp",
+              "shown": true,
+              "rect": [
+                158.41,
+                653.1,
+                73.16,
+                35.68
+              ],
+              "opacity": 1,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/card-strike.webp",
+              "shown": true,
+              "rect": [
+                186.34,
+                325.26,
+                19.35,
+                11.38
+              ],
+              "opacity": 0.00000255388,
+              "ms": 318
+            }
+          },
+          "effect": {
+            "hpLoss": 6,
+            "blockGain": 0,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 18,
+            "block": 0,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        }
+      ]
+    },
+    "defend": {
+      "baseline": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "mirror",
+            "width": 90,
+            "height": 128,
+            "rawBounds": [
+              1,
+              1,
+              89,
+              127
+            ],
+            "visible": 8099,
+            "edgePixels": 0,
+            "stride": 2,
+            "runtime": "9950ad16cfc345d6e82520df1338f32af72489d90efcfe6dba8698d31c358e6d",
+            "disk": "9950ad16cfc345d6e82520df1338f32af72489d90efcfe6dba8698d31c358e6d",
+            "source": null,
+            "hasManifest": false
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              140.84
+            ],
+            "imageScreenBox": [
+              511.44,
+              558.74,
+              119.76,
+              146.54
+            ],
+            "picture": [
+              503.28,
+              548.74,
+              131,
+              69
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 1,
+            "hovered": false,
+            "card": [
+              487.46,
+              513.76,
+              167.38,
+              229.38
+            ],
+            "contentBeforeRotation": [
+              99.03,
+              140.84
+            ],
+            "visibleBounds": [
+              524.54,
+              562.85,
+              614.88,
+              616.27
+            ],
+            "counts": {
+              "visible": 770,
+              "neighbor": 10,
+              "ownClip": 1241,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 38.1,
+            "neighborPercent": 0.49,
+            "transform": {
+              "a": 0.99863,
+              "b": -0.052336,
+              "c": 0.052336,
+              "d": 0.99863
+            }
+          },
+          "hover": {
+            "imageBox": [
+              112.55,
+              140.84
+            ],
+            "imageScreenBox": [
+              515.96,
+              483.04,
+              126.05,
+              157.74
+            ],
+            "picture": [
+              507.37,
+              472.28,
+              143.26,
+              69.88
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 1,
+            "hovered": true,
+            "card": [
+              491.64,
+              433.87,
+              174.72,
+              248.1
+            ],
+            "contentBeforeRotation": [
+              110.91,
+              157.75
+            ],
+            "visibleBounds": [
+              527.85,
+              484.89,
+              631.37,
+              541.58
+            ],
+            "counts": {
+              "visible": 776,
+              "neighbor": 0,
+              "ownClip": 1245,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 38.4,
+            "neighborPercent": 0,
+            "transform": {
+              "a": 1.12,
+              "b": 0,
+              "c": 0,
+              "d": 1.12
+            }
+          },
+          "tapOrClick": {
+            "x": 581,
+            "y": 503,
+            "distance": 4.000611402893067
+          },
+          "ghost": {
+            "samples": 42,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/mirror.webp",
+              "shown": true,
+              "rect": [
+                536.27,
+                422.01,
+                116.14,
+                142.6
+              ],
+              "opacity": 0.979004,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/mirror.webp",
+              "shown": true,
+              "rect": [
+                621.64,
+                346.85,
+                36.7,
+                43.44
+              ],
+              "opacity": 0.00000363231,
+              "ms": 282
+            }
+          },
+          "effect": {
+            "hpLoss": 0,
+            "blockGain": 5,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 24,
+            "block": 5,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "mirror",
+            "width": 90,
+            "height": 128,
+            "rawBounds": [
+              1,
+              1,
+              89,
+              127
+            ],
+            "visible": 8099,
+            "edgePixels": 0,
+            "stride": 2,
+            "runtime": "9950ad16cfc345d6e82520df1338f32af72489d90efcfe6dba8698d31c358e6d",
+            "disk": "9950ad16cfc345d6e82520df1338f32af72489d90efcfe6dba8698d31c358e6d",
+            "source": null,
+            "hasManifest": false
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              140.84
+            ],
+            "imageScreenBox": [
+              93.89,
+              658.43,
+              77.85,
+              95.25
+            ],
+            "picture": [
+              88.58,
+              651.93,
+              85.15,
+              44.85
+            ],
+            "viewport": [
+              390,
+              844,
+              1
+            ],
+            "slot": 1,
+            "hovered": false,
+            "card": [
+              78.3,
+              629.19,
+              108.8,
+              149.09
+            ],
+            "contentBeforeRotation": [
+              64.37,
+              91.55
+            ],
+            "visibleBounds": [
+              102.4,
+              661.1,
+              143.31,
+              695.83
+            ],
+            "counts": {
+              "visible": 553,
+              "neighbor": 586,
+              "ownClip": 882,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 27.36,
+            "neighborPercent": 29,
+            "transform": {
+              "a": 0.6491095,
+              "b": -0.034018400000000004,
+              "c": 0.034018400000000004,
+              "d": 0.6491095
+            }
+          },
+          "hover": null,
+          "tapOrClick": {
+            "x": 133,
+            "y": 674,
+            "distance": 8.84208174703862
+          },
+          "ghost": {
+            "samples": 47,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/mirror.webp",
+              "shown": true,
+              "rect": [
+                93.44,
+                658.18,
+                78.5,
+                98.23
+              ],
+              "opacity": 1,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/mirror.webp",
+              "shown": true,
+              "rect": [
+                183.45,
+                325.58,
+                22.85,
+                27.05
+              ],
+              "opacity": 0.00000190276,
+              "ms": 319
+            }
+          },
+          "effect": {
+            "hpLoss": 0,
+            "blockGain": 5,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 24,
+            "block": 5,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        }
+      ],
+      "final": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "card-defend",
+            "width": 256,
+            "height": 128,
+            "rawBounds": [
+              0,
+              0,
+              256,
+              128
+            ],
+            "visible": 32768,
+            "edgePixels": 764,
+            "stride": 2,
+            "runtime": "1a100f1bcff312f84e6a68560f7eb947136895cd91691a0035c3d3416bdce377",
+            "disk": "1a100f1bcff312f84e6a68560f7eb947136895cd91691a0035c3d3416bdce377",
+            "source": "c1e42d632b1a70548041797bbe63a08ce30556537233160f0d8bfd0951db2754",
+            "hasManifest": true
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              511.14,
+              552.89,
+              115.27,
+              60.71
+            ],
+            "picture": [
+              503.28,
+              548.74,
+              131,
+              69
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 1,
+            "hovered": false,
+            "card": [
+              487.46,
+              513.76,
+              167.38,
+              229.38
+            ],
+            "contentBeforeRotation": [
+              109.78,
+              54.89
+            ],
+            "visibleBounds": [
+              513.19,
+              553.93,
+              616.01,
+              613.28
+            ],
+            "counts": {
+              "visible": 7609,
+              "neighbor": 583,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 92.88,
+            "neighborPercent": 7.12,
+            "transform": {
+              "a": 0.99863,
+              "b": -0.052336,
+              "c": 0.052336,
+              "d": 0.99863
+            }
+          },
+          "hover": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              515.96,
+              476.48,
+              126.05,
+              61.48
+            ],
+            "picture": [
+              507.37,
+              472.28,
+              143.26,
+              69.88
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 1,
+            "hovered": true,
+            "card": [
+              491.64,
+              433.87,
+              174.72,
+              248.1
+            ],
+            "contentBeforeRotation": [
+              122.95,
+              61.48
+            ],
+            "visibleBounds": [
+              518.23,
+              477.2,
+              640.23,
+              537.72
+            ],
+            "counts": {
+              "visible": 8192,
+              "neighbor": 0,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 100,
+            "neighborPercent": 0,
+            "transform": {
+              "a": 1.12,
+              "b": 0,
+              "c": 0,
+              "d": 1.12
+            }
+          },
+          "tapOrClick": {
+            "x": 581,
+            "y": 503,
+            "distance": 4.000611402893067
+          },
+          "ghost": {
+            "samples": 45,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/card-defend.webp",
+              "shown": true,
+              "rect": [
+                515.94,
+                471.94,
+                126.06,
+                55.45
+              ],
+              "opacity": 1,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/card-defend.webp",
+              "shown": true,
+              "rect": [
+                625.44,
+                345.13,
+                33.14,
+                18.11
+              ],
+              "opacity": 0.00000235472,
+              "ms": 318
+            }
+          },
+          "effect": {
+            "hpLoss": 0,
+            "blockGain": 5,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 24,
+            "block": 5,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "card-defend",
+            "width": 256,
+            "height": 128,
+            "rawBounds": [
+              0,
+              0,
+              256,
+              128
+            ],
+            "visible": 32768,
+            "edgePixels": 764,
+            "stride": 2,
+            "runtime": "1a100f1bcff312f84e6a68560f7eb947136895cd91691a0035c3d3416bdce377",
+            "disk": "1a100f1bcff312f84e6a68560f7eb947136895cd91691a0035c3d3416bdce377",
+            "source": "c1e42d632b1a70548041797bbe63a08ce30556537233160f0d8bfd0951db2754",
+            "hasManifest": true
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              93.69,
+              654.63,
+              74.92,
+              39.46
+            ],
+            "picture": [
+              88.58,
+              651.93,
+              85.15,
+              44.85
+            ],
+            "viewport": [
+              390,
+              844,
+              1
+            ],
+            "slot": 1,
+            "hovered": false,
+            "card": [
+              78.3,
+              629.19,
+              108.8,
+              149.09
+            ],
+            "contentBeforeRotation": [
+              71.36,
+              35.68
+            ],
+            "visibleBounds": [
+              95.03,
+              656.3,
+              143.31,
+              693.88
+            ],
+            "counts": {
+              "visible": 5478,
+              "neighbor": 2714,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 66.87,
+            "neighborPercent": 33.13,
+            "transform": {
+              "a": 0.6491095,
+              "b": -0.034018400000000004,
+              "c": 0.034018400000000004,
+              "d": 0.6491095
+            }
+          },
+          "hover": null,
+          "tapOrClick": {
+            "x": 133,
+            "y": 674,
+            "distance": 8.84208174703862
+          },
+          "ghost": {
+            "samples": 46,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/card-defend.webp",
+              "shown": true,
+              "rect": [
+                97.18,
+                634.05,
+                76.81,
+                35.45
+              ],
+              "opacity": 0.99576,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/card-defend.webp",
+              "shown": true,
+              "rect": [
+                185.77,
+                324.53,
+                20.67,
+                11.56
+              ],
+              "opacity": 0.00000185398,
+              "ms": 312
+            }
+          },
+          "effect": {
+            "hpLoss": 0,
+            "blockGain": 5,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 24,
+            "block": 5,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        }
+      ]
+    },
+    "bash": {
+      "baseline": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "mirror",
+            "width": 90,
+            "height": 128,
+            "rawBounds": [
+              1,
+              1,
+              89,
+              127
+            ],
+            "visible": 8099,
+            "edgePixels": 0,
+            "stride": 2,
+            "runtime": "9950ad16cfc345d6e82520df1338f32af72489d90efcfe6dba8698d31c358e6d",
+            "disk": "9950ad16cfc345d6e82520df1338f32af72489d90efcfe6dba8698d31c358e6d",
+            "source": null,
+            "hasManifest": false
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              140.84
+            ],
+            "imageScreenBox": [
+              384.88,
+              561.67,
+              126.65,
+              151.84
+            ],
+            "picture": [
+              376.24,
+              551.31,
+              133.73,
+              75.42
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 0,
+            "hovered": false,
+            "card": [
+              358.69,
+              515.73,
+              178.3,
+              236.61
+            ],
+            "contentBeforeRotation": [
+              99.03,
+              140.84
+            ],
+            "visibleBounds": [
+              400.43,
+              568.22,
+              490.62,
+              624.31
+            ],
+            "counts": {
+              "visible": 770,
+              "neighbor": 12,
+              "ownClip": 1239,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 38.1,
+            "neighborPercent": 0.59,
+            "transform": {
+              "a": 0.994522,
+              "b": -0.104528,
+              "c": 0.104528,
+              "d": 0.994522
+            }
+          },
+          "hover": {
+            "imageBox": [
+              112.55,
+              140.84
+            ],
+            "imageScreenBox": [
+              399.96,
+              483.04,
+              126.05,
+              157.74
+            ],
+            "picture": [
+              391.37,
+              472.28,
+              143.26,
+              69.88
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 0,
+            "hovered": true,
+            "card": [
+              375.64,
+              433.87,
+              174.72,
+              248.1
+            ],
+            "contentBeforeRotation": [
+              110.91,
+              157.75
+            ],
+            "visibleBounds": [
+              411.85,
+              484.89,
+              515.37,
+              541.58
+            ],
+            "counts": {
+              "visible": 776,
+              "neighbor": 0,
+              "ownClip": 1245,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 38.4,
+            "neighborPercent": 0,
+            "transform": {
+              "a": 1.12,
+              "b": 0,
+              "c": 0,
+              "d": 1.12
+            }
+          },
+          "tapOrClick": {
+            "x": 465,
+            "y": 503,
+            "distance": 4.000611402893067
+          },
+          "ghost": {
+            "samples": 41,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/mirror.webp",
+              "shown": true,
+              "rect": [
+                459.6,
+                410.64,
+                113.9,
+                139.35
+              ],
+              "opacity": 0.974773,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/mirror.webp",
+              "shown": true,
+              "rect": [
+                621.64,
+                346.85,
+                36.7,
+                43.44
+              ],
+              "opacity": 0.00000122635,
+              "ms": 277
+            }
+          },
+          "effect": {
+            "hpLoss": 0,
+            "blockGain": 0,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 24,
+            "block": 0,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "mirror",
+            "width": 90,
+            "height": 128,
+            "rawBounds": [
+              1,
+              1,
+              89,
+              127
+            ],
+            "visible": 8099,
+            "edgePixels": 0,
+            "stride": 2,
+            "runtime": "9950ad16cfc345d6e82520df1338f32af72489d90efcfe6dba8698d31c358e6d",
+            "disk": "9950ad16cfc345d6e82520df1338f32af72489d90efcfe6dba8698d31c358e6d",
+            "source": null,
+            "hasManifest": false
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              140.84
+            ],
+            "imageScreenBox": [
+              29.82,
+              660.34,
+              82.32,
+              98.69
+            ],
+            "picture": [
+              24.21,
+              653.6,
+              86.92,
+              49.02
+            ],
+            "viewport": [
+              390,
+              844,
+              1
+            ],
+            "slot": 0,
+            "hovered": false,
+            "card": [
+              12.8,
+              630.48,
+              115.9,
+              153.8
+            ],
+            "contentBeforeRotation": [
+              64.37,
+              91.55
+            ],
+            "visibleBounds": [
+              39.93,
+              664.59,
+              80.06,
+              701.05
+            ],
+            "counts": {
+              "visible": 549,
+              "neighbor": 596,
+              "ownClip": 876,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 27.16,
+            "neighborPercent": 29.49,
+            "transform": {
+              "a": 0.6464393,
+              "b": -0.0679432,
+              "c": 0.0679432,
+              "d": 0.6464393
+            }
+          },
+          "hover": null,
+          "tapOrClick": {
+            "x": 67,
+            "y": 675,
+            "distance": 0.47624857622686
+          },
+          "ghost": {
+            "samples": 45,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/mirror.webp",
+              "shown": true,
+              "rect": [
+                42.91,
+                619.6,
+                81.12,
+                100.72
+              ],
+              "opacity": 0.991512,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/mirror.webp",
+              "shown": true,
+              "rect": [
+                182.65,
+                325.01,
+                24.34,
+                28.82
+              ],
+              "opacity": 0.00000211901,
+              "ms": 305
+            }
+          },
+          "effect": {
+            "hpLoss": 0,
+            "blockGain": 0,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 24,
+            "block": 0,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        }
+      ],
+      "final": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "card-bash",
+            "width": 256,
+            "height": 128,
+            "rawBounds": [
+              0,
+              0,
+              256,
+              128
+            ],
+            "visible": 32768,
+            "edgePixels": 764,
+            "stride": 2,
+            "runtime": "2175667770896ab384c72a8f7314b0f78c475ec2b6dbf38f8e78b4ab416a23fc",
+            "disk": "2175667770896ab384c72a8f7314b0f78c475ec2b6dbf38f8e78b4ab416a23fc",
+            "source": "3d5171a536ef358cde8292928733a7cdd71497ebe8bc19182b543d081298dbb2",
+            "hasManifest": true
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              384.26,
+              555.84,
+              117.67,
+              66.35
+            ],
+            "picture": [
+              376.24,
+              551.31,
+              133.73,
+              75.42
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 0,
+            "hovered": false,
+            "card": [
+              358.69,
+              515.73,
+              178.3,
+              236.61
+            ],
+            "contentBeforeRotation": [
+              109.78,
+              54.89
+            ],
+            "visibleBounds": [
+              386.35,
+              557.37,
+              490.94,
+              621.77
+            ],
+            "counts": {
+              "visible": 7581,
+              "neighbor": 611,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 92.54,
+            "neighborPercent": 7.46,
+            "transform": {
+              "a": 0.994522,
+              "b": -0.104528,
+              "c": 0.104528,
+              "d": 0.994522
+            }
+          },
+          "hover": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              399.96,
+              476.48,
+              126.05,
+              61.48
+            ],
+            "picture": [
+              391.37,
+              472.28,
+              143.26,
+              69.88
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 0,
+            "hovered": true,
+            "card": [
+              375.64,
+              433.87,
+              174.72,
+              248.1
+            ],
+            "contentBeforeRotation": [
+              122.95,
+              61.48
+            ],
+            "visibleBounds": [
+              402.23,
+              477.2,
+              524.23,
+              537.72
+            ],
+            "counts": {
+              "visible": 8192,
+              "neighbor": 0,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 100,
+            "neighborPercent": 0,
+            "transform": {
+              "a": 1.12,
+              "b": 0,
+              "c": 0,
+              "d": 1.12
+            }
+          },
+          "tapOrClick": {
+            "x": 465,
+            "y": 503,
+            "distance": 4.000611402893067
+          },
+          "ghost": {
+            "samples": 46,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/card-bash.webp",
+              "shown": true,
+              "rect": [
+                409.87,
+                460.49,
+                123.31,
+                55.13
+              ],
+              "opacity": 0.995734,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/card-bash.webp",
+              "shown": true,
+              "rect": [
+                625.44,
+                345.13,
+                33.14,
+                18.11
+              ],
+              "opacity": 0.00000226966,
+              "ms": 311
+            }
+          },
+          "effect": {
+            "hpLoss": 0,
+            "blockGain": 0,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 24,
+            "block": 0,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "bash",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "card-bash",
+            "width": 256,
+            "height": 128,
+            "rawBounds": [
+              0,
+              0,
+              256,
+              128
+            ],
+            "visible": 32768,
+            "edgePixels": 764,
+            "stride": 2,
+            "runtime": "2175667770896ab384c72a8f7314b0f78c475ec2b6dbf38f8e78b4ab416a23fc",
+            "disk": "2175667770896ab384c72a8f7314b0f78c475ec2b6dbf38f8e78b4ab416a23fc",
+            "source": "3d5171a536ef358cde8292928733a7cdd71497ebe8bc19182b543d081298dbb2",
+            "hasManifest": true
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              29.42,
+              656.55,
+              76.48,
+              43.13
+            ],
+            "picture": [
+              24.21,
+              653.6,
+              86.92,
+              49.02
+            ],
+            "viewport": [
+              390,
+              844,
+              1
+            ],
+            "slot": 0,
+            "hovered": false,
+            "card": [
+              12.8,
+              630.48,
+              115.9,
+              153.8
+            ],
+            "contentBeforeRotation": [
+              71.36,
+              35.68
+            ],
+            "visibleBounds": [
+              30.77,
+              659.46,
+              80.46,
+              699.4
+            ],
+            "counts": {
+              "visible": 5452,
+              "neighbor": 2740,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 66.55,
+            "neighborPercent": 33.45,
+            "transform": {
+              "a": 0.6464393,
+              "b": -0.0679432,
+              "c": 0.0679432,
+              "d": 0.6464393
+            }
+          },
+          "hover": null,
+          "tapOrClick": {
+            "x": 67,
+            "y": 675,
+            "distance": 0.47624857622686
+          },
+          "ghost": {
+            "samples": 47,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/card-bash.webp",
+              "shown": true,
+              "rect": [
+                28.91,
+                655.27,
+                83.63,
+                36.79
+              ],
+              "opacity": 1,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/card-bash.webp",
+              "shown": true,
+              "rect": [
+                185.17,
+                323.87,
+                21.98,
+                12.02
+              ],
+              "opacity": 0.00000231586,
+              "ms": 320
+            }
+          },
+          "effect": {
+            "hpLoss": 0,
+            "blockGain": 0,
+            "ashSpent": 0,
+            "energySpent": 1
+          },
+          "result": {
+            "hp": 24,
+            "block": 0,
+            "ash": 0,
+            "status": {}
+          },
+          "pageErrors": []
+        }
+      ]
+    },
+    "dust": {
+      "baseline": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "dust",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "ash",
+            "width": 128,
+            "height": 117,
+            "rawBounds": [
+              1,
+              1,
+              127,
+              116
+            ],
+            "visible": 12319,
+            "edgePixels": 0,
+            "stride": 2,
+            "runtime": "b53ae200ceeed0334ae4cf920618b9fc9adfa1d312fdca241f21523e837fc3f2",
+            "disk": "b53ae200ceeed0334ae4cf920618b9fc9adfa1d312fdca241f21523e837fc3f2",
+            "source": null,
+            "hasManifest": false
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              90.52
+            ],
+            "imageScreenBox": [
+              384.52,
+              558.25,
+              121.39,
+              101.78
+            ],
+            "picture": [
+              376.24,
+              551.31,
+              133.73,
+              75.42
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 0,
+            "hovered": false,
+            "card": [
+              358.69,
+              515.73,
+              178.3,
+              236.61
+            ],
+            "contentBeforeRotation": [
+              99.03,
+              90.52
+            ],
+            "visibleBounds": [
+              397.37,
+              560.48,
+              490.5,
+              623.88
+            ],
+            "counts": {
+              "visible": 1900,
+              "neighbor": 38,
+              "ownClip": 1145,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 61.63,
+            "neighborPercent": 1.23,
+            "transform": {
+              "a": 0.994522,
+              "b": -0.104528,
+              "c": 0.104528,
+              "d": 0.994522
+            }
+          },
+          "hover": {
+            "imageBox": [
+              112.55,
+              90.52
+            ],
+            "imageScreenBox": [
+              399.96,
+              479.19,
+              126.05,
+              101.38
+            ],
+            "picture": [
+              391.37,
+              472.28,
+              143.26,
+              69.88
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 0,
+            "hovered": true,
+            "card": [
+              375.64,
+              433.87,
+              174.72,
+              248.1
+            ],
+            "contentBeforeRotation": [
+              110.91,
+              101.38
+            ],
+            "visibleBounds": [
+              408.84,
+              480.49,
+              516.28,
+              541.14
+            ],
+            "counts": {
+              "visible": 1902,
+              "neighbor": 0,
+              "ownClip": 1181,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 61.69,
+            "neighborPercent": 0,
+            "transform": {
+              "a": 1.12,
+              "b": 0,
+              "c": 0,
+              "d": 1.12
+            }
+          },
+          "tapOrClick": {
+            "x": 465,
+            "y": 503,
+            "distance": 4.000611402893067
+          },
+          "ghost": {
+            "samples": 40,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/ash.webp",
+              "shown": true,
+              "rect": [
+                439.82,
+                429.38,
+                116.39,
+                95.03
+              ],
+              "opacity": 0.98302,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/ash.webp",
+              "shown": true,
+              "rect": [
+                623.73,
+                345.9,
+                34.74,
+                29.49
+              ],
+              "opacity": 0.00000245727,
+              "ms": 286
+            }
+          },
+          "effect": {
+            "hpLoss": 8,
+            "blockGain": 0,
+            "ashSpent": 1,
+            "energySpent": 0
+          },
+          "result": {
+            "hp": 16,
+            "block": 0,
+            "ash": 3,
+            "status": {}
+          },
+          "pageErrors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "dust",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "ash",
+            "width": 128,
+            "height": 117,
+            "rawBounds": [
+              1,
+              1,
+              127,
+              116
+            ],
+            "visible": 12319,
+            "edgePixels": 0,
+            "stride": 2,
+            "runtime": "b53ae200ceeed0334ae4cf920618b9fc9adfa1d312fdca241f21523e837fc3f2",
+            "disk": "b53ae200ceeed0334ae4cf920618b9fc9adfa1d312fdca241f21523e837fc3f2",
+            "source": null,
+            "hasManifest": false
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              90.52
+            ],
+            "imageScreenBox": [
+              29.59,
+              658.11,
+              78.9,
+              66.16
+            ],
+            "picture": [
+              24.21,
+              653.6,
+              86.92,
+              49.02
+            ],
+            "viewport": [
+              390,
+              844,
+              1
+            ],
+            "slot": 0,
+            "hovered": false,
+            "card": [
+              12.8,
+              630.48,
+              115.9,
+              153.8
+            ],
+            "contentBeforeRotation": [
+              64.37,
+              58.84
+            ],
+            "visibleBounds": [
+              37.94,
+              663.4,
+              80.47,
+              700.77
+            ],
+            "counts": {
+              "visible": 1315,
+              "neighbor": 970,
+              "ownClip": 798,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 42.65,
+            "neighborPercent": 31.46,
+            "transform": {
+              "a": 0.6464393,
+              "b": -0.0679432,
+              "c": 0.0679432,
+              "d": 0.6464393
+            }
+          },
+          "hover": null,
+          "tapOrClick": {
+            "x": 67,
+            "y": 675,
+            "distance": 0.47624857622686
+          },
+          "ghost": {
+            "samples": 46,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/ash.webp",
+              "shown": true,
+              "rect": [
+                35.82,
+                637.41,
+                82.09,
+                66.27
+              ],
+              "opacity": 0.995788,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/ash.webp",
+              "shown": true,
+              "rect": [
+                184.04,
+                324.38,
+                23.04,
+                19.56
+              ],
+              "opacity": 0.00000217865,
+              "ms": 313
+            }
+          },
+          "effect": {
+            "hpLoss": 8,
+            "blockGain": 0,
+            "ashSpent": 1,
+            "energySpent": 0
+          },
+          "result": {
+            "hp": 16,
+            "block": 0,
+            "ash": 3,
+            "status": {}
+          },
+          "pageErrors": []
+        }
+      ],
+      "final": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "dust",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "card-dust",
+            "width": 256,
+            "height": 128,
+            "rawBounds": [
+              0,
+              0,
+              256,
+              128
+            ],
+            "visible": 32768,
+            "edgePixels": 764,
+            "stride": 2,
+            "runtime": "e41753341b496174b7a67aeb9edc0a4a13e5504a7a58b88d251dbc142a4aa878",
+            "disk": "e41753341b496174b7a67aeb9edc0a4a13e5504a7a58b88d251dbc142a4aa878",
+            "source": "b88d21204559dd8951a9d6240cbf20f94eabb81a69b47af49e7106b3db75b2fd",
+            "hasManifest": true
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              384.26,
+              555.84,
+              117.67,
+              66.35
+            ],
+            "picture": [
+              376.24,
+              551.31,
+              133.73,
+              75.42
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 0,
+            "hovered": false,
+            "card": [
+              358.69,
+              515.73,
+              178.3,
+              236.61
+            ],
+            "contentBeforeRotation": [
+              109.78,
+              54.89
+            ],
+            "visibleBounds": [
+              386.35,
+              557.37,
+              490.94,
+              621.77
+            ],
+            "counts": {
+              "visible": 7581,
+              "neighbor": 611,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 92.54,
+            "neighborPercent": 7.46,
+            "transform": {
+              "a": 0.994522,
+              "b": -0.104528,
+              "c": 0.104528,
+              "d": 0.994522
+            }
+          },
+          "hover": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              399.96,
+              476.48,
+              126.05,
+              61.48
+            ],
+            "picture": [
+              391.37,
+              472.28,
+              143.26,
+              69.88
+            ],
+            "viewport": [
+              1280,
+              720,
+              1
+            ],
+            "slot": 0,
+            "hovered": true,
+            "card": [
+              375.64,
+              433.87,
+              174.72,
+              248.1
+            ],
+            "contentBeforeRotation": [
+              122.95,
+              61.48
+            ],
+            "visibleBounds": [
+              402.23,
+              477.2,
+              524.23,
+              537.72
+            ],
+            "counts": {
+              "visible": 8192,
+              "neighbor": 0,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 100,
+            "neighborPercent": 0,
+            "transform": {
+              "a": 1.12,
+              "b": 0,
+              "c": 0,
+              "d": 1.12
+            }
+          },
+          "tapOrClick": {
+            "x": 465,
+            "y": 503,
+            "distance": 4.000611402893067
+          },
+          "ghost": {
+            "samples": 45,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/card-dust.webp",
+              "shown": true,
+              "rect": [
+                399.94,
+                471.94,
+                126.06,
+                55.45
+              ],
+              "opacity": 1,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/card-dust.webp",
+              "shown": true,
+              "rect": [
+                625.44,
+                345.13,
+                33.14,
+                18.11
+              ],
+              "opacity": 0.00000184706,
+              "ms": 318
+            }
+          },
+          "effect": {
+            "hpLoss": 8,
+            "blockGain": 0,
+            "ashSpent": 1,
+            "energySpent": 0
+          },
+          "result": {
+            "hp": 16,
+            "block": 0,
+            "ash": 3,
+            "status": {}
+          },
+          "pageErrors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "start": {
+            "x": 5,
+            "y": 9,
+            "dir": 0
+          },
+          "target": {
+            "id": 10,
+            "enemy": "moth",
+            "x": 5,
+            "y": 3
+          },
+          "walking": [
+            {
+              "x": 4,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 9,
+              "dir": 3
+            },
+            {
+              "x": 3,
+              "y": 8,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 7,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 6,
+              "dir": 0
+            },
+            {
+              "x": 3,
+              "y": 5,
+              "dir": 0
+            },
+            {
+              "x": 4,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 5,
+              "dir": 1
+            },
+            {
+              "x": 5,
+              "y": 4,
+              "dir": 0
+            },
+            {
+              "x": 5,
+              "y": 3,
+              "dir": 0
+            }
+          ],
+          "hand": [
+            {
+              "uid": -1,
+              "id": "dust",
+              "up": false
+            },
+            {
+              "uid": 5,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 3,
+              "id": "strike",
+              "up": false
+            },
+            {
+              "uid": 7,
+              "id": "defend",
+              "up": false
+            },
+            {
+              "uid": 2,
+              "id": "strike",
+              "up": false
+            }
+          ],
+          "energy": 3,
+          "asset": {
+            "id": "card-dust",
+            "width": 256,
+            "height": 128,
+            "rawBounds": [
+              0,
+              0,
+              256,
+              128
+            ],
+            "visible": 32768,
+            "edgePixels": 764,
+            "stride": 2,
+            "runtime": "e41753341b496174b7a67aeb9edc0a4a13e5504a7a58b88d251dbc142a4aa878",
+            "disk": "e41753341b496174b7a67aeb9edc0a4a13e5504a7a58b88d251dbc142a4aa878",
+            "source": "b88d21204559dd8951a9d6240cbf20f94eabb81a69b47af49e7106b3db75b2fd",
+            "hasManifest": true
+          },
+          "idle": {
+            "imageBox": [
+              112.55,
+              54.89
+            ],
+            "imageScreenBox": [
+              29.42,
+              656.55,
+              76.48,
+              43.13
+            ],
+            "picture": [
+              24.21,
+              653.6,
+              86.92,
+              49.02
+            ],
+            "viewport": [
+              390,
+              844,
+              1
+            ],
+            "slot": 0,
+            "hovered": false,
+            "card": [
+              12.8,
+              630.48,
+              115.9,
+              153.8
+            ],
+            "contentBeforeRotation": [
+              71.36,
+              35.68
+            ],
+            "visibleBounds": [
+              30.77,
+              659.46,
+              80.46,
+              699.4
+            ],
+            "counts": {
+              "visible": 5452,
+              "neighbor": 2740,
+              "ownClip": 0,
+              "viewport": 0,
+              "other": 0
+            },
+            "percent": 66.55,
+            "neighborPercent": 33.45,
+            "transform": {
+              "a": 0.6464393,
+              "b": -0.0679432,
+              "c": 0.0679432,
+              "d": 0.6464393
+            }
+          },
+          "hover": null,
+          "tapOrClick": {
+            "x": 67,
+            "y": 675,
+            "distance": 0.47624857622686
+          },
+          "ghost": {
+            "samples": 46,
+            "first": {
+              "source": "http://127.0.0.1:5178/src/assets/card-dust.webp",
+              "shown": true,
+              "rect": [
+                35.81,
+                635.37,
+                81.83,
+                36.57
+              ],
+              "opacity": 0.995786,
+              "ms": 0
+            },
+            "last": {
+              "source": "http://127.0.0.1:5178/src/assets/card-dust.webp",
+              "shown": true,
+              "rect": [
+                185.17,
+                323.87,
+                21.98,
+                12.02
+              ],
+              "opacity": 0.00000215619,
+              "ms": 312
+            }
+          },
+          "effect": {
+            "hpLoss": 8,
+            "blockGain": 0,
+            "ashSpent": 1,
+            "energySpent": 0
+          },
+          "result": {
+            "hp": 16,
+            "block": 0,
+            "ash": 3,
+            "status": {}
+          },
+          "pageErrors": []
+        }
+      ]
+    }
+  },
+  "positiveBash": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "before": {
+        "enemy": "moth",
+        "enemyHealth": 24,
+        "block": 5,
+        "energy": 2,
+        "underlyingId": 10,
+        "ash": 0,
+        "hand": [
+          {
+            "uid": -1,
+            "id": "bash",
+            "up": false
+          },
+          {
+            "uid": 3,
+            "id": "strike",
+            "up": false
+          },
+          {
+            "uid": 7,
+            "id": "defend",
+            "up": false
+          },
+          {
+            "uid": 2,
+            "id": "strike",
+            "up": false
+          }
+        ],
+        "turn": 1,
+        "status": {},
+        "enemyBlock": 0,
+        "screen": "combat"
+      },
+      "after": {
+        "enemy": "moth",
+        "enemyHealth": 19,
+        "block": 5,
+        "energy": 1,
+        "underlyingId": 10,
+        "ash": 0,
+        "hand": [
+          {
+            "uid": 3,
+            "id": "strike",
+            "up": false
+          },
+          {
+            "uid": 7,
+            "id": "defend",
+            "up": false
+          },
+          {
+            "uid": 2,
+            "id": "strike",
+            "up": false
+          }
+        ],
+        "turn": 1,
+        "status": {},
+        "enemyBlock": 0,
+        "screen": "combat"
+      },
+      "effect": {
+        "hpLoss": 5,
+        "blockGain": 0,
+        "ashSpent": 0,
+        "energySpent": 1
+      },
+      "asset": {
+        "id": "card-bash",
+        "width": 256,
+        "height": 128,
+        "rawBounds": [
+          0,
+          0,
+          256,
+          128
+        ],
+        "visible": 32768,
+        "edgePixels": 764,
+        "stride": 2,
+        "runtime": "2175667770896ab384c72a8f7314b0f78c475ec2b6dbf38f8e78b4ab416a23fc",
+        "disk": "2175667770896ab384c72a8f7314b0f78c475ec2b6dbf38f8e78b4ab416a23fc",
+        "source": "3d5171a536ef358cde8292928733a7cdd71497ebe8bc19182b543d081298dbb2",
+        "hasManifest": true
+      },
+      "ghostSource": "http://127.0.0.1:5178/src/assets/card-bash.webp"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "before": {
+        "enemy": "moth",
+        "enemyHealth": 24,
+        "block": 5,
+        "energy": 2,
+        "underlyingId": 10,
+        "ash": 0,
+        "hand": [
+          {
+            "uid": -1,
+            "id": "bash",
+            "up": false
+          },
+          {
+            "uid": 3,
+            "id": "strike",
+            "up": false
+          },
+          {
+            "uid": 7,
+            "id": "defend",
+            "up": false
+          },
+          {
+            "uid": 2,
+            "id": "strike",
+            "up": false
+          }
+        ],
+        "turn": 1,
+        "status": {},
+        "enemyBlock": 0,
+        "screen": "combat"
+      },
+      "after": {
+        "enemy": "moth",
+        "enemyHealth": 19,
+        "block": 5,
+        "energy": 1,
+        "underlyingId": 10,
+        "ash": 0,
+        "hand": [
+          {
+            "uid": 3,
+            "id": "strike",
+            "up": false
+          },
+          {
+            "uid": 7,
+            "id": "defend",
+            "up": false
+          },
+          {
+            "uid": 2,
+            "id": "strike",
+            "up": false
+          }
+        ],
+        "turn": 1,
+        "status": {},
+        "enemyBlock": 0,
+        "screen": "combat"
+      },
+      "effect": {
+        "hpLoss": 5,
+        "blockGain": 0,
+        "ashSpent": 0,
+        "energySpent": 1
+      },
+      "asset": {
+        "id": "card-bash",
+        "width": 256,
+        "height": 128,
+        "rawBounds": [
+          0,
+          0,
+          256,
+          128
+        ],
+        "visible": 32768,
+        "edgePixels": 764,
+        "stride": 2,
+        "runtime": "2175667770896ab384c72a8f7314b0f78c475ec2b6dbf38f8e78b4ab416a23fc",
+        "disk": "2175667770896ab384c72a8f7314b0f78c475ec2b6dbf38f8e78b4ab416a23fc",
+        "source": "3d5171a536ef358cde8292928733a7cdd71497ebe8bc19182b543d081298dbb2",
+        "hasManifest": true
+      },
+      "ghostSource": "http://127.0.0.1:5178/src/assets/card-bash.webp"
+    }
+  ],
+  "rejectedDust": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "asset": {
+        "id": "card-dust",
+        "width": 256,
+        "height": 128,
+        "rawBounds": [
+          0,
+          0,
+          256,
+          128
+        ],
+        "visible": 32768,
+        "edgePixels": 764,
+        "stride": 2,
+        "runtime": "b5a1dfd1f8d357e0ab188d0ae6ab2c4cda04d3b6bfcade798a50551b8059270e",
+        "disk": "b5a1dfd1f8d357e0ab188d0ae6ab2c4cda04d3b6bfcade798a50551b8059270e",
+        "source": "e6965be7460be48415183b9ad2f61a7abfce5e1b2207f8220771552ef7dcb293",
+        "hasManifest": true
+      },
+      "defaultArtCoverage": 92.54
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "asset": {
+        "id": "card-dust",
+        "width": 256,
+        "height": 128,
+        "rawBounds": [
+          0,
+          0,
+          256,
+          128
+        ],
+        "visible": 32768,
+        "edgePixels": 764,
+        "stride": 2,
+        "runtime": "b5a1dfd1f8d357e0ab188d0ae6ab2c4cda04d3b6bfcade798a50551b8059270e",
+        "disk": "b5a1dfd1f8d357e0ab188d0ae6ab2c4cda04d3b6bfcade798a50551b8059270e",
+        "source": "e6965be7460be48415183b9ad2f61a7abfce5e1b2207f8220771552ef7dcb293",
+        "hasManifest": true
+      },
+      "defaultArtCoverage": 66.55
+    }
+  ]
+}

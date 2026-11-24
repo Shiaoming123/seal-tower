@@ -1,0 +1,779 @@
+{
+  "seed": "gallery",
+  "sizePerViewport": [
+    49,
+    49
+  ],
+  "records": [
+    {
+      "width": 1280,
+      "naturalEncounter": {
+        "foe": "moth",
+        "at": 10,
+        "hand": [
+          "bash",
+          "defend",
+          "strike",
+          "defend",
+          "strike"
+        ]
+      },
+      "shown": 92.16,
+      "hashes": [
+        [
+          "strike",
+          "1233223d86cc705b296c261a91023acdcf26f520d0f2299d750561b45bf20236"
+        ],
+        [
+          "defend",
+          "1a100f1bcff312f84e6a68560f7eb947136895cd91691a0035c3d3416bdce377"
+        ],
+        [
+          "unison",
+          "be9f2d9edca073b549922c4f235a10e28aba345d28ed2fcc2622370ae113b3df"
+        ],
+        [
+          "twin",
+          "f82e8e05dfcda34d14b46d2272b18a2f0e45ecb50a7bba05f4ef638c16d9a44f"
+        ],
+        [
+          "riposte",
+          "57d3e37f2989cba596bbf0b285b8565e27a34723b5e2a0567bab378160715318"
+        ],
+        [
+          "gap",
+          "9b7ca1991d6abb84e16edbf3fb4fa5fc3bd331608130005bf3bea14f922e2fac"
+        ],
+        [
+          "breach",
+          "e1576c8ff11d847f21dbbf84c64624a28fac560d72010f602f0a3d63c2520978"
+        ],
+        [
+          "gather",
+          "5059ed8250e11f998a8bc3a4a2521276fb60701d05f087f529108d87be01b79c"
+        ],
+        [
+          "flurry",
+          "f15ead2df0799a94cc532327cce23ebe2b68c094ab0552cb6959ff35a0832d33"
+        ],
+        [
+          "intent",
+          "c842c881a80a214a83c654a916e94fc4085a5a3ff1c55878e9f858fcacf4f206"
+        ],
+        [
+          "cleave",
+          "729c16f8e1a7f4d298e96c04ab1dc26774b8033734fa22944f0b6920f0671096"
+        ],
+        [
+          "flow",
+          "2f077769be742ed74776855605e3b51abf7d56d6e73418348ef9b4355919f283"
+        ],
+        [
+          "gale",
+          "45072497d82eefaf106317f43857b52518d48a4754f67e14b79eafbfbd5f02b7"
+        ],
+        [
+          "sheathe",
+          "8a437d3e5d111c297b453cc692eb0f345b3bd600a25601853e8e021e8368f99e"
+        ],
+        [
+          "swordqi",
+          "c34cf344c852649c6dfc74933a76759102b6b1b0b4e5db8fef09349798d647ff"
+        ],
+        [
+          "bash",
+          "2175667770896ab384c72a8f7314b0f78c475ec2b6dbf38f8e78b4ab416a23fc"
+        ],
+        [
+          "wall",
+          "375d3b9582298eef1816c78d8ed912bc18f887bec2f8c77eb5a9d34e0c0832f4"
+        ],
+        [
+          "spikes",
+          "5caa0cc78f09d40aeb161666c59150996642e21e509d3b6addb4336d02e80098"
+        ],
+        [
+          "center",
+          "1c76274c5ddf78a57514acfd9f485b218073b69d494f5e1a7325d2e1df8790cd"
+        ],
+        [
+          "guardgoods",
+          "702019873038bbcbc86a8a0605a8b2dacbc7b38da8782c776cdfaecc1bb892fa"
+        ],
+        [
+          "ram",
+          "9e7944cd37cc78c1d15fe0ec4a7863a12a6907a9e34506cd140c4b5a4a564c2b"
+        ],
+        [
+          "rooted",
+          "1912441ef4b35d0dc6179f860ce61ac1f888de05db2bd9692da1f7c5f8efecca"
+        ],
+        [
+          "bulwark",
+          "223ab976459370644e86b9a380c541e9e0de30cd02ea941f72cee359aeccf0f3"
+        ],
+        [
+          "ironshirt",
+          "2b3d8ca94e95470478ac38ea026175ab81b48e5b179c2c1743a6457ae6b2eb8f"
+        ],
+        [
+          "hold",
+          "dc59c41d12579ef5c65c53225d078b4a3f455fcfa33bbc1307de6f0098138391"
+        ],
+        [
+          "dust",
+          "e41753341b496174b7a67aeb9edc0a4a13e5504a7a58b88d251dbc142a4aa878"
+        ],
+        [
+          "reveal",
+          "1c48e2ca3fde4ddf0d5b662e0f22afb49ce884cd5c22f4e54fc8a89d92dbe3a4"
+        ],
+        [
+          "flame",
+          "ede818891f4858bf543b3602a7e2f92c99531ebf3745e7030c7953d282e11249"
+        ],
+        [
+          "burnwick",
+          "1cd563894ba45161e9826afa59d0acf2de694cf6303e0b73cd5fa11ee5338fb1"
+        ],
+        [
+          "barter",
+          "ce8c3922c8eee20bb3b3edf2a4d17097d3fd6e65b153485b6dd12017b32d8617"
+        ],
+        [
+          "reap",
+          "fe88c1a8495a23988e247dcbc37d3fd6cf4421a945c8f9d87ec6ec92751480cd"
+        ],
+        [
+          "lamparray",
+          "d6e3ffb7e1b0b7d9675bd9098a691be7971ca948aa02a55a1a0e71a6487e4963"
+        ],
+        [
+          "stoke",
+          "2d770d97f28db630c4846815bfaa68566cf406f9138963f4a03d0023f8369a64"
+        ],
+        [
+          "ignite",
+          "ee290833215c9ca037e511e6370b61b51121923779ee5e5d6eac2494b3350ccf"
+        ],
+        [
+          "burnout",
+          "e762935ff417a04e0f440ac26feede47f73dd7d2640f46bac1232b0d3f1e9644"
+        ],
+        [
+          "fuel",
+          "ebe6f0e64046dbc20cc103f7a54ef2ad5f5b45003347124213ff081cea6d6299"
+        ],
+        [
+          "clearance",
+          "3e6a7377db02a9697988961542b030e8a0c8366d64b068a0ea256f8e9bdada14"
+        ],
+        [
+          "scatter",
+          "7c7412abb37b51cab7b77bb1331a13707c38399d0de954e9b740b457ddce9184"
+        ],
+        [
+          "principal",
+          "b6554e9981c103fd282e6f8e6a970ba515053c31d63ec41e3f152b980ec20f94"
+        ],
+        [
+          "reckon",
+          "76d6a52d2ba124d705161c23dc7ae45ad8a34361577fd05dbdc1a7cd20edc113"
+        ],
+        [
+          "bribe",
+          "a4c1cd5141d08278de973e5edfac1f73746ba8f89ed4b152d1316109dd06e604"
+        ],
+        [
+          "interest",
+          "bd719b97458ad59aa6e6fbbcc55c317b0e9fe570bdbdbbe719eb455229c76b7b"
+        ],
+        [
+          "windfall",
+          "c6d59d9a801a124cd259cc1a85e2290655248dc3ac4b0fe2323d47375d73ceba"
+        ],
+        [
+          "hoard",
+          "1060d22aae99386178ba364f906b244fdc926fab3836dbd360ce2a3262e1c112"
+        ],
+        [
+          "bandage",
+          "074a29a4efaf9b22475cfe2de64f6e8e219a83d1321142281ec40ca8b39aab9f"
+        ],
+        [
+          "breath",
+          "216f3e0ed66deea397391ec48d1d410fc7ed46f3350990bb2df7b887e91f6c95"
+        ],
+        [
+          "talisman",
+          "10f70c61ee29cb717475520f26e9f99123647e16916fb66b0d9ab09f54af9c89"
+        ],
+        [
+          "pluck",
+          "eeadce2bff8a28a75b32e153b7b527ae6e30754ccd4007110a9425b95f9f6134"
+        ],
+        [
+          "steady",
+          "1a6da24a45a45258ea82f835305803f61134e5f322d6dcde110625b7f78baec1"
+        ]
+      ],
+      "errors": {
+        "ownClip": 0,
+        "viewport": 0
+      }
+    },
+    {
+      "width": 390,
+      "naturalEncounter": {
+        "foe": "moth",
+        "at": 10,
+        "hand": [
+          "bash",
+          "defend",
+          "strike",
+          "defend",
+          "strike"
+        ]
+      },
+      "shown": 66.2,
+      "hashes": [
+        [
+          "strike",
+          "1233223d86cc705b296c261a91023acdcf26f520d0f2299d750561b45bf20236"
+        ],
+        [
+          "defend",
+          "1a100f1bcff312f84e6a68560f7eb947136895cd91691a0035c3d3416bdce377"
+        ],
+        [
+          "unison",
+          "be9f2d9edca073b549922c4f235a10e28aba345d28ed2fcc2622370ae113b3df"
+        ],
+        [
+          "twin",
+          "f82e8e05dfcda34d14b46d2272b18a2f0e45ecb50a7bba05f4ef638c16d9a44f"
+        ],
+        [
+          "riposte",
+          "57d3e37f2989cba596bbf0b285b8565e27a34723b5e2a0567bab378160715318"
+        ],
+        [
+          "gap",
+          "9b7ca1991d6abb84e16edbf3fb4fa5fc3bd331608130005bf3bea14f922e2fac"
+        ],
+        [
+          "breach",
+          "e1576c8ff11d847f21dbbf84c64624a28fac560d72010f602f0a3d63c2520978"
+        ],
+        [
+          "gather",
+          "5059ed8250e11f998a8bc3a4a2521276fb60701d05f087f529108d87be01b79c"
+        ],
+        [
+          "flurry",
+          "f15ead2df0799a94cc532327cce23ebe2b68c094ab0552cb6959ff35a0832d33"
+        ],
+        [
+          "intent",
+          "c842c881a80a214a83c654a916e94fc4085a5a3ff1c55878e9f858fcacf4f206"
+        ],
+        [
+          "cleave",
+          "729c16f8e1a7f4d298e96c04ab1dc26774b8033734fa22944f0b6920f0671096"
+        ],
+        [
+          "flow",
+          "2f077769be742ed74776855605e3b51abf7d56d6e73418348ef9b4355919f283"
+        ],
+        [
+          "gale",
+          "45072497d82eefaf106317f43857b52518d48a4754f67e14b79eafbfbd5f02b7"
+        ],
+        [
+          "sheathe",
+          "8a437d3e5d111c297b453cc692eb0f345b3bd600a25601853e8e021e8368f99e"
+        ],
+        [
+          "swordqi",
+          "c34cf344c852649c6dfc74933a76759102b6b1b0b4e5db8fef09349798d647ff"
+        ],
+        [
+          "bash",
+          "2175667770896ab384c72a8f7314b0f78c475ec2b6dbf38f8e78b4ab416a23fc"
+        ],
+        [
+          "wall",
+          "375d3b9582298eef1816c78d8ed912bc18f887bec2f8c77eb5a9d34e0c0832f4"
+        ],
+        [
+          "spikes",
+          "5caa0cc78f09d40aeb161666c59150996642e21e509d3b6addb4336d02e80098"
+        ],
+        [
+          "center",
+          "1c76274c5ddf78a57514acfd9f485b218073b69d494f5e1a7325d2e1df8790cd"
+        ],
+        [
+          "guardgoods",
+          "702019873038bbcbc86a8a0605a8b2dacbc7b38da8782c776cdfaecc1bb892fa"
+        ],
+        [
+          "ram",
+          "9e7944cd37cc78c1d15fe0ec4a7863a12a6907a9e34506cd140c4b5a4a564c2b"
+        ],
+        [
+          "rooted",
+          "1912441ef4b35d0dc6179f860ce61ac1f888de05db2bd9692da1f7c5f8efecca"
+        ],
+        [
+          "bulwark",
+          "223ab976459370644e86b9a380c541e9e0de30cd02ea941f72cee359aeccf0f3"
+        ],
+        [
+          "ironshirt",
+          "2b3d8ca94e95470478ac38ea026175ab81b48e5b179c2c1743a6457ae6b2eb8f"
+        ],
+        [
+          "hold",
+          "dc59c41d12579ef5c65c53225d078b4a3f455fcfa33bbc1307de6f0098138391"
+        ],
+        [
+          "dust",
+          "e41753341b496174b7a67aeb9edc0a4a13e5504a7a58b88d251dbc142a4aa878"
+        ],
+        [
+          "reveal",
+          "1c48e2ca3fde4ddf0d5b662e0f22afb49ce884cd5c22f4e54fc8a89d92dbe3a4"
+        ],
+        [
+          "flame",
+          "ede818891f4858bf543b3602a7e2f92c99531ebf3745e7030c7953d282e11249"
+        ],
+        [
+          "burnwick",
+          "1cd563894ba45161e9826afa59d0acf2de694cf6303e0b73cd5fa11ee5338fb1"
+        ],
+        [
+          "barter",
+          "ce8c3922c8eee20bb3b3edf2a4d17097d3fd6e65b153485b6dd12017b32d8617"
+        ],
+        [
+          "reap",
+          "fe88c1a8495a23988e247dcbc37d3fd6cf4421a945c8f9d87ec6ec92751480cd"
+        ],
+        [
+          "lamparray",
+          "d6e3ffb7e1b0b7d9675bd9098a691be7971ca948aa02a55a1a0e71a6487e4963"
+        ],
+        [
+          "stoke",
+          "2d770d97f28db630c4846815bfaa68566cf406f9138963f4a03d0023f8369a64"
+        ],
+        [
+          "ignite",
+          "ee290833215c9ca037e511e6370b61b51121923779ee5e5d6eac2494b3350ccf"
+        ],
+        [
+          "burnout",
+          "e762935ff417a04e0f440ac26feede47f73dd7d2640f46bac1232b0d3f1e9644"
+        ],
+        [
+          "fuel",
+          "ebe6f0e64046dbc20cc103f7a54ef2ad5f5b45003347124213ff081cea6d6299"
+        ],
+        [
+          "clearance",
+          "3e6a7377db02a9697988961542b030e8a0c8366d64b068a0ea256f8e9bdada14"
+        ],
+        [
+          "scatter",
+          "7c7412abb37b51cab7b77bb1331a13707c38399d0de954e9b740b457ddce9184"
+        ],
+        [
+          "principal",
+          "b6554e9981c103fd282e6f8e6a970ba515053c31d63ec41e3f152b980ec20f94"
+        ],
+        [
+          "reckon",
+          "76d6a52d2ba124d705161c23dc7ae45ad8a34361577fd05dbdc1a7cd20edc113"
+        ],
+        [
+          "bribe",
+          "a4c1cd5141d08278de973e5edfac1f73746ba8f89ed4b152d1316109dd06e604"
+        ],
+        [
+          "interest",
+          "bd719b97458ad59aa6e6fbbcc55c317b0e9fe570bdbdbbe719eb455229c76b7b"
+        ],
+        [
+          "windfall",
+          "c6d59d9a801a124cd259cc1a85e2290655248dc3ac4b0fe2323d47375d73ceba"
+        ],
+        [
+          "hoard",
+          "1060d22aae99386178ba364f906b244fdc926fab3836dbd360ce2a3262e1c112"
+        ],
+        [
+          "bandage",
+          "074a29a4efaf9b22475cfe2de64f6e8e219a83d1321142281ec40ca8b39aab9f"
+        ],
+        [
+          "breath",
+          "216f3e0ed66deea397391ec48d1d410fc7ed46f3350990bb2df7b887e91f6c95"
+        ],
+        [
+          "talisman",
+          "10f70c61ee29cb717475520f26e9f99123647e16916fb66b0d9ab09f54af9c89"
+        ],
+        [
+          "pluck",
+          "eeadce2bff8a28a75b32e153b7b527ae6e30754ccd4007110a9425b95f9f6134"
+        ],
+        [
+          "steady",
+          "1a6da24a45a45258ea82f835305803f61134e5f322d6dcde110625b7f78baec1"
+        ]
+      ],
+      "errors": {
+        "ownClip": 0,
+        "viewport": 0
+      }
+    }
+  ],
+  "revisions": [
+    {
+      "id": "burnout",
+      "width": 1280,
+      "from": {
+        "enemy": "moth",
+        "hp": 24,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "burnout",
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "to": {
+        "enemy": "moth",
+        "hp": 16,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "oldHash": "ccced1967c09b0f6b39b31c6bbf6a1209ae16b0ee7fec3ccb0c3185037eb87ca",
+      "newHash": "e762935ff417a04e0f440ac26feede47f73dd7d2640f46bac1232b0d3f1e9644",
+      "fractionVisible": 92.54
+    },
+    {
+      "id": "swordqi",
+      "width": 1280,
+      "from": {
+        "enemy": "moth",
+        "hp": 24,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "swordqi",
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "to": {
+        "enemy": "moth",
+        "hp": 16,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 2,
+        "hand": [
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "oldHash": "f11a3d9b4f77322b6ac23c8ff29a671b63570a86181edaf1dc54bfe3868d51cf",
+      "newHash": "c34cf344c852649c6dfc74933a76759102b6b1b0b4e5db8fef09349798d647ff",
+      "fractionVisible": 92.54
+    },
+    {
+      "id": "barter",
+      "width": 1280,
+      "from": {
+        "enemy": "moth",
+        "hp": 24,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "barter",
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "to": {
+        "enemy": "moth",
+        "hp": 24,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 6,
+        "ash": 2,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "oldHash": "4a138ac17c58679a4b7280f7ad92490ec8a1fc40587e35666a3fe39553807f93",
+      "newHash": "ce8c3922c8eee20bb3b3edf2a4d17097d3fd6e65b153485b6dd12017b32d8617",
+      "fractionVisible": 92.54
+    },
+    {
+      "id": "pluck",
+      "width": 1280,
+      "from": {
+        "enemy": "moth",
+        "hp": 24,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "pluck",
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "to": {
+        "enemy": "moth",
+        "hp": 19,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 1,
+        "swordQi": 0,
+        "hand": [
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "oldHash": "088c8a211ce8237eb2a68e840a86de3a4cfa663c055f87b03dd3615f3f0b1d59",
+      "newHash": "eeadce2bff8a28a75b32e153b7b527ae6e30754ccd4007110a9425b95f9f6134",
+      "fractionVisible": 92.54
+    },
+    {
+      "id": "burnout",
+      "width": 390,
+      "from": {
+        "enemy": "moth",
+        "hp": 24,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "burnout",
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "to": {
+        "enemy": "moth",
+        "hp": 16,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "oldHash": "ccced1967c09b0f6b39b31c6bbf6a1209ae16b0ee7fec3ccb0c3185037eb87ca",
+      "newHash": "e762935ff417a04e0f440ac26feede47f73dd7d2640f46bac1232b0d3f1e9644",
+      "fractionVisible": 66.55
+    },
+    {
+      "id": "swordqi",
+      "width": 390,
+      "from": {
+        "enemy": "moth",
+        "hp": 24,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "swordqi",
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "to": {
+        "enemy": "moth",
+        "hp": 16,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 2,
+        "hand": [
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "oldHash": "f11a3d9b4f77322b6ac23c8ff29a671b63570a86181edaf1dc54bfe3868d51cf",
+      "newHash": "c34cf344c852649c6dfc74933a76759102b6b1b0b4e5db8fef09349798d647ff",
+      "fractionVisible": 66.55
+    },
+    {
+      "id": "barter",
+      "width": 390,
+      "from": {
+        "enemy": "moth",
+        "hp": 24,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "barter",
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "to": {
+        "enemy": "moth",
+        "hp": 24,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 6,
+        "ash": 2,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "oldHash": "4a138ac17c58679a4b7280f7ad92490ec8a1fc40587e35666a3fe39553807f93",
+      "newHash": "ce8c3922c8eee20bb3b3edf2a4d17097d3fd6e65b153485b6dd12017b32d8617",
+      "fractionVisible": 66.55
+    },
+    {
+      "id": "pluck",
+      "width": 390,
+      "from": {
+        "enemy": "moth",
+        "hp": 24,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 0,
+        "swordQi": 0,
+        "hand": [
+          "pluck",
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "to": {
+        "enemy": "moth",
+        "hp": 19,
+        "playerHp": 54,
+        "turn": 1,
+        "sideBurn": 4,
+        "block": 0,
+        "ash": 3,
+        "harvest": 1,
+        "swordQi": 0,
+        "hand": [
+          "strike",
+          "defend",
+          "gap",
+          "intent"
+        ]
+      },
+      "oldHash": "088c8a211ce8237eb2a68e840a86de3a4cfa663c055f87b03dd3615f3f0b1d59",
+      "newHash": "eeadce2bff8a28a75b32e153b7b527ae6e30754ccd4007110a9425b95f9f6134",
+      "fractionVisible": 66.55
+    }
+  ]
+}
