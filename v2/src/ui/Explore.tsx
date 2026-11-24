@@ -290,7 +290,7 @@ export function Explore() {
           </div>
         )}
         {onStairs && <StairsPrompt />}
-        {!showTip && !omenOpen && !onStairs && <ConceptTip ids={["oil", "omen", "order"]} />}
+        {!showTip && !omenOpen && !onStairs && <ConceptTip ids={["oil", "omen", "order"]} float />}
         {omenOpen && (
           <div class={`omen-card ${nudge ? "nudge" : ""}`} key={`omen-${nudge}`}>
             <span class="omen-tag">本层签文</span>

@@ -280,13 +280,14 @@ export function TermPopover() {
 }
 
 /** First time an idea matters on this screen, explain it once: the first of `ids` not yet seen, with 「知道了」. */
-export function ConceptTip({ ids }: { ids: TermId[] }) {
+// `float` pins it over a 3D view (explore, combat); in normal flow it would sit under the canvas.
+export function ConceptTip({ ids, float }: { ids: TermId[]; float?: boolean }) {
   const [, force] = useState(0);
   const id = ids.find((x) => !seenTip(`term:${x}`));
   if (!id) return null;
   const term = TERMS[id];
   return (
-    <div class="concept-tip">
+    <div class={`concept-tip ${float ? "float" : ""}`}>
       <span class="ct-badge">新概念</span>
       <b>{term.name}</b>
       <p>{term.short}</p>

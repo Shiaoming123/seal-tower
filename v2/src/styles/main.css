@@ -924,6 +924,10 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .concept-tip b { color: var(--gold); font-family: var(--font-title); font-size: 16px; }
 .concept-tip p { margin: 0; flex: 1 1 100%; }
 .concept-tip .btn { margin-left: auto; }
+/* Over a 3D view the tip floats where the 知道了 tips sit (same layer as .tip). */
+.concept-tip.float { position: absolute; left: 16px; top: 16px; max-width: 460px; z-index: 6; }
+.combat .concept-tip.float { top: auto; bottom: 280px; }
+.portrait .combat .concept-tip.float { bottom: 480px; }
 .ct-badge { font-size: 11px; color: #1b0f0c; background: var(--gold); border-radius: 3px; padding: 0 5px; letter-spacing: 1px; }
 .det-cards { display: flex; flex-direction: column; gap: 2px; font-size: 13px; color: #2f4f78; }
 .det-label { color: #5a4630; font-size: 12px; }

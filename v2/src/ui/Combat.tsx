@@ -381,7 +381,7 @@ export function Combat() {
         {banner && <div class="banner" key={banner}>{banner}</div>}
         {slash > 0 && <div class={`slash s${slash % 3}`} key={`slash${slash}`} />}
         {floaters.map((f) => <span class={`floater ${f.kind}`} key={f.id} style={{ left: `${f.x}%`, top: `${f.y}%` }}>{f.text}</span>)}
-        {seenTip(tipId) && <ConceptTip ids={["intent", "block", ...(def.harvest ? ["harvest" as const] : []), ...(c.kind === "elite" ? ["elite" as const] : []), ...(c.kind === "guardian" ? ["guardian" as const] : []), ...(c.turn >= RAMP_TURN - 2 ? ["ramp" as const] : [])]} />}
+        {seenTip(tipId) && <ConceptTip ids={["intent", "block", ...(def.harvest ? ["harvest" as const] : []), ...(c.kind === "elite" ? ["elite" as const] : []), ...(c.kind === "guardian" ? ["guardian" as const] : []), ...(c.turn >= RAMP_TURN - 2 ? ["ramp" as const] : [])]} float />}
         {!seenTip(tipId) && (
           <div class="tip combat-tip">
             <p>{tips[tipId]}</p>
