@@ -111,7 +111,7 @@ export function RelicRow({ relics }: { relics: string[] }) {
 /** How a good is presented when you get it: plain, good (blue) or rare (gold), by its value. */
 export function goodTier(id: GoodId): "plain" | "good" | "rare" {
   const p = GOODS[id].price;
-  return p >= 9 ? "rare" : p >= 5 ? "good" : "plain";
+  return p >= 8 ? "rare" : p >= 5 ? "good" : "plain";
 }
 
 /** One framed loot slot: icon, count, name. Used by the reward screen and the goods reveal. */

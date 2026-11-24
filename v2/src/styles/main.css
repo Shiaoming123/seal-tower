@@ -251,7 +251,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .chip.bad { background: #6a2a8a; }
 
 /* ---------------------------------------------------------------- explore */
-.view3d { display: block; width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; image-rendering: crisp-edges; }
+.view3d { display: block; width: 100%; height: 100%; object-fit: cover; image-rendering: auto; } /* walls are already upscaled blocky inside the canvas (UI-010) */
 .explore { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 320px; grid-template-rows: 1fr 76px; gap: 10px; padding: 10px; }
 .explore .viewport { position: relative; grid-row: 1; grid-column: 1; border: 2px solid var(--gold-dim); border-radius: 4px; overflow: hidden; background: #000; box-shadow: 0 0 0 4px #160c09, 0 8px 24px rgba(0, 0, 0, 0.7); }
 .explore .side { grid-row: 1 / 3; grid-column: 2; display: flex; flex-direction: column; gap: 10px; }
@@ -732,7 +732,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 
 /* ---------------------------------------------------------------- GAME-007: goods reveal */
 .reveal { position: absolute; inset: 0; z-index: 40; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
-  background: radial-gradient(ellipse at 50% 45%, rgba(40, 20, 10, 0.82), rgba(5, 2, 1, 0.94)); animation: reveal-in 0.25s ease-out; cursor: pointer; }
+  background: radial-gradient(ellipse at 50% 45%, rgba(40, 20, 10, 0.93), rgba(5, 2, 1, 0.97)); animation: reveal-in 0.25s ease-out; cursor: pointer; }
 @keyframes reveal-in { from { opacity: 0; } }
 .reveal-title { margin: 0; font-family: var(--font-title); font-weight: normal; font-size: 32px; letter-spacing: 6px; color: #f6dc98; text-shadow: 0 2px 0 #3a1406, 0 0 14px rgba(240, 180, 80, 0.4); }
 .reveal-row { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; perspective: 900px; }
@@ -812,3 +812,6 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .ware.armed::after, .item-ware.armed::after { top: auto; bottom: -4px; transform: translate(-50%, 100%); }
 .sell-info { grid-column: 1 / -1; width: 100%; }
 .sell-hint { grid-column: 1 / -1; margin: 0; font-size: 12px; }
+/* Keep the ware details inside the scrolling shelf: the first ware's card opens to the right, the last one's to the left. */
+.wares > :first-child .ware-info { left: 0; transform: none; }
+.wares > :last-child .ware-info { left: auto; right: 0; transform: none; }
