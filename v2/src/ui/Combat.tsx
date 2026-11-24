@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "preact/hooks";
 import { sfx } from "../audio/sfx";
 import { setIntensity } from "../audio/music";
 import { creatureCall } from "../audio/voices";
+import { CARDS } from "../data/cards";
 import { ENEMIES } from "../data/enemies";
 import { GOODS } from "../data/goods";
 import { type CombatEvent, type PlayPreview, blockedReason, endTurn, enemyHitDamage, incomingDamage, playCard, previewFor, simulatePlay, stealTarget } from "../game/combat";
@@ -188,10 +189,12 @@ export function Combat() {
           void flash(e.amount > 0 ? "enemy-hit" : "enemy-hit guarded", 200);
         } else {
           if (e.amount > 0) { sfx.hurt(); float(`-${e.amount}`, "hurt", "player"); fxLayer.pulse("200,30,20", Math.min(0.45, 0.15 + e.amount / 40)); void flash("player-hit", 300); }
-          if (e.blocked) { sfx.block(); float(`挡住 ${e.blocked}`, "blocked", "player"); }
+          // A whole attack stopped is worth a moment of its own.
+          if (e.blocked && !e.amount) { sfx.parry(); float("全挡住！", "parry", "player"); fxLayer.pulse("120,190,255", 0.22); }
+          else if (e.blocked) { sfx.block(); float(`挡住 ${e.blocked}`, "blocked", "player"); }
         }
         await wait(170);
-      } else if (e.t === "block") { if (e.target === "player") float(`+${e.amount} 格挡`, "block", "player"); else float(`+${e.amount} 格挡`, "block", "enemy"); }
+      } else if (e.t === "block") { if (e.target === "player") { sfx.guard(); float(`+${e.amount} 格挡`, "block", "player"); } else float(`+${e.amount} 格挡`, "block", "enemy"); }
       else if (e.t === "status" && e.id === "burn" && e.n < 0) { sfx.burn(); }
       else if (e.t === "status") float(`${e.n > 0 ? "" : ""}${statusName(e.id)} ${e.n}`, e.target === "enemy" ? "status" : "status-self", e.target);
       else if (e.t === "steal") {
@@ -242,10 +245,17 @@ export function Combat() {
     if (reason) { say(reason); return; }
     busy.current = true;
     setBanner(""); // the encounter / last-move banner sits where the damage numbers land
+    const def = CARDS[card.id];
     sfx.card();
+    if (def.type === "power") sfx.power(); else if (def.type === "skill") sfx.turn();
     flyCard(i);
+    const attacks0 = c.attacksThisTurn;
+    const weak = !!ENEMIES[c.enemy.id].weakTo && !!def.tags?.some((t) => t === ENEMIES[c.enemy.id].weakTo);
     const res = playCard(run, i);
     commit();
+    // Chains: the 2nd, 3rd… attack in a turn gets a climbing note and a 「连击」 floater; hitting a weakness says so.
+    if (def.type === "attack" && c.attacksThisTurn > attacks0 && c.attacksThisTurn >= 2) { sfx.combo(c.attacksThisTurn); float(`连击 ×${c.attacksThisTurn}`, "combo", "enemy"); }
+    if (weak && res.events.some((e) => e.t === "hit" && e.target === "enemy" && e.amount > 0)) float("怕火！", "warn", "enemy");
     await show(res.events);
     busy.current = false;
     commit();

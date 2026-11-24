@@ -103,6 +103,18 @@ export const sfx = {
   turn: () => { const s = fx(0.1); if (!s) return; woodblock(s.d, s.t, 0.08); },
   /** Harvest succeeded: a bright pipa chime. */
   harvest: () => { const s = fx(0.35); if (!s) return; pluck(s.d, s.t, 784, 0.35, "pipa"); pluck(s.d, s.t + 0.09, 1175, 0.3, "pipa"); },
+  /** Raising a guard: a dull wooden knock with a low thud under it (gaining block, before anything hits it). */
+  guard: () => { const s = fx(0.15); if (!s) return; woodblock(s.d, s.t, 0.09); osc(s.d, s.t, { freq: 150, slideTo: 90, dur: 0.12, vol: 0.18, type: "triangle" }); },
+  /** A whole attack stopped by your block: the clang plus a bright ring. */
+  parry: () => {
+    const s = fx(0.3); if (!s) return;
+    metal(s.d, s.t, rand(700, 760), [[1, 0.14, 0.9], [2.76, 0.08, 0.6], [5.4, 0.04, 0.4]]);
+    noiseHit(s.d, s.t, { dur: 0.04, vol: 0.2, f0: 5000, q: 1 });
+  },
+  /** The n-th attack in one turn: a pipa note that climbs with every hit of the chain. */
+  combo: (n: number) => { const s = fx(0.3); if (!s) return; const st = [0, 2, 4, 7, 9, 12][Math.min(5, n - 2)] ?? 12; pluck(s.d, s.t, 523 * Math.pow(2, st / 12), 0.3, "pipa"); },
+  /** A power card: a soft low pluck that hangs. */
+  power: () => { const s = fx(0.3); if (!s) return; pluck(s.d, s.t, 262, 0.4, "guqin"); pluck(s.d, s.t + 0.12, 392, 0.3, "guqin"); },
   /** Oil drained / ash eaten: a bubbling gulp. */
   drain: () => { const s = fx(0.1); if (!s) return; for (let i = 0; i < 3; i++) osc(s.d, s.t + i * 0.06, { freq: rand(300, 500), slideTo: rand(700, 900), dur: 0.06, vol: 0.06 }); },
   /** A fragile good cracks: a sharp tick and a falling glassy ring. */

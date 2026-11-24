@@ -794,3 +794,5 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .pause-sound { display: flex; justify-content: center; align-items: center; gap: 10px; color: #c8b090; font-size: 14px; }
 .btn.danger { background: linear-gradient(#a03020, #6a1810); border-color: #ff9a7a; color: #fff0e0; }
 .menu-btn kbd { margin-left: 4px; }
+.floater.combo { color: #ffd770; font-size: 26px; text-shadow: 0 0 10px rgba(255, 170, 60, 0.9), 2px 2px 0 #5a1a08; }
+.floater.parry { color: #bfe6ff; font-size: 30px; text-shadow: 0 0 12px rgba(120, 190, 255, 0.95), 2px 2px 0 #0a2040; }
