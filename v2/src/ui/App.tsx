@@ -17,7 +17,7 @@ import { Result } from "./Result";
 import { Achievements, Help, Title, Town } from "./Title";
 import { Codex } from "./Codex";
 import { Bar, GoodChip, RelicRow } from "./parts";
-import { commit, overlay, page, profileSig, runSig, say, tick, toast, useRun } from "./store";
+import { canRestartFight, commit, overlay, page, profileSig, restartFight, runSig, say, tick, toast, useRun } from "./store";
 
 /** Fixed-size stage scaled to fit the window, so nothing reflows or jumps while playing. */
 function useStage() {
@@ -82,6 +82,7 @@ function Game() {
       </div>
       {overlay.value === "bag" && <BagOverlay />}
       {overlay.value === "deck" && <DeckOverlay />}
+      {overlay.value === "pause" && <PauseMenu />}
       {run.cardPick && <CardPicker />}
     </div>
   );
@@ -122,6 +123,7 @@ function Hud() {
         <button type="button" class={`btn small ${pending ? "alert" : ""}`} onClick={() => toggle("bag")}>行囊{pending ? ` · ${pending} 件没装` : ""} <kbd>B</kbd></button>
         <button type="button" class="btn small" onClick={() => toggle("deck")}>牌组 {run.deck.length} <kbd>C</kbd></button>
         <SoundButton />
+        <button type="button" class="btn small menu-btn" onClick={() => { sfx.click(); overlay.value = overlay.value === "pause" ? null : "pause"; }}>菜单 <kbd>Esc</kbd></button>
       </div>
     </header>
   );
@@ -138,10 +140,37 @@ export function useOverlayKeys() {
       const k = e.key.toLowerCase();
       if (k === "b") overlay.value = overlay.value === "bag" ? null : "bag";
       else if (k === "c") overlay.value = overlay.value === "deck" ? null : "deck";
-      else if (k === "escape") overlay.value = null;
+      else if (k === "escape" && !e.defaultPrevented) overlay.value = overlay.value ? null : "pause";
     };
     window.addEventListener("keydown", onKey);
   }, []);
+}
+
+/** Pause: carry on, restart the current fight, or save and go back to the title (the run is saved on every step). */
+function PauseMenu() {
+  const run = useRun();
+  const [sure, setSure] = useState<null | "restart" | "title">(null);
+  const close = () => { sfx.click(); overlay.value = null; };
+  const ask = (what: "restart" | "title", act: () => void) => { if (sure !== what) { sfx.click(); setSure(what); return; } act(); };
+  return (
+    <div class="overlay pause-overlay" onClick={(e) => { if (e.target === e.currentTarget) close(); }}>
+      <div class="pause-box panel">
+        <h2 class="plaque">暂停</h2>
+        <p class="muted">{FLOOR_NAMES[run.floor]} · 气血 {run.hp}/{run.maxHp} · {run.gold} 石</p>
+        <button type="button" class="btn big primary" onClick={close}>继续</button>
+        {canRestartFight() && (
+          <button type="button" class={`btn big ${sure === "restart" ? "danger" : ""}`} onClick={() => ask("restart", () => { sfx.click(); restartFight(); })}>
+            {sure === "restart" ? "再点一下：回到这场战斗开始时重打" : "重新开战"}
+          </button>
+        )}
+        <button type="button" class={`btn big ${sure === "title" ? "danger" : ""}`} onClick={() => ask("title", () => { sfx.click(); commit(); overlay.value = null; page.value = "title"; })}>
+          {sure === "title" ? "再点一下：存档并回主菜单" : "存档并回主菜单"}
+        </button>
+        <p class="muted pause-note">进度每走一步都会自动保存，回主菜单后点「继续上一趟」接着玩。{canRestartFight() ? "重新开战会回到这场战斗的第一回合，手牌也一样。" : ""}</p>
+        <div class="pause-sound"><span>声音</span><SoundButton /></div>
+      </div>
+    </div>
+  );
 }
 
 export const orderTitle = (id: string) => `${ORDERS[id].client}：${ORDERS[id].title}`;

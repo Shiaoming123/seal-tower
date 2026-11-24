@@ -258,14 +258,15 @@ export function Explore() {
       if (overlay.value || run.cardPick) return;
       const k = e.key.toLowerCase();
       if (omenOpenNow() && (k === "enter" || k === " " || k === "escape")) { e.preventDefault(); closeOmen(); return; }
-      if (k === "escape" || k === " ") { e.preventDefault(); stopWalk(); return; }
+      // Esc stops an auto-walk; otherwise it is left for the pause menu (App).
+      if (k === " " || (k === "escape" && walking)) { e.preventDefault(); stopWalk(); return; }
       if (k === "w" || k === "arrowup") { e.preventDefault(); void move(); }
       else if (k === "s" || k === "arrowdown") { e.preventDefault(); void move(true); }
       else if (k === "a" || k === "arrowleft" || k === "q") { e.preventDefault(); void turn(-1); }
       else if (k === "d" || k === "arrowright" || k === "e") { e.preventDefault(); void turn(1); }
     };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    window.addEventListener("keydown", onKey, true); // capture: runs before the global pause key
+    return () => window.removeEventListener("keydown", onKey, true);
   }, [run, omenOpen, walking]);
 
   const here = entityAt(run.dungeon, run.pos.x, run.pos.y);

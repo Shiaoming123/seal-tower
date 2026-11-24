@@ -784,3 +784,13 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .pv-chip.muted { background: #2a2420; color: #b8a890; }
 .pv-chip.status { background: #3a2a50; color: #e0d0ff; }
 .pv-block { display: block; margin-top: 2px; font-size: 13px; color: #9ad0ff; }
+
+/* ---------------------------------------------------------------- UI-009: pause menu */
+.pause-overlay { z-index: 60; }
+.pause-box { width: 420px; max-width: 92%; display: flex; flex-direction: column; align-items: stretch; gap: 10px; padding: 18px 28px 20px; text-align: center; }
+.pause-box .plaque { align-self: center; font-size: 34px; margin-bottom: 4px; }
+.pause-box > p { margin: 0; }
+.pause-note { font-size: 13px; line-height: 1.5; }
+.pause-sound { display: flex; justify-content: center; align-items: center; gap: 10px; color: #c8b090; font-size: 14px; }
+.btn.danger { background: linear-gradient(#a03020, #6a1810); border-color: #ff9a7a; color: #fff0e0; }
+.menu-btn kbd { margin-left: 4px; }

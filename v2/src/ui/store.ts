@@ -30,7 +30,19 @@ export const page = signal<"title" | "town" | "game" | "help" | "achievements" |
 /** 每日签: the next run uses today's shared seed. */
 export const dailyMode = signal(false);
 export const today = () => { const d = new Date(); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; };
-export const overlay = signal<null | "bag" | "deck" | "map">(null);
+export const overlay = signal<null | "bag" | "deck" | "map" | "pause">(null);
+
+/** The run as it was when the current fight began, for 「重新开战」 in the pause menu. Kept in memory only. */
+let fightStart: RunState | null = null;
+export const rememberFight = (run: RunState) => { fightStart = structuredClone(run); };
+export const forgetFight = () => { fightStart = null; };
+export const canRestartFight = () => !!fightStart && !!runSig.value?.combat;
+export function restartFight() {
+  if (!fightStart) return;
+  runSig.value = structuredClone(fightStart);
+  overlay.value = null;
+  commit();
+}
 export const toast = signal<{ text: string; id: number } | null>(null);
 
 export function savedRun(): RunState | null {

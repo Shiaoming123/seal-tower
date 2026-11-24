@@ -14,7 +14,7 @@ import { VIEW_H, VIEW_W } from "../render/raycaster";
 import { fx as fxLayer } from "../render/fx";
 import { enemyStage, useView, view } from "./Explore";
 import { Bar, CardView, Statuses } from "./parts";
-import { commit, markTip, overlay, runSig, say, seenTip, useRun } from "./store";
+import { commit, forgetFight, markTip, overlay, rememberFight, runSig, say, seenTip, useRun } from "./store";
 
 interface Floater { id: number; text: string; kind: string; x: number; y: number }
 let floaterId = 0;
@@ -91,6 +91,8 @@ export function Combat() {
   const headRef = useRef<HTMLDivElement>(null);
   const anchorPt = useRef({ x: 50, y: 34 });
   const anchorPx = useRef({ x: 0, y: 0 });
+  // Remember the fight as it began, for 「重新开战」 (the snapshot includes the rng, so the same hand comes up).
+  useEffect(() => { rememberFight(runSig.value!); return () => forgetFight(); }, []);
   useEffect(() => {
     // Pull the camera back and tilt it down so the whole monster stands on the floor above your hand.
     const r0 = runSig.value!;
