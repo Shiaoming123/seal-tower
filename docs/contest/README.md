@@ -20,13 +20,13 @@
 | 1 | 报名构想帖 | ✅ 11-24 已发布在小红书 | 已完成 | [报名构想帖-v2.md](报名构想帖-v2.md) · [发帖步骤.md](发帖步骤.md) · 配图 [media/post/](media/post/) |
 | 2 | 帖子封面和配图 | ✅ 11-24 你确认了新封面，已替换 `media/cover-*.jpg` 和 `media/post/` 的 7 张图（实机图从新视频重截）。帖子本身用的仍是旧封面 | 你决定要不要给帖子换图（建议等报名审核通过后再说） | [media/](media/) · [封面预审记录](media/cover-review/README.md) |
 | 2b | 宣传主视觉（重画） | ✅ Codex 交付无字图（ART-011），Claude 审图加字（CONTEST-002），你已确认 | 已完成 | [宣传美术需求](宣传美术需求.md) · [无字图](media/promo/) · [加字稿](media/cover-review/) |
-| 3 | 报名审核 | ⏳ **11-24 已提交报名，待审核**。小红书帖子已公开（[链接](https://xhslink.cn/o/ABLiArehEAG)，含 5 个话题、@Qoder CN、@魔搭ModelScope社区，带「含 AI 生成内容」声明） | 主办方审核；**你**：留意审核结果，被退回就按理由改帖再交 | 官网报名页显示「您已报名」（截图含真实姓名，不进公开仓库） |
+| 3 | 报名审核 | ✅ **已通过**（11-24 晚在官网报名页查到「审核已通过，现在可以正常提交作品」）。小红书帖子已公开（[链接](https://xhslink.cn/o/ABLiArehEAG)，含 5 个话题、@Qoder CN、@魔搭ModelScope社区，带「含 AI 生成内容」声明） | 已完成 | 官网报名页（截图含真实姓名，不进公开仓库） |
 | 4 | 创空间部署包 | ✅ 已生成（含新素材、新封面和界面修复，5.4 MB），本地 iframe 三项验收通过 | 我们已做 | `cd v2 && npm run pack:studio` → `v2/dist-studio/`、`v2/dist-studio.zip` |
 | 5 | 创空间上线 | ✅ 11-24 已建、部署并**公开**：https://modelscope.cn/studios/Shiaoming/zhanyaota （Static、免费 CPU、MIT、封面为横版主视觉；网页上传扁平包 201 个文件） | Claude 经你同意代为操作 | [创空间上传步骤.md](创空间上传步骤.md) |
 | 6 | 上线后检查 | ✅ 公开后用未登录浏览器测过：桌面、iPhone 13、Pixel 7 都能打开、进塔、用方向键走路，0 报错；手机 UA 下魔搭自动切手机版页面，游戏铺满屏幕用竖屏布局。**11-24 晚重新上传并部署**（空间提交 `0e68aa20`，含 iPhone 标题修复、手机两步出牌 UI-005、套装调参 GAME-006），未登录 iPhone 13 复验：标题一行、两步出牌正常且选中牌压在提示之上、`?playtest=1` 直链结算页有「复制本局试玩记录」；线上 4 个变更文件哈希和包一致。唯一的报错来自魔搭手机页自己的脚本（`g.alicdn.com/sail-web/maas`），游戏框内 0 报错 | Claude | 同上第 4 节 · 截图 [media/live-check/](media/live-check/) |
 | 7 | 创作手记 | ✅ **11-24 已发布**：https://www.modelscope.cn/posts/438827 （专题 AI+赛事，标签 多模态模型AIGC，封面横版主视觉，关联创空间 zhanyaota；5 张图、3 张表、文末嵌演示视频；未登录可打开） | 你确认后 Claude 代发 | [创作手记-v2草稿.md](创作手记-v2草稿.md) |
 | 8 | 演示视频 | ✅ 已嵌入手记（上传版压成 1280×720、8 MB，因为上传工具单次上限 10 MB） | 已完成 | `media/demo.mp4` |
-| 9 | 官网最终提交 | ⏳ 待做（报名审核通过后） | **你**：在 https://mseo-ai-inf.ms.show/submit 填创空间链接 https://modelscope.cn/studios/Shiaoming/zhanyaota 和手记链接 https://www.modelscope.cn/posts/438827 | — |
+| 9 | 官网最终提交 | ⏳ **可以提交了**（报名已通过） | **你**：在 https://mseo-ai-inf.ms.show/submit 填创空间链接 https://modelscope.cn/studios/Shiaoming/zhanyaota 和手记链接 https://www.modelscope.cn/posts/438827 | — |
 | 10 | 评审期维持可玩 | ⏳ 12-02 至 12-06 | 你：别删空间、别改私有 | — |
 | 11 | 创空间首页精选申请 | ✅ 11-24 已发邮件到 contact@modelscope.cn（用户 163 邮箱） | 等魔搭回复；有回复告诉 Claude | [首页精选申请邮件.md](首页精选申请邮件.md) |
 
@@ -47,7 +47,7 @@
 
 ## 你要做的事（按时间排）
 
-1. ~~发帖、报名~~：11-24 已完成，等审核。审核通过后官网才能提交作品。
+1. ~~发帖、报名~~：11-24 已完成，当晚审核通过。
 2. ~~建创空间、上传~~：11-24 已完成（非公开），地址 https://modelscope.cn/studios/Shiaoming/zhanyaota 。**待你决定何时改公开**；改公开后我们再测一遍未登录和手机。
 3. ~~发手记~~：11-24 已发布 https://www.modelscope.cn/posts/438827 （含演示视频）。
 4. **11-30 前：** 在提交页填两个链接，截图留底，把截图或回执放进仓库（`docs/contest/media/`），清单这一项改成已完成。
