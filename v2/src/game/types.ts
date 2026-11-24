@@ -97,6 +97,8 @@ export interface CombatState {
   stolen: GoodId[];
   /** Guaranteed extra drop on kill (挑材). */
   harvest: number;
+  /** 挑材 already counted this fight. */
+  plucked?: boolean;
   drawBonusNext: number;
   purseUsed: boolean;
   over: null | "win" | "lose" | "fled";

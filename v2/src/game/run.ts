@@ -152,6 +152,15 @@ export function openEntity(run: RunState, e: Entity): boolean {
 
 // ---------------------------------------------------------------- combat outcome
 
+/** 负钟君 pays this much: the top of the tower used to pay nothing, so climbing it lost money (REVIEW-001). */
+export const BELL_GOLD = 60;
+/** 算盘 earns this much more per won fight: the coin weapon's cards spend coin you could otherwise carry home. */
+export const ABACUS_WIN_GOLD = 2;
+/** What you carry home is multiplied by how far you got: clearing more floors must be worth more than going home early. */
+export const CARRY_MULT = [1, 1, 1.2, 1.6];
+/** Each difficulty level adds this much to what you carry home. */
+export const CARRY_DIFFICULTY_BONUS = 0.15;
+
 export function winCombat(run: RunState) {
   const c = run.combat!;
   const e = currentEntity(run)!;
@@ -169,11 +178,14 @@ export function winCombat(run: RunState) {
   if (has(run, "lamp")) goods.push("ash");
   if (has(run, "lamp-fine")) goods.push("ash");
   if (run.omen === "horde" && c.kind === "fight") goods.push(def.drops[0].good);
-  if (has(run, "fangcharm")) run.hp = Math.min(run.maxHp, run.hp + 4);
+  if (has(run, "fangcharm")) run.hp = Math.min(run.maxHp, run.hp + 3); // REVIEW-001: 4 → 3
   // Normal fights sometimes drop a piece of basic gear; elites always drop tier-2 gear or better.
   const gearPool = GEAR_IDS.filter((id) => !["sword", "shield", "lamp"].includes(id));
   if (c.kind === "fight" && chance(c.rng, 0.3)) goods.push(pick(c.rng, gearPool.filter((id) => GOODS[id].tier === 1)));
-  if (c.kind === "elite") goods.push(pick(c.rng, gearPool.filter((id) => GOODS[id].tier === 2)));
+  // Elites (REVIEW-001): on floor 3 the reward turns into money and valuables to carry home, since a relic or gear
+  // there only helps for one more fight. (Floor 1's elite keeps its gear but hits harder, see FLOOR_SPAWNS.)
+  if (c.kind === "elite" && run.floor < 3) goods.push(pick(c.rng, gearPool.filter((id) => GOODS[id].tier === 2)));
+  if (c.kind === "elite" && run.floor === 3) goods.push("token", "rubbing");
   if (def.harvest) {
     if (def.harvest.got(c)) {
       if (def.harvest.good === "stolen") { flag(run, "recover"); goods.push(...c.stolen); note += ` 追回了被抢的${c.stolen.map((g) => GOODS[g].name).join("、")}。`; }
@@ -182,7 +194,6 @@ export function winCombat(run: RunState) {
         note += ` 取材成功：多拿到${GOODS[def.harvest.good].name}。`;
         if (def.harvest.good === "token") flag(run, "token");
         if (run.omen === "bloodmoon") goods.push(def.harvest.good);
-        if (bag.tagLevel(run.bag, "material") >= 2) { goods.push(def.harvest.good); note += " 妖材凑齐了六件，又多割下一份。"; }
         if (has(run, "butcher")) { goods.push(def.harvest.good); run.gold += 5; run.stats.goldEarned += 5; note += " 庖丁刀又多割下一份，外加 5 石。"; }
       }
       run.stats.harvests++;
@@ -198,12 +209,17 @@ export function winCombat(run: RunState) {
     discover(run, "g:" + r.into);
   }
   if (c.stolen.length && def.harvest?.good !== "stolen") note += ` 被抢走的${c.stolen.map((g) => GOODS[g].name).join("、")}被它毁了。`;
-  const gold = (c.kind === "guardian" && run.floor === 3 ? 0 : int(c.rng, def.gold[0], def.gold[1]))
-    + (run.omen === "fog" ? 6 : 0) + (run.omen === "patrol" && c.kind === "elite" ? 20 : 0);
+  if (has(run, "sealbag") && c.stolen.length) { goods.push(...c.stolen); note += ` 封口锦囊：抢走的${c.stolen.map((g) => GOODS[g].name).join("、")}拿回来了。`; }
+  const gold = (c.kind === "guardian" && run.floor === 3 ? BELL_GOLD : int(c.rng, def.gold[0], def.gold[1]))
+    + (run.omen === "fog" ? 6 : 0) + (run.omen === "patrol" && c.kind === "elite" ? 20 : 0)
+    + (c.kind === "elite" && run.floor === 3 ? 40 : 0)
+    + (has(run, "abacus") ? ABACUS_WIN_GOLD : 0)
+    + (bag.tagLevel(run.bag, "material") >= 2 ? 3 : 0)
+    + (has(run, "sealbag") ? c.goldStolen : 0);
   const reward: RewardState = {
     gold, goods, from: c.kind, note: note.trim(),
     cards: cardChoices(run, c.kind === "fight" ? "normal" : "elite"),
-    relic: c.kind === "elite" ? randomRelic(run, "common") : null,
+    relic: c.kind === "elite" && run.floor < 3 ? randomRelic(run, "common") : null,
     relicChoices: c.kind === "guardian" && run.floor < 3 ? pickRelics(run, 3) : null,
   };
   run.combat = null;
@@ -534,6 +550,7 @@ export function goHome(run: RunState) {
 }
 
 export function floorsCleared(run: RunState) {
+  if (run.outcome === "win") return 3;
   const beatGuardian = run.dungeon.entities.some((e) => e.kind === "stairs");
   return run.floor - 1 + (beatGuardian ? 1 : 0);
 }
@@ -568,9 +585,12 @@ export function settle(run: RunState): { renown: number; lines: string[]; carrie
   // 妖材 set: each 妖材 is worth 2 more in town too, not only at the 狐市.
   const materialBonus = bag.tagLevel(run.bag, "material") >= 1 ? 2 * carriedIds.filter((id) => GOODS[id].tags?.includes("material")).length : 0;
   const goodsValue = carriedIds.reduce((s, id) => s + townValue(id), 0) + materialBonus;
-  const carried = alive ? run.gold + goodsValue : 0;
+  // Further up and harder pays more (REVIEW-001): ×1 for one floor, ×1.2 for two, ×1.6 for the top, +15% per difficulty.
+  const mult = CARRY_MULT[Math.min(3, cleared)] * (1 + CARRY_DIFFICULTY_BONUS * run.difficulty);
+  const carried = alive ? Math.round((run.gold + goodsValue) * mult) : 0;
+  const multLine = mult > 1 ? `${cleared >= 3 ? "登顶" : `打通 ${cleared} 层`}${run.difficulty ? `、难度 ${run.difficulty}` : ""}：库银 ×${mult.toFixed(2).replace(/\.?0+$/, "")}` : null;
   const carriedLines = alive
-    ? [`身上的石 ${run.gold}`, `行囊里的东西折价 ${goodsValue}${materialBonus ? `（妖材凑齐，多算 ${materialBonus}）` : ""}`]
+    ? [`身上的石 ${run.gold}`, `行囊里的东西折价 ${goodsValue}${materialBonus ? `（妖材凑齐，多算 ${materialBonus}）` : ""}`, ...(multLine ? [multLine] : [])]
     : [`倒在塔里，身上的 ${run.gold} 石和行囊里值 ${goodsValue} 石的东西都丢了`];
   return { renown, lines, carried, carriedLines, delivered: run.orders.filter((o) => o.done).map((o) => o.id) };
 }

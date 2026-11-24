@@ -239,14 +239,14 @@ export const ENEMIES: Record<string, EnemyDef> = {
       state: () => "open", got: (c) => c.lastHit >= 12 },
   },
   "bronze-puppet": {
-    id: "bronze-puppet", name: "铜傀", sprite: "bronze-puppet", hp: [44, 48], gold: [11, 15], maxHit: 8, scale: 1.15,
+    id: "bronze-puppet", name: "铜傀", sprite: "bronze-puppet", hp: [44, 48], gold: [11, 15], maxHit: 10, scale: 1.15,
     drops: [{ good: "shard", chance: 0.6 }],
     moves: {
       wind: { name: "上弦", charge: { threshold: 14, then: "hammer" }, block: 6, text: "背后的发条在转。本回合打出 14 点伤害可以打断它。" },
       hammer: { name: "重锤", dmg: 22 }, swing: { name: "抡臂", dmg: 7, hits: 2 },
     },
     ai: cycle(["swing", "wind", "swing"]),
-    blurb: "钟楼的铜傀儡。铜身太硬，单次最多只吃 8 点伤害——用多段攻击。",
+    blurb: "钟楼的铜傀儡。铜身太硬，单次最多只吃 10 点伤害——用多段攻击；灼烧、反震、剑气不受这个限制。",
     harvest: { label: "铜片", good: "shard", text: "至少打断一次「上弦」",
       state: (c) => (c.interrupts > 0 ? "done" : "open"), got: (c) => c.interrupts > 0 },
   },
@@ -317,7 +317,7 @@ export const FLOOR_SPAWNS: Record<1 | 2 | 3, { normal: Spawn[]; elite: Spawn[]; 
   1: {
     normal: [{ id: "moth", hp: 1.4, dmg: 3 }, { id: "rat", hp: 1.4, dmg: 3 }, { id: "louse", hp: 1.3, dmg: 3 },
       { id: "lantern-spirit", hp: 1.4, dmg: 3 }, { id: "paper-doll", hp: 1.3, dmg: 2 }],
-    elite: [{ id: "mirror-fox", hp: 1.1, dmg: 3 }],
+    elite: [{ id: "mirror-fox", hp: 1.15, dmg: 4 }], // REVIEW-001: the first elite was a free relic and gear (1% deaths)
     guardian: [{ id: "moth-queen", hp: 1.15, dmg: 3 }, { id: "paper-matron", hp: 1.1, dmg: 1 }],
   },
   2: {
@@ -328,7 +328,7 @@ export const FLOOR_SPAWNS: Record<1 | 2 | 3, { normal: Spawn[]; elite: Spawn[]; 
   },
   3: {
     normal: [{ id: "mirror-fox", hp: 1.35, dmg: 7 }, { id: "louse", hp: 2.7, dmg: 8 }, { id: "rat", hp: 3.2, dmg: 8 }, { id: "warden", hp: 0.9, dmg: 4 },
-      { id: "thorn-stele", hp: 1.2, dmg: 5 }, { id: "bronze-puppet", hp: 1.2, dmg: 5 }, { id: "night-owl", hp: 1.3, dmg: 5 }, { id: "ink-moth", hp: 3, dmg: 8 }],
+      { id: "thorn-stele", hp: 1.2, dmg: 5 }, { id: "bronze-puppet", hp: 1.0, dmg: 5 }, { id: "night-owl", hp: 1.3, dmg: 5 }, { id: "ink-moth", hp: 3, dmg: 8 }],
     elite: [{ id: "night-fox", hp: 1, dmg: 5 }, { id: "warden", hp: 1.25, dmg: 4 }, { id: "fallen", hp: 1.3, dmg: 4 }],
     guardian: [{ id: "bell", hp: 1, dmg: 0 }],
   },

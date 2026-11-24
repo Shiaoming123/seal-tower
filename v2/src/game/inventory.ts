@@ -39,9 +39,10 @@ export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floo
   const market = omen === "market" ? 1.25 : 1;
   const raw = Math.round(g.price * SELL_RATE * (m.mult[id] ?? 1) * (m.wanted === id ? 2 : 1) * festival * market);
   const material = g.tags?.includes("material") && bag.tagLevel(run.bag, "material") >= 1 ? 2 : 0;
-  // Each one of the same good already sold here knocks 20% off (at least 1 石): the buyer's shelf fills up.
-  const glut = Math.max(1, raw - Math.max(sold, Math.round(raw * SELL_GLUT * sold)));
-  return glut + pin + material + (omen === "rain" ? 1 : 0);
+  // Each one of the same good already sold here knocks 20% off (at least 1 石): the buyer's shelf fills up. The
+  // markdown applies to the whole price, flat bonuses included (REVIEW-001: bonuses used to dodge it).
+  const full = raw + pin + material + (omen === "rain" ? 1 : 0);
+  return Math.max(1, full - Math.max(sold, Math.round(full * SELL_GLUT * sold)));
 }
 
 export function sellItem(run: RunState, uid: number): number {
@@ -78,12 +79,14 @@ export function sewPiece(run: RunState, uid: number, cells: [number, number][]):
 
 export const POUCH_SLOTS = 3;
 export const pouchFull = (run: RunState) => run.pouch.length >= POUCH_SLOTS;
+/** Only one-cell things fit in a pouch slot (REVIEW-001: a 2×2 钟铜 used to slip into one). */
+export const pouchFits = (id: GoodId) => GOODS[id].shape.length === 1;
 
 /** Move a packed item into the side pouch. Not during a fight. */
 export function toPouch(run: RunState, uid: number): boolean {
   if (run.combat || pouchFull(run)) return false;
   const it = run.bag.items.find((i) => i.uid === uid);
-  if (!it) return false;
+  if (!it || !pouchFits(it.id)) return false;
   run.pouch.push(bag.takeOne(run.bag, it));
   bump(run, "pouchStash");
   return true;
@@ -91,7 +94,7 @@ export function toPouch(run: RunState, uid: number): boolean {
 
 /** Move a not-yet-packed good straight into the side pouch. */
 export function pendingToPouch(run: RunState, index: number): boolean {
-  if (run.combat || pouchFull(run) || run.pending[index] === undefined) return false;
+  if (run.combat || pouchFull(run) || run.pending[index] === undefined || !pouchFits(run.pending[index])) return false;
   run.pouch.push(run.pending.splice(index, 1)[0]);
   bump(run, "pouchStash");
   return true;

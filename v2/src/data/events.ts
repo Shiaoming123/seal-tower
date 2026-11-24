@@ -67,8 +67,8 @@ export const EVENTS: Record<string, EventDef> = {
         apply: (r) => { r.gold -= 3; r.rumor = true; return "道友把上一层狐市的行情一样一样告诉你。到狐市时可以对照着卖。"; } },
       { label: "以货换牌", detail: "给他一件货，他帮你升级 1 张牌。", locked: (r) => (bag.count(r.bag) ? null : "行囊里没有货"),
         apply: (r) => {
-          const item = bag.cheapest(r.bag)!;
-          r.bag.items = r.bag.items.filter((i) => i !== item);
+          // One good, not the whole stack (REVIEW-001: a stack of five 灯灰 used to vanish at once).
+          bag.takeOne(r.bag, bag.cheapest(r.bag)!);
           r.cardPick = { mode: "upgrade", source: "event" };
           return "道友收下货，示意你挑一张牌。";
         } },
@@ -113,8 +113,8 @@ export const EVENTS: Record<string, EventDef> = {
     id: "thorn", title: "荆棘碑", sprite: "stele-thorn",
     text: "缠满荆棘的石碑下压着一件法宝。要拿出来，就得让荆棘扎进手里。",
     options: [
-      { label: "硬拿", detail: "失去 9 气血，得到一件随机法宝。",
-        apply: (r) => { hurt(r, 9); const id = randomRelic(r); if (!id) return "碑下什么也没有。"; gainRelic(r, id); return `你拿到了「${RELICS[id].name}」：${RELICS[id].text}`; } },
+      { label: "硬拿", detail: "失去 14 气血，得到一件随机法宝。",
+        apply: (r) => { hurt(r, 14); const id = randomRelic(r); if (!id) return "碑下什么也没有。"; gainRelic(r, id); return `你拿到了「${RELICS[id].name}」：${RELICS[id].text}`; } },
       leave,
     ],
   },

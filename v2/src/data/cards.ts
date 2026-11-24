@@ -83,7 +83,7 @@ const list: CardDef[] = [
     text: (v, p) => `造成 ${d(p, v.dmg)} 伤害，施加 ${v.vuln} 层破绽。`, play: (c, v) => { c.attack(v.dmg); c.enemyStatus("vuln", v.vuln); } },
   { id: "gather", name: "蓄势", cost: 1, type: "skill", rarity: "common", pool: "sword", v: [{ focus: 7, blk: 3 }, { focus: 10, blk: 5 }],
     text: (v) => `获得 ${v.blk} 格挡。下一张攻击牌伤害 +${v.focus}。`, play: (c, v) => { c.block(v.blk); c.selfStatus("focus", v.focus); } },
-  { id: "flurry", name: "三连刺", cost: 2, type: "attack", rarity: "uncommon", pool: "sword", v: [{ dmg: 3 }, { dmg: 4 }], tags: ["multi"],
+  { id: "flurry", name: "三连刺", cost: 2, type: "attack", rarity: "uncommon", pool: "sword", v: [{ dmg: 4 }, { dmg: 5 }], tags: ["multi"],
     text: (v, p) => `造成 ${d(p, v.dmg)} 伤害 4 次。`, play: (c, v) => { c.attack(v.dmg, 4); } },
   { id: "intent", name: "剑意", cost: 1, type: "power", rarity: "uncommon", pool: "sword", v: [{ str: 2 }, { str: 3 }],
     text: (v) => `获得 ${v.str} 点力量（每次伤害 +${v.str}）。`, play: (c, v) => c.selfStatus("str", v.str) },
@@ -93,7 +93,7 @@ const list: CardDef[] = [
     text: () => `每回合打出第一张攻击牌后，抽 1 张牌并获得 1 点能量。`, play: (c) => c.selfStatus("swordIntent", 1) },
 
   // ---------- 玄甲盾 ----------
-  { id: "bash", name: "盾击", cost: 1, type: "attack", rarity: "basic", pool: "shield", v: [{ plus: 0 }, { plus: 4 }],
+  { id: "bash", name: "盾击", cost: 1, type: "attack", rarity: "basic", pool: "shield", v: [{ plus: 3 }, { plus: 6 }],
     text: (v, p) => `造成等同当前格挡${v.plus ? ` +${v.plus}` : ""} 的伤害${p.inCombat ? `（现在是 ${p.dmg(p.block + v.plus)}）` : ""}。`,
     play: (c, v) => { c.attack(c.currentBlock() + v.plus); } },
   { id: "wall", name: "铁壁", cost: 2, type: "skill", rarity: "common", pool: "shield", v: [{ blk: 12 }, { blk: 16 }],
@@ -117,17 +117,18 @@ const list: CardDef[] = [
     play: (c, v) => { c.consume("ash"); c.attack(v.dmg); c.enemyStatus("weak", 1); } },
   { id: "reveal", name: "照妖", cost: 1, type: "skill", rarity: "common", pool: "lamp", v: [{ vuln: 2 }, { vuln: 3 }],
     text: (v) => `施加 ${v.vuln} 层破绽（受到伤害 +50%），抽 1 张牌。`, play: (c, v) => { c.enemyStatus("vuln", v.vuln); c.draw(1); } },
-  { id: "flame", name: "灯火", cost: 1, type: "attack", rarity: "common", pool: "lamp", tags: ["fire"], v: [{ dmg: 6, per: 3 }, { dmg: 7, per: 4 }],
-    text: (v, p) => `造成 ${d(p, v.dmg + v.per * p.ash)} 伤害。行囊里每有 1 份灯灰，伤害 +${v.per}（不消耗）。`,
-    play: (c, v) => { c.attack(v.dmg + v.per * c.goods("ash")); } },
+  { id: "flame", name: "灯火", cost: 1, type: "attack", rarity: "common", pool: "lamp", tags: ["fire"], v: [{ dmg: 6, per: 2, cap: 12 }, { dmg: 7, per: 3, cap: 18 }],
+    // Capped (REVIEW-001): uncapped, a pile of cheap stacked 灯灰 made one card hit for 36+.
+    text: (v, p) => `造成 ${d(p, v.dmg + Math.min(v.cap, v.per * p.ash))} 伤害。行囊里每有 1 份灯灰，伤害 +${v.per}，最多 +${v.cap}（不消耗）。`,
+    play: (c, v) => { c.attack(v.dmg + Math.min(v.cap, v.per * c.goods("ash"))); } },
   { id: "burnwick", name: "燃芯", cost: 0, type: "skill", rarity: "uncommon", pool: "lamp", v: [{ e: 2, draw: 2 }, { e: 3, draw: 2 }], tags: ["goods"],
     text: (v) => `烧掉 1 截灯芯：获得 ${v.e} 点能量，抽 ${v.draw} 张牌。`,
     needs: (c) => (c.goods("wick") < 1 ? "需要 1 截灯芯" : null),
     play: (c, v) => { c.consume("wick"); c.energy(v.e); c.draw(v.draw); } },
-  { id: "barter", name: "以货挡灾", cost: 1, type: "skill", rarity: "common", pool: "lamp", v: [{ mul: 3 }, { mul: 4 }], tags: ["goods"],
-    text: (v) => `丢掉行囊里最便宜的一件货：获得它售价 ×${v.mul} 的格挡。`,
+  { id: "barter", name: "以货挡灾", cost: 1, type: "skill", rarity: "common", pool: "lamp", v: [{ base: 6, mul: 3 }, { base: 8, mul: 4 }], tags: ["goods"],
+    text: (v) => `丢掉行囊里最便宜的一件货：获得 ${v.base} + 它售价 ×${v.mul} 的格挡。`,
     needs: (c) => (c.goods() < 1 ? "行囊里没有货" : null),
-    play: (c, v) => { c.consume("cheapest"); c.block(Math.max(4, c.lastConsumedPrice * v.mul)); } },
+    play: (c, v) => { c.consume("cheapest"); c.block(v.base + c.lastConsumedPrice * v.mul); } },
   { id: "scatter", name: "撒钱", cost: 1, type: "attack", rarity: "common", pool: "abacus", v: [{ dmg: 11, cost: 5 }, { dmg: 16, cost: 5 }], tags: ["money"],
     text: (v, p) => `花 ${v.cost} 石：造成 ${d(p, v.dmg)} 伤害。`,
     needs: (c, v) => (c.gold() < v.cost ? `需要 ${v.cost} 石` : null),
@@ -150,20 +151,20 @@ const list: CardDef[] = [
   { id: "interest", name: "生息", cost: [1, 0], type: "power", rarity: "uncommon", pool: "abacus", v: [{ n: 3 }, { n: 3 }],
     text: (v) => `每回合开始获得 ${v.n} 石。`, play: (c, v) => c.selfStatus("interest", v.n) },
   { id: "windfall", name: "一掷千金", cost: 2, type: "attack", rarity: "rare", pool: "abacus", v: [{ div: 2 }, { div: 1.5 }], tags: ["money"],
-    text: (v, p) => `花光身上一半的石：每花 ${v.div === 2 ? "2" : "1.5"} 石造成 1 点伤害${p.inCombat ? `（现在 ${p.dmg(Math.floor(Math.floor(p.gold / 2) / v.div))}）` : ""}。`,
+    text: (v, p) => `花掉身上一半的石（最多 ${WINDFALL_CAP}）：每花 ${v.div === 2 ? "2" : "1.5"} 石造成 1 点伤害${p.inCombat ? `（现在 ${p.dmg(Math.floor(Math.min(WINDFALL_CAP, Math.floor(p.gold / 2)) / v.div))}）` : ""}。`,
     needs: (c) => (c.gold() < 2 ? "身上没钱" : null),
-    play: (c, v) => { const spend = Math.floor(c.gold() / 2); c.spendGold(spend); c.attack(Math.floor(spend / v.div)); } },
+    play: (c, v) => { const spend = Math.min(WINDFALL_CAP, Math.floor(c.gold() / 2)); c.spendGold(spend); c.attack(Math.floor(spend / v.div)); } },
 
   // ---------- combo 关键牌 ----------
   { id: "gale", name: "疾风", cost: 0, type: "attack", rarity: "common", pool: "sword", v: [{ dmg: 4, bonus: 6 }, { dmg: 5, bonus: 8 }], tags: ["multi"],
     text: (v, p) => `造成 ${d(p, v.dmg)} 伤害。本回合已打出 3 张攻击牌时，再造成 ${d(p, v.bonus)}${p.inCombat ? `（已打 ${p.attacks} 张）` : ""}。`,
     play: (c, v) => { c.attack(v.dmg); if (c.attacksThisTurn() >= 3) c.attack(v.bonus); } },
-  { id: "sheathe", name: "收剑", cost: 1, type: "skill", rarity: "common", pool: "sword", v: [{ per: 3 }, { per: 4 }],
+  { id: "sheathe", name: "收剑", cost: 1, type: "skill", rarity: "common", pool: "sword", v: [{ per: 4 }, { per: 5 }],
     text: (v, p) => `本回合每打出过一张攻击牌，获得 ${v.per} 格挡${p.inCombat ? `（现在 ${v.per * p.attacks}）` : ""}。`,
     play: (c, v) => c.block(v.per * c.attacksThisTurn()) },
   { id: "swordqi", name: "剑气纵横", cost: [2, 1], type: "power", rarity: "rare", pool: "sword", v: [{ n: 2 }, { n: 2 }],
     text: (v) => `之后每打出一张攻击牌，额外造成 ${v.n} 伤害。`, play: (c, v) => c.selfStatus("swordQi", v.n) },
-  { id: "ironshirt", name: "铁布衫", cost: 1, type: "power", rarity: "uncommon", pool: "shield", v: [{ n: 1 }, { n: 2 }],
+  { id: "ironshirt", name: "铁布衫", cost: 1, type: "power", rarity: "uncommon", pool: "shield", v: [{ n: 2 }, { n: 3 }],
     text: (v) => `之后每次获得格挡，额外 +${v.n}。`, play: (c, v) => c.selfStatus("ironshirt", v.n) },
   { id: "hold", name: "固守", cost: 1, type: "skill", rarity: "common", pool: "shield", v: [{ blk: 5 }, { blk: 7 }],
     text: (v, p) => `获得 ${v.blk} 格挡。如果打出前你已经有格挡，再获得 ${v.blk}${p.inCombat ? (p.block ? "（会触发）" : "（现在没有格挡）") : ""}。`,
@@ -181,8 +182,8 @@ const list: CardDef[] = [
   { id: "principal", name: "本利", cost: 1, type: "skill", rarity: "common", pool: "abacus", v: [{ g: 4 }, { g: 6 }], tags: ["money"],
     text: (v) => `得到 ${v.g} 石。之后身上不少于 50 石，再抽 2 张牌。`, play: (c, v) => { c.gainGold(v.g); if (c.gold() >= 50) c.draw(2); } },
   { id: "hoard", name: "囤货", cost: [1, 0], type: "power", rarity: "uncommon", pool: "neutral", v: [{}, {}],
-    text: (_v, p) => `行囊里每有 3 件货物，获得 1 点力量${p.inCombat ? `（现在 ${Math.floor(p.goods / 3)} 点）` : ""}。`,
-    play: (c) => { const n = Math.floor(c.goods() / 3); if (n) c.selfStatus("str", n); } },
+    text: (_v, p) => `行囊里每有 3 件货物，获得 1 点力量，最多 3 点${p.inCombat ? `（现在 ${Math.min(3, Math.floor(p.goods / 3))} 点）` : ""}。`,
+    play: (c) => { const n = Math.min(3, Math.floor(c.goods() / 3)); if (n) c.selfStatus("str", n); } },
 
   // ---------- 通用 ----------
   { id: "bandage", name: "包扎", cost: 1, type: "skill", rarity: "common", pool: "neutral", v: [{ heal: 5 }, { heal: 8 }], exhaust: true,
@@ -192,10 +193,13 @@ const list: CardDef[] = [
   { id: "talisman", name: "定身符", cost: [1, 0], type: "skill", rarity: "uncommon", pool: "neutral", v: [{}, {}], exhaust: true, tags: ["interrupt"],
     text: () => `立刻打断敌人的蓄力。消耗。`, needs: () => null, play: (c) => { c.interrupt(); } },
   { id: "pluck", name: "挑材", cost: 1, type: "attack", rarity: "uncommon", pool: "neutral", v: [{ dmg: 5 }, { dmg: 8 }],
-    text: (v, p) => `造成 ${d(p, v.dmg)} 伤害。这场战斗胜利后，多拿一件这只妖的材料。`, play: (c, v) => { c.attack(v.dmg); c.harvest(); } },
+    text: (v, p) => `造成 ${d(p, v.dmg)} 伤害。这场战斗胜利后，多拿一件这只妖的材料（每场只算一次）。`, play: (c, v) => { c.attack(v.dmg); c.harvest(); } },
   { id: "steady", name: "稳步", cost: 1, type: "skill", rarity: "common", pool: "neutral", v: [{ blk: 6 }, { blk: 9 }],
     text: (v) => `获得 ${v.blk} 格挡。下回合多抽 1 张牌。`, play: (c, v) => { c.block(v.blk); c.drawNext(1); } },
 ];
+
+/** 一掷千金 spends at most this much (REVIEW-001: uncapped it ate the coin you could carry home). */
+export const WINDFALL_CAP = 30;
 
 export const CARDS: Record<string, CardDef> = Object.fromEntries(list.map((c) => [c.id, c]));
 

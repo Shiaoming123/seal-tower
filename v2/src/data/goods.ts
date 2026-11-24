@@ -67,7 +67,7 @@ const list: GoodDef[] = [
   { id: "shard", tags: ["material"], kind: "goods", name: "铜片", icon: "icon-shard", shape: ONE, price: 6, text: "铜傀身上掉下的铜片，铁匠拿它补锅。" },
   { id: "feather", tags: ["material"], kind: "goods", name: "枭羽", icon: "icon-feather", shape: V2, price: 8, text: "夜枭的翎羽。做成箭羽，射得又快又准。" },
   { id: "tail", tags: ["material"], kind: "goods", name: "白狐尾", icon: "icon-tail", shape: H2, price: 14, text: "假狐商的一条尾巴。绯绡说，这本来就不该长在它身上。" },
-  { id: "copper", kind: "goods", name: "钟铜", icon: "bell-item", shape: SQ, price: 16, fragile: "copper-cracked", text: "负钟君的碎钟片。镇长要它重铸镇塔钟。易碎：挨打时可能磕裂。" },
+  { id: "copper", kind: "goods", name: "钟铜", icon: "bell-item", shape: SQ, price: 16, text: "负钟君的碎钟片。镇长要它重铸镇塔钟。" },
   { id: "copper-cracked", kind: "goods", name: "裂钟铜", icon: "bell-item", shape: SQ, price: 8, dim: true, text: "裂成两半的钟片，铸不了钟，只能当铜卖。" },
 
   // ---------- gear ----------
@@ -84,7 +84,7 @@ const list: GoodDef[] = [
   { id: "mirror", tags: ["guard"], kind: "gear", tier: 2, name: "护心镜", icon: "mirror", shape: SQ, price: 14, cards: ["wall"],
     passive: "每场战斗开始时获得 6 点格挡。", text: "挂在胸前的铜镜，很重，但真能救命。" },
   { id: "abacus", tags: ["coin"], kind: "gear", tier: 2, name: "算盘", icon: "abacus", shape: SQ, price: 14, cards: ["scatter", "reckon"],
-    passive: "战斗开始时，身上每有 15 石，获得 1 点力量（最多 3）。", text: "账房先生的算盘。钱越多，底气越足。" },
+    passive: "战斗开始时，身上每有 15 石，获得 1 点力量（最多 3）。每场胜利多得 2 石。", text: "账房先生的算盘。钱越多，底气越足。" },
   { id: "bell", kind: "gear", tier: 2, name: "铜铃", icon: "bell-item", shape: SQ, price: 15,
     passive: "每场战斗第一回合多 1 点能量。", text: "摇一下，先手就是你的。" },
   { id: "purse", tags: ["coin"], kind: "gear", tier: 1, name: "货郎钱袋", icon: "order-purse", shape: H2, price: 7, cards: ["guardgoods"],
@@ -108,9 +108,10 @@ const list: GoodDef[] = [
   { id: "shield-fine", base: "shield", tags: ["guard"], kind: "gear", name: "精木挡板", icon: "plank", shape: H2, price: 16, cards: ["bash", "spikes"], cardsUp: true,
     passive: "牌已升级。回合结束时最多保留 4 点格挡。", text: "贴了护身符的木挡板，挨一下就嗡一声。" },
   { id: "lamp-fine", base: "lamp", tags: ["lamp"], kind: "gear", name: "精引灯盘", icon: "seal", shape: V2, price: 18, cards: ["dust", "flame"], cardsUp: true,
+    aura: { kind: "ash", n: 1, text: "相邻的每份灯灰，在「灯火」这类按灯灰算的牌里算两份（灯油壶的效果留在了盘里）" },
     passive: "牌已升级。每场战斗胜利后多得 2 份灯灰。", text: "浸过灯油的引灯盘，火一点就旺。" },
   { id: "purse-fine", base: "purse", tags: ["coin"], kind: "gear", name: "精钱袋", icon: "order-purse", shape: H2, price: 12, cards: ["guardgoods"], cardsUp: true,
-    aura: { kind: "sell", n: 1, text: "相邻的每件货物卖价 +1" }, text: "缝进了招财袋的钱袋，货装进去都显得体面。" },
+    aura: { kind: "sell", n: 2, text: "相邻的每件货物卖价 +2" }, text: "缝进了招财袋的钱袋，货装进去都显得体面。" },
 
   // ---------- consumables ----------
   { id: "salve", kind: "consumable", name: "金疮药", icon: "salve", shape: V2, price: 5,
@@ -129,7 +130,7 @@ export const TAGS: Record<TagId, TagDef> = {
   guard: { id: "guard", name: "盾", at: [2, 3], text: ["每场开始获得 4 点格挡", "回合结束多保留 3 点格挡"] },
   lamp: { id: "lamp", name: "灯", at: [2, 4], text: ["灼烧每次多烧 2 点", "每场开始给妖点上 3 层灼烧"] },
   coin: { id: "coin", name: "钱", at: [2, 3], text: ["狐市买东西便宜两成", "每场开始得 5 石"] },
-  material: { id: "material", name: "妖材", at: [3, 6], text: ["每件妖材多值 2 石（卖给绯绡或带回镇上都算）", "取材成功时多拿一份"] },
+  material: { id: "material", name: "妖材", at: [3, 6], text: ["每件妖材多值 2 石（卖给绯绡或带回镇上都算）", "每场胜利多得 3 石"] },
 };
 export const TAG_IDS = Object.keys(TAGS) as TagId[];
 

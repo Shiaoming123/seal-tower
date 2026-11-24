@@ -28,6 +28,8 @@ export type CombatEvent =
   | { t: "proc"; text: string };
 
 const HAND = 5;
+/** From this turn on the monster gains 2 strength each turn (妖气渐盛). */
+export const RAMP_TURN = 8;
 /** True if you own the 法宝 or carry the gear with this id. */
 export const has = (run: RunState, id: string) => run.relics.includes(id) || run.bag.items.some((it) => it.id === id || GOODS[it.id].base === id);
 
@@ -131,7 +133,9 @@ function damageEnemy(run: RunState, c: CombatState, dmg: number, events: CombatE
   e.block -= blocked;
   const taken = Math.min(e.hp, dmg - blocked);
   e.hp -= taken;
-  c.dmgThisTurn += taken;
+  // Charge interrupts count the whole blow, block included: 「打出 20 点」 means 20 dealt, not 20 HP lost
+  // (REVIEW-001: 负钟君 shells up right before charging, so HP-only needed nearly twice the number shown).
+  c.dmgThisTurn += taken + blocked;
   const def = ENEMIES[e.id];
   let part: "broke" | undefined;
   if (def.part && e.partIntact && dmg - blocked >= def.part.threshold) { e.partIntact = false; part = "broke"; }
@@ -242,7 +246,7 @@ function makeCtx(run: RunState, c: CombatState, events: CombatEvent[], card: { f
       events.push({ t: "interrupt" });
       return true;
     },
-    harvest() { c.harvest++; },
+    harvest() { if (!c.plucked) { c.harvest++; c.plucked = true; } }, // 挑材 counts once per fight (REVIEW-001)
     drawNext(n) { c.drawBonusNext += n; },
   };
   return ctx;
@@ -324,8 +328,11 @@ export function playCard(run: RunState, handIndex: number): { ok: boolean; reaso
     c.attacksThisTurn++;
     if (c.status.swordQi && !c.over) damageEnemy(run, c, c.status.swordQi, events);
     if (c.attacksThisTurn === 4 && has(run, "swordmanual")) { c.energy += 2; events.push({ t: "proc", text: "剑谱残页：能量 +2" }); }
+
   }
-  if (c.cardsThisTurn === 3 && has(run, "tassel") && !c.over) damageEnemy(run, c, playerHit(c, 6, 0), events);
+
+  // 镇妖剑穗 (REVIEW-001: 6 → 4 damage; still any third card, so block-heavy decks keep a use for it).
+  if (c.cardsThisTurn === 3 && has(run, "tassel") && !c.over) { events.push({ t: "proc", text: "镇妖剑穗：+4 伤害" }); damageEnemy(run, c, playerHit(c, 4, 0), events); }
   if (def.type === "power") { /* powers leave the deck for this fight */ }
   else if (cardExhausts(def, card.up)) c.exhaust.push(card);
   else c.discard.push(card);
@@ -344,6 +351,11 @@ function startTurn(run: RunState, events: CombatEvent[]) {
   c.attacksThisTurn = 0;
   c.cardsThisTurn = 0;
   c.dmgThisTurn = 0;
+  // 妖气渐盛: from turn 8 the monster gains 2 strength a turn, so a fight can't be stalled to farm coin (REVIEW-001).
+  if (c.turn >= RAMP_TURN) {
+    c.enemy.status.str = (c.enemy.status.str ?? 0) + 2;
+    events.push({ t: "phase", text: c.turn === RAMP_TURN ? `妖气渐盛：${c.enemy.name}每回合力量 +2` : `妖气渐盛（力量 ${c.enemy.status.str}）` });
+  }
   delete c.status.ward;
   delete c.status.counter;
   const blind = c.status.blind ? 1 : 0;
@@ -449,6 +461,15 @@ function crack(run: RunState, c: CombatState, events: CombatEvent[]) {
     else it.id = into;
     discover(run, "g:" + into);
   }
+  // The side pouch keeps things from thieves, not from knocks (REVIEW-001).
+  run.pouch.forEach((id, i) => {
+    const into = GOODS[id].fragile;
+    if (!into || !chance(c.rng, CRACK_CHANCE)) return;
+    events.push({ t: "crack", good: id, into });
+    bump(run, "cracks");
+    run.pouch[i] = into;
+    discover(run, "g:" + into);
+  });
 }
 
 /** Oil, ash and coin thieves take their cut when an attack gets through. */

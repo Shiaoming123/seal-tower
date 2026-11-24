@@ -135,7 +135,7 @@ export function autoPack(bag: Bag): boolean {
 /** How many packed items carry each tag. */
 export function tagCounts(bag: Bag): Record<TagId, number> {
   const out = Object.fromEntries(TAG_IDS.map((t) => [t, 0])) as Record<TagId, number>;
-  for (const it of bag.items) for (const t of GOODS[it.id].tags ?? []) out[t] += qty(it);
+  for (const it of bag.items) for (const t of GOODS[it.id].tags ?? []) out[t]++; // per placed item, not per stacked good (REVIEW-001)
   return out;
 }
 

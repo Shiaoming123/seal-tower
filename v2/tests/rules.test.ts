@@ -4,6 +4,7 @@ import { ENEMIES } from "../src/data/enemies";
 import { EVENTS } from "../src/data/events";
 import * as bag from "../src/game/bag";
 import { endTurn, incomingDamage, playCard, startCombat } from "../src/game/combat";
+import { GOODS } from "../src/data/goods";
 import { distances, findPath, generate, idx, revealAll } from "../src/game/dungeon";
 import { addGood, fromPouch, sellPouch, sewPiece, toPouch, useItem } from "../src/game/inventory";
 import { climb, closeReward as winCombatClose, createRun, settle, townValue, winCombat } from "../src/game/run";
@@ -353,13 +354,13 @@ describe("new monsters", () => {
     handOf(run, ["twin"]); playCard(run, 0);
     expect(run.hp).toBe(hp - 4);
   });
-  it("bronze puppet caps every hit at 8", () => {
+  it("bronze puppet caps every hit at 10", () => {
     const run = createRun(52, "sword", "lamp");
     const c = fightWith(run, "bronze-puppet");
     c.status.str = 20; c.enemy.block = 0;
     const hp = c.enemy.hp;
     handOf(run, ["strike"]); playCard(run, 0);
-    expect(hp - c.enemy.hp).toBe(8);
+    expect(hp - c.enemy.hp).toBe(10);
   });
   it("water ghost takes half damage while diving", () => {
     const run = createRun(53, "shield", "lamp");
@@ -595,15 +596,15 @@ describe("bag sets and side pouch (GAME-003A)", () => {
   it("items in the side pouch give no cards, boosts or tags", async () => {
     const { combatDeck } = await import("../src/game/combat");
     const run = createRun(24, "sword", "lamp");
-    addGood(run, "ironsword");
+    addGood(run, "ironsword"); addGood(run, "whetstone");
+    expect(toPouch(run, uidOf(run, "ironsword"))).toBe(false); // only one-cell things fit (REVIEW-001)
     expect(bag.tagLevel(run.bag, "blade")).toBe(1);
-    expect(toPouch(run, uidOf(run, "ironsword"))).toBe(true);
-    expect(run.pouch).toEqual(["ironsword"]);
-    expect(bag.tagLevel(run.bag, "blade")).toBe(0);
-    expect(combatDeck(run).map((c) => c.id)).not.toContain("gap");
+    expect(toPouch(run, uidOf(run, "whetstone"))).toBe(true);
+    expect(run.pouch).toEqual(["whetstone"]);
+    expect(bag.tagLevel(run.bag, "blade")).toBe(1); // sword + iron sword still make 刃 1; the pouched whetstone adds nothing
+    expect(combatDeck(run).map((c) => c.id)).toContain("gap");
     expect(fromPouch(run, 0)).toBe(true);
     expect(run.pouch).toEqual([]);
-    expect(combatDeck(run).map((c) => c.id)).toContain("gap");
   });
 
   it("thieves can't reach the side pouch, and it can't be used mid-fight", () => {
@@ -621,14 +622,14 @@ describe("bag sets and side pouch (GAME-003A)", () => {
 
   it("the pouch holds three things and its goods can be sold", () => {
     const run = createRun(26, "sword", "lamp");
-    for (const g of ["fang", "silk", "shell", "knot"] as const) addGood(run, g);
-    for (const g of ["fang", "silk", "shell", "knot"]) toPouch(run, uidOf(run, g));
-    expect(run.pouch).toEqual(["fang", "silk", "shell"]);
+    for (const g of ["redpaper", "fur", "inkdust", "token"] as const) addGood(run, g);
+    for (const g of ["redpaper", "fur", "inkdust", "token"]) toPouch(run, uidOf(run, g));
+    expect(run.pouch).toEqual(["redpaper", "fur", "inkdust"]);
     const gold = run.gold;
     const p = sellPouch(run, 0);
     expect(p).toBeGreaterThan(0);
     expect(run.gold).toBe(gold + p);
-    expect(run.pouch).toEqual(["silk", "shell"]);
+    expect(run.pouch).toEqual(["fur", "inkdust"]);
   });
 
   it("an accessory reaches the 8 cells around it, clipped to the bag", () => {
@@ -786,9 +787,9 @@ describe("playtest record (GAME-001)", () => {
     const { playtestRecord } = await import("../src/game/stats");
     const run = createRun(31, "sword", "lamp");
     run.shop = { cards: [], relics: [], gear: [], consumables: [], removePrice: 0, removed: false, oil: { amount: 25, price: 6, bought: 0 }, wanted: run.markets[1].wanted, sold: {} };
-    addGood(run, "shell"); addGood(run, "silk");
+    addGood(run, "shell"); addGood(run, "redpaper");
     const got = sellItem(run, run.bag.items.find((i) => i.id === "shell")!.uid);
-    toPouch(run, run.bag.items.find((i) => i.id === "silk")!.uid);
+    toPouch(run, run.bag.items.find((i) => i.id === "redpaper")!.uid);
     const elites = run.dungeon.entities.filter((e) => e.kind === "elite").length;
     run.hp = 40;
     climb(run);
@@ -840,7 +841,7 @@ describe("set bonuses after GAME-006", () => {
   it("灯 2: the fight opens with 3 burn on the monster; 钱 2: +5 石", () => {
     const run = createRun(61, "sword", "lamp");
     run.bag.w = 6; run.bag.h = 5;
-    for (const id of ["lamp", "oilpot", "wick", "wick", "purse", "luckybag", "abacus"] as const) addGood(run, id);
+    for (const id of ["lamp", "oilpot", "lamp-fine", "wick", "purse", "luckybag", "abacus"] as const) addGood(run, id);
     const gold = run.gold;
     const c = fightWith(run, "louse");
     expect(c.enemy.status.burn).toBeGreaterThanOrEqual(3);
@@ -892,6 +893,60 @@ describe("passives say when they fire (行云)", () => {
     const { upgradeDiff } = await import("../src/ui/parts");
     expect(upgradeDiff("flow")).toEqual(["费用 2 → 1"]);
     expect(upgradeDiff("strike")).toEqual(["伤害 6 → 9"]);
+  });
+});
+
+describe("REVIEW-001 fixes", () => {
+  it("from turn 8 the monster gains 2 strength each turn (no stalling to farm coin)", async () => {
+    const { RAMP_TURN } = await import("../src/game/combat");
+    const run = createRun(81, "shield", "lamp");
+    const c = fightWith(run, "louse");
+    run.hp = 999; run.maxHp = 999;
+    for (let t = 1; t < RAMP_TURN; t++) { handOf(run, []); endTurn(run); }
+    const before = c.enemy.status.str ?? 0;
+    handOf(run, []); endTurn(run);
+    expect((c.enemy.status.str ?? 0) - before).toBe(2);
+  });
+  it("damage soaked by the monster's block counts toward breaking a charge", () => {
+    const run = createRun(82, "sword", "lamp");
+    const c = fightWith(run, "louse");
+    c.enemy.block = 20; c.dmgThisTurn = 0;
+    handOf(run, ["strike"]); playCard(run, 0);
+    expect(c.dmgThisTurn).toBeGreaterThanOrEqual(6);
+  });
+  it("挑材 counts once per fight", () => {
+    const run = createRun(83, "sword", "lamp");
+    const c = fightWith(run, "louse");
+    c.enemy.hp = 999;
+    handOf(run, ["pluck", "pluck", "pluck"]); c.energy = 9;
+    playCard(run, 0); playCard(run, 0); playCard(run, 0);
+    expect(c.harvest).toBe(1);
+  });
+  it("what you carry home grows with floors cleared and difficulty", () => {
+    const run = createRun(84, "sword", "lamp");
+    run.gold = 100; run.bag.items = []; run.pouch = [];
+    run.outcome = "retreat";
+    const one = settle(run).carried; // still on floor 1, guardian not beaten: ×1
+    run.floor = 3; run.outcome = "win";
+    expect(settle(run).carried).toBe(Math.round(one * 1.6));
+    run.difficulty = 2;
+    expect(settle(run).carried).toBe(Math.round(100 * 1.6 * 1.3));
+  });
+  it("以货换牌 takes one good off a stack, not the whole stack", async () => {
+    const { EVENTS } = await import("../src/data/events");
+    const run = createRun(85, "sword", "lamp");
+    run.bag.items = run.bag.items.filter((i) => GOODS[i.id].kind !== "goods");
+    for (let i = 0; i < 5; i++) addGood(run, "ash");
+    const opts = EVENTS.guide.options;
+    const opt = (Array.isArray(opts) ? opts : opts(run, run.rng)).find((o) => o.label === "以货换牌")!;
+    opt.apply(run);
+    expect(bag.count(run.bag, "ash")).toBe(4);
+  });
+  it("a stack counts once toward a set", () => {
+    const run = createRun(86, "lamp", "lamp");
+    for (let i = 0; i < 3; i++) addGood(run, "wick");
+    expect(run.bag.items.filter((it) => it.id === "wick").length).toBe(1);
+    expect(bag.tagCounts(run.bag).lamp).toBe(2); // 引灯盘 + one stack of 灯芯
   });
 });
 

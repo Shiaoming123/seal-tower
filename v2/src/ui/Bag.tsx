@@ -3,7 +3,7 @@ import { sfx } from "../audio/sfx";
 import { CARDS } from "../data/cards";
 import { GOODS, KIND_LABEL, REFINES, TAGS, TAG_IDS, stackMax } from "../data/goods";
 import * as bag from "../game/bag";
-import { POUCH_SLOTS, canExpand, discard, sellPending, sewPiece, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
+import { POUCH_SLOTS, canExpand, discard, pouchFits, sellPending, sewPiece, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
 import type { GoodId, PlacedGood, RunState } from "../game/types";
 import { ART } from "../render/assets";
 import { GoodInfo } from "./parts";
@@ -69,7 +69,7 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
         // Dropped on the side pouch.
         const ok = run.combat ? false : held.from === "bag" ? toPouch(run, held.uid) : pendingToPouch(run, held.index);
         if (ok) { sfx.click(); setSelected(null); commit(); }
-        else say(run.combat ? "打架的时候腾不出手整理侧袋" : `侧袋只有 ${POUCH_SLOTS} 格，已经满了`);
+        else say(run.combat ? "打架的时候腾不出手整理侧袋" : !pouchFits(held.id) ? "侧袋只放一格大的东西" : `侧袋只有 ${POUCH_SLOTS} 格，已经满了`);
       }
       else if (moved.current && !drop(held, at) && at) say("放不下：换个位置或先旋转");
       setHeld(null); setHover(null); setGhost(null);
@@ -256,7 +256,7 @@ function ItemDetails({ run, uid, onRotate, onDone, onSew }: { run: RunState; uid
         }}>{g.use!.label}</button>}
         {g.use?.bagRow && !canExpand(run) && <span class="muted">行囊已经到最大了</span>}
         <button type="button" class="btn small" onClick={onRotate}>旋转</button>
-        {!inCombat && <button type="button" class="btn small" disabled={pouchFull(run)} onClick={() => { if (toPouch(run, it.uid)) { sfx.click(); onDone(); commit(); } }}>放进侧袋</button>}
+        {!inCombat && <button type="button" class="btn small" disabled={pouchFull(run) || !pouchFits(it.id)} title={!pouchFits(it.id) ? "侧袋只放一格大的东西" : undefined} onClick={() => { if (toPouch(run, it.uid)) { sfx.click(); onDone(); commit(); } }}>{pouchFits(it.id) ? "放进侧袋" : "太大，进不了侧袋"}</button>}
         <button type="button" class="btn small ghost" onClick={() => { unpack(run, it.uid); onDone(); commit(); }}>放回货堆</button>
         {!inCombat && <DiscardButton run={run} uid={it.uid} onDone={onDone} />}
       </div>
@@ -345,7 +345,7 @@ function Pouch({ run, mode, held, onDrag }: { run: RunState; mode: "manage" | "s
   };
   return (
     <div class={`pouch ${locked ? "locked" : ""} ${held && held.from !== "pouch" ? "target" : ""}`}>
-      <h4>侧袋 <small>{locked ? "打完再整理" : mode === "sell" ? "点一下卖掉" : "不生效，但不会被抢。点一下放回行囊"}</small></h4>
+      <h4>侧袋 <small>{locked ? "打完再整理" : mode === "sell" ? "点一下卖掉" : "只放一格大的东西。不生效，不会被抢，但挨打时易碎货照样会磕坏。点一下放回行囊"}</small></h4>
       <div class="pouch-slots">
         {Array.from({ length: POUCH_SLOTS }, (_, i) => {
           const id = run.pouch[i];
