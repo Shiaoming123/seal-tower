@@ -41,6 +41,7 @@ export function Result() {
     <div class={`result outcome-${run.outcome}`} style={{ backgroundImage: `linear-gradient(rgba(10,5,4,0.5), rgba(10,5,4,0.85)), url(${ART["last-market"]})` }}>
       <div class="result-art"><img src={ART[run.outcome === "dead" ? "hunter-guard" : "hero"]} alt="" /></div>
       <div class="result-box panel">
+        <div class="result-scroll">
         <h1>{title}</h1>
         <p>{sub}</p>
         <ul class="stats">
@@ -60,7 +61,9 @@ export function Result() {
           {!settled.lines.length && !settled.fresh.length && <li>这趟没挣到声望。</li>}
         </ul>
         <p class="muted">总声望 {profileSig.value.renown}。声望到 4 解锁「算盘」兵器；到 3、7、12 解锁更难的签。</p>
-        <div class="row">
+        </div>
+        {/* Outside the scrolling list: after a win the list (achievements, renown) can be taller than the stage. */}
+        <div class="row result-actions">
           <button type="button" class="btn big primary" onClick={() => { runSig.value = null; page.value = "town"; commit(); }}>再进一趟</button>
           <button type="button" class="btn" onClick={() => { runSig.value = null; page.value = "title"; commit(); }}>回标题</button>
         </div>

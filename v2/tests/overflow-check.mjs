@@ -40,8 +40,11 @@ const scan = () => {
   for (let n = walker.nextNode(); n; n = walker.nextNode()) {
     const t = n.textContent.trim();
     if (!t || !n.parentElement || !vis(n.parentElement)) continue;
-    let box = n.parentElement;
-    while (box && !isBox(box)) box = box.parentElement;
+    // Nearest box; a scrolling panel on the way means the text can be scrolled into view, so stop there.
+    let box = n.parentElement, scrolled = false;
+    while (box && !isBox(box)) { const st = getComputedStyle(box); if (/auto|scroll/.test(st.overflow + st.overflowY + st.overflowX)) { scrolled = true; break; } box = box.parentElement; }
+    if (box && !scrolled) { const st = getComputedStyle(box); if (/auto|scroll/.test(st.overflow + st.overflowY + st.overflowX)) scrolled = true; }
+    if (scrolled) box = null;
     const range = document.createRange(); range.selectNodeContents(n);
     const b = (box ?? document.body).getBoundingClientRect();
     const rects = [...range.getClientRects()].filter((r) => r.width >= 1 && r.height >= 1);
@@ -58,6 +61,20 @@ const scan = () => {
       const out = rects.map((r) => Math.max(r.bottom - c.bottom, r.right - c.right, c.top - r.top, c.left - r.left)).reduce((m, v) => Math.max(m, v), 0);
       if (out > 2) { add("clip " + name(a), { kind: "clip", box: name(a), text: t.slice(0, 40), px: Math.round(out) }); break; }
     }
+  }
+  // Unreachable: a visible button whose box lies outside the stage with no scrolling panel around it.
+  const stage = document.querySelector(".stage")?.getBoundingClientRect();
+  if (stage) for (const el of document.querySelectorAll(".stage button")) {
+    if (!vis(el)) continue;
+    const r = el.getBoundingClientRect();
+    if (r.width < 2 || r.height < 2) continue;
+    // Hand cards deliberately poke out of the bottom edge: only a button whose centre is off the stage is unreachable.
+    const cx = (r.left + r.right) / 2, cy = (r.top + r.bottom) / 2;
+    const out = Math.max(cy - stage.bottom, cx - stage.right, stage.top - cy, stage.left - cx);
+    if (out <= 0) continue;
+    let scroller = false;
+    for (let a = el.parentElement; a && a !== document.body; a = a.parentElement) { const st = getComputedStyle(a); if (/auto|scroll/.test(st.overflow + st.overflowY + st.overflowX) && a.scrollHeight > a.clientHeight) { scroller = true; break; } }
+    if (!scroller) add("unreachable " + name(el), { kind: "unreachable", box: name(el), text: el.textContent.trim().slice(0, 40), px: Math.round(out) });
   }
   return [...found.values()];
 };
@@ -132,7 +149,13 @@ async function run(vpName, viewport) {
     await reset();
   }
   for (const id of events) {
-    await S(() => { const r = window.__seal.runSig.value; r.floor = 3; r.gold = 99; window.__seal.commit(); });
+    // A crammed bag, so results that hand out goods show the "didn't fit" bag panel too.
+    await S(async () => {
+      const inv = await import("/src/game/inventory.ts");
+      const r = window.__seal.runSig.value; r.floor = 3; r.gold = 99;
+      for (let i = 0; i < 24; i++) inv.addGood(r, ["ash", "fang", "silk", "clasp", "copper"][i % 5]);
+      window.__seal.commit();
+    });
     await S((id) => window.__seal.event(id), id);
     await check(`event ${id}`);
     await click(page.locator(".option:not(.locked)"));
@@ -151,6 +174,9 @@ async function run(vpName, viewport) {
   await S(() => { window.__seal.overlay.value = "bag"; }); await check("reward bag"); await S(() => { window.__seal.overlay.value = null; });
   await S(async () => { const R = await import("/src/game/run.ts"); const r = window.__seal.runSig.value; r.screen = "explore"; r.combat = null; R.goHome(r); window.__seal.commit(); });
   await check("result");
+  // A winning run lists every new achievement; pad the list so the buttons must survive a very long settlement.
+  await S(() => { const ul = document.querySelector(".result-box ul.renown"); for (let i = 0; i < 15 && ul; i++) { const li = document.createElement("li"); li.className = "ach"; li.textContent = "新成就「测试」：一段足够长的成就说明文字，用来把结算列表撑高。 +1"; ul.appendChild(li); } });
+  await check("result (long)");
   report[vpName] = { issues: issues.map(({ key, ...i }) => i), errors };
   console.log(vpName, issues.length, "issues", errors.length, "errors");
   for (const i of issues) console.log(`  [${i.kind} ${i.px}px] ${i.box} «${i.text}» @ ${i.where.slice(0, 4).join(", ")}${i.where.length > 4 ? ` (+${i.where.length - 4})` : ""}`);

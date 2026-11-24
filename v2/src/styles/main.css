@@ -396,7 +396,9 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 /* (UI-002) The water ghost's portrait-only offsets are no longer needed: every monster is placed on its tile. */
 
 /* ---------------------------------------------------------------- overlays */
-.overlay { position: absolute; inset: 0; z-index: 40; background: rgba(5, 3, 2, 0.75); display: grid; place-items: center; }
+/* minmax(0, 1fr) tracks: max-width/max-height on the box resolve against the stage (as in .help-screen); without
+   them the deck box kept its 1100px width in portrait and its close button ended up above the screen. */
+.overlay { position: absolute; inset: 0; z-index: 40; background: rgba(5, 3, 2, 0.75); display: grid; place-items: center; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); }
 .overlay-box { background: linear-gradient(#2a1712, #160c09); border: 1px solid var(--gold); border-radius: 6px; padding: 16px 20px; max-width: 94%; max-height: 92%; overflow: auto; box-shadow: 0 10px 40px #000; }
 .overlay-box header { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 6px; }
 .overlay-box h2 { margin: 0; font-family: var(--font-title); font-weight: normal; color: var(--gold); font-size: 32px; }
@@ -456,7 +458,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .reward { position: absolute; inset: 0; display: grid; grid-template-columns: 560px 1fr; gap: 16px; padding: 16px; }
 .reward-bg { position: absolute; inset: 0; z-index: 0; }
 .reward > *:not(.reward-bg) { position: relative; z-index: 1; }
-.reward-left { align-self: start; max-height: 100%; overflow: hidden; display: flex; flex-direction: column; gap: 6px; }
+.reward-left { align-self: start; max-height: 100%; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; }
 .reward-left .bag-wrap { grid-template-columns: auto; }
 /* GAME-003A: accessory reach, set progress, side pouch */
 .bag-grid .cell.reach { z-index: 4; background: rgba(255, 205, 90, 0.26); border-style: dashed; box-shadow: inset 0 0 0 3px rgba(255, 210, 100, 0.95), 0 0 10px rgba(240, 196, 90, 0.35); pointer-events: none; }
@@ -573,7 +575,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .item-ware .shape { font-size: 11px; color: #2f6f78; }
 .item-ware .desc { font-size: 11px; line-height: 1.3; flex: 1; overflow: hidden; }
 .item-ware .tag-price { margin-top: auto; }
-.shop-sell { display: flex; flex-direction: column; gap: 8px; overflow: hidden; }
+.shop-sell { display: flex; flex-direction: column; gap: 8px; overflow-y: auto; }
 .shop-sell h3 { font-size: 17px; margin: 0; }
 .wanted { margin: 0; font-size: 14px; }
 .order-box { display: flex; flex-direction: column; gap: 4px; background: rgba(0, 0, 0, 0.3); padding: 8px; border-radius: 4px; font-size: 14px; }
@@ -584,7 +586,12 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .shop-sell .leave { position: sticky; bottom: 0; flex: none; }
 .portrait .shop-table { grid-column: 1 / -1; grid-row: 2; }
 
-.event { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 600px; gap: 20px; padding: 24px 40px; align-items: center; background-size: cover; background-position: center; }
+/* Rows sized to the stage; the scroll's text area scrolls and the continue button sits below it: with a full bag
+   the result (bag, tag sets) is taller than the stage, and continue must stay on screen. */
+.event { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 600px; grid-template-rows: minmax(0, 1fr); gap: 20px; padding: 24px 40px; align-items: center; background-size: cover; background-position: center; }
+.event-box { max-height: calc(100% - 36px); box-sizing: border-box; display: flex; flex-direction: column; min-height: 0; }
+.event-scroll { overflow-y: auto; min-height: 0; flex: 0 1 auto; }
+.event-continue { flex: none; margin-top: 12px; align-self: flex-start; }
 .event-art { display: grid; place-items: center; height: 100%; }
 .event-art img { height: 72%; width: 100%; max-height: 90%; object-fit: contain; filter: drop-shadow(0 10px 20px #000); }
 .event-text { font-size: 18px; line-height: 1.7; }
@@ -596,9 +603,12 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .option:hover:not(:disabled) { box-shadow: inset 0 0 0 2px var(--red), 0 3px 0 #3a2410; }
 .option.locked { filter: grayscale(0.8) brightness(0.75); cursor: not-allowed; }
 .result-text { font-size: 18px; color: #ffcf5a; }
-.portrait .event { grid-template-columns: 1fr; grid-template-rows: 380px 1fr; padding: 16px; }
+.portrait .event { grid-template-columns: 1fr; grid-template-rows: 380px minmax(0, 1fr); padding: 16px; }
 
-.result { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 640px; gap: 20px; padding: 30px 50px; align-items: center; background-size: cover; background-position: center; }
+.result { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 640px; grid-template-rows: minmax(0, 1fr); gap: 20px; padding: 30px 50px; align-items: center; background-size: cover; background-position: center; }
+.result-box { max-height: 100%; box-sizing: border-box; display: flex; flex-direction: column; min-height: 0; }
+.result-scroll { overflow-y: auto; min-height: 0; flex: 0 1 auto; }
+.result-actions { flex: none; margin-top: 10px; }
 .result-art { display: grid; place-items: center; height: 100%; }
 .result-art img { max-height: 90%; filter: drop-shadow(0 10px 30px #000); }
 .outcome-dead .result-art img { filter: grayscale(0.7) brightness(0.6); }
@@ -607,7 +617,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .result-box .renown { color: #8fe0a0; }
 .result-box .renown .ach { color: #ffcf5a; }
 .seed { font-size: 12px; color: var(--ink-dim); }
-.portrait .result { grid-template-columns: 1fr; grid-template-rows: 360px 1fr; padding: 20px; }
+.portrait .result { grid-template-columns: 1fr; grid-template-rows: 360px minmax(0, 1fr); padding: 20px; }
 
 /* ---------------------------------------------------------------- UI-003 immersion */
 .fx-layer { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 4; }

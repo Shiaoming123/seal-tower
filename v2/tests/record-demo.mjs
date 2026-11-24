@@ -47,6 +47,7 @@ iframe{border:0;width:100%;height:100%;display:block}
 #card p{font:30px/1.7 Kai,serif;color:#e9cf9a;margin:0;text-align:center}
 #card.poster{background:#000}#card .blur{position:absolute;inset:-40px;background:url(/__cover.jpg) center/cover;filter:blur(30px) brightness(.45)}
 #card .poster-img{position:relative;height:100%;box-shadow:0 0 60px #000}
+#card .banner-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 </style>
 <iframe id=game src="${base}?seed=demo-fox"></iframe><div id=cap></div><div id=card></div>
 <script>
@@ -55,6 +56,7 @@ window.card=(h)=>{const c=document.getElementById('card');if(!h){c.classList.rem
 </script>` }));
 
 await page.route(`${base}__cover.jpg`, (route) => route.fulfill({ path: new URL("../../docs/contest/media/cover-1080x1440.jpg", import.meta.url).pathname, contentType: "image/jpeg" }));
+await page.route(`${base}__banner.jpg`, (route) => route.fulfill({ path: new URL("../../docs/contest/media/cover-review/banner.jpg", import.meta.url).pathname, contentType: "image/jpeg" }));
 const videoPath = outPath.replace(/\.mp4$/, "") + ".video.mp4", audioPath = outPath.replace(/\.mp4$/, "") + ".audio.m4a";
 const file = await open(videoPath, "w"), afile = await open(audioPath, "w");
 let bytes = 0;
@@ -278,7 +280,10 @@ try {
 
   // 7. End card.
   scene("片尾");
-  await card(`<h1>斩妖塔</h1><h2>富婆狐商救救我！</h2><p>第一人称爬塔 · 卡牌 · 背包 · 跑商<br>魔搭创空间 网页即玩 · AI+∞ 开发者创作大赛</p>`);
+  // The lettered landscape key art (ART-011 + CONTEST-002) as the closing frame.
+  await page.evaluate(() => { const c = document.getElementById("card"); c.className = "banner"; c.innerHTML = '<img class="banner-img" src="/__banner.jpg">'; });
+  await page.waitForFunction(() => document.querySelector(".banner-img")?.complete);
+  await page.evaluate(() => document.getElementById("card").classList.add("on"));
   await wait(4500);
 } catch (e) {
   errors.push("driver: " + String(e).split("\n")[0]);

@@ -18,6 +18,7 @@ export function EventScreen() {
     <div class="event" style={{ backgroundImage: `linear-gradient(rgba(5,3,2,0.55), rgba(5,3,2,0.75)), url(${ART[FLOOR_BG[run.floor]]})` }}>
       <div class="event-art"><img src={ART[sprite]} alt="" draggable={false} /></div>
       <div class="event-box panel">
+        <div class="event-scroll">
         <h2>{ev.title}</h2>
         <p class="event-text">{ev.text}</p>
         {!result ? (
@@ -36,10 +37,14 @@ export function EventScreen() {
           <>
             <p class="result-text">{result}</p>
             {run.pending.length > 0 && <BagGrid mode="manage" cell={44} />}
-            <button type="button" class="btn big primary" onClick={() => { R.closeEvent(run); commit(); }}>
-              {run.eventFight ? "迎战" : "继续"}{run.pending.length ? `（${run.pending.length} 件没装的留在这里）` : ""}
-            </button>
           </>
+        )}
+        </div>
+        {/* Outside the scrolling area so it never ends up below the stage, however full the bag is. */}
+        {result && (
+          <button type="button" class="btn big primary event-continue" onClick={() => { R.closeEvent(run); commit(); }}>
+            {run.eventFight ? "迎战" : "继续"}{run.pending.length ? `（${run.pending.length} 件没装的留在这里）` : ""}
+          </button>
         )}
       </div>
     </div>

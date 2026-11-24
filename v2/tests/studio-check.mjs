@@ -117,6 +117,20 @@ async function check(name, ctxOpts, climb = false) {
     }, [kinds, visited]);
     if (process.env.DEBUG) console.log("walkTo", JSON.stringify(kinds), JSON.stringify(pick), JSON.stringify(s?.pos));
     if (!pick) return;
+    // Clicking a tile right next to you on the minimap does nothing: turn to face it and step, as a player would.
+    const adj = await frame.evaluate((t) => {
+      const S = window.__seal, r = S.runSig.value, dx = t.x - r.pos.x, dy = t.y - r.pos.y;
+      if (Math.abs(dx) + Math.abs(dy) !== 1) return null;
+      return ((dy < 0 ? 0 : dx > 0 ? 1 : dy > 0 ? 2 : 3) - r.pos.dir + 4) % 4;
+    }, { x: pick.x, y: pick.y });
+    if (adj !== null) {
+      if (adj === 1 || adj === 2) await btn("右转");
+      if (adj === 3) await btn("左转");
+      if (adj === 2) await btn("右转");
+      await btn("前进");
+      await page.waitForTimeout(600);
+      return;
+    }
     const mb = await frame.locator(".minimap canvas").boundingBox();
     const x = mb.x + ((pick.x + 0.5) / pick.w) * mb.width, y = mb.y + ((pick.y + 0.5) / pick.h) * mb.height;
     if (touch) await page.touchscreen.tap(x, y); else await page.mouse.click(x, y);
