@@ -74,7 +74,8 @@ export function startCombat(run: RunState, entity: Entity, kind: FightKind): Com
   run.combat = c;
   if (has(run, "mirror")) c.block += 6;
   if (bag.tagLevel(run.bag, "guard") >= 1) c.block += 4;
-  if (bag.tagLevel(run.bag, "coin") >= 2) { run.gold += 3; run.stats.goldEarned += 3; }
+  if (bag.tagLevel(run.bag, "coin") >= 2) { run.gold += 5; run.stats.goldEarned += 5; }
+  if (bag.tagLevel(run.bag, "lamp") >= 2) enemy.status.burn = (enemy.status.burn ?? 0) + 3;
   if (has(run, "thorn")) c.status.thorns = (c.status.thorns ?? 0) + 2;
   if (has(run, "abacus")) { const s = Math.min(3, Math.floor(run.gold / 15)); if (s) c.status.str = s; }
   if (has(run, "treasurebag")) { const s = Math.min(3, Math.floor(bag.count(run.bag) / 4)); if (s) c.status.str = (c.status.str ?? 0) + s; }
@@ -337,7 +338,7 @@ export function endTurn(run: RunState): CombatEvent[] {
   // Burn ticks before the enemy acts and ignores block.
   const e = c.enemy;
   if (e.status.burn) {
-    const dmg = Math.min(e.hp, e.status.burn + (has(run, "wickcutter") ? 2 : 0) + (bag.tagLevel(run.bag, "lamp") >= 1 ? 1 : 0));
+    const dmg = Math.min(e.hp, e.status.burn + (has(run, "wickcutter") ? 2 : 0) + (bag.tagLevel(run.bag, "lamp") >= 1 ? 2 : 0));
     e.hp -= dmg;
     events.push({ t: "hit", target: "enemy", amount: dmg, blocked: 0 });
     events.push({ t: "status", target: "enemy", id: "burn", n: -1 });

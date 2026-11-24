@@ -168,7 +168,6 @@ export function winCombat(run: RunState) {
   }
   if (has(run, "lamp")) goods.push("ash");
   if (has(run, "lamp-fine")) goods.push("ash");
-  if (bag.tagLevel(run.bag, "lamp") >= 2) goods.push("ash");
   if (run.omen === "horde" && c.kind === "fight") goods.push(def.drops[0].good);
   if (has(run, "fangcharm")) run.hp = Math.min(run.maxHp, run.hp + 4);
   // Normal fights sometimes drop a piece of basic gear; elites always drop tier-2 gear or better.
@@ -303,7 +302,7 @@ export function closeReward(run: RunState) {
 export const SHOP_INFLATION = 0.25;
 
 function makeShop(run: RunState): ShopState {
-  const off = (run.relics.includes("pin") ? 0.8 : 1) * (run.omen === "market" ? 0.75 : 1) * (bag.tagLevel(run.bag, "coin") >= 1 ? 0.9 : 1);
+  const off = (run.relics.includes("pin") ? 0.8 : 1) * (run.omen === "market" ? 0.75 : 1) * (bag.tagLevel(run.bag, "coin") >= 1 ? 0.8 : 1);
   const price = (n: number) => Math.round(n * off * (1 + SHOP_INFLATION * (run.floor - 1)));
   const cardPrice = (id: string) => price({ common: 14, uncommon: 22, rare: 34, basic: 10 }[CARDS[id].rarity] + int(run.rng, -2, 2));
   const relics = [randomRelic(run, "common"), randomRelic(run)].filter((id, i, a): id is string => !!id && a.indexOf(id) === i);
@@ -554,10 +553,13 @@ export function settle(run: RunState): { renown: number; lines: string[]; carrie
   });
   if (cleared) { renown += cleared; lines.push(`打通 ${cleared} 层 +${cleared}`); }
   if (run.outcome === "win") { renown += 2; lines.push("击败负钟君 +2"); }
-  const goodsValue = run.bag.items.reduce((s, it) => s + townValue(it.id), 0) + run.pouch.reduce((s, id) => s + townValue(id), 0);
+  const carriedIds = [...run.bag.items.map((it) => it.id), ...run.pouch];
+  // 妖材 set: each 妖材 is worth 2 more in town too, not only at the 狐市.
+  const materialBonus = bag.tagLevel(run.bag, "material") >= 1 ? 2 * carriedIds.filter((id) => GOODS[id].tags?.includes("material")).length : 0;
+  const goodsValue = carriedIds.reduce((s, id) => s + townValue(id), 0) + materialBonus;
   const carried = alive ? run.gold + goodsValue : 0;
   const carriedLines = alive
-    ? [`身上的石 ${run.gold}`, `行囊里的东西折价 ${goodsValue}`]
+    ? [`身上的石 ${run.gold}`, `行囊里的东西折价 ${goodsValue}${materialBonus ? `（妖材凑齐，多算 ${materialBonus}）` : ""}`]
     : [`倒在塔里，身上的 ${run.gold} 石和行囊里值 ${goodsValue} 石的东西都丢了`];
   return { renown, lines, carried, carriedLines, delivered: run.orders.filter((o) => o.done).map((o) => o.id) };
 }

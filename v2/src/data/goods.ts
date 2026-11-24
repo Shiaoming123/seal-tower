@@ -126,9 +126,9 @@ export interface TagDef { id: TagId; name: string; at: [number, number]; text: [
 export const TAGS: Record<TagId, TagDef> = {
   blade: { id: "blade", name: "刃", at: [2, 4], text: ["所有伤害 +1", "每回合第一张攻击牌再 +3 伤害"] },
   guard: { id: "guard", name: "盾", at: [2, 3], text: ["每场开始获得 4 点格挡", "回合结束多保留 3 点格挡"] },
-  lamp: { id: "lamp", name: "灯", at: [2, 3], text: ["灼烧每次多烧 1 点", "每场胜利多得 1 份灯灰"] },
-  coin: { id: "coin", name: "钱", at: [2, 3], text: ["狐市买东西便宜一成", "每场开始得 3 石"] },
-  material: { id: "material", name: "妖材", at: [3, 6], text: ["妖材卖价 +1", "取材成功时多拿一份"] },
+  lamp: { id: "lamp", name: "灯", at: [2, 4], text: ["灼烧每次多烧 2 点", "每场开始给妖点上 3 层灼烧"] },
+  coin: { id: "coin", name: "钱", at: [2, 3], text: ["狐市买东西便宜两成", "每场开始得 5 石"] },
+  material: { id: "material", name: "妖材", at: [3, 6], text: ["每件妖材多值 2 石（卖给绯绡或带回镇上都算）", "取材成功时多拿一份"] },
 };
 export const TAG_IDS = Object.keys(TAGS) as TagId[];
 

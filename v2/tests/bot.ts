@@ -68,13 +68,14 @@ export function fight(run: RunState, maxTurns = 60, stats?: SimStats) {
 }
 
 /** Sell trade goods the bot doesn't need: keeps what open orders ask for and a few ash for lamp cards. */
-function sellSpare(run: RunState): number {
+function sellSpare(run: RunState, always: readonly string[] = []): number {
   let got = 0;
   const keep: Record<string, number> = {};
   run.orders.forEach((o, i) => { if (!o.done) for (const p of R.orderProgress(run, i).parts) keep[p.id] = Math.max(keep[p.id] ?? 0, p.need); });
   if (run.bag.items.some((i) => i.id === "lamp" || i.id === "lamp-fine")) keep.ash = Math.max(keep.ash ?? 0, 3);
   for (const it of [...run.bag.items]) {
     if (GOODS[it.id].kind !== "goods") continue;
+    if (always.includes(it.id)) continue;
     if ((keep[it.id] ?? 0) > 0) { keep[it.id]--; continue; }
     got += sellItem(run, it.uid);
   }
@@ -82,7 +83,8 @@ function sellSpare(run: RunState): number {
 }
 
 /** Play a whole run with simple rules. Returns the floor reached and the outcome. */
-export function playRun(run: RunState, opts: { elites?: boolean; onFloor?: () => void; stats?: SimStats; sell?: boolean } = {}) {
+/** `keep`: goods the bot never sells (experiments that load the bag with tagged goods). */
+export function playRun(run: RunState, opts: { elites?: boolean; onFloor?: () => void; stats?: SimStats; sell?: boolean; keep?: readonly string[] } = {}) {
   const st = opts.stats;
   let floorSeen = 0;
   const endFloor = () => { if (st && floorSeen) { st.floors[floorSeen].hpAtEnd += Math.max(0, run.hp); st.floors[floorSeen].goldAtEnd += run.gold; } };
@@ -126,7 +128,7 @@ export function playRun(run: RunState, opts: { elites?: boolean; onFloor?: () =>
       let g = run.gold;
       R.deliverOrder(run);
       if (f) f.orderGold += run.gold - g;
-      if (opts.sell !== false) { const got = sellSpare(run); if (f) f.saleGold += got; }
+      if (opts.sell !== false) { const got = sellSpare(run, opts.keep); if (f) f.saleGold += got; }
       g = run.gold;
       if (run.hp < run.maxHp * 0.5) R.buyItem(run, "consumables", 0);
       if (f) { f.spentOther += g - run.gold; g = run.gold; }

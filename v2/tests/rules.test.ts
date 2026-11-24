@@ -6,7 +6,7 @@ import * as bag from "../src/game/bag";
 import { endTurn, incomingDamage, playCard, startCombat } from "../src/game/combat";
 import { distances, findPath, generate, idx, revealAll } from "../src/game/dungeon";
 import { addGood, fromPouch, sellPouch, sewPiece, toPouch, useItem } from "../src/game/inventory";
-import { climb, createRun, winCombat } from "../src/game/run";
+import { climb, createRun, settle, townValue, winCombat } from "../src/game/run";
 import { FLOOR_SPAWNS } from "../src/data/enemies";
 import { hearing } from "../src/game/dungeon";
 import { makeRng } from "../src/game/rng";
@@ -804,5 +804,24 @@ describe("hearing monsters (AUDIO-002)", () => {
     expect(h.los).toBe(false);
     expect(h.steps).toBe(7);
     expect(hearing(d, { x: 1, y: 1 }, { x: 4, y: 1 }, 6)).toBeNull();
+  });
+});
+
+describe("set bonuses after GAME-006", () => {
+  it("灯 2: the fight opens with 3 burn on the monster; 钱 2: +5 石", () => {
+    const run = createRun(61, "sword", "lamp");
+    run.bag.w = 6; run.bag.h = 5;
+    for (const id of ["lamp", "oilpot", "wick", "wick", "purse", "luckybag", "abacus"] as const) addGood(run, id);
+    const gold = run.gold;
+    const c = fightWith(run, "louse");
+    expect(c.enemy.status.burn).toBeGreaterThanOrEqual(3);
+    expect(run.gold).toBe(gold + 5);
+  });
+  it("妖材: each 妖材 carried home counts 2 more", () => {
+    const run = createRun(62, "sword", "lamp");
+    for (const id of ["redpaper", "fur", "inkdust"] as const) addGood(run, id);
+    run.outcome = "retreat";
+    const plain = run.bag.items.reduce((s, it) => s + townValue(it.id), 0) + run.gold;
+    expect(settle(run).carried).toBe(plain + 6);
   });
 });

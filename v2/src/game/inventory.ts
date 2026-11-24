@@ -35,7 +35,7 @@ export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floo
   const festival = omen === "festival" && id === "ash" ? 2 : 1;
   const market = omen === "market" ? 1.25 : 1;
   const raw = Math.round(g.price * SELL_RATE * (m.mult[id] ?? 1) * (m.wanted === id ? 2 : 1) * festival * market);
-  const material = g.tags?.includes("material") && bag.tagLevel(run.bag, "material") >= 1 ? 1 : 0;
+  const material = g.tags?.includes("material") && bag.tagLevel(run.bag, "material") >= 1 ? 2 : 0;
   // Each one of the same good already sold here knocks 20% off (at least 1 石): the buyer's shelf fills up.
   const glut = Math.max(1, raw - Math.max(sold, Math.round(raw * SELL_GLUT * sold)));
   return glut + pin + material + (omen === "rain" ? 1 : 0);
