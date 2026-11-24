@@ -353,5 +353,25 @@
     "file": "water-ghost-hurt.png",
     "sourceSha256": "54b7d6b11c1219e1fa72a15b0725abefb07092a694b4d7f5ce52268fae2fe2cb",
     "webpSha256": "9589a1019ed82363e403f2543a0a3835c38587e6064f9efcd5cc44922acbfb35"
+  },
+  "portrait-lamp": {
+    "file": "portrait-lamp.png",
+    "sourceSha256": "2f3abd1e4e48a1a21e5dc469fb83bcab987555379a28aac7cf95a5b6e20edc6e",
+    "webpSha256": "0774b6ef2fc1f2435b1c7761c858b4b2a71a5c3865556d9e9d3659301c8ff67f"
+  },
+  "portrait-herbs": {
+    "file": "portrait-herbs.png",
+    "sourceSha256": "8741604fd399b938fea091783f589261eaebaca5c7b7579d6e1ba3156fd9f4a0",
+    "webpSha256": "7130a9c0b8cfda6f2ad9ad2d3edd6239eef0cd2d72ee4b0b10a2f12967c71a5f"
+  },
+  "portrait-mayor": {
+    "file": "portrait-mayor.png",
+    "sourceSha256": "d5437805717900649e6a0c855d3fc40813cb1f644e5df1a6213faa374611bb32",
+    "webpSha256": "c66dda832ffdd34ee4b02ed4ad68c78d77b98ef8f14b65a4e151bccdea6d2dc5"
+  },
+  "portrait-scholar": {
+    "file": "portrait-scholar.png",
+    "sourceSha256": "ffea8059eda8bc71360c45550c6e50b97bb49f79cb472362cf4b7ede6c3f5d21",
+    "webpSha256": "acab6f4c06ae6b3d08a0ae906598146716d20f76d74d01ce250b11908cda607e"
   }
 }

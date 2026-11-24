@@ -1,0 +1,1139 @@
+{
+  "runtimeBase": "fdd5d7a",
+  "records": {
+    "baseline": {
+      "mode": "baseline",
+      "expected": "guide",
+      "seed": "gallery",
+      "rows": [
+        {
+          "port": {
+            "width": 1280,
+            "height": 720
+          },
+          "mode": "baseline",
+          "expected": "guide",
+          "badge": {
+            "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+            "logical": [
+              48,
+              48
+            ],
+            "natural": [
+              480,
+              360
+            ],
+            "rect": [
+              40,
+              143,
+              48,
+              48
+            ],
+            "fit": "cover",
+            "position": "50% 0%",
+            "border": "2px",
+            "radius": "50%",
+            "filter": "none",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                1280,
+                720
+              ],
+              "viewport": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "factor": 1
+            },
+            "window": [
+              1280,
+              720,
+              1
+            ]
+          },
+          "list": {
+            "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              480,
+              360
+            ],
+            "rect": [
+              156,
+              78,
+              80,
+              80
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "none",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                1280,
+                720
+              ],
+              "viewport": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "factor": 1
+            },
+            "window": [
+              1280,
+              720,
+              1
+            ]
+          },
+          "detail": {
+            "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+            "logical": [
+              267,
+              200
+            ],
+            "natural": [
+              480,
+              360
+            ],
+            "rect": [
+              908.67,
+              84,
+              266.66,
+              200
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                1280,
+                720
+              ],
+              "viewport": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "factor": 1
+            },
+            "window": [
+              1280,
+              720,
+              1
+            ]
+          },
+          "unknown": {
+            "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              480,
+              360
+            ],
+            "rect": [
+              156,
+              78,
+              80,
+              80
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "brightness(0) opacity(0.45)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                1280,
+                720
+              ],
+              "viewport": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "factor": 1
+            },
+            "window": [
+              1280,
+              720,
+              1
+            ]
+          },
+          "hiddenNeighbor": {
+            "source": "http://127.0.0.1:5178/src/assets/broker.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              310,
+              480
+            ],
+            "rect": [
+              268,
+              78,
+              80,
+              80
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "brightness(0) opacity(0.45)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                1280,
+                720
+              ],
+              "viewport": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "factor": 1
+            },
+            "window": [
+              1280,
+              720,
+              1
+            ]
+          },
+          "beforeCount": "0 / 7",
+          "afterCount": "1 / 7",
+          "devResumed": true,
+          "stored": {
+            "seen": [
+              "c:lamp",
+              "g:shield"
+            ],
+            "signed": [
+              {
+                "id": "lamp",
+                "level": 0,
+                "done": false
+              }
+            ]
+          },
+          "errors": [],
+          "art": {
+            "browserSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "diskSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "sourceSha256": null,
+            "fileDimensions": [
+              480,
+              360
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  20,
+                  0,
+                  472,
+                  356
+                ],
+                "pixels": 95462,
+                "borderPixels": 6
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  21,
+                  1,
+                  471,
+                  355
+                ],
+                "pixels": 93278,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  22,
+                  2,
+                  470,
+                  355
+                ],
+                "pixels": 90685,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "port": {
+            "width": 390,
+            "height": 844
+          },
+          "mode": "baseline",
+          "expected": "guide",
+          "badge": {
+            "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+            "logical": [
+              48,
+              48
+            ],
+            "natural": [
+              480,
+              360
+            ],
+            "rect": [
+              26,
+              108.05,
+              31.2,
+              31.2
+            ],
+            "fit": "cover",
+            "position": "50% 0%",
+            "border": "2px",
+            "radius": "50%",
+            "filter": "none",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                600,
+                1298
+              ],
+              "viewport": [
+                0,
+                0.15,
+                390,
+                843.7
+              ],
+              "factor": 0.65
+            },
+            "window": [
+              390,
+              844,
+              1
+            ]
+          },
+          "list": {
+            "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              480,
+              360
+            ],
+            "rect": [
+              101.4,
+              50.85,
+              52,
+              52
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "none",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                600,
+                1298
+              ],
+              "viewport": [
+                0,
+                0.15,
+                390,
+                843.7
+              ],
+              "factor": 0.65
+            },
+            "window": [
+              390,
+              844,
+              1
+            ]
+          },
+          "detail": {
+            "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+            "logical": [
+              267,
+              200
+            ],
+            "natural": [
+              480,
+              360
+            ],
+            "rect": [
+              108.34,
+              453.85,
+              173.33,
+              130
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                600,
+                1298
+              ],
+              "viewport": [
+                0,
+                0.15,
+                390,
+                843.7
+              ],
+              "factor": 0.65
+            },
+            "window": [
+              390,
+              844,
+              1
+            ]
+          },
+          "unknown": {
+            "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              480,
+              360
+            ],
+            "rect": [
+              101.4,
+              50.85,
+              52,
+              52
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "brightness(0) opacity(0.45)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                600,
+                1298
+              ],
+              "viewport": [
+                0,
+                0.15,
+                390,
+                843.7
+              ],
+              "factor": 0.65
+            },
+            "window": [
+              390,
+              844,
+              1
+            ]
+          },
+          "hiddenNeighbor": {
+            "source": "http://127.0.0.1:5178/src/assets/broker.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              310,
+              480
+            ],
+            "rect": [
+              174.2,
+              50.85,
+              52,
+              52
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "brightness(0) opacity(0.45)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                600,
+                1298
+              ],
+              "viewport": [
+                0,
+                0.15,
+                390,
+                843.7
+              ],
+              "factor": 0.65
+            },
+            "window": [
+              390,
+              844,
+              1
+            ]
+          },
+          "beforeCount": "0 / 7",
+          "afterCount": "1 / 7",
+          "devResumed": true,
+          "stored": {
+            "seen": [
+              "c:lamp",
+              "g:shield"
+            ],
+            "signed": [
+              {
+                "id": "lamp",
+                "level": 0,
+                "done": false
+              }
+            ]
+          },
+          "errors": [],
+          "art": {
+            "browserSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "diskSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "sourceSha256": null,
+            "fileDimensions": [
+              480,
+              360
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  20,
+                  0,
+                  472,
+                  356
+                ],
+                "pixels": 95462,
+                "borderPixels": 6
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  21,
+                  1,
+                  471,
+                  355
+                ],
+                "pixels": 93278,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  22,
+                  2,
+                  470,
+                  355
+                ],
+                "pixels": 90685,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    },
+    "final": {
+      "mode": "final",
+      "expected": "portrait-lamp",
+      "seed": "gallery",
+      "rows": [
+        {
+          "port": {
+            "width": 1280,
+            "height": 720
+          },
+          "mode": "final",
+          "expected": "portrait-lamp",
+          "badge": {
+            "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+            "logical": [
+              48,
+              48
+            ],
+            "natural": [
+              480,
+              480
+            ],
+            "rect": [
+              40,
+              143,
+              48,
+              48
+            ],
+            "fit": "cover",
+            "position": "50% 0%",
+            "border": "2px",
+            "radius": "50%",
+            "filter": "none",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                1280,
+                720
+              ],
+              "viewport": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "factor": 1
+            },
+            "window": [
+              1280,
+              720,
+              1
+            ]
+          },
+          "list": {
+            "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              480,
+              480
+            ],
+            "rect": [
+              156,
+              78,
+              80,
+              80
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "none",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                1280,
+                720
+              ],
+              "viewport": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "factor": 1
+            },
+            "window": [
+              1280,
+              720,
+              1
+            ]
+          },
+          "detail": {
+            "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+            "logical": [
+              200,
+              200
+            ],
+            "natural": [
+              480,
+              480
+            ],
+            "rect": [
+              942,
+              84,
+              200,
+              200
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                1280,
+                720
+              ],
+              "viewport": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "factor": 1
+            },
+            "window": [
+              1280,
+              720,
+              1
+            ]
+          },
+          "unknown": {
+            "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              480,
+              480
+            ],
+            "rect": [
+              156,
+              78,
+              80,
+              80
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "brightness(0) opacity(0.45)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                1280,
+                720
+              ],
+              "viewport": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "factor": 1
+            },
+            "window": [
+              1280,
+              720,
+              1
+            ]
+          },
+          "hiddenNeighbor": {
+            "source": "http://127.0.0.1:5178/src/assets/broker.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              310,
+              480
+            ],
+            "rect": [
+              268,
+              78,
+              80,
+              80
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "brightness(0) opacity(0.45)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                1280,
+                720
+              ],
+              "viewport": [
+                0,
+                0,
+                1280,
+                720
+              ],
+              "factor": 1
+            },
+            "window": [
+              1280,
+              720,
+              1
+            ]
+          },
+          "beforeCount": "0 / 7",
+          "afterCount": "1 / 7",
+          "devResumed": true,
+          "stored": {
+            "seen": [
+              "c:lamp",
+              "g:shield"
+            ],
+            "signed": [
+              {
+                "id": "lamp",
+                "level": 0,
+                "done": false
+              }
+            ]
+          },
+          "errors": [],
+          "art": {
+            "browserSha256": "0774b6ef2fc1f2435b1c7761c858b4b2a71a5c3865556d9e9d3659301c8ff67f",
+            "diskSha256": "0774b6ef2fc1f2435b1c7761c858b4b2a71a5c3865556d9e9d3659301c8ff67f",
+            "sourceSha256": "2f3abd1e4e48a1a21e5dc469fb83bcab987555379a28aac7cf95a5b6e20edc6e",
+            "fileDimensions": [
+              480,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  3,
+                  6,
+                  478,
+                  478
+                ],
+                "pixels": 131061,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  4,
+                  7,
+                  477,
+                  477
+                ],
+                "pixels": 129936,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  4,
+                  9,
+                  477,
+                  476
+                ],
+                "pixels": 128472,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "port": {
+            "width": 390,
+            "height": 844
+          },
+          "mode": "final",
+          "expected": "portrait-lamp",
+          "badge": {
+            "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+            "logical": [
+              48,
+              48
+            ],
+            "natural": [
+              480,
+              480
+            ],
+            "rect": [
+              26,
+              108.05,
+              31.2,
+              31.2
+            ],
+            "fit": "cover",
+            "position": "50% 0%",
+            "border": "2px",
+            "radius": "50%",
+            "filter": "none",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                600,
+                1298
+              ],
+              "viewport": [
+                0,
+                0.15,
+                390,
+                843.7
+              ],
+              "factor": 0.65
+            },
+            "window": [
+              390,
+              844,
+              1
+            ]
+          },
+          "list": {
+            "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              480,
+              480
+            ],
+            "rect": [
+              101.4,
+              50.85,
+              52,
+              52
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "none",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                600,
+                1298
+              ],
+              "viewport": [
+                0,
+                0.15,
+                390,
+                843.7
+              ],
+              "factor": 0.65
+            },
+            "window": [
+              390,
+              844,
+              1
+            ]
+          },
+          "detail": {
+            "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+            "logical": [
+              200,
+              200
+            ],
+            "natural": [
+              480,
+              480
+            ],
+            "rect": [
+              130,
+              453.85,
+              130,
+              130
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                600,
+                1298
+              ],
+              "viewport": [
+                0,
+                0.15,
+                390,
+                843.7
+              ],
+              "factor": 0.65
+            },
+            "window": [
+              390,
+              844,
+              1
+            ]
+          },
+          "unknown": {
+            "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              480,
+              480
+            ],
+            "rect": [
+              101.4,
+              50.85,
+              52,
+              52
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "brightness(0) opacity(0.45)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                600,
+                1298
+              ],
+              "viewport": [
+                0,
+                0.15,
+                390,
+                843.7
+              ],
+              "factor": 0.65
+            },
+            "window": [
+              390,
+              844,
+              1
+            ]
+          },
+          "hiddenNeighbor": {
+            "source": "http://127.0.0.1:5178/src/assets/broker.webp",
+            "logical": [
+              80,
+              80
+            ],
+            "natural": [
+              310,
+              480
+            ],
+            "rect": [
+              174.2,
+              50.85,
+              52,
+              52
+            ],
+            "fit": "contain",
+            "position": "50% 50%",
+            "border": "0px",
+            "radius": "0px",
+            "filter": "brightness(0) opacity(0.45)",
+            "rendering": "auto",
+            "stage": {
+              "logical": [
+                600,
+                1298
+              ],
+              "viewport": [
+                0,
+                0.15,
+                390,
+                843.7
+              ],
+              "factor": 0.65
+            },
+            "window": [
+              390,
+              844,
+              1
+            ]
+          },
+          "beforeCount": "0 / 7",
+          "afterCount": "1 / 7",
+          "devResumed": true,
+          "stored": {
+            "seen": [
+              "c:lamp",
+              "g:shield"
+            ],
+            "signed": [
+              {
+                "id": "lamp",
+                "level": 0,
+                "done": false
+              }
+            ]
+          },
+          "errors": [],
+          "art": {
+            "browserSha256": "0774b6ef2fc1f2435b1c7761c858b4b2a71a5c3865556d9e9d3659301c8ff67f",
+            "diskSha256": "0774b6ef2fc1f2435b1c7761c858b4b2a71a5c3865556d9e9d3659301c8ff67f",
+            "sourceSha256": "2f3abd1e4e48a1a21e5dc469fb83bcab987555379a28aac7cf95a5b6e20edc6e",
+            "fileDimensions": [
+              480,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  3,
+                  6,
+                  478,
+                  478
+                ],
+                "pixels": 131061,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  4,
+                  7,
+                  477,
+                  477
+                ],
+                "pixels": 129936,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  4,
+                  9,
+                  477,
+                  476
+                ],
+                "pixels": 128472,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

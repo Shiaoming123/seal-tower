@@ -5,6 +5,7 @@ import { GOODS } from "../data/goods";
 import { ORDERS } from "../data/orders";
 import { ACHIEVEMENTS } from "../data/achievements";
 import { createRun, orderNeeds, orderRewardText } from "../game/run";
+import { ORDER_CHARACTER } from "../game/discover";
 import { MAX_FAVOR, UPGRADES } from "../data/town";
 import { seedFromString } from "../game/rng";
 import type { WeaponId } from "../game/types";
@@ -111,7 +112,7 @@ export function Town() {
                 const needs = orderNeeds(ord);
                 return (
                   <button type="button" class={`order-card ${orders.includes(o.id) ? "selected" : ""}`} onClick={() => toggleOrder(o.id)}>
-                    <div class="order-top"><Art id={portraitOf(o.id, o.portrait)} class="portrait" /><div><b>{o.client}</b><span>{o.title}</span></div></div>
+                    <div class="order-top"><Art id={portraitOf(ORDER_CHARACTER[o.id] ?? o.id, o.portrait)} class="portrait" /><div><b>{o.client}</b><span>{o.title}</span></div></div>
                     <p class="favor" title="交情越高，要的货越多、给的报酬越多">交情 {"●".repeat(level)}{"○".repeat(MAX_FAVOR - level)}</p>
                     <p>要：{Object.entries(needs).map(([g, n]) => `${GOODS[g as keyof typeof GOODS].name}×${n}`).join("、")}</p>
                     <p class="order-reward">报酬：{orderRewardText(ord)}</p>

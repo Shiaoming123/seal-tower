@@ -1,0 +1,2277 @@
+{
+  "base": "fdd5d7a",
+  "entrance": 5178,
+  "seed": "gallery",
+  "records": {
+    "lamp": {
+      "baseline": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "expected": "guide",
+          "orderId": "lamp",
+          "characterUnlock": [
+            "c:lamp"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 1,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                40,
+                143,
+                48,
+                48
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                156,
+                78,
+                80,
+                80
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                267,
+                200
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                908.67,
+                84,
+                266.66,
+                200
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "diskSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "sourceSha256": null,
+            "fileDimensions": [
+              480,
+              360
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  20,
+                  0,
+                  472,
+                  356
+                ],
+                "pixels": 95462,
+                "borderPixels": 6
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  21,
+                  1,
+                  471,
+                  355
+                ],
+                "pixels": 93278,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  22,
+                  2,
+                  470,
+                  355
+                ],
+                "pixels": 90685,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "expected": "guide",
+          "orderId": "lamp",
+          "characterUnlock": [
+            "c:lamp"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 0.65,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                26,
+                108.05,
+                31.2,
+                31.2
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                101.4,
+                50.85,
+                52,
+                52
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                267,
+                200
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                108.34,
+                453.85,
+                173.33,
+                130
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "diskSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "sourceSha256": null,
+            "fileDimensions": [
+              480,
+              360
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  20,
+                  0,
+                  472,
+                  356
+                ],
+                "pixels": 95462,
+                "borderPixels": 6
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  21,
+                  1,
+                  471,
+                  355
+                ],
+                "pixels": 93278,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  22,
+                  2,
+                  470,
+                  355
+                ],
+                "pixels": 90685,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        }
+      ],
+      "final": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "expected": "portrait-lamp",
+          "orderId": "lamp",
+          "characterUnlock": [
+            "c:lamp"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 1,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                40,
+                143,
+                48,
+                48
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                156,
+                78,
+                80,
+                80
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+              "logical": [
+                200,
+                200
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                942,
+                84,
+                200,
+                200
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "0774b6ef2fc1f2435b1c7761c858b4b2a71a5c3865556d9e9d3659301c8ff67f",
+            "diskSha256": "0774b6ef2fc1f2435b1c7761c858b4b2a71a5c3865556d9e9d3659301c8ff67f",
+            "sourceSha256": "2f3abd1e4e48a1a21e5dc469fb83bcab987555379a28aac7cf95a5b6e20edc6e",
+            "fileDimensions": [
+              480,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  3,
+                  6,
+                  478,
+                  478
+                ],
+                "pixels": 131061,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  4,
+                  7,
+                  477,
+                  477
+                ],
+                "pixels": 129936,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  4,
+                  9,
+                  477,
+                  476
+                ],
+                "pixels": 128472,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "expected": "portrait-lamp",
+          "orderId": "lamp",
+          "characterUnlock": [
+            "c:lamp"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 0.65,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                26,
+                108.05,
+                31.2,
+                31.2
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                101.4,
+                50.85,
+                52,
+                52
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-lamp.webp",
+              "logical": [
+                200,
+                200
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                130,
+                453.85,
+                130,
+                130
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "0774b6ef2fc1f2435b1c7761c858b4b2a71a5c3865556d9e9d3659301c8ff67f",
+            "diskSha256": "0774b6ef2fc1f2435b1c7761c858b4b2a71a5c3865556d9e9d3659301c8ff67f",
+            "sourceSha256": "2f3abd1e4e48a1a21e5dc469fb83bcab987555379a28aac7cf95a5b6e20edc6e",
+            "fileDimensions": [
+              480,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  3,
+                  6,
+                  478,
+                  478
+                ],
+                "pixels": 131061,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  4,
+                  7,
+                  477,
+                  477
+                ],
+                "pixels": 129936,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  4,
+                  9,
+                  477,
+                  476
+                ],
+                "pixels": 128472,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        }
+      ]
+    },
+    "herbs": {
+      "baseline": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "expected": "broker",
+          "orderId": "herbs",
+          "characterUnlock": [
+            "c:herbs"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 1,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/broker.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                310,
+                480
+              ],
+              "rect": [
+                445.33,
+                143,
+                48,
+                48
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/broker.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                310,
+                480
+              ],
+              "rect": [
+                268,
+                78,
+                80,
+                80
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/broker.webp",
+              "logical": [
+                129,
+                200
+              ],
+              "natural": [
+                310,
+                480
+              ],
+              "rect": [
+                977.42,
+                84,
+                129.16,
+                200
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "6586e52c5fd5ac4d5e5a0a1526e1210ff02272e66226b9a631d0aeb144f42a30",
+            "diskSha256": "6586e52c5fd5ac4d5e5a0a1526e1210ff02272e66226b9a631d0aeb144f42a30",
+            "sourceSha256": null,
+            "fileDimensions": [
+              310,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  1,
+                  0,
+                  309,
+                  480
+                ],
+                "pixels": 110663,
+                "borderPixels": 315
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  2,
+                  1,
+                  309,
+                  480
+                ],
+                "pixels": 109680,
+                "borderPixels": 301
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  3,
+                  2,
+                  308,
+                  480
+                ],
+                "pixels": 108404,
+                "borderPixels": 298
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "expected": "broker",
+          "orderId": "herbs",
+          "characterUnlock": [
+            "c:herbs"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 0.65,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/broker.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                310,
+                480
+              ],
+              "rect": [
+                26,
+                243.25,
+                31.2,
+                31.2
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/broker.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                310,
+                480
+              ],
+              "rect": [
+                174.2,
+                50.85,
+                52,
+                52
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/broker.webp",
+              "logical": [
+                129,
+                200
+              ],
+              "natural": [
+                310,
+                480
+              ],
+              "rect": [
+                153.02,
+                453.85,
+                83.95,
+                130
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "6586e52c5fd5ac4d5e5a0a1526e1210ff02272e66226b9a631d0aeb144f42a30",
+            "diskSha256": "6586e52c5fd5ac4d5e5a0a1526e1210ff02272e66226b9a631d0aeb144f42a30",
+            "sourceSha256": null,
+            "fileDimensions": [
+              310,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  1,
+                  0,
+                  309,
+                  480
+                ],
+                "pixels": 110663,
+                "borderPixels": 315
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  2,
+                  1,
+                  309,
+                  480
+                ],
+                "pixels": 109680,
+                "borderPixels": 301
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  3,
+                  2,
+                  308,
+                  480
+                ],
+                "pixels": 108404,
+                "borderPixels": 298
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "errors": []
+        }
+      ],
+      "final": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "expected": "portrait-herbs",
+          "orderId": "herbs",
+          "characterUnlock": [
+            "c:herbs"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 1,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-herbs.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                445.33,
+                143,
+                48,
+                48
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-herbs.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                268,
+                78,
+                80,
+                80
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-herbs.webp",
+              "logical": [
+                200,
+                200
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                942,
+                84,
+                200,
+                200
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "7130a9c0b8cfda6f2ad9ad2d3edd6239eef0cd2d72ee4b0b10a2f12967c71a5f",
+            "diskSha256": "7130a9c0b8cfda6f2ad9ad2d3edd6239eef0cd2d72ee4b0b10a2f12967c71a5f",
+            "sourceSha256": "8741604fd399b938fea091783f589261eaebaca5c7b7579d6e1ba3156fd9f4a0",
+            "fileDimensions": [
+              480,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  29,
+                  2,
+                  436,
+                  477
+                ],
+                "pixels": 110027,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  30,
+                  2,
+                  435,
+                  477
+                ],
+                "pixels": 108738,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  31,
+                  3,
+                  434,
+                  476
+                ],
+                "pixels": 106688,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "expected": "portrait-herbs",
+          "orderId": "herbs",
+          "characterUnlock": [
+            "c:herbs"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 0.65,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-herbs.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                26,
+                243.25,
+                31.2,
+                31.2
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-herbs.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                174.2,
+                50.85,
+                52,
+                52
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-herbs.webp",
+              "logical": [
+                200,
+                200
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                130,
+                453.85,
+                130,
+                130
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "7130a9c0b8cfda6f2ad9ad2d3edd6239eef0cd2d72ee4b0b10a2f12967c71a5f",
+            "diskSha256": "7130a9c0b8cfda6f2ad9ad2d3edd6239eef0cd2d72ee4b0b10a2f12967c71a5f",
+            "sourceSha256": "8741604fd399b938fea091783f589261eaebaca5c7b7579d6e1ba3156fd9f4a0",
+            "fileDimensions": [
+              480,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  29,
+                  2,
+                  436,
+                  477
+                ],
+                "pixels": 110027,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  30,
+                  2,
+                  435,
+                  477
+                ],
+                "pixels": 108738,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  31,
+                  3,
+                  434,
+                  476
+                ],
+                "pixels": 106688,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        }
+      ]
+    },
+    "scholar": {
+      "baseline": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "expected": "guide",
+          "orderId": "scholar",
+          "characterUnlock": [
+            "c:scholar"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 1,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                40,
+                347,
+                48,
+                48
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                380,
+                78,
+                80,
+                80
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                267,
+                200
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                908.67,
+                84,
+                266.66,
+                200
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "diskSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "sourceSha256": null,
+            "fileDimensions": [
+              480,
+              360
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  20,
+                  0,
+                  472,
+                  356
+                ],
+                "pixels": 95462,
+                "borderPixels": 6
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  21,
+                  1,
+                  471,
+                  355
+                ],
+                "pixels": 93278,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  22,
+                  2,
+                  470,
+                  355
+                ],
+                "pixels": 90685,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "expected": "guide",
+          "orderId": "scholar",
+          "characterUnlock": [
+            "c:scholar"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 0.65,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                205.4,
+                243.25,
+                31.2,
+                31.2
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                247,
+                50.85,
+                52,
+                52
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/guide.webp",
+              "logical": [
+                267,
+                200
+              ],
+              "natural": [
+                480,
+                360
+              ],
+              "rect": [
+                108.34,
+                453.85,
+                173.33,
+                130
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "diskSha256": "a346bb1a2af323d8c3afbcb6153861d2389fe7955eb352422538e1457b355bae",
+            "sourceSha256": null,
+            "fileDimensions": [
+              480,
+              360
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  20,
+                  0,
+                  472,
+                  356
+                ],
+                "pixels": 95462,
+                "borderPixels": 6
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  21,
+                  1,
+                  471,
+                  355
+                ],
+                "pixels": 93278,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  22,
+                  2,
+                  470,
+                  355
+                ],
+                "pixels": 90685,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        }
+      ],
+      "final": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "expected": "portrait-scholar",
+          "orderId": "scholar",
+          "characterUnlock": [
+            "c:scholar"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 1,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-scholar.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                40,
+                347,
+                48,
+                48
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-scholar.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                380,
+                78,
+                80,
+                80
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-scholar.webp",
+              "logical": [
+                200,
+                200
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                942,
+                84,
+                200,
+                200
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "acab6f4c06ae6b3d08a0ae906598146716d20f76d74d01ce250b11908cda607e",
+            "diskSha256": "acab6f4c06ae6b3d08a0ae906598146716d20f76d74d01ce250b11908cda607e",
+            "sourceSha256": "ffea8059eda8bc71360c45550c6e50b97bb49f79cb472362cf4b7ede6c3f5d21",
+            "fileDimensions": [
+              480,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  11,
+                  0,
+                  468,
+                  478
+                ],
+                "pixels": 121231,
+                "borderPixels": 6
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  12,
+                  1,
+                  467,
+                  478
+                ],
+                "pixels": 119918,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  12,
+                  2,
+                  466,
+                  477
+                ],
+                "pixels": 118002,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "expected": "portrait-scholar",
+          "orderId": "scholar",
+          "characterUnlock": [
+            "c:scholar"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 0.65,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-scholar.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                205.4,
+                243.25,
+                31.2,
+                31.2
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-scholar.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                247,
+                50.85,
+                52,
+                52
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-scholar.webp",
+              "logical": [
+                200,
+                200
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                130,
+                453.85,
+                130,
+                130
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "acab6f4c06ae6b3d08a0ae906598146716d20f76d74d01ce250b11908cda607e",
+            "diskSha256": "acab6f4c06ae6b3d08a0ae906598146716d20f76d74d01ce250b11908cda607e",
+            "sourceSha256": "ffea8059eda8bc71360c45550c6e50b97bb49f79cb472362cf4b7ede6c3f5d21",
+            "fileDimensions": [
+              480,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  11,
+                  0,
+                  468,
+                  478
+                ],
+                "pixels": 121231,
+                "borderPixels": 6
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  12,
+                  1,
+                  467,
+                  478
+                ],
+                "pixels": 119918,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  12,
+                  2,
+                  466,
+                  477
+                ],
+                "pixels": 118002,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        }
+      ]
+    },
+    "mayor": {
+      "baseline": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "expected": "hero",
+          "orderId": "bell",
+          "characterUnlock": [
+            "c:mayor"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 1,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/hero.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                372,
+                460
+              ],
+              "rect": [
+                242.66,
+                347,
+                48,
+                48
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/hero.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                372,
+                460
+              ],
+              "rect": [
+                492,
+                78,
+                80,
+                80
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/hero.webp",
+              "logical": [
+                162,
+                200
+              ],
+              "natural": [
+                372,
+                460
+              ],
+              "rect": [
+                961.13,
+                84,
+                161.73,
+                200
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "1229aba4324e53d819a340df6780a7fff6b81596f409aa70a3f33bbfc559aa60",
+            "diskSha256": "1229aba4324e53d819a340df6780a7fff6b81596f409aa70a3f33bbfc559aa60",
+            "sourceSha256": null,
+            "fileDimensions": [
+              372,
+              460
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  3,
+                  3,
+                  370,
+                  460
+                ],
+                "pixels": 89847,
+                "borderPixels": 16
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  4,
+                  5,
+                  370,
+                  459
+                ],
+                "pixels": 85785,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  15,
+                  15,
+                  366,
+                  457
+                ],
+                "pixels": 73227,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "expected": "hero",
+          "orderId": "bell",
+          "characterUnlock": [
+            "c:mayor"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 0.65,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/hero.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                372,
+                460
+              ],
+              "rect": [
+                26,
+                378.45,
+                31.2,
+                31.2
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/hero.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                372,
+                460
+              ],
+              "rect": [
+                28.6,
+                132.75,
+                52,
+                52
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/hero.webp",
+              "logical": [
+                162,
+                200
+              ],
+              "natural": [
+                372,
+                460
+              ],
+              "rect": [
+                142.43,
+                453.85,
+                105.13,
+                130
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "1229aba4324e53d819a340df6780a7fff6b81596f409aa70a3f33bbfc559aa60",
+            "diskSha256": "1229aba4324e53d819a340df6780a7fff6b81596f409aa70a3f33bbfc559aa60",
+            "sourceSha256": null,
+            "fileDimensions": [
+              372,
+              460
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  3,
+                  3,
+                  370,
+                  460
+                ],
+                "pixels": 89847,
+                "borderPixels": 16
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  4,
+                  5,
+                  370,
+                  459
+                ],
+                "pixels": 85785,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  15,
+                  15,
+                  366,
+                  457
+                ],
+                "pixels": 73227,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              1
+            ]
+          },
+          "errors": []
+        }
+      ],
+      "final": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "expected": "portrait-mayor",
+          "orderId": "bell",
+          "characterUnlock": [
+            "c:mayor"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 1,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-mayor.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                242.66,
+                347,
+                48,
+                48
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-mayor.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                492,
+                78,
+                80,
+                80
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-mayor.webp",
+              "logical": [
+                200,
+                200
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                942,
+                84,
+                200,
+                200
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "c66dda832ffdd34ee4b02ed4ad68c78d77b98ef8f14b65a4e151bccdea6d2dc5",
+            "diskSha256": "c66dda832ffdd34ee4b02ed4ad68c78d77b98ef8f14b65a4e151bccdea6d2dc5",
+            "sourceSha256": "d5437805717900649e6a0c855d3fc40813cb1f644e5df1a6213faa374611bb32",
+            "fileDimensions": [
+              480,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  14,
+                  6,
+                  462,
+                  474
+                ],
+                "pixels": 121894,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  15,
+                  7,
+                  461,
+                  474
+                ],
+                "pixels": 120973,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  15,
+                  8,
+                  460,
+                  473
+                ],
+                "pixels": 119764,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "expected": "portrait-mayor",
+          "orderId": "bell",
+          "characterUnlock": [
+            "c:mayor"
+          ],
+          "devicePixelRatio": 1,
+          "stageScale": 0.65,
+          "spots": [
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-mayor.webp",
+              "logical": [
+                48,
+                48
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                26,
+                378.45,
+                31.2,
+                31.2
+              ],
+              "fit": "cover",
+              "position": "50% 0%",
+              "radius": "50%",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-mayor.webp",
+              "logical": [
+                80,
+                80
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                28.6,
+                132.75,
+                52,
+                52
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "none"
+            },
+            {
+              "source": "http://127.0.0.1:5178/src/assets/portrait-mayor.webp",
+              "logical": [
+                200,
+                200
+              ],
+              "natural": [
+                480,
+                480
+              ],
+              "rect": [
+                130,
+                453.85,
+                130,
+                130
+              ],
+              "fit": "contain",
+              "position": "50% 50%",
+              "radius": "0px",
+              "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+            }
+          ],
+          "undiscovered": [
+            "brightness(0) opacity(0.45)",
+            "brightness(0) opacity(0.45)"
+          ],
+          "counts": [
+            "0 / 7",
+            "1 / 7"
+          ],
+          "devResumed": true,
+          "art": {
+            "browserSha256": "c66dda832ffdd34ee4b02ed4ad68c78d77b98ef8f14b65a4e151bccdea6d2dc5",
+            "diskSha256": "c66dda832ffdd34ee4b02ed4ad68c78d77b98ef8f14b65a4e151bccdea6d2dc5",
+            "sourceSha256": "d5437805717900649e6a0c855d3fc40813cb1f644e5df1a6213faa374611bb32",
+            "fileDimensions": [
+              480,
+              480
+            ],
+            "thresholds": [
+              {
+                "alpha": 16,
+                "bounds": [
+                  14,
+                  6,
+                  462,
+                  474
+                ],
+                "pixels": 121894,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 128,
+                "bounds": [
+                  15,
+                  7,
+                  461,
+                  474
+                ],
+                "pixels": 120973,
+                "borderPixels": 0
+              },
+              {
+                "alpha": 248,
+                "bounds": [
+                  15,
+                  8,
+                  460,
+                  473
+                ],
+                "pixels": 119764,
+                "borderPixels": 0
+              }
+            ],
+            "cornerAlpha": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "errors": []
+        }
+      ]
+    }
+  },
+  "crop": {
+    "lamp": {
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "sourceFirstAlpha128Row": 18,
+      "outputFirstAlpha128Row": 7,
+      "outputAlpha16EdgePixels": 0
+    },
+    "herbs": {
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "sourceFirstAlpha128Row": 6,
+      "outputFirstAlpha128Row": 2,
+      "outputAlpha16EdgePixels": 0
+    },
+    "scholar": {
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "sourceFirstAlpha128Row": 3,
+      "outputFirstAlpha128Row": 1,
+      "outputAlpha16EdgePixels": 6
+    },
+    "mayor": {
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "sourceFirstAlpha128Row": 18,
+      "outputFirstAlpha128Row": 7,
+      "outputAlpha16EdgePixels": 0
+    }
+  }
+}

@@ -831,8 +831,7 @@
       "category": "事件",
       "usedBy": [
         "事件·血客",
-        "人物·药铺阿蘅",
-        "人物·血客"
+        "图鉴·血客"
       ],
       "wanted": [],
       "status": "ok",
@@ -845,9 +844,7 @@
       "category": "事件",
       "usedBy": [
         "事件·歇脚的道友",
-        "人物·灯匠老周",
-        "人物·书院先生",
-        "人物·歇脚的道友"
+        "图鉴·歇脚的道友"
       ],
       "wanted": [],
       "status": "ok",
@@ -1016,7 +1013,8 @@
       "file": "feixiao",
       "category": "人物",
       "usedBy": [
-        "人物·绯绡",
+        "图鉴·绯绡",
+        "接单·绯绡",
         "狐市·绯绡"
       ],
       "wanted": [],
@@ -1026,16 +1024,55 @@
       "priority": "P2"
     },
     {
-      "file": "hero",
+      "file": "portrait-lamp",
       "category": "人物",
       "usedBy": [
-        "人物·镇长",
-        "标题主角 / 结算"
+        "图鉴·灯匠老周",
+        "接单·灯匠老周"
       ],
       "wanted": [],
       "status": "ok",
       "shared": true,
-      "note": "",
+      "note": "已采用 v2/art 原图",
+      "priority": "P2"
+    },
+    {
+      "file": "portrait-herbs",
+      "category": "人物",
+      "usedBy": [
+        "图鉴·药铺阿蘅",
+        "接单·药铺阿蘅"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "已采用 v2/art 原图",
+      "priority": "P2"
+    },
+    {
+      "file": "portrait-scholar",
+      "category": "人物",
+      "usedBy": [
+        "图鉴·书院先生",
+        "接单·书院先生"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "已采用 v2/art 原图",
+      "priority": "P2"
+    },
+    {
+      "file": "portrait-mayor",
+      "category": "人物",
+      "usedBy": [
+        "图鉴·镇长",
+        "接单·镇长"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": true,
+      "note": "已采用 v2/art 原图",
       "priority": "P2"
     },
     {
@@ -1115,6 +1152,18 @@
       "category": "场景",
       "usedBy": [
         "结算背景"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "hero",
+      "category": "场景",
+      "usedBy": [
+        "标题主角 / 结算"
       ],
       "wanted": [],
       "status": "ok",
@@ -1673,7 +1722,7 @@
       "category": "人物立绘",
       "usedBy": "人物·灯匠老周",
       "fallback": "guide",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1681,7 +1730,7 @@
       "category": "人物立绘",
       "usedBy": "人物·药铺阿蘅",
       "fallback": "broker",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1689,7 +1738,7 @@
       "category": "人物立绘",
       "usedBy": "人物·书院先生",
       "fallback": "guide",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -1697,7 +1746,7 @@
       "category": "人物立绘",
       "usedBy": "人物·镇长",
       "fallback": "hero",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {

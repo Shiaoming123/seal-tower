@@ -10,9 +10,9 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const server = await createServer({ root, server: { middlewareMode: true }, appType: "custom", logLevel: "error" });
 const load = (f) => server.ssrLoadModule(f);
-const [{ ENEMIES, FLOOR_SPAWNS }, { GOODS }, { RELICS }, { CARDS }, { EVENTS }, { CHARACTERS }, { ORDERS }, { UPGRADES }, { OMENS }, parts] = await Promise.all([
+const [{ ENEMIES, FLOOR_SPAWNS }, { GOODS }, { RELICS }, { CARDS }, { EVENTS }, { CHARACTERS }, { ORDERS }, { UPGRADES }, { OMENS }, { ORDER_CHARACTER }, parts] = await Promise.all([
   load("/src/data/enemies.ts"), load("/src/data/goods.ts"), load("/src/data/relics.ts"), load("/src/data/cards.ts"), load("/src/data/events.ts"),
-  load("/src/data/codex.ts"), load("/src/data/orders.ts"), load("/src/data/town.ts"), load("/src/data/omens.ts"), load("/src/ui/parts.tsx"),
+  load("/src/data/codex.ts"), load("/src/data/orders.ts"), load("/src/data/town.ts"), load("/src/data/omens.ts"), load("/src/game/discover.ts"), load("/src/ui/parts.tsx"),
 ]);
 await server.close();
 
@@ -69,7 +69,10 @@ for (const ev of Object.values(EVENTS)) {
   const billboard = `map-${ev.sprite}`;
   if (have.has(billboard)) use(billboard, "事件", `地图物件·${ev.title}`);
 }
-for (const c of CHARACTERS) use(c.portrait, "人物", `人物·${c.name}`);
+for (const c of CHARACTERS) use(parts.portraitOf(c.id, c.portrait), "人物", `图鉴·${c.name}`);
+for (const order of Object.values(ORDERS)) {
+  use(parts.portraitOf(ORDER_CHARACTER[order.id] ?? order.id, order.portrait), "人物", `接单·${order.client}`);
+}
 for (const u of UPGRADES) use(u.icon, "物品图标", `营建·${u.name}`);
 for (const [file, what] of [["shop", "标题背景"], ["shop-wall", "镇灯铺背景"], ["market", "狐市背景"], ["court", "第一层事件背景"], ["gate", "第二层事件背景"],
   ["belfry", "第三层事件背景"], ["last-market", "结算背景"], ["hero", "标题主角 / 结算"], ["hunter-guard", "败北结算"], ["feixiao", "狐市·绯绡"],
@@ -114,4 +117,4 @@ const count = (list, s) => list.filter((x) => x.status === s).length;
 console.log(`现用图片 ${current.length} 张：原图 ${count(current, "ok")}，改色占位 ${count(current, "placeholder-tint")}，借用占位 ${count(current, "placeholder-borrowed")}，被多处共用 ${current.filter((x) => x.shared).length}`);
 console.log(`待补专用图 ${wanted.length} 张（缺 ${count(wanted, "missing")}）：卡牌 ${wantCards.length}、法宝 ${wantRelics.length}、人物 ${wantPortraits.length}、营建 ${wantBuilds.length}、敌怪姿态 ${wantPoses.length}`);
 console.log("→ docs/美术清单.json");
-void FLOOR_SPAWNS; void ORDERS;
+void FLOOR_SPAWNS;

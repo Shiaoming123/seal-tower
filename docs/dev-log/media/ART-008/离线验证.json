@@ -1,0 +1,288 @@
+{
+  "offlineBytes": 6861157,
+  "offlineSha256": "c4a8bac9c4c68e93285b51821d8c8e0129346ed413269d97bbf430228020fadc",
+  "assets": [
+    {
+      "id": "lamp",
+      "order": "lamp",
+      "client": "灯匠老周",
+      "bytes": 53192,
+      "png": {
+        "sha256": "2f3abd1e4e48a1a21e5dc469fb83bcab987555379a28aac7cf95a5b6e20edc6e",
+        "width": 1254,
+        "height": 1254,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "transparentPadding": {
+          "left": 9,
+          "right": 7,
+          "top": 18,
+          "bottom": 7
+        }
+      },
+      "webp": {
+        "sha256": "0774b6ef2fc1f2435b1c7761c858b4b2a71a5c3865556d9e9d3659301c8ff67f",
+        "width": 480,
+        "height": 480,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "transparentPadding": {
+          "left": 3,
+          "right": 2,
+          "top": 6,
+          "bottom": 2
+        }
+      },
+      "consumers": [
+        "图鉴·灯匠老周",
+        "接单·灯匠老周"
+      ]
+    },
+    {
+      "id": "herbs",
+      "order": "herbs",
+      "client": "药铺阿蘅",
+      "bytes": 46570,
+      "png": {
+        "sha256": "8741604fd399b938fea091783f589261eaebaca5c7b7579d6e1ba3156fd9f4a0",
+        "width": 1254,
+        "height": 1254,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "transparentPadding": {
+          "left": 76,
+          "right": 116,
+          "top": 5,
+          "bottom": 8
+        }
+      },
+      "webp": {
+        "sha256": "7130a9c0b8cfda6f2ad9ad2d3edd6239eef0cd2d72ee4b0b10a2f12967c71a5f",
+        "width": 480,
+        "height": 480,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "transparentPadding": {
+          "left": 29,
+          "right": 44,
+          "top": 2,
+          "bottom": 3
+        }
+      },
+      "consumers": [
+        "图鉴·药铺阿蘅",
+        "接单·药铺阿蘅"
+      ]
+    },
+    {
+      "id": "scholar",
+      "order": "scholar",
+      "client": "书院先生",
+      "bytes": 55188,
+      "png": {
+        "sha256": "ffea8059eda8bc71360c45550c6e50b97bb49f79cb472362cf4b7ede6c3f5d21",
+        "width": 1254,
+        "height": 1254,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "transparentPadding": {
+          "left": 30,
+          "right": 33,
+          "top": 2,
+          "bottom": 5
+        }
+      },
+      "webp": {
+        "sha256": "acab6f4c06ae6b3d08a0ae906598146716d20f76d74d01ce250b11908cda607e",
+        "width": 480,
+        "height": 480,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "transparentPadding": {
+          "left": 11,
+          "right": 12,
+          "top": 0,
+          "bottom": 2
+        }
+      },
+      "consumers": [
+        "图鉴·书院先生",
+        "接单·书院先生"
+      ]
+    },
+    {
+      "id": "mayor",
+      "order": "bell",
+      "client": "镇长",
+      "bytes": 39784,
+      "png": {
+        "sha256": "d5437805717900649e6a0c855d3fc40813cb1f644e5df1a6213faa374611bb32",
+        "width": 1254,
+        "height": 1254,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "transparentPadding": {
+          "left": 38,
+          "right": 49,
+          "top": 17,
+          "bottom": 16
+        }
+      },
+      "webp": {
+        "sha256": "c66dda832ffdd34ee4b02ed4ad68c78d77b98ef8f14b65a4e151bccdea6d2dc5",
+        "width": 480,
+        "height": 480,
+        "corners": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "transparentPadding": {
+          "left": 14,
+          "right": 18,
+          "top": 6,
+          "bottom": 6
+        }
+      },
+      "consumers": [
+        "图鉴·镇长",
+        "接单·镇长"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "order": "lamp",
+      "character": "lamp",
+      "matched": [
+        "order board",
+        "codex list",
+        "codex detail"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "order": "herbs",
+      "character": "herbs",
+      "matched": [
+        "order board",
+        "codex list",
+        "codex detail"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "order": "scholar",
+      "character": "scholar",
+      "matched": [
+        "order board",
+        "codex list",
+        "codex detail"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "order": "bell",
+      "character": "mayor",
+      "matched": [
+        "order board",
+        "codex list",
+        "codex detail"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "order": "lamp",
+      "character": "lamp",
+      "matched": [
+        "order board",
+        "codex list",
+        "codex detail"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "order": "herbs",
+      "character": "herbs",
+      "matched": [
+        "order board",
+        "codex list",
+        "codex detail"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "order": "scholar",
+      "character": "scholar",
+      "matched": [
+        "order board",
+        "codex list",
+        "codex detail"
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "order": "bell",
+      "character": "mayor",
+      "matched": [
+        "order board",
+        "codex list",
+        "codex detail"
+      ]
+    }
+  ]
+}
