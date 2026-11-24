@@ -1,0 +1,146 @@
+[
+  {
+    "view": {
+      "width": 1280,
+      "height": 720
+    },
+    "seed": "gallery",
+    "fixtures": [
+      "固定狐市库存",
+      "单件及守关奖励候选",
+      "满背包"
+    ],
+    "actualChecks": [
+      {
+        "surface": "狐市扣款与实际持有",
+        "id": "pin",
+        "charged": 20
+      },
+      {
+        "surface": "满包领取守关三选一",
+        "id": "sealbag"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "thorn"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "fangcharm"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "silkfan"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "knotcharm"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "seal"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "tassel"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "butcher"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "treasurebag"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "wickcutter"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "swordmanual"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "ledger"
+      }
+    ],
+    "shopFiles": 13,
+    "codexUnseen": 13,
+    "codexKnown": 13,
+    "network": [],
+    "errors": []
+  },
+  {
+    "view": {
+      "width": 390,
+      "height": 844
+    },
+    "seed": "gallery",
+    "fixtures": [
+      "固定狐市库存",
+      "单件及守关奖励候选",
+      "满背包"
+    ],
+    "actualChecks": [
+      {
+        "surface": "狐市扣款与实际持有",
+        "id": "pin",
+        "charged": 20
+      },
+      {
+        "surface": "满包领取守关三选一",
+        "id": "sealbag"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "thorn"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "fangcharm"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "silkfan"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "knotcharm"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "seal"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "tassel"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "butcher"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "treasurebag"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "wickcutter"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "swordmanual"
+      },
+      {
+        "surface": "满包领取单件",
+        "id": "ledger"
+      }
+    ],
+    "shopFiles": 13,
+    "codexUnseen": 13,
+    "codexKnown": 13,
+    "network": [],
+    "errors": []
+  }
+]

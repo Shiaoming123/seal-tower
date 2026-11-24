@@ -1,0 +1,14 @@
+{
+  "seed": "gallery",
+  "test": "单件奖励候选与纸灯蛾用测试定位，实际领奖与首回合抽牌",
+  "result": [
+    {
+      "withFan": false,
+      "count": 5
+    },
+    {
+      "withFan": true,
+      "count": 7
+    }
+  ]
+}

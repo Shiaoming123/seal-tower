@@ -1,0 +1,6308 @@
+{
+  "seed": "gallery",
+  "sample": [
+    {
+      "width": 1280,
+      "shopRoute": {
+        "from": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        },
+        "steps": [
+          {
+            "x": 4,
+            "y": 9,
+            "dir": 3
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "dir": 3
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "dir": 0
+          }
+        ],
+        "target": {
+          "id": 3,
+          "kind": "shop",
+          "x": 3,
+          "y": 3,
+          "done": false
+        },
+        "fixture": false
+      },
+      "chestRoute": {
+        "from": {
+          "x": 7,
+          "y": 8,
+          "dir": 2
+        },
+        "steps": [
+          {
+            "x": 7,
+            "y": 9,
+            "dir": 2
+          }
+        ],
+        "target": {
+          "id": 5,
+          "kind": "chest",
+          "x": 7,
+          "y": 9,
+          "done": false
+        },
+        "fixture": true
+      },
+      "full": {
+        "cells": 20,
+        "uids": [
+          1000,
+          1001,
+          1002,
+          1003,
+          1004,
+          1005,
+          1006,
+          1007,
+          1008,
+          1009,
+          1010,
+          1011,
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1018
+        ]
+      },
+      "after": {
+        "relics": [
+          "thorn",
+          "wickcutter",
+          "pin",
+          "sealbag",
+          "fangcharm",
+          "silkfan",
+          "knotcharm",
+          "seal",
+          "tassel",
+          "butcher",
+          "treasurebag",
+          "swordmanual",
+          "ledger"
+        ],
+        "bag": [
+          1000,
+          1001,
+          1002,
+          1003,
+          1004,
+          1005,
+          1006,
+          1007,
+          1008,
+          1009,
+          1010,
+          1011,
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1018
+        ],
+        "pending": [],
+        "seen": [
+          "r:thorn",
+          "r:wickcutter",
+          "r:pin",
+          "r:sealbag",
+          "r:fangcharm",
+          "r:silkfan",
+          "r:knotcharm",
+          "r:seal",
+          "r:tassel",
+          "r:butcher",
+          "r:treasurebag",
+          "r:swordmanual",
+          "r:ledger"
+        ]
+      },
+      "purchase": {
+        "gold": 72,
+        "relic": "thorn",
+        "sold": true
+      },
+      "records": [
+        {
+          "id": "pin",
+          "oldArt": "relic-pin",
+          "oldHash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+          "newHash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+          "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd"
+        },
+        {
+          "id": "sealbag",
+          "oldArt": "relic-sealbag",
+          "oldHash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+          "newHash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+          "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d"
+        },
+        {
+          "id": "thorn",
+          "oldArt": "hook",
+          "oldHash": "d680b761b8cbe87942fb08c15608493a86c039875822850dc1d2cea7b4d3825f",
+          "newHash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+          "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274"
+        },
+        {
+          "id": "fangcharm",
+          "oldArt": "fang",
+          "oldHash": "63fdfe04f53e661b33282a1889fdf1ee182402b2a6b54950f8b0ac5ee6fb41f0",
+          "newHash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+          "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34"
+        },
+        {
+          "id": "silkfan",
+          "oldArt": "relic-silkfan",
+          "oldHash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+          "newHash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+          "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f"
+        },
+        {
+          "id": "knotcharm",
+          "oldArt": "knot",
+          "oldHash": "c6c9b474267b8041d2bd8c6fe95d37bdca11ad7e5d05e9fa0249f7de1c0d4db4",
+          "newHash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+          "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755"
+        },
+        {
+          "id": "seal",
+          "oldArt": "grit",
+          "oldHash": "ee53c280c9cd50cef4e62a8c63e6d9d5fed0d79d5c2f318d4977f72a470ff844",
+          "newHash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+          "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02"
+        },
+        {
+          "id": "tassel",
+          "oldArt": "ward-blade",
+          "oldHash": "aeb24d2979c74a05e0f32910e0a26f46116551e41b1614b5676851aca5a31077",
+          "newHash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+          "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c"
+        },
+        {
+          "id": "butcher",
+          "oldArt": "hook",
+          "oldHash": "d680b761b8cbe87942fb08c15608493a86c039875822850dc1d2cea7b4d3825f",
+          "newHash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+          "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419"
+        },
+        {
+          "id": "treasurebag",
+          "oldArt": "relic-treasurebag",
+          "oldHash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+          "newHash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+          "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2"
+        },
+        {
+          "id": "wickcutter",
+          "oldArt": "seal",
+          "oldHash": "95462a4f1f73eec847b95349802d40440412ea38fd65d9989aba3c379bed20cc",
+          "newHash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+          "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9"
+        },
+        {
+          "id": "swordmanual",
+          "oldArt": "silk",
+          "oldHash": "6d4bbfa2c12cc9ba2a1bb60dc1d82c120982651a783344275ca89a413bfc04e3",
+          "newHash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+          "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f"
+        },
+        {
+          "id": "ledger",
+          "oldArt": "order-purse",
+          "oldHash": "ea979a962e69cb072deaac5a47329e48e4f3a3e89a7b5e30253b4ec153ff16d4",
+          "newHash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+          "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528"
+        }
+      ],
+      "surfaces": {
+        "unknown": [
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              44,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              156,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              268,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              380,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              492,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              604,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              716,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              44,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              156,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              268,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              380,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              492,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              604,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        "known": [
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              44,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              156,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              268,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              380,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              492,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              604,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              716,
+              78,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              44,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              156,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              268,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              380,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              492,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              604,
+              204,
+              80,
+              80
+            ],
+            "visibleWidthAndHeight": [
+              80,
+              80
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        "details": [
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visibleWidthAndHeight": [
+              110,
+              110
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        "singles": [
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              46,
+              226,
+              64,
+              64
+            ],
+            "visibleWidthAndHeight": [
+              64,
+              64
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              46,
+              226,
+              64,
+              64
+            ],
+            "visibleWidthAndHeight": [
+              64,
+              64
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              46,
+              226,
+              64,
+              64
+            ],
+            "visibleWidthAndHeight": [
+              64,
+              64
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              46,
+              226,
+              64,
+              64
+            ],
+            "visibleWidthAndHeight": [
+              64,
+              64
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              46,
+              226,
+              64,
+              64
+            ],
+            "visibleWidthAndHeight": [
+              64,
+              64
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              46,
+              226,
+              64,
+              64
+            ],
+            "visibleWidthAndHeight": [
+              64,
+              64
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              46,
+              226,
+              64,
+              64
+            ],
+            "visibleWidthAndHeight": [
+              64,
+              64
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              46,
+              226,
+              64,
+              64
+            ],
+            "visibleWidthAndHeight": [
+              64,
+              64
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              46,
+              226,
+              64,
+              64
+            ],
+            "visibleWidthAndHeight": [
+              64,
+              64
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              46,
+              226,
+              64,
+              64
+            ],
+            "visibleWidthAndHeight": [
+              64,
+              64
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              46,
+              226,
+              64,
+              64
+            ],
+            "visibleWidthAndHeight": [
+              64,
+              64
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        "maxHud": [
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              643.72,
+              12,
+              11.86,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.86,
+              34
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              663.58,
+              12,
+              11.84,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.84,
+              34
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              604.02,
+              12,
+              11.86,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.86,
+              34
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              683.42,
+              12,
+              11.86,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.86,
+              34
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              703.28,
+              12,
+              11.84,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.84,
+              34
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              723.13,
+              12,
+              11.84,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.84,
+              34
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              742.97,
+              12,
+              11.84,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.84,
+              34
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              762.81,
+              12,
+              11.84,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.84,
+              34
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              782.66,
+              12,
+              11.84,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.84,
+              34
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              802.5,
+              12,
+              11.84,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.84,
+              34
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              623.88,
+              12,
+              11.84,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.84,
+              34
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              822.34,
+              12,
+              11.84,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.84,
+              34
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              842.19,
+              12,
+              11.84,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              11.84,
+              34
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ]
+      },
+      "wares": [
+        [
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              368,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              484,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              600,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              716,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              368,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              484,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              600,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              716,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              368,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              484,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              600,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              716,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              368,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              484,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              600,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              716,
+              549.44,
+              44,
+              44
+            ],
+            "visibleWidthAndHeight": [
+              44,
+              44
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          }
+        ]
+      ],
+      "choices": [
+        [
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              44,
+              265,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              44,
+              323,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              44,
+              381,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              44,
+              265,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              44,
+              323,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              44,
+              381,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              44,
+              265,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              44,
+              323,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              44,
+              381,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              44,
+              265,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              44,
+              323,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              44,
+              381,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              44,
+              265,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              44,
+              323,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              44,
+              381,
+              40,
+              40
+            ],
+            "visibleWidthAndHeight": [
+              40,
+              40
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          }
+        ]
+      ],
+      "huds": [
+        [
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              604.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              646.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              688.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              730.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              604.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              646.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              688.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              730.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              604.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              646.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              688.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              730.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              604.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              646.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              688.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              730.02,
+              12,
+              34,
+              34
+            ],
+            "visibleWidthAndHeight": [
+              34,
+              34
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          }
+        ]
+      ],
+      "hudBreakpoints": [
+        {
+          "count": 5,
+          "frames": [
+            [
+              34,
+              34
+            ],
+            [
+              34,
+              34
+            ],
+            [
+              34,
+              34
+            ],
+            [
+              34,
+              34
+            ],
+            [
+              34,
+              34
+            ]
+          ]
+        },
+        {
+          "count": 6,
+          "frames": [
+            [
+              34,
+              34
+            ],
+            [
+              34,
+              34
+            ],
+            [
+              34,
+              34
+            ],
+            [
+              34,
+              34
+            ],
+            [
+              34,
+              34
+            ],
+            [
+              34,
+              34
+            ]
+          ]
+        },
+        {
+          "count": 7,
+          "frames": [
+            [
+              28.86,
+              34
+            ],
+            [
+              28.86,
+              34
+            ],
+            [
+              28.86,
+              34
+            ],
+            [
+              28.86,
+              34
+            ],
+            [
+              28.86,
+              34
+            ],
+            [
+              28.86,
+              34
+            ],
+            [
+              28.86,
+              34
+            ]
+          ]
+        },
+        {
+          "count": 8,
+          "frames": [
+            [
+              24.27,
+              34
+            ],
+            [
+              24.25,
+              34
+            ],
+            [
+              24.25,
+              34
+            ],
+            [
+              24.25,
+              34
+            ],
+            [
+              24.25,
+              34
+            ],
+            [
+              24.25,
+              34
+            ],
+            [
+              24.25,
+              34
+            ],
+            [
+              24.25,
+              34
+            ]
+          ]
+        },
+        {
+          "count": 9,
+          "frames": [
+            [
+              20.67,
+              34
+            ],
+            [
+              20.66,
+              34
+            ],
+            [
+              20.67,
+              34
+            ],
+            [
+              20.66,
+              34
+            ],
+            [
+              20.67,
+              34
+            ],
+            [
+              20.67,
+              34
+            ],
+            [
+              20.67,
+              34
+            ],
+            [
+              20.67,
+              34
+            ],
+            [
+              20.67,
+              34
+            ]
+          ]
+        },
+        {
+          "count": 10,
+          "frames": [
+            [
+              17.81,
+              34
+            ],
+            [
+              17.8,
+              34
+            ],
+            [
+              17.81,
+              34
+            ],
+            [
+              17.8,
+              34
+            ],
+            [
+              17.81,
+              34
+            ],
+            [
+              17.8,
+              34
+            ],
+            [
+              17.8,
+              34
+            ],
+            [
+              17.8,
+              34
+            ],
+            [
+              17.8,
+              34
+            ],
+            [
+              17.8,
+              34
+            ]
+          ]
+        },
+        {
+          "count": 11,
+          "frames": [
+            [
+              15.47,
+              34
+            ],
+            [
+              15.45,
+              34
+            ],
+            [
+              15.47,
+              34
+            ],
+            [
+              15.45,
+              34
+            ],
+            [
+              15.45,
+              34
+            ],
+            [
+              15.45,
+              34
+            ],
+            [
+              15.45,
+              34
+            ],
+            [
+              15.45,
+              34
+            ],
+            [
+              15.45,
+              34
+            ],
+            [
+              15.45,
+              34
+            ],
+            [
+              15.45,
+              34
+            ]
+          ]
+        },
+        {
+          "count": 12,
+          "frames": [
+            [
+              13.52,
+              34
+            ],
+            [
+              13.5,
+              34
+            ],
+            [
+              13.5,
+              34
+            ],
+            [
+              13.5,
+              34
+            ],
+            [
+              13.5,
+              34
+            ],
+            [
+              13.5,
+              34
+            ],
+            [
+              13.5,
+              34
+            ],
+            [
+              13.5,
+              34
+            ],
+            [
+              13.5,
+              34
+            ],
+            [
+              13.5,
+              34
+            ],
+            [
+              13.5,
+              34
+            ],
+            [
+              13.5,
+              34
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "shopRoute": {
+        "from": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        },
+        "steps": [
+          {
+            "x": 4,
+            "y": 9,
+            "dir": 3
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "dir": 3
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "dir": 0
+          }
+        ],
+        "target": {
+          "id": 3,
+          "kind": "shop",
+          "x": 3,
+          "y": 3,
+          "done": false
+        },
+        "fixture": false
+      },
+      "chestRoute": {
+        "from": {
+          "x": 7,
+          "y": 8,
+          "dir": 2
+        },
+        "steps": [
+          {
+            "x": 7,
+            "y": 9,
+            "dir": 2
+          }
+        ],
+        "target": {
+          "id": 5,
+          "kind": "chest",
+          "x": 7,
+          "y": 9,
+          "done": false
+        },
+        "fixture": true
+      },
+      "full": {
+        "cells": 20,
+        "uids": [
+          1000,
+          1001,
+          1002,
+          1003,
+          1004,
+          1005,
+          1006,
+          1007,
+          1008,
+          1009,
+          1010,
+          1011,
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1018
+        ]
+      },
+      "after": {
+        "relics": [
+          "thorn",
+          "wickcutter",
+          "pin",
+          "sealbag",
+          "fangcharm",
+          "silkfan",
+          "knotcharm",
+          "seal",
+          "tassel",
+          "butcher",
+          "treasurebag",
+          "swordmanual",
+          "ledger"
+        ],
+        "bag": [
+          1000,
+          1001,
+          1002,
+          1003,
+          1004,
+          1005,
+          1006,
+          1007,
+          1008,
+          1009,
+          1010,
+          1011,
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1018
+        ],
+        "pending": [],
+        "seen": [
+          "r:thorn",
+          "r:wickcutter",
+          "r:pin",
+          "r:sealbag",
+          "r:fangcharm",
+          "r:silkfan",
+          "r:knotcharm",
+          "r:seal",
+          "r:tassel",
+          "r:butcher",
+          "r:treasurebag",
+          "r:swordmanual",
+          "r:ledger"
+        ]
+      },
+      "purchase": {
+        "gold": 72,
+        "relic": "thorn",
+        "sold": true
+      },
+      "records": [
+        {
+          "id": "pin",
+          "oldArt": "relic-pin",
+          "oldHash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+          "newHash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+          "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd"
+        },
+        {
+          "id": "sealbag",
+          "oldArt": "relic-sealbag",
+          "oldHash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+          "newHash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+          "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d"
+        },
+        {
+          "id": "thorn",
+          "oldArt": "hook",
+          "oldHash": "d680b761b8cbe87942fb08c15608493a86c039875822850dc1d2cea7b4d3825f",
+          "newHash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+          "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274"
+        },
+        {
+          "id": "fangcharm",
+          "oldArt": "fang",
+          "oldHash": "63fdfe04f53e661b33282a1889fdf1ee182402b2a6b54950f8b0ac5ee6fb41f0",
+          "newHash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+          "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34"
+        },
+        {
+          "id": "silkfan",
+          "oldArt": "relic-silkfan",
+          "oldHash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+          "newHash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+          "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f"
+        },
+        {
+          "id": "knotcharm",
+          "oldArt": "knot",
+          "oldHash": "c6c9b474267b8041d2bd8c6fe95d37bdca11ad7e5d05e9fa0249f7de1c0d4db4",
+          "newHash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+          "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755"
+        },
+        {
+          "id": "seal",
+          "oldArt": "grit",
+          "oldHash": "ee53c280c9cd50cef4e62a8c63e6d9d5fed0d79d5c2f318d4977f72a470ff844",
+          "newHash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+          "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02"
+        },
+        {
+          "id": "tassel",
+          "oldArt": "ward-blade",
+          "oldHash": "aeb24d2979c74a05e0f32910e0a26f46116551e41b1614b5676851aca5a31077",
+          "newHash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+          "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c"
+        },
+        {
+          "id": "butcher",
+          "oldArt": "hook",
+          "oldHash": "d680b761b8cbe87942fb08c15608493a86c039875822850dc1d2cea7b4d3825f",
+          "newHash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+          "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419"
+        },
+        {
+          "id": "treasurebag",
+          "oldArt": "relic-treasurebag",
+          "oldHash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+          "newHash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+          "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2"
+        },
+        {
+          "id": "wickcutter",
+          "oldArt": "seal",
+          "oldHash": "95462a4f1f73eec847b95349802d40440412ea38fd65d9989aba3c379bed20cc",
+          "newHash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+          "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9"
+        },
+        {
+          "id": "swordmanual",
+          "oldArt": "silk",
+          "oldHash": "6d4bbfa2c12cc9ba2a1bb60dc1d82c120982651a783344275ca89a413bfc04e3",
+          "newHash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+          "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f"
+        },
+        {
+          "id": "ledger",
+          "oldArt": "order-purse",
+          "oldHash": "ea979a962e69cb072deaac5a47329e48e4f3a3e89a7b5e30253b4ec153ff16d4",
+          "newHash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+          "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528"
+        }
+      ],
+      "surfaces": {
+        "unknown": [
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              28.6,
+              50.85,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              101.4,
+              50.85,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              174.2,
+              50.85,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              247,
+              50.85,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              28.6,
+              132.75,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              101.4,
+              132.75,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              174.2,
+              132.75,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              247,
+              132.75,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              28.6,
+              214.65,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              101.4,
+              214.65,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              174.2,
+              214.65,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              247,
+              214.65,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              28.6,
+              296.55,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        "known": [
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              28.6,
+              50.85,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              101.4,
+              50.85,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              174.2,
+              50.85,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              247,
+              50.85,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              28.6,
+              132.75,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              101.4,
+              132.75,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              174.2,
+              132.75,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              247,
+              132.75,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              28.6,
+              214.65,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              101.4,
+              214.65,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              174.2,
+              214.65,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              247,
+              214.65,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              28.6,
+              296.55,
+              52,
+              52
+            ],
+            "visibleWidthAndHeight": [
+              52,
+              52
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        "details": [
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visibleWidthAndHeight": [
+              71.5,
+              71.5
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        "singles": [
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              29.9,
+              188,
+              41.6,
+              41.6
+            ],
+            "visibleWidthAndHeight": [
+              41.6,
+              41.6
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              29.9,
+              188,
+              41.6,
+              41.6
+            ],
+            "visibleWidthAndHeight": [
+              41.6,
+              41.6
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              29.9,
+              188,
+              41.6,
+              41.6
+            ],
+            "visibleWidthAndHeight": [
+              41.6,
+              41.6
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              29.9,
+              188,
+              41.6,
+              41.6
+            ],
+            "visibleWidthAndHeight": [
+              41.6,
+              41.6
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              29.9,
+              188,
+              41.6,
+              41.6
+            ],
+            "visibleWidthAndHeight": [
+              41.6,
+              41.6
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              29.9,
+              188,
+              41.6,
+              41.6
+            ],
+            "visibleWidthAndHeight": [
+              41.6,
+              41.6
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              29.9,
+              188,
+              41.6,
+              41.6
+            ],
+            "visibleWidthAndHeight": [
+              41.6,
+              41.6
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              29.9,
+              188,
+              41.6,
+              41.6
+            ],
+            "visibleWidthAndHeight": [
+              41.6,
+              41.6
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              29.9,
+              188,
+              41.6,
+              41.6
+            ],
+            "visibleWidthAndHeight": [
+              41.6,
+              41.6
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              29.9,
+              188,
+              41.6,
+              41.6
+            ],
+            "visibleWidthAndHeight": [
+              41.6,
+              41.6
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              29.9,
+              188,
+              41.6,
+              41.6
+            ],
+            "visibleWidthAndHeight": [
+              41.6,
+              41.6
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        "maxHud": [
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              63.7,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              91,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              9.1,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              118.3,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              145.6,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              172.9,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              200.2,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              227.5,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              254.8,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              282.1,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              36.4,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              309.4,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              336.7,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ]
+      },
+      "wares": [
+        [
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              36.4,
+              731.03,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              111.8,
+              731.03,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              187.2,
+              731.03,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              262.6,
+              731.03,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              36.4,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              111.8,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              187.2,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              262.6,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              36.4,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              111.8,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              187.2,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              262.6,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              36.4,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              111.8,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              187.2,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              262.6,
+              742.73,
+              28.6,
+              28.6
+            ],
+            "visibleWidthAndHeight": [
+              28.6,
+              28.6
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          }
+        ]
+      ],
+      "choices": [
+        [
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              28.6,
+              213.35,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              28.6,
+              251.05,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              28.6,
+              288.75,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              28.6,
+              213.35,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              28.6,
+              251.05,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              28.6,
+              288.75,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              28.6,
+              213.35,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              28.6,
+              251.05,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              28.6,
+              288.75,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              28.6,
+              213.35,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              28.6,
+              251.05,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              28.6,
+              288.75,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              28.6,
+              213.35,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              28.6,
+              251.05,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              28.6,
+              288.75,
+              26,
+              26
+            ],
+            "visibleWidthAndHeight": [
+              26,
+              26
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          }
+        ]
+      ],
+      "huds": [
+        [
+          {
+            "id": "thorn",
+            "loaded": "relic-thorn",
+            "hash": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553",
+            "source": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+            "box": [
+              9.1,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              17,
+              25,
+              175,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "butcher",
+            "loaded": "relic-butcher",
+            "hash": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6",
+            "source": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+            "box": [
+              36.4,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              16,
+              25,
+              175,
+              165
+            ],
+            "edge": 0
+          },
+          {
+            "id": "tassel",
+            "loaded": "relic-tassel",
+            "hash": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254",
+            "source": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+            "box": [
+              63.7,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              23,
+              12,
+              169,
+              185
+            ],
+            "edge": 0
+          },
+          {
+            "id": "wickcutter",
+            "loaded": "relic-wickcutter",
+            "hash": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2",
+            "source": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+            "box": [
+              91,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              18,
+              22,
+              176,
+              177
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "fangcharm",
+            "loaded": "relic-fangcharm",
+            "hash": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf",
+            "source": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+            "box": [
+              9.1,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              64,
+              10,
+              143,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "knotcharm",
+            "loaded": "relic-knotcharm",
+            "hash": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55",
+            "source": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+            "box": [
+              36.4,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              27,
+              13,
+              163,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "pin",
+            "loaded": "relic-pin",
+            "hash": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "box": [
+              63.7,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0
+          },
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              91,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "seal",
+            "loaded": "relic-seal",
+            "hash": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756",
+            "source": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+            "box": [
+              9.1,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              30,
+              27,
+              159,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              36.4,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          },
+          {
+            "id": "silkfan",
+            "loaded": "relic-silkfan",
+            "hash": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "box": [
+              63.7,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              91,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          }
+        ],
+        [
+          {
+            "id": "sealbag",
+            "loaded": "relic-sealbag",
+            "hash": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "box": [
+              9.1,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0
+          },
+          {
+            "id": "treasurebag",
+            "loaded": "relic-treasurebag",
+            "hash": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "box": [
+              36.4,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0
+          },
+          {
+            "id": "ledger",
+            "loaded": "relic-ledger",
+            "hash": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d",
+            "source": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+            "box": [
+              63.7,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              21,
+              23,
+              166,
+              169
+            ],
+            "edge": 0
+          },
+          {
+            "id": "swordmanual",
+            "loaded": "relic-swordmanual",
+            "hash": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae",
+            "source": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+            "box": [
+              91,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visibleWidthAndHeight": [
+              22.1,
+              22.1
+            ],
+            "alphaBounds": [
+              31,
+              21,
+              163,
+              173
+            ],
+            "edge": 0
+          }
+        ]
+      ],
+      "hudBreakpoints": [
+        {
+          "count": 5,
+          "frames": [
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ]
+          ]
+        },
+        {
+          "count": 6,
+          "frames": [
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ]
+          ]
+        },
+        {
+          "count": 7,
+          "frames": [
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ]
+          ]
+        },
+        {
+          "count": 8,
+          "frames": [
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ]
+          ]
+        },
+        {
+          "count": 9,
+          "frames": [
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ]
+          ]
+        },
+        {
+          "count": 10,
+          "frames": [
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ]
+          ]
+        },
+        {
+          "count": 11,
+          "frames": [
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ]
+          ]
+        },
+        {
+          "count": 12,
+          "frames": [
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ],
+            [
+              22.1,
+              22.1
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "refs": [
+    "狐市-1280.jpg",
+    "狐市-390.jpg",
+    "狐市旧图与新图-390.jpg",
+    "图鉴-蒙黑剪影.jpg",
+    "图鉴-已发现.jpg",
+    "持有栏-390.jpg",
+    "持有栏-人数对照.jpg",
+    "满包三选一-390.jpg",
+    "单件领取及未选-390.jpg"
+  ]
+}

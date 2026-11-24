@@ -1,0 +1,374 @@
+{
+  "baseline": "92866d3",
+  "missingBefore": 13,
+  "missingAfter": 0,
+  "offlineBytes": 7674987,
+  "offlineSha256": "6b955bdea0749af8d88ff59dd2f709a7940001597148a9c2d20076b1a2d46bc0",
+  "webpBytes": 106666,
+  "assets": [
+    {
+      "id": "relic-pin",
+      "usedBy": "法宝·狐扣针",
+      "png": {
+        "size": 256,
+        "bounds": [
+          32,
+          15,
+          233,
+          239
+        ],
+        "area": 7691
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          24,
+          11,
+          174,
+          179
+        ],
+        "area": 4323
+      },
+      "bytes": 6310,
+      "file": "relic-pin.png",
+      "sourceSha256": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+      "webpSha256": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa"
+    },
+    {
+      "id": "relic-sealbag",
+      "usedBy": "法宝·封口锦囊",
+      "png": {
+        "size": 256,
+        "bounds": [
+          73,
+          19,
+          176,
+          233
+        ],
+        "area": 17639
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          55,
+          14,
+          132,
+          175
+        ],
+        "area": 9921
+      },
+      "bytes": 7080,
+      "file": "relic-sealbag.png",
+      "sourceSha256": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+      "webpSha256": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02"
+    },
+    {
+      "id": "relic-thorn",
+      "usedBy": "法宝·棘环",
+      "png": {
+        "size": 256,
+        "bounds": [
+          22,
+          33,
+          233,
+          217
+        ],
+        "area": 17322
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          17,
+          25,
+          174,
+          162
+        ],
+        "area": 9738
+      },
+      "bytes": 9484,
+      "file": "relic-thorn.png",
+      "sourceSha256": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+      "webpSha256": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553"
+    },
+    {
+      "id": "relic-fangcharm",
+      "usedBy": "法宝·鼠牙坠",
+      "png": {
+        "size": 256,
+        "bounds": [
+          85,
+          13,
+          189,
+          239
+        ],
+        "area": 9941
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          64,
+          10,
+          142,
+          179
+        ],
+        "area": 5594
+      },
+      "bytes": 6044,
+      "file": "relic-fangcharm.png",
+      "sourceSha256": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+      "webpSha256": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf"
+    },
+    {
+      "id": "relic-silkfan",
+      "usedBy": "法宝·蛾丝扇",
+      "png": {
+        "size": 256,
+        "bounds": [
+          42,
+          6,
+          225,
+          249
+        ],
+        "area": 24435
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          32,
+          4,
+          169,
+          186
+        ],
+        "area": 13789
+      },
+      "bytes": 9084,
+      "file": "relic-silkfan.png",
+      "sourceSha256": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+      "webpSha256": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a"
+    },
+    {
+      "id": "relic-knotcharm",
+      "usedBy": "法宝·狐毛护身结",
+      "png": {
+        "size": 256,
+        "bounds": [
+          36,
+          16,
+          217,
+          240
+        ],
+        "area": 17194
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          27,
+          12,
+          163,
+          179
+        ],
+        "area": 9683
+      },
+      "bytes": 9648,
+      "file": "relic-knotcharm.png",
+      "sourceSha256": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+      "webpSha256": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55"
+    },
+    {
+      "id": "relic-seal",
+      "usedBy": "法宝·灯纹印",
+      "png": {
+        "size": 256,
+        "bounds": [
+          40,
+          36,
+          212,
+          225
+        ],
+        "area": 23705
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          30,
+          27,
+          159,
+          168
+        ],
+        "area": 13326
+      },
+      "bytes": 6836,
+      "file": "relic-seal.png",
+      "sourceSha256": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+      "webpSha256": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756"
+    },
+    {
+      "id": "relic-tassel",
+      "usedBy": "法宝·镇妖剑穗",
+      "png": {
+        "size": 256,
+        "bounds": [
+          30,
+          16,
+          225,
+          246
+        ],
+        "area": 14093
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          22,
+          12,
+          168,
+          184
+        ],
+        "area": 7932
+      },
+      "bytes": 8612,
+      "file": "relic-tassel.png",
+      "sourceSha256": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+      "webpSha256": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254"
+    },
+    {
+      "id": "relic-butcher",
+      "usedBy": "法宝·庖丁刀",
+      "png": {
+        "size": 256,
+        "bounds": [
+          21,
+          33,
+          233,
+          219
+        ],
+        "area": 13225
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          16,
+          25,
+          175,
+          164
+        ],
+        "area": 7433
+      },
+      "bytes": 5962,
+      "file": "relic-butcher.png",
+      "sourceSha256": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+      "webpSha256": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6"
+    },
+    {
+      "id": "relic-treasurebag",
+      "usedBy": "法宝·万宝囊",
+      "png": {
+        "size": 256,
+        "bounds": [
+          13,
+          48,
+          242,
+          217
+        ],
+        "area": 30045
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          10,
+          36,
+          181,
+          163
+        ],
+        "area": 16887
+      },
+      "bytes": 9118,
+      "file": "relic-treasurebag.png",
+      "sourceSha256": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+      "webpSha256": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935"
+    },
+    {
+      "id": "relic-wickcutter",
+      "usedBy": "法宝·灯芯剪",
+      "png": {
+        "size": 256,
+        "bounds": [
+          23,
+          29,
+          233,
+          236
+        ],
+        "area": 15614
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          17,
+          22,
+          175,
+          176
+        ],
+        "area": 8766
+      },
+      "bytes": 10382,
+      "file": "relic-wickcutter.png",
+      "sourceSha256": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+      "webpSha256": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2"
+    },
+    {
+      "id": "relic-swordmanual",
+      "usedBy": "法宝·剑谱残页",
+      "png": {
+        "size": 256,
+        "bounds": [
+          41,
+          27,
+          217,
+          230
+        ],
+        "area": 22651
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          30,
+          20,
+          163,
+          172
+        ],
+        "area": 12741
+      },
+      "bytes": 8812,
+      "file": "relic-swordmanual.png",
+      "sourceSha256": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+      "webpSha256": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae"
+    },
+    {
+      "id": "relic-ledger",
+      "usedBy": "法宝·绯绡的账本",
+      "png": {
+        "size": 256,
+        "bounds": [
+          27,
+          31,
+          221,
+          225
+        ],
+        "area": 28521
+      },
+      "webp": {
+        "size": 192,
+        "bounds": [
+          21,
+          23,
+          165,
+          168
+        ],
+        "area": 16030
+      },
+      "bytes": 9294,
+      "file": "relic-ledger.png",
+      "sourceSha256": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+      "webpSha256": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d"
+    }
+  ]
+}

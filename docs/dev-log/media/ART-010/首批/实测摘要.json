@@ -1,0 +1,1569 @@
+{
+  "seed": "gallery",
+  "evidence": [
+    {
+      "width": 1280,
+      "shopRoute": {
+        "from": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        },
+        "steps": [
+          {
+            "x": 4,
+            "y": 9,
+            "dir": 3
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "dir": 3
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "dir": 0
+          }
+        ],
+        "target": {
+          "id": 3,
+          "kind": "shop",
+          "x": 3,
+          "y": 3,
+          "done": false
+        },
+        "fixture": false
+      },
+      "chestRoute": {
+        "from": {
+          "x": 7,
+          "y": 8,
+          "dir": 2
+        },
+        "steps": [
+          {
+            "x": 7,
+            "y": 9,
+            "dir": 2
+          }
+        ],
+        "target": {
+          "id": 5,
+          "kind": "chest",
+          "x": 7,
+          "y": 9,
+          "done": false
+        },
+        "fixture": true
+      },
+      "afterShop": {
+        "gold": 30,
+        "relics": [
+          "pin",
+          "sealbag"
+        ],
+        "sold": [
+          "pin",
+          "sealbag"
+        ],
+        "discoveries": [
+          "r:pin",
+          "r:sealbag"
+        ]
+      },
+      "afterLoot": {
+        "relics": [
+          "pin",
+          "sealbag",
+          "treasurebag",
+          "silkfan"
+        ],
+        "discoveries": [
+          "r:pin",
+          "r:sealbag",
+          "r:treasurebag",
+          "r:silkfan"
+        ],
+        "reward": {
+          "relic": null,
+          "choices": null
+        }
+      },
+      "unselected": false,
+      "fullBagInstanceIds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010,
+        1011,
+        1012,
+        1013,
+        1014,
+        1015,
+        1016,
+        1017,
+        1018
+      ],
+      "chest": {
+        "id": "silkfan",
+        "rect": [
+          46,
+          226,
+          64,
+          64
+        ],
+        "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a"
+      },
+      "compare": {
+        "unknown": [
+          {
+            "id": "pin",
+            "old": "pin",
+            "url": "http://127.0.0.1:5178/src/assets/relic-pin.webp",
+            "digest": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              44,
+              78,
+              80,
+              80
+            ],
+            "visiblePixels": 4220,
+            "opaqueBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "brightness(0) opacity(0.45)"
+          },
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              156,
+              78,
+              80,
+              80
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "brightness(0) opacity(0.45)"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              268,
+              204,
+              80,
+              80
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "brightness(0) opacity(0.45)"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              492,
+              78,
+              80,
+              80
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "brightness(0) opacity(0.45)"
+          }
+        ],
+        "wares": [
+          {
+            "id": "pin",
+            "old": "pin",
+            "url": "http://127.0.0.1:5178/src/assets/relic-pin.webp",
+            "digest": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              368,
+              549.44,
+              44,
+              44
+            ],
+            "visiblePixels": 4220,
+            "opaqueBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              484,
+              549.44,
+              44,
+              44
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              600,
+              549.44,
+              44,
+              44
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              716,
+              549.44,
+              44,
+              44
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          }
+        ],
+        "choices": [
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              44,
+              265,
+              40,
+              40
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              44,
+              323,
+              40,
+              40
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              44,
+              381,
+              40,
+              40
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          }
+        ],
+        "carried": [
+          {
+            "id": "pin",
+            "old": "pin",
+            "url": "http://127.0.0.1:5178/src/assets/relic-pin.webp",
+            "digest": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              604.02,
+              12,
+              34,
+              34
+            ],
+            "visiblePixels": 4220,
+            "opaqueBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              646.02,
+              12,
+              34,
+              34
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              688.02,
+              12,
+              34,
+              34
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              730.02,
+              12,
+              34,
+              34
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          }
+        ],
+        "unlocked": [
+          {
+            "id": "pin",
+            "old": "pin",
+            "url": "http://127.0.0.1:5178/src/assets/relic-pin.webp",
+            "digest": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              44,
+              78,
+              80,
+              80
+            ],
+            "visiblePixels": 4220,
+            "opaqueBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              156,
+              78,
+              80,
+              80
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              268,
+              204,
+              80,
+              80
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              492,
+              78,
+              80,
+              80
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          }
+        ],
+        "details": [
+          {
+            "id": "pin",
+            "old": "pin",
+            "url": "http://127.0.0.1:5178/src/assets/relic-pin.webp",
+            "digest": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visiblePixels": 4220,
+            "opaqueBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+          },
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              987,
+              84,
+              110,
+              110
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "shopRoute": {
+        "from": {
+          "x": 5,
+          "y": 9,
+          "dir": 0
+        },
+        "steps": [
+          {
+            "x": 4,
+            "y": 9,
+            "dir": 3
+          },
+          {
+            "x": 3,
+            "y": 9,
+            "dir": 3
+          },
+          {
+            "x": 3,
+            "y": 8,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 7,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 6,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 5,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 4,
+            "dir": 0
+          },
+          {
+            "x": 3,
+            "y": 3,
+            "dir": 0
+          }
+        ],
+        "target": {
+          "id": 3,
+          "kind": "shop",
+          "x": 3,
+          "y": 3,
+          "done": false
+        },
+        "fixture": false
+      },
+      "chestRoute": {
+        "from": {
+          "x": 7,
+          "y": 8,
+          "dir": 2
+        },
+        "steps": [
+          {
+            "x": 7,
+            "y": 9,
+            "dir": 2
+          }
+        ],
+        "target": {
+          "id": 5,
+          "kind": "chest",
+          "x": 7,
+          "y": 9,
+          "done": false
+        },
+        "fixture": true
+      },
+      "afterShop": {
+        "gold": 30,
+        "relics": [
+          "pin",
+          "sealbag"
+        ],
+        "sold": [
+          "pin",
+          "sealbag"
+        ],
+        "discoveries": [
+          "r:pin",
+          "r:sealbag"
+        ]
+      },
+      "afterLoot": {
+        "relics": [
+          "pin",
+          "sealbag",
+          "treasurebag",
+          "silkfan"
+        ],
+        "discoveries": [
+          "r:pin",
+          "r:sealbag",
+          "r:treasurebag",
+          "r:silkfan"
+        ],
+        "reward": {
+          "relic": null,
+          "choices": null
+        }
+      },
+      "unselected": false,
+      "fullBagInstanceIds": [
+        1000,
+        1001,
+        1002,
+        1003,
+        1004,
+        1005,
+        1006,
+        1007,
+        1008,
+        1009,
+        1010,
+        1011,
+        1012,
+        1013,
+        1014,
+        1015,
+        1016,
+        1017,
+        1018
+      ],
+      "chest": {
+        "id": "silkfan",
+        "rect": [
+          29.9,
+          188,
+          41.6,
+          41.6
+        ],
+        "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a"
+      },
+      "compare": {
+        "unknown": [
+          {
+            "id": "pin",
+            "old": "pin",
+            "url": "http://127.0.0.1:5178/src/assets/relic-pin.webp",
+            "digest": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              28.6,
+              50.85,
+              52,
+              52
+            ],
+            "visiblePixels": 4220,
+            "opaqueBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "brightness(0) opacity(0.45)"
+          },
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              101.4,
+              50.85,
+              52,
+              52
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "brightness(0) opacity(0.45)"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              101.4,
+              214.65,
+              52,
+              52
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "brightness(0) opacity(0.45)"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              28.6,
+              132.75,
+              52,
+              52
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "brightness(0) opacity(0.45)"
+          }
+        ],
+        "wares": [
+          {
+            "id": "pin",
+            "old": "pin",
+            "url": "http://127.0.0.1:5178/src/assets/relic-pin.webp",
+            "digest": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              36.4,
+              731.03,
+              28.6,
+              28.6
+            ],
+            "visiblePixels": 4220,
+            "opaqueBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              111.8,
+              731.03,
+              28.6,
+              28.6
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              187.2,
+              731.03,
+              28.6,
+              28.6
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              262.6,
+              731.03,
+              28.6,
+              28.6
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          }
+        ],
+        "choices": [
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              28.6,
+              213.35,
+              26,
+              26
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              28.6,
+              251.05,
+              26,
+              26
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              28.6,
+              288.75,
+              26,
+              26
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          }
+        ],
+        "carried": [
+          {
+            "id": "pin",
+            "old": "pin",
+            "url": "http://127.0.0.1:5178/src/assets/relic-pin.webp",
+            "digest": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              9.1,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visiblePixels": 4220,
+            "opaqueBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              36.4,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              63.7,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              91,
+              50.2,
+              22.1,
+              22.1
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          }
+        ],
+        "unlocked": [
+          {
+            "id": "pin",
+            "old": "pin",
+            "url": "http://127.0.0.1:5178/src/assets/relic-pin.webp",
+            "digest": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              28.6,
+              50.85,
+              52,
+              52
+            ],
+            "visiblePixels": 4220,
+            "opaqueBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              101.4,
+              50.85,
+              52,
+              52
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              101.4,
+              214.65,
+              52,
+              52
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              28.6,
+              132.75,
+              52,
+              52
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "none"
+          }
+        ],
+        "details": [
+          {
+            "id": "pin",
+            "old": "pin",
+            "url": "http://127.0.0.1:5178/src/assets/relic-pin.webp",
+            "digest": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa",
+            "source": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visiblePixels": 4220,
+            "opaqueBounds": [
+              24,
+              11,
+              175,
+              180
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+          },
+          {
+            "id": "sealbag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-sealbag.webp",
+            "digest": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02",
+            "source": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visiblePixels": 9821,
+            "opaqueBounds": [
+              55,
+              15,
+              133,
+              176
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+          },
+          {
+            "id": "treasurebag",
+            "old": "pouch",
+            "url": "http://127.0.0.1:5178/src/assets/relic-treasurebag.webp",
+            "digest": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935",
+            "source": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visiblePixels": 16754,
+            "opaqueBounds": [
+              10,
+              37,
+              182,
+              163
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+          },
+          {
+            "id": "silkfan",
+            "old": "silk",
+            "url": "http://127.0.0.1:5178/src/assets/relic-silkfan.webp",
+            "digest": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a",
+            "source": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+            "natural": [
+              192,
+              192
+            ],
+            "imageRect": [
+              159.25,
+              453.85,
+              71.5,
+              71.5
+            ],
+            "visiblePixels": 13648,
+            "opaqueBounds": [
+              32,
+              4,
+              169,
+              187
+            ],
+            "edge": 0,
+            "onScreen": true,
+            "filter": "drop-shadow(rgba(0, 0, 0, 0.5) 0px 6px 10px)"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -60,7 +60,10 @@ for (const e of Object.values(ENEMIES)) {
   if (e.phase2 && e.phase2.sprite !== e.sprite) use(e.phase2.sprite, "敌怪", `敌怪·${e.name}·二阶段`);
 }
 for (const g of Object.values(GOODS)) use(g.icon, "物品图标", `${{ goods: "货物", gear: "装备", consumable: "消耗品" }[g.kind]}·${g.name}`);
-for (const r of Object.values(RELICS)) use(r.icon, "物品图标", `法宝·${r.name}`);
+for (const r of Object.values(RELICS)) {
+  const icon = parts.relicIcon(r.id);
+  use(icon, icon === `relic-${r.id}` ? "法宝图标" : "物品图标", `法宝·${r.name}`);
+}
 const wantCards = Object.values(CARDS).map(({ id, name }) => ({
   file: `card-${id}`, category: "卡牌插图", usedBy: `卡牌·${name}`, fallback: parts.CARD_ART[id] ?? "sword",
 }));

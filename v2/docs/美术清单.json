@@ -344,22 +344,19 @@
       "file": "fang",
       "category": "物品图标",
       "usedBy": [
-        "货物·鼠牙",
-        "法宝·鼠牙坠"
+        "货物·鼠牙"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "silk",
       "category": "物品图标",
       "usedBy": [
         "货物·蛾丝卷",
-        "法宝·蛾丝扇",
-        "法宝·剑谱残页",
         "营建·学堂"
       ],
       "wanted": [],
@@ -384,14 +381,13 @@
       "file": "knot",
       "category": "物品图标",
       "usedBy": [
-        "货物·狐毛结",
-        "法宝·狐毛护身结"
+        "货物·狐毛结"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "seal",
@@ -399,8 +395,7 @@
       "usedBy": [
         "货物·灯芯",
         "装备·引灯盘",
-        "装备·精引灯盘",
-        "法宝·灯芯剪"
+        "装备·精引灯盘"
       ],
       "wanted": [],
       "status": "ok",
@@ -575,7 +570,6 @@
       "usedBy": [
         "装备·铁剑",
         "装备·精铁剑",
-        "法宝·镇妖剑穗",
         "营建·货架"
       ],
       "wanted": [],
@@ -588,15 +582,13 @@
       "file": "hook",
       "category": "物品图标",
       "usedBy": [
-        "装备·竹柄钩",
-        "法宝·棘环",
-        "法宝·庖丁刀"
+        "装备·竹柄钩"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "mirror",
@@ -629,7 +621,6 @@
       "usedBy": [
         "装备·货郎钱袋",
         "装备·精钱袋",
-        "法宝·绯绡的账本",
         "营建·订单柜"
       ],
       "wanted": [],
@@ -715,15 +706,13 @@
       "file": "pouch",
       "category": "物品图标",
       "usedBy": [
-        "消耗品·养元丹",
-        "法宝·封口锦囊",
-        "法宝·万宝囊"
+        "消耗品·养元丹"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "lining",
@@ -739,28 +728,159 @@
       "priority": "P2"
     },
     {
-      "file": "pin",
-      "category": "物品图标",
+      "file": "relic-pin",
+      "category": "法宝图标",
       "usedBy": [
-        "法宝·狐扣针",
-        "营建·狐市分号"
+        "法宝·狐扣针"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
-      "note": "",
-      "priority": "P2"
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
-      "file": "grit",
-      "category": "物品图标",
+      "file": "relic-sealbag",
+      "category": "法宝图标",
+      "usedBy": [
+        "法宝·封口锦囊"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "relic-thorn",
+      "category": "法宝图标",
+      "usedBy": [
+        "法宝·棘环"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "relic-fangcharm",
+      "category": "法宝图标",
+      "usedBy": [
+        "法宝·鼠牙坠"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "relic-silkfan",
+      "category": "法宝图标",
+      "usedBy": [
+        "法宝·蛾丝扇"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "relic-knotcharm",
+      "category": "法宝图标",
+      "usedBy": [
+        "法宝·狐毛护身结"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "relic-seal",
+      "category": "法宝图标",
       "usedBy": [
         "法宝·灯纹印"
       ],
       "wanted": [],
       "status": "ok",
       "shared": false,
-      "note": "",
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "relic-tassel",
+      "category": "法宝图标",
+      "usedBy": [
+        "法宝·镇妖剑穗"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "relic-butcher",
+      "category": "法宝图标",
+      "usedBy": [
+        "法宝·庖丁刀"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "relic-treasurebag",
+      "category": "法宝图标",
+      "usedBy": [
+        "法宝·万宝囊"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "relic-wickcutter",
+      "category": "法宝图标",
+      "usedBy": [
+        "法宝·灯芯剪"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "relic-swordmanual",
+      "category": "法宝图标",
+      "usedBy": [
+        "法宝·剑谱残页"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "relic-ledger",
+      "category": "法宝图标",
+      "usedBy": [
+        "法宝·绯绡的账本"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
       "priority": "-"
     },
     {
@@ -1615,6 +1735,18 @@
       "priority": "P2"
     },
     {
+      "file": "pin",
+      "category": "物品图标",
+      "usedBy": [
+        "营建·狐市分号"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
       "file": "shop",
       "category": "场景",
       "usedBy": [
@@ -2157,7 +2289,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·狐扣针",
       "fallback": "pin",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2165,7 +2297,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·封口锦囊",
       "fallback": "pouch",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2173,7 +2305,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·棘环",
       "fallback": "hook",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2181,7 +2313,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·鼠牙坠",
       "fallback": "fang",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2189,7 +2321,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·蛾丝扇",
       "fallback": "silk",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2197,7 +2329,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·狐毛护身结",
       "fallback": "knot",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2205,7 +2337,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·灯纹印",
       "fallback": "grit",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2213,7 +2345,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·镇妖剑穗",
       "fallback": "ward-blade",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2221,7 +2353,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·庖丁刀",
       "fallback": "hook",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2229,7 +2361,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·万宝囊",
       "fallback": "pouch",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2237,7 +2369,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·灯芯剪",
       "fallback": "seal",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2245,7 +2377,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·剑谱残页",
       "fallback": "silk",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {
@@ -2253,7 +2385,7 @@
       "category": "法宝图标",
       "usedBy": "法宝·绯绡的账本",
       "fallback": "order-purse",
-      "status": "missing",
+      "status": "ok",
       "priority": "P1"
     },
     {

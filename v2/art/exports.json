@@ -618,5 +618,70 @@
     "file": "card-windfall.png",
     "sourceSha256": "a184abaea6c109f21ea33cacbc11f04c9878267058e25595bf272d47777ec672",
     "webpSha256": "c6d59d9a801a124cd259cc1a85e2290655248dc3ac4b0fe2323d47375d73ceba"
+  },
+  "relic-pin": {
+    "file": "relic-pin.png",
+    "sourceSha256": "9fec7a26156be1e81c7dc2771d66a9b4a5bb75949419b6a6fa8eb5a0468068cd",
+    "webpSha256": "701da647f162732e7c05f2ee259d7ac065fe7b748c0653cde1929b4aa8b01faa"
+  },
+  "relic-sealbag": {
+    "file": "relic-sealbag.png",
+    "sourceSha256": "b5ad9d5c0caa8b17f11a89c2866f082374fe60a8865f564ee3937a3de422ef2d",
+    "webpSha256": "7616fc577598ad659d96e89e6094ea6c64eb2855c73a3347c5a6ea38332aba02"
+  },
+  "relic-silkfan": {
+    "file": "relic-silkfan.png",
+    "sourceSha256": "4b7676e65dba86e83a5e0562166d177ddb7055e08cad97ff7622c966f9daac4f",
+    "webpSha256": "a440856a55363dc82da67b7992781f774951c9be662b62902ccd33d27305166a"
+  },
+  "relic-treasurebag": {
+    "file": "relic-treasurebag.png",
+    "sourceSha256": "136970680247d5a2f534d319cc5e1c22d4b6ece1f7e74520a851cd16329eaec2",
+    "webpSha256": "22c43328eb9f658a55097e0683be4ab1148fe9c23c7e171f2d8d47eba6689935"
+  },
+  "relic-butcher": {
+    "file": "relic-butcher.png",
+    "sourceSha256": "abadb23826f038b41f7abe8326bbfe586dc8c42e83e8920534015d57980a9419",
+    "webpSha256": "868649e91e8216dc603cce7613b6ebbccfd0b79823fa31cc51b64c28392abce6"
+  },
+  "relic-fangcharm": {
+    "file": "relic-fangcharm.png",
+    "sourceSha256": "b076e0a848668eaa8357e0e511e56590b821c16c7279dd56bea41032a44f8d34",
+    "webpSha256": "d166bfbf1fadf8029d7c9f04271cf83dbb934bbb2927d99e9ededef1358836cf"
+  },
+  "relic-knotcharm": {
+    "file": "relic-knotcharm.png",
+    "sourceSha256": "1935d3e336fe2931a1dbfaf3bdeff4c71399d55af0c57c593d1ab643a5b45755",
+    "webpSha256": "d0a898db3ac7278ea9788953cbb1b92d3254a38ff4793628727b12fd59dade55"
+  },
+  "relic-ledger": {
+    "file": "relic-ledger.png",
+    "sourceSha256": "6616138d9fc9b580221d321caf099aa68577167903df7c4e9f814159aecf0528",
+    "webpSha256": "45fc8f464bc408b0b231593b5c4dea5d50b877dfaa1988667f49371a8516e38d"
+  },
+  "relic-seal": {
+    "file": "relic-seal.png",
+    "sourceSha256": "20091606c92bb9681c899649bd104016180396fe5f029fbbb70e001f5051bd02",
+    "webpSha256": "44cc4c667fdd1080048b860d0fcf0b8f2eb4fe3f05289667b44329ca7e426756"
+  },
+  "relic-swordmanual": {
+    "file": "relic-swordmanual.png",
+    "sourceSha256": "e0f3a8789c0f5036dcb7993ebc6b1e05893bfef29f1f6c8b9e977ba9da98953f",
+    "webpSha256": "31812ffab0a23395e7d3c1bbd7307aac6c9e38d505883ba324fcac402db844ae"
+  },
+  "relic-tassel": {
+    "file": "relic-tassel.png",
+    "sourceSha256": "bb058746530a6bb8755a7c0e9128944e3f06ac2c5ad13de0d3feb9ba9882016c",
+    "webpSha256": "746704abc6556a6a1dd16c05395a2f5437043be7719c85b3c300c226481fa254"
+  },
+  "relic-thorn": {
+    "file": "relic-thorn.png",
+    "sourceSha256": "9cc5023e7fdc01ab9fcd7117ffaaf7d8aedee65ad20bf386098b1f9dac22e274",
+    "webpSha256": "0fbb460c9a9caf2544218fad54addf2c2df80e470d4271e67f77d694101c0553"
+  },
+  "relic-wickcutter": {
+    "file": "relic-wickcutter.png",
+    "sourceSha256": "ef866fce35f2cb4460f5db9420ddeae776e03e17ae37d5886184d6b11d369af9",
+    "webpSha256": "f87224b8f2a0139c9c589ab5a3aab32cde244d2d3f8b4a1f48001e9652cf9ce2"
   }
 }
