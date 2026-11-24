@@ -1,4 +1,4 @@
-import { GOODS, REFINES, TAGS, TAG_IDS, type TagId } from "../data/goods";
+import { GOODS, stackMax, REFINES, TAGS, TAG_IDS, type TagId } from "../data/goods";
 import type { Bag, GoodId, PlacedGood } from "./types";
 
 /** Cells an item covers after rotating `rot` quarter turns clockwise, normalised to start at 0,0. */
@@ -68,16 +68,31 @@ export function auraOn(bag: Bag, item: PlacedGood, kind: "dmg" | "blk" | "sell" 
 }
 
 /** Extra 灯灰 counted by ash-scaling cards: each ash next to a 灯油壶 counts again. */
+/** How many goods a placed item stands for (a stack of 灯灰 is several). */
+export const qty = (it: Pick<PlacedGood, "n">) => it.n ?? 1;
+
 export function ashBonus(bag: Bag): number {
-  return bag.items.filter((it) => it.id === "ash" && auraOn(bag, it, "ash") > 0).length;
+  return bag.items.filter((it) => it.id === "ash" && auraOn(bag, it, "ash") > 0).reduce((s, it) => s + qty(it), 0);
 }
 
 export function count(bag: Bag, id?: GoodId): number {
-  return bag.items.filter((it) => (id ? it.id === id : GOODS[it.id].kind === "goods")).length;
+  return bag.items.filter((it) => (id ? it.id === id : GOODS[it.id].kind === "goods")).reduce((s, it) => s + qty(it), 0);
 }
 
 export function value(bag: Bag): number {
-  return bag.items.reduce((s, it) => s + GOODS[it.id].price, 0);
+  return bag.items.reduce((s, it) => s + GOODS[it.id].price * qty(it), 0);
+}
+
+/** A stack of `id` that still has room, if any. */
+export function stackWithRoom(bag: Bag, id: GoodId): PlacedGood | null {
+  return bag.items.find((it) => it.id === id && qty(it) < stackMax(id)) ?? null;
+}
+
+/** Take one good off an item: a stack just gets smaller, a single item leaves the bag. */
+export function takeOne(bag: Bag, item: PlacedGood): GoodId {
+  if (qty(item) > 1) item.n = qty(item) - 1;
+  else removeUid(bag, item.uid);
+  return item.id;
 }
 
 export function removeUid(bag: Bag, uid: number): PlacedGood | null {
@@ -87,7 +102,7 @@ export function removeUid(bag: Bag, uid: number): PlacedGood | null {
 
 /** Remove one of `id`, preferring the most recently added. */
 export function removeOne(bag: Bag, id: GoodId): boolean {
-  for (let i = bag.items.length - 1; i >= 0; i--) if (bag.items[i].id === id) { bag.items.splice(i, 1); return true; }
+  for (let i = bag.items.length - 1; i >= 0; i--) if (bag.items[i].id === id) { takeOne(bag, bag.items[i]); return true; }
   return false;
 }
 
@@ -120,7 +135,7 @@ export function autoPack(bag: Bag): boolean {
 /** How many packed items carry each tag. */
 export function tagCounts(bag: Bag): Record<TagId, number> {
   const out = Object.fromEntries(TAG_IDS.map((t) => [t, 0])) as Record<TagId, number>;
-  for (const it of bag.items) for (const t of GOODS[it.id].tags ?? []) out[t]++;
+  for (const it of bag.items) for (const t of GOODS[it.id].tags ?? []) out[t] += qty(it);
   return out;
 }
 

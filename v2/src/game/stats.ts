@@ -6,7 +6,7 @@ import { ENEMIES } from "../data/enemies";
 import { GOODS } from "../data/goods";
 import type { RunState } from "./types";
 
-type Count = "elitesFought" | "elitesSkipped" | "soldValue" | "refines" | "cracks" | "pouchStash" | "sews" | "ordersDone";
+type Count = "elitesFought" | "elitesSkipped" | "soldValue" | "refines" | "cracks" | "pouchStash" | "sews" | "ordersDone" | "leftBehind";
 
 export function bump(run: RunState, k: Count, n = 1) {
   run.stats[k] = (run.stats[k] ?? 0) + n;
@@ -35,6 +35,7 @@ export function playtestRecord(run: RunState, carried: number, runNo: number, no
     `每层离开时气血：${s.hpAtFloorEnd?.length ? s.hpAtFloorEnd.join(" / ") : "—"}（上限 ${run.maxHp}）`,
     `精英：打了 ${s.elitesFought ?? 0}，没打就离开 ${s.elitesSkipped ?? 0}`,
     `在狐市卖出 ${s.goodsSold} 件，得 ${s.soldValue ?? 0} 石；带回镇上折库银 ${carried} 石`,
+    `上楼或回镇时留下 ${s.leftBehind ?? 0} 件货`,
     `委托完成 ${s.ordersDone ?? 0} · 淬炼 ${s.refines ?? 0} · 磕坏 ${s.cracks ?? 0} · 放进侧袋 ${s.pouchStash ?? 0} 次 · 缝衬布 ${s.sews ?? 0} 次`,
     `取材成功 ${s.harvests}，打倒 ${s.kills} 只妖`,
   ].join("\n");

@@ -173,7 +173,7 @@ function damagePlayer(run: RunState, c: CombatState, dmg: number, events: Combat
 function consumeGood(run: RunState, c: CombatState, which: GoodId | "cheapest", events: CombatEvent[]): GoodId | null {
   const item = which === "cheapest" ? bag.cheapest(run.bag) : run.bag.items.slice().reverse().find((it) => it.id === which) ?? null;
   if (!item) return null;
-  bag.removeUid(run.bag, item.uid);
+  bag.takeOne(run.bag, item);
   c.goodsUsed++;
   run.stats.goodsUsed++;
   events.push({ t: "goods", good: item.id, gained: false });
@@ -434,12 +434,14 @@ export function endTurn(run: RunState): CombatEvent[] {
 export const CRACK_CHANCE = 0.25;
 function crack(run: RunState, c: CombatState, events: CombatEvent[]) {
   if (c.status.ward) return;
-  for (const it of run.bag.items) {
+  for (const it of [...run.bag.items]) {
     const into = GOODS[it.id].fragile;
     if (!into || bag.auraOn(run.bag, it, "ward") || !chance(c.rng, CRACK_CHANCE)) continue;
     events.push({ t: "crack", good: it.id, into });
     bump(run, "cracks");
-    it.id = into;
+    // One of a stack cracks and comes off it; a single good cracks in place.
+    if (bag.qty(it) > 1) { it.n = bag.qty(it) - 1; addGood(run, into); }
+    else it.id = into;
     discover(run, "g:" + into);
   }
 }
@@ -473,7 +475,7 @@ function steal(run: RunState, c: CombatState, events: CombatEvent[]) {
     events.push({ t: "steal", good: item.id, saved: true });
     return;
   }
-  bag.removeUid(run.bag, item.uid);
+  bag.takeOne(run.bag, item); // a thief grabs one off a stack
   c.stolen.push(item.id);
   events.push({ t: "steal", good: item.id, saved: false });
   // Thieves that keep what they grab try to run for it next turn.

@@ -59,10 +59,10 @@ describe.skipIf(!process.env.REPORT)("balance report", () => {
       const sum = (k: "n" | "hpLost" | "losses") => n.reduce((a, r) => a + r.e[k], 0);
       lines.push(`| ${f} | ${sum("n")} | ${avg(sum("hpLost"), sum("n"))} | ${pct(sum("losses"), sum("n"))} |`);
     }
-    lines.push("", "## 每层收支（平均每局到达这一层时）", "", "| 层 | 到达 | 战斗得石 | 卖货得石 | 委托得石 | 买牌 | 买灯油 | 买药等 | 灯油耗尽 | 离开时气血 | 离开时石 |", "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |");
+    lines.push("", "## 每层收支（平均每局到达这一层时）", "", "| 层 | 到达 | 战斗得石 | 卖货得石 | 委托得石 | 买牌 | 买灯油 | 买药等 | 灯油耗尽 | 离开时气血 | 离开时石 | 装不下丢掉的货 | 离开时行囊占用 |", "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |");
     for (const f of [1, 2, 3]) {
       const s = all.floors[f], n = s.reached;
-      lines.push(`| ${f} | ${n} | ${avg(s.fightGold, n, 0)} | ${avg(s.saleGold, n, 0)} | ${avg(s.orderGold, n, 0)} | ${avg(s.spentCards, n, 0)} | ${avg(s.spentOil, n, 0)} | ${avg(s.spentOther, n, 0)} | ${pct(s.oilOut, n)} | ${avg(s.hpAtEnd, n, 0)} | ${avg(s.goldAtEnd, n, 0)} |`);
+      lines.push(`| ${f} | ${n} | ${avg(s.fightGold, n, 0)} | ${avg(s.saleGold, n, 0)} | ${avg(s.orderGold, n, 0)} | ${avg(s.spentCards, n, 0)} | ${avg(s.spentOil, n, 0)} | ${avg(s.spentOther, n, 0)} | ${pct(s.oilOut, n)} | ${avg(s.hpAtEnd, n, 0)} | ${avg(s.goldAtEnd, n, 0)} | ${avg(s.lostGoods, n, 1)} | ${pct(s.fillAtEnd, n)} |`);
     }
     lines.push("", "## 卡牌被选率（奖励三选一里出现时被机器人选中的比例）", "", "| 牌 | 出现 | 被选 | 选中率 |", "| --- | --- | --- | --- |");
     for (const [id, n] of Object.entries(all.offered).sort((a, b) => (all.picked[b[0]] ?? 0) / b[1] - (all.picked[a[0]] ?? 0) / a[1])) {

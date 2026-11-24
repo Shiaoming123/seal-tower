@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import { sfx } from "../audio/sfx";
 import { CARDS } from "../data/cards";
-import { GOODS, KIND_LABEL, REFINES, TAGS, TAG_IDS } from "../data/goods";
+import { GOODS, KIND_LABEL, REFINES, TAGS, TAG_IDS, stackMax } from "../data/goods";
 import * as bag from "../game/bag";
-import { POUCH_SLOTS, canExpand, sewPiece, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
+import { POUCH_SLOTS, canExpand, discard, sellPending, sewPiece, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
 import type { GoodId, PlacedGood, RunState } from "../game/types";
 import { ART } from "../render/assets";
 import { GoodInfo } from "./parts";
@@ -40,6 +40,7 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
   const [ghost, setGhost] = useState<{ x: number; y: number } | null>(null);
   const moved = useRef(false);
   const [confirmSell, setConfirmSell] = useState<number | null>(null);
+  const [pileSell, setPileSell] = useState<number | null>(null);
   /** Sewing a 扩囊衬布 on: the lining item's uid while the expander is open. */
   const [sewing, setSewing] = useState<number | null>(null);
 
@@ -169,6 +170,7 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
                 style={{ width: `${(it.rot % 2 ? size.h : size.w) * cell}px`, height: `${(it.rot % 2 ? size.w : size.h) * cell}px`, transform: `translate(-50%, -50%) rotate(${it.rot * 90 + (g.tilt?.[0] ?? 0)}deg) scale(${g.tilt?.[1] ?? 1})` }} />
               {mode === "sell" && <span class={`price ${confirmSell === it.uid ? "confirm" : ""}`}>{confirmSell === it.uid ? `卖?${sellPrice(run, it.id, run.floor, run.shop?.sold[it.id] ?? 0, it.uid)}` : sellPrice(run, it.id, run.floor, run.shop?.sold[it.id] ?? 0, it.uid)}</span>}
               {mode !== "sell" && <AuraBadge run={run} uid={it.uid} />}
+              {bag.qty(it) > 1 && <span class="stack-n">×{bag.qty(it)}</span>}
               {g.base && <span class="fine-badge">精</span>}
               {refining.has(it.uid) && GOODS[it.id].cards && <span class="refine-badge">战后淬炼</span>}
             </div>
@@ -194,14 +196,19 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
       </div>
       {run.pending.length > 0 && (
         <div class="pending">
-          <h4>没装下的东西 · {run.pending.length} 件 <small>拖进格子，或点「自动装」。离开时没装的会留在原地。</small></h4>
+          <h4>货堆 · {run.pending.length} 件 <small>{mode === "sell" ? "点一下看价，再点一下卖掉。" : "这一层一直跟着你，不生效也不会被偷。上楼或回镇前装进行囊，装不下的会留下。"}</small></h4>
           <div class="pending-list">
             {run.pending.map((id, index) => (
-              <div class={`pending-item ${held?.from === "pending" && held.index === index ? "held" : ""}`} title={GOODS[id].text}
-                onPointerDown={(e) => startDrag({ from: "pending", index, id, rot: 0 }, e as unknown as PointerEvent)}>
+              <div class={`pending-item ${held?.from === "pending" && held.index === index ? "held" : ""} ${mode === "sell" && pileSell === index ? "confirm" : ""}`} title={GOODS[id].text}
+                onPointerDown={(e) => { if (mode !== "sell") startDrag({ from: "pending", index, id, rot: 0 }, e as unknown as PointerEvent); }}
+                onClick={() => {
+                  if (mode !== "sell") return;
+                  if (pileSell !== index) { sfx.click(); setPileSell(index); say(`再点一次，${sellPrice(run, id)} 石卖掉${GOODS[id].name}`, 3000); return; }
+                  const p = sellPending(run, index); sfx.coin(); say(`卖出${GOODS[id].name}，得 ${p} 石`); setPileSell(null); commit();
+                }}>
                 <img src={ART[GOODS[id].icon]} alt="" draggable={false} />
                 <span>{GOODS[id].name}</span>
-                <small>{bag.sizeOf(id, 0).w}×{bag.sizeOf(id, 0).h}</small>
+                <small>{mode === "sell" ? `${pileSell === index ? "卖?" : ""}${sellPrice(run, id)} 石` : `${bag.sizeOf(id, 0).w}×${bag.sizeOf(id, 0).h}`}</small>
               </div>
             ))}
           </div>
@@ -209,6 +216,20 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
         </div>
       )}
     </div>
+  );
+}
+
+/** Throw a good away: two taps, one at a time off a stack. */
+function DiscardButton({ run, uid, onDone }: { run: RunState; uid: number; onDone: () => void }) {
+  const [sure, setSure] = useState(false);
+  const it = run.bag.items.find((i) => i.uid === uid);
+  if (!it) return null;
+  const n = bag.qty(it);
+  return (
+    <button type="button" class={`btn small ${sure ? "danger" : "ghost"}`} onClick={() => {
+      if (!sure) { sfx.click(); setSure(true); return; }
+      discard(run, uid); sfx.drain(); setSure(false); if (n <= 1) onDone(); commit();
+    }}>{sure ? `再点一下丢掉${n > 1 ? "一个" : ""}` : "丢掉"}</button>
   );
 }
 
@@ -220,7 +241,7 @@ function ItemDetails({ run, uid, onRotate, onDone, onSew }: { run: RunState; uid
   const canUse = g.use && (g.use.inCombat || !inCombat) && !(g.use.bagRow && !canExpand(run));
   return (
     <div class="item-details">
-      <div class="det-head"><img src={ART[g.icon]} alt="" /><div><b>{g.name}</b><span>{KIND_LABEL[g.kind]} · 售价 {g.price} 石</span></div></div>
+      <div class="det-head"><img src={ART[g.icon]} alt="" /><div><b>{g.name}{bag.qty(it) > 1 ? ` ×${bag.qty(it)}` : ""}</b><span>{KIND_LABEL[g.kind]} · 售价 {g.price} 石{stackMax(it.id) > 1 ? ` · 一格叠 ${stackMax(it.id)} 个` : ""}</span></div></div>
       <p class="det-text">{g.text}</p>
       {g.passive && <p class="det-passive">带在身上：{g.passive}</p>}
       {g.cards && <p class="det-cards">牌组多出：{g.cards.map((c) => `「${CARDS[c].name}」`).join("")}</p>}
@@ -236,7 +257,8 @@ function ItemDetails({ run, uid, onRotate, onDone, onSew }: { run: RunState; uid
         {g.use?.bagRow && !canExpand(run) && <span class="muted">行囊已经到最大了</span>}
         <button type="button" class="btn small" onClick={onRotate}>旋转</button>
         {!inCombat && <button type="button" class="btn small" disabled={pouchFull(run)} onClick={() => { if (toPouch(run, it.uid)) { sfx.click(); onDone(); commit(); } }}>放进侧袋</button>}
-        <button type="button" class="btn small ghost" onClick={() => { unpack(run, it.uid); onDone(); commit(); }}>拿出来</button>
+        <button type="button" class="btn small ghost" onClick={() => { unpack(run, it.uid); onDone(); commit(); }}>放回货堆</button>
+        {!inCombat && <DiscardButton run={run} uid={it.uid} onDone={onDone} />}
       </div>
     </div>
   );

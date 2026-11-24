@@ -7,6 +7,8 @@ import type { GoodId } from "../game/types";
  * - consumable: used from the bag, then gone.
  */
 export interface GoodDef {
+  /** How many fit in one cell (GAME-008). Default: 3 for one-cell trade goods, 1 for everything else. */
+  stack?: number;
   id: GoodId;
   kind: "goods" | "gear" | "consumable";
   name: string;
@@ -46,7 +48,7 @@ const ONE: [number, number][] = [[0, 0]];
 
 const list: GoodDef[] = [
   // ---------- goods ----------
-  { id: "ash", kind: "goods", name: "灯灰", icon: "ash", shape: ONE, price: 2,
+  { id: "ash", kind: "goods", name: "灯灰", icon: "ash", shape: ONE, price: 2, stack: 5,
     text: "妖物偷吃灯油后剩下的灰。镇上的灯匠收它补灯，引灯的招式也要烧它，实在没油了还能烧来照路。",
     use: { label: "烧来照路 · 灯油 +8", oil: 8, inCombat: false } },
   { id: "fang", tags: ["material"], kind: "goods", name: "鼠牙", icon: "fang", tilt: [-45, 1.25], shape: V2, price: 3, text: "灯鼠的门牙，药铺收去磨粉。" },
@@ -145,3 +147,10 @@ export const REFINES: { gear: GoodId; with: GoodId; into: GoodId }[] = [
   { gear: "purse", with: "luckybag", into: "purse-fine" },
 ];
 export const KIND_LABEL = { goods: "货物", gear: "装备", consumable: "消耗品" } as const;
+
+/** How many of this good stack in one bag cell. */
+export function stackMax(id: GoodId): number {
+  const g = GOODS[id];
+  return g.stack ?? (g.kind === "goods" && g.shape.length === 1 ? 3 : 1);
+}
+

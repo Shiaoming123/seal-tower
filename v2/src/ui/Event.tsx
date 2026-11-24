@@ -62,7 +62,7 @@ export function EventScreen() {
         {/* Outside the scrolling area so it never ends up below the stage, however full the bag is. */}
         {result && (
           <button type="button" class="btn big primary event-continue" onClick={() => { R.closeEvent(run); commit(); }}>
-            {run.eventFight ? "迎战" : "继续"}{run.pending.length ? `（${run.pending.length} 件没装的留在这里）` : ""}
+            {run.eventFight ? "迎战" : "继续"}
           </button>
         )}
       </div>

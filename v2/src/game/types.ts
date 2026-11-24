@@ -20,7 +20,7 @@ export interface CardInst {
   bonus?: { dmg?: number; blk?: number };
 }
 
-export interface PlacedGood { uid: number; id: GoodId; x: number; y: number; rot: number }
+export interface PlacedGood { uid: number; id: GoodId; x: number; y: number; rot: number; /** Stack size for small goods (GAME-008); missing means 1. */ n?: number }
 /**
  * The bag is a w×h box; `holes` lists cells inside it that aren't part of the bag (y * w + x). A plain
  * rectangle has none. Sewing in expansion pieces grows the box and leaves holes where nothing was added.
@@ -185,7 +185,7 @@ export interface RunStats {
   steps: number; harvests: number; kills: number; goldEarned: number; goodsSold: number; goodsUsed: number; damageTaken: number; turns: number;
   // Playtest counters (GAME-001). Optional so older saves load; see game/stats.ts.
   startedAt?: number; elitesFought?: number; elitesSkipped?: number; soldValue?: number; refines?: number; cracks?: number;
-  pouchStash?: number; sews?: number; ordersDone?: number; hpAtFloorEnd?: number[]; killedBy?: string;
+  pouchStash?: number; sews?: number; ordersDone?: number; leftBehind?: number; hpAtFloorEnd?: number[]; killedBy?: string;
 }
 
 export interface RunState {

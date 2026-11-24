@@ -1,9 +1,10 @@
 // A simple player used by the balance simulation and smoke tests. It is deliberately average, not optimal.
+import * as bag from "../src/game/bag";
 import { CARDS, cardCost } from "../src/data/cards";
 import { blockedReason, endTurn, incomingDamage, playCard } from "../src/game/combat";
 import { entityAt, findPath, revealAll } from "../src/game/dungeon";
 import { GOODS } from "../src/data/goods";
-import { sellItem, useItem } from "../src/game/inventory";
+import { autoPackPending, sellItem, sellPending, useItem } from "../src/game/inventory";
 import * as R from "../src/game/run";
 import type { RunState } from "../src/game/types";
 
@@ -11,7 +12,7 @@ import type { RunState } from "../src/game/types";
 export interface SimStats {
   /** Keyed `floor:enemyId:kind` (the same monster can be a normal fight on one floor and an elite on another). */
   enemies: Record<string, { n: number; turns: number; hpLost: number; losses: number; kind: string }>;
-  floors: Record<number, { reached: number; fightGold: number; saleGold: number; orderGold: number; spentCards: number; spentOil: number; spentOther: number; oilOut: number; hpAtEnd: number; goldAtEnd: number }>;
+  floors: Record<number, { reached: number; fightGold: number; saleGold: number; orderGold: number; spentCards: number; spentOil: number; spentOther: number; oilOut: number; hpAtEnd: number; goldAtEnd: number; lostGoods: number; fillAtEnd: number }>;
   offered: Record<string, number>;
   picked: Record<string, number>;
   refines: number;
@@ -19,7 +20,7 @@ export interface SimStats {
 }
 export const newStats = (): SimStats => ({
   enemies: {}, offered: {}, picked: {}, refines: 0, cracks: 0,
-  floors: Object.fromEntries([1, 2, 3].map((f) => [f, { reached: 0, fightGold: 0, saleGold: 0, orderGold: 0, spentCards: 0, spentOil: 0, spentOther: 0, oilOut: 0, hpAtEnd: 0, goldAtEnd: 0 }])),
+  floors: Object.fromEntries([1, 2, 3].map((f) => [f, { reached: 0, fightGold: 0, saleGold: 0, orderGold: 0, spentCards: 0, spentOil: 0, spentOther: 0, oilOut: 0, hpAtEnd: 0, goldAtEnd: 0, lostGoods: 0, fillAtEnd: 0 }])),
 });
 
 export function fight(run: RunState, maxTurns = 60, stats?: SimStats) {
@@ -73,11 +74,19 @@ function sellSpare(run: RunState, always: readonly string[] = []): number {
   const keep: Record<string, number> = {};
   run.orders.forEach((o, i) => { if (!o.done) for (const p of R.orderProgress(run, i).parts) keep[p.id] = Math.max(keep[p.id] ?? 0, p.need); });
   if (run.bag.items.some((i) => i.id === "lamp" || i.id === "lamp-fine")) keep.ash = Math.max(keep.ash ?? 0, 3);
+  // Loose goods in the floor's pile first, then packed ones one at a time (stacks sell one per call).
+  for (let i = run.pending.length - 1; i >= 0; i--) {
+    const id = run.pending[i];
+    if (GOODS[id].kind !== "goods" || always.includes(id)) continue;
+    if ((keep[id] ?? 0) > 0) { keep[id]--; continue; }
+    got += sellPending(run, i);
+  }
   for (const it of [...run.bag.items]) {
-    if (GOODS[it.id].kind !== "goods") continue;
-    if (always.includes(it.id)) continue;
-    if ((keep[it.id] ?? 0) > 0) { keep[it.id]--; continue; }
-    got += sellItem(run, it.uid);
+    if (GOODS[it.id].kind !== "goods" || always.includes(it.id)) continue;
+    for (let n = bag.qty(it); n > 0; n--) {
+      if ((keep[it.id] ?? 0) > 0) { keep[it.id]--; continue; }
+      got += sellItem(run, it.uid);
+    }
   }
   return got;
 }
@@ -87,7 +96,14 @@ function sellSpare(run: RunState, always: readonly string[] = []): number {
 export function playRun(run: RunState, opts: { elites?: boolean; onFloor?: () => void; stats?: SimStats; sell?: boolean; keep?: readonly string[] } = {}) {
   const st = opts.stats;
   let floorSeen = 0;
-  const endFloor = () => { if (st && floorSeen) { st.floors[floorSeen].hpAtEnd += Math.max(0, run.hp); st.floors[floorSeen].goldAtEnd += run.gold; } };
+  const endFloor = () => {
+    if (!st || !floorSeen) return;
+    const f = st.floors[floorSeen];
+    f.hpAtEnd += Math.max(0, run.hp); f.goldAtEnd += run.gold;
+    f.fillAtEnd += run.bag.items.reduce((s, it) => s + bag.footprint(it).length, 0) / bag.cellCount(run.bag);
+  };
+  // GAME-008: the floor's pile is left behind when you leave; pack what fits first, count the rest.
+  const leaveFloor = () => { autoPackPending(run); if (st) st.floors[run.floor].lostGoods += run.pending.filter((id) => GOODS[id].kind === "goods").length; };
   for (let step = 0; step < 400 && !run.outcome; step++) {
     if (st && run.floor !== floorSeen) { endFloor(); floorSeen = run.floor; st.floors[floorSeen].reached++; }
     if (run.screen === "combat") { fight(run, 60, st); continue; }
@@ -150,7 +166,7 @@ export function playRun(run: RunState, opts: { elites?: boolean; onFloor?: () =>
     revealAll(run.dungeon);
     const targets = run.dungeon.entities.filter((e) => !e.done && e.kind !== "stairs" && (opts.elites !== false || e.kind !== "elite"));
     const stairs = run.dungeon.entities.find((e) => e.kind === "stairs");
-    if (stairs) { if (run.floor === 3) break; opts.onFloor?.(); R.climb(run); continue; }
+    if (stairs) { if (run.floor === 3) break; opts.onFloor?.(); leaveFloor(); R.climb(run); continue; }
     const others = targets.filter((e) => e.kind !== "guardian");
     const order = (others.length ? others : targets)
       .map((e) => ({ e, p: findPath(run.dungeon, run.pos, e) }))

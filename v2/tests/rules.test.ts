@@ -6,7 +6,7 @@ import * as bag from "../src/game/bag";
 import { endTurn, incomingDamage, playCard, startCombat } from "../src/game/combat";
 import { distances, findPath, generate, idx, revealAll } from "../src/game/dungeon";
 import { addGood, fromPouch, sellPouch, sewPiece, toPouch, useItem } from "../src/game/inventory";
-import { climb, createRun, settle, townValue, winCombat } from "../src/game/run";
+import { climb, closeReward as winCombatClose, createRun, settle, townValue, winCombat } from "../src/game/run";
 import { FLOOR_SPAWNS } from "../src/data/enemies";
 import { hearing } from "../src/game/dungeon";
 import { makeRng } from "../src/game/rng";
@@ -30,10 +30,39 @@ describe("bag", () => {
   });
   it("overflows into the pending pile instead of failing", () => {
     const run = createRun(1, "sword", "lamp");
-    // 5×4 bag, the sword takes 3 cells
+    // 5×4 bag, the sword takes 3 cells; 蛾丝卷 is 1×2 and doesn't stack
+    for (let i = 0; i < 10; i++) addGood(run, "silk");
+    expect(run.pending.length).toBeGreaterThan(0);
+    expect(bag.count(run.bag, "silk") + run.pending.length).toBe(10);
+  });
+  it("small goods stack: 灯灰 five to a cell, other one-cell goods three", () => {
+    const run = createRun(1, "sword", "lamp");
     for (let i = 0; i < 20; i++) addGood(run, "ash");
-    expect(run.bag.items.length).toBe(18);
-    expect(run.pending.length).toBe(3);
+    expect(bag.count(run.bag, "ash")).toBe(20);
+    expect(run.bag.items.filter((it) => it.id === "ash").length).toBe(4);
+    expect(run.pending.length).toBe(0);
+    for (let i = 0; i < 4; i++) addGood(run, "fur");
+    expect(run.bag.items.filter((it) => it.id === "fur").map((it) => bag.qty(it))).toEqual([3, 1]);
+  });
+  it("selling, stealing and orders take one off a stack", async () => {
+    const { sellItem } = await import("../src/game/inventory");
+    const run = createRun(2, "sword", "lamp");
+    for (let i = 0; i < 3; i++) addGood(run, "ash");
+    const st = run.bag.items.find((it) => it.id === "ash")!;
+    sellItem(run, st.uid);
+    expect(bag.qty(st)).toBe(2);
+    expect(bag.removeOne(run.bag, "ash")).toBe(true);
+    expect(bag.count(run.bag, "ash")).toBe(1);
+  });
+  it("the floor's pile stays through rewards and is left behind on the stairs", () => {
+    const run = createRun(3, "sword", "lamp");
+    run.pending.push("silk", "fang");
+    run.reward = { gold: 0, goods: [], cards: null, relic: null, relicChoices: null, from: "fight", note: "" } as never;
+    winCombatClose(run);
+    expect(run.pending.length).toBe(2);
+    climb(run);
+    expect(run.pending.length).toBe(0);
+    expect(run.stats.leftBehind).toBe(2);
   });
 });
 
@@ -245,10 +274,10 @@ describe("market", () => {
     run.omen = "calm"; run.markets[1].mult.tail = 1; run.markets[1].wanted = "silk";
     run.shop = { cards: [], relics: [], gear: [], consumables: [], removePrice: 0, removed: false, oil: { amount: 25, price: 6, bought: 0 }, wanted: "silk", sold: {} };
     addGood(run, "tail"); addGood(run, "tail");
-    expect(sellPrice(run, "tail")).toBe(11); // 14 × 0.75
+    expect(sellPrice(run, "tail")).toBe(8); // 14 × 0.6
     expect(sellPrice(run, "tail")).toBeLessThan(townValue("tail"));
     sellItem(run, run.bag.items.find((i) => i.id === "tail")!.uid);
-    expect(sellPrice(run, "tail")).toBe(9); // 11 − 20% of 11
+    expect(sellPrice(run, "tail")).toBe(6); // 8 − 20% of 8
   });
   it("guardians use their floor's hp and damage modifiers", () => {
     const run = createRun(24, "sword", "lamp");
@@ -833,11 +862,11 @@ describe("goods reveal and the abandoned purse (GAME-007)", () => {
     for (let seed = 1; seed <= 200; seed++) {
       const run = createRun(seed, "sword", "lamp");
       run.bag.w = 8; run.bag.h = 7;
-      const before = run.bag.items.length;
+      const before = bag.count(run.bag);
       const opts = EVENTS.purse.options;
       (Array.isArray(opts) ? opts : opts(run, run.rng))[0].apply(run);
-      expect(run.bag.items.length - before + run.pending.length).toBe(3);
-      rare += run.bag.items.filter((it) => PURSE_RARE.includes(it.id)).length;
+      expect(bag.count(run.bag) - before + run.pending.length).toBe(3);
+      rare += run.bag.items.filter((it) => PURSE_RARE.includes(it.id)).reduce((s, it) => s + bag.qty(it), 0);
       runs++;
     }
     // 600 pulls at 12%: about 72; a wide band so the test only catches a broken roll.

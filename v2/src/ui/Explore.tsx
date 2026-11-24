@@ -343,13 +343,23 @@ function FloorCard() {
 function StairsPrompt() {
   const run = useRun();
   const top = run.floor === 3;
+  // GAME-008: the floor's pile stays behind when you leave, so leaving with goods still loose takes a second tap.
+  const pile = run.pending.length;
+  const [sure, setSure] = useState<null | "climb" | "home">(null);
+  const leave = (what: "climb" | "home", act: () => void) => { if (pile && sure !== what) { sfx.click(); setSure(what); return; } act(); };
   return (
     <div class="stairs-prompt panel">
       <h3>{top ? "塔顶" : "守关妖倒下了"}</h3>
       <p>{top ? "负钟君已经倒下。" : `楼梯通往第 ${run.floor + 1} 层。上楼会回复 ${Math.round(R.CLIMB_HEAL * 100)}% 已损失的气血。也可以现在带着货回镇上结算。`}</p>
+      {pile > 0 && (
+        <p class="pile-warn">货堆里还有 {pile} 件没装进行囊，离开这一层就会留下。
+          <button type="button" class="btn small" onClick={() => { sfx.click(); overlay.value = "bag"; }}>整理行囊</button></p>
+      )}
       <div class="row">
-        {!top && <button type="button" class="btn primary" onClick={() => { sfx.bell(); R.climb(run); view.place(run.pos.x, run.pos.y, run.pos.dir); commit(); }}>上楼</button>}
-        <button type="button" class="btn" onClick={() => { R.goHome(run); commit(); }}>回镇结算</button>
+        {!top && <button type="button" class={`btn ${sure === "climb" ? "danger" : "primary"}`} onClick={() => leave("climb", () => { sfx.bell(); R.climb(run); view.place(run.pos.x, run.pos.y, run.pos.dir); commit(); })}>
+          {sure === "climb" ? `留下 ${pile} 件，上楼` : "上楼"}</button>}
+        <button type="button" class={`btn ${sure === "home" ? "danger" : ""}`} onClick={() => leave("home", () => { R.goHome(run); commit(); })}>
+          {sure === "home" ? `留下 ${pile} 件，回镇` : "回镇结算"}</button>
       </div>
     </div>
   );

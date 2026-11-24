@@ -38,7 +38,7 @@ export function Reward() {
         {rw.note && <p class={`ribbon ${good ? "ok" : "miss"}`}>{rw.note.trim()}</p>}
       </header>
       <section class="reward-bag panel">
-        <h3 class="section-title">行囊 {pending > 0 && <span class="alert-text">· {pending} 件没装下，拖进格子或先挪一挪</span>}</h3>
+        <h3 class="section-title">行囊 {pending > 0 && <span class="alert-text">· 货堆 {pending} 件，上楼前装进行囊</span>}</h3>
         <BagGrid mode="manage" cell={48} details="popover" />
       </section>
       <section class="reward-right">
@@ -78,7 +78,7 @@ export function Reward() {
           </div>
         )}
         <button type="button" class="btn big primary continue" onClick={() => { sfx.click(); R.closeReward(run); commit(); }}>
-          {run.outcome === "win" ? "回镇结算" : "继续"}{pending ? `（${pending} 件没装的留在这里）` : ""}
+          {run.outcome === "win" ? `回镇结算${pending ? `（货堆 ${pending} 件会留下）` : ""}` : "继续"}
         </button>
       </section>
     </div>

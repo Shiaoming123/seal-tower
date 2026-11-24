@@ -317,19 +317,19 @@ export const FLOOR_SPAWNS: Record<1 | 2 | 3, { normal: Spawn[]; elite: Spawn[]; 
   1: {
     normal: [{ id: "moth", hp: 1.4, dmg: 3 }, { id: "rat", hp: 1.4, dmg: 3 }, { id: "louse", hp: 1.3, dmg: 3 },
       { id: "lantern-spirit", hp: 1.4, dmg: 3 }, { id: "paper-doll", hp: 1.3, dmg: 2 }],
-    elite: [{ id: "mirror-fox", hp: 1.1, dmg: 2 }],
+    elite: [{ id: "mirror-fox", hp: 1.1, dmg: 3 }],
     guardian: [{ id: "moth-queen", hp: 1.15, dmg: 3 }, { id: "paper-matron", hp: 1.1, dmg: 1 }],
   },
   2: {
-    normal: [{ id: "rat", hp: 2.1, dmg: 6 }, { id: "louse", hp: 1.8, dmg: 6 }, { id: "moth", hp: 2.1, dmg: 6 }, { id: "mirror-fox", hp: 0.95, dmg: 5 },
-      { id: "fire-rat", hp: 2, dmg: 6 }, { id: "ink-moth", hp: 2, dmg: 6 }, { id: "water-ghost", hp: 1.6, dmg: 5 }, { id: "stele-spirit", hp: 1.1, dmg: 5 }],
-    elite: [{ id: "warden", hp: 1, dmg: 0 }, { id: "fallen", hp: 1, dmg: 0 }],
+    normal: [{ id: "rat", hp: 2.1, dmg: 7 }, { id: "louse", hp: 1.8, dmg: 7 }, { id: "moth", hp: 2.1, dmg: 7 }, { id: "mirror-fox", hp: 0.95, dmg: 6 },
+      { id: "fire-rat", hp: 2, dmg: 7 }, { id: "ink-moth", hp: 2, dmg: 7 }, { id: "water-ghost", hp: 1.6, dmg: 6 }, { id: "stele-spirit", hp: 1.1, dmg: 6 }],
+    elite: [{ id: "warden", hp: 1, dmg: 1 }, { id: "fallen", hp: 1, dmg: 1 }],
     guardian: [{ id: "night-fox", hp: 1.05, dmg: 1 }, { id: "fallen-elder", hp: 1, dmg: 0 }],
   },
   3: {
-    normal: [{ id: "mirror-fox", hp: 1.35, dmg: 6 }, { id: "louse", hp: 2.7, dmg: 7 }, { id: "rat", hp: 3.2, dmg: 7 }, { id: "warden", hp: 0.9, dmg: 3 },
-      { id: "thorn-stele", hp: 1.2, dmg: 4 }, { id: "bronze-puppet", hp: 1.2, dmg: 4 }, { id: "night-owl", hp: 1.3, dmg: 4 }, { id: "ink-moth", hp: 3, dmg: 7 }],
-    elite: [{ id: "night-fox", hp: 1, dmg: 4 }, { id: "warden", hp: 1.25, dmg: 3 }, { id: "fallen", hp: 1.3, dmg: 3 }],
+    normal: [{ id: "mirror-fox", hp: 1.35, dmg: 7 }, { id: "louse", hp: 2.7, dmg: 8 }, { id: "rat", hp: 3.2, dmg: 8 }, { id: "warden", hp: 0.9, dmg: 4 },
+      { id: "thorn-stele", hp: 1.2, dmg: 5 }, { id: "bronze-puppet", hp: 1.2, dmg: 5 }, { id: "night-owl", hp: 1.3, dmg: 5 }, { id: "ink-moth", hp: 3, dmg: 8 }],
+    elite: [{ id: "night-fox", hp: 1, dmg: 5 }, { id: "warden", hp: 1.25, dmg: 4 }, { id: "fallen", hp: 1.3, dmg: 4 }],
     guardian: [{ id: "bell", hp: 1, dmg: 0 }],
   },
 };

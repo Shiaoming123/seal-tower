@@ -120,7 +120,7 @@ function Hud() {
         })}
       </div>
       <div class="hud-buttons">
-        <button type="button" class={`btn small ${pending ? "alert" : ""}`} onClick={() => toggle("bag")}>行囊{pending ? ` · ${pending} 件没装` : ""} <kbd>B</kbd></button>
+        <button type="button" class={`btn small ${pending ? "alert" : ""}`} onClick={() => toggle("bag")}>行囊{pending ? ` · 货堆 ${pending}` : ""} <kbd>B</kbd></button>
         <button type="button" class="btn small" onClick={() => toggle("deck")}>牌组 {run.deck.length} <kbd>C</kbd></button>
         <SoundButton />
         <button type="button" class="btn small menu-btn" onClick={() => { sfx.click(); overlay.value = overlay.value === "pause" ? null : "pause"; }}>菜单 <kbd>Esc</kbd></button>

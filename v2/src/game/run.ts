@@ -291,7 +291,7 @@ export function takeRewardRelic(run: RunState, id: string) {
 /** Leave the reward screen. Unpacked goods stay behind on the floor. */
 export function closeReward(run: RunState) {
   run.reward = null;
-  run.pending = [];
+  // GAME-008: goods that didn't fit stay in the floor's pile (run.pending) until you leave the floor.
   run.at = null;
   run.screen = run.outcome === "win" ? "result" : "explore";
 }
@@ -417,7 +417,7 @@ export function orderRewardText(ord: RunOrder): string {
 export function orderProgress(run: RunState, i = 0) {
   const ord = run.orders[i];
   const order = ORDERS[ord.id];
-  const parts = Object.entries(orderNeeds(ord)).map(([id, n]) => ({ id: id as GoodId, need: n!, have: bag.count(run.bag, id as GoodId) + run.pouch.filter((g) => g === id).length }));
+  const parts = Object.entries(orderNeeds(ord)).map(([id, n]) => ({ id: id as GoodId, need: n!, have: bag.count(run.bag, id as GoodId) + run.pouch.filter((g) => g === id).length + run.pending.filter((g) => g === id).length }));
   return { ord, order, parts, ready: !ord.done && parts.every((p) => p.have >= p.need) };
 }
 
@@ -425,8 +425,12 @@ export function orderProgress(run: RunState, i = 0) {
 export function deliverOrder(run: RunState, i = 0): string | null {
   const { ord, order, parts, ready } = orderProgress(run, i);
   if (!ready) return null;
-  // Hand over packed goods first, then any in the side pouch.
-  for (const p of parts) for (let k = 0; k < p.need; k++) if (!bag.removeOne(run.bag, p.id)) run.pouch.splice(run.pouch.indexOf(p.id), 1);
+  // Hand over loose goods (the floor's pile) first, then packed ones, then the side pouch.
+  for (const p of parts) for (let k = 0; k < p.need; k++) {
+    const pi = run.pending.indexOf(p.id);
+    if (pi >= 0) run.pending.splice(pi, 1);
+    else if (!bag.removeOne(run.bag, p.id)) run.pouch.splice(run.pouch.indexOf(p.id), 1);
+  }
   ord.done = true;
   bump(run, "ordersDone");
   const r = orderReward(ord);
@@ -457,7 +461,6 @@ export function closeEvent(run: RunState) {
   const e = currentEntity(run);
   if (run.omen === "incense") run.hp = Math.min(run.maxHp, run.hp + 5);
   run.event = null;
-  run.pending = [];
   if (e && run.eventFight) {
     const f = run.eventFight;
     run.eventFight = null;
@@ -506,9 +509,16 @@ export function applyCardPick(run: RunState, uid: number | null) {
 /** Share of missing 气血 you get back when you take the stairs. */
 export const CLIMB_HEAL = 0.4;
 
+/** Leaving a floor: whatever is still in the pile (not packed) stays behind. */
+function leavePile(run: RunState) {
+  bump(run, "leftBehind", run.pending.length);
+  run.pending = [];
+}
+
 export function climb(run: RunState) {
   if (run.floor >= 3) return;
   noteFloorEnd(run);
+  leavePile(run);
   const healed = Math.round((run.maxHp - run.hp) * CLIMB_HEAL);
   run.hp += healed;
   enterFloor(run, (run.floor + 1) as FloorNo);
@@ -518,6 +528,7 @@ export function climb(run: RunState) {
 /** Leave the tower early with what you carry. */
 export function goHome(run: RunState) {
   if (!run.outcome) noteFloorEnd(run); // after the final win the floor was already counted
+  leavePile(run);
   run.outcome = run.outcome ?? "retreat";
   run.screen = "result";
 }
@@ -553,7 +564,7 @@ export function settle(run: RunState): { renown: number; lines: string[]; carrie
   });
   if (cleared) { renown += cleared; lines.push(`打通 ${cleared} 层 +${cleared}`); }
   if (run.outcome === "win") { renown += 2; lines.push("击败负钟君 +2"); }
-  const carriedIds = [...run.bag.items.map((it) => it.id), ...run.pouch];
+  const carriedIds = [...run.bag.items.flatMap((it) => Array<GoodId>(bag.qty(it)).fill(it.id)), ...run.pouch];
   // 妖材 set: each 妖材 is worth 2 more in town too, not only at the 狐市.
   const materialBonus = bag.tagLevel(run.bag, "material") >= 1 ? 2 * carriedIds.filter((id) => GOODS[id].tags?.includes("material")).length : 0;
   const goodsValue = carriedIds.reduce((s, id) => s + townValue(id), 0) + materialBonus;

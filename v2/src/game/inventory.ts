@@ -1,6 +1,6 @@
 import { RELICS, RELIC_POOL } from "../data/relics";
 import { pick } from "./rng";
-import { GOODS } from "../data/goods";
+import { GOODS, stackMax } from "../data/goods";
 import { discover } from "./discover";
 import { bump } from "./stats";
 import * as bag from "./bag";
@@ -9,6 +9,9 @@ import type { GoodId, RunState } from "./types";
 /** Put a good into the bag if it fits, otherwise into the pending pile the player sorts out later. */
 export function addGood(run: RunState, id: GoodId): boolean {
   discover(run, "g:" + id);
+  // Small goods go onto a stack of the same kind first (GAME-008).
+  const stack = bag.stackWithRoom(run.bag, id);
+  if (stack) { stack.n = bag.qty(stack) + 1; return true; }
   const spot = bag.findSpot(run.bag, id);
   if (spot) {
     run.bag.items.push({ uid: run.nextUid++, id, ...spot });
@@ -22,7 +25,7 @@ export function addGood(run: RunState, id: GoodId): boolean {
 /** How much each earlier sale of the same good lowers its price at this 狐市 (fraction of the base). */
 export const SELL_GLUT = 0.2;
 /** 狐市 pays this share of a good's value; carrying it home to town pays it in full. */
-export const SELL_RATE = 0.75;
+export const SELL_RATE = 0.6;
 
 export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floor, sold = run.shop?.sold[id] ?? 0, uid?: number): number {
   const g = GOODS[id];
@@ -45,7 +48,7 @@ export function sellItem(run: RunState, uid: number): number {
   const item = run.bag.items.find((it) => it.uid === uid);
   if (!item) return 0;
   const price = sellPrice(run, item.id, run.floor, run.shop?.sold[item.id] ?? 0, uid);
-  bag.removeUid(run.bag, uid);
+  bag.takeOne(run.bag, item); // one off a stack at a time
   if (run.shop && GOODS[item.id].kind === "goods") run.shop.sold[item.id] = (run.shop.sold[item.id] ?? 0) + 1;
   run.gold += price;
   run.stats.goldEarned += price;
@@ -79,9 +82,9 @@ export const pouchFull = (run: RunState) => run.pouch.length >= POUCH_SLOTS;
 /** Move a packed item into the side pouch. Not during a fight. */
 export function toPouch(run: RunState, uid: number): boolean {
   if (run.combat || pouchFull(run)) return false;
-  const it = bag.removeUid(run.bag, uid);
+  const it = run.bag.items.find((i) => i.uid === uid);
   if (!it) return false;
-  run.pouch.push(it.id);
+  run.pouch.push(bag.takeOne(run.bag, it));
   bump(run, "pouchStash");
   return true;
 }
@@ -98,6 +101,8 @@ export function pendingToPouch(run: RunState, index: number): boolean {
 export function fromPouch(run: RunState, i: number, at?: { x: number; y: number; rot: number }): boolean {
   const id = run.pouch[i];
   if (run.combat || id === undefined) return false;
+  const onto = at ? stackAt(run, id, at.x, at.y) : bag.stackWithRoom(run.bag, id);
+  if (onto) { onto.n = bag.qty(onto) + 1; run.pouch.splice(i, 1); return true; }
   const spot = at && bag.fits(run.bag, id, at.x, at.y, at.rot) ? at : at ? null : bag.findSpot(run.bag, id);
   if (!spot) return false;
   run.bag.items.push({ uid: run.nextUid++, id, ...spot });
@@ -110,6 +115,21 @@ export function sellPouch(run: RunState, i: number): number {
   if (id === undefined) return 0;
   const price = sellPrice(run, id);
   run.pouch.splice(i, 1);
+  if (run.shop && GOODS[id].kind === "goods") run.shop.sold[id] = (run.shop.sold[id] ?? 0) + 1;
+  run.gold += price;
+  run.stats.goldEarned += price;
+  run.stats.goodsSold++;
+  bump(run, "soldValue", price);
+  if (run.relics.includes("ledger")) run.hp = Math.min(run.maxHp, run.hp + 1);
+  return price;
+}
+
+/** Sell a good straight from the floor's pile (GAME-008: no need to pack it first). */
+export function sellPending(run: RunState, index: number): number {
+  const id = run.pending[index];
+  if (id === undefined) return 0;
+  const price = sellPrice(run, id);
+  run.pending.splice(index, 1);
   if (run.shop && GOODS[id].kind === "goods") run.shop.sold[id] = (run.shop.sold[id] ?? 0) + 1;
   run.gold += price;
   run.stats.goldEarned += price;
@@ -141,7 +161,10 @@ export function useItem(run: RunState, uid: number): string | null {
 /** Move a pending good into a specific bag position. */
 export function packPending(run: RunState, index: number, x: number, y: number, rot: number): boolean {
   const id = run.pending[index];
-  if (id === undefined || !bag.fits(run.bag, id, x, y, rot)) return false;
+  if (id === undefined) return false;
+  const onto = stackAt(run, id, x, y);
+  if (onto) { onto.n = bag.qty(onto) + 1; run.pending.splice(index, 1); return true; }
+  if (!bag.fits(run.bag, id, x, y, rot)) return false;
   run.bag.items.push({ uid: run.nextUid++, id, x, y, rot });
   run.pending.splice(index, 1);
   return true;
@@ -150,12 +173,29 @@ export function packPending(run: RunState, index: number, x: number, y: number, 
 /** Drop a bag item back onto the floor (into pending) to make room. */
 export function unpack(run: RunState, uid: number) {
   const it = bag.removeUid(run.bag, uid);
-  if (it) run.pending.push(it.id);
+  if (it) for (let k = 0; k < bag.qty(it); k++) run.pending.push(it.id);
+}
+
+/** A same-kind stack with room covering cell (x, y), to drop a good onto. */
+function stackAt(run: RunState, id: GoodId, x: number, y: number) {
+  return run.bag.items.find((it) => it.id === id && bag.qty(it) < stackMax(id) && bag.footprint(it).some(([cx, cy]) => cx === x && cy === y)) ?? null;
+}
+
+/** Throw one good away for good (a stack loses one; a single item leaves the bag). */
+export function discard(run: RunState, uid: number, all = false): GoodId | null {
+  const it = run.bag.items.find((i) => i.uid === uid);
+  if (!it || run.combat) return null;
+  if (all) { bag.removeUid(run.bag, uid); return it.id; }
+  return bag.takeOne(run.bag, it);
 }
 
 export function moveItem(run: RunState, uid: number, x: number, y: number, rot: number): boolean {
   const it = run.bag.items.find((i) => i.uid === uid);
-  if (!it || !bag.fits(run.bag, it.id, x, y, rot, uid)) return false;
+  if (!it) return false;
+  // Dropped onto another stack of the same good: merge if it all fits.
+  const onto = run.bag.items.find((o) => o.uid !== uid && o.id === it.id && bag.footprint(o).some(([cx, cy]) => cx === x && cy === y));
+  if (onto && bag.qty(onto) + bag.qty(it) <= stackMax(it.id)) { onto.n = bag.qty(onto) + bag.qty(it); bag.removeUid(run.bag, uid); return true; }
+  if (!bag.fits(run.bag, it.id, x, y, rot, uid)) return false;
   Object.assign(it, { x, y, rot });
   return true;
 }
@@ -165,6 +205,8 @@ export function autoPackPending(run: RunState) {
   const order = run.pending.map((id, i) => ({ id, i })).sort((a, b) => GOODS[b.id].price - GOODS[a.id].price);
   const placed = new Set<number>();
   for (const { id, i } of order) {
+    const stack = bag.stackWithRoom(run.bag, id);
+    if (stack) { stack.n = bag.qty(stack) + 1; placed.add(i); continue; }
     const spot = bag.findSpot(run.bag, id);
     if (spot) { run.bag.items.push({ uid: run.nextUid++, id, ...spot }); placed.add(i); }
   }
