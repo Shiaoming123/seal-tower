@@ -815,3 +815,73 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 /* Keep the ware details inside the scrolling shelf: the first ware's card opens to the right, the last one's to the left. */
 .wares > :first-child .ware-info { left: 0; transform: none; }
 .wares > :last-child .ware-info { left: auto; right: 0; transform: none; }
+
+/* ---------------------------------------------------------------- UI-011: smoothness pass
+   One easing family everywhere: a quick ease-out for things settling, a small overshoot for things popping in. */
+:root { --ease-out: cubic-bezier(0.22, 1, 0.36, 1); --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+/* Buttons: lift and glow on hover, a short squash on press, a visible ring for keyboard focus. */
+.btn { transition: transform 0.14s var(--ease-out), filter 0.14s, box-shadow 0.18s; }
+.btn:hover:not(:disabled) { transform: translateY(-1px); }
+.btn.primary:hover:not(:disabled) { box-shadow: inset 0 0 0 1px #ffd080, inset 0 1px 0 rgba(255, 220, 160, 0.5), 0 3px 0 #3a0c08, 0 6px 18px rgba(240, 120, 60, 0.45); }
+.btn:active:not(:disabled) { transform: translateY(1px) scale(0.97); transition-duration: 0.05s; }
+.btn:focus-visible, .option:focus-visible, .card:focus-visible, .ware:focus-visible, .order-card:focus-visible, .weapon-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.option, .order-card, .weapon-card, .item-ware, .relic-choice { transition: transform 0.16s var(--ease-out), box-shadow 0.18s, filter 0.14s; }
+.option:hover, .order-card:hover, .weapon-card:hover:not(.locked), .item-ware:hover:not(.sold), .relic-choice:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.option:active, .order-card:active, .weapon-card:active, .item-ware:active, .relic-choice:active { transform: translateY(0) scale(0.98); transition-duration: 0.05s; }
+.card { transition: transform 0.16s var(--ease-out), box-shadow 0.16s; }
+
+/* Overlays: the backdrop fades in, the panel grows into place with a slight overshoot. */
+.overlay { animation: overlay-in 0.18s ease-out; }
+.overlay > .overlay-box, .overlay > .pause-box { animation: box-in 0.26s var(--ease-pop); }
+@keyframes overlay-in { from { background: rgba(5, 3, 2, 0); } }
+@keyframes box-in { from { opacity: 0; transform: scale(0.95) translateY(8px); } }
+
+/* Screens: their parts come in one after another instead of all at once. */
+.event-box { animation: rise-in 0.4s var(--ease-out) 0.08s both; }
+.event-art img { animation: art-in 0.6s var(--ease-out) both; }
+.options .option { animation: rise-in 0.3s var(--ease-out) both; }
+.options .option:nth-child(2) { animation-delay: 0.05s; } .options .option:nth-child(3) { animation-delay: 0.1s; } .options .option:nth-child(4) { animation-delay: 0.15s; }
+.shop-row { animation: rise-in 0.35s var(--ease-out) both; }
+.shop-row:nth-child(2) { animation-delay: 0.07s; } .shop-row:nth-child(3) { animation-delay: 0.14s; }
+.shop-sell { animation: slide-in-r 0.4s var(--ease-out) 0.1s both; }
+.order-list .order-card, .weapon-list .weapon-card { animation: rise-in 0.3s var(--ease-out) both; }
+.order-list .order-card:nth-child(2), .weapon-list .weapon-card:nth-child(2) { animation-delay: 0.04s; }
+.order-list .order-card:nth-child(3), .weapon-list .weapon-card:nth-child(3) { animation-delay: 0.08s; }
+.order-list .order-card:nth-child(4), .weapon-list .weapon-card:nth-child(4) { animation-delay: 0.12s; }
+.order-list .order-card:nth-child(5) { animation-delay: 0.16s; }
+.reward-bag { animation: rise-in 0.4s var(--ease-out) 0.15s both; }
+.reward-right { animation: rise-in 0.4s var(--ease-out) 0.22s both; }
+.result-box { animation: rise-in 0.5s var(--ease-out) 0.1s both; }
+@keyframes rise-in { from { opacity: 0; transform: translateY(14px); } }
+@keyframes slide-in-r { from { opacity: 0; transform: translateX(18px); } }
+@keyframes art-in { from { opacity: 0; transform: scale(1.04); } }
+
+/* Bag: items glide to a new spot (drop, auto-pack, being pushed by a sew) and lift a little when picked up. */
+.bag-grid .item { transition: left 0.14s var(--ease-out), top 0.14s var(--ease-out), opacity 0.12s, transform 0.12s; }
+.bag-grid .item.selected { transform: scale(1.03); z-index: 5; }
+.bag-grid .item.held { transform: scale(0.96); }
+.drag-ghost img { animation: ghost-in 0.12s var(--ease-pop); }
+@keyframes ghost-in { from { transform: scale(0.8); } }
+.stack-n { position: absolute; right: 3px; bottom: 1px; z-index: 4; font-size: 13px; font-weight: bold; color: #fff3d0; text-shadow: 1px 1px 0 #000, 0 0 3px #000; pointer-events: none; }
+
+/* Numbers: the HUD coin count rolls and flashes; bars flash red on damage and green on healing. */
+.roll { display: inline-block; transition: color 0.2s, transform 0.2s var(--ease-pop); }
+.roll.up { color: #ffe08a; transform: scale(1.12); }
+.roll.down { color: #ff9a8a; }
+.bar.flash-down { animation: bar-hurt 0.45s ease-out; }
+.bar.flash-up { animation: bar-heal 0.45s ease-out; }
+@keyframes bar-hurt { 20% { box-shadow: 0 0 0 2px rgba(255, 90, 70, 0.9), 0 0 12px rgba(255, 60, 40, 0.7); transform: translateX(-2px); } 40% { transform: translateX(2px); } }
+@keyframes bar-heal { 30% { box-shadow: 0 0 0 2px rgba(120, 230, 140, 0.9), 0 0 12px rgba(100, 220, 120, 0.6); } }
+
+/* Toasts slide up and fade, the pile warning on the stairs pulses once. */
+.pile-warn { animation: rise-in 0.3s var(--ease-out); color: #ffcf8a; }
+.pile-warn .btn { margin-left: 8px; }
+
+/* Respect "reduce motion": keep state changes, drop the movement. */
+@media (prefers-reduced-motion: reduce) {
+  .overlay, .overlay > .overlay-box, .overlay > .pause-box, .event-box, .event-art img, .options .option, .shop-row, .shop-sell,
+  .order-list .order-card, .weapon-list .weapon-card, .reward-bag, .reward-right, .result-box, .loot, .pile-warn, .drag-ghost img,
+  .bar.flash-down, .bar.flash-up, .item-pop, .ware-info { animation: none !important; }
+  .btn, .option, .order-card, .weapon-card, .item-ware, .relic-choice, .card, .bag-grid .item, .roll { transition: none !important; }
+}

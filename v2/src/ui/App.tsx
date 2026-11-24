@@ -16,7 +16,7 @@ import { EventScreen, RestScreen } from "./Event";
 import { Result } from "./Result";
 import { Achievements, Help, Title, Town } from "./Title";
 import { Codex } from "./Codex";
-import { Bar, GoodChip, RelicRow } from "./parts";
+import { Bar, GoodChip, RelicRow, RollingNumber } from "./parts";
 import { canRestartFight, commit, overlay, page, profileSig, restartFight, runSig, say, tick, toast, useRun } from "./store";
 
 /** Fixed-size stage scaled to fit the window, so nothing reflows or jumps while playing. */
@@ -99,7 +99,7 @@ function Hud() {
       <div class="hud-left">
         <span class="floor-name">{FLOOR_NAMES[run.floor]}</span>
         <Bar value={run.hp} max={run.maxHp} kind="hp" block={run.combat?.block ?? 0} />
-        <span class="gold" title="灵石">{run.gold} 石</span>
+        <span class="gold" title="灵石"><RollingNumber value={run.gold} /> 石</span>
         <span class={`oil ${run.oil <= 15 ? "low" : ""} ${run.oil <= 0 ? "out" : ""}`} title="灯油：每走一步烧 1 点。灯灭了会很危险。">
           <i style={{ height: `${Math.round((run.oil / run.maxOil) * 100)}%` }} />灯油 {run.oil}
         </span>

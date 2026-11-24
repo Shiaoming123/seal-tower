@@ -1,4 +1,5 @@
 import type { ComponentChildren } from "preact";
+import { useEffect, useRef, useState } from "preact/hooks";
 import { CARDS, type Preview, RARITY_LABEL, TYPE_LABEL, cardCost, cardVals } from "../data/cards";
 import { GOODS, KIND_LABEL, TAGS } from "../data/goods";
 import { RELICS } from "../data/relics";
@@ -64,12 +65,47 @@ export function CardView({ id, up, preview, onClick, disabled, reason, small, se
   );
 }
 
+/** A number that rolls to its new value instead of jumping, and flashes up (gold) or down (red) as it changes. */
+export function RollingNumber({ value }: { value: number }) {
+  const [shown, setShown] = useState(value);
+  const [dir, setDir] = useState<"" | "up" | "down">("");
+  const from = useRef(value);
+  useEffect(() => {
+    const start = from.current;
+    if (start === value) return;
+    setDir(value > start ? "up" : "down");
+    const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const t0 = performance.now(), dur = calm ? 0 : Math.min(600, 200 + Math.abs(value - start) * 12);
+    let raf = 0;
+    const step = (t: number) => {
+      const k = dur ? Math.min(1, (t - t0) / dur) : 1;
+      setShown(Math.round(start + (value - start) * (1 - Math.pow(1 - k, 3))));
+      if (k < 1) raf = requestAnimationFrame(step); else { from.current = value; setTimeout(() => setDir(""), 250); }
+    };
+    raf = requestAnimationFrame(step);
+    // Fallback when frames are throttled (background tab): land on the final value anyway.
+    const done = setTimeout(() => { cancelAnimationFrame(raf); setShown(value); from.current = value; setDir(""); }, dur + 300);
+    return () => { cancelAnimationFrame(raf); clearTimeout(done); from.current = value; };
+  }, [value]);
+  return <span class={`roll ${dir}`}>{shown}</span>;
+}
+
 /** `lose`: HP the card under the cursor would take off, shown as a flashing chunk at the end of the bar. */
 export function Bar({ value, max, kind, block = 0, label, lose = 0 }: { value: number; max: number; kind: "hp" | "enemy"; block?: number; label?: string; lose?: number }) {
   const pct = Math.max(0, Math.min(100, (value / max) * 100));
+  // Flash the bar when the value changes: red for damage, green for healing.
+  const prev = useRef(value);
+  const [flash, setFlash] = useState<"" | "down" | "up">("");
+  useEffect(() => {
+    if (value === prev.current) return;
+    setFlash(value < prev.current ? "down" : "up");
+    prev.current = value;
+    const t = setTimeout(() => setFlash(""), 450);
+    return () => clearTimeout(t);
+  }, [value]);
   const losePct = Math.min(pct, (Math.max(0, lose) / max) * 100);
   return (
-    <div class={`bar bar-${kind}`}>
+    <div class={`bar bar-${kind} ${flash ? `flash-${flash}` : ""}`}>
       <div class="trail" style={{ width: `${pct}%` }} />
       <div class="fill" style={{ width: `${pct}%` }} />
       {losePct > 0 && <div class="lose" style={{ left: `${pct - losePct}%`, width: `${losePct}%` }} />}
