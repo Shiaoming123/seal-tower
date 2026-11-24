@@ -104,6 +104,7 @@ async function fight() {
       const cards = page.locator(".hand .card:not(.disabled)");
       if (!(await cards.count())) break;
       await cards.first().click();
+      if (await page.locator(".hand-slot.picked .card").count()) await page.locator(".hand-slot.picked .card").first().click(); // portrait: two-step play
       await page.waitForTimeout(450);
       if ((await state()).screen !== "combat") return;
     }

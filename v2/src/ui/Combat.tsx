@@ -77,6 +77,10 @@ export function Combat() {
   const [banner, setBanner] = useState<string>("");
   const [slash, setSlash] = useState(0);
   const busy = useRef(false);
+  // Phones: the fanned hand overlaps too much to read, so the first tap picks a card (lifted, enlarged, on top)
+  // and a second tap on it plays it. Desktop mouse keeps one-click play.
+  const [picked, setPicked] = useState<number | null>(null);
+  const twoStep = () => !!rootRef.current?.closest(".stage.portrait") || matchMedia("(hover: none)").matches;
   // The fight happens in the scene: the monster keeps standing on its tile, one step ahead of you.
   const foe = R.currentEntity(run);
   useView(ref, run, { combatEntity: foe?.id, dim: 0.08 });
@@ -320,7 +324,8 @@ export function Combat() {
   };
 
   return (
-    <div class={`combat combat-enter ${fx}`} data-enemy={c.enemy.id} ref={rootRef}>
+    <div class={`combat combat-enter ${fx}`} data-enemy={c.enemy.id} ref={rootRef}
+      onPointerDown={(e) => { if (picked !== null && !(e.target as HTMLElement).closest(".hand")) setPicked(null); }}>
       <div class="viewport" ref={ref}>
         <div class={`enemy kind-${c.kind} ${foe && enemyStage(foe).lift ? "flyer" : ""}`} ref={enemyRef} style={{ visibility: "hidden" }}>
           <img class="enemy-sprite" src={ART[enemyPose(c, def, fx)]} alt={c.enemy.name} draggable={false} />
@@ -374,9 +379,12 @@ export function Combat() {
         {c.hand.map((card, i) => {
           const reason = blockedReason(run, c, card);
           return (
-            <div class="hand-slot" style={{ "--i": i, "--n": c.hand.length } as never} key={card.uid}>
+            <div class={`hand-slot ${picked === card.uid ? "picked" : ""}`} style={{ "--i": i, "--n": c.hand.length } as never} key={card.uid}>
               <CardView id={card.id} up={card.up} bonus={card.bonus} preview={preview} disabled={!!reason} reason={reason}
-                onClick={() => play(i)} extra={<span class="hotkey">{i + 1}</span>} />
+                onClick={() => {
+                  if (twoStep() && picked !== card.uid) { sfx.click(); setPicked(card.uid); return; }
+                  setPicked(null); play(i);
+                }} extra={<span class="hotkey">{i + 1}</span>} />
             </div>
           );
         })}

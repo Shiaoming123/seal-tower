@@ -146,6 +146,9 @@ async function check(name, ctxOpts, climb = false) {
         const cards = frame.locator(".hand .card:not(.disabled)");
         if (!(await cards.count())) break;
         await press(cards.first());
+        // Phones play in two steps (UI-005): the first tap only picks the card.
+        const picked = frame.locator(".hand-slot.picked .card");
+        if (await picked.count()) await press(picked.first());
         await page.waitForTimeout(350);
         if ((await state())?.screen !== "combat") return;
       }
