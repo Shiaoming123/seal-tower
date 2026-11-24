@@ -23,7 +23,7 @@
 | 3 | 报名审核 | ⏳ **11-24 已提交报名，待审核**。小红书帖子已公开（[链接](https://xhslink.cn/o/ABLiArehEAG)，含 5 个话题、@Qoder CN、@魔搭ModelScope社区，带「含 AI 生成内容」声明） | 主办方审核；**你**：留意审核结果，被退回就按理由改帖再交 | 官网报名页显示「您已报名」（截图含真实姓名，不进公开仓库） |
 | 4 | 创空间部署包 | ✅ 已生成（含新素材、新封面和界面修复，5.4 MB），本地 iframe 三项验收通过 | 我们已做 | `cd v2 && npm run pack:studio` → `v2/dist-studio/`、`v2/dist-studio.zip` |
 | 5 | 创空间上线 | ✅ 11-24 已建、部署并**公开**：https://modelscope.cn/studios/Shiaoming/zhanyaota （Static、免费 CPU、MIT、封面为横版主视觉；网页上传扁平包 201 个文件） | Claude 经你同意代为操作 | [创空间上传步骤.md](创空间上传步骤.md) |
-| 6 | 上线后检查 | ✅ 公开后用未登录浏览器测过：桌面、iPhone 13、Pixel 7 都能打开、进塔、用方向键走路，0 报错；手机 UA 下魔搭自动切手机版页面，游戏铺满屏幕用竖屏布局。发现 iPhone 矮屏标题折行，已修，待重新上传 | Claude | 同上第 4 节 |
+| 6 | 上线后检查 | ✅ 公开后用未登录浏览器测过：桌面、iPhone 13、Pixel 7 都能打开、进塔、用方向键走路，0 报错；手机 UA 下魔搭自动切手机版页面，游戏铺满屏幕用竖屏布局。**11-24 晚重新上传并部署**（空间提交 `0e68aa20`，含 iPhone 标题修复、手机两步出牌 UI-005、套装调参 GAME-006），未登录 iPhone 13 复验：标题一行、两步出牌正常且选中牌压在提示之上、`?playtest=1` 直链结算页有「复制本局试玩记录」；线上 4 个变更文件哈希和包一致。唯一的报错来自魔搭手机页自己的脚本（`g.alicdn.com/sail-web/maas`），游戏框内 0 报错 | Claude | 同上第 4 节 · 截图 [media/live-check/](media/live-check/) |
 | 7 | 创作手记 | ✅ **11-24 已发布**：https://www.modelscope.cn/posts/438827 （专题 AI+赛事，标签 多模态模型AIGC，封面横版主视觉，关联创空间 zhanyaota；5 张图、3 张表、文末嵌演示视频；未登录可打开） | 你确认后 Claude 代发 | [创作手记-v2草稿.md](创作手记-v2草稿.md) |
 | 8 | 演示视频 | ✅ 已嵌入手记（上传版压成 1280×720、8 MB，因为上传工具单次上限 10 MB） | 已完成 | `media/demo.mp4` |
 | 9 | 官网最终提交 | ⏳ 待做（报名审核通过后） | **你**：在 https://mseo-ai-inf.ms.show/submit 填创空间链接 https://modelscope.cn/studios/Shiaoming/zhanyaota 和手记链接 https://www.modelscope.cn/posts/438827 | — |
@@ -35,7 +35,7 @@
 - 给人玩：https://modelscope.cn/studios/Shiaoming/zhanyaota
 - 游戏本身的直链：https://shiaoming-zhanyaota.ms.show/ 。打开后会跳到魔搭页面（`?mode=full`），并把直链上的参数放进 `app_path` 传给游戏框。
 - **带参数要用直链**，例如 `https://shiaoming-zhanyaota.ms.show/?seed=任意文字`（复现同一座塔）、`https://shiaoming-zhanyaota.ms.show/?playtest=1`（试玩记录，GAME-001）。11-24 实测：桌面和 iPhone UA 下，游戏框都收到了 `?seed=…&playtest=1`。在魔搭页面地址后面加参数（`modelscope.cn/studios/…/zhanyaota?seed=…`）**传不进去**。
-- `?playtest=1` 要等包含 GAME-001 的版本上传部署后才生效，部署后再实测一次结算页的「复制本局试玩记录」。
+- `?playtest=1` 已在 11-24 晚的部署里生效：未登录 iPhone 13 打开 `https://shiaoming-zhanyaota.ms.show/?seed=livecheck&playtest=1`，结算页出现「复制本局试玩记录」（截图 [iphone13-03-result.jpg](media/live-check/iphone13-03-result.jpg)）。
 
 ## 演示视频
 
