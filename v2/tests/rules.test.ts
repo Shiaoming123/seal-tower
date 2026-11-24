@@ -825,3 +825,24 @@ describe("set bonuses after GAME-006", () => {
     expect(settle(run).carried).toBe(plain + 6);
   });
 });
+
+describe("goods reveal and the abandoned purse (GAME-007)", () => {
+  it("翻货袋 gives three goods, and now and then a rare one", async () => {
+    const { EVENTS, PURSE_RARE } = await import("../src/data/events");
+    let rare = 0, runs = 0;
+    for (let seed = 1; seed <= 200; seed++) {
+      const run = createRun(seed, "sword", "lamp");
+      run.bag.w = 8; run.bag.h = 7;
+      const before = run.bag.items.length;
+      const opts = EVENTS.purse.options;
+      (Array.isArray(opts) ? opts : opts(run, run.rng))[0].apply(run);
+      expect(run.bag.items.length - before + run.pending.length).toBe(3);
+      rare += run.bag.items.filter((it) => PURSE_RARE.includes(it.id)).length;
+      runs++;
+    }
+    // 600 pulls at 12%: about 72; a wide band so the test only catches a broken roll.
+    expect(rare).toBeGreaterThan(35);
+    expect(rare).toBeLessThan(120);
+  });
+});
+

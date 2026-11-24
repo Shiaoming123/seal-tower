@@ -1,9 +1,20 @@
 import { sfx } from "../audio/sfx";
 import { EVENTS } from "../data/events";
+import { GOODS } from "../data/goods";
 import * as R from "../game/run";
 import { ART, artId } from "../render/assets";
 import { BagGrid } from "./Bag";
+import { GoodsReveal } from "./Reveal";
 import { commit, useRun } from "./store";
+import { useState } from "preact/hooks";
+import type { GoodId, RunState } from "../game/types";
+
+/** Every good you carry (bag, the not-yet-packed pile, side pouch), to see what an event just handed over. */
+const carried = (run: RunState): GoodId[] => [...run.bag.items.map((it) => it.id), ...run.pending, ...run.pouch];
+function gained(before: GoodId[], after: GoodId[]): GoodId[] {
+  const left = [...before];
+  return after.filter((g) => { const i = left.indexOf(g); if (i >= 0) { left.splice(i, 1); return false; } return true; });
+}
 
 const FLOOR_BG: Record<number, string> = { 1: "court", 2: "gate", 3: "belfry" };
 
@@ -14,6 +25,14 @@ export function EventScreen() {
   const result = run.event!.result;
   // The optional close-up is for conversation. The reveal uses the encounter sprite.
   const sprite = run.eventFight ? ev.sprite : artId(`event-${ev.sprite}`, ev.sprite);
+  const [reveal, setReveal] = useState<GoodId[] | null>(null);
+  const choose = (i: number) => {
+    const before = carried(run);
+    sfx.click(); R.chooseEvent(run, i);
+    const got = gained(before, carried(run)).filter((g) => GOODS[g].kind === "goods");
+    if (got.length >= 2) setReveal(got);
+    commit();
+  };
   return (
     <div class="event" style={{ backgroundImage: `linear-gradient(rgba(5,3,2,0.55), rgba(5,3,2,0.75)), url(${ART[FLOOR_BG[run.floor]]})` }}>
       <div class="event-art"><img src={ART[sprite]} alt="" draggable={false} /></div>
@@ -27,7 +46,7 @@ export function EventScreen() {
               const locked = o.locked?.(run) ?? null;
               return (
                 <button type="button" class={`option ${locked ? "locked" : ""}`} disabled={!!locked}
-                  onClick={() => { sfx.click(); R.chooseEvent(run, i); commit(); }}>
+                  onClick={() => choose(i)}>
                   <b>{o.label}</b><span>{locked ? `（${locked}）` : o.detail}</span>
                 </button>
               );
@@ -47,6 +66,7 @@ export function EventScreen() {
           </button>
         )}
       </div>
+      {reveal && <GoodsReveal goods={reveal} onDone={() => setReveal(null)} />}
     </div>
   );
 }

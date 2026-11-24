@@ -729,3 +729,42 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .ware.armed::after, .item-ware.armed::after { content: "再点一下买下"; position: absolute; left: 50%; top: -6px; transform: translate(-50%, -100%); white-space: nowrap; z-index: 5;
   font-size: 12px; padding: 2px 8px; border-radius: 3px; background: #7a3a10; color: #fff0c8; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); pointer-events: none; }
 
+
+/* ---------------------------------------------------------------- GAME-007: goods reveal */
+.reveal { position: absolute; inset: 0; z-index: 40; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+  background: radial-gradient(ellipse at 50% 45%, rgba(40, 20, 10, 0.82), rgba(5, 2, 1, 0.94)); animation: reveal-in 0.25s ease-out; cursor: pointer; }
+@keyframes reveal-in { from { opacity: 0; } }
+.reveal-title { margin: 0; font-family: var(--font-title); font-weight: normal; font-size: 32px; letter-spacing: 6px; color: #f6dc98; text-shadow: 0 2px 0 #3a1406, 0 0 14px rgba(240, 180, 80, 0.4); }
+.reveal-row { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; perspective: 900px; }
+.reveal-card { width: 118px; height: 158px; }
+.reveal-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1); }
+.reveal-card.open .reveal-inner { transform: rotateY(180deg); }
+.reveal-back, .reveal-face { position: absolute; inset: 0; border-radius: 8px; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+/* The face-down pack: a tied cloth bundle with a seal. */
+.reveal-back { border: 2px solid #8c6e30; box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6), inset 0 0 18px rgba(0, 0, 0, 0.5);
+  background: repeating-linear-gradient(45deg, rgba(255, 220, 160, 0.06) 0 6px, transparent 6px 12px), linear-gradient(160deg, #7a4a24, #4a2a14 60%, #351c0c); }
+.reveal-back span { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; font-family: var(--font-title); font-size: 24px; color: #f6dc98;
+  background: radial-gradient(circle at 40% 35%, #b02a1c, #6a120a); box-shadow: 0 0 0 3px rgba(217, 180, 90, 0.6), 0 2px 6px #000; }
+.reveal-card.next .reveal-inner { animation: pack-wiggle 0.6s ease-in-out; }
+.reveal-card.building .reveal-back { box-shadow: 0 0 0 2px #ffd070, 0 0 28px rgba(255, 200, 90, 0.9), inset 0 0 18px rgba(255, 210, 120, 0.35); }
+.reveal-card.building .reveal-inner { animation: pack-shake 0.12s linear infinite; }
+@keyframes pack-wiggle { 30% { transform: rotate(-4deg); } 60% { transform: rotate(3deg); } }
+@keyframes pack-shake { 25% { transform: translateX(-2px) rotate(-1deg); } 75% { transform: translateX(2px) rotate(1deg); } }
+.reveal-face { transform: rotateY(180deg); gap: 4px; overflow: hidden; border: 2px solid #6a4a24;
+  background: radial-gradient(circle at 50% 38%, #3e2818, #170c07 78%); box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6); }
+.reveal-face img { position: relative; width: 70px; height: 70px; object-fit: contain; filter: drop-shadow(0 3px 3px #000); }
+.reveal-face b { position: relative; color: #f3e6c8; font-size: 16px; font-weight: normal; }
+.reveal-face small { position: relative; color: #b8a080; font-size: 12px; }
+.reveal-card.tier-good .reveal-face { border-color: #4a8ab0; box-shadow: 0 0 16px rgba(80, 160, 220, 0.6); }
+.reveal-card.tier-good .reveal-face b { color: #bfe2ff; }
+.reveal-card.tier-rare .reveal-face { border-color: #ffd070; box-shadow: 0 0 26px rgba(255, 200, 90, 0.9); }
+.reveal-card.tier-rare .reveal-face b { color: #ffe08a; }
+.reveal-card.tier-rare.open { animation: rare-pop 0.5s ease-out; }
+@keyframes rare-pop { 40% { transform: scale(1.14); } }
+.reveal-rays { position: absolute; left: 50%; top: 40%; width: 260px; height: 260px; margin: -130px 0 0 -130px; border-radius: 50%;
+  background: repeating-conic-gradient(rgba(255, 210, 110, 0.35) 0 10deg, transparent 10deg 24deg); animation: rays-spin 6s linear infinite; mask-image: radial-gradient(circle, #000 20%, transparent 65%); }
+@keyframes rays-spin { to { transform: rotate(360deg); } }
+.reveal-hint { margin: 0; font-size: 14px; }
+.portrait .reveal-card { width: 150px; height: 200px; }
+.portrait .reveal-face img { width: 90px; height: 90px; }
+@media (prefers-reduced-motion: reduce) { .reveal-inner { transition: none; } .reveal-rays, .reveal-card .reveal-inner { animation: none !important; } }

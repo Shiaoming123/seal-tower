@@ -7,6 +7,10 @@ import { GEAR_IDS, GOODS } from "./goods";
 import type { GoodId, RunState } from "../game/types";
 import { RELICS } from "./relics";
 
+/** 遗落的货袋: each of the three pulls has this chance to be one of the rare goods instead of a cheap one. */
+export const PURSE_RARE_CHANCE = 0.12;
+export const PURSE_RARE: GoodId[] = ["pearl", "clasp", "rubbing", "feather"];
+
 export interface EventOption {
   label: string;
   detail: string;
@@ -84,7 +88,15 @@ export const EVENTS: Record<string, EventDef> = {
     text: "墙角有个被人丢下的货袋，鼓鼓囊囊。旁边还滚着一个小钱袋。",
     options: [
       { label: "翻货袋", detail: "得到 3 件随机货物（要腾地方装）。",
-        apply: (r) => { const got: GoodId[] = []; for (let i = 0; i < 3; i++) { const g = pick(r.rng, ["ash", "fang", "silk", "shell", "knot"] as GoodId[]); got.push(g); addGood(r, g); } return "你翻出三件货。"; } },
+        apply: (r) => {
+          // Mostly cheap goods, but each pull has a small chance at something worth having (the reveal plays it up).
+          const got: GoodId[] = [];
+          for (let i = 0; i < 3; i++) {
+            const g = chance(r.rng, PURSE_RARE_CHANCE) ? pick(r.rng, PURSE_RARE) : pick(r.rng, ["ash", "fang", "silk", "shell", "knot"] as GoodId[]);
+            got.push(g); addGood(r, g);
+          }
+          return `你翻出了${got.map((g) => GOODS[g].name).join("、")}。`;
+        } },
       { label: "只拿钱袋", detail: "得到 12 石。", apply: (r) => { r.gold += 12; r.stats.goldEarned += 12; return "钱袋里有 12 石。"; } },
     ],
   },
