@@ -69,14 +69,14 @@ async function check(name, ctxOpts, climb = false) {
   await shot("01-title");
 
   // Sound: the menu toggles mute and the setting sticks in this (partitioned) iframe storage.
-  await btn(/^(声音|静音)$/);
+  await btn(/^(声音|音量|静音)$/);
   const box = frame.locator(".sound-panel input[type=checkbox]");
   const before = await box.isChecked();
   await press(box);
   const afterOff = await frame.evaluate(() => Object.entries(localStorage).map(([k, v]) => v).join("").includes('"sound":false'));
   await press(box);
   r.checks.sound = { startedOn: before, mutePersisted: afterOff, backOn: await box.isChecked(), audioContexts: await frame.evaluate(() => (window.__ctxs ?? []).map((c) => c.state)) };
-  await btn(/^(声音|静音)$/);
+  await btn(/^(声音|音量|静音)$/);
 
   await btn(/去镇灯铺接单|重新接单/);
   await btn("进塔");
@@ -133,7 +133,13 @@ async function check(name, ctxOpts, climb = false) {
     }
     const mb = await frame.locator(".minimap canvas").boundingBox();
     const x = mb.x + ((pick.x + 0.5) / pick.w) * mb.width, y = mb.y + ((pick.y + 0.5) / pick.h) * mb.height;
-    if (touch) await page.touchscreen.tap(x, y); else await page.mouse.click(x, y);
+    const tapAt = () => (touch ? page.touchscreen.tap(x, y) : page.mouse.click(x, y));
+    const posKey = async () => JSON.stringify((await state())?.pos);
+    const before = await posKey();
+    await tapAt();
+    // REVIEW-002: a long walk that would leave the lamp at ≤15 oil only warns on the first tap; tap the same tile again.
+    await page.waitForTimeout(400);
+    if ((await state())?.screen === "explore" && !(await frame.locator(".stop-walk").count()) && (await posKey()) === before) await tapAt();
     for (let i = 0; i < 16; i++) { await page.waitForTimeout(250); if ((await state())?.screen !== "explore" || !(await frame.locator(".stop-walk").count())) break; }
     void s;
   }
@@ -144,11 +150,12 @@ async function check(name, ctxOpts, climb = false) {
       if (climb) await frame.evaluate(() => { const S = window.__seal, c = S.runSig.value?.combat; if (c?.enemy && c.enemy.hp > 1) { c.enemy.hp = 1; S.commit(); } });
       // First-encounter tips sit over the hand; read and close them like a player would.
       const tip = frame.getByRole("button", { name: "知道了" });
-      if (await tip.count()) await press(tip.first()).catch(() => {});
+      if (await tip.count()) await tip.first().click({ timeout: 1500 }).catch(() => {});
       for (let i = 0; i < 6; i++) {
         const cards = frame.locator(".hand .card:not(.disabled)");
         if (!(await cards.count())) break;
-        await press(cards.first());
+        // The fanned hand overlaps each card with the next one; the last card is the one fully on top.
+        await press(cards.last());
         // Phones play in two steps (UI-005): the first tap only picks the card.
         const picked = frame.locator(".hand-slot.picked .card");
         if (await picked.count()) await press(picked.first());
@@ -177,6 +184,25 @@ async function check(name, ctxOpts, climb = false) {
     if (!climb && s.screen === "explore") await frame.evaluate(() => { const S = window.__seal, r = S.runSig.value; if (r && (r.oil <= 0 || !r.dungeon.seen.every(Boolean))) { if (r.oil <= 0) r.oil = r.maxOil; r.dungeon.seen.fill(true); S.commit(); } });
     if (climb && s.screen === "explore") await frame.evaluate(() => { const S = window.__seal, r = S.runSig.value; if (r) { r.maxHp = Math.max(r.maxHp, 400); r.hp = r.maxHp; r.oil = r.maxOil; r.dungeon.seen.fill(true); S.commit(); } });
     try {
+      // GAME-007 goods reveal (翻货袋 etc.) covers the screen: tap to turn all cards over, then take them.
+      if (await frame.locator(".reveal").count()) {
+        await once("05b-reveal");
+        await press(frame.locator(".reveal").first());
+        const keep = frame.getByRole("button", { name: /^收下/ }); if (await keep.count()) await press(keep.first());
+        continue;
+      }
+      // Card pick overlay (copy / upgrade / remove from an event): tap a card, then confirm (two steps since UI-011).
+      if (await frame.locator(".overlay .deck-box").count()) {
+        const pick = frame.locator(".deck-box .card-grid .card");
+        if (await pick.count()) {
+          await press(pick.first());
+          const ok = frame.locator(".pick-confirm .btn"); if (await ok.count()) await press(ok.first());
+        } else { for (let i = 0; i < 2; i++) { const skip = frame.locator(".deck-box header .btn"); if (await skip.count()) await press(skip.first()); } }
+        continue;
+      }
+      // REVIEW-001 first-time concept tips can open on any screen: close them first.
+      // Try briefly: a tip hidden behind another layer can't be tapped (a player never sees it either), so carry on.
+      { const tip = frame.getByRole("button", { name: "知道了" }); if (await tip.count() && await tip.first().click({ timeout: 1500 }).then(() => true, () => false)) continue; }
       if (s.screen === "combat") { await once("03-combat"); await fight(); await page.waitForTimeout(1200); continue; }
       if (s.screen === "reward") {
         await once("04-reward");
@@ -187,32 +213,36 @@ async function check(name, ctxOpts, climb = false) {
       }
       if (s.screen === "event") {
         await once("05-event");
-        await press(frame.locator(".option:not(.locked)").first());
-        if (await frame.locator(".overlay .card").count()) await press(frame.locator(".overlay .card").first());
+        // After a goods reveal the event comes back with only 「继续」 left: no option to pick.
+        const opt = frame.locator(".option:not(.locked)");
+        if (await opt.count()) await press(opt.first());
+        if (await frame.locator(".overlay .deck-box, .reveal").count()) continue; // handled at the top of the loop
         await btn(/继续|迎战/); continue;
       }
       if (s.screen === "shop") { visited.push(s.pos.x + "," + s.pos.y); await once("06-shop"); await btn("离开狐市"); continue; }
-      if (s.screen === "rest") { visited.push(s.pos.x + "," + s.pos.y); await press(frame.locator(".option").first()); continue; }
+      if (s.screen === "rest") { visited.push(s.pos.x + "," + s.pos.y); await press(frame.locator(".option:not([disabled])").first()); continue; }
       if (s.screen === "explore") {
         if (await frame.locator(".omen-card").count()) { await press(frame.locator(".omen-card .btn").first()); continue; }
         if (await frame.locator(".stairs-prompt").count()) {
           await once(`07-stairs-f${s.floor}`);
-          const up = frame.getByRole("button", { name: "上楼" });
+          // Leaving a pile behind takes a second tap on the relabelled button (「留下 N 件，上楼／回镇」).
+          const up = frame.getByRole("button", { name: /^(上楼|留下 \d+ 件，上楼)$/ });
           // Only the climb pass goes up; the other passes retreat at the first stairs so their run ends in minutes
           // and the town settlement and restart get checked (a surviving bot could otherwise run past the deadline).
-          if (climb && await up.count()) await press(up.first()); else await btn("回镇结算");
+          if (climb && await up.count()) await press(up.first()); else await btn(/^(回镇结算|留下 \d+ 件，回镇)$/);
           await page.waitForTimeout(900); continue;
         }
         await walkTo(climb ? [["stairs", "guardian"], ALL] : [ALL]);
         continue;
       }
       await page.waitForTimeout(600);
-    } catch (e) { r.errors.push("driver: " + String(e).split("\n")[0]); await page.waitForTimeout(600); }
+    } catch (e) { { const m = String(e).split("\n"); r.errors.push(`driver [${s.screen}]: ${m[0]} ${(m.find((l) => l.includes("waiting for")) ?? "").trim()}`); if (!seen.has("err")) { seen.add("err"); await shot("09-first-error").catch(() => {}); } } await page.waitForTimeout(600); }
   }
   await page.waitForTimeout(1500);
   // Beating the last guardian sets the outcome while the reward screen is still up: go through to the result screen.
-  const home = frame.getByRole("button", { name: /回镇结算/ });
-  if ((await state())?.screen === "reward" && (await home.count())) { await press(home.first()); await page.waitForTimeout(1500); }
+  // Leaving with an untaken card is two taps: 「回镇结算」, then 「不要了，继续」.
+  const home = frame.getByRole("button", { name: /回镇结算|不要了，继续/ });
+  for (let i = 0; i < 3 && (await state())?.screen === "reward" && (await home.count()); i++) { await press(home.first()); await page.waitForTimeout(1500); }
   await shot("08-result");
   r.checks.run = { climb, steps: step, outcome: last?.outcome ?? null, floorReached: last?.floor, minutes: +((Date.now() - t0) / 60000).toFixed(1) };
 
