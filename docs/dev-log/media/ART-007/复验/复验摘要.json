@@ -1,0 +1,1029 @@
+{
+  "head": "75aa8d2",
+  "entrance": "http://127.0.0.1:5178/",
+  "seed": "gallery",
+  "reports": {
+    "bell": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "fixture": {
+          "target": {
+            "x": 7,
+            "y": 10,
+            "dir": 0
+          },
+          "id": 20003,
+          "from": {
+            "x": 7,
+            "y": 11,
+            "dir": 0
+          }
+        },
+        "matchesPreviousArt": true,
+        "assets": {
+          "bell-attack": {
+            "webpSha256": "ca880c419a7a34115e65f9afcc3c2f3405ecdfb07330e78b303e298c4a394486",
+            "sourceSha256": "134c3fb3626861d1c025d1306858795ac6b02dc9faa65a69085f392829623ad8",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              35,
+              50,
+              359,
+              369
+            ],
+            "matches101e18a": null
+          },
+          "bell-heavy-attack": {
+            "webpSha256": "a3680c088f9a31c034726da55468c3f02385c905a34d1e58355ad41b7ce0258b",
+            "sourceSha256": "996289452bfd69b32669bc4201c6ceda01ead805407b8ae29928093908a31a7d",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              40,
+              66,
+              365,
+              391
+            ],
+            "matches101e18a": null
+          },
+          "bell-heavy-hurt": {
+            "webpSha256": "ec3a987b917511874a2c132663a33f82c05279a1394f96410456ec08e2b6a7af",
+            "sourceSha256": "fedd3cf45b2451b032df9bad5d601e900f1496207ed831952f2ee280b88354b3",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              43,
+              35,
+              368,
+              388
+            ],
+            "matches101e18a": null
+          },
+          "bell-heavy": {
+            "webpSha256": "69e72d5145b3b9700303b8283e0bf88846411b8f0425e1d56e6c7a9e0a37183f",
+            "sourceSha256": "4ab33a32f60d8773e29fdd8c11056627225844a6842c195cf528ddcf22f178f1",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              30,
+              32,
+              388,
+              387
+            ],
+            "matches101e18a": false
+          },
+          "bell-hurt": {
+            "webpSha256": "d8c5e218685bddfe98782113c0390386f0a97e8d5fa8d249f7342b5cc80f8f38",
+            "sourceSha256": "c5afd0b0ecad14a38a092e74b5398f807bd3f660cf0cb744db540c18893855a2",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              49,
+              29,
+              371,
+              366
+            ],
+            "matches101e18a": null
+          },
+          "bell": {
+            "webpSha256": "34a24a22a8f80e03348f1d159dbe160a34a541985706d3790787b7bab3204441",
+            "sourceSha256": "4809f0e00157df163bd7db629550cb8129ec1e8e096e7c06d7d79deb7ecb7980",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              42,
+              25,
+              357,
+              366
+            ],
+            "matches101e18a": false
+          }
+        },
+        "actions": {
+          "p1Hurt": {
+            "asset": "bell-hurt",
+            "returnAsset": "bell",
+            "samples": 30,
+            "firstLoadedMs": 0,
+            "lastFrame": 192,
+            "screenExtent": [
+              537,
+              235.8,
+              757,
+              466.1
+            ],
+            "hudBottom": 211.8,
+            "playerLoss": 0,
+            "enemyLoss": 6,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 1,
+            "resultingSprite": "bell",
+            "resultingIntent": "摇铃",
+            "resultingStrength": 0
+          },
+          "ringing": {
+            "asset": "bell-attack",
+            "returnAsset": "bell",
+            "samples": 35,
+            "firstLoadedMs": 0,
+            "lastFrame": 261,
+            "screenExtent": [
+              505.8,
+              235.6,
+              769.3,
+              495.1
+            ],
+            "hudBottom": 211.8,
+            "playerLoss": 7,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 1,
+            "resultingSprite": "bell",
+            "resultingIntent": "铜壳",
+            "resultingStrength": 0
+          },
+          "shell": {
+            "asset": "bell-attack",
+            "returnAsset": "bell",
+            "samples": 34,
+            "firstLoadedMs": 0,
+            "lastFrame": 259,
+            "screenExtent": [
+              508,
+              236.6,
+              767.3,
+              491.9
+            ],
+            "hudBottom": 211.8,
+            "playerLoss": 4,
+            "enemyLoss": 0,
+            "enemyBlockUsed": -16,
+            "goldLoss": null,
+            "resultingPhase": 1,
+            "resultingSprite": "bell",
+            "resultingIntent": "蓄钟",
+            "resultingStrength": 0
+          },
+          "guarded": {
+            "asset": "bell",
+            "returnAsset": "bell",
+            "samples": 31,
+            "firstLoadedMs": 0,
+            "lastFrame": 197,
+            "screenExtent": [
+              540.8,
+              253.7,
+              738.7,
+              467.9
+            ],
+            "hudBottom": 233.5,
+            "playerLoss": 0,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 6,
+            "goldLoss": null,
+            "resultingPhase": 1,
+            "resultingSprite": "bell",
+            "resultingIntent": "蓄钟",
+            "resultingStrength": 0
+          },
+          "phase2": {
+            "asset": "bell-heavy-hurt",
+            "returnAsset": "bell-heavy",
+            "samples": 29,
+            "firstLoadedMs": 0,
+            "lastFrame": 187,
+            "screenExtent": [
+              549,
+              284.1,
+              726.4,
+              476.8
+            ],
+            "hudBottom": 260.5,
+            "playerLoss": 0,
+            "enemyLoss": 6,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 2,
+            "resultingSprite": "bell-heavy",
+            "resultingIntent": "蓄钟",
+            "resultingStrength": 3
+          },
+          "drop": {
+            "asset": "bell-heavy-attack",
+            "returnAsset": "bell-heavy",
+            "samples": 33,
+            "firstLoadedMs": 0,
+            "lastFrame": 274,
+            "screenExtent": [
+              518.9,
+              273.1,
+              750.3,
+              504.5
+            ],
+            "hudBottom": 238.8,
+            "playerLoss": 35,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 2,
+            "resultingSprite": "bell-heavy",
+            "resultingIntent": "碎铃",
+            "resultingStrength": 3
+          },
+          "p2Hurt": {
+            "asset": "bell-heavy-hurt",
+            "returnAsset": "bell-heavy",
+            "samples": 30,
+            "firstLoadedMs": 0,
+            "lastFrame": 193,
+            "screenExtent": [
+              540.1,
+              258.9,
+              734.6,
+              470.2
+            ],
+            "hudBottom": 233.8,
+            "playerLoss": 0,
+            "enemyLoss": 6,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 2,
+            "resultingSprite": "bell-heavy",
+            "resultingIntent": "碎铃",
+            "resultingStrength": 3
+          },
+          "heavy": {
+            "asset": "bell-heavy-hurt",
+            "returnAsset": "bell-heavy",
+            "samples": 43,
+            "firstLoadedMs": 0,
+            "lastFrame": 283,
+            "screenExtent": [
+              540.2,
+              263.9,
+              734.7,
+              475.2
+            ],
+            "hudBottom": 238.8,
+            "playerLoss": 0,
+            "enemyLoss": 14,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 2,
+            "resultingSprite": "bell-heavy",
+            "resultingIntent": "碎铃",
+            "resultingStrength": 3
+          }
+        },
+        "errors": []
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "fixture": {
+          "target": {
+            "x": 7,
+            "y": 10,
+            "dir": 0
+          },
+          "id": 20003,
+          "from": {
+            "x": 7,
+            "y": 11,
+            "dir": 0
+          }
+        },
+        "matchesPreviousArt": true,
+        "assets": {
+          "bell-attack": {
+            "webpSha256": "ca880c419a7a34115e65f9afcc3c2f3405ecdfb07330e78b303e298c4a394486",
+            "sourceSha256": "134c3fb3626861d1c025d1306858795ac6b02dc9faa65a69085f392829623ad8",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              35,
+              50,
+              359,
+              369
+            ],
+            "matches101e18a": null
+          },
+          "bell-heavy-attack": {
+            "webpSha256": "a3680c088f9a31c034726da55468c3f02385c905a34d1e58355ad41b7ce0258b",
+            "sourceSha256": "996289452bfd69b32669bc4201c6ceda01ead805407b8ae29928093908a31a7d",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              40,
+              66,
+              365,
+              391
+            ],
+            "matches101e18a": null
+          },
+          "bell-heavy-hurt": {
+            "webpSha256": "ec3a987b917511874a2c132663a33f82c05279a1394f96410456ec08e2b6a7af",
+            "sourceSha256": "fedd3cf45b2451b032df9bad5d601e900f1496207ed831952f2ee280b88354b3",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              43,
+              35,
+              368,
+              388
+            ],
+            "matches101e18a": null
+          },
+          "bell-heavy": {
+            "webpSha256": "69e72d5145b3b9700303b8283e0bf88846411b8f0425e1d56e6c7a9e0a37183f",
+            "sourceSha256": "4ab33a32f60d8773e29fdd8c11056627225844a6842c195cf528ddcf22f178f1",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              30,
+              32,
+              388,
+              387
+            ],
+            "matches101e18a": false
+          },
+          "bell-hurt": {
+            "webpSha256": "d8c5e218685bddfe98782113c0390386f0a97e8d5fa8d249f7342b5cc80f8f38",
+            "sourceSha256": "c5afd0b0ecad14a38a092e74b5398f807bd3f660cf0cb744db540c18893855a2",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              49,
+              29,
+              371,
+              366
+            ],
+            "matches101e18a": null
+          },
+          "bell": {
+            "webpSha256": "34a24a22a8f80e03348f1d159dbe160a34a541985706d3790787b7bab3204441",
+            "sourceSha256": "4809f0e00157df163bd7db629550cb8129ec1e8e096e7c06d7d79deb7ecb7980",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              42,
+              25,
+              357,
+              366
+            ],
+            "matches101e18a": false
+          }
+        },
+        "actions": {
+          "p1Hurt": {
+            "asset": "bell-hurt",
+            "returnAsset": "bell",
+            "samples": 30,
+            "firstLoadedMs": 0,
+            "lastFrame": 190,
+            "screenExtent": [
+              53.8,
+              242.4,
+              355.2,
+              557.9
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 0,
+            "enemyLoss": 6,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 1,
+            "resultingSprite": "bell",
+            "resultingIntent": "摇铃",
+            "resultingStrength": 0
+          },
+          "ringing": {
+            "asset": "bell-attack",
+            "returnAsset": "bell",
+            "samples": 34,
+            "firstLoadedMs": 0,
+            "lastFrame": 258,
+            "screenExtent": [
+              14.1,
+              223.7,
+              369.3,
+              573.5
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 7,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 1,
+            "resultingSprite": "bell",
+            "resultingIntent": "铜壳",
+            "resultingStrength": 0
+          },
+          "shell": {
+            "asset": "bell-attack",
+            "returnAsset": "bell",
+            "samples": 34,
+            "firstLoadedMs": 0,
+            "lastFrame": 260,
+            "screenExtent": [
+              14.1,
+              223.7,
+              369.3,
+              573.5
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 4,
+            "enemyLoss": 0,
+            "enemyBlockUsed": -16,
+            "goldLoss": null,
+            "resultingPhase": 1,
+            "resultingSprite": "bell",
+            "resultingIntent": "蓄钟",
+            "resultingStrength": 0
+          },
+          "guarded": {
+            "asset": "bell",
+            "returnAsset": "bell",
+            "samples": 30,
+            "firstLoadedMs": 0,
+            "lastFrame": 194,
+            "screenExtent": [
+              47.1,
+              238.7,
+              342,
+              557.9
+            ],
+            "hudBottom": 212.4,
+            "playerLoss": 0,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 6,
+            "goldLoss": null,
+            "resultingPhase": 1,
+            "resultingSprite": "bell",
+            "resultingIntent": "蓄钟",
+            "resultingStrength": 0
+          },
+          "phase2": {
+            "asset": "bell-heavy-hurt",
+            "returnAsset": "bell-heavy",
+            "samples": 29,
+            "firstLoadedMs": 0,
+            "lastFrame": 188,
+            "screenExtent": [
+              46.2,
+              246.4,
+              336,
+              561.2
+            ],
+            "hudBottom": 212.4,
+            "playerLoss": 0,
+            "enemyLoss": 6,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 2,
+            "resultingSprite": "bell-heavy",
+            "resultingIntent": "蓄钟",
+            "resultingStrength": 3
+          },
+          "drop": {
+            "asset": "bell-heavy-attack",
+            "returnAsset": "bell-heavy",
+            "samples": 32,
+            "firstLoadedMs": 0,
+            "lastFrame": 261,
+            "screenExtent": [
+              17.5,
+              237.8,
+              356.8,
+              577.1
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 35,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 2,
+            "resultingSprite": "bell-heavy",
+            "resultingIntent": "碎铃",
+            "resultingStrength": 3
+          },
+          "p2Hurt": {
+            "asset": "bell-heavy-hurt",
+            "returnAsset": "bell-heavy",
+            "samples": 29,
+            "firstLoadedMs": 0,
+            "lastFrame": 191,
+            "screenExtent": [
+              46.1,
+              246.5,
+              335.8,
+              561.2
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 0,
+            "enemyLoss": 6,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 2,
+            "resultingSprite": "bell-heavy",
+            "resultingIntent": "碎铃",
+            "resultingStrength": 3
+          },
+          "heavy": {
+            "asset": "bell-heavy-hurt",
+            "returnAsset": "bell-heavy",
+            "samples": 43,
+            "firstLoadedMs": 0,
+            "lastFrame": 287,
+            "screenExtent": [
+              46.2,
+              246.4,
+              336,
+              561.2
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 0,
+            "enemyLoss": 14,
+            "enemyBlockUsed": 0,
+            "goldLoss": null,
+            "resultingPhase": 2,
+            "resultingSprite": "bell-heavy",
+            "resultingIntent": "碎铃",
+            "resultingStrength": 3
+          }
+        },
+        "errors": []
+      }
+    ],
+    "fake-fox": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "fixture": {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        },
+        "event": {
+          "intro": "event-fake-fox",
+          "reveal": "你一刀挑开摊布，底下是九条白尾巴。它不笑了。",
+          "revealArt": "fake-fox",
+          "via": [
+            "前进",
+            "揭穿它",
+            "迎战"
+          ],
+          "foe": {
+            "id": 20002,
+            "kind": "elite",
+            "done": false,
+            "x": 8,
+            "y": 9,
+            "event": "fakefox",
+            "enemy": "fake-fox",
+            "hpMul": 0.8,
+            "dmgAdd": 0
+          }
+        },
+        "matchesPreviousArt": true,
+        "assets": {
+          "event-fake-fox": {
+            "webpSha256": "7e5303ae7c12051329fbbb857699eb95264aa16915db4d23a8f3d6726934aea0",
+            "sourceSha256": "348e0f14473cc66e0008c7681ac274f3199249818d5fb2d587b92129d0a68ada",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              40,
+              36,
+              381,
+              391
+            ],
+            "matches0a555ec": true
+          },
+          "fake-fox-attack": {
+            "webpSha256": "1d3c03b6025038c4176f34953a738380682f34d87f69db7d814d94cb41c4908f",
+            "sourceSha256": "52bfc59d099669b497e49080f81aaf10bfd613f7e5ddfb444c5a4f152d601359",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              63,
+              55,
+              338,
+              373
+            ],
+            "matches0a555ec": null
+          },
+          "fake-fox-hurt": {
+            "webpSha256": "6c4e58b85fbed6c278b2a2da45e398bc6c8babf0f76beed3937246ce0c9ddb60",
+            "sourceSha256": "c9220ee1bb695889993ed6e9b08d0127fcc152141cc7e4f9f2ab9eabaa338714",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              71,
+              26,
+              324,
+              374
+            ],
+            "matches0a555ec": null
+          },
+          "fake-fox": {
+            "webpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+            "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              56,
+              23,
+              337,
+              378
+            ],
+            "matches0a555ec": true
+          }
+        },
+        "actions": {
+          "normal": {
+            "asset": "fake-fox-hurt",
+            "returnAsset": "fake-fox",
+            "samples": 28,
+            "firstLoadedMs": 0,
+            "lastFrame": 189,
+            "screenExtent": [
+              552.2,
+              238.7,
+              725.2,
+              476.5
+            ],
+            "hudBottom": 216.8,
+            "playerLoss": 0,
+            "enemyLoss": 6,
+            "enemyBlockUsed": 0,
+            "goldLoss": 0,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "迷魂",
+            "resultingStrength": 0
+          },
+          "guarded": {
+            "asset": "fake-fox",
+            "returnAsset": "fake-fox",
+            "samples": 30,
+            "firstLoadedMs": 0,
+            "lastFrame": 191,
+            "screenExtent": [
+              541.7,
+              231.7,
+              733.7,
+              474.3
+            ],
+            "hudBottom": 211.8,
+            "playerLoss": 0,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 6,
+            "goldLoss": 0,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "九尾抽",
+            "resultingStrength": 0
+          },
+          "charm": {
+            "asset": "fake-fox-attack",
+            "returnAsset": "fake-fox",
+            "samples": 39,
+            "firstLoadedMs": 0,
+            "lastFrame": 264,
+            "screenExtent": [
+              525.8,
+              243.3,
+              755,
+              508.4
+            ],
+            "hudBottom": 216.8,
+            "playerLoss": 6,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": 0,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "收账",
+            "resultingStrength": 0
+          },
+          "partial": {
+            "asset": "fake-fox-attack",
+            "returnAsset": "fake-fox",
+            "samples": 39,
+            "firstLoadedMs": 0,
+            "lastFrame": 262,
+            "screenExtent": [
+              525.8,
+              238.3,
+              755,
+              503.4
+            ],
+            "hudBottom": 211.8,
+            "playerLoss": 4,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": 12,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "掀摊",
+            "resultingStrength": 0
+          },
+          "lash": {
+            "asset": "fake-fox-attack",
+            "returnAsset": "fake-fox",
+            "samples": 38,
+            "firstLoadedMs": 0,
+            "lastFrame": 256,
+            "screenExtent": [
+              526.7,
+              238.7,
+              754.1,
+              501.7
+            ],
+            "hudBottom": 211.8,
+            "playerLoss": 24,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": 0,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "收账",
+            "resultingStrength": 0
+          },
+          "full": {
+            "asset": "fake-fox-attack",
+            "returnAsset": "fake-fox",
+            "samples": 39,
+            "firstLoadedMs": 0,
+            "lastFrame": 264,
+            "screenExtent": [
+              526.7,
+              243.7,
+              754.2,
+              506.8
+            ],
+            "hudBottom": 216.8,
+            "playerLoss": 0,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": 0,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "迷魂",
+            "resultingStrength": 0
+          }
+        },
+        "errors": []
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "fixture": {
+          "target": {
+            "x": 8,
+            "y": 9,
+            "dir": 1
+          },
+          "id": 20002,
+          "from": {
+            "x": 7,
+            "y": 9,
+            "dir": 1
+          }
+        },
+        "event": {
+          "intro": "event-fake-fox",
+          "reveal": "你一刀挑开摊布，底下是九条白尾巴。它不笑了。",
+          "revealArt": "fake-fox",
+          "via": [
+            "前进",
+            "揭穿它",
+            "迎战"
+          ],
+          "foe": {
+            "id": 20002,
+            "kind": "elite",
+            "done": false,
+            "x": 8,
+            "y": 9,
+            "event": "fakefox",
+            "enemy": "fake-fox",
+            "hpMul": 0.8,
+            "dmgAdd": 0
+          }
+        },
+        "matchesPreviousArt": true,
+        "assets": {
+          "event-fake-fox": {
+            "webpSha256": "7e5303ae7c12051329fbbb857699eb95264aa16915db4d23a8f3d6726934aea0",
+            "sourceSha256": "348e0f14473cc66e0008c7681ac274f3199249818d5fb2d587b92129d0a68ada",
+            "width": 420,
+            "height": 420,
+            "bounds": [
+              40,
+              36,
+              381,
+              391
+            ],
+            "matches0a555ec": true
+          },
+          "fake-fox-attack": {
+            "webpSha256": "1d3c03b6025038c4176f34953a738380682f34d87f69db7d814d94cb41c4908f",
+            "sourceSha256": "52bfc59d099669b497e49080f81aaf10bfd613f7e5ddfb444c5a4f152d601359",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              63,
+              55,
+              338,
+              373
+            ],
+            "matches0a555ec": null
+          },
+          "fake-fox-hurt": {
+            "webpSha256": "6c4e58b85fbed6c278b2a2da45e398bc6c8babf0f76beed3937246ce0c9ddb60",
+            "sourceSha256": "c9220ee1bb695889993ed6e9b08d0127fcc152141cc7e4f9f2ab9eabaa338714",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              71,
+              26,
+              324,
+              374
+            ],
+            "matches0a555ec": null
+          },
+          "fake-fox": {
+            "webpSha256": "7356860b9dc1241980663d7214ffe935cc36d5558cfd36c574eb7f3c333179fc",
+            "sourceSha256": "8db27b971f765769fbea3235376571760eb492060630c325e6e301ad64b519a0",
+            "width": 400,
+            "height": 400,
+            "bounds": [
+              56,
+              23,
+              337,
+              378
+            ],
+            "matches0a555ec": true
+          }
+        },
+        "actions": {
+          "normal": {
+            "asset": "fake-fox-hurt",
+            "returnAsset": "fake-fox",
+            "samples": 30,
+            "firstLoadedMs": 0,
+            "lastFrame": 190,
+            "screenExtent": [
+              74.4,
+              239.5,
+              311.2,
+              565.4
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 0,
+            "enemyLoss": 6,
+            "enemyBlockUsed": 0,
+            "goldLoss": 0,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "迷魂",
+            "resultingStrength": 0
+          },
+          "guarded": {
+            "asset": "fake-fox",
+            "returnAsset": "fake-fox",
+            "samples": 30,
+            "firstLoadedMs": 0,
+            "lastFrame": 194,
+            "screenExtent": [
+              60.2,
+              236.8,
+              323.2,
+              569.1
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 0,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 6,
+            "goldLoss": 0,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "九尾抽",
+            "resultingStrength": 0
+          },
+          "charm": {
+            "asset": "fake-fox-attack",
+            "returnAsset": "fake-fox",
+            "samples": 38,
+            "firstLoadedMs": 0,
+            "lastFrame": 257,
+            "screenExtent": [
+              39.7,
+              221.3,
+              351.3,
+              581.7
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 6,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": 0,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "收账",
+            "resultingStrength": 0
+          },
+          "partial": {
+            "asset": "fake-fox-attack",
+            "returnAsset": "fake-fox",
+            "samples": 38,
+            "firstLoadedMs": 0,
+            "lastFrame": 257,
+            "screenExtent": [
+              42.3,
+              225.3,
+              348.8,
+              579.7
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 4,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": 12,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "掀摊",
+            "resultingStrength": 0
+          },
+          "lash": {
+            "asset": "fake-fox-attack",
+            "returnAsset": "fake-fox",
+            "samples": 38,
+            "firstLoadedMs": 0,
+            "lastFrame": 257,
+            "screenExtent": [
+              39.7,
+              221.2,
+              351.4,
+              581.7
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 24,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": 0,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "收账",
+            "resultingStrength": 0
+          },
+          "full": {
+            "asset": "fake-fox-attack",
+            "returnAsset": "fake-fox",
+            "samples": 38,
+            "firstLoadedMs": 0,
+            "lastFrame": 257,
+            "screenExtent": [
+              42.3,
+              225.3,
+              348.8,
+              579.7
+            ],
+            "hudBottom": 212.5,
+            "playerLoss": 0,
+            "enemyLoss": 0,
+            "enemyBlockUsed": 0,
+            "goldLoss": 0,
+            "resultingPhase": 1,
+            "resultingSprite": "fake-fox",
+            "resultingIntent": "迷魂",
+            "resultingStrength": 0
+          }
+        },
+        "errors": []
+      }
+    ]
+  }
+}

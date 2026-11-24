@@ -104,6 +104,12 @@
   "requiredTraces": [
     "ART-007A",
     "ART-007B",
-    "ART-007C"
+    "ART-007C",
+    "ART-007",
+    "ART-007D",
+    "ART-007E",
+    "ART-007F",
+    "ART-007G",
+    "ART-007H"
   ]
 }

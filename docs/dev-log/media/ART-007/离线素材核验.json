@@ -1,0 +1,153 @@
+{
+  "buildBase": "75aa8d2c31ee4a38d53952705f308eae1b91d8e2",
+  "offlineSha256": "fbb77b16d91c3bff38037fe33588cd7a42c3492f56d06f2bc966f0e667fa373e",
+  "bytes": 6601044,
+  "baselineExpected": 33,
+  "additional": [
+    "bell-heavy-attack",
+    "bell-heavy-hurt"
+  ],
+  "allAuditedPoses": 44,
+  "verifiedInlineExports": [
+    {
+      "id": "moth-attack",
+      "sha256": "c555781a9dd4a7173ddd585d8a13e52a44a25fb30f44593f25e6eae81a457ab5"
+    },
+    {
+      "id": "moth-hurt",
+      "sha256": "bcac9905ec2247d6589cbf413a634b8a2308330f93689bcae057b4962961df0e"
+    },
+    {
+      "id": "rat-attack",
+      "sha256": "fcdcd776a343c636c48028a23ad646ab3c55a2fd495b19309110770b538166f1"
+    },
+    {
+      "id": "rat-hurt",
+      "sha256": "e5872be694de3abad262a5cf1b4f750f477766b6c3e39a75d380c0ec79c97394"
+    },
+    {
+      "id": "louse-attack",
+      "sha256": "f1674a8b8292a9b781ebac00b964c4d91e33238c560104cc94cd8818478fda82"
+    },
+    {
+      "id": "louse-hurt",
+      "sha256": "be7213aec32f9695b89cd8b7cf895a74065a98092d9c4176359980c44770127d"
+    },
+    {
+      "id": "mirror-fox-attack",
+      "sha256": "fa9a3ce7d3844af047adf95d1f464061d89a25ba78e319b0aae1c74a3a4ffe68"
+    },
+    {
+      "id": "mirror-fox-hurt",
+      "sha256": "0a03fa80ae7ff474217bda51fa7aa94a53475e565e1cbe857f0a67e53f2e986b"
+    },
+    {
+      "id": "moth-queen-attack",
+      "sha256": "f9855d50140e111f59a7891cdf82f4d2f71c6f8c0f900f1ddde638c3a5f3ed73"
+    },
+    {
+      "id": "moth-queen-hurt",
+      "sha256": "5bf51a0583307a9144bc3f6dfc600ef86e46d7c149647a9615dbd9bdb90c6757"
+    },
+    {
+      "id": "warden-attack",
+      "sha256": "e9930109c8083d20743286ca60f03ef724fb0f476b8c9fe774a59d6f4b1c8496"
+    },
+    {
+      "id": "warden-hurt",
+      "sha256": "00af7cd6365c75c66c2f2fa1202d39bc92166822c11870d67cf6e1eac6fce597"
+    },
+    {
+      "id": "night-fox-attack",
+      "sha256": "4e526a16132a8c843aa7ae9701b7d99125c0f8127fe9edd1da3bd3e481a0e692"
+    },
+    {
+      "id": "night-fox-hurt",
+      "sha256": "d47c7417ae679523c968ab670367b026f08f3519390971e8e37b99ce40187b5d"
+    },
+    {
+      "id": "bell-attack",
+      "sha256": "ca880c419a7a34115e65f9afcc3c2f3405ecdfb07330e78b303e298c4a394486"
+    },
+    {
+      "id": "bell-hurt",
+      "sha256": "d8c5e218685bddfe98782113c0390386f0a97e8d5fa8d249f7342b5cc80f8f38"
+    },
+    {
+      "id": "lantern-spirit-attack",
+      "sha256": "94bbc724dbb536fdef17ef47cf8b660490099b3990786aa96c3ab78f2da68438"
+    },
+    {
+      "id": "lantern-spirit-hurt",
+      "sha256": "d82eaa51616401e5b4fdd352f7f83f40f5d63da58ae6a8b057e0acd0421e9304"
+    },
+    {
+      "id": "paper-doll-attack",
+      "sha256": "70cc235cad1b09c0cee667efe7818b80ef74ba3d297ddc6b31f6c981d6292285"
+    },
+    {
+      "id": "paper-doll-hurt",
+      "sha256": "dc5aacaf341f23843e8bc8fe7be4d61b1ba413bc1bca44a42e685bcfb3238f95"
+    },
+    {
+      "id": "fire-rat-hurt",
+      "sha256": "c8c41cb06b3bc311ae44c6cfcf62f3e65c65be63f2327a8cda9fd5ccf0161f43"
+    },
+    {
+      "id": "ink-moth-attack",
+      "sha256": "263ac87ca166f493b8c2e953b35d8c277ec400c11e47229fe1ff641c5831a08d"
+    },
+    {
+      "id": "ink-moth-hurt",
+      "sha256": "ad75fc16bb8ba9b00285c533ede11f08830b9841684572879e5fb2b095215af9"
+    },
+    {
+      "id": "water-ghost-attack",
+      "sha256": "1f72206ab8d99200fa5775a3c068534cc405c83c1c4b478e01742fb2f82d705d"
+    },
+    {
+      "id": "water-ghost-hurt",
+      "sha256": "9589a1019ed82363e403f2543a0a3835c38587e6064f9efcd5cc44922acbfb35"
+    },
+    {
+      "id": "stele-spirit-attack",
+      "sha256": "1a3cffd5b9d2ddf9907769ce2690dcc6c87ffac02da186b8ce4a43a5f0e0a303"
+    },
+    {
+      "id": "stele-spirit-hurt",
+      "sha256": "acd1079cecc14d8f32cdddccf6348079e21d0696d460a59c7230bb3f08a02ddc"
+    },
+    {
+      "id": "fallen-hurt",
+      "sha256": "0ad5de6c4f541b273acac42484e87be5da0b98ea6099c3e9cd4bc5c032b3d5ad"
+    },
+    {
+      "id": "fake-fox-attack",
+      "sha256": "1d3c03b6025038c4176f34953a738380682f34d87f69db7d814d94cb41c4908f"
+    },
+    {
+      "id": "fake-fox-hurt",
+      "sha256": "6c4e58b85fbed6c278b2a2da45e398bc6c8babf0f76beed3937246ce0c9ddb60"
+    },
+    {
+      "id": "paper-matron-attack",
+      "sha256": "82abba8d5ae90876f973e5210b0bff0ba4405441ec482d6673ad5dcbe4edef2f"
+    },
+    {
+      "id": "paper-matron-hurt",
+      "sha256": "53eb5aa3e14633e6b0b95ba1ce49319b830e0ca71a3fcbdcbbc3f29b973c72ca"
+    },
+    {
+      "id": "fallen-elder-hurt",
+      "sha256": "48f63638cfe2dfc399b85a6b07d014f588871fadfb0c6c32e8d48d4b43e97eb4"
+    },
+    {
+      "id": "bell-heavy-attack",
+      "sha256": "a3680c088f9a31c034726da55468c3f02385c905a34d1e58355ad41b7ce0258b"
+    },
+    {
+      "id": "bell-heavy-hurt",
+      "sha256": "ec3a987b917511874a2c132663a33f82c05279a1394f96410456ec08e2b6a7af"
+    }
+  ]
+}
