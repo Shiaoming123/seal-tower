@@ -91,10 +91,11 @@ const CALLS: Record<string, Call> = {
  * Play a monster's call. `pan` -1 (left) … 1 (right); `dist` in tiles; `behind` muffles it as if
  * through a wall or from behind you.
  */
-export function creatureCall(enemyId: string, pan = 0, dist = 1, behind = false) {
+/** `muffle` 0–1: 0 in plain view, about 0.5 around a corner, about 0.85 through a wall. */
+export function creatureCall(enemyId: string, pan = 0, dist = 1, muffle = 0) {
   const a = ac(); if (!a) return;
   const call = CALLS[enemyId] ?? growl;
-  const d = spatial(pan, dist, behind ? 0.6 : 0); if (!d) return;
+  const d = spatial(pan, dist, muffle); if (!d) return;
   // Calls are written quiet; this lifts them to sit just above the footsteps at 1–2 tiles.
   const lift = a.createGain(); lift.gain.value = VOICE_GAIN; lift.connect(d);
   call(lift, a.currentTime + 0.02);

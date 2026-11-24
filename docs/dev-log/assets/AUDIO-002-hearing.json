@@ -1,0 +1,38 @@
+{
+ "louse 看得见 3 格": {
+  "rms": 0.0012,
+  "centroidHz": 4513
+ },
+ "louse 拐角 5 步": {
+  "rms": 0.0002,
+  "centroidHz": 3130
+ },
+ "louse 隔墙": {
+  "rms": 0.0001,
+  "centroidHz": 2968
+ },
+ "rat 看得见 3 格": {
+  "rms": 0.003,
+  "centroidHz": 3376
+ },
+ "rat 拐角 5 步": {
+  "rms": 0.0005,
+  "centroidHz": 2602
+ },
+ "rat 隔墙": {
+  "rms": 0.0002,
+  "centroidHz": 2369
+ },
+ "warden 看得见 3 格": {
+  "rms": 0.0067,
+  "centroidHz": 384
+ },
+ "warden 拐角 5 步": {
+  "rms": 0.0043,
+  "centroidHz": 364
+ },
+ "warden 隔墙": {
+  "rms": 0.0045,
+  "centroidHz": 345
+ }
+}

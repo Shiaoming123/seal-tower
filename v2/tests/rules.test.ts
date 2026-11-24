@@ -8,6 +8,7 @@ import { distances, findPath, generate, idx, revealAll } from "../src/game/dunge
 import { addGood, fromPouch, sellPouch, sewPiece, toPouch, useItem } from "../src/game/inventory";
 import { climb, createRun, winCombat } from "../src/game/run";
 import { FLOOR_SPAWNS } from "../src/data/enemies";
+import { hearing } from "../src/game/dungeon";
 import { makeRng } from "../src/game/rng";
 import type { Entity, FloorNo, RunState } from "../src/game/types";
 
@@ -778,5 +779,30 @@ describe("playtest record (GAME-001)", () => {
     run.stats = { steps: 1, harvests: 0, kills: 0, goldEarned: 0, goodsSold: 0, goodsUsed: 0, damageTaken: 0, turns: 0 };
     run.outcome = "dead";
     expect(playtestRecord(run, 0, 1)).toContain("精英：打了 0，没打就离开 0");
+  });
+});
+
+describe("hearing monsters (AUDIO-002)", () => {
+  // #######
+  // #..#..#
+  // #..#..#
+  // #.....#
+  // #######
+  const rows = ["#######", "#..#..#", "#..#..#", "#.....#", "#######"];
+  const d = { w: 7, h: 5, tiles: rows.join("").split("").map((c) => (c === "#" ? 1 : 0)), entities: [], seen: [] } as unknown as Parameters<typeof hearing>[0];
+  it("is clear in plain view", () => {
+    expect(hearing(d, { x: 1, y: 3 }, { x: 5, y: 3 }, 8)).toEqual({ steps: 4, los: true, via: { x: 2, y: 3 } });
+  });
+  it("goes round a corner and arrives through the opening", () => {
+    const h = hearing(d, { x: 2, y: 1 }, { x: 4, y: 3 }, 8)!;
+    expect(h.los).toBe(false);
+    expect(h.steps).toBe(4);
+    expect(h.via).toEqual({ x: 2, y: 2 });
+  });
+  it("behind a wall the way round is long, and too far is silent", () => {
+    const h = hearing(d, { x: 1, y: 1 }, { x: 4, y: 1 }, 8)!;
+    expect(h.los).toBe(false);
+    expect(h.steps).toBe(7);
+    expect(hearing(d, { x: 1, y: 1 }, { x: 4, y: 1 }, 6)).toBeNull();
   });
 });

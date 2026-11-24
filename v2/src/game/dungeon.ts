@@ -184,6 +184,33 @@ export function findPath(d: Dungeon, from: { x: number; y: number }, to: { x: nu
 export const blocks = (e: Entity) => !e.done;
 
 /** Ids of active entities currently on revealed tiles (what the minimap shows). */
+/** A straight line between two tile centres crosses no wall. */
+export function lineOfSight(d: Dungeon, a: { x: number; y: number }, b: { x: number; y: number }): boolean {
+  const n = Math.ceil(Math.hypot(b.x - a.x, b.y - a.y) * 4);
+  for (let i = 1; i < n; i++) {
+    const t = i / n;
+    if (isWall(d, Math.round(a.x + (b.x - a.x) * t), Math.round(a.y + (b.y - a.y) * t))) return false;
+  }
+  return true;
+}
+
+/**
+ * How a sound made at `to` reaches someone standing at `from`: steps along the corridors, whether there is a
+ * straight line between them, and the neighbouring tile the sound arrives through (where it seems to come from).
+ * Null when it is more than `maxSteps` away by corridor.
+ */
+export function hearing(d: Dungeon, from: { x: number; y: number }, to: { x: number; y: number }, maxSteps: number) {
+  const dist = distances(d, to);
+  const steps = dist[idx(d, from.x, from.y)];
+  if (steps < 0 || steps > maxSteps) return null;
+  let via = { x: to.x, y: to.y };
+  if (steps > 1) for (const [dx, dy] of DIRS) {
+    const x = from.x + dx, y = from.y + dy;
+    if (!isWall(d, x, y) && dist[idx(d, x, y)] === steps - 1) { via = { x, y }; break; }
+  }
+  return { steps, los: lineOfSight(d, from, to), via };
+}
+
 export function sightedIds(d: Dungeon): Set<number> {
   return new Set(d.entities.filter((e) => !e.done && e.kind !== "stairs" && d.seen[idx(d, e.x, e.y)]).map((e) => e.id));
 }

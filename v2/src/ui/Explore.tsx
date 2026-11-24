@@ -3,7 +3,7 @@ import { SURFACE, sfx } from "../audio/sfx";
 import { creatureCall } from "../audio/voices";
 import { ENEMIES } from "../data/enemies";
 import { EVENTS } from "../data/events";
-import { DIRS, DIR_NAMES, entityAt, findPath, isWall, newlySighted, sightedIds } from "../game/dungeon";
+import { DIRS, DIR_NAMES, entityAt, findPath, hearing, isWall, newlySighted, sightedIds } from "../game/dungeon";
 import * as R from "../game/run";
 import type { Entity, RunState } from "../game/types";
 import { type Billboard, Raycaster } from "../render/raycaster";
@@ -109,10 +109,24 @@ function relative(run: RunState, x: number, y: number) {
   return { pan: (dx * rx + dy * ry) / dist, dist, behind: dx * fx_ + dy * fy < 0 };
 }
 
+/**
+ * Where a monster's call seems to come from. Sound follows the corridors: in plain view it is clear and comes
+ * straight at you; around a corner it is duller and comes from the opening it travels through, so the ear
+ * points down the right corridor; through a wall (the way round is much longer) it is quiet and very muffled.
+ */
+function callFrom(run: RunState, e: Entity) {
+  const h = hearing(run.dungeon, run.pos, e, 8);
+  if (!h) return null;
+  const straight = relative(run, e.x, e.y);
+  if (h.los) return { pan: straight.pan, dist: straight.dist, muffle: straight.behind ? 0.3 : 0 };
+  if (h.steps > straight.dist + 3) return { pan: straight.pan, dist: straight.dist + 2, muffle: 0.85 };
+  return { pan: relative(run, h.via.x, h.via.y).pan, dist: h.steps, muffle: 0.5 };
+}
+
 const lastCall = new Map<number, number>();
 /**
  * Nearby monsters make themselves heard every few seconds, from the direction they are in — and right away
- * when you first spot one. Only monsters within 5 tiles call; each waits at least 7 s between calls.
+ * when you first spot one. Only monsters within about 6 tiles (by corridor, see callFrom) call; each waits at least 7 s between calls.
  */
 function useCreatureCalls() {
   const prev = useRef<Set<number>>(new Set());
@@ -123,15 +137,15 @@ function useCreatureCalls() {
       const now = performance.now();
       const near = run.dungeon.entities
         .filter((e) => !e.done && e.enemy && isFight(e))
-        .map((e) => ({ e, ...relative(run, e.x, e.y) }))
-        .filter((c) => c.dist <= 5 && now - (lastCall.get(c.e.id) ?? -1e9) > 7000);
+        .map((e) => { const s = callFrom(run, e); return s && { e, ...s }; })
+        .filter((c): c is NonNullable<typeof c> => !!c && c.dist <= 6 && now - (lastCall.get(c.e.id) ?? -1e9) > 7000);
       const seen = new Set(sightedIds(run.dungeon));
       const spotted = near.filter((c) => seen.has(c.e.id) && !prev.current.has(c.e.id));
       prev.current = seen;
       const pick = fresh && spotted.length ? spotted[0] : !fresh && near.length && Math.random() < 0.45 ? near[Math.floor(Math.random() * near.length)] : null;
       if (!pick) return;
       lastCall.set(pick.e.id, now);
-      creatureCall(pick.e.enemy!, pick.pan, pick.dist, pick.behind || !seen.has(pick.e.id));
+      creatureCall(pick.e.enemy!, pick.pan, pick.dist, pick.muffle);
     };
     call(true);
     const iv = window.setInterval(() => call(false), 2600);
