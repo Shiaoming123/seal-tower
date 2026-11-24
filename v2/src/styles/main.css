@@ -678,7 +678,9 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 /* ---------------------------------------------------------------- UI-008: fight reward screen
    Centred composition: a title plaque and the loot laid out in front of you, then the bag on a framed tray on
    the left and the choice (cards / relic) with the continue button on the right. */
-.reward { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); gap: 12px 18px; padding: 14px 22px 18px; }
+/* The leave button must stay on screen however much the final reward lists (loot, notes, relic pick, cards).
+   The right column scrolls with the button pinned to its bottom; if the header alone is huge, the whole screen scrolls. */
+.reward { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto minmax(260px, 1fr); gap: 12px 18px; padding: 14px 22px 18px; overflow-y: auto; }
 .reward-head { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; }
 .plaque { position: relative; margin: 0; padding: 4px 56px 6px; font-family: var(--font-title); font-weight: normal; font-size: 40px; letter-spacing: 6px; color: #f6dc98;
   text-shadow: 0 2px 0 #3a1406, 0 0 14px rgba(240, 180, 80, 0.45);
@@ -721,6 +723,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .reward-right { min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; align-items: center; }
 .reward-right > :first-child { margin-top: auto; }
 .reward-right > :last-child { margin-bottom: auto; }
+.reward-right > .continue { position: sticky; bottom: 0; z-index: 2; flex: none; box-shadow: 0 -10px 18px rgba(10, 5, 3, 0.75), 0 4px 10px rgba(0, 0, 0, 0.6); }
+.portrait .reward-right > .continue { position: static; }
 .card-offer { padding: 12px 18px 14px; }
 .offer-actions { justify-content: center; align-items: center; gap: 12px; }
 .pick-hint { font-size: 13px; }
