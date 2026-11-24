@@ -1,11 +1,15 @@
 // First-person grid view: textured walls, floor and ceiling casting, distance light, billboard sprites.
 // Draws into a small buffer (pixel look) that CSS scales up with nearest-neighbour filtering.
+import { isWall } from "../game/dungeon";
 import type { Dungeon } from "../game/types";
 import { shadedSprite } from "./assets";
 import { TEX, type Theme } from "./textures";
 
 export const VIEW_W = 384;
 export const VIEW_H = 216;
+/** The world (walls, floor, sky) is cast at VIEW_W × VIEW_H for its pixel look; the output canvas is this many times
+ *  bigger so the hand-drawn monsters keep their detail instead of being squeezed into a few dozen pixels. */
+const OUT = 2;
 
 export interface Billboard {
   x: number; y: number; sprite: string; scale: number; bob?: boolean; glow?: string;
@@ -24,6 +28,9 @@ const FOV = 0.7;
 export class Raycaster {
   readonly canvas: HTMLCanvasElement;
   private ctx: CanvasRenderingContext2D;
+  /** Low-resolution buffer the world is cast into before it is scaled up onto the output canvas. */
+  private low: HTMLCanvasElement;
+  private lowCtx: CanvasRenderingContext2D;
   private img: ImageData;
   private buf: Uint32Array;
   private zbuf = new Float32Array(VIEW_W);
@@ -50,11 +57,15 @@ export class Raycaster {
 
   constructor() {
     this.canvas = document.createElement("canvas");
-    this.canvas.width = VIEW_W;
-    this.canvas.height = VIEW_H;
+    this.canvas.width = VIEW_W * OUT;
+    this.canvas.height = VIEW_H * OUT;
     this.canvas.className = "view3d";
     this.ctx = this.canvas.getContext("2d", { alpha: false })!;
-    this.img = this.ctx.createImageData(VIEW_W, VIEW_H);
+    this.low = document.createElement("canvas");
+    this.low.width = VIEW_W;
+    this.low.height = VIEW_H;
+    this.lowCtx = this.low.getContext("2d", { alpha: false })!;
+    this.img = this.lowCtx.createImageData(VIEW_W, VIEW_H);
     this.buf = new Uint32Array(this.img.data.buffer);
   }
 
@@ -250,13 +261,18 @@ export class Raycaster {
         texPos += step;
       }
     }
-    this.ctx.putImageData(this.img, 0, 0);
+    this.lowCtx.putImageData(this.img, 0, 0);
+    const ctx = this.ctx;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.imageSmoothingEnabled = false; // keep the cast world crisp and blocky
+    ctx.drawImage(this.low, 0, 0, W * OUT, H * OUT);
+    // Everything below is drawn in buffer pixels; the transform maps them onto the bigger output canvas.
+    ctx.setTransform(OUT, 0, 0, OUT, 0, 0);
 
     // Sprites, far to near.
     const list = this.sprites.map((s) => ({ s, dx: s.x + 0.5 - px, dy: s.y + 0.5 - py }))
       .map((o) => ({ ...o, dist: o.dx * o.dx + o.dy * o.dy })).sort((a, b) => b.dist - a.dist);
     const invDet = 1 / (planeX * dirY - dirX * planeY);
-    const ctx = this.ctx;
     for (const { s, dx, dy, dist } of list) {
       const tX = invDet * (dirY * dx - dirX * dy);
       const tY = invDet * (-planeY * dx + planeX * dy);
@@ -284,12 +300,26 @@ export class Raycaster {
         ctx.fill();
       }
       if (s.shadowOnly) continue;
-      const x0 = Math.max(0, Math.floor(left)), x1 = Math.min(W - 1, Math.ceil(left + wid));
-      for (let x = x0; x <= x1; x++) {
-        if (tY >= this.zbuf[x]) continue;
+      // One output column at a time (OUT per buffer pixel), smoothed, so the art stays sharp. A column is skipped
+      // when a wall is nearer (zbuf) or when, at the sprite's depth, it lands inside a wall tile beside the monster:
+      // a long body (书虱, 墨蛾) is cut off by the corridor wall instead of being painted into it.
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+      const x0 = Math.max(0, Math.floor(left * OUT)), x1 = Math.min(W * OUT - 1, Math.ceil((left + wid) * OUT));
+      const cxW = s.x + 0.5, cyW = s.y + 0.5;
+      for (let xo = x0; xo <= x1; xo++) {
+        const x = xo / OUT;
+        if (tY >= this.zbuf[Math.min(W - 1, Math.floor(x))]) continue;
         const u = ((x - left) / wid) * sw;
         if (u < 0 || u >= sw) continue;
-        ctx.drawImage(src, Math.floor(u), 0, 1, sh, x, top, 1, hgt);
+        if (d) {
+          // Camera-space offset of this column from the sprite centre, then along the camera plane into the world.
+          const lateral = ((x - screenX) / (W / 2)) * tY;
+          const wx = cxW + planeX * lateral, wy = cyW + planeY * lateral;
+          const tx = Math.floor(wx), ty = Math.floor(wy);
+          if ((tx !== s.x || ty !== s.y) && isWall(d, tx, ty)) continue;
+        }
+        ctx.drawImage(src, Math.floor(u), 0, 1, sh, xo / OUT, top, 1 / OUT, hgt);
       }
     }
     // Lantern glow and vignette.
