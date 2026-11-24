@@ -3,10 +3,11 @@ import { CARDS } from "../src/data/cards";
 import { ENEMIES } from "../src/data/enemies";
 import { EVENTS } from "../src/data/events";
 import * as bag from "../src/game/bag";
-import { endTurn, playCard, startCombat } from "../src/game/combat";
+import { endTurn, incomingDamage, playCard, startCombat } from "../src/game/combat";
 import { distances, findPath, generate, idx, revealAll } from "../src/game/dungeon";
 import { addGood, fromPouch, sellPouch, sewPiece, toPouch, useItem } from "../src/game/inventory";
-import { createRun, winCombat } from "../src/game/run";
+import { climb, createRun, winCombat } from "../src/game/run";
+import { FLOOR_SPAWNS } from "../src/data/enemies";
 import { makeRng } from "../src/game/rng";
 import type { Entity, FloorNo, RunState } from "../src/game/types";
 
@@ -81,8 +82,9 @@ describe("combat", () => {
     const run = createRun(3, "sword", "lamp");
     addGood(run, "clasp");
     const c = fightWith(run, "rat");
-    handOf(run, ["defend"]);
-    playCard(run, 0);
+    handOf(run, ["defend", "defend"]);
+    playCard(run, 0); playCard(run, 0);
+    expect(c.block).toBeGreaterThanOrEqual(incomingDamage(run, c));
     endTurn(run);
     expect(c.stolen).toEqual([]);
     expect(bag.count(run.bag, "clasp")).toBe(1);
@@ -234,6 +236,31 @@ describe("market", () => {
     const p1 = sellPrice(run, "shell");
     sellItem(run, run.bag.items.find((i) => i.id === "shell")!.uid);
     expect(sellPrice(run, "shell")).toBe(Math.max(1, p1 - 1));
+  });
+  it("the fox market pays under town value, and dear goods drop a fifth per sale", async () => {
+    const { sellItem, sellPrice } = await import("../src/game/inventory");
+    const { townValue } = await import("../src/game/run");
+    const run = createRun(21, "sword", "lamp");
+    run.omen = "calm"; run.markets[1].mult.tail = 1; run.markets[1].wanted = "silk";
+    run.shop = { cards: [], relics: [], gear: [], consumables: [], removePrice: 0, removed: false, oil: { amount: 25, price: 6, bought: 0 }, wanted: "silk", sold: {} };
+    addGood(run, "tail"); addGood(run, "tail");
+    expect(sellPrice(run, "tail")).toBe(11); // 14 × 0.75
+    expect(sellPrice(run, "tail")).toBeLessThan(townValue("tail"));
+    sellItem(run, run.bag.items.find((i) => i.id === "tail")!.uid);
+    expect(sellPrice(run, "tail")).toBe(9); // 11 − 20% of 11
+  });
+  it("guardians use their floor's hp and damage modifiers", () => {
+    const run = createRun(24, "sword", "lamp");
+    const g = run.dungeon.entities.find((e) => e.kind === "guardian")!;
+    const spawn = FLOOR_SPAWNS[1].guardian.find((s) => s.id === g.enemy)!;
+    expect(g.hpMul).toBe(spawn.hp);
+    expect(g.dmgAdd).toBe(spawn.dmg);
+  });
+  it("taking the stairs heals 40% of missing 气血", () => {
+    const run = createRun(23, "sword", "lamp");
+    run.hp = run.maxHp - 20;
+    climb(run);
+    expect(run.hp).toBe(run.maxHp - 12);
   });
   it("markets are fixed per run so a rumour about the next floor is true", () => {
     const a = createRun(22, "sword", "lamp"), b = createRun(22, "sword", "lamp");

@@ -295,9 +295,12 @@ export function closeReward(run: RunState) {
 
 // ---------------------------------------------------------------- shop
 
+/** 狐市 prices rise this much per floor below the first (deeper markets know you're carrying more). */
+export const SHOP_INFLATION = 0.25;
+
 function makeShop(run: RunState): ShopState {
   const off = (run.relics.includes("pin") ? 0.8 : 1) * (run.omen === "market" ? 0.75 : 1) * (bag.tagLevel(run.bag, "coin") >= 1 ? 0.9 : 1);
-  const price = (n: number) => Math.round(n * off * (1 + 0.15 * (run.floor - 1)));
+  const price = (n: number) => Math.round(n * off * (1 + SHOP_INFLATION * (run.floor - 1)));
   const cardPrice = (id: string) => price({ common: 14, uncommon: 22, rare: 34, basic: 10 }[CARDS[id].rarity] + int(run.rng, -2, 2));
   const relics = [randomRelic(run, "common"), randomRelic(run)].filter((id, i, a): id is string => !!id && a.indexOf(id) === i);
   return {
@@ -496,9 +499,12 @@ export function applyCardPick(run: RunState, uid: number | null) {
 
 // ---------------------------------------------------------------- floors
 
+/** Share of missing 气血 you get back when you take the stairs. */
+export const CLIMB_HEAL = 0.4;
+
 export function climb(run: RunState) {
   if (run.floor >= 3) return;
-  const healed = Math.round((run.maxHp - run.hp) * 0.5);
+  const healed = Math.round((run.maxHp - run.hp) * CLIMB_HEAL);
   run.hp += healed;
   enterFloor(run, (run.floor + 1) as FloorNo);
   run.screen = "explore";

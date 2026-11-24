@@ -53,7 +53,7 @@ export const ENEMIES: Record<string, EnemyDef> = {
   moth: {
     id: "moth", name: "纸灯蛾", sprite: "moth", hp: [15, 18], gold: [6, 9],
     drops: [{ good: "ash", chance: 1 }, { good: "silk", chance: 0.5 }],
-    moves: { swoop: { name: "扑火", dmg: 6 }, dust: { name: "撒鳞粉", dmg: 3, apply: { status: "weak", n: 1 } } },
+    moves: { swoop: { name: "扑火", dmg: 8 }, dust: { name: "撒鳞粉", dmg: 4, apply: { status: "weak", n: 1 } } },
     ai: (e, r) => (last(e) === "swoop" ? "dust" : last(e) === "dust" ? "swoop" : next(r) < 0.5 ? "swoop" : "dust"),
     blurb: "偷灯油的纸蛾。撒的鳞粉会让你虚弱（伤害 -25%）。",
     harvest: { label: "灯芯", good: "wick", text: "完整挡下它一次攻击，再击倒它",
@@ -63,7 +63,7 @@ export const ENEMIES: Record<string, EnemyDef> = {
     id: "rat", name: "灯鼠", sprite: "rat", spriteAttack: "rat-swipe", stealFlees: true, hp: [13, 16], gold: [7, 10],
     drops: [{ good: "fang", chance: 0.7 }, { good: "ash", chance: 0.5 }],
     moves: {
-      grab: { name: "掀货筐", dmg: 5, steal: true }, bite: { name: "啃咬", dmg: 3, hits: 2 },
+      grab: { name: "掀货筐", dmg: 6, steal: true }, bite: { name: "啃咬", dmg: 4, hits: 2 },
       flee: { name: "钻洞逃跑", flee: true, text: "叼着货往洞里钻。这回合不打死它，它就带着货跑了。" },
     },
     ai: cycle(["grab", "bite", "bite"]),
@@ -151,8 +151,8 @@ export const ENEMIES: Record<string, EnemyDef> = {
     id: "lantern-spirit", name: "引魂灯", sprite: "lantern-spirit", hp: [14, 17], gold: [6, 9],
     drops: [{ good: "ash", chance: 0.6 }],
     moves: {
-      sip: { name: "吸灯油", dmg: 4, drainOil: 10, text: "" }, glare: { name: "照魂", dmg: 3, apply: { status: "weak", n: 1 } },
-      flare: { name: "灯焰", dmg: 7 },
+      sip: { name: "吸灯油", dmg: 5, drainOil: 10, text: "" }, glare: { name: "照魂", dmg: 4, apply: { status: "weak", n: 1 } },
+      flare: { name: "灯焰", dmg: 10 },
     },
     ai: cycle(["sip", "glare", "flare"]),
     blurb: "飘着的旧灯笼，专吸活人的灯油。被它咬中会少 10 点灯油。",
@@ -315,21 +315,21 @@ export const ENEMIES: Record<string, EnemyDef> = {
 export interface Spawn { id: string; hp: number; dmg: number }
 export const FLOOR_SPAWNS: Record<1 | 2 | 3, { normal: Spawn[]; elite: Spawn[]; guardian: Spawn[] }> = {
   1: {
-    normal: [{ id: "moth", hp: 1, dmg: 0 }, { id: "rat", hp: 1, dmg: 0 }, { id: "louse", hp: 1, dmg: 0 },
-      { id: "lantern-spirit", hp: 1, dmg: 0 }, { id: "paper-doll", hp: 1, dmg: 0 }],
-    elite: [{ id: "mirror-fox", hp: 1, dmg: 0 }],
-    guardian: [{ id: "moth-queen", hp: 1, dmg: 0 }, { id: "paper-matron", hp: 1, dmg: 0 }],
+    normal: [{ id: "moth", hp: 1.4, dmg: 3 }, { id: "rat", hp: 1.4, dmg: 3 }, { id: "louse", hp: 1.3, dmg: 3 },
+      { id: "lantern-spirit", hp: 1.4, dmg: 3 }, { id: "paper-doll", hp: 1.3, dmg: 2 }],
+    elite: [{ id: "mirror-fox", hp: 1.1, dmg: 2 }],
+    guardian: [{ id: "moth-queen", hp: 1.15, dmg: 3 }, { id: "paper-matron", hp: 1.1, dmg: 1 }],
   },
   2: {
-    normal: [{ id: "rat", hp: 2.1, dmg: 3 }, { id: "louse", hp: 1.8, dmg: 3 }, { id: "moth", hp: 2.1, dmg: 3 }, { id: "mirror-fox", hp: 0.95, dmg: 2 },
-      { id: "fire-rat", hp: 2, dmg: 3 }, { id: "ink-moth", hp: 2, dmg: 3 }, { id: "water-ghost", hp: 1.6, dmg: 2 }, { id: "stele-spirit", hp: 1.1, dmg: 2 }],
+    normal: [{ id: "rat", hp: 2.1, dmg: 6 }, { id: "louse", hp: 1.8, dmg: 6 }, { id: "moth", hp: 2.1, dmg: 6 }, { id: "mirror-fox", hp: 0.95, dmg: 5 },
+      { id: "fire-rat", hp: 2, dmg: 6 }, { id: "ink-moth", hp: 2, dmg: 6 }, { id: "water-ghost", hp: 1.6, dmg: 5 }, { id: "stele-spirit", hp: 1.1, dmg: 5 }],
     elite: [{ id: "warden", hp: 1, dmg: 0 }, { id: "fallen", hp: 1, dmg: 0 }],
-    guardian: [{ id: "night-fox", hp: 1, dmg: 0 }, { id: "fallen-elder", hp: 1, dmg: 0 }],
+    guardian: [{ id: "night-fox", hp: 1.05, dmg: 1 }, { id: "fallen-elder", hp: 1, dmg: 0 }],
   },
   3: {
-    normal: [{ id: "mirror-fox", hp: 1.35, dmg: 5 }, { id: "louse", hp: 2.7, dmg: 6 }, { id: "rat", hp: 3.2, dmg: 6 }, { id: "warden", hp: 0.9, dmg: 2 },
-      { id: "thorn-stele", hp: 1.2, dmg: 3 }, { id: "bronze-puppet", hp: 1.2, dmg: 3 }, { id: "night-owl", hp: 1.3, dmg: 3 }, { id: "ink-moth", hp: 3, dmg: 6 }],
-    elite: [{ id: "night-fox", hp: 1, dmg: 4 }, { id: "warden", hp: 1.5, dmg: 5 }, { id: "fallen", hp: 1.3, dmg: 4 }],
+    normal: [{ id: "mirror-fox", hp: 1.35, dmg: 6 }, { id: "louse", hp: 2.7, dmg: 7 }, { id: "rat", hp: 3.2, dmg: 7 }, { id: "warden", hp: 0.9, dmg: 3 },
+      { id: "thorn-stele", hp: 1.2, dmg: 4 }, { id: "bronze-puppet", hp: 1.2, dmg: 4 }, { id: "night-owl", hp: 1.3, dmg: 4 }, { id: "ink-moth", hp: 3, dmg: 7 }],
+    elite: [{ id: "night-fox", hp: 1, dmg: 4 }, { id: "warden", hp: 1.25, dmg: 3 }, { id: "fallen", hp: 1.3, dmg: 3 }],
     guardian: [{ id: "bell", hp: 1, dmg: 0 }],
   },
 };

@@ -9,6 +9,7 @@ import type { RunState } from "../src/game/types";
 
 /** Optional numbers collected while the bot plays (see tests/report.test.ts). */
 export interface SimStats {
+  /** Keyed `floor:enemyId:kind` (the same monster can be a normal fight on one floor and an elite on another). */
   enemies: Record<string, { n: number; turns: number; hpLost: number; losses: number; kind: string }>;
   floors: Record<number, { reached: number; fightGold: number; saleGold: number; orderGold: number; spentCards: number; spentOil: number; spentOther: number; oilOut: number; hpAtEnd: number; goldAtEnd: number }>;
   offered: Record<string, number>;
@@ -23,7 +24,7 @@ export const newStats = (): SimStats => ({
 
 export function fight(run: RunState, maxTurns = 60, stats?: SimStats) {
   const c = run.combat!;
-  const hp0 = run.hp, gold0 = run.gold, id = c.enemy.id, kind = c.kind;
+  const hp0 = run.hp, gold0 = run.gold, id = c.enemy.id, kind = c.kind, floor0 = run.floor;
   const fragile0 = run.bag.items.filter((i) => GOODS[i.id].fragile).length;
   while (!c.over && c.turn < maxTurns) {
     if (run.hp < run.maxHp * 0.35) {
@@ -53,12 +54,13 @@ export function fight(run: RunState, maxTurns = 60, stats?: SimStats) {
     if (!c.over) endTurn(run);
   }
   const fragile1 = run.bag.items.filter((i) => GOODS[i.id].fragile).length;
+  const hp1 = Math.max(0, run.hp); // before win heals (獠牙护符) so the loss is what the fight cost
   if (c.over === "win") R.winCombat(run);
   else if (c.over === "fled") R.fledCombat(run);
   else R.loseCombat(run);
   if (stats) {
-    const e = (stats.enemies[id] ??= { n: 0, turns: 0, hpLost: 0, losses: 0, kind });
-    e.n++; e.turns += c.turn; e.hpLost += Math.max(0, hp0 - Math.max(0, run.hp)); if (c.over !== "win" && c.over !== "fled") e.losses++;
+    const e = (stats.enemies[`${floor0}:${id}:${kind}`] ??= { n: 0, turns: 0, hpLost: 0, losses: 0, kind });
+    e.n++; e.turns += c.turn; e.hpLost += Math.max(0, hp0 - hp1); if (c.over !== "win" && c.over !== "fled") e.losses++;
     stats.floors[run.floor].fightGold += run.gold - gold0;
     stats.cracks += fragile0 - fragile1;
     if (run.reward?.note.includes("淬炼")) stats.refines++;

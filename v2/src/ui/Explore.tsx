@@ -329,7 +329,7 @@ function StairsPrompt() {
   return (
     <div class="stairs-prompt panel">
       <h3>{top ? "塔顶" : "守关妖倒下了"}</h3>
-      <p>{top ? "负钟君已经倒下。" : `楼梯通往第 ${run.floor + 1} 层。上楼会回复一半已损失的气血。也可以现在带着货回镇上结算。`}</p>
+      <p>{top ? "负钟君已经倒下。" : `楼梯通往第 ${run.floor + 1} 层。上楼会回复 ${Math.round(R.CLIMB_HEAL * 100)}% 已损失的气血。也可以现在带着货回镇上结算。`}</p>
       <div class="row">
         {!top && <button type="button" class="btn primary" onClick={() => { sfx.bell(); R.climb(run); view.place(run.pos.x, run.pos.y, run.pos.dir); commit(); }}>上楼</button>}
         <button type="button" class="btn" onClick={() => { R.goHome(run); commit(); }}>回镇结算</button>

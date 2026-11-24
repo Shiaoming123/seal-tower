@@ -18,6 +18,11 @@ export function addGood(run: RunState, id: GoodId): boolean {
 }
 
 /** What a good would fetch at a floor's shop (defaults to the shop you're in). Gear sells back at half price. */
+/** How much each earlier sale of the same good lowers its price at this 狐市 (fraction of the base). */
+export const SELL_GLUT = 0.2;
+/** 狐市 pays this share of a good's value; carrying it home to town pays it in full. */
+export const SELL_RATE = 0.75;
+
 export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floor, sold = run.shop?.sold[id] ?? 0, uid?: number): number {
   const g = GOODS[id];
   const item = uid === undefined ? undefined : run.bag.items.find((i) => i.uid === uid);
@@ -28,9 +33,11 @@ export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floo
   const omen = floor === run.floor ? run.omen : "calm";
   const festival = omen === "festival" && id === "ash" ? 2 : 1;
   const market = omen === "market" ? 1.25 : 1;
-  const raw = Math.round(g.price * (m.mult[id] ?? 1) * (m.wanted === id ? 2 : 1) * festival * market);
+  const raw = Math.round(g.price * SELL_RATE * (m.mult[id] ?? 1) * (m.wanted === id ? 2 : 1) * festival * market);
   const material = g.tags?.includes("material") && bag.tagLevel(run.bag, "material") >= 1 ? 1 : 0;
-  return Math.max(1, raw - sold) + pin + material + (omen === "rain" ? 1 : 0);
+  // Each one of the same good already sold here knocks 20% off (at least 1 石): the buyer's shelf fills up.
+  const glut = Math.max(1, raw - Math.max(sold, Math.round(raw * SELL_GLUT * sold)));
+  return glut + pin + material + (omen === "rain" ? 1 : 0);
 }
 
 export function sellItem(run: RunState, uid: number): number {

@@ -14,6 +14,9 @@ const SELL = process.env.SELL !== "0";
 const WEAPONS: WeaponId[] = ["sword", "shield", "lamp", "abacus"];
 const pct = (a: number, b: number) => (b ? `${Math.round((100 * a) / b)}%` : "–");
 const avg = (a: number, b: number, d = 1) => (b ? (a / b).toFixed(d) : "–");
+const KIND: Record<string, string> = { fight: "普通", elite: "精英", guardian: "守关" };
+/** Stats keys are `floor:enemyId:kind`. */
+const name = (k: string) => { const [f, id, kind] = k.split(":"); return id ? `${ENEMIES[id]?.name ?? id}（${f} 层${kind === "fight" ? "" : KIND[kind]}）` : k; };
 
 describe.skipIf(!process.env.REPORT)("balance report", () => {
   it("writes docs/sim/report.md", () => {
@@ -41,12 +44,20 @@ describe.skipIf(!process.env.REPORT)("balance report", () => {
     lines.push("## 结局", "", "| 兵器 | 胜率 | 死在第 1 / 2 / 3 层 | 最常见的致死原因 |", "| --- | --- | --- | --- |");
     for (const w of WEAPONS) {
       const o = outcome[w];
-      const top = Object.entries(o.killer).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k, n]) => `${ENEMIES[k]?.name ?? k} ${n}`).join("、");
+      const top = Object.entries(o.killer).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k, n]) => `${name(k)} ${n}`).join("、");
       lines.push(`| ${w} | ${pct(o.win, SEEDS)} | ${o.died.slice(1).join(" / ")} | ${top} |`);
     }
-    lines.push("", "## 每只妖", "", "掉血 = 这一场打完你少了多少气血（含被打死那场）。致死率 = 打这只妖时死掉的比例。", "", "| 妖 | 类型 | 遭遇 | 平均回合 | 平均掉血 | 致死率 |", "| --- | --- | --- | --- | --- | --- |");
-    for (const [id, e] of Object.entries(all.enemies).sort((a, b) => b[1].hpLost / b[1].n - a[1].hpLost / a[1].n)) {
-      lines.push(`| ${ENEMIES[id].name} | ${e.kind} | ${e.n} | ${avg(e.turns, e.n)} | ${avg(e.hpLost, e.n)} | ${pct(e.losses, e.n)} |`);
+    lines.push("", "## 每只妖", "", "掉血 = 这一场打完你少了多少气血（含被打死那场）。致死率 = 打这只妖时死掉的比例。", "", "| 层 | 妖 | 类型 | 遭遇 | 平均回合 | 平均掉血 | 致死率 |", "| --- | --- | --- | --- | --- | --- | --- |");
+    const rows = Object.entries(all.enemies).map(([k, e]) => ({ floor: Number(k.split(":")[0]), id: k.split(":")[1], e }));
+    rows.sort((a, b) => a.floor - b.floor || b.e.hpLost / b.e.n - a.e.hpLost / a.e.n);
+    for (const { floor, id, e } of rows) {
+      lines.push(`| ${floor} | ${ENEMIES[id].name} | ${KIND[e.kind] ?? e.kind} | ${e.n} | ${avg(e.turns, e.n)} | ${avg(e.hpLost, e.n)} | ${pct(e.losses, e.n)} |`);
+    }
+    lines.push("", "### 每层普通妖合计", "", "| 层 | 遭遇 | 平均掉血 | 致死率 |", "| --- | --- | --- | --- |");
+    for (const f of [1, 2, 3]) {
+      const n = rows.filter((r) => r.floor === f && r.e.kind === "fight");
+      const sum = (k: "n" | "hpLost" | "losses") => n.reduce((a, r) => a + r.e[k], 0);
+      lines.push(`| ${f} | ${sum("n")} | ${avg(sum("hpLost"), sum("n"))} | ${pct(sum("losses"), sum("n"))} |`);
     }
     lines.push("", "## 每层收支（平均每局到达这一层时）", "", "| 层 | 到达 | 战斗得石 | 卖货得石 | 委托得石 | 买牌 | 买灯油 | 买药等 | 灯油耗尽 | 离开时气血 | 离开时石 |", "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |");
     for (const f of [1, 2, 3]) {
