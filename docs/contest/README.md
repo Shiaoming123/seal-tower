@@ -22,12 +22,19 @@
 | 2b | 宣传主视觉（重画） | ✅ Codex 交付无字图（ART-011），Claude 审图加字（CONTEST-002），你已确认 | 已完成 | [宣传美术需求](宣传美术需求.md) · [无字图](media/promo/) · [加字稿](media/cover-review/) |
 | 3 | 报名审核 | ⏳ **11-24 已提交报名，待审核**。小红书帖子已公开（[链接](https://xhslink.cn/o/ABLiArehEAG)，含 5 个话题、@Qoder CN、@魔搭ModelScope社区，带「含 AI 生成内容」声明） | 主办方审核；**你**：留意审核结果，被退回就按理由改帖再交 | 官网报名页显示「您已报名」（截图含真实姓名，不进公开仓库） |
 | 4 | 创空间部署包 | ✅ 已生成（含新素材、新封面和界面修复，5.4 MB），本地 iframe 三项验收通过 | 我们已做 | `cd v2 && npm run pack:studio` → `v2/dist-studio/`、`v2/dist-studio.zip` |
-| 5 | 创空间上线 | ✅ 11-24 已建并部署，**运行中，目前非公开**：https://modelscope.cn/studios/Shiaoming/zhanyaota （Static、免费 CPU、MIT、封面为横版主视觉；网页上传扁平包 201 个文件） | Claude 经你同意代为操作；**你**：决定何时改为公开 | [创空间上传步骤.md](创空间上传步骤.md) |
-| 6 | 上线后检查 | ⏳ 部分完成：已登录状态下桌面实测标题页、接单、进塔、迷宫、签文卡、开宝箱、声音菜单都正常。未登录访问和手机尺寸要等改成公开后再测 | Claude（改公开后用本地无痕浏览器和 390×844 触屏模拟测公开地址） | 同上第 4 节 |
+| 5 | 创空间上线 | ✅ 11-24 已建、部署并**公开**：https://modelscope.cn/studios/Shiaoming/zhanyaota （Static、免费 CPU、MIT、封面为横版主视觉；网页上传扁平包 201 个文件） | Claude 经你同意代为操作 | [创空间上传步骤.md](创空间上传步骤.md) |
+| 6 | 上线后检查 | ✅ 公开后用未登录浏览器测过：桌面、iPhone 13、Pixel 7 都能打开、进塔、用方向键走路，0 报错；手机 UA 下魔搭自动切手机版页面，游戏铺满屏幕用竖屏布局。发现 iPhone 矮屏标题折行，已修，待重新上传 | Claude | 同上第 4 节 |
 | 7 | 创作手记 | ✅ 草稿完成，待补试玩链接、视频和配图 | 我们补链接；**你**审阅后发到魔搭「开发者实践」 | [创作手记-v2草稿.md](创作手记-v2草稿.md) |
 | 8 | 演示视频 | ✅ 见下方 | 我们已录；你上传到手记里 | `media/demo.mp4` |
 | 9 | 官网最终提交 | ⏳ 待做 | **你**：在 https://mseo-ai-inf.ms.show/submit 填创空间链接和手记链接 | — |
 | 10 | 评审期维持可玩 | ⏳ 12-02 至 12-06 | 你：别删空间、别改私有 | — |
+
+## 游戏直链与网址参数
+
+- 给人玩：https://modelscope.cn/studios/Shiaoming/zhanyaota
+- 游戏本身的直链：https://shiaoming-zhanyaota.ms.show/ 。打开后会跳到魔搭页面（`?mode=full`），并把直链上的参数放进 `app_path` 传给游戏框。
+- **带参数要用直链**，例如 `https://shiaoming-zhanyaota.ms.show/?seed=任意文字`（复现同一座塔）、`https://shiaoming-zhanyaota.ms.show/?playtest=1`（试玩记录，GAME-001）。11-24 实测：桌面和 iPhone UA 下，游戏框都收到了 `?seed=…&playtest=1`。在魔搭页面地址后面加参数（`modelscope.cn/studios/…/zhanyaota?seed=…`）**传不进去**。
+- `?playtest=1` 要等包含 GAME-001 的版本上传部署后才生效，部署后再实测一次结算页的「复制本局试玩记录」。
 
 ## 演示视频
 

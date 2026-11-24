@@ -185,6 +185,7 @@ async function run(vpName, viewport) {
 
 await run("desktop", { width: 1280, height: 720 });
 await run("portrait", { width: 390, height: 844 });
+await run("phone-short", { width: 390, height: 664 }); // iPhone Safari/Chrome visible area inside the ModelScope mobile page
 await writeFile(`${out}/report.json`, JSON.stringify(report, null, 2));
 await browser.close();
 await server.close();
