@@ -120,11 +120,18 @@ for (let step = 0; step < Number(process.env.STEPS ?? 60) && seen.size < 11; ste
   if (r.screen === "reward") {
     await first("07-reward");
     const cards = page.locator(".card-offer .card");
-    if (await cards.count()) await cards.first().click();
-    const relic = page.getByRole("button", { name: "拿走" });
+    // Choices take two taps (UI-008): the first only picks the card, the second learns it.
+    if (await cards.count()) {
+      const deck0 = await page.evaluate(() => window.__seal.runSig.value.deck.length);
+      await cards.first().click();
+      if ((await page.evaluate(() => window.__seal.runSig.value.deck.length)) !== deck0) throw new Error("one tap learned a reward card");
+      await cards.first().click();
+      if ((await page.evaluate(() => window.__seal.runSig.value.deck.length)) !== deck0 + 1) throw new Error("second tap did not learn the card");
+    }
+    const relic = page.getByRole("button", { name: "拿走", exact: true });
     if (await relic.count()) await relic.click();
     const choice = page.locator(".relic-choice");
-    if (await choice.count()) await choice.first().click();
+    if (await choice.count()) { await choice.first().click(); await choice.first().click(); }
     if (!seen.has("09-bag")) { await page.keyboard.press("b"); await first("09-bag"); await page.keyboard.press("Escape"); }
     await page.getByRole("button", { name: /继续|回镇/ }).click();
     continue;

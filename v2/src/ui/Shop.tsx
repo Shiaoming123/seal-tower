@@ -30,8 +30,15 @@ export function Shop() {
     if (ok === true || ok === null) { sfx.coin(); setLine(`${what}归你了。`); settlePose(); commit(); }
     else say(typeof ok === "string" ? ok : "石不够");
   };
+  // Buying takes two taps: the first marks the ware ("再点一下买下"), the second pays. Tapping elsewhere clears it.
+  const [armed, setArmed] = useState<string | null>(null);
+  const tap = (key: string, act: () => void) => {
+    if (armed !== key) { sfx.click(); setArmed(key); return; }
+    setArmed(null); act();
+  };
+  const arm = (key: string) => (armed === key ? "armed" : "");
   return (
-    <div class="shop" style={{ backgroundImage: `linear-gradient(rgba(10,5,4,0.55), rgba(10,5,4,0.85)), url(${ART.market})` }}>
+    <div class="shop" onPointerDown={(e) => { if (armed && !(e.target as HTMLElement).closest(".ware")) setArmed(null); }} style={{ backgroundImage: `linear-gradient(rgba(10,5,4,0.55), rgba(10,5,4,0.85)), url(${ART.market})` }}>
       <div class="shop-keeper">
         <img src={ART[pose]} alt="绯绡" draggable={false} />
         <MarketBoard />
@@ -42,8 +49,8 @@ export function Shop() {
           <h3>技法 <small>学了就进牌组</small></h3>
           <div class="wares">
             {s.cards.map((w, i) => (
-              <div class={`ware ${w.sold ? "sold" : ""}`}>
-                <CardView id={w.id} up={false} preview={preview} small onClick={() => !w.sold && buy(R.buyCard(run, i), `「${CARDS[w.id].name}」`)} />
+              <div class={`ware ${w.sold ? "sold" : ""} ${arm(`card${i}`)}`}>
+                <CardView id={w.id} up={false} preview={preview} small onClick={() => !w.sold && tap(`card${i}`, () => buy(R.buyCard(run, i), `「${CARDS[w.id].name}」`))} />
                 <span class={`tag-price ${run.gold < w.price ? "poor" : ""}`}>{w.sold ? "已售" : `${w.price} 石`}</span>
               </div>
             ))}
@@ -56,7 +63,7 @@ export function Shop() {
               const g = GOODS[w.id];
               const size = bag.sizeOf(w.id, 0);
               return (
-                <button type="button" class={`ware item-ware ${w.sold ? "sold" : ""}`} onClick={() => !w.sold && buy(R.buyItem(run, list, i), g.name)}
+                <button type="button" class={`ware item-ware ${w.sold ? "sold" : ""} ${arm(`${list}${i}`)}`} onClick={() => !w.sold && tap(`${list}${i}`, () => buy(R.buyItem(run, list, i), g.name))}
                   title={g.text}>
                   <img src={ART[g.icon]} alt="" draggable={false} />
                   <b>{g.name}</b>
@@ -72,20 +79,20 @@ export function Shop() {
           <h3>法宝 <small>不占格子</small></h3>
           <div class="wares items">
             {s.relics.map((w, i) => (
-              <button type="button" class={`ware item-ware ${w.sold ? "sold" : ""}`} onClick={() => !w.sold && buy(R.buyRelic(run, i), RELICS[w.id].name)}>
+              <button type="button" class={`ware item-ware ${w.sold ? "sold" : ""} ${arm(`relic${i}`)}`} onClick={() => !w.sold && tap(`relic${i}`, () => buy(R.buyRelic(run, i), RELICS[w.id].name))}>
                 <Art id={relicIcon(w.id)} />
                 <b>{RELICS[w.id].name}</b>
                 <span class="desc">{RELICS[w.id].text}</span>
                 <span class={`tag-price ${run.gold < w.price ? "poor" : ""}`}>{w.sold ? "已售" : `${w.price} 石`}</span>
               </button>
             ))}
-            <button type="button" class="ware item-ware service" onClick={() => buy(R.buyOil(run), "灯油")} title="每买一次贵 2 石">
+            <button type="button" class={`ware item-ware service ${arm("oil")}`} onClick={() => tap("oil", () => buy(R.buyOil(run), "灯油"))} title="每买一次贵 2 石">
               <Art id="lamp" />
               <b>灯油 +{s.oil.amount}</b>
               <span class="desc">每走一步烧 1 点。你现在有 {run.oil} / {run.maxOil}。</span>
               <span class={`tag-price ${run.gold < R.oilCost(run) ? "poor" : ""}`}>{R.oilCost(run)} 石</span>
             </button>
-            <button type="button" class={`ware item-ware service ${s.removed ? "sold" : ""}`} onClick={() => !s.removed && (R.startRemove(run) ? commit() : say("石不够"))}>
+            <button type="button" class={`ware item-ware service ${s.removed ? "sold" : ""} ${arm("remove")}`} onClick={() => !s.removed && tap("remove", () => (R.startRemove(run) ? commit() : say("石不够")))}>
               <Art id="grit" />
               <b>删一张牌</b>
               <span class="desc">把不想要的牌从牌组里去掉。</span>
@@ -95,7 +102,7 @@ export function Shop() {
         </div>
       </div>
       <div class="shop-sell panel">
-        <h3>卖货 <small>点货物直接卖出。绯绡压价收货，比带回镇上折库银少两三成（随行情浮动）；同一种卖得越多越便宜。装备半价回收，要点两下</small></h3>
+        <h3>卖货 <small>点一下看价，再点一下卖出。绯绡压价收货，比带回镇上折库银少两三成（随行情浮动）；同一种卖得越多越便宜。装备半价回收</small></h3>
         <p class="wanted">今天高价收：<GoodChip id={s.wanted} /> 价格翻倍</p>
         <BagGrid mode="sell" cell={44} />
         {run.orders.map((_, i) => {

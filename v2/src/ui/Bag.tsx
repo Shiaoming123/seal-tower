@@ -4,7 +4,7 @@ import { CARDS } from "../data/cards";
 import { GOODS, KIND_LABEL, REFINES, TAGS, TAG_IDS } from "../data/goods";
 import * as bag from "../game/bag";
 import { POUCH_SLOTS, canExpand, sewPiece, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
-import type { GoodId, RunState } from "../game/types";
+import type { GoodId, PlacedGood, RunState } from "../game/types";
 import { ART } from "../render/assets";
 import { commit, overlay, say, useRun } from "./store";
 
@@ -27,7 +27,9 @@ function stagePoint(e: PointerEvent) {
  * The shaped inventory. Drag to move, R / right-click / the button to rotate.
  * Tapping an item selects it; the details panel has a fixed height so the page never jumps.
  */
-export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?: number }) {
+/** `details`: "panel" shows the fixed details panel beside the grid; "popover" shows it as a small card next to the
+ *  tapped item (screens with no room for the panel, like the fight reward). */
+export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manage" | "sell"; cell?: number; details?: "panel" | "popover" }) {
   const run = useRun();
   const b = run.bag;
   const gridRef = useRef<HTMLDivElement>(null);
@@ -88,6 +90,18 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
   };
 
   const sel = run.bag.items.find((it) => it.uid === selected) ?? null;
+  // Popover details: next to the grid, level with the tapped item; a tap anywhere else closes it.
+  const popRef = useRef<HTMLDivElement>(null);
+  const popAt = (it: PlacedGood) => ({ left: `${b.w * cell + 12}px`, top: `${Math.max(0, Math.min(it.y, b.h - 2)) * cell}px`, "--below": `${(it.y + bag.sizeOf(it.id, it.rot).h) * cell + 8}px` } as never);
+  useEffect(() => {
+    if (details !== "popover" || selected === null) return;
+    const close = (e: PointerEvent) => {
+      const t = e.target as HTMLElement;
+      if (!popRef.current?.contains(t) && !t.closest(".bag-grid .item")) setSelected(null);
+    };
+    document.addEventListener("pointerdown", close);
+    return () => document.removeEventListener("pointerdown", close);
+  }, [details, selected]);
   // Items lit up by the selected accessory (or the accessories boosting the selected item).
   const linked = new Set(sel ? bag.neighbours(b, sel).filter((o) => GOODS[sel.id].aura || GOODS[o.id].aura).map((o) => o.uid) : []);
   const preview = held && hover ? { cells: bag.shapeOf(held.id, held.rot).map(([x, y]) => [x + hover.x, y + hover.y] as [number, number]), ok: bag.fits(b, held.id, hover.x, hover.y, held.rot, held.from === "bag" ? held.uid : -1) } : null;
@@ -130,9 +144,11 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
               onClick={() => {
                 if (moved.current) return;
                 if (mode === "sell") {
-                  if (g.kind === "gear" && confirmSell !== it.uid) {
+                  // Every sale takes two taps: the first shows the price, the second sells.
+                  if (confirmSell !== it.uid) {
+                    sfx.click();
                     setConfirmSell(it.uid);
-                    say(`再点一次，${sellPrice(run, it.id)} 石卖掉${g.name}（它的牌也会离开牌组）`, 3000);
+                    say(`再点一次，${sellPrice(run, it.id, run.floor, run.shop?.sold[it.id] ?? 0, it.uid)} 石卖掉${g.name}${g.kind === "gear" ? "（它的牌也会离开牌组）" : ""}`, 3000);
                     return;
                   }
                   const p = sellItem(run, it.uid); sfx.coin(); say(`卖出${g.name}，得 ${p} 石`); setSelected(null); setConfirmSell(null); commit();
@@ -156,7 +172,13 @@ export function BagGrid({ mode, cell = CELL }: { mode: "manage" | "sell"; cell?:
           <span class="keys-only">R 旋转</span>
         </div>
       )}
-      {mode === "manage" && <ItemDetails run={run} uid={sel?.uid ?? null} onRotate={rotateSelected} onDone={() => setSelected(null)} onSew={setSewing} />}
+      {mode === "manage" && details === "panel" && <ItemDetails run={run} uid={sel?.uid ?? null} onRotate={rotateSelected} onDone={() => setSelected(null)} onSew={setSewing} />}
+      {mode === "manage" && details === "popover" && sel && (
+        <div class="item-pop" ref={popRef} style={popAt(sel)}>
+          <button type="button" class="pop-close" aria-label="收起" onClick={() => setSelected(null)}>×</button>
+          <ItemDetails run={run} uid={sel.uid} onRotate={rotateSelected} onDone={() => setSelected(null)} onSew={setSewing} />
+        </div>
+      )}
       <div class="bag-side">
         {mode !== "sell" && <TagSets run={run} />}
         {(mode !== "sell" || run.pouch.length > 0) && <Pouch run={run} mode={mode} held={held} onDrag={(index, e) => startDrag({ from: "pouch", index, id: run.pouch[index], rot: 0 }, e)} />}
@@ -284,7 +306,7 @@ function Pouch({ run, mode, held, onDrag }: { run: RunState; mode: "manage" | "s
     if (locked) return;
     if (mode === "sell") {
       const id = run.pouch[i];
-      if (GOODS[id].kind === "gear" && confirm !== i) { setConfirm(i); say(`再点一次，${sellPrice(run, id)} 石卖掉${GOODS[id].name}`, 3000); return; }
+      if (confirm !== i) { sfx.click(); setConfirm(i); say(`再点一次，${sellPrice(run, id)} 石卖掉${GOODS[id].name}`, 3000); return; }
       const p = sellPouch(run, i); sfx.coin(); say(`卖出${GOODS[id].name}，得 ${p} 石`); setConfirm(null); commit(); return;
     }
     if (fromPouch(run, i)) { sfx.click(); commit(); }
