@@ -142,6 +142,9 @@ async function check(name, ctxOpts, climb = false) {
       if ((await state())?.screen !== "combat") return;
       // Climb pass: one card ends each fight, so the run reaches every floor within the time box.
       if (climb) await frame.evaluate(() => { const S = window.__seal, c = S.runSig.value?.combat; if (c?.enemy && c.enemy.hp > 1) { c.enemy.hp = 1; S.commit(); } });
+      // First-encounter tips sit over the hand; read and close them like a player would.
+      const tip = frame.getByRole("button", { name: "知道了" });
+      if (await tip.count()) await press(tip.first()).catch(() => {});
       for (let i = 0; i < 6; i++) {
         const cards = frame.locator(".hand .card:not(.disabled)");
         if (!(await cards.count())) break;
@@ -170,7 +173,8 @@ async function check(name, ctxOpts, climb = false) {
     // (proves every floor's art and music load from the package; not a balance result).
     // Any pass: this simple bot cannot find oil in the dark (an empty lamp stops minimap auto-walk and exploring),
     // so relight it; the check is about the package running a whole run, not about difficulty.
-    if (!climb && s.screen === "explore" && s.oil <= 0) await frame.evaluate(() => { const S = window.__seal, r = S.runSig.value; if (r) { r.oil = r.maxOil; S.commit(); } });
+    // It also only walks to tiles it has seen, so under the fog omen it walks into walls until the deadline: reveal the map.
+    if (!climb && s.screen === "explore") await frame.evaluate(() => { const S = window.__seal, r = S.runSig.value; if (r && (r.oil <= 0 || !r.dungeon.seen.every(Boolean))) { if (r.oil <= 0) r.oil = r.maxOil; r.dungeon.seen.fill(true); S.commit(); } });
     if (climb && s.screen === "explore") await frame.evaluate(() => { const S = window.__seal, r = S.runSig.value; if (r) { r.maxHp = Math.max(r.maxHp, 400); r.hp = r.maxHp; r.oil = r.maxOil; r.dungeon.seen.fill(true); S.commit(); } });
     try {
       if (s.screen === "combat") { await once("03-combat"); await fight(); await page.waitForTimeout(1200); continue; }
@@ -194,7 +198,9 @@ async function check(name, ctxOpts, climb = false) {
         if (await frame.locator(".stairs-prompt").count()) {
           await once(`07-stairs-f${s.floor}`);
           const up = frame.getByRole("button", { name: "上楼" });
-          if (await up.count()) await press(up.first()); else await btn("回镇结算");
+          // Only the climb pass goes up; the other passes retreat at the first stairs so their run ends in minutes
+          // and the town settlement and restart get checked (a surviving bot could otherwise run past the deadline).
+          if (climb && await up.count()) await press(up.first()); else await btn("回镇结算");
           await page.waitForTimeout(900); continue;
         }
         await walkTo(climb ? [["stairs", "guardian"], ALL] : [ALL]);
