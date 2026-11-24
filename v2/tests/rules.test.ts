@@ -1020,3 +1020,52 @@ describe("REVIEW-001 follow-up review", () => {
     expect(run.reward!.note).not.toContain("毁了");
   });
 });
+
+describe("GAME-009 签文 that change decisions", () => {
+  const atRest = (run: RunState) => {
+    const e: Entity = { id: 7777, kind: "rest", x: run.pos.x, y: run.pos.y, done: false };
+    run.dungeon.entities.push(e); run.at = e.id; run.screen = "rest";
+    return e;
+  };
+  it("香火旺: a 旧灯台 allows two different choices, then it's spent", async () => {
+    const { rest } = await import("../src/game/run");
+    const run = createRun(101, "sword", "lamp");
+    run.omen = "incense"; run.hp = 10; run.oil = 10;
+    const e = atRest(run);
+    rest(run, "heal");
+    expect(run.screen).toBe("rest");
+    const hp = run.hp;
+    rest(run, "heal"); // same choice twice does nothing
+    expect(run.hp).toBe(hp);
+    rest(run, "oil");
+    expect(e.done).toBe(true);
+    expect(run.screen).toBe("explore");
+  });
+  it("without 香火旺 a 旧灯台 allows one choice", async () => {
+    const { rest } = await import("../src/game/run");
+    const run = createRun(102, "sword", "lamp");
+    run.omen = "calm"; run.hp = 10;
+    const e = atRest(run);
+    rest(run, "heal");
+    expect(e.done).toBe(true);
+  });
+  it("货紧: handing an order in at a 狐市 doubles its coin", async () => {
+    const { orderReward } = await import("../src/game/run");
+    const run = createRun(103, "sword", "lamp");
+    const ord = run.orders.find((o) => (orderReward(o).gold ?? 0) > 0) ?? run.orders[0];
+    const base = orderReward(ord, run).gold;
+    run.omen = "demand"; run.screen = "shop";
+    expect(orderReward(ord, run).gold).toBe(base * 2);
+    run.screen = "result";
+    expect(orderReward(ord, run).gold).toBe(base);
+  });
+  it("精英巡夜: an elite's relic becomes a pick of three", () => {
+    const run = createRun(104, "sword", "lamp");
+    run.omen = "patrol";
+    const c = fightWith(run, "mirror-fox", "elite");
+    c.enemy.hp = 0; c.over = "win";
+    winCombat(run);
+    expect(run.reward!.relic).toBeNull();
+    expect(run.reward!.relicChoices?.length).toBe(3);
+  });
+});

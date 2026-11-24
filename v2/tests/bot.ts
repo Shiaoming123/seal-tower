@@ -134,9 +134,13 @@ export function playRun(run: RunState, opts: { elites?: boolean; onFloor?: () =>
       continue;
     }
     if (run.screen === "rest") {
-      if (run.oil < 25) R.rest(run, "oil");
-      else if (run.hp < run.maxHp * 0.6) R.rest(run, "heal");
-      else { R.rest(run, "upgrade"); R.applyCardPick(run, run.deck.find((c) => !c.up && c.id !== "strike" && c.id !== "defend")?.uid ?? run.deck[0].uid); }
+      // 香火旺 allows two different choices (GAME-009): pick the most needed one not used yet, until it lets you go.
+      const used = R.currentEntity(run)?.restUsed ?? [];
+      if (run.oil < 25 && !used.includes("oil")) R.rest(run, "oil");
+      else if (run.hp < run.maxHp * 0.6 && !used.includes("heal")) R.rest(run, "heal");
+      else if (!used.includes("upgrade") && run.deck.some((c) => !c.up)) { R.rest(run, "upgrade"); R.applyCardPick(run, run.deck.find((c) => !c.up && c.id !== "strike" && c.id !== "defend")?.uid ?? run.deck.find((c) => !c.up)!.uid); }
+      else if (!used.includes("heal")) R.rest(run, "heal");
+      else R.rest(run, "oil");
       continue;
     }
     if (run.screen === "shop") {

@@ -41,7 +41,7 @@ export function sellPrice(run: RunState, id: GoodId, floor: 1 | 2 | 3 = run.floo
   const material = g.tags?.includes("material") && bag.tagLevel(run.bag, "material") >= 1 ? 2 : 0;
   // Each one of the same good already sold here knocks 20% off (at least 1 石): the buyer's shelf fills up. The
   // markdown applies to the whole price, flat bonuses included (REVIEW-001: bonuses used to dodge it).
-  const full = raw + pin + material + (omen === "rain" ? 1 : 0);
+  const full = raw + pin + material + (omen === "rain" ? 2 : 0);
   return Math.max(1, full - Math.max(sold, Math.round(full * SELL_GLUT * sold)));
 }
 

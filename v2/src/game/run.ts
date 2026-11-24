@@ -225,8 +225,9 @@ export function winCombat(run: RunState) {
   const reward: RewardState = {
     gold, goods, from: c.kind, note: note.trim(),
     cards: cardChoices(run, c.kind === "fight" ? "normal" : "elite"),
-    relic: c.kind === "elite" && run.floor < 3 ? randomRelic(run, "common") : null,
-    relicChoices: c.kind === "guardian" && run.floor < 3 ? pickRelics(run, 3) : null,
+    // 精英巡夜: the elite's relic becomes a pick of three (GAME-009).
+    relic: c.kind === "elite" && run.floor < 3 && run.omen !== "patrol" ? randomRelic(run, "common") : null,
+    relicChoices: (c.kind === "guardian" || (c.kind === "elite" && run.omen === "patrol")) && run.floor < 3 ? pickRelics(run, 3) : null,
   };
   run.combat = null;
   run.reward = reward;
@@ -438,14 +439,17 @@ export function orderNeeds(ord: RunOrder): Partial<Record<GoodId, number>> {
 }
 
 /** Reward scaled by favour: +25% coin per level, +1 renown per two levels. */
-export function orderReward(ord: RunOrder) {
+/** 货紧: handing an order in at this floor's 狐市 doubles its coin (GAME-009). */
+export const demandBoost = (run?: RunState) => !!run && run.omen === "demand" && run.screen === "shop";
+
+export function orderReward(ord: RunOrder, run?: RunState) {
   const o = ORDERS[ord.id];
-  const gold = Math.round((o.reward.gold ?? 0) * (1 + 0.25 * ord.level)) + (ord.level >= 1 ? o.regular.bonusGold ?? 0 : 0);
+  const gold = (Math.round((o.reward.gold ?? 0) * (1 + 0.25 * ord.level)) + (ord.level >= 1 ? o.regular.bonusGold ?? 0 : 0)) * (demandBoost(run) ? 2 : 1);
   return { gold, salve: o.reward.salve ?? 0, relic: o.reward.relic, renown: o.renown + Math.floor(ord.level / 2) };
 }
 
-export function orderRewardText(ord: RunOrder): string {
-  const r = orderReward(ord);
+export function orderRewardText(ord: RunOrder, run?: RunState): string {
+  const r = orderReward(ord, run);
   const parts = [r.gold ? `${r.gold} 石` : "", r.salve ? `${r.salve} 瓶金疮药` : "", r.relic ? "一件稀有法宝" : ""].filter(Boolean);
   return [...parts, `声望 +${r.renown}`].join(" · ");
 }
@@ -473,7 +477,7 @@ export function deliverOrder(run: RunState, i = 0): string | null {
   }
   ord.done = true;
   bump(run, "ordersDone");
-  const r = orderReward(ord);
+  const r = orderReward(ord, run);
   const lines: string[] = [];
   if (r.gold) { run.gold += r.gold; run.stats.goldEarned += r.gold; lines.push(`${r.gold} 石`); }
   for (let k = 0; k < r.salve; k++) addGood(run, "salve");
@@ -499,7 +503,7 @@ export function chooseEvent(run: RunState, i: number): boolean {
 /** Leave the event. If it turned into a fight, the fight starts here. */
 export function closeEvent(run: RunState) {
   const e = currentEntity(run);
-  if (run.omen === "incense") run.hp = Math.min(run.maxHp, run.hp + 5);
+  if (run.omen === "incense") run.hp = Math.min(run.maxHp, run.hp + INCENSE_HEAL);
   run.event = null;
   if (e && run.eventFight) {
     const f = run.eventFight;
@@ -515,12 +519,28 @@ export function closeEvent(run: RunState) {
 
 export const REST_OIL = 40;
 
+/** 香火旺: events heal this much. */
+export const INCENSE_HEAL = 8;
+/** How many different things a 旧灯台 allows: two under 香火旺 (GAME-009), else one. */
+export const restAllowance = (run: RunState) => (run.omen === "incense" ? 2 : 1);
+
 export function rest(run: RunState, choice: "heal" | "upgrade" | "oil") {
   const e = currentEntity(run);
+  if (e?.restUsed?.includes(choice)) return;
   if (choice === "upgrade") { run.cardPick = { mode: "upgrade", source: "rest" }; return; }
   if (choice === "heal") run.hp = Math.min(run.maxHp, run.hp + Math.round(run.maxHp * 0.3));
   else run.oil = Math.min(run.maxOil, run.oil + REST_OIL);
-  if (e) e.done = true;
+  restUsed(run, choice);
+}
+
+/** Record one 旧灯台 choice; leave once the allowance is spent. */
+function restUsed(run: RunState, choice: "heal" | "upgrade" | "oil") {
+  const e = currentEntity(run);
+  if (e) {
+    e.restUsed = [...(e.restUsed ?? []), choice];
+    if (e.restUsed.length < restAllowance(run)) return;
+    e.done = true;
+  }
   run.at = null;
   run.screen = "explore";
 }
@@ -536,12 +556,7 @@ export function applyCardPick(run: RunState, uid: number | null) {
   else if (pickState.mode === "copy") run.deck.push({ ...card, uid: run.nextUid++ });
   else run.deck = run.deck.filter((c) => c.uid !== uid);
   if (pickState.source === "shop" && run.shop) { run.gold -= pickState.price ?? 0; run.shop.removed = true; }
-  if (pickState.source === "rest") {
-    const e = currentEntity(run);
-    if (e) e.done = true;
-    run.at = null;
-    run.screen = "explore";
-  }
+  if (pickState.source === "rest") restUsed(run, "upgrade");
 }
 
 // ---------------------------------------------------------------- floors

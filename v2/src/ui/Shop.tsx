@@ -125,7 +125,7 @@ export function Shop() {
                 <>
                   <span>{prog.parts.map((p) => `${GOODS[p.id].name} ${Math.min(p.have, p.need)}/${p.need}`).join("，")}</span>
                   <button type="button" class="btn small primary" disabled={!prog.ready} onClick={() => { const r = R.deliverOrder(run, i); if (r) { sfx.coin(); setLine(r); commit(); } }}>
-                    {prog.ready ? `交货 · ${R.orderRewardText(prog.ord)}` : "货还不够"}
+                    {prog.ready ? `交货 · ${R.orderRewardText(prog.ord, run)}${R.demandBoost(run) ? "（货紧，石翻倍）" : ""}` : "货还不够"}
                   </button>
                 </>
               )}

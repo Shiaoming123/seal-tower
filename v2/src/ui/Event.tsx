@@ -74,24 +74,29 @@ export function EventScreen() {
 export function RestScreen() {
   const run = useRun();
   const heal = Math.min(Math.round(run.maxHp * 0.3), run.maxHp - run.hp);
+  // 香火旺 allows two different choices here (GAME-009); each one used is greyed out.
+  const e = R.currentEntity(run);
+  const used = e?.restUsed ?? [];
+  const allow = R.restAllowance(run);
+  const opt = (id: "heal" | "upgrade" | "oil", title: string, text: string) => (
+    <button type="button" class={`option ${used.includes(id) ? "locked" : ""}`} disabled={used.includes(id)} onClick={() => { sfx.click(); R.rest(run, id); commit(); }}>
+      <b>{title}</b><span>{used.includes(id) ? "（已经做过了）" : text}</span>
+    </button>
+  );
   return (
     <div class="event rest" style={{ backgroundImage: `linear-gradient(rgba(5,3,2,0.55), rgba(5,3,2,0.75)), url(${ART[FLOOR_BG[run.floor]]})` }}>
       <div class="event-art"><img src={ART.lamp} alt="" draggable={false} /></div>
       <div class="event-box panel">
         <h2>旧灯台</h2>
-        <p class="event-text">守关妖就在不远处。灯台下还算安全，只够做一件事：歇口气、磨剑，或者把灯台的油倒进自己的灯里。</p>
+        <p class="event-text">{allow > 1
+          ? `守关妖就在不远处。今晚香火旺，灯台的香够用两回：可以做两件不同的事${used.length ? `（还能再做 ${allow - used.length} 件）` : ""}。`
+          : "守关妖就在不远处。灯台下还算安全，只够做一件事：歇口气、磨剑，或者把灯台的油倒进自己的灯里。"}</p>
         <div class="options">
-          <button type="button" class="option" onClick={() => { sfx.click(); R.rest(run, "heal"); commit(); }}>
-            <b>歇一会</b><span>回复 {heal} 气血（最多回复最大气血的 30%）。</span>
-          </button>
-          <button type="button" class="option" onClick={() => { sfx.click(); R.rest(run, "upgrade"); commit(); }}>
-            <b>磨剑</b><span>升级 1 张牌。</span>
-          </button>
-          <button type="button" class="option" onClick={() => { sfx.click(); R.rest(run, "oil"); commit(); }}>
-            <b>添灯油</b><span>灯油 +{Math.min(R.REST_OIL, run.maxOil - run.oil)}（现在 {run.oil} / {run.maxOil}）。</span>
-          </button>
+          {opt("heal", "歇一会", `回复 ${heal} 气血（最多回复最大气血的 30%）。`)}
+          {opt("upgrade", "磨剑", "升级 1 张牌。")}
+          {opt("oil", "添灯油", `灯油 +${Math.min(R.REST_OIL, run.maxOil - run.oil)}（现在 ${run.oil} / ${run.maxOil}）。`)}
           <button type="button" class="option" onClick={() => { run.at = null; run.screen = "explore"; commit(); }}>
-            <b>先不用</b><span>以后还能回来。</span>
+            <b>{used.length ? "先走" : "先不用"}</b><span>{used.length ? "剩下的一回以后还能回来用。" : "以后还能回来。"}</span>
           </button>
         </div>
       </div>

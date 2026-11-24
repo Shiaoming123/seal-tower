@@ -135,6 +135,8 @@ export interface Entity {
   dmgAdd?: number;
   event?: string;
   done: boolean;
+  /** 旧灯台 under 香火旺: the choices already used (it allows two different ones). */
+  restUsed?: ("heal" | "upgrade" | "oil")[];
 }
 
 export interface Dungeon {
