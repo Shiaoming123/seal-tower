@@ -1,0 +1,165 @@
+// Find text that spills out of its box or gets clipped, on every screen, desktop and 390×844 portrait.
+// Opens title, help, achievements, codex (every entry), town (every order and weapon, build tab), and in a run:
+// explore, bag, deck, every monster's fight, every event, shop, rest, reward and result.
+// Usage: node tests/overflow-check.mjs [outDir]   (starts its own Vite dev server; needs system Chrome)
+import { chromium } from "playwright-core";
+import { createServer } from "vite";
+import { mkdir, writeFile } from "node:fs/promises";
+
+const out = process.argv[2] ?? ".cache/overflow";
+await mkdir(out, { recursive: true });
+const server = await createServer({ root: new URL("..", import.meta.url).pathname, server: { port: 0, host: "127.0.0.1" }, logLevel: "error" });
+await server.listen();
+const base = server.resolvedUrls.local[0];
+const browser = await chromium.launch({ channel: "chrome", headless: true });
+
+// Runs in the page: every visible text run is compared with its nearest visible box (background, border or inset frame).
+const scan = () => {
+  const vis = (el) => { const s = getComputedStyle(el); return s.display !== "none" && s.visibility !== "hidden" && +s.opacity > 0.05; };
+  const isBox = (el) => {
+    const s = getComputedStyle(el);
+    if (el === document.body || el.id === "app") return false;
+    const bg = s.backgroundColor !== "rgba(0, 0, 0, 0)" && s.backgroundColor !== "transparent";
+    const img = s.backgroundImage !== "none";
+    const border = ["Top", "Right", "Bottom", "Left"].some((k) => parseFloat(s[`border${k}Width`]) > 0 && s[`border${k}Style`] !== "none");
+    const inset = s.boxShadow.includes("inset");
+    const r = el.getBoundingClientRect();
+    return (bg || img || border || inset) && r.width * r.height < innerWidth * innerHeight * 0.6;
+  };
+  const name = (el) => {
+    const parts = [];
+    for (let e = el; e && parts.length < 3 && e !== document.body; e = e.parentElement) {
+      const c = [...e.classList].filter((x) => !/^(selected|on|active|kind-|disabled)/.test(x)).slice(0, 2).join(".");
+      parts.unshift(e.tagName.toLowerCase() + (c ? "." + c : ""));
+    }
+    return parts.join(" > ");
+  };
+  const found = new Map();
+  const add = (key, v) => { if (!found.has(key)) found.set(key, v); };
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+    const t = n.textContent.trim();
+    if (!t || !n.parentElement || !vis(n.parentElement)) continue;
+    let box = n.parentElement;
+    while (box && !isBox(box)) box = box.parentElement;
+    const range = document.createRange(); range.selectNodeContents(n);
+    const b = (box ?? document.body).getBoundingClientRect();
+    const rects = [...range.getClientRects()].filter((r) => r.width >= 1 && r.height >= 1);
+    for (const r of rects) {
+      const over = Math.max(r.bottom - b.bottom, r.right - b.right, b.top - r.top, b.left - r.left);
+      if (box && over > 2) { add("spill " + name(box), { kind: "spill", box: name(box), text: t.slice(0, 40), px: Math.round(over) }); break; }
+    }
+    // Clipped: the text itself lies outside an ancestor that hides overflow (scrolling panels are fine).
+    for (let a = n.parentElement; a && a !== document.body; a = a.parentElement) {
+      const st = getComputedStyle(a), ov = st.overflow + st.overflowX + st.overflowY;
+      if (/auto|scroll/.test(ov)) break; // a scrolling panel owns its overflow: the text can be scrolled to
+      if (!/hidden|clip/.test(ov) || st.textOverflow === "ellipsis") continue;
+      const c = a.getBoundingClientRect();
+      const out = rects.map((r) => Math.max(r.bottom - c.bottom, r.right - c.right, c.top - r.top, c.left - r.left)).reduce((m, v) => Math.max(m, v), 0);
+      if (out > 2) { add("clip " + name(a), { kind: "clip", box: name(a), text: t.slice(0, 40), px: Math.round(out) }); break; }
+    }
+  }
+  return [...found.values()];
+};
+
+const report = {};
+async function run(vpName, viewport) {
+  const page = await browser.newPage({ viewport, deviceScaleFactor: 1 });
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(String(e)));
+  const issues = [];
+  const check = async (where) => {
+    await page.waitForTimeout(350);
+    for (const i of await page.evaluate(scan)) {
+      const key = i.kind + " " + i.box;
+      const prev = issues.find((x) => x.key === key);
+      if (prev) { if (!prev.where.includes(where)) prev.where.push(where); continue; }
+      issues.push({ key, ...i, where: [where] });
+      await page.screenshot({ path: `${out}/${vpName}-${issues.length}.jpg`, type: "jpeg", quality: 60 });
+    }
+  };
+  const S = (fn, arg) => page.evaluate(fn, arg);
+  const click = async (loc) => { if (await loc.count()) { await loc.first().click({ timeout: 3000 }).catch(() => {}); await page.waitForTimeout(250); } };
+  const btn = (name) => click(page.getByRole("button", { name, exact: typeof name === "string" }));
+
+  await page.goto(base + "?seed=overflow");
+  await page.evaluate(() => localStorage.clear());
+  // A veteran profile: abacus and difficulties unlocked, every codex entry seen, every client at high favour,
+  // so the longest texts a returning player can see get checked too.
+  await page.evaluate(async () => {
+    const [E, G, R, C, A, O, T] = await Promise.all(["enemies", "goods", "relics", "codex", "achievements", "orders", "town"].map((m) => import(`/src/data/${m}.ts`)));
+    const ens = E.ENEMIES, goods = G.GOODS, relics = R.RELICS, chars = C.CHARACTERS, achs = A.ACHIEVEMENTS, orders = O.ORDERS;
+    const codex = [...Object.keys(ens).map((k) => "e:" + k), ...Object.keys(goods).map((k) => "g:" + k), ...Object.keys(relics ?? {}).map((k) => "r:" + k), ...chars.map((c) => "c:" + c.id)];
+    const favor = {}; for (const id of Object.keys(orders)) favor[id] = T.MAX_FAVOR; for (const c of chars) favor[c.id] = T.MAX_FAVOR;
+    localStorage.setItem("seal-tower.v2.profile", JSON.stringify({ renown: 20, runs: 12, wins: 4, bestFloor: 3, ordersDone: [], seenTips: [], achievements: achs.map((a) => a.id), treasury: 999, upgrades: {}, favor, codex, daily: null, sound: false }));
+  });
+  await page.reload();
+  await page.waitForSelector(".title-screen");
+  await check("title");
+  await btn("怎么玩"); await check("help"); await S(() => { window.__seal.page.value = "title"; });
+  await S(() => { window.__seal.page.value = "achievements"; }); await check("achievements");
+  await S(() => { window.__seal.page.value = "codex"; }); await page.waitForTimeout(300);
+  for (const tab of await page.locator(".codex-head .town-tabs button").all()) {
+    await tab.click().catch(() => {}); await page.waitForTimeout(200);
+    const entries = page.locator(".codex-cell");
+    const n = await entries.count();
+    for (let i = 0; i < n; i++) { await entries.nth(i).click().catch(() => {}); await check("codex"); }
+  }
+  await S(() => { window.__seal.page.value = "town"; }); await page.waitForTimeout(300);
+  for (const card of await page.locator(".order-card").all()) { await card.click().catch(() => {}); await check("town orders"); }
+  for (const card of await page.locator(".weapon-card").all()) { await card.click({ force: true }).catch(() => {}); await check("town weapons"); }
+  await btn("营建铺子"); await check("town build"); await btn("接单出发");
+  await btn("进塔");
+  await page.waitForSelector(".explore");
+  await check("explore tip");
+  await click(page.getByRole("button", { name: "知道了" }));
+  await click(page.locator(".omen-card .btn"));
+  await check("explore");
+  await S(() => { window.__seal.overlay.value = "bag"; }); await check("bag"); await S(() => { window.__seal.overlay.value = "deck"; }); await check("deck");
+  await S(() => { window.__seal.overlay.value = null; });
+
+  const { enemies, events } = await S(async () => {
+    const [E, V] = await Promise.all([import("/src/data/enemies.ts"), import("/src/data/events.ts")]);
+    const evs = V.EVENTS ?? Object.values(V).find((v) => v && typeof v === "object" && v.fakefox);
+    return { enemies: Object.keys(E.ENEMIES), events: Object.keys(evs) };
+  });
+  const reset = () => S(() => { const r = window.__seal.runSig.value; r.screen = "explore"; r.combat = null; r.at = null; r.hp = r.maxHp; r.dungeon.entities = r.dungeon.entities.filter((e) => e.id < 9000); window.__seal.commit(); });
+  for (const id of enemies) {
+    await S((id) => window.__seal.fight(id), id);
+    await page.waitForTimeout(300);
+    await click(page.getByRole("button", { name: "知道了" }));
+    await check(`fight ${id}`);
+    await reset();
+  }
+  for (const id of events) {
+    await S(() => { const r = window.__seal.runSig.value; r.floor = 3; r.gold = 99; window.__seal.commit(); });
+    await S((id) => window.__seal.event(id), id);
+    await check(`event ${id}`);
+    await click(page.locator(".option:not(.locked)"));
+    await check(`event ${id} result`);
+    await reset();
+  }
+  for (const kind of ["shop", "rest", "chest"]) { await S((k) => window.__seal.fight("", k), kind); await check(kind); await reset(); }
+  // Reward: win a fight quickly.
+  await S(() => window.__seal.fight("moth"));
+  for (let t = 0; t < 8 && (await S(() => window.__seal.runSig.value.screen)) === "combat"; t++) {
+    await S(() => { const c = window.__seal.runSig.value.combat; if (c) { c.enemy.hp = 1; window.__seal.commit(); } });
+    for (let i = 0; i < 5; i++) await click(page.locator(".hand .card:not(.disabled)"));
+    if ((await S(() => window.__seal.runSig.value.screen)) === "combat") await btn(/结束回合/);
+  }
+  await check("reward");
+  await S(() => { window.__seal.overlay.value = "bag"; }); await check("reward bag"); await S(() => { window.__seal.overlay.value = null; });
+  await S(async () => { const R = await import("/src/game/run.ts"); const r = window.__seal.runSig.value; r.screen = "explore"; r.combat = null; R.goHome(r); window.__seal.commit(); });
+  await check("result");
+  report[vpName] = { issues: issues.map(({ key, ...i }) => i), errors };
+  console.log(vpName, issues.length, "issues", errors.length, "errors");
+  for (const i of issues) console.log(`  [${i.kind} ${i.px}px] ${i.box} «${i.text}» @ ${i.where.slice(0, 4).join(", ")}${i.where.length > 4 ? ` (+${i.where.length - 4})` : ""}`);
+  await page.close();
+}
+
+await run("desktop", { width: 1280, height: 720 });
+await run("portrait", { width: 390, height: 844 });
+await writeFile(`${out}/report.json`, JSON.stringify(report, null, 2));
+await browser.close();
+await server.close();
+process.exit(Object.values(report).every((r) => !r.issues.length && !r.errors.length) ? 0 : 1);

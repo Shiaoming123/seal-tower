@@ -34,7 +34,9 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 
 /* ---------------------------------------------------------------- stage */
-.stage { position: absolute; left: 50%; top: 50%; transform-origin: 50% 50%; overflow: hidden;
+/* overflow: clip, not hidden: a hidden box can still be scrolled, and focusing a card that pokes out of the
+   bottom edge scrolled the whole stage up and cut off the HUD. */
+.stage { position: absolute; left: 50%; top: 50%; transform-origin: 50% 50%; overflow: hidden; overflow: clip;
   background: radial-gradient(ellipse at 50% 30%, #2a1a14 0%, #0d0807 70%); }
 .stage.landscape { width: 1280px; height: 720px; }
 
@@ -158,7 +160,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .codex-art { display: block; max-width: 100%; height: 200px; margin: 0 auto; object-fit: contain; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.5)); }
 .codex-art.small { height: 110px; }
 .portrait .codex-body { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
-.ach-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ach-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.portrait .ach-list { grid-template-columns: 1fr 1fr; }
 .ach-list li { display: flex; flex-direction: column; padding: 8px 10px; border-radius: 2px; box-shadow: inset 0 0 0 1px #8a6a3a; opacity: 0.55; }
 .ach-list li.got { opacity: 1; box-shadow: inset 0 0 0 2px #b8322a; }
 .ach-list li b { font-size: 17px; }
@@ -166,7 +169,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .ach-list li i { font-style: normal; font-size: 12px; color: #6a3a10; }
 .weapon-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .weapon-card { border: 0; cursor: pointer; text-align: center; padding: 10px; border-radius: 4px; background: rgba(30, 17, 13, 0.9);
-  box-shadow: inset 0 0 0 1px var(--gold-dim); display: flex; flex-direction: column; align-items: center; gap: 4px; height: 196px; }
+  box-shadow: inset 0 0 0 1px var(--gold-dim); display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 196px; }
 .weapon-card.selected { box-shadow: inset 0 0 0 3px var(--gold), 0 0 16px rgba(217, 180, 90, 0.5); }
 .weapon-card .weapon-icon { height: 72px; width: 72px; object-fit: contain; }
 .weapon-card b { font-size: 20px; color: var(--gold); }
@@ -181,10 +184,11 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .portrait .order-card { height: 200px; }
 .portrait .order-list { grid-template-columns: 1fr 1fr; }
 
-.help-screen { display: grid; place-items: center; }
-.help-box { width: 860px; max-width: 92%; background: linear-gradient(#efe2c2, #e2d0a6); color: var(--paper-ink); padding: 28px 36px; border-radius: 6px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7); }
-.help-box h2 { font-family: var(--font-title); font-weight: normal; font-size: 40px; margin: 0 0 10px; color: var(--red); }
-.help-box li { margin-bottom: 10px; font-size: 17px; line-height: 1.6; }
+/* minmax(0, 1fr) tracks: the box's percentages resolve against the stage, not against its own content. */
+.help-screen { display: grid; place-items: center; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); }
+.help-box { width: 860px; max-width: 92%; max-height: 94%; overflow-y: auto; box-sizing: border-box; background: linear-gradient(#efe2c2, #e2d0a6); color: var(--paper-ink); padding: 22px 36px; border-radius: 6px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7); }
+.help-box h2 { font-family: var(--font-title); font-weight: normal; font-size: 36px; margin: 0 0 6px; color: var(--red); }
+.help-box li { margin-bottom: 6px; font-size: 16px; line-height: 1.55; }
 .help-box .btn { color: var(--ink); }
 .credits { font-size: 13px; opacity: 0.7; }
 
@@ -219,9 +223,12 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
   color: #ffd0b0; background: rgba(20, 6, 4, 0.88); border-radius: 3px; box-shadow: inset 0 0 0 1px #8a2a1a; }
 .dark-warn.soft { width: auto; color: #ffd98a; box-shadow: inset 0 0 0 1px #8a6a3a; }
 .hud .bar { width: 170px; }
-.relics { display: flex; gap: 4px; flex: 1; min-width: 0; overflow: hidden; }
-.relic { width: 38px; height: 38px; padding: 2px; border: 0; cursor: pointer; border-radius: 50%; background: radial-gradient(#4a2a1c, #1b0f0c); box-shadow: inset 0 0 0 1px var(--gold-dim); }
-.relic img { width: 100%; height: 100%; object-fit: contain; }
+/* Many relics: the buttons shrink but each icon stays a full 38px coin, so they overlap like a stack instead of squashing. */
+.relics { display: flex; gap: 2px; flex: 1; min-width: 0; padding-right: 28px; }
+.relic { flex: 0 1 38px; min-width: 10px; height: 38px; padding: 0; border: 0; cursor: pointer; background: none; position: relative; }
+.relic img { position: absolute; left: 0; top: 0; width: 38px; height: 38px; padding: 2px; box-sizing: border-box; object-fit: contain;
+  border-radius: 50%; background: radial-gradient(#4a2a1c, #1b0f0c); box-shadow: inset 0 0 0 1px var(--gold-dim), 0 0 0 1px rgba(0, 0, 0, 0.55); }
+.relic:hover, .relic:focus-visible { z-index: 2; }
 .hud-order { display: flex; align-items: center; gap: 8px; font-size: 14px; white-space: nowrap; }
 .hud-order .order-label { color: var(--gold); }
 .hud-order .ok { color: #8fe0a0; }

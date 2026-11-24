@@ -57,7 +57,8 @@ export function App() {
   else if (page.value === "town" || !run) body = <Town />;
   else body = <Game />;
   return (
-    <div class={`stage ${portrait ? "portrait" : "landscape"}`} style={{ width: `${w}px`, height: `${h}px`, transform: `translate(-50%, -50%) scale(${scale})` }}>
+    <div class={`stage ${portrait ? "portrait" : "landscape"}`} style={{ width: `${w}px`, height: `${h}px`, transform: `translate(-50%, -50%) scale(${scale})` }}
+      onScroll={(e) => { const el = e.currentTarget as HTMLElement; if (el.scrollTop || el.scrollLeft) { el.scrollTop = 0; el.scrollLeft = 0; } }}>
       {body}
       {toast.value && <div class="toast" key={toast.value.id}>{toast.value.text}</div>}
     </div>

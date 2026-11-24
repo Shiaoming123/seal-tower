@@ -92,7 +92,7 @@
 }
 .portrait .hud { background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.45)), var(--tex-wood) center / 512px 256px; }
 .bar { box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8), 0 0 0 1px #b08a3c, 0 0 0 2px #2a1006; }
-.relic { box-shadow: inset 0 0 0 1px #2a1006, 0 0 0 2px #b08a3c, 0 2px 4px rgba(0, 0, 0, 0.6); }
+.relic img { box-shadow: inset 0 0 0 1px #2a1006, 0 0 0 2px #b08a3c, 0 2px 4px rgba(0, 0, 0, 0.6); }
 
 /* ---------- combat furniture ---------- */
 .intent-line {
