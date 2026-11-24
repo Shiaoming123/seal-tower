@@ -51,6 +51,13 @@
       ]
     },
     {
+      "id": "contest",
+      "entry": "docs/contest/README.md",
+      "directories": [
+        "docs/contest/"
+      ]
+    },
+    {
       "id": "task-records",
       "entry": "docs/dev-log/README.md",
       "directories": [

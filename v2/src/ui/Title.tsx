@@ -24,7 +24,7 @@ export function Title() {
       <div class="title-hero"><Art id="hero" /></div>
       <div class="title-box">
         <h1 class="logo">斩妖塔</h1>
-        <p class="tagline">镇灯铺 · 一个斩妖人的进货生意</p>
+        <p class="tagline">富婆狐商救救我！<br /><small>镇灯铺 · 一个斩妖人的进货生意</small></p>
         <div class="title-buttons">
           {saved && (
             <button type="button" class="btn big primary" onClick={() => { sfx.click(); runSig.value = saved; page.value = "game"; commit(); }}>

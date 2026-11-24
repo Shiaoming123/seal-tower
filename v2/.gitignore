@@ -2,3 +2,5 @@ node_modules
 dist
 dist-offline
 .cache
+dist-studio
+dist-studio.zip

@@ -21,3 +21,7 @@ Thumbs.db
 !/evidence/桥驿入洞/画审对照/1920宽-鼠洞交接.jpg
 !/evidence/桥驿入洞/画审对照/390触屏-鼠洞交接.jpg
 !/evidence/桥驿入洞/画审对照/护筐水渠.jpg
+
+# Contest demo video (33 MB): regenerate with node v2/tests/record-demo.mjs
+/docs/contest/media/*.mp4
+/docs/contest/media/*.m4a

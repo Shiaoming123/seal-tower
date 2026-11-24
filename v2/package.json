@@ -16,7 +16,8 @@
     "docs:check": "node scripts/check-doc-trace.mjs",
     "assets": "node scripts/prepare-assets.mjs",
     "fonts": "node scripts/build-fonts.mjs",
-    "test:e2e": "node tests/e2e.mjs"
+    "test:e2e": "node tests/e2e.mjs",
+    "pack:studio": "npm run build && node scripts/pack-studio.mjs"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
