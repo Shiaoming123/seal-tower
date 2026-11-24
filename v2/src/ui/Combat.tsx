@@ -233,6 +233,7 @@ export function Combat() {
     const reason = card && blockedReason(run, c, card);
     if (reason) { say(reason); return; }
     busy.current = true;
+    setBanner(""); // the encounter / last-move banner sits where the damage numbers land
     sfx.card();
     flyCard(i);
     const res = playCard(run, i);

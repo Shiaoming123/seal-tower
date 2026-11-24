@@ -368,7 +368,14 @@ function BagExpander({ run, uid, onDone }: { run: RunState; uid: number; onDone:
         })}
         {b.items.filter((i) => i.uid !== uid).map((it) => {
           const size = bag.sizeOf(it.id, it.rot);
-          return <img class="sew-item" src={ART[GOODS[it.id].icon]} alt="" style={{ ...pos(it.x, it.y), width: `${size.w * SEW_CELL}px`, height: `${size.h * SEW_CELL}px` }} />;
+          const g = GOODS[it.id];
+          // Same drawing as the bag: the picture is laid out unrotated, then turned inside the footprint.
+          return (
+            <div class="sew-item" style={{ ...pos(it.x, it.y), width: `${size.w * SEW_CELL}px`, height: `${size.h * SEW_CELL}px` }}>
+              <img src={ART[g.icon]} alt="" draggable={false}
+                style={{ width: `${(it.rot % 2 ? size.h : size.w) * SEW_CELL}px`, height: `${(it.rot % 2 ? size.w : size.h) * SEW_CELL}px`, transform: `translate(-50%, -50%) rotate(${it.rot * 90 + (g.tilt?.[0] ?? 0)}deg) scale(${g.tilt?.[1] ?? 1})` }} />
+            </div>
+          );
         })}
         {cells.map(([x, y]) => <div class={`sew-cell piece ${problem ? "bad" : "ok"}`} style={pos(x, y)} />)}
       </div>

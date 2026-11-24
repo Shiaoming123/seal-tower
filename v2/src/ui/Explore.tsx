@@ -94,7 +94,8 @@ function lookAhead(run: RunState): string {
       const part = e.enemy && ENEMIES[e.enemy].part;
       const tip = h ? ` 取材：${h.text}，可多拿${h.label}。` : part ? ` 取材：单次伤害别超过 ${part.threshold - 1}，${part.label}才不会碎。` : "";
       const engage = i === 1 && isFight(e) ? " 再往前一步就开战。" : "";
-      return `前面 ${i} 格：${entityName(e)}。${engage}${tip}`;
+      const elite = e.kind === "elite" ? " 精英可以绕开不打；打赢必得一件法宝和一件好装备。" : "";
+      return `前面 ${i} 格：${entityName(e)}。${engage}${elite}${tip}`;
     }
   }
   return "前面是一条长廊。";

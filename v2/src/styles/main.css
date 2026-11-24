@@ -509,7 +509,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .sew-cell.piece { pointer-events: none; z-index: 3; border-radius: 2px; }
 .sew-cell.piece.ok { background: rgba(110, 220, 140, 0.45); box-shadow: inset 0 0 0 2px rgba(150, 255, 170, 0.9); }
 .sew-cell.piece.bad { background: rgba(230, 70, 60, 0.4); box-shadow: inset 0 0 0 2px rgba(255, 110, 100, 0.9); }
-.sew-item { position: absolute; object-fit: contain; opacity: 0.55; pointer-events: none; z-index: 2; padding: 3px; box-sizing: border-box; }
+.sew-item { position: absolute; opacity: 0.55; pointer-events: none; z-index: 2; }
+.sew-item img { position: absolute; left: 50%; top: 50%; object-fit: contain; padding: 3px; box-sizing: border-box; }
 .sew-hint { margin: 0; font-size: 13px; color: #b8e8b8; min-height: 1.4em; }
 .sew-hint.bad { color: #f0a090; }
 /* GAME-003B: refined gear (精) and pending refines */
