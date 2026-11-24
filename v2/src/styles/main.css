@@ -181,8 +181,10 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .card-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .town-start { display: flex; justify-content: flex-end; gap: 16px; align-items: center; margin-top: auto; }
 .diff select { font: inherit; margin-left: 8px; background: #2a1712; color: var(--ink); border: 1px solid var(--gold-dim); padding: 6px; }
-.portrait .town-screen { grid-template-columns: 1fr; grid-template-rows: auto auto auto; overflow-y: auto; }
-.portrait .order-card { height: 200px; }
+/* max-content rows: with auto rows the sections (min-height: 0) were squeezed to equal heights and spilled onto
+   each other when the page is taller than the phone screen; the screen scrolls instead. */
+.portrait .town-screen { grid-template-columns: 1fr; grid-template-rows: repeat(3, max-content); overflow-y: auto; }
+.portrait .order-card { height: auto; min-height: 120px; }
 .portrait .order-list { grid-template-columns: 1fr 1fr; }
 
 /* minmax(0, 1fr) tracks: the box's percentages resolve against the stage, not against its own content. */

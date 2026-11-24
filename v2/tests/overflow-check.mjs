@@ -1,4 +1,5 @@
-// Find text that spills out of its box or gets clipped, on every screen, desktop and 390×844 portrait.
+// Find text that spills out of its box, gets clipped, or lands on top of other text, on every screen, desktop and
+// two portrait sizes.
 // Opens title, help, achievements, codex (every entry), town (every order and weapon, build tab), and in a run:
 // explore, bag, deck, every monster's fight, every event, shop, rest, reward and result.
 // Usage: node tests/overflow-check.mjs [outDir]   (starts its own Vite dev server; needs system Chrome)
@@ -36,6 +37,7 @@ const scan = () => {
   };
   const found = new Map();
   const add = (key, v) => { if (!found.has(key)) found.set(key, v); };
+  const runs = []; // every visible text run, for the overlap check below
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   for (let n = walker.nextNode(); n; n = walker.nextNode()) {
     const t = n.textContent.trim();
@@ -48,6 +50,19 @@ const scan = () => {
     const range = document.createRange(); range.selectNodeContents(n);
     const b = (box ?? document.body).getBoundingClientRect();
     const rects = [...range.getClientRects()].filter((r) => r.width >= 1 && r.height >= 1);
+    // For the overlap check: only the part of the text you can see (scrolling and clipping boxes cut it), and the
+    // layer it is drawn in (nearest absolutely or fixed positioned ancestor) — overlays sitting on the game don't count.
+    let layer = n.parentElement, seen = rects.map((r) => ({ left: r.left, right: r.right, top: r.top, bottom: r.bottom }));
+    for (let a = n.parentElement; a && a !== document.body; a = a.parentElement) {
+      const st = getComputedStyle(a);
+      if (/hidden|clip|auto|scroll/.test(st.overflow + st.overflowX + st.overflowY)) {
+        const c = a.getBoundingClientRect();
+        seen = seen.map((r) => ({ left: Math.max(r.left, c.left), right: Math.min(r.right, c.right), top: Math.max(r.top, c.top), bottom: Math.min(r.bottom, c.bottom) }));
+      }
+    }
+    for (layer = n.parentElement; layer && layer !== document.body; layer = layer.parentElement) if (/absolute|fixed/.test(getComputedStyle(layer).position)) break;
+    seen = seen.filter((r) => r.right - r.left >= 1 && r.bottom - r.top >= 1).map((r) => ({ ...r, width: r.right - r.left, height: r.bottom - r.top }));
+    runs.push({ el: n.parentElement, text: t, rects: seen, layer });
     for (const r of rects) {
       const over = Math.max(r.bottom - b.bottom, r.right - b.right, b.top - r.top, b.left - r.left);
       if (box && over > 2) { add("spill " + name(box), { kind: "spill", box: name(box), text: t.slice(0, 40), px: Math.round(over) }); break; }
@@ -60,6 +75,22 @@ const scan = () => {
       const c = a.getBoundingClientRect();
       const out = rects.map((r) => Math.max(r.bottom - c.bottom, r.right - c.right, c.top - r.top, c.left - r.left)).reduce((m, v) => Math.max(m, v), 0);
       if (out > 2) { add("clip " + name(a), { kind: "clip", box: name(a), text: t.slice(0, 40), px: Math.round(out) }); break; }
+    }
+  }
+  // Overlap: text from one element lying on text from another (a block pushed onto the next one, or text showing
+  // through behind a card). Ignores an element and its own descendants.
+  const hit = (a, b) => Math.max(0, Math.min(a.right, b.right) - Math.max(a.left, b.left)) * Math.max(0, Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top));
+  for (let i = 0; i < runs.length; i++) for (let j = i + 1; j < runs.length; j++) {
+    const A = runs[i], B = runs[j];
+    if (A.layer !== B.layer || A.el === B.el || A.el.contains(B.el) || B.el.contains(A.el)) continue;
+    // Hand cards fan over each other on purpose; the card on top hides the one below.
+    const ha = A.el.closest(".hand-slot"), hb = B.el.closest(".hand-slot");
+    if (ha && hb && ha !== hb) continue;
+    for (const ra of A.rects) for (const rb of B.rects) {
+      const area = hit(ra, rb);
+      if (area > 0.3 * Math.min(ra.width * ra.height, rb.width * rb.height)) {
+        add("overlap " + name(A.el) + " | " + name(B.el), { kind: "overlap", box: `${name(A.el)} ⟷ ${name(B.el)}`, text: `${A.text.slice(0, 18)} ⟷ ${B.text.slice(0, 18)}`, px: Math.round(Math.sqrt(area)) });
+      }
     }
   }
   // Unreachable: a visible button whose box lies outside the stage with no scrolling panel around it.
@@ -183,9 +214,11 @@ async function run(vpName, viewport) {
   await page.close();
 }
 
-await run("desktop", { width: 1280, height: 720 });
-await run("portrait", { width: 390, height: 844 });
-await run("phone-short", { width: 390, height: 664 }); // iPhone Safari/Chrome visible area inside the ModelScope mobile page
+// ONLY=phone-short (comma-separated) runs just those viewports.
+const only = process.env.ONLY?.split(",");
+const VIEWPORTS = [["desktop", { width: 1280, height: 720 }], ["portrait", { width: 390, height: 844 }],
+  ["phone-short", { width: 390, height: 664 }]]; // phone-short: iPhone Safari/Chrome visible area inside the ModelScope mobile page
+for (const [n, vp] of VIEWPORTS) if (!only || only.includes(n)) await run(n, vp);
 await writeFile(`${out}/report.json`, JSON.stringify(report, null, 2));
 await browser.close();
 await server.close();
