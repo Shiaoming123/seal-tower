@@ -1,46 +1,7 @@
 {
-  "package": "/Users/aiyu-macminim4/Documents/Explore/seal-tower/v2/dist-studio-flat/",
-  "hostUrl": "http://localhost:49188/",
+  "package": "/private/tmp/st-pack/v2/dist-studio-flat/",
+  "hostUrl": "http://localhost:65395/",
   "runs": [
-    {
-      "name": "climb",
-      "viewport": {
-        "width": 1280,
-        "height": 720
-      },
-      "touch": false,
-      "errors": [],
-      "badResponses": [],
-      "outsideRequests": [],
-      "checks": {
-        "titleLoadMs": 216,
-        "fontsLoaded": [
-          "TowerBrush",
-          "TowerKai"
-        ],
-        "sound": {
-          "startedOn": true,
-          "mutePersisted": true,
-          "backOn": true,
-          "audioContexts": [
-            "running"
-          ]
-        },
-        "padMoves": true,
-        "run": {
-          "climb": true,
-          "steps": 50,
-          "outcome": "win",
-          "floorReached": 3,
-          "minutes": 1.5
-        },
-        "restart": {
-          "newRunFloor": 1,
-          "resumeOfferedAfterReload": true
-        }
-      },
-      "ok": true
-    },
     {
       "name": "desktop",
       "viewport": {
@@ -52,7 +13,7 @@
       "badResponses": [],
       "outsideRequests": [],
       "checks": {
-        "titleLoadMs": 460,
+        "titleLoadMs": 287,
         "fontsLoaded": [
           "TowerBrush",
           "TowerKai"
@@ -68,10 +29,10 @@
         "padMoves": true,
         "run": {
           "climb": false,
-          "steps": 26,
-          "outcome": "dead",
+          "steps": 45,
+          "outcome": "retreat",
           "floorReached": 1,
-          "minutes": 1.9
+          "minutes": 2.1
         },
         "restart": {
           "newRunFloor": 1,
@@ -91,7 +52,7 @@
       "badResponses": [],
       "outsideRequests": [],
       "checks": {
-        "titleLoadMs": 372,
+        "titleLoadMs": 282,
         "fontsLoaded": [
           "TowerBrush",
           "TowerKai"
@@ -107,10 +68,49 @@
         "padMoves": true,
         "run": {
           "climb": false,
-          "steps": 21,
+          "steps": 47,
           "outcome": "retreat",
           "floorReached": 1,
-          "minutes": 1.1
+          "minutes": 2.1
+        },
+        "restart": {
+          "newRunFloor": 1,
+          "resumeOfferedAfterReload": true
+        }
+      },
+      "ok": true
+    },
+    {
+      "name": "climb",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "touch": false,
+      "errors": [],
+      "badResponses": [],
+      "outsideRequests": [],
+      "checks": {
+        "titleLoadMs": 285,
+        "fontsLoaded": [
+          "TowerBrush",
+          "TowerKai"
+        ],
+        "sound": {
+          "startedOn": true,
+          "mutePersisted": true,
+          "backOn": true,
+          "audioContexts": [
+            "running"
+          ]
+        },
+        "padMoves": true,
+        "run": {
+          "climb": true,
+          "steps": 85,
+          "outcome": "win",
+          "floorReached": 3,
+          "minutes": 2
         },
         "restart": {
           "newRunFloor": 1,
@@ -121,13 +121,10 @@
     }
   ],
   "when": {
-    "phone-390": "2026-11-24T10:30:32.906Z",
+    "climb": "2026-11-24T20:56:07.668Z",
     "earlier": {
-      "desktop": "2026-11-24T10:29:24.865Z",
-      "earlier": {
-        "desktop,phone-390": "2026-11-24T10:27:13.434Z",
-        "earlier": "2026-11-24T10:26:37.807Z"
-      }
+      "phone-390": "2026-11-24T20:54:05.885Z",
+      "earlier": "2026-11-24T20:52:00.076Z"
     }
   }
 }
