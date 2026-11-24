@@ -64,12 +64,15 @@ export function CardView({ id, up, preview, onClick, disabled, reason, small, se
   );
 }
 
-export function Bar({ value, max, kind, block = 0, label }: { value: number; max: number; kind: "hp" | "enemy"; block?: number; label?: string }) {
+/** `lose`: HP the card under the cursor would take off, shown as a flashing chunk at the end of the bar. */
+export function Bar({ value, max, kind, block = 0, label, lose = 0 }: { value: number; max: number; kind: "hp" | "enemy"; block?: number; label?: string; lose?: number }) {
   const pct = Math.max(0, Math.min(100, (value / max) * 100));
+  const losePct = Math.min(pct, (Math.max(0, lose) / max) * 100);
   return (
     <div class={`bar bar-${kind}`}>
       <div class="trail" style={{ width: `${pct}%` }} />
       <div class="fill" style={{ width: `${pct}%` }} />
+      {losePct > 0 && <div class="lose" style={{ left: `${pct - losePct}%`, width: `${losePct}%` }} />}
       <span class="num">{label ?? `${value} / ${max}`}</span>
       {block > 0 && <span class="shield">{block}</span>}
     </div>

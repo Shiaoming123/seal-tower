@@ -768,3 +768,19 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .portrait .reveal-card { width: 150px; height: 200px; }
 .portrait .reveal-face img { width: 90px; height: 90px; }
 @media (prefers-reduced-motion: reduce) { .reveal-inner { transition: none; } .reveal-rays, .reveal-card .reveal-inner { animation: none !important; } }
+
+/* ---------------------------------------------------------------- UI-009: play preview */
+.bar .lose { position: absolute; top: 0; bottom: 0; border-radius: 2px; background: repeating-linear-gradient(-45deg, #fff1c8 0 4px, #ffb35a 4px 8px); animation: lose-blink 0.8s ease-in-out infinite; }
+@keyframes lose-blink { 50% { opacity: 0.45; } }
+.play-preview { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 6px; margin-top: 4px; padding: 3px 10px; border-radius: 4px;
+  background: rgba(15, 8, 6, 0.86); border: 1px solid rgba(217, 180, 90, 0.5); animation: loot-in 0.12s ease-out; pointer-events: none; }
+.pv-dmg { font-size: 22px; color: #fff3d0; text-shadow: 0 0 8px rgba(255, 120, 60, 0.8), 1px 1px 0 #000; }
+.play-preview.lethal { border-color: #ffcf5a; box-shadow: 0 0 12px rgba(255, 200, 90, 0.6); }
+.pv-kill { font-style: normal; font-size: 13px; padding: 1px 6px; border-radius: 3px; background: linear-gradient(#ffd770, #c08a20); color: #3a1c00; font-weight: bold; }
+.pv-chip { font-size: 12px; padding: 1px 6px; border-radius: 3px; background: #3a2416; color: #f0dcae; }
+.pv-chip.fire { background: #7a2a10; color: #ffd6a0; }
+.pv-chip.good { background: #24502c; color: #c8f0c0; }
+.pv-chip.warn { background: #7a1a10; color: #ffc0b0; }
+.pv-chip.muted { background: #2a2420; color: #b8a890; }
+.pv-chip.status { background: #3a2a50; color: #e0d0ff; }
+.pv-block { display: block; margin-top: 2px; font-size: 13px; color: #9ad0ff; }

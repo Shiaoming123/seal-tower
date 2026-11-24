@@ -260,6 +260,37 @@ export function previewFor(run: RunState, c: CombatState | null): Preview {
   };
 }
 
+/** What playing a card right now would do, for the preview over the monster before you commit. */
+export interface PlayPreview {
+  dmg: number; hits: number; absorbed: number; block: number; heal: number;
+  kills: boolean; interrupts: boolean; breaksPart: boolean;
+  enemyStatus: { id: StatusId; n: number }[]; tags: readonly string[]; weakness: boolean;
+}
+
+/**
+ * Plays the card on a copy of the run and reads off what happened, so the preview matches the real outcome
+ * exactly: focus, sets, weak / vulnerable, fire weakness, multi-hit and the monster's block are all counted.
+ * Null if the card can't be played now.
+ */
+export function simulatePlay(run: RunState, handIndex: number): PlayPreview | null {
+  const c = run.combat;
+  if (!c || c.over || !c.hand[handIndex] || blockedReason(run, c, c.hand[handIndex])) return null;
+  const copy = structuredClone(run);
+  const res = playCard(copy, handIndex);
+  if (!res.ok) return null;
+  const def = CARDS[c.hand[handIndex].id];
+  const out: PlayPreview = { dmg: 0, hits: 0, absorbed: 0, block: 0, heal: 0, kills: copy.combat?.over === "win", interrupts: false, breaksPart: false,
+    enemyStatus: [], tags: def.tags ?? [], weakness: !!ENEMIES[c.enemy.id].weakTo && !!def.tags?.some((t) => t === ENEMIES[c.enemy.id].weakTo) };
+  for (const e of res.events) {
+    if (e.t === "hit" && e.target === "enemy") { out.dmg += e.amount; out.absorbed += e.blocked; out.hits++; if (e.part === "broke") out.breaksPart = true; }
+    else if (e.t === "block" && e.target === "player") out.block += e.amount;
+    else if (e.t === "heal") out.heal += e.amount;
+    else if (e.t === "interrupt") out.interrupts = true;
+    else if (e.t === "status" && e.target === "enemy") out.enemyStatus.push({ id: e.id, n: e.n });
+  }
+  return out;
+}
+
 /** Why a card in hand can't be played, or null. */
 export function blockedReason(run: RunState, c: CombatState, card: CardInst): string | null {
   const def = CARDS[card.id];

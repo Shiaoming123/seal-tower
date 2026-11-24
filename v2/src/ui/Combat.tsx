@@ -4,7 +4,7 @@ import { setIntensity } from "../audio/music";
 import { creatureCall } from "../audio/voices";
 import { ENEMIES } from "../data/enemies";
 import { GOODS } from "../data/goods";
-import { type CombatEvent, blockedReason, endTurn, enemyHitDamage, incomingDamage, playCard, previewFor, stealTarget } from "../game/combat";
+import { type CombatEvent, type PlayPreview, blockedReason, endTurn, enemyHitDamage, incomingDamage, playCard, previewFor, simulatePlay, stealTarget } from "../game/combat";
 import { DIRS, isWall } from "../game/dungeon";
 import { useItem } from "../game/inventory";
 import * as R from "../game/run";
@@ -80,6 +80,8 @@ export function Combat() {
   // Phones: the fanned hand overlaps too much to read, so the first tap picks a card (lifted, enlarged, on top)
   // and a second tap on it plays it. Desktop mouse keeps one-click play.
   const [picked, setPicked] = useState<number | null>(null);
+  /** Card under the mouse (desktop); on phones the picked card is previewed instead. */
+  const [hovered, setHovered] = useState<number | null>(null);
   const twoStep = () => !!rootRef.current?.closest(".stage.portrait") || matchMedia("(hover: none)").matches;
   // The fight happens in the scene: the monster keeps standing on its tile, one step ahead of you.
   const foe = R.currentEntity(run);
@@ -317,6 +319,8 @@ export function Combat() {
   const salve = run.bag.items.find((it) => GOODS[it.id].use?.inCombat);
   // Same rule as twoStep(): phones pick a card first, then play it.
   const phoneHand = !!document.querySelector(".stage.portrait") || matchMedia("(hover: none)").matches;
+  const previewIdx = picked !== null ? c.hand.findIndex((h) => h.uid === picked) : hovered !== null ? c.hand.findIndex((h) => h.uid === hovered) : -1;
+  const pv = previewIdx >= 0 && !busy.current ? simulatePlay(run, previewIdx) : null;
   const tipId = c.enemy.intent.steal ? "steal" : c.enemy.intent.charge ? "charge" : def.part ? "part" : "combat";
   const tips: Record<string, string> = {
     combat: phoneHand
@@ -343,7 +347,8 @@ export function Combat() {
           </div>
           <div class="enemy-info">
             <div class="enemy-name">{c.enemy.name}</div>
-            <Bar value={c.enemy.hp} max={c.enemy.maxHp} kind="enemy" block={c.enemy.block} />
+            <Bar value={c.enemy.hp} max={c.enemy.maxHp} kind="enemy" block={c.enemy.block} lose={pv?.dmg ?? 0} />
+            {pv && <PreviewTag pv={pv} part={def.part?.label} />}
             <Statuses status={c.enemy.status} />
             {def.harvest && <HarvestTag c={c} />}
             {def.part && (
@@ -369,6 +374,7 @@ export function Combat() {
         <div class="player-stats">
           <div class={`incoming ${net > 0 ? "danger" : "safe"}`}>
             {c.enemy.intent.stunned || !incoming ? "这回合不会挨打" : net > 0 ? `结束回合会挨 ${net} 点` : `格挡够了（来袭 ${incoming}）`}
+            {pv && pv.block > 0 && <span class="pv-block">+{pv.block} 格挡{incoming && !c.enemy.intent.stunned ? ` → ${Math.max(0, incoming - c.block - pv.block) ? `还会挨 ${Math.max(0, incoming - c.block - pv.block)}` : "全挡住"}` : ""}</span>}
           </div>
           <div class="block-line">格挡 <b>{c.block}</b></div>
           <Statuses status={c.status} />
@@ -383,7 +389,9 @@ export function Combat() {
         {c.hand.map((card, i) => {
           const reason = blockedReason(run, c, card);
           return (
-            <div class={`hand-slot ${picked === card.uid ? "picked" : ""}`} style={{ "--i": i, "--n": c.hand.length } as never} key={card.uid}>
+            <div class={`hand-slot ${picked === card.uid ? "picked" : ""}`} style={{ "--i": i, "--n": c.hand.length } as never} key={card.uid}
+              onPointerEnter={(e) => { if (e.pointerType === "mouse") setHovered(card.uid); }}
+              onPointerLeave={() => setHovered((h) => (h === card.uid ? null : h))}>
               <CardView id={card.id} up={card.up} bonus={card.bonus} preview={preview} disabled={!!reason} reason={reason}
                 onClick={() => {
                   if (twoStep() && picked !== card.uid) { sfx.click(); setPicked(card.uid); return; }
@@ -404,7 +412,27 @@ export function Combat() {
   );
 }
 
-const statusName = (id: string) => ({ str: "力量", weak: "虚弱", vuln: "破绽", thorns: "反震", counter: "回敬", focus: "蓄势", ward: "护货", barricade: "不动", lampArray: "灯阵", swordIntent: "行云", bulwark: "以守为攻" } as Record<string, string>)[id] ?? id;
+/** What the card under the cursor (or the picked one) would do, over the monster's HP bar. */
+function PreviewTag({ pv, part }: { pv: PlayPreview; part?: string }) {
+  const chips: [string, string][] = [];
+  if (pv.hits > 1) chips.push(["", `${pv.hits} 段`]);
+  if (pv.weakness) chips.push(["fire", "怕火 · 伤害翻倍"]);
+  if (pv.absorbed > 0) chips.push(["muted", `格挡吃掉 ${pv.absorbed}`]);
+  if (pv.interrupts) chips.push(["good", "打断蓄力"]);
+  if (pv.breaksPart) chips.push(["warn", `会打碎${part ?? "部件"}`]);
+  for (const s of pv.enemyStatus) chips.push(["status", `${statusName(s.id)} ${s.n > 0 ? "+" : ""}${s.n}`]);
+  if (pv.heal > 0) chips.push(["good", `回复 ${pv.heal}`]);
+  if (!pv.dmg && !chips.length) return null;
+  return (
+    <div class={`play-preview ${pv.kills ? "lethal" : ""}`}>
+      {pv.dmg > 0 && <b class="pv-dmg">-{pv.dmg}</b>}
+      {pv.kills && <i class="pv-kill">致命</i>}
+      {chips.map(([cls, t]) => <span class={`pv-chip ${cls}`}>{t}</span>)}
+    </div>
+  );
+}
+
+const statusName = (id: string) => ({ str: "力量", weak: "虚弱", vuln: "破绽", thorns: "反震", counter: "回敬", focus: "蓄势", ward: "护货", barricade: "不动", lampArray: "灯阵", swordIntent: "行云", bulwark: "以守为攻", burn: "灼烧", blind: "目盲" } as Record<string, string>)[id] ?? id;
 
 const HARVEST_STATE = { done: "已达成", open: "能取", risk: "注意", failed: "取不了了" } as const;
 
