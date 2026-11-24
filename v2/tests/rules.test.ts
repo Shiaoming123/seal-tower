@@ -875,3 +875,23 @@ describe("goods reveal and the abandoned purse (GAME-007)", () => {
   });
 });
 
+describe("passives say when they fire (行云)", () => {
+  it("the first attack each turn draws 1 and gives 1 energy, with a proc event; the second does nothing", () => {
+    const run = createRun(71, "sword", "lamp");
+    const c = fightWith(run, "louse");
+    c.status.swordIntent = 1;
+    handOf(run, ["strike", "strike"]);
+    c.energy = 3;
+    const first = playCard(run, 0);
+    expect(first.events.some((e) => e.t === "proc")).toBe(true);
+    expect(c.energy).toBe(3); // 3 − 1 for the strike + 1 from 行云
+    const second = playCard(run, 0);
+    expect(second.events.some((e) => e.t === "proc")).toBe(false);
+  });
+  it("the upgrade picker can say what upgrading changes", async () => {
+    const { upgradeDiff } = await import("../src/ui/parts");
+    expect(upgradeDiff("flow")).toEqual(["费用 2 → 1"]);
+    expect(upgradeDiff("strike")).toEqual(["伤害 6 → 9"]);
+  });
+});
+

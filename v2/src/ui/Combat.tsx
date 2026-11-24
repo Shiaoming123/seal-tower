@@ -209,6 +209,7 @@ export function Combat() {
       else if (e.t === "thorns") { if (e.target === "player") float(`被扎 ${e.amount}`, "hurt", "player"); else float(`回敬 ${e.amount}`, "status-self", "enemy"); }
       else if (e.t === "drain") { sfx.drain(); float(e.what === "oil" ? `灯油 -${e.amount}` : e.what === "ash" ? `被吃掉 ${e.amount} 份灯灰` : `被收走 ${e.amount} 石`, "warn", "player"); }
       else if (e.t === "enemy-move") { setBanner(`${c.enemy.name}：${e.name}`); }
+      else if (e.t === "proc") { sfx.harvest(); float(e.text, "proc", "player"); await wait(250); }
       else if (e.t === "fled") { sfx.steal(); setBanner(`${c.enemy.name}钻进洞里跑了！`); await wait(700); }
     }
     await settle();

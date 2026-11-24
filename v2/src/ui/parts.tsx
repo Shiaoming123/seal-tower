@@ -44,6 +44,20 @@ export function Art({ id, class: cls = "", alt = "" }: { id: string; class?: str
   return <img class={`art ${cls}`} src={ART[id]} alt={alt} draggable={false} />;
 }
 
+const VAL_LABEL: Record<string, string> = { dmg: "伤害", blk: "格挡", hits: "段数", n: "数值", draw: "抽牌", plus: "加成", burn: "灼烧", heal: "回复" };
+/** What upgrading a card changes, for the upgrade picker: cost, numbers, exhaust. Empty if nothing visible changes. */
+export function upgradeDiff(id: string): string[] {
+  const def = CARDS[id];
+  const out: string[] = [];
+  const c0 = cardCost(def, false), c1 = cardCost(def, true);
+  if (c0 !== c1) out.push(`费用 ${c0} → ${c1}`);
+  const [a, b] = def.v as [Record<string, number>, Record<string, number>];
+  for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) if (a[k] !== b[k]) out.push(`${VAL_LABEL[k] ?? k} ${a[k] ?? 0} → ${b[k] ?? 0}`);
+  const e0 = Array.isArray(def.exhaust) ? def.exhaust[0] : !!def.exhaust, e1 = Array.isArray(def.exhaust) ? def.exhaust[1] : !!def.exhaust;
+  if (e0 && !e1) out.push("不再消耗");
+  return out;
+}
+
 export function CardView({ id, up, preview, onClick, disabled, reason, small, selected, extra, bonus }: {
   id: string; up: boolean; preview: Preview; onClick?: () => void; disabled?: boolean; reason?: string | null;
   small?: boolean; selected?: boolean; extra?: ComponentChildren; bonus?: { dmg?: number; blk?: number };

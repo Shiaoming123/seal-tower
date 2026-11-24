@@ -140,7 +140,14 @@ for (let step = 0; step < Number(process.env.STEPS ?? 60) && seen.size < 11; ste
     await first("11-event");
     await page.locator(".option:not(.locked)").first().click();
     await page.waitForTimeout(300);
-    if (await page.locator(".overlay .card").count()) await page.locator(".overlay .card").first().click();
+    // Card picks (upgrade / remove) take two taps too: the first only selects.
+    if (await page.locator(".overlay .card").count()) {
+      await page.locator(".overlay .card").first().click();
+      if (!(await page.evaluate(() => !!window.__seal.runSig.value.cardPick))) throw new Error("one tap applied a card pick");
+      await page.locator(".overlay .card").first().click();
+      await page.waitForTimeout(200);
+      if (await page.evaluate(() => !!window.__seal.runSig.value.cardPick)) throw new Error("second tap did not apply the card pick");
+    }
     await first("12-event-result");
     await page.getByRole("button", { name: /继续|迎战/ }).click();
     continue;

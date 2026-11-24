@@ -93,6 +93,13 @@ const scan = () => {
       }
     }
   }
+  // Too small to tap (QA-001): on a phone-sized viewport, buttons below 24×24 CSS px (WCAG 2.2 target size minimum).
+  if (innerWidth < 600) for (const el of document.querySelectorAll(".stage button, .stage [role=button]")) {
+    if (!vis(el) || el.disabled) continue;
+    const r = el.getBoundingClientRect();
+    if (r.width < 2 || r.height < 2) continue;
+    if (Math.min(r.width, r.height) < 24) add("tap " + name(el), { kind: "tap", box: name(el), text: el.textContent.trim().slice(0, 30), px: Math.round(Math.min(r.width, r.height)) });
+  }
   // Unreachable: a visible button whose box lies outside the stage with no scrolling panel around it.
   const stage = document.querySelector(".stage")?.getBoundingClientRect();
   if (stage) for (const el of document.querySelectorAll(".stage button")) {
@@ -113,6 +120,12 @@ const scan = () => {
 const report = {};
 async function run(vpName, viewport) {
   const page = await browser.newPage({ viewport, deviceScaleFactor: 1 });
+  // Measure the settled layout: entrance animations and transitions (UI-011) would catch elements mid-slide.
+  await page.addInitScript(() => {
+    const css = "*, *::before, *::after { animation-duration: 0s !important; animation-delay: 0s !important; transition-duration: 0s !important; transition-delay: 0s !important; }";
+    const add = () => { const st = document.createElement("style"); st.textContent = css; document.head.appendChild(st); };
+    if (document.head) add(); else document.addEventListener("DOMContentLoaded", add);
+  });
   const errors = [];
   page.on("pageerror", (e) => errors.push(String(e)));
   const issues = [];

@@ -215,7 +215,8 @@ export function Explore() {
     const dir = run.pos.dir;
     const [dx, dy] = DIRS[back ? (dir + 2) % 4 : dir];
     const x = run.pos.x + dx, y = run.pos.y + dy;
-    if (isWall(run.dungeon, x, y)) { sfx.bump(); view.bump(back ? (dir + 2) % 4 : dir); return; }
+    // Bumping a wall: the thud and the camera nudge, plus a line you can read with the sound off (button-check).
+    if (isWall(run.dungeon, x, y)) { sfx.bump(); view.bump(back ? (dir + 2) % 4 : dir); say(back ? "身后是墙，退不过去。" : "前面是墙。", 1200); return; }
     busy.current = true;
     await stepTo(x, y, dir, true);
     done();

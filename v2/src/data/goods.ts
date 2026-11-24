@@ -43,7 +43,6 @@ const V3: [number, number][] = [[0, 0], [0, 1], [0, 2]];
 const V2: [number, number][] = [[0, 0], [0, 1]];
 const H2: [number, number][] = [[0, 0], [1, 0]];
 const SQ: [number, number][] = [[0, 0], [1, 0], [0, 1], [1, 1]];
-const L3: [number, number][] = [[0, 0], [0, 1], [1, 1]];
 const ONE: [number, number][] = [[0, 0]];
 
 const list: GoodDef[] = [
@@ -80,7 +79,7 @@ const list: GoodDef[] = [
     passive: "每场战斗胜利后多得 1 份灯灰。", text: "镇灯铺的引火盘。能把灯灰烧成照妖的火。" },
   { id: "ironsword", tags: ["blade"], kind: "gear", tier: 1, name: "铁剑", icon: "ward-blade", tilt: [-45, 1.6], shape: V3, price: 8, cards: ["strike", "gap"],
     text: "铁匠铺的大路货。多一把剑，就多两招。" },
-  { id: "hook", tags: ["blade"], kind: "gear", tier: 1, name: "竹柄钩", icon: "hook", shape: L3, price: 9, cards: ["riposte", "pluck"],
+  { id: "hook", tags: ["blade"], kind: "gear", tier: 1, name: "竹柄钩", icon: "hook", tilt: [-45, 1.35], shape: V2, price: 9, cards: ["riposte", "pluck"],
     text: "取材用的弯钩，顺手也能刺一下。" },
   { id: "mirror", tags: ["guard"], kind: "gear", tier: 2, name: "护心镜", icon: "mirror", shape: SQ, price: 14, cards: ["wall"],
     passive: "每场战斗开始时获得 6 点格挡。", text: "挂在胸前的铜镜，很重，但真能救命。" },

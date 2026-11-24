@@ -885,3 +885,23 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
   .bar.flash-down, .bar.flash-up, .item-pop, .ware-info { animation: none !important; }
   .btn, .option, .order-card, .weapon-card, .item-ware, .relic-choice, .card, .bag-grid .item, .roll { transition: none !important; }
 }
+
+/* QA-001: reach cells sit above the items, so they must stay see-through — also on a sewn (irregular) bag, whose
+   own cell background used to win and made them opaque (磨刀石's neighbours vanished). Checked by bag-art-check. */
+.bag-grid .cell.reach, .bag-grid.irregular .cell.reach { background: rgba(255, 205, 90, 0.26); }
+
+
+/* QA-001: tap targets on phones. The portrait stage is drawn at about 0.65 scale on a 390-wide phone, so anything
+   tappable needs ~38 stage px to reach the 24×24 CSS px minimum (WCAG 2.2, 2.5.8). Checked by overflow-check. */
+.portrait .btn.small { min-height: 38px; padding: 8px 13px; }
+.portrait .omen-chip { min-height: 38px; padding-top: 6px; padding-bottom: 6px; }
+.portrait .statuses .chip { min-height: 38px; min-width: 38px; display: inline-flex; align-items: center; justify-content: center; }
+
+/* Passive procs (行云, 剑谱残页) and the upgrade picker's "what changes" line. */
+.floater.proc { color: #c8e8ff; font-size: 22px; text-shadow: 0 0 8px rgba(120, 190, 255, 0.85), 2px 2px 0 #0a2040; }
+.pick-slot { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.up-diff { font-size: 13px; color: #ffe08a; text-align: center; max-width: 150px; }
+.up-diff.none { color: #a08a6a; }
+.pick-confirm { justify-content: center; margin: 4px 0 8px; }
+/* The rest screen has no scrolling area of its own; on a short phone its last option fell off the stage. */
+.event.rest .event-box { overflow-y: auto; }

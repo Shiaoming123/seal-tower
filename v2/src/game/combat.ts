@@ -23,7 +23,9 @@ export type CombatEvent =
   | { t: "intent" }
   | { t: "fled" }
   | { t: "drain"; what: "oil" | "ash" | "gold"; amount: number }
-  | { t: "enemy-move"; name: string };
+  | { t: "enemy-move"; name: string }
+  /** A passive set off by what you played (行云, 剑谱残页): said out loud so it doesn't happen unnoticed. */
+  | { t: "proc"; text: string };
 
 const HAND = 5;
 /** True if you own the 法宝 or carry the gear with this id. */
@@ -315,10 +317,13 @@ export function playCard(run: RunState, handIndex: number): { ok: boolean; reaso
   def.play(ctx, cardVals(def, card.up, card.bonus));
   c.cardsThisTurn++;
   if (isAttack) {
-    if (c.attacksThisTurn === 0 && c.status.swordIntent && !c.over) { drawCards(c, c.status.swordIntent); c.energy += c.status.swordIntent; }
+    if (c.attacksThisTurn === 0 && c.status.swordIntent && !c.over) {
+      drawCards(c, c.status.swordIntent); c.energy += c.status.swordIntent;
+      events.push({ t: "proc", text: `行云：抽 ${c.status.swordIntent} · 能量 +${c.status.swordIntent}` });
+    }
     c.attacksThisTurn++;
     if (c.status.swordQi && !c.over) damageEnemy(run, c, c.status.swordQi, events);
-    if (c.attacksThisTurn === 4 && has(run, "swordmanual")) c.energy += 2;
+    if (c.attacksThisTurn === 4 && has(run, "swordmanual")) { c.energy += 2; events.push({ t: "proc", text: "剑谱残页：能量 +2" }); }
   }
   if (c.cardsThisTurn === 3 && has(run, "tassel") && !c.over) damageEnemy(run, c, playerHit(c, 6, 0), events);
   if (def.type === "power") { /* powers leave the deck for this fight */ }

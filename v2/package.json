@@ -17,6 +17,10 @@
     "assets": "node scripts/prepare-assets.mjs",
     "fonts": "node scripts/build-fonts.mjs",
     "test:e2e": "node tests/e2e.mjs",
+    "test:bag-art": "node tests/bag-art-check.mjs",
+    "test:screens": "node tests/overflow-check.mjs",
+    "test:buttons": "node tests/button-check.mjs",
+    "qa": "tsc --noEmit && vitest run --testTimeout=180000 && node tests/bag-art-check.mjs && node tests/button-check.mjs && node tests/overflow-check.mjs",
     "pack:studio": "npm run build && node scripts/pack-studio.mjs --flat"
   },
   "devDependencies": {
