@@ -26,7 +26,7 @@
 | 6 | 上线后检查 | ✅ 公开后用未登录浏览器测过：桌面、iPhone 13、Pixel 7 都能打开、进塔、用方向键走路，0 报错；手机 UA 下魔搭自动切手机版页面，游戏铺满屏幕用竖屏布局。**11-24 晚重新上传并部署**（空间提交 `0e68aa20`，含 iPhone 标题修复、手机两步出牌 UI-005、套装调参 GAME-006），未登录 iPhone 13 复验：标题一行、两步出牌正常且选中牌压在提示之上、`?playtest=1` 直链结算页有「复制本局试玩记录」；线上 4 个变更文件哈希和包一致。唯一的报错来自魔搭手机页自己的脚本（`g.alicdn.com/sail-web/maas`），游戏框内 0 报错 | Claude | 同上第 4 节 · 截图 [media/live-check/](media/live-check/) |
 | 7 | 创作手记 | ✅ **11-24 已发布**：https://www.modelscope.cn/posts/438827 （专题 AI+赛事，标签 多模态模型AIGC，封面横版主视觉，关联创空间 zhanyaota；5 张图、3 张表、文末嵌演示视频；未登录可打开） | 你确认后 Claude 代发 | [创作手记-v2草稿.md](创作手记-v2草稿.md) |
 | 8 | 演示视频 | ✅ 已嵌入手记（上传版压成 1280×720、8 MB，因为上传工具单次上限 10 MB） | 已完成 | `media/demo.mp4` |
-| 9 | 官网最终提交 | ⏳ 待做（报名审核通过后） | **你**：在 https://mseo-ai-inf.ms.show/submit 填创空间链接 https://modelscope.cn/studios/Shiaoming/zhanyaota 和手记链接 https://www.modelscope.cn/posts/438827 | — |
+| 9 | 官网最终提交 | ✅ **11-24 19:57 已提交**，官网「我的作品」显示「待审核」。填写：作品名称「斩妖塔 · 富婆狐商救救我！」、简介（卡牌战斗 + 狐商跑商 + 假狐商 + AI 分工，约 170 字）、创空间链接 https://www.modelscope.cn/studios/Shiaoming/zhanyaota 、手记链接 https://www.modelscope.cn/posts/438827 | 你确认后 Claude 代交；**你**：留意作品审核结果，需要改就在「我的作品」点「编辑」 | [回执截图](media/submit-receipt.jpg) |
 | 10 | 评审期维持可玩 | ⏳ 12-02 至 12-06 | 你：别删空间、别改私有 | — |
 | 11 | 创空间首页精选申请 | ✅ 11-24 已发邮件到 contact@modelscope.cn（用户 163 邮箱） | 等魔搭回复；有回复告诉 Claude | [首页精选申请邮件.md](首页精选申请邮件.md) |
 
@@ -50,7 +50,7 @@
 1. ~~发帖、报名~~：11-24 已完成，等审核。审核通过后官网才能提交作品。
 2. ~~建创空间、上传~~：11-24 已完成（非公开），地址 https://modelscope.cn/studios/Shiaoming/zhanyaota 。**待你决定何时改公开**；改公开后我们再测一遍未登录和手机。
 3. ~~发手记~~：11-24 已发布 https://www.modelscope.cn/posts/438827 （含演示视频）。
-4. **11-30 前：** 在提交页填两个链接，截图留底，把截图或回执放进仓库（`docs/contest/media/`），清单这一项改成已完成。
+4. ~~官网提交~~：11-24 19:57 已提交，待作品审核。回执 [media/submit-receipt.jpg](media/submit-receipt.jpg)。提交页提示「比赛期间建议创空间采用『仅公开体验』」，我们现在是完全公开，要不要改由你定（获奖作品最终都要公开）。
 5. **12-02 至 12-06：** 保持空间公开。人气奖按创空间点赞数取前 5，可以转发拉赞。
 
 ## 待你决定
