@@ -1069,3 +1069,18 @@ describe("GAME-009 签文 that change decisions", () => {
     expect(run.reward!.relicChoices?.length).toBe(3);
   });
 });
+
+describe("REVIEW-002 AI playtest fixes", () => {
+  it("using a stacked consumable (烧灯灰) takes one off the stack, not the whole stack", () => {
+    const run = createRun(202, "sword", "lamp");
+    run.bag.items = run.bag.items.filter((it) => GOODS[it.id].kind === "gear");
+    for (let i = 0; i < 3; i++) addGood(run, "ash");
+    const stack = run.bag.items.find((it) => it.id === "ash")!;
+    expect(bag.qty(stack)).toBe(3);
+    run.oil = 10;
+    expect(useItem(run, stack.uid)).toContain("灯油 +8");
+    const left = run.bag.items.filter((it) => it.id === "ash").reduce((n, it) => n + bag.qty(it), 0);
+    expect(left).toBe(2);
+    expect(run.oil).toBe(18);
+  });
+});

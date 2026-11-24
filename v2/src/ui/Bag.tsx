@@ -207,7 +207,8 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
               <div class={`pending-item ${held?.from === "pending" && held.index === index ? "held" : ""} ${mode === "sell" && pileSell === `${index}:${id}` ? "confirm" : ""}`} title={GOODS[id].text}
                 onPointerDown={(e) => { if (mode !== "sell") startDrag({ from: "pending", index, id, rot: 0 }, e as unknown as PointerEvent); }}
                 onClick={() => {
-                  if (mode !== "sell") return;
+                  // Outside selling a tap used to do nothing, so new players never learned the pile can be dragged (REVIEW-002).
+                  if (mode !== "sell") { sfx.click(); say(`${GOODS[id].name}（${kindLabel(id)}）：${GOODS[id].text} 按住拖进行囊或侧袋就装上了。`, 4500); return; }
                   if (pileSell !== `${index}:${id}`) { sfx.click(); setPileSell(`${index}:${id}`); say(`再点一次，${sellPrice(run, id)} 石卖掉${GOODS[id].name}`, 3000); return; }
                   const p = sellPending(run, index); sfx.coin(); say(`卖出${GOODS[id].name}，得 ${p} 石`); setPileSell(null); commit();
                 }}>
@@ -217,7 +218,13 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
               </div>
             ))}
           </div>
-          <button type="button" class="btn small" onClick={() => { autoPackPending(run); sfx.click(); commit(); }}>自动装</button>
+          <button type="button" class="btn small" onClick={() => {
+            const before = run.pending.length; autoPackPending(run); const packed = before - run.pending.length;
+            sfx.click(); commit();
+            // A full bag used to make this button silently do nothing (REVIEW-002).
+            say(packed === 0 ? "行囊没有合适的空位，一件也装不下。丢掉或卖掉点东西，或者换个摆法。"
+              : run.pending.length ? `装进 ${packed} 件，还有 ${run.pending.length} 件装不下。` : `${packed} 件都装进去了。`, 3000);
+          }}>自动装</button>
         </div>
       )}
     </div>

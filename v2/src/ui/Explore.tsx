@@ -91,8 +91,10 @@ function lookAhead(run: RunState): string {
     if (isWall(d, x, y)) return i === 1 ? "前面是墙。" : `前面 ${i - 1} 格后是墙。`;
     const e = entityAt(d, x, y);
     if (e) {
-      const h = e.enemy && ENEMIES[e.enemy].harvest;
-      const part = e.enemy && ENEMIES[e.enemy].part;
+      // Only a monster still standing has a harvest: the stairs keep the dead guardian's id (REVIEW-002).
+      const foe = isFight(e) && !e.done ? e.enemy : undefined;
+      const h = foe && ENEMIES[foe].harvest;
+      const part = foe && ENEMIES[foe].part;
       const tip = h ? (h.good === "stolen" ? ` 它会抢货：${h.text}。` : ` 取材：${h.text}，可多拿${h.label}。`) : part ? ` 取材：单次伤害别超过 ${part.threshold - 1}，${part.label}才不会碎。` : "";
       const engage = i === 1 && isFight(e) ? " 再往前一步就开战。" : "";
       const elite = e.kind !== "elite" ? "" : run.floor < 3 ? " 精英可以绕开不打；打赢必得一件法宝、一件好装备或配件，还有更好的选牌。" : " 精英可以绕开不打；打赢多得 40 石、一块斩妖令、一张碑拓，还有更好的选牌。";
@@ -224,6 +226,7 @@ export function Explore() {
     await stepTo(x, y, dir, true);
     done();
   };
+  const walkConfirm = useRef<string | null>(null);
   /** Click a minimap tile: walk there. Clicking again while walking re-targets; any move key stops. */
   const walkTo = async (tx: number, ty: number) => {
     if (gate()) return;
@@ -232,7 +235,23 @@ export function Explore() {
       return;
     }
     const path = findPath(run.dungeon, run.pos, { x: tx, y: ty });
-    if (!path || !path.length) { say("那里还走不过去：路没探明，或者被妖挡住了。"); return; }
+    if (!path || !path.length) {
+      // Say what is in the way (REVIEW-002): under 月明 the whole map is lit and a far tile looks reachable.
+      const open = findPath(run.dungeon, run.pos, { x: tx, y: ty }, true);
+      const blocker = open?.map((p) => entityAt(run.dungeon, p.x, p.y)).find((e) => e && !e.done && e !== entityAt(run.dungeon, tx, ty));
+      say(blocker ? `${entityName(blocker)}挡在路上，得先打过去或者绕开。` : "那里还走不过去：路还没探明。");
+      return;
+    }
+    // A long walk can burn the lamp down without warning (REVIEW-002): if it would leave the lamp low, ask once more.
+    const cost = path.length + (run.omen === "rain" ? Math.floor(path.length / 3) : 0);
+    const key = `${tx},${ty}`;
+    if (run.oil > 0 && run.oil - cost <= 15 && walkConfirm.current !== key) {
+      walkConfirm.current = key;
+      say(run.oil - cost < 0 ? `这趟要走 ${path.length} 步，灯油只剩 ${run.oil}，走到一半灯就灭了。再点一次这一格照走。`
+        : `这趟要走 ${path.length} 步，约烧 ${cost} 灯油，走完只剩 ${run.oil - cost}。再点一次这一格就走。`, 3500);
+      return;
+    }
+    walkConfirm.current = null;
     busy.current = true;
     cancelWalk.current = false;
     setWalking(true);

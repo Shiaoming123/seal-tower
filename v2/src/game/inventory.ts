@@ -153,7 +153,7 @@ export function useItem(run: RunState, uid: number): string | null {
     return cells ? sewPiece(run, uid, cells) : null;
   }
   if (use.oil && run.oil >= run.maxOil) return null;
-  bag.removeUid(run.bag, uid);
+  bag.takeOne(run.bag, item); // one off a stack: burning 灯灰 ×3 used to burn all three (REVIEW-002)
   const lines: string[] = [];
   if (use.maxHp) { run.maxHp += use.maxHp; lines.push(`最大气血 +${use.maxHp}`); }
   if (use.heal) { const a = Math.min(use.heal, run.maxHp - run.hp); run.hp += a; lines.push(`回复 ${a} 气血`); }

@@ -26,7 +26,10 @@ export function intentSummary(run: RunState, c: CombatState) {
   const parts: { icon: string; label: string; cls: string }[] = [];
   if (i.stunned) parts.push({ icon: "晕", label: "", cls: "stun" });
   if (i.flee) parts.push({ icon: "逃", label: "", cls: "steal" });
-  if (i.charge) parts.push({ icon: "蓄", label: `${Math.min(c.dmgThisTurn, i.charge.threshold)}/${i.charge.threshold}`, cls: "charge" });
+  // Once the threshold is met, say so at once (REVIEW-002): 打断 itself only shows when the turn ends.
+  if (i.charge) parts.push(c.dmgThisTurn >= i.charge.threshold
+    ? { icon: "断", label: "够了", cls: "charge broken" }
+    : { icon: "蓄", label: `${c.dmgThisTurn}/${i.charge.threshold}`, cls: "charge" });
   if (i.dmg && !i.stunned) parts.push({ icon: "攻", label: `${enemyHitDamage(run, c)}${(i.hits ?? 1) > 1 ? `×${i.hits}` : ""}`, cls: "atk" });
   if (i.steal) parts.push({ icon: "抢", label: "", cls: "steal" });
   if (i.drainOil) parts.push({ icon: "油", label: `-${i.drainOil}`, cls: "steal" });
@@ -64,7 +67,9 @@ export function intentSummary(run: RunState, c: CombatState) {
   }
   if (i.charge) {
     const next = ENEMIES[c.enemy.id].moves[i.charge.then];
-    line += ` 不打断的话，下回合放「${next.name}」${next.dmg ? `（${next.dmg + c.enemy.dmgAdd + (c.enemy.status.str ?? 0)} 伤害）` : ""}。`;
+    line += c.dmgThisTurn >= i.charge.threshold
+      ? ` 这回合的伤害已经够了：结束回合时它会被打断，「${next.name}」不会来。`
+      : ` 不打断的话，下回合放「${next.name}」${next.dmg ? `（${next.dmg + c.enemy.dmgAdd + (c.enemy.status.str ?? 0)} 伤害）` : ""}。`;
   }
   return { parts, line };
 }

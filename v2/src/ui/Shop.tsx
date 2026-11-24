@@ -113,7 +113,7 @@ export function Shop() {
       </div>
       <div class="shop-sell panel">
         <ConceptTip ids={["market", "order", "pile"]} />
-        <h3>卖货 <small>点一下看价，再点一下卖出。绯绡压价收货，大约是带回镇上折库银的六成（随行情浮动）；同一种卖得越多越便宜。装备半价回收</small></h3>
+        <h3>卖货 <small>货角上的数字是卖价（石）。点一下看详情，再点一下卖出。绯绡压价收货，大约是带回镇上折库银的六成（随行情浮动）；同一种卖得越多越便宜。装备半价回收</small></h3>
         <p class="wanted">今天高价收：<GoodChip id={s.wanted} /> 今日翻倍</p>
         <BagGrid mode="sell" cell={44} />
         {run.orders.map((_, i) => {

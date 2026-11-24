@@ -47,7 +47,7 @@ export function EventScreen() {
               return (
                 <button type="button" class={`option ${locked ? "locked" : ""}`} disabled={!!locked}
                   onClick={() => choose(i)}>
-                  <b>{o.label}</b><span>{locked ? `（${locked}）` : o.detail}</span>
+                  <b>{o.label}</b><span>{o.detail}{locked ? <em class="lock-why">（{locked}）</em> : null}</span>
                 </button>
               );
             })}
@@ -78,11 +78,15 @@ export function RestScreen() {
   const e = R.currentEntity(run);
   const used = e?.restUsed ?? [];
   const allow = R.restAllowance(run);
-  const opt = (id: "heal" | "upgrade" | "oil", title: string, text: string) => (
-    <button type="button" class={`option ${used.includes(id) ? "locked" : ""}`} disabled={used.includes(id)} onClick={() => { sfx.click(); R.rest(run, id); commit(); }}>
-      <b>{title}</b><span>{used.includes(id) ? "（已经做过了）" : text}</span>
-    </button>
-  );
+  // A choice that would do nothing (full HP, full oil) is greyed out instead of quietly using up the lamp (REVIEW-002).
+  const opt = (id: "heal" | "upgrade" | "oil", title: string, text: string, useless?: string) => {
+    const why = used.includes(id) ? "已经做过了" : useless;
+    return (
+      <button type="button" class={`option ${why ? "locked" : ""}`} disabled={!!why} onClick={() => { sfx.click(); R.rest(run, id); commit(); }}>
+        <b>{title}</b><span>{why ? `（${why}）` : text}</span>
+      </button>
+    );
+  };
   return (
     <div class="event rest" style={{ backgroundImage: `linear-gradient(rgba(5,3,2,0.55), rgba(5,3,2,0.75)), url(${ART[FLOOR_BG[run.floor]]})` }}>
       <div class="event-art"><img src={ART.lamp} alt="" draggable={false} /></div>
@@ -92,9 +96,9 @@ export function RestScreen() {
           ? `守关妖就在不远处。今晚香火旺，灯台的香够用两回：可以做两件不同的事${used.length ? `（还能再做 ${allow - used.length} 件）` : ""}。`
           : "守关妖就在不远处。灯台下还算安全，只够做一件事：歇口气、磨剑，或者把灯台的油倒进自己的灯里。"}</p>
         <div class="options">
-          {opt("heal", "歇一会", `回复 ${heal} 气血（最多回复最大气血的 30%）。`)}
+          {opt("heal", "歇一会", `回复 ${heal} 气血（最多回复最大气血的 30%）。`, heal <= 0 ? "气血是满的" : undefined)}
           {opt("upgrade", "磨剑", "升级 1 张牌。")}
-          {opt("oil", "添灯油", `灯油 +${Math.min(R.REST_OIL, run.maxOil - run.oil)}（现在 ${run.oil} / ${run.maxOil}）。`)}
+          {opt("oil", "添灯油", `灯油 +${Math.min(R.REST_OIL, run.maxOil - run.oil)}（现在 ${run.oil} / ${run.maxOil}）。`, run.oil >= run.maxOil ? "灯油是满的" : undefined)}
           <button type="button" class="option" onClick={() => { run.at = null; run.screen = "explore"; commit(); }}>
             <b>{used.length ? "先走" : "先不用"}</b><span>{used.length ? "剩下的一回以后还能回来用。" : "以后还能回来。"}</span>
           </button>

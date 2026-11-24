@@ -127,7 +127,7 @@ export const EVENTS: Record<string, EventDef> = {
     id: "portal", title: "传送阵", sprite: "event-pool",
     text: "地上刻着一圈还在发光的阵纹，不知道是哪位前辈留下的。站上去，会被送到这一层的别处。",
     options: [
-      { label: "踏进去", detail: "被送到这一层还没去过的地方，省下走路的灯油。落地处的四周会被照亮。",
+      { label: "踏进去", detail: "被送到这一层至少 5 步外的地方，先挑还没去过的；都去过了就随便落一处。省下走路的灯油，落地处的四周会被照亮。",
         apply: (r) => (teleport(r) ? "一阵晕眩之后，你站在了陌生的走廊里。" : "阵纹闪了两下，熄了。这层已经没有你没去过的地方。") },
       { label: "拆下阵眼", detail: "阵就废了，但阵眼里嵌着一截灯芯。", apply: (r) => { addGood(r, "wick"); return "你撬下阵眼，得到一截灯芯。阵纹暗了下去。"; } },
       leave,

@@ -180,6 +180,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .weapon-detail p { margin: 0 0 6px; font-size: 15px; }
 .card-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .town-start { display: flex; justify-content: flex-end; gap: 16px; align-items: center; margin-top: auto; }
+/* Portrait: the order and weapon lists are two screens tall; keep 进塔 on screen (REVIEW-002). */
+.portrait .town-start { position: sticky; bottom: 0; z-index: 5; padding: 10px 0 12px; background: linear-gradient(rgba(22, 12, 9, 0), rgba(22, 12, 9, 0.94) 30%); }
 .diff select { font: inherit; margin-left: 8px; background: #2a1712; color: var(--ink); border: 1px solid var(--gold-dim); padding: 6px; }
 /* max-content rows: with auto rows the sections (min-height: 0) were squeezed to equal heights and spilled onto
    each other when the page is taller than the phone screen; the screen scrolls instead. */
@@ -198,10 +200,10 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 /* ---------------------------------------------------------------- game shell + HUD */
 .game { position: absolute; inset: 0; display: flex; flex-direction: column; }
 .main { position: relative; flex: 1; min-height: 0; }
-.hud { height: 58px; flex: none; display: flex; align-items: center; gap: 14px; padding: 0 14px; position: relative; z-index: 20;
+.hud { height: 58px; flex: none; display: flex; align-items: center; gap: 10px; padding: 0 14px; position: relative; z-index: 20;
   background: linear-gradient(#2a1712, #160c09); border-bottom: 2px solid var(--gold-dim); box-shadow: 0 3px 12px rgba(0, 0, 0, 0.6); }
-.hud-left { display: flex; align-items: center; gap: 12px; }
-.floor-name { font-family: var(--font-title); font-size: 24px; color: var(--gold); white-space: nowrap; }
+.hud-left { display: flex; align-items: center; gap: 10px; }
+.floor-name { font-family: var(--font-title); font-size: 21px; color: var(--gold); white-space: nowrap; }
 .gold { font-size: 18px; color: #f2c14e; white-space: nowrap; }
 .oil { position: relative; font-size: 15px; white-space: nowrap; padding-left: 16px; color: #ffd98a; }
 .oil i { position: absolute; left: 2px; bottom: 2px; width: 9px; max-height: 18px; background: linear-gradient(#ffd27a, #e2702a); border-radius: 2px; box-shadow: 0 0 0 1px #3a1a08, 0 0 6px rgba(255, 180, 80, 0.7); }
@@ -225,10 +227,11 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .dark-warn { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 4; width: 80%; text-align: center; padding: 8px 14px; font-size: 15px;
   color: #ffd0b0; background: rgba(20, 6, 4, 0.88); border-radius: 3px; box-shadow: inset 0 0 0 1px #8a2a1a; }
 .dark-warn.soft { width: auto; color: #ffd98a; box-shadow: inset 0 0 0 1px #8a6a3a; }
-.hud .bar { width: 170px; }
+.hud .bar { width: 150px; } /* with gap 10px: room for the relic row next to a two-good order (REVIEW-002) */
 /* Many relics: the buttons shrink but each icon stays a full 38px coin, so they overlap like a stack instead of squashing. */
-.relics { display: flex; gap: 2px; flex: 1; min-width: 0; padding-right: 28px; }
-.relic { flex: 0 1 38px; min-width: 10px; height: 38px; padding: 0; border: 0; cursor: pointer; background: none; position: relative; }
+/* Clipped to its own box (REVIEW-002): with a long order the last coins spilled over the client's name. */
+.relics { display: flex; gap: 2px; flex: 1; min-width: 46px; padding-right: 24px; overflow: hidden; }
+.relic { flex: 0 1 38px; min-width: 3px; height: 38px; padding: 0; border: 0; cursor: pointer; background: none; position: relative; }
 .relic img { position: absolute; left: 0; top: 0; width: 38px; height: 38px; padding: 2px; box-sizing: border-box; object-fit: contain;
   border-radius: 50%; background: radial-gradient(#4a2a1c, #1b0f0c); box-shadow: inset 0 0 0 1px var(--gold-dim), 0 0 0 1px rgba(0, 0, 0, 0.55); }
 .relic:hover, .relic:focus-visible { z-index: 2; }
@@ -236,7 +239,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .hud-order .order-label { color: var(--gold); }
 .hud-order .ok { color: #8fe0a0; }
 .hud-order .done { color: #8fe0a0; }
-.hud-buttons { display: flex; gap: 6px; }
+.hud-buttons { display: flex; gap: 4px; }
 .portrait .hud { height: auto; flex-wrap: wrap; padding: 8px 12px; row-gap: 6px; }
 .portrait .relics { order: 5; flex-basis: 100%; }
 
@@ -332,7 +335,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .harvest.failed i { background: #7a2a1a; }
 .harvest.failed { opacity: 0.7; }
 .part.broken { color: #999; text-decoration: line-through; }
-.intent { display: flex; flex-direction: column; align-items: center; gap: 2px; margin-bottom: -6px; animation: intent-in 0.25s ease-out; }
+.intent { display: flex; flex-direction: column; align-items: center; gap: 2px; margin-bottom: 0; /* was -6px: the move name sat on the monster name (REVIEW-002) */ animation: intent-in 0.25s ease-out; }
 @keyframes intent-in { from { transform: translateY(-8px); opacity: 0; } }
 .intent-icons { display: flex; gap: 6px; }
 .ib { display: flex; align-items: center; gap: 3px; background: rgba(15, 9, 7, 0.88); border-radius: 4px; padding: 3px 8px 3px 3px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2); }
@@ -344,8 +347,10 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .ib.buff i { background: #7a5a2a; }
 .ib.debuff i { background: #6a2a8a; }
 .ib.charge i { background: #e2483b; animation: pulse 0.8s infinite; }
+.ib.charge.broken i { background: #3f7a3a; animation: none; }
+.ib.charge.broken b { font-size: 17px; color: #bfe6a8; }
 .ib.stun i { background: #555; }
-.intent-name { font-size: 17px; color: #ffd9a0; text-shadow: 0 1px 3px #000; }
+.intent-name { font-size: 17px; line-height: 1.2; color: #ffd9a0; text-shadow: 0 1px 3px #000; }
 .intent-line { position: relative; margin-top: 4px; width: 100%; text-align: center; z-index: 3; font-size: 15px !important;
   background: rgba(15, 9, 7, 0.82); padding: 7px 14px; border-radius: 4px; font-size: 16px; line-height: 1.45; border: 1px solid rgba(217, 180, 90, 0.4); }
 .banner { position: absolute; left: 50%; top: 46%; transform: translate(-50%, -50%); z-index: 8; pointer-events: none; font-family: var(--font-title);
@@ -608,6 +613,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .option span { font-size: 15px; color: #5a4430; }
 .option:hover:not(:disabled) { box-shadow: inset 0 0 0 2px var(--red), 0 3px 0 #3a2410; }
 .option.locked { filter: grayscale(0.8) brightness(0.75); cursor: not-allowed; }
+.option .lock-why { font-style: normal; color: #8a2a14; margin-left: 4px; }
 .result-text { font-size: 18px; color: #ffcf5a; }
 .portrait .event { grid-template-columns: 1fr; grid-template-rows: 380px minmax(0, 1fr); padding: 16px; }
 
@@ -703,7 +709,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .reward-bag .tag-set { min-width: 0; }
 .reward-bag .pouch { min-width: 0; }
 .reward-bag .pouch-slot { width: 64px; height: 58px; }
-.reward-right { min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; justify-content: center; align-items: center; }
+/* safe center: when the relic pick overflows, it starts at the top instead of hiding its first choice above the scroll (REVIEW-002). */
+.reward-right { min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; justify-content: safe center; align-items: center; }
 .card-offer { padding: 12px 18px 14px; }
 .offer-actions { justify-content: center; align-items: center; gap: 12px; }
 .pick-hint { font-size: 13px; }

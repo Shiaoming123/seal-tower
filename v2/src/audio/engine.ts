@@ -36,6 +36,15 @@ function hallImpulse(a: AudioContext, seconds = 2.6, dark = 0.5, early = 0.004):
   return buf;
 }
 
+// Browsers refuse to start audio before the player touches the page, and log a warning every time we ask.
+// Ask only after the first tap or key (REVIEW-002: the playtest saw ~80 such warnings in one run).
+let gestured = false;
+if (typeof window !== "undefined") {
+  const on = () => { gestured = true; if (ctx?.state === "suspended") void ctx.resume(); };
+  window.addEventListener("pointerdown", on, { capture: true, once: true });
+  window.addEventListener("keydown", on, { capture: true, once: true });
+}
+
 export function ac(): AudioContext | null {
   if (!enabled) return null;
   if (!ctx) {
@@ -52,7 +61,7 @@ export function ac(): AudioContext | null {
       musicBus.connect(master); sfxBus.connect(master);
     } catch { return null; }
   }
-  if (ctx.state === "suspended") void ctx.resume();
+  if (ctx.state === "suspended" && gestured) void ctx.resume();
   return ctx;
 }
 
