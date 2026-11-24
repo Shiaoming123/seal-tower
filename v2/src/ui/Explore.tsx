@@ -11,6 +11,7 @@ import { theme } from "../render/textures";
 import { fx } from "../render/fx";
 import { OMEN } from "../data/omens";
 import { ART, artId } from "../render/assets";
+import { ConceptTip } from "./parts";
 import { commit, markTip, overlay, runSig, say, seenTip, tick, useRun } from "./store";
 
 // One renderer for the whole session; screens mount its canvas where they need it.
@@ -92,10 +93,12 @@ function lookAhead(run: RunState): string {
     if (e) {
       const h = e.enemy && ENEMIES[e.enemy].harvest;
       const part = e.enemy && ENEMIES[e.enemy].part;
-      const tip = h ? ` 取材：${h.text}，可多拿${h.label}。` : part ? ` 取材：单次伤害别超过 ${part.threshold - 1}，${part.label}才不会碎。` : "";
+      const tip = h ? (h.good === "stolen" ? ` 它会抢货：${h.text}。` : ` 取材：${h.text}，可多拿${h.label}。`) : part ? ` 取材：单次伤害别超过 ${part.threshold - 1}，${part.label}才不会碎。` : "";
       const engage = i === 1 && isFight(e) ? " 再往前一步就开战。" : "";
-      const elite = e.kind === "elite" ? " 精英可以绕开不打；打赢必得一件法宝和一件好装备。" : "";
-      return `前面 ${i} 格：${entityName(e)}。${engage}${elite}${tip}`;
+      const elite = e.kind !== "elite" ? "" : run.floor < 3 ? " 精英可以绕开不打；打赢必得一件法宝、一件好装备或配件，还有更好的选牌。" : " 精英可以绕开不打；打赢多得 40 石、一块斩妖令、一张碑拓，还有更好的选牌。";
+      // The guardian is the one fight you can't step back from: say what losing costs (REVIEW-001).
+      const guard = e.kind === "guardian" ? " 守关妖不能撤退；倒下的话身上的石和货全丢。打得不顺，菜单里可以「重新开战」。" : "";
+      return `前面 ${i} 格：${entityName(e)}。${engage}${elite}${guard}${tip}`;
     }
   }
   return "前面是一条长廊。";
@@ -287,6 +290,7 @@ export function Explore() {
           </div>
         )}
         {onStairs && <StairsPrompt />}
+        {!showTip && !omenOpen && !onStairs && <ConceptTip ids={["oil", "omen", "order"]} />}
         {omenOpen && (
           <div class={`omen-card ${nudge ? "nudge" : ""}`} key={`omen-${nudge}`}>
             <span class="omen-tag">本层签文</span>
@@ -346,6 +350,7 @@ function StairsPrompt() {
   const top = run.floor === 3;
   // GAME-008: the floor's pile stays behind when you leave, so leaving with goods still loose takes a second tap.
   const pile = run.pending.length;
+  const orderLoose = run.orders.some((o, i) => !o.done && R.orderProgress(run, i).parts.some((p) => p.inPile > 0));
   const [sure, setSure] = useState<null | "climb" | "home">(null);
   const leave = (what: "climb" | "home", act: () => void) => { if (pile && sure !== what) { sfx.click(); setSure(what); return; } act(); };
   return (
@@ -353,7 +358,7 @@ function StairsPrompt() {
       <h3>{top ? "塔顶" : "守关妖倒下了"}</h3>
       <p>{top ? "负钟君已经倒下。" : `楼梯通往第 ${run.floor + 1} 层。上楼会回复 ${Math.round(R.CLIMB_HEAL * 100)}% 已损失的气血。也可以现在带着货回镇上结算。`}</p>
       {pile > 0 && (
-        <p class="pile-warn">货堆里还有 {pile} 件没装进行囊，离开这一层就会留下。
+        <p class="pile-warn">货堆里还有 {pile} 件没装进行囊，离开这一层就会留下。{orderLoose ? "其中有委托要的货。" : ""}
           <button type="button" class="btn small" onClick={() => { sfx.click(); overlay.value = "bag"; }}>整理行囊</button></p>
       )}
       <div class="row">
@@ -381,7 +386,7 @@ function BossIntel() {
 }
 
 const COLORS: Record<Entity["kind"], string> = {
-  fight: "#d9483b", elite: "#ff7a2f", guardian: "#ff3355", stairs: "#f4e3b0", shop: "#f2c14e", event: "#b48cf2", rest: "#6fd08c", chest: "#e8d27a",
+  fight: "#d9483b", elite: "#ff7a2f", guardian: "#ff3355", stairs: "#f4e3b0", shop: "#f2c14e", event: "#b48cf2", rest: "#6fd08c", chest: "#5fd3e6",
 };
 
 function Minimap({ onPick }: { onPick: (x: number, y: number) => void }) {
@@ -426,7 +431,7 @@ function Minimap({ onPick }: { onPick: (x: number, y: number) => void }) {
     <div class="minimap">
       <canvas ref={ref} width={d.w * cell} height={d.h * cell} onClick={pick} />
       <div class="legend">
-        {([["fight", "妖"], ["shop", "狐市"], ["rest", "灯台"], ["event", "事件"], ["chest", "宝箱"], ["guardian", "守关"]] as const).map(([k, label]) => (
+        {([["fight", "妖"], ["elite", "精英"], ["guardian", "守关"], ["shop", "狐市"], ["rest", "灯台"], ["event", "事件"], ["chest", "宝箱"], ["stairs", "楼梯"]] as const).map(([k, label]) => (
           <span><i class="dot" style={{ background: COLORS[k] }} />{label}</span>
         ))}
       </div>

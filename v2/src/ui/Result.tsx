@@ -4,6 +4,7 @@ import { ACHIEVEMENTS } from "../data/achievements";
 import { MAX_FAVOR } from "../data/town";
 import * as R from "../game/run";
 import { playtestRecord } from "../game/stats";
+import { Term } from "./parts";
 import { ART } from "../render/assets";
 import { clearRun, commit, page, playtest, profileSig, runSig, today, useRun } from "./store";
 
@@ -53,7 +54,7 @@ export function Result() {
           <li>取材成功 <b>{s.harvests}</b> 次，走了 {s.steps} 步</li>
           {run.orders.map((o) => <li>委托「{ORDERS[o.id].title}」：{o.done ? `已完成，${ORDERS[o.id].client}的交情 +1` : "没完成"}</li>)}
         </ul>
-        <h3>{settled.carried ? `带回镇灯铺 ${settled.carried} 石` : "什么也没带回来"}</h3>
+        <h3>{settled.carried ? <>带回镇灯铺 {settled.carried} 石 <small>（<Term id="treasury" />）</small></> : "什么也没带回来"}</h3>
         <ul class="carried">{settled.carriedLines.map((l) => <li>{l}</li>)}</ul>
         <p class="muted">库银现在是 {profileSig.value.treasury} 石，可以在镇灯铺营建。</p>
         <h3>声望 +{settled.renown}</h3>

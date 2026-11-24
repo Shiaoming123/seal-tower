@@ -381,7 +381,10 @@ export function endTurn(run: RunState): CombatEvent[] {
   c.discard.push(...c.hand);
   c.hand = [];
   if (has(run, "knotcharm") && c.block === 0) { const a = Math.min(2, run.maxHp - run.hp); run.hp += a; if (a) events.push({ t: "heal", amount: a }); }
-  tick(c.status);
+  // Your 虚弱 wears off now (it weakened this turn's attacks). Your 破绽 waits until after the monster has hit you:
+  // it used to tick here too, so 1 turn of 破绽 never did anything while the intent showed ×1.5 (REVIEW-001).
+  tick(c.status, ["weak"]);
+  const vulnBefore = c.status.vuln ?? 0;
 
   // Burn ticks before the enemy acts and ignores block.
   const e = c.enemy;
@@ -436,6 +439,8 @@ export function endTurn(run: RunState): CombatEvent[] {
     if (i.charge) e.queued = i.charge.then;
   }
   tick(e.status);
+  // Only 破绽 you already had wears off; a fresh one from this very turn lasts into the monster's next hit.
+  if (vulnBefore && c.status.vuln) { c.status.vuln -= 1; if (!c.status.vuln) delete c.status.vuln; }
   e.turn++;
   if (c.over) return events;
   chooseIntent(e, c.rng);
@@ -445,7 +450,7 @@ export function endTurn(run: RunState): CombatEvent[] {
 }
 
 /**
- * Fragile goods (完整狐扣, 水珠, 钟铜) may crack when a hit gets through: each one has a 25% chance, unless it
+ * Fragile goods (完整狐扣, 水珠) may crack when a hit gets through: each one has a 25% chance, unless it
  * sits next to a 镇货符 or you played 护货 this turn. Cracked goods keep their place in the bag.
  */
 export const CRACK_CHANCE = 0.25;
@@ -508,9 +513,9 @@ function steal(run: RunState, c: CombatState, events: CombatEvent[]) {
   if (ENEMIES[c.enemy.id].stealFlees) c.enemy.queued = "flee";
 }
 
-/** Weak / vulnerable wear off by one at the end of the owner's turn. */
-function tick(s: CombatState["status"]) {
-  for (const k of ["weak", "vuln"] as const) if (s[k]) { s[k]! -= 1; if (!s[k]) delete s[k]; }
+/** Weak / vulnerable wear off by one: the monster's at the end of its turn; yours as noted in endTurn. */
+function tick(s: CombatState["status"], keys: ("weak" | "vuln")[] = ["weak", "vuln"]) {
+  for (const k of keys) if (s[k]) { s[k]! -= 1; if (!s[k]) delete s[k]; }
 }
 
 /** What the enemy is about to steal, for the intent label. */

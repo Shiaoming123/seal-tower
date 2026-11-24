@@ -231,7 +231,8 @@ export interface RunState {
   /** A 道友 told you the next floor's prices. */
   rumor: boolean;
   /** Open card picker (upgrade / remove), from an event, rest or shop. */
-  cardPick: { mode: "upgrade" | "remove" | "copy"; source: "event" | "rest" | "shop"; price?: number } | null;
+  /** `paid`: the pick was bought with blood or a good, so walking away loses that (asked twice). */
+  cardPick: { mode: "upgrade" | "remove" | "copy"; source: "event" | "rest" | "shop"; price?: number; paid?: boolean } | null;
   bossIntel: boolean;
   log: string[];
   /** Things that happened this run, for achievements. */

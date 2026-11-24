@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import { sfx } from "../audio/sfx";
 import { CARDS } from "../data/cards";
-import { GOODS, KIND_LABEL, REFINES, TAGS, TAG_IDS, stackMax } from "../data/goods";
+import { GOODS, REFINES, TAGS, TAG_IDS, kindLabel, stackMax, townPrice, townPriceLabel } from "../data/goods";
 import * as bag from "../game/bag";
 import { POUCH_SLOTS, canExpand, discard, pouchFits, sellPending, sewPiece, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
 import type { GoodId, PlacedGood, RunState } from "../game/types";
 import { ART } from "../render/assets";
-import { GoodInfo } from "./parts";
+import { ConceptTip, GoodInfo, Term, cardText } from "./parts";
+import { previewFor } from "../game/combat";
+import type { TermId } from "../data/glossary";
 import { commit, overlay, say, useRun } from "./store";
 
 type Held = { from: "bag"; uid: number; id: GoodId; rot: number } | { from: "pending" | "pouch"; index: number; id: GoodId; rot: number };
@@ -40,7 +42,9 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
   const [ghost, setGhost] = useState<{ x: number; y: number } | null>(null);
   const moved = useRef(false);
   const [confirmSell, setConfirmSell] = useState<number | null>(null);
-  const [pileSell, setPileSell] = useState<number | null>(null);
+  // Confirming a pile sale remembers the slot *and* the good: handing in an order shifts the pile, and a second tap
+  // must never sell a different good that slid into the same slot (REVIEW-001).
+  const [pileSell, setPileSell] = useState<string | null>(null);
   /** Sewing a 扩囊衬布 on: the lining item's uid while the expander is open. */
   const [sewing, setSewing] = useState<number | null>(null);
 
@@ -134,9 +138,10 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
         // Selling: the good picked by the first tap is described here, above the grid (the panel is too narrow
         // and scrolls, so a popover beside the item would be cut off).
         const it = run.bag.items.find((x) => x.uid === confirmSell);
-        return it
+        // A fixed-height slot, so picking a good never pushes the grid down under your finger (REVIEW-001).
+        return <div class="sell-slot">{it
           ? <div class="sell-info"><GoodInfo id={it.id} price={`卖 ${sellPrice(run, it.id, run.floor, run.shop?.sold[it.id] ?? 0, it.uid)} 石`} note="再点一下这件货卖出，点别的货换一件看" /></div>
-          : <p class="sell-hint muted">点一件货看说明和卖价，再点一下卖出。</p>;
+          : <p class="sell-hint muted">点一件货看说明和卖价，再点一下卖出。</p>}</div>;
       })()}
       <div class={`bag-grid ${b.holes?.length ? "irregular" : ""}`} ref={gridRef} style={{ width: `${b.w * cell}px`, height: `${b.h * cell}px`, "--cell": `${cell}px` } as never}
         onContextMenu={(e) => { e.preventDefault(); if (held) setHeld({ ...held, rot: (held.rot + 1) % 4 }); else rotateSelected(); }}>
@@ -196,19 +201,19 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
       </div>
       {run.pending.length > 0 && (
         <div class="pending">
-          <h4>货堆 · {run.pending.length} 件 <small>{mode === "sell" ? "点一下看价，再点一下卖掉。" : "这一层一直跟着你，不生效也不会被偷。上楼或回镇前装进行囊，装不下的会留下。"}</small></h4>
+          <h4><Term id="pile" /> · {run.pending.length} 件 <small>{mode === "sell" ? "点一下看价，再点一下卖掉。" : "这一层一直跟着你，不生效也不会被偷。上楼或回镇前装进行囊，装不下的会留下。"}</small></h4>
           <div class="pending-list">
             {run.pending.map((id, index) => (
-              <div class={`pending-item ${held?.from === "pending" && held.index === index ? "held" : ""} ${mode === "sell" && pileSell === index ? "confirm" : ""}`} title={GOODS[id].text}
+              <div class={`pending-item ${held?.from === "pending" && held.index === index ? "held" : ""} ${mode === "sell" && pileSell === `${index}:${id}` ? "confirm" : ""}`} title={GOODS[id].text}
                 onPointerDown={(e) => { if (mode !== "sell") startDrag({ from: "pending", index, id, rot: 0 }, e as unknown as PointerEvent); }}
                 onClick={() => {
                   if (mode !== "sell") return;
-                  if (pileSell !== index) { sfx.click(); setPileSell(index); say(`再点一次，${sellPrice(run, id)} 石卖掉${GOODS[id].name}`, 3000); return; }
+                  if (pileSell !== `${index}:${id}`) { sfx.click(); setPileSell(`${index}:${id}`); say(`再点一次，${sellPrice(run, id)} 石卖掉${GOODS[id].name}`, 3000); return; }
                   const p = sellPending(run, index); sfx.coin(); say(`卖出${GOODS[id].name}，得 ${p} 石`); setPileSell(null); commit();
                 }}>
                 <img src={ART[GOODS[id].icon]} alt="" draggable={false} />
                 <span>{GOODS[id].name}</span>
-                <small>{mode === "sell" ? `${pileSell === index ? "卖?" : ""}${sellPrice(run, id)} 石` : `${bag.sizeOf(id, 0).w}×${bag.sizeOf(id, 0).h}`}</small>
+                <small>{mode === "sell" ? `${pileSell === `${index}:${id}` ? "卖?" : ""}${sellPrice(run, id)} 石` : `${bag.sizeOf(id, 0).w}×${bag.sizeOf(id, 0).h}`}</small>
               </div>
             ))}
           </div>
@@ -233,6 +238,9 @@ function DiscardButton({ run, uid, onDone }: { run: RunState; uid: number; onDon
   );
 }
 
+/** Card text outside a fight (no live numbers). */
+const cardPreview = previewFor({ bag: { w: 1, h: 1, items: [] }, gold: 0, relics: [], combat: null } as never, null);
+
 function ItemDetails({ run, uid, onRotate, onDone, onSew }: { run: RunState; uid: number | null; onRotate: () => void; onDone: () => void; onSew: (uid: number) => void }) {
   const it = run.bag.items.find((i) => i.uid === uid);
   if (!it) return <div class="item-details empty"><p>点一件东西看详情。拖动可以挪位置<span class="keys-only">，右键或 R 旋转</span>。</p></div>;
@@ -241,14 +249,28 @@ function ItemDetails({ run, uid, onRotate, onDone, onSew }: { run: RunState; uid
   const canUse = g.use && (g.use.inCombat || !inCombat) && !(g.use.bagRow && !canExpand(run));
   return (
     <div class="item-details">
-      <div class="det-head"><img src={ART[g.icon]} alt="" /><div><b>{g.name}{bag.qty(it) > 1 ? ` ×${bag.qty(it)}` : ""}</b><span>{KIND_LABEL[g.kind]} · 售价 {g.price} 石{stackMax(it.id) > 1 ? ` · 一格叠 ${stackMax(it.id)} 个` : ""}</span></div></div>
+      <div class="det-head"><img src={ART[g.icon]} alt="" /><div><b>{g.name}{bag.qty(it) > 1 ? ` ×${bag.qty(it)}` : ""}</b><span>{kindLabel(it.id)} · {townPriceLabel(it.id)}{stackMax(it.id) > 1 ? ` · 一格叠 ${stackMax(it.id)} 个` : ""}</span></div></div>
       <p class="det-text">{g.text}</p>
       {g.passive && <p class="det-passive">带在身上：{g.passive}</p>}
-      {g.cards && <p class="det-cards">牌组多出：{g.cards.map((c) => `「${CARDS[c].name}」`).join("")}</p>}
-      {g.aura && <p class="det-aura">配件：{g.aura.text}。现在挨着：{bag.neighbours(run.bag, it).map((o) => GOODS[o.id].name).join("、") || "什么也没有"}</p>}
-      {!g.aura && <AuraLine run={run} uid={it.uid} />}
+      {g.cards && (
+        <div class="det-cards">
+          <span class="det-label">放进行囊，牌组多出：</span>
+          {(() => {
+            // Same numbers as the deck shows: neighbours' bonus and the refined item's own bonus included (REVIEW-001).
+            const dmg = bag.auraOn(run.bag, it, "dmg") + (g.selfBonus?.dmg ?? 0), blk = bag.auraOn(run.bag, it, "blk") + (g.selfBonus?.blk ?? 0);
+            const bonus = dmg || blk ? { dmg, blk } : undefined;
+            return g.cards.map((c) => { const def = CARDS[c]; return <span class="det-card"><b>「{def.name}{g.cardsUp ? "+" : ""}」</b>{cardText(def, !!g.cardsUp, bonus, cardPreview)}</span>; });
+          })()}
+        </div>
+      )}
+      {g.aura && <p class="det-aura"><Term id="aura" />：{g.aura.text}。现在挨着：{bag.neighbours(run.bag, it).map((o) => GOODS[o.id].name).join("、") || "什么也没有"}</p>}
+      {(!g.aura || g.cards) && <AuraLine run={run} uid={it.uid} />}
       <RefineLine run={run} uid={it.uid} />
-      {g.tags && <p class="det-tags">{g.tags.map((t) => `「${TAGS[t].name}」${TAGS[t].at[0]} 件：${TAGS[t].text[0]}；${TAGS[t].at[1]} 件：${TAGS[t].text[1]}`).join("　")}</p>}
+      {g.tags && g.tags.map((t) => {
+        const n = bag.tagCounts(run.bag)[t];
+        return <p class="det-tags">「{TAGS[t].name}」<Term id="set" />：现在 {n} 件　{TAGS[t].at[0]} 件：{TAGS[t].text[0]}；{TAGS[t].at[1]} 件：{TAGS[t].text[1]}</p>;
+      })}
+      {g.fragile && <p class="det-tags"><Term id="fragile" />：挨打时可能磕坏成「{GOODS[g.fragile].name}」。贴着镇货符、或这回合打过「护货」就不会坏；放在侧袋里也会坏。</p>}
       <div class="row">
         {canUse && <button type="button" class="btn small primary" onClick={() => {
           if (g.use!.bagRow) { onSew(it.uid); return; }
@@ -258,10 +280,24 @@ function ItemDetails({ run, uid, onRotate, onDone, onSew }: { run: RunState; uid
         <button type="button" class="btn small" onClick={onRotate}>旋转</button>
         {!inCombat && <button type="button" class="btn small" disabled={pouchFull(run) || !pouchFits(it.id)} title={!pouchFits(it.id) ? "侧袋只放一格大的东西" : undefined} onClick={() => { if (toPouch(run, it.uid)) { sfx.click(); onDone(); commit(); } }}>{pouchFits(it.id) ? "放进侧袋" : "太大，进不了侧袋"}</button>}
         <button type="button" class="btn small ghost" onClick={() => { unpack(run, it.uid); onDone(); commit(); }}>放回货堆</button>
-        {!inCombat && <DiscardButton run={run} uid={it.uid} onDone={onDone} />}
+        {!inCombat && <DiscardButton key={it.uid} run={run} uid={it.uid} onDone={onDone} />}
       </div>
     </div>
   );
+}
+
+/** Which bag ideas are in play right now, in the order a new player should meet them. */
+function bagConcepts(run: RunState): TermId[] {
+  const items = run.bag.items, ids: TermId[] = ["gear"];
+  const tags = bag.tagCounts(run.bag);
+  if (Object.values(tags).some((n) => n >= 1)) ids.push("set");
+  if (items.some((it) => GOODS[it.id].aura)) ids.push("aura");
+  if (bag.pendingRefines(run.bag).length || items.some((it) => REFINES.some((r) => r.gear === it.id || r.with === it.id))) ids.push("refine");
+  if (items.some((it) => GOODS[it.id].fragile) || run.pouch.some((id) => GOODS[id].fragile)) ids.push("fragile");
+  if (run.pending.length) ids.push("pile");
+  if (items.some((it) => bag.qty(it) > 1)) ids.push("stack");
+  if (run.pouch.length) ids.push("pouch");
+  return ids;
 }
 
 export function BagOverlay() {
@@ -269,9 +305,10 @@ export function BagOverlay() {
   return (
     <div class="overlay" onClick={(e) => { if (e.target === e.currentTarget) overlay.value = null; }}>
       <div class="overlay-box bag-box">
-        <header><h2>行囊 <small>{bag.cellCount(run.bag)} 格 · 货值 {bag.value(run.bag)} 石</small></h2>
+        <header><h2>行囊 <small>{bag.cellCount(run.bag)} 格 · 带回镇约值 {run.bag.items.reduce((s, x) => s + townPrice(x.id) * bag.qty(x), 0) + run.pouch.reduce((s, id) => s + townPrice(id), 0)} 石</small></h2>
           <button type="button" class="btn small" onClick={() => (overlay.value = null)}>关闭 <kbd>Esc</kbd></button></header>
-        <p class="muted">装备（青框）放在行囊里，它的牌就会进入牌组。货物（金框）可以卖、交委托，或被某些牌烧掉。</p>
+        <p class="muted">行囊就是你的牌组：<Term id="gear">装备（青框）</Term>放进来，它的牌就进牌组；<Term id="aura">配件</Term>挨着装备，牌变强；同标签的东西凑够数是<Term id="set">套装</Term>。<Term id="goods">货物（金框）</Term>可以卖、交委托，或被某些牌烧掉。配件是紫框，用品（药、衬布）是绿框，淬炼过的装备发金光。</p>
+        <ConceptTip ids={bagConcepts(run)} />
         {/* Tall bags (after sewing on pieces) use slightly smaller cells so the overlay still fits. */}
         <BagGrid mode="manage" cell={run.bag.h > 6 ? 56 : 64} />
       </div>
@@ -309,7 +346,7 @@ function AuraLine({ run, uid }: { run: RunState; uid: number }) {
 function TagSets({ run }: { run: RunState }) {
   const counts = bag.tagCounts(run.bag);
   const shown = TAG_IDS.filter((t) => counts[t] > 0);
-  if (!shown.length) return <div class="tag-sets empty"><span>套装：带同一类的东西凑够数量会生效（刃、盾、灯、钱、妖材）</span></div>;
+  if (!shown.length) return <div class="tag-sets empty"><span><Term id="set" />：带同一类的东西凑够数量会生效（刃、盾、灯、钱、妖材）</span></div>;
   return (
     <div class="tag-sets">
       {shown.map((t) => {
@@ -317,8 +354,8 @@ function TagSets({ run }: { run: RunState }) {
         const next = lv < 2 ? d.at[lv] : d.at[1];
         return (
           <span class={`tag-set lv${lv}`} title={`${d.at[0]} 件：${d.text[0]}\n${d.at[1]} 件：${d.text[1]}`}>
-            <b>{d.name}</b> {n}/{next}
-            <small>{lv === 0 ? `再 ${d.at[0] - n} 件：${d.text[0]}` : lv === 1 ? `${d.text[0]}；再 ${d.at[1] - n} 件：${d.text[1]}` : `${d.text[0]}；${d.text[1]}`}</small>
+            <b>{d.name}</b> {lv === 2 ? `${n} · 已满` : `${n}/${next}`}
+            <small>{lv === 0 ? `再 ${d.at[0] - n} 件：${d.text[0]}` : lv === 1 ? `已生效：${d.text[0]}；再 ${d.at[1] - n} 件：${d.text[1]}` : `都已生效：${d.text[0]}；${d.text[1]}`}</small>
           </span>
         );
       })}
@@ -332,12 +369,12 @@ function TagSets({ run }: { run: RunState }) {
  */
 function Pouch({ run, mode, held, onDrag }: { run: RunState; mode: "manage" | "sell"; held: Held | null; onDrag: (index: number, e: PointerEvent) => void }) {
   const locked = !!run.combat;
-  const [confirm, setConfirm] = useState<number | null>(null);
+  const [confirm, setConfirm] = useState<string | null>(null); // slot and good, as for the pile
   const take = (i: number) => {
     if (locked) return;
     if (mode === "sell") {
       const id = run.pouch[i];
-      if (confirm !== i) { sfx.click(); setConfirm(i); say(`再点一次，${sellPrice(run, id)} 石卖掉${GOODS[id].name}`, 3000); return; }
+      if (confirm !== `${i}:${id}`) { sfx.click(); setConfirm(`${i}:${id}`); say(`再点一次，${sellPrice(run, id)} 石卖掉${GOODS[id].name}`, 3000); return; }
       const p = sellPouch(run, i); sfx.coin(); say(`卖出${GOODS[id].name}，得 ${p} 石`); setConfirm(null); commit(); return;
     }
     if (fromPouch(run, i)) { sfx.click(); commit(); }
@@ -345,7 +382,7 @@ function Pouch({ run, mode, held, onDrag }: { run: RunState; mode: "manage" | "s
   };
   return (
     <div class={`pouch ${locked ? "locked" : ""} ${held && held.from !== "pouch" ? "target" : ""}`}>
-      <h4>侧袋 <small>{locked ? "打完再整理" : mode === "sell" ? "点一下卖掉" : "只放一格大的东西。不生效，不会被抢，但挨打时易碎货照样会磕坏。点一下放回行囊"}</small></h4>
+      <h4><Term id="pouch" /> <small>{locked ? "打完再整理" : mode === "sell" ? "点一下卖掉" : "只放一格大的东西。不生效，不会被抢，但挨打时易碎货照样会磕坏。点一下放回行囊"}</small></h4>
       <div class="pouch-slots">
         {Array.from({ length: POUCH_SLOTS }, (_, i) => {
           const id = run.pouch[i];
@@ -357,7 +394,7 @@ function Pouch({ run, mode, held, onDrag }: { run: RunState; mode: "manage" | "s
               onClick={() => take(i)}>
               <img src={ART[g.icon]} alt={g.name} draggable={false} />
               <span>{g.name}</span>
-              {mode === "sell" && <span class={`price ${confirm === i ? "confirm" : ""}`}>{sellPrice(run, id)}</span>}
+              {mode === "sell" && <span class={`price ${confirm === `${i}:${id}` ? "confirm" : ""}`}>{sellPrice(run, id)}</span>}
             </div>
           );
         })}

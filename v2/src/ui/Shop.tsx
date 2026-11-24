@@ -10,11 +10,11 @@ import { sellPrice } from "../game/inventory";
 import type { GoodId } from "../game/types";
 import { ART } from "../render/assets";
 import { BagGrid } from "./Bag";
-import { Art, CardView, GoodChip, GoodInfo, relicIcon } from "./parts";
+import { Art, CardView, ConceptTip, GoodChip, GoodInfo, relicIcon } from "./parts";
 import { commit, say, useRun } from "./store";
 
 const LINES = [
-  "货架上的都能拿，石头放下就行。你行囊里的东西，我也收。",
+  "货架上的都能拿，石放下就行。你行囊里的东西，我也收。",
   "今天高价收的东西写在牌子上了，有就拿来。",
   "兵器放进行囊才算数——放不下的，买了也是白买。",
 ];
@@ -53,7 +53,7 @@ export function Shop() {
       </div>
       <div class="shop-table">
         <div class="shop-row">
-          <h3>技法 <small>学了就进牌组</small></h3>
+          <h3>招式 <small>学了就进牌组</small></h3>
           <div class="wares">
             {s.cards.map((w, i) => (
               <div class={`ware ${w.sold ? "sold" : ""} ${arm(`card${i}`)}`}>
@@ -76,7 +76,7 @@ export function Shop() {
                   <img src={ART[g.icon]} alt="" draggable={false} />
                   <b>{g.name}</b>
                   <span class="shape">{size.w}×{size.h}</span>
-                  <span class="desc">{g.cards ? `牌：${g.cards.map((c) => CARDS[c].name).join("、")}` : ""}{g.passive ? ` ${g.passive}` : ""}{g.use ? g.use.label : ""}</span>
+                  <span class="desc">{g.cards ? `牌：${g.cards.map((c) => CARDS[c].name).join("、")}` : ""}{g.passive ? ` ${g.passive}` : ""}{g.use ? g.use.label : ""}{g.aura && !g.cards ? `配件：${g.aura.text}` : ""}</span>
                   <span class={`tag-price ${run.gold < w.price ? "poor" : ""}`}>{w.sold ? "已售" : `${w.price} 石`}</span>
                 </button>
               );
@@ -112,8 +112,9 @@ export function Shop() {
         </div>
       </div>
       <div class="shop-sell panel">
+        <ConceptTip ids={["market", "order", "pile"]} />
         <h3>卖货 <small>点一下看价，再点一下卖出。绯绡压价收货，大约是带回镇上折库银的六成（随行情浮动）；同一种卖得越多越便宜。装备半价回收</small></h3>
-        <p class="wanted">今天高价收：<GoodChip id={s.wanted} /> 价格翻倍</p>
+        <p class="wanted">今天高价收：<GoodChip id={s.wanted} /> 今日翻倍</p>
         <BagGrid mode="sell" cell={44} />
         {run.orders.map((_, i) => {
           const prog = R.orderProgress(run, i);
@@ -144,7 +145,7 @@ function MarketBoard() {
   const goods = R.TRADE_GOODS.filter((g) => g !== "clasp-broken");
   return (
     <div class="market-board">
-      <h4>行情牌{run.rumor && run.floor < 3 ? <small> · 括号里是上一层的价</small> : null}</h4>
+      <h4>行情牌{run.rumor && run.floor < 3 ? <small> · 括号里是楼上（第 {run.floor + 1} 层）的价</small> : null}</h4>
       <ul>
         {goods.map((g: GoodId) => {
           const now = sellPrice(run, g);

@@ -1,11 +1,13 @@
 import type { ComponentChildren } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
-import { CARDS, type Preview, RARITY_LABEL, TYPE_LABEL, cardCost, cardVals } from "../data/cards";
-import { GOODS, KIND_LABEL, TAGS } from "../data/goods";
+import { CARDS, type CardDef, type Preview, RARITY_LABEL, TYPE_LABEL, cardCost, cardVals } from "../data/cards";
+import { GOODS, TAGS, kindLabel } from "../data/goods";
 import { RELICS } from "../data/relics";
+import { previewFor } from "../game/combat";
 import type { GoodId, StatusId } from "../game/types";
 import { ART, artId } from "../render/assets";
-import { say } from "./store";
+import { TERMS, type TermId } from "../data/glossary";
+import { markTip, say, seenTip, termTip } from "./store";
 
 export const CARD_ART: Record<string, string> = {
   strike: "sword", defend: "mirror", unison: "sword", twin: "sword", riposte: "hook", gap: "pin", breach: "ward-blade",
@@ -22,10 +24,10 @@ export const STATUS_INFO: Record<StatusId, { name: string; text: (n: number) => 
   str: { name: "力量", text: (n) => `每次伤害 +${n}。` },
   weak: { name: "虚弱", text: (n) => `造成的伤害 -25%，还剩 ${n} 回合。`, bad: true },
   vuln: { name: "破绽", text: (n) => `受到的伤害 +50%，还剩 ${n} 回合。`, bad: true },
-  thorns: { name: "反震", text: (n) => `每被打一下，回敬 ${n} 伤害。` },
+  thorns: { name: "棘刺", text: (n) => `每被打一下，扎回去 ${n} 伤害（整场有效）。` },
   counter: { name: "回敬", text: (n) => `直到你的下回合，每被打一下回敬 ${n} 伤害。` },
   focus: { name: "蓄势", text: (n) => `下一张攻击牌伤害 +${n}。` },
-  ward: { name: "护货", text: () => "本回合货不会被抢。" },
+  ward: { name: "护货", text: () => "本回合货不会被抢，易碎货也不会磕坏。" },
   barricade: { name: "不动", text: () => "回合结束不清空格挡。" },
   lampArray: { name: "灯阵", text: (n) => `每回合开始烧 1 份灯灰，造成 ${n} 伤害并获得 ${n} 格挡。` },
   swordIntent: { name: "行云", text: () => "每回合第一张攻击牌后抽 1 张、能量 +1。" },
@@ -58,6 +60,17 @@ export function upgradeDiff(id: string): string[] {
   return out;
 }
 
+/**
+ * A card's rules text as shown on its face. Exhausting cards always say so (火上浇油 used to vanish without a word),
+ * and 「消耗」 says what it means (REVIEW-001).
+ */
+export function cardText(def: CardDef, up: boolean, bonus: { dmg?: number; blk?: number } | undefined, preview: Preview): string {
+  let t = def.text(cardVals(def, up, bonus), preview);
+  const ex = Array.isArray(def.exhaust) ? def.exhaust[up ? 1 : 0] : !!def.exhaust;
+  if (ex && !/消耗。$/.test(t)) t += "消耗。";
+  return t.replace(/(^|[。，])消耗。$/, "$1消耗（这场只能用一次）。");
+}
+
 export function CardView({ id, up, preview, onClick, disabled, reason, small, selected, extra, bonus }: {
   id: string; up: boolean; preview: Preview; onClick?: () => void; disabled?: boolean; reason?: string | null;
   small?: boolean; selected?: boolean; extra?: ComponentChildren; bonus?: { dmg?: number; blk?: number };
@@ -70,9 +83,15 @@ export function CardView({ id, up, preview, onClick, disabled, reason, small, se
       <span class="cost">{cost}</span>
       <span class="name">{def.name}{up ? "+" : ""}</span>
       <span class="pic"><Art id={artId(`card-${id}`, CARD_ART[id] ?? "sword")} /></span>
-      <span class="type">{TYPE_LABEL[def.type]} · {RARITY_LABEL[def.rarity]}</span>
-      <span class="text">{def.text(cardVals(def, up, bonus), preview)}</span>
-      {bonus && (bonus.dmg || bonus.blk) ? <span class="bonus-tag">{bonus.dmg ? `磨刀 +${bonus.dmg}` : ""}{bonus.blk ? ` 护符 +${bonus.blk}` : ""}</span> : null}
+      <span class="type">{TYPE_LABEL[def.type]}{def.type === "power" ? "（整场有效）" : ""} · {RARITY_LABEL[def.rarity]}</span>
+      {def.tags?.includes("fire") && <span class="fire-tag" title="带「火」字的牌：纸人怕火，但用它打出最后一下会烧掉红纸">火</span>}
+      {/* 「消耗」 alone means nothing to a new player: say what it does right on the card (REVIEW-001). */}
+      <span class="text">{cardText(def, up, bonus, preview)}</span>
+      {(() => {
+        // Only name a bonus this card actually uses (REVIEW-001: 「护符 +2」 used to sit on attack-only cards).
+        const v = def.v[0], dmg = bonus?.dmg && (v.dmg !== undefined || v.plus !== undefined) ? bonus.dmg : 0, blk = bonus?.blk && v.blk !== undefined ? bonus.blk : 0;
+        return dmg || blk ? <span class="bonus-tag">{[dmg ? `伤害 +${dmg}` : "", blk ? `格挡 +${blk}` : ""].filter(Boolean).join(" ")}</span> : null;
+      })()}
       {reason && <span class="reason">{reason}</span>}
       {extra}
     </button>
@@ -176,14 +195,21 @@ export function LootSlot({ id, n }: { id: GoodId; n?: number }) {
 }
 
 /** Read-only details of a good (no buttons): shown when you look at a ware in the 狐市 or pick a good to sell. */
+/** A neutral preview (no fight, empty bag) for card text outside combat. */
+let giPv: Preview | null = null;
+const giPreview = () => (giPv ??= previewFor({ bag: { w: 1, h: 1, items: [] }, gold: 0, relics: [], combat: null } as never, null));
+
 export function GoodInfo({ id, price, note }: { id: GoodId; price?: string; note?: string }) {
   const g = GOODS[id];
   return (
     <div class="good-info">
-      <div class="gi-head"><Art id={g.icon} /><div><b>{g.name}</b><span>{KIND_LABEL[g.kind]}{price ? ` · ${price}` : ""}</span></div></div>
+      <div class="gi-head"><Art id={g.icon} /><div><b>{g.name}</b><span>{kindLabel(id)}{price ? ` · ${price}` : ""}</span></div></div>
       <p>{g.text}</p>
       {g.passive && <p class="gi-line">带在身上：{g.passive}</p>}
-      {g.cards && <p class="gi-line">牌组多出：{g.cards.map((c) => `「${CARDS[c].name}」`).join("")}</p>}
+      {g.cards && (
+        // The whole card, not just its name: what goes into the deck is the point of buying gear (REVIEW-001).
+        <div class="gi-line gi-cards">放进行囊，牌组多出：{g.cards.map((c) => <span class="det-card"><b>「{CARDS[c].name}{g.cardsUp ? "+" : ""}」</b>{cardText(CARDS[c], !!g.cardsUp, g.selfBonus, giPreview())}</span>)}</div>
+      )}
       {g.aura && <p class="gi-line">配件：{g.aura.text}</p>}
       {g.use && <p class="gi-line">{g.use.label}</p>}
       {g.tags && <p class="gi-tags">{g.tags.map((t) => `「${TAGS[t].name}」套装`).join("　")}</p>}
@@ -215,3 +241,57 @@ export const countGoods = (ids: GoodId[]) => {
   for (const id of ids) m.set(id, (m.get(id) ?? 0) + 1);
   return [...m.entries()];
 };
+
+/** A game word with a dotted underline: tap it to see what it means (the popover is drawn by <TermPopover>). */
+export function Term({ id, children }: { id: TermId; children?: ComponentChildren }) {
+  return (
+    <span class="term" role="button" tabIndex={0} onClick={(e) => {
+      e.stopPropagation();
+      const el = e.currentTarget as HTMLElement, stage = document.querySelector(".stage") as HTMLElement | null;
+      if (!stage) return;
+      const r = el.getBoundingClientRect(), s = stage.getBoundingClientRect(), k = s.width / stage.offsetWidth;
+      termTip.value = termTip.value?.id === id ? null : { id, x: (r.left - s.left) / k, y: (r.bottom - s.top) / k + 4, top: (r.top - s.top) / k - 4 };
+    }}>{children ?? TERMS[id].name}</span>
+  );
+}
+
+/** The one glossary popover, on top of the stage; any tap elsewhere closes it. */
+export function TermPopover() {
+  const t = termTip.value;
+  useEffect(() => {
+    if (!t) return;
+    const close = (e: PointerEvent) => { if (!(e.target as HTMLElement).closest(".term-pop, .term")) termTip.value = null; };
+    document.addEventListener("pointerdown", close);
+    return () => document.removeEventListener("pointerdown", close);
+  }, [t]);
+  if (!t) return null;
+  const term = TERMS[t.id as TermId];
+  const stage = document.querySelector(".stage") as HTMLElement | null;
+  const w = 300, maxX = (stage?.offsetWidth ?? 1280) - w - 8, H = stage?.offsetHeight ?? 720;
+  // Words low on the stage open their explanation upwards, so it never runs off the bottom.
+  const up = t.y > H * 0.6;
+  return (
+    <div class="term-pop" style={{ left: `${Math.max(8, Math.min(maxX, t.x))}px`, width: `${w}px`, ...(up ? { bottom: `${H - (t.top ?? t.y)}px` } : { top: `${t.y}px` }) }}>
+      <b>{term.name}</b>
+      <p>{term.short}</p>
+      <p class="muted">{term.more}</p>
+    </div>
+  );
+}
+
+/** First time an idea matters on this screen, explain it once: the first of `ids` not yet seen, with 「知道了」. */
+export function ConceptTip({ ids }: { ids: TermId[] }) {
+  const [, force] = useState(0);
+  const id = ids.find((x) => !seenTip(`term:${x}`));
+  if (!id) return null;
+  const term = TERMS[id];
+  return (
+    <div class="concept-tip">
+      <span class="ct-badge">新概念</span>
+      <b>{term.name}</b>
+      <p>{term.short}</p>
+      <p class="muted">{term.more}</p>
+      <button type="button" class="btn small" onClick={() => { markTip(`term:${id}`); force((n) => n + 1); }}>知道了</button>
+    </div>
+  );
+}

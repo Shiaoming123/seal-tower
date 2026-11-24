@@ -950,3 +950,73 @@ describe("REVIEW-001 fixes", () => {
   });
 });
 
+
+describe("REVIEW-001 player-facing fixes", () => {
+  it("撤退 never steps into a wall: it tries behind, then the sides, and reports no spot when boxed in", async () => {
+    const { fleeSpot } = await import("../src/game/run");
+    const run = createRun(91, "sword", "lamp");
+    const d = run.dungeon;
+    // Put the player in a corridor facing north with a wall behind (south).
+    const x = run.pos.x, y = run.pos.y;
+    for (const [dx, dy] of [[0, 1], [-1, 0], [1, 0]]) d.tiles[idx(d, x + dx, y + dy)] = 1;
+    run.pos.dir = 0;
+    expect(fleeSpot(run)).toBeNull();
+    d.tiles[idx(d, x + 1, y)] = 0;
+    d.entities = d.entities.filter((e) => !(e.x === x + 1 && e.y === y));
+    expect(fleeSpot(run)).toEqual({ x: x + 1, y });
+  });
+  it("照影池 copies the chosen card (the picker has a copy mode)", async () => {
+    const { applyCardPick } = await import("../src/game/run");
+    const run = createRun(92, "sword", "lamp");
+    const n = run.deck.length, card = run.deck[0];
+    run.cardPick = { mode: "copy", source: "event" };
+    applyCardPick(run, card.uid);
+    expect(run.deck.length).toBe(n + 1);
+    expect(run.deck.filter((c) => c.id === card.id).length).toBe(run.deck.filter((c) => c.id === card.id && c.uid !== card.uid).length + 1);
+  });
+  it("order progress says how much of it is still loose in the floor's pile", async () => {
+    const { orderProgress } = await import("../src/game/run");
+    const run = createRun(93, "sword", "lamp");
+    const p0 = orderProgress(run, 0).parts[0];
+    run.pending.push(p0.id);
+    const p1 = orderProgress(run, 0).parts[0];
+    expect(p1.inPile).toBe(p0.inPile + 1);
+    expect(p1.have).toBe(p0.have + 1);
+  });
+});
+
+describe("REVIEW-001 follow-up review", () => {
+  it("破绽 on you makes the monster's next hit land ×1.5, as the intent says", () => {
+    const run = createRun(95, "sword", "lamp");
+    const c = fightWith(run, "louse");
+    run.hp = 999; run.maxHp = 999;
+    c.status.vuln = 1;
+    c.enemy.intent = { key: "test", name: "试打", dmg: 10 };
+    c.enemy.dmgAdd = 0; c.enemy.status = {};
+    c.block = 0;
+    const shown = incomingDamage(run, c);
+    const hp0 = run.hp;
+    handOf(run, []); endTurn(run);
+    expect(hp0 - run.hp).toBe(shown);
+    expect(shown).toBe(15);
+    expect(c.status.vuln ?? 0).toBe(0);
+  });
+  it("a fresh 破绽 from the monster's own turn is still there for its next hit", () => {
+    const run = createRun(96, "sword", "lamp");
+    const c = fightWith(run, "louse");
+    run.hp = 999; run.maxHp = 999;
+    c.enemy.intent = { key: "test", name: "迷魂", dmg: 1, apply: { status: "vuln", n: 1 } };
+    handOf(run, []); endTurn(run);
+    expect(c.status.vuln).toBe(1);
+  });
+  it("封口锦囊 returns stolen goods once, and the banner doesn't also call them destroyed", () => {
+    const run = createRun(97, "sword", "lamp");
+    run.relics.push("sealbag");
+    const c = fightWith(run, "louse");
+    c.stolen = ["pearl"];
+    c.enemy.hp = 0; c.over = "win";
+    winCombat(run);
+    expect(run.reward!.goods.filter((g) => g === "pearl").length).toBe(1);
+    expect(run.reward!.note).not.toContain("毁了");
+  });
+});

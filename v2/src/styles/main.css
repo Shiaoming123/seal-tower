@@ -523,7 +523,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .sew-hint { margin: 0; font-size: 13px; color: #b8e8b8; min-height: 1.4em; }
 .sew-hint.bad { color: #f0a090; }
 /* GAME-003B: refined gear (精) and pending refines */
-.item.fine .foot { box-shadow: inset 0 0 0 2px var(--gold), 0 0 8px rgba(240, 196, 90, 0.45); background: rgba(240, 196, 90, 0.14); }
+/* Refined gear keeps the gear teal (gold means goods) and only gains a gold glow (REVIEW-001). */
+.item.fine .foot { box-shadow: inset 0 0 0 2px rgba(111, 208, 200, 0.95), 0 0 9px rgba(240, 196, 90, 0.6); background: rgba(63, 140, 134, 0.3); }
 .fine-badge { position: absolute; right: 2px; top: 2px; z-index: 3; width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; background: radial-gradient(#ffe7a0, #c08a20); color: #3a1c00; font-size: 12px; font-weight: bold; box-shadow: 0 0 6px rgba(255, 210, 100, 0.8); pointer-events: none; }
 .item.refining .foot { animation: refine-glow 1.4s ease-in-out infinite; }
 @keyframes refine-glow { 50% { box-shadow: inset 0 0 0 2px #ffcf6a, 0 0 12px rgba(255, 190, 80, 0.75); } }
@@ -907,3 +908,47 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .event.rest .event-box { overflow-y: auto; }
 /* UI-012: town build cards two to a row on the 540-wide portrait stage (four overflowed it). */
 .portrait .build-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+/* ---------------------------------------------------------------- REVIEW-001: glossary, concept tips, deck sources */
+/* A tappable word: dotted underline, like a dictionary entry. */
+.term { border-bottom: 1px dotted currentColor; cursor: help; text-underline-offset: 2px; }
+.term:hover, .term:focus-visible { color: var(--gold); outline: none; }
+.term-pop { position: absolute; z-index: 90; background: rgba(239, 226, 194, 0.98); color: var(--paper-ink); border: 1px solid var(--gold-dim);
+  border-radius: 6px; padding: 10px 12px; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.6); animation: rise-in 0.14s var(--ease-out); pointer-events: auto; }
+.term-pop b { font-family: var(--font-title); font-size: 18px; color: #7a2a14; }
+.term-pop p { margin: 4px 0 0; font-size: 14px; line-height: 1.5; }
+.term-pop .muted { color: #5a4630; font-size: 13px; }
+.concept-tip { position: relative; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; background: rgba(27, 15, 12, 0.92);
+  border: 1px solid var(--gold-dim); border-left: 3px solid var(--gold); border-radius: 4px; padding: 8px 10px; font-size: 14px; line-height: 1.5;
+  animation: rise-in 0.3s var(--ease-out); }
+.concept-tip b { color: var(--gold); font-family: var(--font-title); font-size: 16px; }
+.concept-tip p { margin: 0; flex: 1 1 100%; }
+.concept-tip .btn { margin-left: auto; }
+.ct-badge { font-size: 11px; color: #1b0f0c; background: var(--gold); border-radius: 3px; padding: 0 5px; letter-spacing: 1px; }
+.det-cards { display: flex; flex-direction: column; gap: 2px; font-size: 13px; color: #2f4f78; }
+.det-label { color: #5a4630; font-size: 12px; }
+.det-card b { color: #1f3f68; margin-right: 2px; }
+.glossary { display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; margin: 0 0 12px; font-size: 14px; line-height: 1.5; }
+.glossary dt { color: var(--gold); font-family: var(--font-title); white-space: nowrap; }
+.glossary dd { margin: 0; }
+.glossary.keys dt { font-family: var(--font-body); }
+.glossary-title { margin: 14px 0 6px; }
+.deck-note { margin: 0 0 6px; }
+.deck-group { margin-bottom: 10px; }
+.deck-group-title { margin: 6px 0 4px; font-size: 16px; color: var(--gold); border-bottom: 1px solid rgba(140, 110, 48, 0.4); padding-bottom: 2px; }
+.deck-group.gear .deck-group-title { color: #7fd0c8; }
+.warn-line { margin: 4px 0; color: #ffb08a; font-size: 14px; }
+.fire-tag { position: absolute; right: 6px; top: 34px; font-size: 12px; line-height: 1; padding: 2px 4px; border-radius: 3px; background: #a8361c; color: #ffe8c0; box-shadow: 0 0 6px rgba(255, 120, 40, 0.6); }
+.card.small .fire-tag { top: 28px; font-size: 11px; }
+.hud-order .pile { color: var(--amber); }
+.hud-order .in-pile { margin-left: 4px; color: var(--amber); }
+.reward-head .pile-warn { margin: 4px 0 0; font-size: 14px; }
+/* Selling: the picked good's details live in a fixed slot so the grid never jumps under your finger. */
+.sell-slot { grid-column: 1 / -1; width: 100%; height: 150px; overflow-y: auto; display: flex; align-items: flex-start; }
+.sell-slot .sell-hint { align-self: center; }
+.shop-sell .leave { z-index: 30; }
+.portrait .shop-sell .leave { box-shadow: 0 -10px 16px rgba(10, 5, 3, 0.85), inset 0 0 0 1px var(--gold-dim); }
+/* Tappable words are inline text, too short for a finger on a phone: pad the hit area without moving any text. */
+.portrait .term { padding: 12px 4px; margin: -12px -4px; }
+.portrait .oil .oil-max { display: none; }
+.hud-order .in-pile { font-size: 11px; }

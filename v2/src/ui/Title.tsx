@@ -13,6 +13,14 @@ import { previewFor } from "../game/combat";
 import { ART, artId } from "../render/assets";
 import { Art, CardView, portraitOf } from "./parts";
 import { SoundButton } from "./App";
+import { TERMS } from "../data/glossary";
+
+/** Every key the game listens to (REVIEW-001: the help page used to name only W / A / D). */
+const KEYS: [string, string][] = [
+  ["W / ↑", "前进"], ["S / ↓", "后退"], ["A / ← / Q", "左转"], ["D / → / E", "右转"],
+  ["空格", "停下自动走路；关掉签文"], ["B", "打开 / 关上行囊"], ["C", "打开 / 关上牌组"], ["Esc", "关掉弹窗；没有弹窗时打开菜单"],
+  ["1–9", "战斗中直接打出第几张手牌"], ["E（战斗中）", "结束回合"], ["R", "整理行囊时旋转拿着的物品"],
+];
 import { clearRun, commit, dailyMode, page, profileSig, runSig, savedRun, today } from "./store";
 
 export function Title() {
@@ -209,9 +217,17 @@ export function Help() {
           <li><b>货怎么用你说了算。</b>妖掉的材料能卖给狐市换石，能交委托拿报酬，有的还能在战斗里烧掉换伤害。灯鼠会抢你最值钱的货，挡住它的攻击就抢不走。</li>
           <li><b>取材。</b>每只妖都有取材条件，写在它名字下面：比如完整挡下纸灯蛾一次攻击再打死它能多拿灯芯，别在书虱缩壳时打死它。想带回什么，决定了怎么打。</li>
           <li><b>灯油。</b>每走一步烧 1 点灯油。灯灭了看不清地图，妖也更凶。狐市卖灯油，灯台能添油，灯灰也能烧来照路。不必每间屋子都进。</li>
-          <li><b>行情。</b>每层狐市收价不同，同一种货卖得越多越便宜。道友能告诉你上一层的行情：是现在卖，还是背上去卖，你自己算。</li>
+          <li><b>行情。</b>每层狐市收价不同，同一种货卖得越多越便宜。道友能告诉你楼上那层的行情：是现在卖，还是背上去卖，你自己算。</li>
           <li><b>回镇结算。</b>交了委托、打通的层数、拿到的成就会换成声望。完成过的委托人会把你当老主顾；声望高了能解锁「算盘」兵器和更难的签。</li>
         </ol>
+        <h3 class="glossary-title">名词</h3>
+        <dl class="glossary">
+          {Object.values(TERMS).map((t) => <><dt>{t.name}</dt><dd>{t.short}{" "}<span class="muted">{t.more}</span></dd></>)}
+        </dl>
+        <h3 class="glossary-title">按键</h3>
+        <dl class="glossary keys">
+          {KEYS.map(([k, what]) => <><dt>{k}</dt><dd>{what}</dd></>)}
+        </dl>
         <p class="credits">字体：马善政楷书、霞鹜文楷（均为 SIL OFL 1.1 开源字体，可商用）。界面材质与迷宫贴图由代码生成，音效由代码合成。</p>
         <button type="button" class="btn primary" onClick={() => (page.value = "title")}>知道了</button>
       </div>

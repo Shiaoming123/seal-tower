@@ -5,6 +5,7 @@ import { setAmbience } from "../audio/ambience";
 import { setRoom } from "../audio/engine";
 import { ORDERS } from "../data/orders";
 import { OMEN } from "../data/omens";
+import { combatDeck } from "../game/combat";
 import { orderProgress } from "../game/run";
 import { BagOverlay } from "./Bag";
 import { CardPicker, DeckOverlay } from "./Deck";
@@ -16,7 +17,7 @@ import { EventScreen, RestScreen } from "./Event";
 import { Result } from "./Result";
 import { Achievements, Help, Title, Town } from "./Title";
 import { Codex } from "./Codex";
-import { Bar, GoodChip, RelicRow, RollingNumber } from "./parts";
+import { Bar, GoodChip, RelicRow, RollingNumber, TermPopover } from "./parts";
 import { canRestartFight, commit, overlay, page, profileSig, restartFight, runSig, say, tick, toast, useRun } from "./store";
 
 /** Fixed-size stage scaled to fit the window, so nothing reflows or jumps while playing. */
@@ -51,6 +52,10 @@ export function App() {
   // Ambience and reverb follow the place too; the floor's omen colours the ambience.
   const omen = page.value === "game" && run && run.screen !== "result" ? run.omen : "calm";
   useEffect(() => { setRoom(mood); setAmbience(profileSig.value.sound ? mood : "", omen, !!fight); }, [mood, omen, fight, profileSig.value.sound]);
+  // A toast belongs to the screen it was said on: drop it when the screen changes, unless it was said just now
+  // (an action that both speaks and moves you on, like 撤退) (REVIEW-001).
+  const screenKey = `${page.value}:${run?.screen ?? ""}`;
+  useEffect(() => { const t = toast.value; if (t && Date.now() - (t.at ?? 0) > 400) toast.value = null; }, [screenKey]);
   let body;
   if (page.value === "title") body = <Title />;
   else if (page.value === "help") body = <Help />;
@@ -62,6 +67,7 @@ export function App() {
     <div class={`stage ${portrait ? "portrait" : "landscape"}`} style={{ width: `${w}px`, height: `${h}px`, transform: `translate(-50%, -50%) scale(${scale})` }}
       onScroll={(e) => { const el = e.currentTarget as HTMLElement; if (el.scrollTop || el.scrollLeft) { el.scrollTop = 0; el.scrollLeft = 0; } }}>
       {body}
+      <TermPopover />
       {toast.value && <div class="toast" key={toast.value.id}>{toast.value.text}</div>}
     </div>
   );
@@ -101,9 +107,9 @@ function Hud() {
       <div class="hud-left">
         <span class="floor-name">{FLOOR_NAMES[run.floor]}</span>
         <Bar value={run.hp} max={run.maxHp} kind="hp" block={run.combat?.block ?? 0} />
-        <span class="gold" title="灵石"><RollingNumber value={run.gold} /> 石</span>
+        <span class="gold" title="石：塔里通用的钱。活着回镇时折成库银"><RollingNumber value={run.gold} /> 石</span>
         <span class={`oil ${run.oil <= 15 ? "low" : ""} ${run.oil <= 0 ? "out" : ""}`} title="灯油：每走一步烧 1 点。灯灭了会很危险。">
-          <i style={{ height: `${Math.round((run.oil / run.maxOil) * 100)}%` }} />灯油 {run.oil}
+          <i style={{ height: `${Math.round((run.oil / run.maxOil) * 100)}%` }} />灯油 {run.oil}<small class="oil-max">/{run.maxOil}</small>
         </span>
       </div>
       <button type="button" class="omen-chip" title={`${OMEN[run.omen].name}：${OMEN[run.omen].text}`} onClick={() => say(`本层签文「${OMEN[run.omen].name}」：${OMEN[run.omen].text}`, 4000)}>签·{OMEN[run.omen].name}</button>
@@ -115,7 +121,8 @@ function Hud() {
             <div class="hud-order" title={order.story}>
               <span class="order-label">{order.client}</span>
               {ord.done ? <span class="done">已交付</span> : parts.map((p) => (
-                <span class={p.have >= p.need ? "ok" : ""}><GoodChip id={p.id} /> {Math.min(p.have, p.need)}/{p.need}</span>
+                <span class={p.have - p.inPile >= p.need ? "ok" : p.have >= p.need ? "pile" : ""} title={p.inPile ? `其中 ${p.inPile} 件还在货堆里，上楼前要装进行囊或侧袋` : undefined}>
+                  <GoodChip id={p.id} /> {Math.min(p.have, p.need)}/{p.need}{p.inPile ? <small class="in-pile">堆{p.inPile}</small> : null}</span>
               ))}
             </div>
           );
@@ -123,7 +130,7 @@ function Hud() {
       </div>
       <div class="hud-buttons">
         <button type="button" class={`btn small ${pending ? "alert" : ""}`} onClick={() => toggle("bag")}>行囊{pending ? ` · 货堆 ${pending}` : ""} <kbd>B</kbd></button>
-        <button type="button" class="btn small" onClick={() => toggle("deck")}>牌组 {run.deck.length} <kbd>C</kbd></button>
+        <button type="button" class="btn small" onClick={() => toggle("deck")}>牌组 {combatDeck(run).length} <kbd>C</kbd></button>
         <SoundButton />
         <button type="button" class="btn small menu-btn" onClick={() => { sfx.click(); overlay.value = overlay.value === "pause" ? null : "pause"; }}>菜单 <kbd>Esc</kbd></button>
       </div>
@@ -169,7 +176,7 @@ function PauseMenu() {
           {sure === "title" ? "再点一下：存档并回主菜单" : "存档并回主菜单"}
         </button>
         <p class="muted pause-note">进度每走一步都会自动保存，回主菜单后点「继续上一趟」接着玩。{canRestartFight() ? "重新开战会回到这场战斗的第一回合，手牌也一样。" : ""}</p>
-        <div class="pause-sound"><span>声音</span><SoundButton /></div>
+        <div class="pause-sound"><SoundButton /></div>
       </div>
     </div>
   );
@@ -190,7 +197,7 @@ export function SoundButton() {
   };
   return (
     <div class="sound-menu">
-      <button type="button" class="btn small ghost" onClick={() => { sfx.click(); setOpen(!open); }}>{p.sound ? "声音" : "静音"}</button>
+      <button type="button" class="btn small ghost" onClick={() => { sfx.click(); setOpen(!open); }}>{p.sound ? "音量" : "静音"}</button>
       {open && (
         <div class="sound-panel">
           <label class="row"><input type="checkbox" checked={p.sound} onChange={(e) => update({ sound: (e.target as HTMLInputElement).checked })} /> 开启声音</label>

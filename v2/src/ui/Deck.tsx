@@ -3,24 +3,50 @@ import { sfx } from "../audio/sfx";
 import { CARDS } from "../data/cards";
 import { GOODS } from "../data/goods";
 import { combatDeck, previewFor } from "../game/combat";
+import * as bag from "../game/bag";
 import * as R from "../game/run";
-import { CardView, upgradeDiff } from "./parts";
+import { CardView, Term, upgradeDiff } from "./parts";
 import { commit, overlay, useRun } from "./store";
 
 export function DeckOverlay() {
   const run = useRun();
   const deck = combatDeck(run);
   const preview = previewFor(run, null);
+  // Grouped by where each card comes from (REVIEW-001): the base deck, then every gear item in the bag with the
+  // bonus its neighbours give. Moving a gear item out of the bag takes its whole group with it.
+  const base = deck.filter((c) => !c.from);
+  const gear = run.bag.items.filter((it) => GOODS[it.id].cards?.length);
   return (
     <div class="overlay" onClick={(e) => { if (e.target === e.currentTarget) overlay.value = null; }}>
       <div class="overlay-box deck-box">
-        <header><h2>牌组 <small>共 {deck.length} 张，其中 {deck.filter((c) => c.from).length} 张来自行囊里的装备</small></h2>
+        <header><h2>牌组 <small>共 {deck.length} 张，其中 {deck.length - base.length} 张来自行囊里的装备</small></h2>
           <button type="button" class="btn small" onClick={() => (overlay.value = null)}>关闭 <kbd>Esc</kbd></button></header>
-        <div class="card-grid">
-          {deck.map((c) => (
-            <CardView id={c.id} up={c.up} bonus={c.bonus} preview={preview} small extra={c.from ? <span class="from">来自{GOODS[c.from].name}</span> : undefined} />
-          ))}
-        </div>
+        <p class="muted deck-note">牌组 = 基础牌 + 行囊里每件<Term id="gear" />带来的牌。装备拿出行囊，它那一组牌就不在了；<Term id="aura" />挨着装备，那一组牌会变强。</p>
+        <section class="deck-group">
+          <h3 class="deck-group-title">基础牌 <small>{base.length} 张 · 学牌、升级、移除都改这里</small></h3>
+          <div class="card-grid">
+            {base.map((c) => <CardView id={c.id} up={c.up} preview={preview} small />)}
+          </div>
+        </section>
+        {gear.map((it) => {
+          const g = GOODS[it.id];
+          // Neighbours' bonus and the refined item's own bonus are named apart (REVIEW-001).
+          const aDmg = bag.auraOn(run.bag, it, "dmg"), aBlk = bag.auraOn(run.bag, it, "blk");
+          const sDmg = g.selfBonus?.dmg ?? 0, sBlk = g.selfBonus?.blk ?? 0;
+          const b = aDmg + sDmg || aBlk + sBlk ? { dmg: aDmg + sDmg, blk: aBlk + sBlk } : undefined;
+          const near = bag.neighbours(run.bag, it).filter((o) => GOODS[o.id].aura?.kind === "dmg" || GOODS[o.id].aura?.kind === "blk").map((o) => GOODS[o.id].name);
+          const parts = [aDmg || aBlk ? `挨着${near.join("、")}：${[aDmg ? `伤害 +${aDmg}` : "", aBlk ? `格挡 +${aBlk}` : ""].filter(Boolean).join("、")}` : "",
+            sDmg || sBlk ? `精炼自带：${[sDmg ? `伤害 +${sDmg}` : "", sBlk ? `格挡 +${sBlk}` : ""].filter(Boolean).join("、")}` : ""].filter(Boolean);
+          const bonus = parts.join(" · ");
+          return (
+            <section class="deck-group gear">
+              <h3 class="deck-group-title">来自{g.name} <small>{g.cards!.length} 张{g.cardsUp ? " · 已淬炼，牌是升级版" : ""}{bonus ? ` · ${bonus}` : ""}</small></h3>
+              <div class="card-grid">
+                {g.cards!.map((id) => <CardView id={id} up={!!g.cardsUp} bonus={b} preview={preview} small />)}
+              </div>
+            </section>
+          );
+        })}
       </div>
     </div>
   );
@@ -31,22 +57,38 @@ export function CardPicker() {
   const pick = run.cardPick!;
   const preview = previewFor(run, null);
   const upgrade = pick.mode === "upgrade";
+  const copy = pick.mode === "copy";
   const options = run.deck.filter((c) => !upgrade || !c.up);
   // Two taps, like every other choice (UI-008): the first picks the card, the second (or the button) applies it.
   const [chosen, setChosen] = useState<number | null>(null);
+  // An event pick was already paid for (blood, a good). Walking away must say so and take two taps (REVIEW-001).
+  const [skipArmed, setSkipArmed] = useState(false);
+  const paid = !!pick.paid;
   const apply = (uid: number) => { sfx.click(); R.applyCardPick(run, uid); setChosen(null); commit(); };
+  const skip = () => {
+    if (paid && !skipArmed) { sfx.click(); setSkipArmed(true); return; }
+    R.applyCardPick(run, null); setSkipArmed(false); commit();
+  };
   const chosenCard = options.find((c) => c.uid === chosen);
+  const verb = upgrade ? "升级" : copy ? "复制" : "移除";
+  const title = upgrade ? "选一张牌升级" : copy ? "选一张牌复制" : `选一张牌移除${pick.price ? `（${pick.price} 石）` : ""}`;
+  const note = upgrade ? "下面显示的是升级后的样子，牌下写着升级改了什么。点一张选中，再点一次确认。装备带来的牌不能在这里改。"
+    : copy ? "选中的牌会多一张一模一样的（升级过的照样是升级版）。点一张选中，再点一次确认。装备带来的牌不能在这里复制。"
+    : "牌组越精，关键牌越容易抽到。点一张选中，再点一次确认。装备带来的牌不能在这里移除。";
   return (
     <div class="overlay">
       <div class="overlay-box deck-box">
         <header>
-          <h2>{upgrade ? "选一张牌升级" : `选一张牌移除${pick.price ? `（${pick.price} 石）` : ""}`}</h2>
-          <button type="button" class="btn small ghost" onClick={() => { R.applyCardPick(run, null); commit(); }}>{pick.source === "shop" ? "算了" : "不选了"}</button>
+          <h2>{title}</h2>
+          <button type="button" class={`btn small ${skipArmed ? "danger" : "ghost"}`} onClick={skip}>
+            {pick.source === "shop" ? "算了" : skipArmed ? "确定不选（代价不退）" : "不选了"}
+          </button>
         </header>
-        <p class="muted">{upgrade ? "下面显示的是升级后的样子，牌下写着升级改了什么。点一张选中，再点一次确认。装备带来的牌不能在这里改。" : "牌组越精，关键牌越容易抽到。点一张选中，再点一次确认。装备带来的牌不能在这里移除。"}</p>
+        <p class="muted">{note}</p>
+        {skipArmed && <p class="warn-line">已经付过的代价不会退回。再点一次「确定不选」离开。</p>}
         {chosenCard && (
           <div class="row pick-confirm">
-            <button type="button" class="btn primary" onClick={() => apply(chosenCard.uid)}>{upgrade ? "升级" : "移除"}「{CARDS[chosenCard.id].name}」</button>
+            <button type="button" class="btn primary" onClick={() => apply(chosenCard.uid)}>{verb}「{CARDS[chosenCard.id].name}」</button>
           </div>
         )}
         <div class="card-grid">

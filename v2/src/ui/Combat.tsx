@@ -5,16 +5,16 @@ import { creatureCall } from "../audio/voices";
 import { CARDS } from "../data/cards";
 import { ENEMIES } from "../data/enemies";
 import { GOODS } from "../data/goods";
-import { type CombatEvent, type PlayPreview, blockedReason, endTurn, enemyHitDamage, incomingDamage, playCard, previewFor, simulatePlay, stealTarget } from "../game/combat";
+import { type CombatEvent, type PlayPreview, RAMP_TURN, blockedReason, endTurn, enemyHitDamage, incomingDamage, playCard, previewFor, simulatePlay, stealTarget } from "../game/combat";
 import { DIRS, isWall } from "../game/dungeon";
 import { useItem } from "../game/inventory";
 import * as R from "../game/run";
-import type { CombatState, RunState } from "../game/types";
+import type { CombatState, RunState, StatusId } from "../game/types";
 import { ART, artId, image } from "../render/assets";
 import { VIEW_H, VIEW_W } from "../render/raycaster";
 import { fx as fxLayer } from "../render/fx";
 import { enemyStage, useView, view } from "./Explore";
-import { Bar, CardView, Statuses } from "./parts";
+import { Bar, CardView, ConceptTip, STATUS_INFO, Statuses, Term } from "./parts";
 import { commit, forgetFight, markTip, overlay, rememberFight, runSig, say, seenTip, useRun } from "./store";
 
 interface Floater { id: number; text: string; kind: string; x: number; y: number }
@@ -32,7 +32,7 @@ export function intentSummary(run: RunState, c: CombatState) {
   if (i.drainOil) parts.push({ icon: "油", label: `-${i.drainOil}`, cls: "steal" });
   if (i.eatAsh) parts.push({ icon: "灰", label: `-${i.eatAsh}`, cls: "steal" });
   if (i.stealGold) parts.push({ icon: "钱", label: `-${i.stealGold}`, cls: "steal" });
-  if (i.counter) parts.push({ icon: "架", label: `${i.counter}`, cls: "def" });
+  if (i.counter) parts.push({ icon: "反", label: `${i.counter}`, cls: "def" });
   if (i.dive) parts.push({ icon: "潜", label: "½", cls: "def" });
   if (i.thorns) parts.push({ icon: "棘", label: `+${i.thorns}`, cls: "buff" });
   if (i.block) parts.push({ icon: "守", label: `${i.block}`, cls: "def" });
@@ -54,7 +54,7 @@ export function intentSummary(run: RunState, c: CombatState) {
   if (i.stealGold) line += ` 打穿格挡会收走你 ${i.stealGold} 石。`;
   const def = ENEMIES[c.enemy.id];
   if (def.maxHit) line += ` 铜身：你每下最多打 ${def.maxHit} 点。`;
-  if (def.weakTo === "fire") line += " 怕火：扬灰、灯火伤害翻倍。";
+  if (def.weakTo === "fire") line += " 怕火：带「火」字的牌伤害翻倍。";
   if (c.enemy.status.thorns) line += ` 你每打它一下，自己挨 ${c.enemy.status.thorns + (i.counter ?? 0)} 点。`;
   if (def.dmgMod && def.dmgMod(run.oil)) line += def.dmgMod(run.oil) > 0 ? ` 灯油不足 30，它每下多打 ${def.dmgMod(run.oil)}。` : ` 灯油充足，它每下少打 ${-def.dmgMod(run.oil)}。`;
   if (i.steal) {
@@ -302,15 +302,17 @@ export function Combat() {
 
   const flee = () => {
     if (busy.current) return;
-    const [dx, dy] = DIRS[run.pos.dir];
-    R.flee(run, { x: run.pos.x - dx, y: run.pos.y - dy });
+    const spot = R.fleeSpot(run);
+    if (!spot) return;
+    R.flee(run, spot);
     commit();
   };
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (overlay.value || run.cardPick) return;
-      if (e.key === "e" || e.key === "E" || e.key === " ") { e.preventDefault(); void finishTurn(); }
+      // Only E ends the turn: Space is too easy to hit by accident (REVIEW-001).
+      if (e.key === "e" || e.key === "E") { e.preventDefault(); void finishTurn(); }
       const n = parseInt(e.key, 10);
       if (n >= 1 && n <= 9) void play(n - 1);
     };
@@ -371,10 +373,15 @@ export function Combat() {
             )}
           </div>
             <div class="intent-line">{intent.line}</div>
+            {/* 妖气渐盛 used to arrive unannounced on turn 8 (REVIEW-001): warn two turns ahead. */}
+            {c.turn >= RAMP_TURN - 2 && !c.over && (
+              <div class="ramp-line"><Term id="ramp" />{c.turn < RAMP_TURN ? `：再过 ${RAMP_TURN - c.turn} 回合，妖每回合力量 +2` : "：妖每回合力量 +2"}</div>
+            )}
         </div>
         {banner && <div class="banner" key={banner}>{banner}</div>}
         {slash > 0 && <div class={`slash s${slash % 3}`} key={`slash${slash}`} />}
         {floaters.map((f) => <span class={`floater ${f.kind}`} key={f.id} style={{ left: `${f.x}%`, top: `${f.y}%` }}>{f.text}</span>)}
+        {seenTip(tipId) && <ConceptTip ids={["intent", "block", ...(def.harvest ? ["harvest" as const] : []), ...(c.kind === "elite" ? ["elite" as const] : []), ...(c.kind === "guardian" ? ["guardian" as const] : []), ...(c.turn >= RAMP_TURN - 2 ? ["ramp" as const] : [])]} />}
         {!seenTip(tipId) && (
           <div class="tip combat-tip">
             <p>{tips[tipId]}</p>
@@ -418,7 +425,9 @@ export function Combat() {
         <button type="button" class="btn big primary end-turn" onClick={finishTurn}>结束回合 <kbd>E</kbd></button>
         <div class="row">
           {salve && <button type="button" class="btn small" onClick={() => { const r = useItem(run, salve.uid); if (r) { sfx.coin(); say(r); commit(); } }}>用{GOODS[salve.id].name}</button>}
-          {c.kind !== "guardian" && <button type="button" class="btn small ghost" onClick={flee} title="退回上一格。这只妖会恢复，被抢的货找不回来。">撤退</button>}
+          {c.kind !== "guardian" && (R.fleeSpot(run)
+            ? <button type="button" class="btn small ghost" onClick={flee} title="退回旁边一格。这只妖会恢复，被抢的货找不回来。">撤退</button>
+            : <button type="button" class="btn small ghost" disabled title="四周都是墙或别的东西，没处可退。">无路可退</button>)}
         </div>
       </div>
     </div>
@@ -445,7 +454,7 @@ function PreviewTag({ pv, part }: { pv: PlayPreview; part?: string }) {
   );
 }
 
-const statusName = (id: string) => ({ str: "力量", weak: "虚弱", vuln: "破绽", thorns: "反震", counter: "回敬", focus: "蓄势", ward: "护货", barricade: "不动", lampArray: "灯阵", swordIntent: "行云", bulwark: "以守为攻", burn: "灼烧", blind: "目盲" } as Record<string, string>)[id] ?? id;
+const statusName = (id: string) => STATUS_INFO[id as StatusId]?.name ?? id;
 
 const HARVEST_STATE = { done: "已达成", open: "能取", risk: "注意", failed: "取不了了" } as const;
 
@@ -454,7 +463,7 @@ function HarvestTag({ c }: { c: CombatState }) {
   const st = h.state(c);
   return (
     <div class={`harvest ${st}`} title={h.text}>
-      <b>取材 · {h.label}</b>
+      <b><Term id="harvest" /> · {h.label}</b>
       <span>{h.text}</span>
       <i>{HARVEST_STATE[st]}</i>
     </div>

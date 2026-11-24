@@ -3,7 +3,7 @@
 // a rare one — the small thrill of a draw. Tap anywhere to turn them all over at once.
 import { useEffect, useState } from "preact/hooks";
 import { sfx } from "../audio/sfx";
-import { GOODS } from "../data/goods";
+import { GOODS, townPrice, townPriceLabel } from "../data/goods";
 import type { GoodId } from "../game/types";
 import { ART } from "../render/assets";
 import { goodTier } from "./parts";
@@ -36,7 +36,7 @@ export function GoodsReveal({ goods, onDone }: { goods: GoodId[]; onDone: () => 
   }, [shown]);
 
   const skip = () => { if (!done) { sfx.card(); setBuilding(false); setShown(order.length); } };
-  const total = order.reduce((s, g) => s + GOODS[g].price, 0);
+  const total = order.reduce((s, g) => s + townPrice(g), 0);
   return (
     <div class="reveal" onClick={skip}>
       <h3 class="reveal-title">{done ? "翻出来的货" : "翻货……"}</h3>
@@ -52,7 +52,7 @@ export function GoodsReveal({ goods, onDone }: { goods: GoodId[]; onDone: () => 
                   {tier === "rare" && <span class="reveal-rays" />}
                   <img src={ART[GOODS[g].icon]} alt="" draggable={false} />
                   <b>{GOODS[g].name}</b>
-                  <small>值 {GOODS[g].price} 石</small>
+                  <small>{townPriceLabel(g)}</small>
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@ export function GoodsReveal({ goods, onDone }: { goods: GoodId[]; onDone: () => 
         })}
       </div>
       {done
-        ? <button type="button" class="btn big primary" onClick={(e) => { e.stopPropagation(); sfx.click(); onDone(); }}>收下（共值 {total} 石）</button>
+        ? <button type="button" class="btn big primary" onClick={(e) => { e.stopPropagation(); sfx.click(); onDone(); }}>收下（带回镇共值 {total} 石）</button>
         : <p class="muted reveal-hint">点一下全部翻开</p>}
     </div>
   );

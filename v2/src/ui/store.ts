@@ -43,7 +43,9 @@ export function restartFight() {
   overlay.value = null;
   commit();
 }
-export const toast = signal<{ text: string; id: number } | null>(null);
+export const toast = signal<{ text: string; id: number; at?: number } | null>(null);
+/** The glossary popover opened by tapping a <Term>: which word, and where on the stage (stage px). */
+export const termTip = signal<{ id: string; x: number; y: number; top?: number } | null>(null);
 
 export function savedRun(): RunState | null {
   const r = read<RunState>(RUN_KEY);
@@ -70,7 +72,7 @@ export function clearRun() { write(RUN_KEY, null); }
 let toastId = 0;
 export function say(text: string, ms = 2600) {
   const id = ++toastId;
-  toast.value = { text, id };
+  toast.value = { text, id, at: Date.now() };
   setTimeout(() => { if (toast.value?.id === id) toast.value = null; }, ms);
 }
 

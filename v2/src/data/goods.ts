@@ -146,7 +146,15 @@ export const REFINES: { gear: GoodId; with: GoodId; into: GoodId }[] = [
   { gear: "lamp", with: "oilpot", into: "lamp-fine" },
   { gear: "purse", with: "luckybag", into: "purse-fine" },
 ];
-export const KIND_LABEL = { goods: "货物", gear: "装备", consumable: "消耗品" } as const;
+export const KIND_LABEL = { goods: "货物", gear: "装备", consumable: "用品" } as const;
+
+/** What the details call it: an accessory (aura, no cards) is 「配件」; refined gear with an aura still brings cards, so it is 装备. */
+export const kindLabel = (id: GoodId): string => { const g = GOODS[id]; return g.aura && !g.cards ? "配件" : KIND_LABEL[g.kind]; };
+
+/** What one of these turns into in town: goods at full price, gear and supplies at half (same rule as 回镇结算). */
+export const townPrice = (id: GoodId): number => { const g = GOODS[id]; return g.kind === "goods" ? g.price : Math.floor(g.price / 2); };
+/** The price line for details: 「镇上价」 for goods, 「回镇折价」 for the rest (they only fetch half). */
+export const townPriceLabel = (id: GoodId): string => `${GOODS[id].kind === "goods" ? "镇上价" : "回镇折价"} ${townPrice(id)} 石`;
 
 /** How many of this good stack in one bag cell. */
 export function stackMax(id: GoodId): number {

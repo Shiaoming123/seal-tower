@@ -2,6 +2,7 @@ import { addGood, gainRelic, randomRelic } from "../game/inventory";
 import * as bag from "../game/bag";
 import { type RngState, chance, int, makeRng, pick, shuffle } from "../game/rng";
 import { distances, reveal } from "../game/dungeon";
+import { CARDS } from "./cards";
 import { FLOOR_SPAWNS } from "./enemies";
 import { GEAR_IDS, GOODS } from "./goods";
 import type { GoodId, RunState } from "../game/types";
@@ -36,7 +37,7 @@ const hurt = (run: RunState, n: number) => { run.hp = Math.max(1, run.hp - n); r
 
 export const EVENTS: Record<string, EventDef> = {
   lampstand: {
-    id: "lampstand", title: "没人管的灯台", sprite: "lamp",
+    id: "lampstand", title: "残灯", sprite: "lamp",
     text: "一盏旧灯台还亮着，灯油不多了。可以借着灯光包扎伤口，也可以把灯里的灰刮下来带走。",
     options: [
       { label: "包扎", detail: "回复 12 气血。", apply: (r) => { const a = Math.min(12, r.maxHp - r.hp); r.hp += a; return `你包扎好伤口，回复了 ${a} 气血。`; } },
@@ -62,23 +63,24 @@ export const EVENTS: Record<string, EventDef> = {
       { label: "问路", detail: "付 8 石，本层地图全部点亮。", locked: (r) => (r.gold < 8 ? "石不够" : null),
         apply: (r) => { r.gold -= 8; r.mapRevealed = true; return "道友在你的地图上画出了整层的路。"; } },
       { label: "问守关妖", detail: "免费。之后在地图上能看到守关妖的招式。",
-        apply: (r) => { r.bossIntel = true; return "道友把守关妖的招式一招一招讲给你听。打开地图上的守关标记就能看到。"; } },
-      { label: "打听行情", detail: "付 3 石，知道下一层狐市每种货收多少钱。", locked: (r) => (r.floor >= 3 ? "这已经是最高层了" : r.gold < 3 ? "石不够" : null),
-        apply: (r) => { r.gold -= 3; r.rumor = true; return "道友把上一层狐市的行情一样一样告诉你。到狐市时可以对照着卖。"; } },
-      { label: "以货换牌", detail: "给他一件货，他帮你升级 1 张牌。", locked: (r) => (bag.count(r.bag) ? null : "行囊里没有货"),
+        apply: (r) => { r.bossIntel = true; return "道友把守关妖的招式一招一招讲给你听。小地图下面会一直写着它的招式。"; } },
+      { label: "打听行情", detail: "付 3 石，知道楼上那一层狐市每种货收多少钱。", locked: (r) => (r.floor >= 3 ? "这已经是最高层了" : r.gold < 3 ? "石不够" : null),
+        apply: (r) => { r.gold -= 3; r.rumor = true; return `道友把楼上（第 ${r.floor + 1} 层）狐市的行情一样一样告诉你。到狐市的行情牌上，括号里就是楼上的价。`; } },
+      { label: "以货换牌", detail: "给他行囊里最便宜的一件货，他帮你升级 1 张牌。", locked: (r) => (bag.count(r.bag) ? null : "行囊里没有货"),
         apply: (r) => {
           // One good, not the whole stack (REVIEW-001: a stack of five 灯灰 used to vanish at once).
           bag.takeOne(r.bag, bag.cheapest(r.bag)!);
-          r.cardPick = { mode: "upgrade", source: "event" };
+          r.cardPick = { mode: "upgrade", source: "event", paid: true };
           return "道友收下货，示意你挑一张牌。";
         } },
+      leave,
     ],
   },
   stele: {
     id: "stele", title: "断碑", sprite: "stele",
     text: "半截石碑上刻着前辈的剑诀。碑面粗糙，能拿来磨剑，只是会磨破手。",
     options: [
-      { label: "磨剑", detail: "失去 6 气血，升级 1 张牌。", apply: (r) => { hurt(r, 6); r.cardPick = { mode: "upgrade", source: "event" }; return "选一张牌升级。"; } },
+      { label: "磨剑", detail: "失去 6 气血，升级 1 张牌。", apply: (r) => { hurt(r, 6); r.cardPick = { mode: "upgrade", source: "event", paid: true }; return "选一张牌升级。"; } },
       { label: "抄碑文", detail: "移除 1 张牌（让牌组更精）。", apply: (r) => { r.cardPick = { mode: "remove", source: "event" }; return "选一张牌移除。"; } },
       leave,
     ],
@@ -156,7 +158,7 @@ export const EVENTS: Record<string, EventDef> = {
       const offers = [...goods, gear].map((id) => ({ id, price: Math.max(2, Math.round(GOODS[id].price * (GOODS[id].kind === "gear" ? 1.2 : 0.7))) }));
       return [
         ...offers.map((o): EventOption => ({
-          label: `买${GOODS[o.id].name}`, detail: `${o.price} 石。${GOODS[o.id].kind === "gear" ? "装备，牌：" + (GOODS[o.id].cards ?? []).length + " 张。" : "狐市一般收 " + GOODS[o.id].price + " 石左右。"}`,
+          label: `买${GOODS[o.id].name}`, detail: `${o.price} 石。${GOODS[o.id].aura && !GOODS[o.id].cards ? `配件：${GOODS[o.id].aura!.text}。` : GOODS[o.id].kind === "gear" ? `装备，带来 ${(GOODS[o.id].cards ?? []).map((c) => `「${CARDS[c].name}」`).join("") || "被动效果"}。` : `镇上价 ${GOODS[o.id].price} 石，狐市大约收六成。`}`,
           locked: (r) => (r.gold < o.price ? "石不够" : !bag.findSpot(r.bag, o.id) ? "行囊放不下" : null),
           apply: (r) => { r.gold -= o.price; addGood(r, o.id); return `灯鼠把${GOODS[o.id].name}递给你，数了三遍钱。`; },
         })),
@@ -202,7 +204,7 @@ export const EVENTS: Record<string, EventDef> = {
           r.gold -= 10;
           const cards = shuffle(r.rng, r.deck.filter((c) => !c.up)).slice(0, 2);
           for (const c of cards) c.up = true;
-          return cards.length ? `他比划了两下，你的「${cards.map((c) => c.id === "strike" ? "斩" : c.id === "defend" ? "架" : "招式").join("」「")}」更利落了。` : "你的招式他已经教不了了。";
+          return cards.length ? `他比划了两下，你的「${cards.map((c) => CARDS[c.id].name).join("」「")}」更利落了。` : "你的招式他已经教不了了。";
         } },
       leave,
     ],
@@ -222,7 +224,7 @@ export const EVENTS: Record<string, EventDef> = {
     id: "mirrorpool", title: "照影池", sprite: "event-pool",
     text: "地上一洼水，平得像镜子。水里的你也拿着剑——它比你慢半拍。",
     options: [
-      { label: "照一照", detail: "失去 5 气血，复制牌组里的 1 张牌。", apply: (r) => { hurt(r, 5); r.cardPick = { mode: "copy", source: "event" }; return "选一张牌，水里的你会学会它。"; } },
+      { label: "照一照", detail: "失去 5 气血，复制牌组里的 1 张牌。", apply: (r) => { hurt(r, 5); r.cardPick = { mode: "copy", source: "event", paid: true }; return "选一张牌，水里的你会学会它。"; } },
       { label: "洗把脸", detail: "回复 6 气血。", apply: (r) => { const a = Math.min(6, r.maxHp - r.hp); r.hp += a; return `池水很凉。回复 ${a} 气血。`; } },
       leave,
     ],

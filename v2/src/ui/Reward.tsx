@@ -19,6 +19,9 @@ export function Reward() {
   // Choices take two taps: the first picks (and enlarges), the second — or the confirm button — takes it.
   const [pickCard, setPickCard] = useState<string | null>(null);
   const [pickRelic, setPickRelic] = useState<string | null>(null);
+  // Leaving with a relic or a card offer still on the table takes two taps (REVIEW-001).
+  const [leaveArmed, setLeaveArmed] = useState(false);
+  const untaken = [rw.relic || rw.relicChoices ? "法宝" : "", rw.cards ? "新牌" : ""].filter(Boolean).join("和");
   const good = /取材成功|追回|淬炼/.test(rw.note);
   useEffect(() => { if (rw.note.includes("取材成功") || rw.note.includes("追回")) sfx.harvest(); }, []);
   useView(bg, run, { hideAll: true, dim: 0.65 });
@@ -36,9 +39,10 @@ export function Reward() {
           {countGoods(rw.goods).map(([id, n]) => <LootSlot id={id} n={n} />)}
         </div>
         {rw.note && <p class={`ribbon ${good ? "ok" : "miss"}`}>{rw.note.trim()}</p>}
+        {pending > 0 && <p class="pile-warn">装不下的 {pending} 件在货堆里：这一层一直跟着你，上楼或回镇前没装进行囊的会留下。</p>}
       </header>
       <section class="reward-bag panel">
-        <h3 class="section-title">行囊 {pending > 0 && <span class="alert-text">· 货堆 {pending} 件，上楼前装进行囊</span>}</h3>
+        <h3 class="section-title">行囊 {pending > 0 && <span class="alert-text">· 货堆 {pending} 件</span>}</h3>
         <BagGrid mode="manage" cell={48} details="popover" />
       </section>
       <section class="reward-right">
@@ -77,8 +81,14 @@ export function Reward() {
             </div>
           </div>
         )}
-        <button type="button" class="btn big primary continue" onClick={() => { sfx.click(); R.closeReward(run); commit(); }}>
-          {run.outcome === "win" ? `回镇结算${pending ? `（货堆 ${pending} 件会留下）` : ""}` : "继续"}
+        {leaveArmed && untaken && <p class="warn-line">{untaken}还没拿，离开就没了。</p>}
+        <button type="button" class={`btn big continue ${leaveArmed && untaken ? "danger" : "primary"}`}
+          onClick={() => {
+            sfx.click();
+            if (untaken && !leaveArmed) { setLeaveArmed(true); return; }
+            R.closeReward(run); commit();
+          }}>
+          {leaveArmed && untaken ? "不要了，继续" : run.outcome === "win" ? `回镇结算${pending ? `（货堆 ${pending} 件会留下）` : ""}` : "继续"}
         </button>
       </section>
     </div>

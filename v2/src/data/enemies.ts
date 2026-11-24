@@ -83,7 +83,7 @@ export const ENEMIES: Record<string, EnemyDef> = {
   "mirror-fox": {
     id: "mirror-fox", name: "镜狐", sprite: "mirror-fox", hp: [38, 42], gold: [16, 22],
     drops: [{ good: "knot", chance: 0.4 }],
-    part: { label: "颈扣", good: "clasp", broken: "clasp-broken", threshold: 10 },
+    part: { label: "狐扣", good: "clasp", broken: "clasp-broken", threshold: 10 },
     moves: {
       mirror: { name: "照镜", block: 6, str: 2 }, pounce: { name: "飞扑", dmg: 11 }, claw: { name: "抓挠", dmg: 4, hits: 2 },
     },
@@ -99,7 +99,7 @@ export const ENEMIES: Record<string, EnemyDef> = {
     },
     ai: cycle(["flutter", "ignite", "call", "dust", "ignite", "flutter"]),
     blurb: "照影廊的守关妖。焚翅之后会放出 20 点烈焰——蓄力那回合打够伤害就能打断。",
-    harvest: { label: "多一截灯芯", good: "wick", text: "至少打断一次「焚翅」",
+    harvest: { label: "灯芯", good: "wick", text: "至少打断一次「焚翅」",
       state: (c) => (c.interrupts > 0 ? "done" : "open"), got: (c) => c.interrupts > 0 },
   },
   warden: {
@@ -142,7 +142,7 @@ export const ENEMIES: Record<string, EnemyDef> = {
       ai: (e) => ["crack", "wind", "quake", "wind", "ring"][e.history.length % 5],
     },
     blurb: "塔顶的钟妖。蓄钟后的钟落有 32 点伤害；半血后会撞碎外壳，变得更凶。",
-    harvest: { label: "多一片钟铜", good: "copper", text: "至少打断一次「蓄钟」",
+    harvest: { label: "钟铜", good: "copper", text: "至少打断一次「蓄钟」",
       state: (c) => (c.interrupts > 0 ? "done" : "open"), got: (c) => c.interrupts > 0 },
   },
 
@@ -164,8 +164,8 @@ export const ENEMIES: Record<string, EnemyDef> = {
     drops: [{ good: "ash", chance: 0.4 }],
     moves: { paste: { name: "糊纸", block: 6, dmg: 3 }, slice: { name: "纸刃", dmg: 4, hits: 2 } },
     ai: cycle(["slice", "paste"]),
-    blurb: "纸扎铺丢掉的纸人，夜里自己走了进来。怕火：扬灰、灯火对它伤害翻倍。",
-    harvest: { label: "红纸", good: "redpaper", text: "别用带火的牌打出最后一下，纸会烧掉",
+    blurb: "纸扎铺丢掉的纸人，夜里自己走了进来。怕火：带「火」字的牌（扬灰、灯火等）对它伤害翻倍。",
+    harvest: { label: "红纸", good: "redpaper", text: "别用带「火」字的牌打出最后一下，纸会烧掉",
       state: (c) => (c.lastTags.includes("fire") ? "risk" : "open"), got: (c) => !c.lastTags.includes("fire") },
   },
   "fire-rat": {
@@ -234,7 +234,7 @@ export const ENEMIES: Record<string, EnemyDef> = {
       grow: { name: "生棘", thorns: 1, block: 8 }, smash: { name: "砸", dmg: 10 }, rain: { name: "棘雨", dmg: 3, hits: 3 },
     },
     ai: cycle(["smash", "grow", "rain", "smash"]),
-    blurb: "缠满荆棘的石碑。你每打它一下，自己都要被扎（看它的「反震」层数）。少出几刀、刀刀要重。",
+    blurb: "缠满荆棘的石碑。你每打它一下，自己都要被扎（看它的「棘刺」层数）。少出几刀、刀刀要重。",
     harvest: { label: "碑拓", good: "rubbing", text: "用一下 12 点以上的重击打出最后一下",
       state: () => "open", got: (c) => c.lastHit >= 12 },
   },
@@ -246,7 +246,7 @@ export const ENEMIES: Record<string, EnemyDef> = {
       hammer: { name: "重锤", dmg: 22 }, swing: { name: "抡臂", dmg: 7, hits: 2 },
     },
     ai: cycle(["swing", "wind", "swing"]),
-    blurb: "钟楼的铜傀儡。铜身太硬，单次最多只吃 10 点伤害——用多段攻击；灼烧、反震、剑气不受这个限制。",
+    blurb: "钟楼的铜傀儡。铜身太硬，单次最多只吃 10 点伤害——用多段攻击；灼烧、棘刺、剑气不受这个限制。",
     harvest: { label: "铜片", good: "shard", text: "至少打断一次「上弦」",
       state: (c) => (c.interrupts > 0 ? "done" : "open"), got: (c) => c.interrupts > 0 },
   },
@@ -271,7 +271,7 @@ export const ENEMIES: Record<string, EnemyDef> = {
     },
     ai: cycle(["charm", "collect", "flip", "wisp", "collect"]),
     blurb: "冒充绯绡摆摊的白狐。「收账」打穿格挡会抢走你 12 石。",
-    harvest: { label: "白狐尾", good: "tail", text: "一个石头都别让它收走",
+    harvest: { label: "白狐尾", good: "tail", text: "一块石都别让它收走",
       state: (c) => (c.goldStolen > 0 ? "failed" : "open"), got: (c) => c.goldStolen === 0 },
   },
 
@@ -289,7 +289,7 @@ export const ENEMIES: Record<string, EnemyDef> = {
     phase2: { at: 0.5, sprite: "paper-matron", str: 2, heal: 12, block: 10, text: "纸扎娘娘把破掉的身子重新糊了一遍：回复 12 气血，力量 +2。",
       ai: (e) => ["fold", "lunge", "call", "fold", "paste"][e.history.length % 5] },
     blurb: "纸扎铺的老板娘，死后被自己扎的纸人供进了塔里。怕火，半血时会把自己重新糊好。",
-    harvest: { label: "多一张红纸", good: "redpaper", text: "别用带火的牌打出最后一下",
+    harvest: { label: "红纸", good: "redpaper", text: "别用带「火」字的牌打出最后一下，纸会烧掉",
       state: (c) => (c.lastTags.includes("fire") ? "risk" : "open"), got: (c) => !c.lastTags.includes("fire") },
   },
   "fallen-elder": {
@@ -306,7 +306,7 @@ export const ENEMIES: Record<string, EnemyDef> = {
     phase2: { at: 0.5, sprite: "fallen-elder", str: 3, text: "堕道首座彻底入魔：力量 +3，剑阵和蓄刀来得更快。",
       ai: (e) => ["gather", "array", "twin", "gather", "cut"][e.history.length % 5] },
     blurb: "当年带队进塔的斩妖人首座，没能出来。剑阵回合硬打会被反伤，半血后入魔。",
-    harvest: { label: "多一块斩妖令", good: "token", text: "别在它剑阵的回合出手攻击",
+    harvest: { label: "斩妖令", good: "token", text: "别在它剑阵的回合出手攻击",
       state: (c) => (c.guardHits > 0 ? "failed" : c.enemy.intent.counter ? "risk" : "open"), got: (c) => c.guardHits === 0 },
   },
 };

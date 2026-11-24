@@ -16,7 +16,7 @@ export const UPGRADES: UpgradeDef[] = [
   { id: "medicine", name: "药柜", icon: "salve", levels: [
     { cost: 50, text: "开局带 1 瓶金疮药。" }, { cost: 120, text: "再多带 1 颗养元丹。" }] },
   { id: "shelf", name: "货架", icon: "ward-blade", levels: [
-    { cost: 70, text: "开局多带一件随机的一级装备。" }, { cost: 160, text: "改为一件随机的二级装备。" }] },
+    { cost: 70, text: "开局多带一件随机的普通装备或配件。" }, { cost: 160, text: "改为一件随机的好装备或配件。" }] },
   { id: "school", name: "学堂", icon: "silk", levels: [
     { cost: 90, text: "进塔前先从 3 张牌里挑 1 张学。" }] },
   { id: "bagsmith", name: "行囊匠", icon: "lining", levels: [

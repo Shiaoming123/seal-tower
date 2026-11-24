@@ -2,7 +2,7 @@ import { bump, noteFloorEnd } from "./stats";
 import { BASE_DECK, CARDS, type CardDef, STARTER_GEAR } from "../data/cards";
 import { ENEMIES } from "../data/enemies";
 import { eventOptions } from "../data/events";
-import { GEAR_IDS, GOODS } from "../data/goods";
+import { GEAR_IDS, GOODS, townPrice } from "../data/goods";
 import { ORDERS } from "../data/orders";
 import { RELICS } from "../data/relics";
 import * as bag from "./bag";
@@ -208,8 +208,14 @@ export function winCombat(run: RunState) {
     bump(run, "refines");
     discover(run, "g:" + r.into);
   }
-  if (c.stolen.length && def.harvest?.good !== "stolen") note += ` 被抢走的${c.stolen.map((g) => GOODS[g].name).join("、")}被它毁了。`;
-  if (has(run, "sealbag") && c.stolen.length) { goods.push(...c.stolen); note += ` 封口锦囊：抢走的${c.stolen.map((g) => GOODS[g].name).join("、")}拿回来了。`; }
+  // Stolen goods: won back by the 灯鼠's harvest (above), else by 封口锦囊, else lost. Never twice, and never both
+  // "destroyed" and "recovered" in one banner (REVIEW-001).
+  const recovered = def.harvest?.good === "stolen" && def.harvest.got(c);
+  if (c.stolen.length && !recovered) {
+    const names = c.stolen.map((g) => GOODS[g].name).join("、");
+    if (has(run, "sealbag")) { goods.push(...c.stolen); note += ` 封口锦囊：抢走的${names}拿回来了。`; }
+    else if (def.harvest?.good !== "stolen") note += ` 被抢走的${names}被它毁了。`;
+  }
   const gold = (c.kind === "guardian" && run.floor === 3 ? BELL_GOLD : int(c.rng, def.gold[0], def.gold[1]))
     + (run.omen === "fog" ? 6 : 0) + (run.omen === "patrol" && c.kind === "elite" ? 20 : 0)
     + (c.kind === "elite" && run.floor === 3 ? 40 : 0)
@@ -251,6 +257,20 @@ export function loseCombat(run: RunState) {
   run.outcome = "dead";
   run.combat = null;
   run.screen = "result";
+}
+
+/** Where 撤退 steps to: behind you first, then either side. Never into a wall or onto something unfinished (REVIEW-001). */
+export function fleeSpot(run: RunState): { x: number; y: number } | null {
+  const d = run.pos.dir;
+  for (const k of [(d + 2) % 4, (d + 3) % 4, (d + 1) % 4]) {
+    const [dx, dy] = DIRS[k];
+    const x = run.pos.x + dx, y = run.pos.y + dy;
+    if (isWall(run.dungeon, x, y)) continue;
+    const e = entityAt(run.dungeon, x, y);
+    if (e && !e.done) continue;
+    return { x, y };
+  }
+  return null;
 }
 
 /** Step back out of a normal fight. The enemy heals; stolen goods stay lost. */
@@ -427,13 +447,17 @@ export function orderReward(ord: RunOrder) {
 export function orderRewardText(ord: RunOrder): string {
   const r = orderReward(ord);
   const parts = [r.gold ? `${r.gold} 石` : "", r.salve ? `${r.salve} 瓶金疮药` : "", r.relic ? "一件稀有法宝" : ""].filter(Boolean);
-  return `${parts.join("、") || "声望"} · 声望 +${r.renown}`;
+  return [...parts, `声望 +${r.renown}`].join(" · ");
 }
 
 export function orderProgress(run: RunState, i = 0) {
   const ord = run.orders[i];
   const order = ORDERS[ord.id];
-  const parts = Object.entries(orderNeeds(ord)).map(([id, n]) => ({ id: id as GoodId, need: n!, have: bag.count(run.bag, id as GoodId) + run.pouch.filter((g) => g === id).length + run.pending.filter((g) => g === id).length }));
+  // `inPile` is the part of `have` still loose in the floor's pile: it counts at a 狐市, but stays behind at the stairs.
+  const parts = Object.entries(orderNeeds(ord)).map(([id, n]) => {
+    const inPile = run.pending.filter((g) => g === id).length;
+    return { id: id as GoodId, need: n!, inPile, have: bag.count(run.bag, id as GoodId) + run.pouch.filter((g) => g === id).length + inPile };
+  });
   return { ord, order, parts, ready: !ord.done && parts.every((p) => p.have >= p.need) };
 }
 
@@ -455,7 +479,7 @@ export function deliverOrder(run: RunState, i = 0): string | null {
   for (let k = 0; k < r.salve; k++) addGood(run, "salve");
   if (r.salve) lines.push(`${r.salve} 瓶金疮药`);
   if (r.relic) { const id = randomRelic(run, "rare"); if (id) { gainRelic(run, id); lines.push(`法宝「${RELICS[id].name}」`); } }
-  return `${order.client}收下了货。你得到 ${lines.join("、") || "声望"}。`;
+  return `${order.client}收下了货。你得到 ${[...lines, `声望 +${r.renown}（回镇结算）`].join("、")}。`;
 }
 
 // ---------------------------------------------------------------- events, rest, cards
@@ -557,8 +581,7 @@ export function floorsCleared(run: RunState) {
 
 /** What something in the bag is worth back in town: goods at full price, gear and consumables at half. */
 export function townValue(id: GoodId): number {
-  const g = GOODS[id];
-  return g.kind === "goods" ? g.price : Math.floor(g.price / 2);
+  return townPrice(id);
 }
 
 /**
