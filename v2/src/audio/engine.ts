@@ -39,10 +39,17 @@ function hallImpulse(a: AudioContext, seconds = 2.6, dark = 0.5, early = 0.004):
 // Browsers refuse to start audio before the player touches the page, and log a warning every time we ask.
 // Ask only after the first tap or key (REVIEW-002: the playtest saw ~80 such warnings in one run).
 let gestured = false;
+// A touch counts only on its release (pointerup / touchend / click), so listen to all of them until audio is running.
 if (typeof window !== "undefined") {
-  const on = () => { gestured = true; if (ctx?.state === "suspended") void ctx.resume(); };
-  window.addEventListener("pointerdown", on, { capture: true, once: true });
-  window.addEventListener("keydown", on, { capture: true, once: true });
+  const kinds = ["pointerdown", "pointerup", "touchend", "click", "keydown"] as const;
+  const on = () => {
+    gestured = true;
+    if (!ctx) return;
+    if (ctx.state === "suspended") void ctx.resume().then(() => { if (ctx?.state === "running") off(); });
+    else if (ctx.state === "running") off();
+  };
+  const off = () => kinds.forEach((k) => window.removeEventListener(k, on, true));
+  kinds.forEach((k) => window.addEventListener(k, on, true));
 }
 
 export function ac(): AudioContext | null {

@@ -180,8 +180,12 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .weapon-detail p { margin: 0 0 6px; font-size: 15px; }
 .card-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .town-start { display: flex; justify-content: flex-end; gap: 16px; align-items: center; margin-top: auto; }
-/* Portrait: the order and weapon lists are two screens tall; keep 进塔 on screen (REVIEW-002). */
-.portrait .town-start { position: sticky; bottom: 0; z-index: 5; padding: 10px 0 12px; background: linear-gradient(rgba(22, 12, 9, 0), rgba(22, 12, 9, 0.94) 30%); }
+/* Portrait: the order and weapon lists are two screens tall; keep 进塔 on screen (REVIEW-002). Fixed, not sticky: sticky
+   only held inside the weapons section, so it was gone while reading the orders. The stage is transformed, so fixed
+   means the bottom of the stage. */
+.portrait .town-start { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; padding: 14px 20px 14px; margin: 0;
+  background: linear-gradient(rgba(22, 12, 9, 0), rgba(22, 12, 9, 0.94) 35%); }
+.portrait .town-screen { padding-bottom: 96px; }
 .diff select { font: inherit; margin-left: 8px; background: #2a1712; color: var(--ink); border: 1px solid var(--gold-dim); padding: 6px; }
 /* max-content rows: with auto rows the sections (min-height: 0) were squeezed to equal heights and spilled onto
    each other when the page is taller than the phone screen; the screen scrolls instead. */
@@ -235,6 +239,9 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .relic img { position: absolute; left: 0; top: 0; width: 38px; height: 38px; padding: 2px; box-sizing: border-box; object-fit: contain;
   border-radius: 50%; background: radial-gradient(#4a2a1c, #1b0f0c); box-shadow: inset 0 0 0 1px var(--gold-dim), 0 0 0 1px rgba(0, 0, 0, 0.55); }
 .relic:hover, .relic:focus-visible { z-index: 2; }
+.relics { position: relative; }
+.relic-count { position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 3; min-width: 22px; height: 22px; padding: 0 5px; border: 0; border-radius: 11px;
+  cursor: pointer; font-size: 13px; font-weight: bold; color: #1b0f0c; background: var(--gold); box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.6); }
 .hud-order { display: flex; align-items: center; gap: 8px; font-size: 14px; white-space: nowrap; }
 .hud-order .order-label { color: var(--gold); }
 .hud-order .ok { color: #8fe0a0; }
@@ -709,8 +716,11 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .reward-bag .tag-set { min-width: 0; }
 .reward-bag .pouch { min-width: 0; }
 .reward-bag .pouch-slot { width: 64px; height: 58px; }
-/* safe center: when the relic pick overflows, it starts at the top instead of hiding its first choice above the scroll (REVIEW-002). */
-.reward-right { min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; justify-content: safe center; align-items: center; }
+/* Centered with auto margins, not justify-content: center. When the relic pick overflows, auto margins drop to 0 and it
+   starts at the top instead of hiding its first choice above the scroll (REVIEW-002; "safe center" needs iOS 17.6+). */
+.reward-right { min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; align-items: center; }
+.reward-right > :first-child { margin-top: auto; }
+.reward-right > :last-child { margin-bottom: auto; }
 .card-offer { padding: 12px 18px 14px; }
 .offer-actions { justify-content: center; align-items: center; gap: 12px; }
 .pick-hint { font-size: 13px; }

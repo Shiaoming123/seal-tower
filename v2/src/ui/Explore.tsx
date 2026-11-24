@@ -239,16 +239,20 @@ export function Explore() {
       // Say what is in the way (REVIEW-002): under 月明 the whole map is lit and a far tile looks reachable.
       const open = findPath(run.dungeon, run.pos, { x: tx, y: ty }, true);
       const blocker = open?.map((p) => entityAt(run.dungeon, p.x, p.y)).find((e) => e && !e.done && e !== entityAt(run.dungeon, tx, ty));
-      say(blocker ? `${entityName(blocker)}挡在路上，得先打过去或者绕开。` : "那里还走不过去：路还没探明。");
+      say(!blocker ? "那里还走不过去：路还没探明。"
+        : isFight(blocker) ? `${entityName(blocker)}挡在路上，得先打过去。` : `${entityName(blocker)}挡在路上，得先走到那里处理掉。`);
       return;
     }
-    // A long walk can burn the lamp down without warning (REVIEW-002): if it would leave the lamp low, ask once more.
+    // A long walk can burn the lamp down without warning (REVIEW-002): ask once more when this walk takes the lamp
+    // from fine to low, or would burn it out. Already low, short hops go straight through (follow-up review).
     const cost = path.length + (run.omen === "rain" ? Math.floor(path.length / 3) : 0);
-    const key = `${tx},${ty}`;
-    if (run.oil > 0 && run.oil - cost <= 15 && walkConfirm.current !== key) {
+    const left = run.oil - cost;
+    // The confirmation is for this walk from this spot on this floor; moving or climbing makes it stale.
+    const key = `${run.floor}:${run.pos.x},${run.pos.y}>${tx},${ty}`;
+    if (run.oil > 0 && ((run.oil > 15 && left <= 15) || left < 0) && walkConfirm.current !== key) {
       walkConfirm.current = key;
-      say(run.oil - cost < 0 ? `这趟要走 ${path.length} 步，灯油只剩 ${run.oil}，走到一半灯就灭了。再点一次这一格照走。`
-        : `这趟要走 ${path.length} 步，约烧 ${cost} 灯油，走完只剩 ${run.oil - cost}。再点一次这一格就走。`, 3500);
+      say(left < 0 ? `这趟要走 ${path.length} 步，灯油只剩 ${run.oil}，走到一半灯就灭了（灭了会自动停下）。再点一次这一格就走。`
+        : `这趟要走 ${path.length} 步，约烧 ${cost} 灯油，走完只剩 ${left}。再点一次这一格就走。`, 3500);
       return;
     }
     walkConfirm.current = null;

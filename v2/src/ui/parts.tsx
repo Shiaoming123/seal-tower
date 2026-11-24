@@ -173,6 +173,10 @@ export function RelicRow({ relics }: { relics: string[] }) {
           <Art id={relicIcon(id)} />
         </button>
       ))}
+      {/* With many relics the coins overlap and the row is clipped: the count lists them all (follow-up review). */}
+      {relics.length >= 3 && (
+        <button type="button" class="relic-count" title="看全部法宝" onClick={() => say(`法宝 ${relics.length} 件：${relics.map((id) => `${RELICS[id].name}（${RELICS[id].text}）`).join("；")}`, 9000)}>{relics.length}</button>
+      )}
     </div>
   );
 }
