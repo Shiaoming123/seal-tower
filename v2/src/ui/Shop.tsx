@@ -10,7 +10,7 @@ import { sellPrice } from "../game/inventory";
 import type { GoodId } from "../game/types";
 import { ART } from "../render/assets";
 import { BagGrid } from "./Bag";
-import { Art, CardView, GoodChip, relicIcon } from "./parts";
+import { Art, CardView, GoodChip, GoodInfo, relicIcon } from "./parts";
 import { commit, say, useRun } from "./store";
 
 const LINES = [
@@ -37,6 +37,13 @@ export function Shop() {
     setArmed(null); act();
   };
   const arm = (key: string) => (armed === key ? "armed" : "");
+  // Look before you buy: hovering a ware (mouse) or the first tap shows its full details above it.
+  const [hovered, setHovered] = useState<string | null>(null);
+  const look = (key: string) => ({
+    onPointerEnter: (e: PointerEvent) => { if (e.pointerType === "mouse") setHovered(key); },
+    onPointerLeave: () => setHovered((h) => (h === key ? null : h)),
+  });
+  const showing = (key: string) => armed === key || hovered === key;
   return (
     <div class="shop" onPointerDown={(e) => { if (armed && !(e.target as HTMLElement).closest(".ware")) setArmed(null); }} style={{ backgroundImage: `linear-gradient(rgba(10,5,4,0.55), rgba(10,5,4,0.85)), url(${ART.market})` }}>
       <div class="shop-keeper">
@@ -64,7 +71,8 @@ export function Shop() {
               const size = bag.sizeOf(w.id, 0);
               return (
                 <button type="button" class={`ware item-ware ${w.sold ? "sold" : ""} ${arm(`${list}${i}`)}`} onClick={() => !w.sold && tap(`${list}${i}`, () => buy(R.buyItem(run, list, i), g.name))}
-                  title={g.text}>
+                  {...look(`${list}${i}`)}>
+                  {showing(`${list}${i}`) && !w.sold && <div class="ware-info"><GoodInfo id={w.id} price={`${w.price} 石`} note={`占 ${size.w}×${size.h} 格`} /></div>}
                   <img src={ART[g.icon]} alt="" draggable={false} />
                   <b>{g.name}</b>
                   <span class="shape">{size.w}×{size.h}</span>
@@ -79,7 +87,9 @@ export function Shop() {
           <h3>法宝 <small>不占格子</small></h3>
           <div class="wares items">
             {s.relics.map((w, i) => (
-              <button type="button" class={`ware item-ware ${w.sold ? "sold" : ""} ${arm(`relic${i}`)}`} onClick={() => !w.sold && tap(`relic${i}`, () => buy(R.buyRelic(run, i), RELICS[w.id].name))}>
+              <button type="button" class={`ware item-ware ${w.sold ? "sold" : ""} ${arm(`relic${i}`)}`} onClick={() => !w.sold && tap(`relic${i}`, () => buy(R.buyRelic(run, i), RELICS[w.id].name))}
+                {...look(`relic${i}`)}>
+                {showing(`relic${i}`) && !w.sold && <div class="ware-info"><div class="good-info"><div class="gi-head"><Art id={relicIcon(w.id)} /><div><b>{RELICS[w.id].name}</b><span>法宝 · 不占格子 · {w.price} 石</span></div></div><p>{RELICS[w.id].text}</p></div></div>}
                 <Art id={relicIcon(w.id)} />
                 <b>{RELICS[w.id].name}</b>
                 <span class="desc">{RELICS[w.id].text}</span>

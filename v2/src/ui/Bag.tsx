@@ -6,6 +6,7 @@ import * as bag from "../game/bag";
 import { POUCH_SLOTS, canExpand, sewPiece, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
 import type { GoodId, PlacedGood, RunState } from "../game/types";
 import { ART } from "../render/assets";
+import { GoodInfo } from "./parts";
 import { commit, overlay, say, useRun } from "./store";
 
 type Held = { from: "bag"; uid: number; id: GoodId; rot: number } | { from: "pending" | "pouch"; index: number; id: GoodId; rot: number };
@@ -128,6 +129,14 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
 
   return (
     <div class={`bag-wrap mode-${mode}`}>
+      {mode === "sell" && (() => {
+        // Selling: the good picked by the first tap is described here, above the grid (the panel is too narrow
+        // and scrolls, so a popover beside the item would be cut off).
+        const it = run.bag.items.find((x) => x.uid === confirmSell);
+        return it
+          ? <div class="sell-info"><GoodInfo id={it.id} price={`卖 ${sellPrice(run, it.id, run.floor, run.shop?.sold[it.id] ?? 0, it.uid)} 石`} note="再点一下这件货卖出，点别的货换一件看" /></div>
+          : <p class="sell-hint muted">点一件货看说明和卖价，再点一下卖出。</p>;
+      })()}
       <div class={`bag-grid ${b.holes?.length ? "irregular" : ""}`} ref={gridRef} style={{ width: `${b.w * cell}px`, height: `${b.h * cell}px`, "--cell": `${cell}px` } as never}
         onContextMenu={(e) => { e.preventDefault(); if (held) setHeld({ ...held, rot: (held.rot + 1) % 4 }); else rotateSelected(); }}>
         {Array.from({ length: b.w * b.h }, (_, i) => bag.usable(b, i % b.w, Math.floor(i / b.w)) && <div class="cell" style={{ left: `${(i % b.w) * cell}px`, top: `${Math.floor(i / b.w) * cell}px` }} />)}

@@ -1,6 +1,6 @@
 import type { ComponentChildren } from "preact";
 import { CARDS, type Preview, RARITY_LABEL, TYPE_LABEL, cardCost, cardVals } from "../data/cards";
-import { GOODS } from "../data/goods";
+import { GOODS, KIND_LABEL, TAGS } from "../data/goods";
 import { RELICS } from "../data/relics";
 import type { GoodId, StatusId } from "../game/types";
 import { ART, artId } from "../render/assets";
@@ -121,6 +121,23 @@ export function LootSlot({ id, n }: { id: GoodId; n?: number }) {
     <div class={`loot tier-${goodTier(id)} ${g.dim ? "dim" : ""}`} title={g.text}>
       <span class="loot-frame"><Art id={g.icon} />{n && n > 1 ? <i>×{n}</i> : null}</span>
       <small>{g.name}</small>
+    </div>
+  );
+}
+
+/** Read-only details of a good (no buttons): shown when you look at a ware in the 狐市 or pick a good to sell. */
+export function GoodInfo({ id, price, note }: { id: GoodId; price?: string; note?: string }) {
+  const g = GOODS[id];
+  return (
+    <div class="good-info">
+      <div class="gi-head"><Art id={g.icon} /><div><b>{g.name}</b><span>{KIND_LABEL[g.kind]}{price ? ` · ${price}` : ""}</span></div></div>
+      <p>{g.text}</p>
+      {g.passive && <p class="gi-line">带在身上：{g.passive}</p>}
+      {g.cards && <p class="gi-line">牌组多出：{g.cards.map((c) => `「${CARDS[c].name}」`).join("")}</p>}
+      {g.aura && <p class="gi-line">配件：{g.aura.text}</p>}
+      {g.use && <p class="gi-line">{g.use.label}</p>}
+      {g.tags && <p class="gi-tags">{g.tags.map((t) => `「${TAGS[t].name}」套装`).join("　")}</p>}
+      {note && <p class="gi-note">{note}</p>}
     </div>
   );
 }

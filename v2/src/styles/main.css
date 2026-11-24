@@ -796,3 +796,19 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .menu-btn kbd { margin-left: 4px; }
 .floater.combo { color: #ffd770; font-size: 26px; text-shadow: 0 0 10px rgba(255, 170, 60, 0.9), 2px 2px 0 #5a1a08; }
 .floater.parry { color: #bfe6ff; font-size: 30px; text-shadow: 0 0 12px rgba(120, 190, 255, 0.95), 2px 2px 0 #0a2040; }
+
+/* ---------------------------------------------------------------- UI-008b: look before you buy or sell */
+.good-info { background: var(--tex-paper, none) center / 256px, linear-gradient(170deg, #f4e8cc 0%, #e8d6ae 60%, #dcc69a 100%); color: var(--paper-ink);
+  border: 1px solid var(--gold-dim); border-radius: 5px; padding: 8px 10px; text-align: left; display: flex; flex-direction: column; gap: 4px; }
+.good-info p { margin: 0; font-size: 13px; line-height: 1.4; }
+.gi-head { display: flex; gap: 8px; align-items: center; }
+.gi-head img { width: 36px; height: 36px; object-fit: contain; }
+.gi-head b { display: block; font-size: 16px; }
+.gi-head span { font-size: 12px; color: #6a5030; }
+.gi-line { color: #3a5a20; }
+.gi-tags { color: #7a5010; font-size: 12px !important; }
+.gi-note { color: #8a3a10; font-size: 12px !important; }
+.ware-info { position: absolute; left: 50%; bottom: calc(100% + 8px); transform: translateX(-50%); width: 240px; z-index: 20; pointer-events: none; filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.65)); animation: loot-in 0.12s ease-out; }
+.ware.armed::after, .item-ware.armed::after { top: auto; bottom: -4px; transform: translate(-50%, 100%); }
+.sell-info { grid-column: 1 / -1; width: 100%; }
+.sell-hint { grid-column: 1 / -1; margin: 0; font-size: 12px; }
