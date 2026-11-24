@@ -772,7 +772,7 @@ describe("refining (GAME-003B)", () => {
     c.block = 10;
     c.enemy.intent = { key: "wait", name: "等", block: 1 };
     endTurn(run);
-    expect(c.block).toBe(4);
+    expect(c.block).toBe(6); // 木挡板 4 + 精 2 (GAME-010)
   });
 
   it("refined gear never drops or shows up in shops", async () => {
@@ -1082,5 +1082,20 @@ describe("REVIEW-002 AI playtest fixes", () => {
     const left = run.bag.items.filter((it) => it.id === "ash").reduce((n, it) => n + bag.qty(it), 0);
     expect(left).toBe(2);
     expect(run.oil).toBe(18);
+  });
+});
+
+describe("GAME-010 木挡板", () => {
+  it("keeps up to 4 block at the end of the turn (refined: 6)", () => {
+    for (const [id, want] of [["shield", 4], ["shield-fine", 6]] as const) {
+      const run = createRun(303, "shield", "lamp");
+      const it = run.bag.items.find((i) => i.id === "shield")!;
+      it.id = id;
+      const c = fightWith(run, "moth");
+      c.block = 20;
+      c.enemy.intent = { key: "wait", name: "等", block: 1 } as never;
+      endTurn(run);
+      expect(c.block).toBe(want);
+    }
   });
 });

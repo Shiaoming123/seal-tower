@@ -98,7 +98,7 @@ const list: CardDef[] = [
     play: (c, v) => { c.attack(c.currentBlock() + v.plus); } },
   { id: "wall", name: "铁壁", cost: 2, type: "skill", rarity: "common", pool: "shield", v: [{ blk: 12 }, { blk: 16 }],
     text: (v) => `获得 ${v.blk} 格挡。`, play: (c, v) => c.block(v.blk) },
-  { id: "spikes", name: "回敬", cost: 1, type: "skill", rarity: "common", pool: "shield", v: [{ blk: 4, th: 3 }, { blk: 6, th: 5 }],
+  { id: "spikes", name: "回敬", cost: 1, type: "skill", rarity: "common", pool: "shield", v: [{ blk: 5, th: 3 }, { blk: 7, th: 5 }],
     text: (v) => `获得 ${v.blk} 格挡。直到你的下回合，每被打一下，回敬 ${v.th} 伤害。`, play: (c, v) => { c.block(v.blk); c.selfStatus("counter", v.th); } },
   { id: "center", name: "守中", cost: 0, type: "skill", rarity: "common", pool: "shield", v: [{ blk: 3 }, { blk: 5 }],
     text: (v) => `获得 ${v.blk} 格挡，抽 1 张牌。`, play: (c, v) => { c.block(v.blk); c.draw(1); } },

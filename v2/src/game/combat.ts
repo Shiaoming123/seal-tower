@@ -343,8 +343,9 @@ function startTurn(run: RunState, events: CombatEvent[]) {
   const c = run.combat!;
   c.turn++;
   run.stats.turns++;
-  // Block you keep between turns: 木挡板 keeps 2, a full 盾 set 3 more.
-  const keep = (has(run, "shield") ? 2 : 0) + (has(run, "shield-fine") ? 2 : 0) + (bag.tagLevel(run.bag, "guard") >= 2 ? 3 : 0);
+  // Block you keep between turns: 木挡板 keeps 4, refined 2 more, a full 盾 set 3 more.
+  // (木挡板 was 2: the starter meant for new players won 23% of sims, the others 38–41%; GAME-010.)
+  const keep = (has(run, "shield") ? 4 : 0) + (has(run, "shield-fine") ? 2 : 0) + (bag.tagLevel(run.bag, "guard") >= 2 ? 3 : 0);
   // (Not on turn 1: block granted at the start of a fight — 护心镜, the 盾 set — must survive into it.)
   if (!c.status.barricade && c.turn > 1) c.block = Math.min(keep, c.block);
   c.energy = c.maxEnergy + (c.turn === 1 && has(run, "bell") ? 1 : 0);
