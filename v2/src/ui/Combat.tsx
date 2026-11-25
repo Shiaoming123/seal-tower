@@ -342,6 +342,9 @@ export function Combat() {
   const previewIdx = picked !== null ? c.hand.findIndex((h) => h.uid === picked) : hovered !== null ? c.hand.findIndex((h) => h.uid === hovered) : -1;
   const pv = previewIdx >= 0 && !busy.current ? simulatePlay(run, previewIdx) : null;
   const tipId = c.enemy.intent.steal ? "steal" : c.enemy.intent.charge ? "charge" : def.part ? "part" : "combat";
+  // A fight that opened with a 知道了 tip doesn't also queue a 新概念 tip (TIP-PACE): one explanation per fight.
+  const hadTip = useRef(false);
+  if (!seenTip(tipId)) hadTip.current = true;
   const tips: Record<string, string> = {
     combat: phoneHand
       ? "敌人头上写着它下回合要做什么。每回合 3 点能量。点一张牌会放大，再点一次才打出。打不过可以先架起格挡，最后点「结束回合」。"
@@ -386,11 +389,11 @@ export function Combat() {
         {banner && <div class="banner" key={banner}>{banner}</div>}
         {slash > 0 && <div class={`slash s${slash % 3}`} key={`slash${slash}`} />}
         {floaters.map((f) => <span class={`floater ${f.kind}`} key={f.id} style={{ left: `${f.x}%`, top: `${f.y}%` }}>{f.text}</span>)}
-        {seenTip(tipId) && <ConceptTip ids={["intent", "block", ...(def.harvest ? ["harvest" as const] : []), ...(c.kind === "elite" ? ["elite" as const] : []), ...(c.kind === "guardian" ? ["guardian" as const] : []), ...(c.turn >= RAMP_TURN - 2 ? ["ramp" as const] : [])]} float />}
+        {seenTip(tipId) && !hadTip.current && <ConceptTip ids={["intent", "block", ...(def.harvest ? ["harvest" as const] : []), ...(c.kind === "elite" ? ["elite" as const] : []), ...(c.kind === "guardian" ? ["guardian" as const] : []), ...(c.turn >= RAMP_TURN - 2 ? ["ramp" as const] : [])]} float />}
         {!seenTip(tipId) && (
           <div class="tip combat-tip">
             <p>{tips[tipId]}</p>
-            <button type="button" class="btn small" onClick={() => markTip(tipId)}>知道了</button>
+            <button type="button" class="btn small" onClick={() => { markTip(tipId); if (tipId === "combat") markTip("term:intent"); }}>知道了</button>
           </div>
         )}
       </div>

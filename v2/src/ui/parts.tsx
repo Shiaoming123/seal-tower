@@ -285,10 +285,12 @@ export function TermPopover() {
 
 /** First time an idea matters on this screen, explain it once: the first of `ids` not yet seen, with 「知道了」. */
 // `float` pins it over a 3D view (explore, combat); in normal flow it would sit under the canvas.
+// One new concept per visit (TIP-PACE): after 「知道了」 the next one waits until the screen is opened again (the next
+// fight, the next walk, the next look in the bag). The first playtest tapped 知道了 about ten times in two minutes.
 export function ConceptTip({ ids, float }: { ids: TermId[]; float?: boolean }) {
-  const [, force] = useState(0);
+  const [done, setDone] = useState(false);
   const id = ids.find((x) => !seenTip(`term:${x}`));
-  if (!id) return null;
+  if (!id || done) return null;
   const term = TERMS[id];
   return (
     <div class={`concept-tip ${float ? "float" : ""}`}>
@@ -296,7 +298,7 @@ export function ConceptTip({ ids, float }: { ids: TermId[]; float?: boolean }) {
       <b>{term.name}</b>
       <p>{term.short}</p>
       <p class="muted">{term.more}</p>
-      <button type="button" class="btn small" onClick={() => { markTip(`term:${id}`); force((n) => n + 1); }}>知道了</button>
+      <button type="button" class="btn small" onClick={() => { markTip(`term:${id}`); setDone(true); }}>知道了</button>
     </div>
   );
 }

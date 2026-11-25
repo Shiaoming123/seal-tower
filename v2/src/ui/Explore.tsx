@@ -179,7 +179,8 @@ export function Explore() {
     setNudge((n) => n + 1);
     return true;
   };
-  const closeOmen = () => { run.omenSeen = true; sfx.click(); commit(); };
+  // The omen card is itself the explanation of 签文, so it counts as seeing that concept (TIP-PACE).
+  const closeOmen = () => { run.omenSeen = true; markTip("term:omen"); sfx.click(); commit(); };
   useView(ref, run);
   useCreatureCalls();
   useLayoutEffect(() => { view.place(run.pos.x, run.pos.y, run.pos.dir); }, [run.floor, run.warp]);
@@ -313,7 +314,8 @@ export function Explore() {
           </div>
         )}
         {onStairs && <StairsPrompt />}
-        {!showTip && !omenOpen && !onStairs && <ConceptTip ids={["oil", "omen", "order"]} float />}
+        {/* Not on the very first screen (walking tip, then the omen card): oil is explained once you've walked a few steps. */}
+        {!showTip && !omenOpen && !onStairs && run.stats.steps >= 4 && <ConceptTip ids={["oil", "omen", "order"]} float />}
         {omenOpen && (
           <div class={`omen-card ${nudge ? "nudge" : ""}`} key={`omen-${nudge}`}>
             <span class="omen-tag">本层签文</span>
