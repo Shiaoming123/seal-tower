@@ -1,12 +1,13 @@
-import { useState } from "preact/hooks";
+import { useLayoutEffect, useRef, useState } from "preact/hooks";
 import { sfx } from "../audio/sfx";
 import { CARDS } from "../data/cards";
 import { GOODS } from "../data/goods";
 import { combatDeck, previewFor } from "../game/combat";
 import * as bag from "../game/bag";
 import * as R from "../game/run";
+import type { CombatState } from "../game/types";
 import { CardView, Term, upgradeDiff } from "./parts";
-import { commit, overlay, useRun } from "./store";
+import { type CombatPile, commit, overlay, useRun } from "./store";
 
 export function DeckOverlay() {
   const run = useRun();
@@ -47,6 +48,57 @@ export function DeckOverlay() {
             </section>
           );
         })}
+      </div>
+    </div>
+  );
+}
+
+export const PILE_LABELS = [
+  ["draw", "抽牌堆"], ["discard", "弃牌堆"], ["exhaust", "消耗牌堆"],
+] as const satisfies ReadonlyArray<readonly [CombatPile, string]>;
+
+const PILE_NOTE: Record<CombatPile, string> = {
+  draw: "按牌种排列，实际抽牌顺序隐藏。",
+  discard: "抽牌堆用完后，弃牌会洗回抽牌堆。",
+  exhaust: "这些牌本场战斗不会再抽到。",
+};
+
+export function PileOverlay({ combat, pile }: { combat: CombatState; pile: CombatPile }) {
+  const run = useRun();
+  const closeRef = useRef<HTMLButtonElement>(null);
+  useLayoutEffect(() => {
+    closeRef.current?.focus();
+    return () => {
+      requestAnimationFrame(() => {
+        if (!overlay.value) document.querySelector<HTMLButtonElement>(`[data-combat-pile="${pile}"]`)?.focus();
+      });
+    };
+  }, []);
+  const close = () => { sfx.click(); overlay.value = null; };
+  const label = PILE_LABELS.find(([id]) => id === pile)![1];
+  const cards = [...combat[pile]];
+  if (pile === "draw") cards.sort((a, b) => a.id.localeCompare(b.id) || a.uid - b.uid);
+  else cards.reverse();
+  const preview = previewFor(run, combat);
+  return (
+    <div class="overlay" onClick={(e) => { if (e.target === e.currentTarget) close(); }}>
+      <div class="overlay-box pile-box" role="dialog" aria-modal="true" aria-labelledby="pile-title">
+        <header>
+          <h2 id="pile-title">{label}</h2>
+          <button ref={closeRef} type="button" class="btn small" onClick={close}>关闭 <kbd>Esc</kbd></button>
+        </header>
+        <div class="pile-switch" role="group" aria-label="切换牌堆">
+          {PILE_LABELS.map(([id, name]) => (
+            <button type="button" class={`btn small ${id === pile ? "primary" : ""}`} aria-pressed={id === pile}
+              onClick={() => { sfx.click(); overlay.value = id; }}>{name} <b>{combat[id].length}</b></button>
+          ))}
+        </div>
+        <p class="pile-note muted">{PILE_NOTE[pile]}</p>
+        <div class="pile-scroll" key={pile}>
+          {cards.length ? <div class="pile-card-grid">
+            {cards.map(card => <CardView key={card.uid} id={card.id} up={card.up} bonus={card.bonus} preview={preview} readOnly />)}
+          </div> : <p class="pile-empty">这个牌堆现在是空的。</p>}
+        </div>
       </div>
     </div>
   );

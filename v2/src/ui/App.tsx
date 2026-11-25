@@ -8,7 +8,7 @@ import { OMEN } from "../data/omens";
 import { combatDeck } from "../game/combat";
 import { orderProgress } from "../game/run";
 import { BagOverlay } from "./Bag";
-import { CardPicker, DeckOverlay } from "./Deck";
+import { CardPicker, DeckOverlay, PileOverlay } from "./Deck";
 import { Explore } from "./Explore";
 import { Combat } from "./Combat";
 import { Reward } from "./Reward";
@@ -76,10 +76,12 @@ export function App() {
 function Game() {
   const run = useRun();
   const screen = run.screen;
+  const layer = overlay.value;
+  const pile = layer === "draw" || layer === "discard" || layer === "exhaust" ? layer : null;
   return (
     <div class={`game screen-${screen} floor-${run.floor}`}>
-      {screen !== "result" && <Hud />}
-      <div class="main">
+      {screen !== "result" && <Hud blocked={pile !== null} />}
+      <div class="main" inert={pile !== null}>
         {screen === "explore" && <Explore />}
         {screen === "combat" && <Combat />}
         {screen === "reward" && <Reward />}
@@ -88,6 +90,7 @@ function Game() {
         {screen === "rest" && <RestScreen />}
         {screen === "result" && <Result />}
       </div>
+      {screen === "combat" && run.combat && pile && <PileOverlay combat={run.combat} pile={pile} />}
       {overlay.value === "bag" && <BagOverlay />}
       {overlay.value === "deck" && <DeckOverlay />}
       {overlay.value === "pause" && <PauseMenu />}
@@ -98,12 +101,12 @@ function Game() {
 
 const FLOOR_NAMES = ["", "第一层 · 照影廊", "第二层 · 桥驿", "第三层 · 钟楼"];
 
-function Hud() {
+function Hud({ blocked }: { blocked: boolean }) {
   const run = useRun();
   const toggle = (o: "bag" | "deck") => { sfx.click(); overlay.value = overlay.value === o ? null : o; };
   const pending = run.pending.length;
   return (
-    <header class="hud">
+    <header class="hud" inert={blocked}>
       <div class="hud-left">
         <span class="floor-name">{FLOOR_NAMES[run.floor]}</span>
         <Bar value={run.hp} max={run.maxHp} kind="hp" block={run.combat?.block ?? 0} />

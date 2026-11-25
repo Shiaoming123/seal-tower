@@ -71,15 +71,16 @@ export function cardText(def: CardDef, up: boolean, bonus: { dmg?: number; blk?:
   return t.replace(/(^|[。，])消耗。$/, "$1消耗（这场只能用一次）。");
 }
 
-export function CardView({ id, up, preview, onClick, disabled, reason, small, selected, extra, bonus }: {
+export function CardView({ id, up, preview, onClick, disabled, reason, small, selected, extra, bonus, readOnly }: {
   id: string; up: boolean; preview: Preview; onClick?: () => void; disabled?: boolean; reason?: string | null;
-  small?: boolean; selected?: boolean; extra?: ComponentChildren; bonus?: { dmg?: number; blk?: number };
+  readOnly?: boolean; small?: boolean; selected?: boolean; extra?: ComponentChildren; bonus?: { dmg?: number; blk?: number };
 }) {
   const def = CARDS[id];
   const cost = cardCost(def, up);
+  const Tag = readOnly ? "div" : "button";
   return (
-    <button type="button" class={`card pool-${def.pool} type-${def.type} ${small ? "small" : ""} ${disabled ? "disabled" : ""} ${selected ? "selected" : ""}`}
-      onClick={onClick} aria-disabled={disabled} title={reason ?? undefined}>
+    <Tag type={readOnly ? undefined : "button"} class={`card pool-${def.pool} type-${def.type} ${small ? "small" : ""} ${disabled ? "disabled" : ""} ${selected ? "selected" : ""} ${readOnly ? "read-only" : ""}`}
+      onClick={readOnly ? undefined : onClick} aria-disabled={disabled} title={reason ?? undefined}>
       <span class="cost">{cost}</span>
       <span class="name">{def.name}{up ? "+" : ""}</span>
       <span class="pic"><Art id={artId(`card-${id}`, CARD_ART[id] ?? "sword")} /></span>
@@ -94,7 +95,7 @@ export function CardView({ id, up, preview, onClick, disabled, reason, small, se
       })()}
       {reason && <span class="reason">{reason}</span>}
       {extra}
-    </button>
+    </Tag>
   );
 }
 

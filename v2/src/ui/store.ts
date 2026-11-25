@@ -30,7 +30,8 @@ export const page = signal<"title" | "town" | "game" | "help" | "achievements" |
 /** 每日签: the next run uses today's shared seed. */
 export const dailyMode = signal(false);
 export const today = () => { const d = new Date(); return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`; };
-export const overlay = signal<null | "bag" | "deck" | "map" | "pause">(null);
+export type CombatPile = "draw" | "discard" | "exhaust";
+export const overlay = signal<null | "bag" | "deck" | "map" | "pause" | CombatPile>(null);
 
 /** The run as it was when the current fight began, for 「重新开战」 in the pause menu. Kept in memory only. */
 let fightStart: RunState | null = null;

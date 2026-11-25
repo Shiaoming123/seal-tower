@@ -14,6 +14,7 @@ import { ART, artId, image } from "../render/assets";
 import { VIEW_H, VIEW_W } from "../render/raycaster";
 import { fx as fxLayer } from "../render/fx";
 import { enemyStage, useView, view } from "./Explore";
+import { PILE_LABELS } from "./Deck";
 import { Bar, CardView, ConceptTip, STATUS_INFO, Statuses, Term } from "./parts";
 import { commit, forgetFight, markTip, overlay, rememberFight, runSig, say, seenTip, useRun } from "./store";
 
@@ -98,7 +99,13 @@ export function Combat() {
   const anchorPt = useRef({ x: 50, y: 34 });
   const anchorPx = useRef({ x: 0, y: 0 });
   // Remember the fight as it began, for 「重新开战」 (the snapshot includes the rng, so the same hand comes up).
-  useEffect(() => { rememberFight(runSig.value!); return () => forgetFight(); }, []);
+  useEffect(() => {
+    rememberFight(runSig.value!);
+    return () => {
+      forgetFight();
+      if (PILE_LABELS.some(([id]) => overlay.value === id)) overlay.value = null;
+    };
+  }, []);
   useEffect(() => {
     // Pull the camera back and tilt it down so the whole monster stands on the floor above your hand.
     const r0 = runSig.value!;
@@ -247,7 +254,8 @@ export function Combat() {
   const play = async (i: number) => {
     if (busy.current || c.over) return;
     const card = c.hand[i];
-    const reason = card && blockedReason(run, c, card);
+    if (!card) return;
+    const reason = blockedReason(run, c, card);
     if (reason) { say(reason); return; }
     busy.current = true;
     setBanner(""); // the encounter / last-move banner sits where the damage numbers land
@@ -408,9 +416,12 @@ export function Combat() {
           <Statuses status={c.status} />
         </div>
         <div class="piles">
-          <span title="抽牌堆">抽 {c.draw.length}</span>
-          <span title="弃牌堆">弃 {c.discard.length}</span>
-          {c.exhaust.length > 0 && <span title="消耗掉的牌">耗 {c.exhaust.length}</span>}
+          {PILE_LABELS.map(([pile, name]) => (
+            <button type="button" class="btn small" data-combat-pile={pile} aria-haspopup="dialog"
+              onClick={() => { sfx.click(); overlay.value = pile; }}>
+              {name} <b>{c[pile].length}</b>
+            </button>
+          ))}
         </div>
       </div>
       <div class="hand">
