@@ -422,10 +422,10 @@
         "货物·红纸"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-fur",
@@ -434,10 +434,10 @@
         "货物·火鼠毛"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-inkdust",
@@ -446,10 +446,10 @@
         "货物·墨粉"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-pearl",
@@ -459,10 +459,10 @@
         "货物·裂水珠"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": true,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "P2"
     },
     {
       "file": "icon-rubbing",
@@ -471,10 +471,10 @@
         "货物·碑拓"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-token",
@@ -483,10 +483,10 @@
         "货物·斩妖令"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-shard",
@@ -495,10 +495,10 @@
         "货物·铜片"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-feather",
@@ -507,10 +507,10 @@
         "货物·枭羽"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-tail",
@@ -519,10 +519,10 @@
         "货物·白狐尾"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "bell-item",
@@ -632,10 +632,10 @@
         "装备·磨刀石"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-amulet",
@@ -644,10 +644,10 @@
         "装备·护身符"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-oilpot",
@@ -656,10 +656,10 @@
         "装备·灯油壶"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-luckybag",
@@ -668,10 +668,10 @@
         "装备·招财袋"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-wardcharm",
@@ -680,10 +680,10 @@
         "装备·镇货符"
       ],
       "wanted": [],
-      "status": "placeholder-tint",
+      "status": "ok",
       "shared": false,
-      "note": "现在是旧图改色",
-      "priority": "P1"
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "salve",

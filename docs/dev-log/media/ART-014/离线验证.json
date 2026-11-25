@@ -1,0 +1,1048 @@
+{
+  "mode": "offline",
+  "seed": 1414,
+  "fixture": "inventory and shop seeded for art repeatability",
+  "report": {
+    "desktop": {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "bag": {
+        "inkdust": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            64,
+            64
+          ],
+          "sha256": "d296ac43dbf6cb56c93f868b00685f756fe1787b4de0edf11b87825951d02f00"
+        },
+        "rubbing": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            64,
+            128
+          ],
+          "sha256": "b22f043397b51c65520047fe93ea04306f73b5903304360141d9fdd0c74752c2"
+        },
+        "tail": {
+          "src": "embedded",
+          "size": [
+            128,
+            64
+          ],
+          "box": [
+            128,
+            64
+          ],
+          "sha256": "22cf78e879a046b9e146f0a2d46d6f76b7bba0410ac5815293925ddb250064ed"
+        },
+        "oilpot": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            64,
+            128
+          ],
+          "sha256": "fb8d94b100d503c743eede3c67086bb82940300855492cebb88c10800de2e7ab"
+        },
+        "redpaper": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            64,
+            64
+          ],
+          "sha256": "e72bd6c1d323bbf1a460f94397e417158600873f997c353c432bf33dc63f0d64"
+        },
+        "fur": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            64,
+            64
+          ],
+          "sha256": "e56622abde49751155fd827c9b26b41d0ef8b7e190fd362cadd39ae3cd759f1b"
+        },
+        "pearl": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            64,
+            64
+          ],
+          "sha256": "ef8ade840c80adcbe28a370812cbff945841c27a441b8c28d8bdb657bc97e592"
+        },
+        "token": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            64,
+            64
+          ],
+          "sha256": "fd36b49948f2798aa748f76a5551cd4113b91df3bfc04995734357f3e9f9f5dc"
+        },
+        "shard": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            64,
+            64
+          ],
+          "sha256": "8d9401d286c6ec5dab6821642736b70e577f8a4bc9c76f16c6aa944e1c902795"
+        },
+        "feather": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            64,
+            128
+          ],
+          "sha256": "26367143eb488ff0411306ebac8e246f53f07b6b68c51268dd2113ee99d1824b"
+        },
+        "whetstone": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            64,
+            64
+          ],
+          "sha256": "538408a8604b99eca686569732395c2bbc13262c94f3821a5c6bacea19507232"
+        },
+        "amulet": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            64,
+            64
+          ],
+          "sha256": "41e4eb1147d2a13b6113034558be061809d49ea14d936d78c84fdb698ca2807f"
+        },
+        "luckybag": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            64,
+            64
+          ],
+          "sha256": "6e2763b77fcbf26bb27ac1d9645ca51e7e9f6589ccfc470eefb14282bfa4fbec"
+        },
+        "wardcharm": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            64,
+            64
+          ],
+          "sha256": "e78084e91f49cc58a45a924e3ec17d59dd14007d3d63b330b37cb5130c9fbbf0"
+        }
+      },
+      "sell": {
+        "inkdust": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "d296ac43dbf6cb56c93f868b00685f756fe1787b4de0edf11b87825951d02f00"
+        },
+        "rubbing": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            44,
+            88
+          ],
+          "sha256": "b22f043397b51c65520047fe93ea04306f73b5903304360141d9fdd0c74752c2"
+        },
+        "tail": {
+          "src": "embedded",
+          "size": [
+            128,
+            64
+          ],
+          "box": [
+            88,
+            44
+          ],
+          "sha256": "22cf78e879a046b9e146f0a2d46d6f76b7bba0410ac5815293925ddb250064ed"
+        },
+        "oilpot": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            44,
+            88
+          ],
+          "sha256": "fb8d94b100d503c743eede3c67086bb82940300855492cebb88c10800de2e7ab"
+        },
+        "redpaper": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "e72bd6c1d323bbf1a460f94397e417158600873f997c353c432bf33dc63f0d64"
+        },
+        "fur": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "e56622abde49751155fd827c9b26b41d0ef8b7e190fd362cadd39ae3cd759f1b"
+        },
+        "pearl": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "ef8ade840c80adcbe28a370812cbff945841c27a441b8c28d8bdb657bc97e592"
+        },
+        "token": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "fd36b49948f2798aa748f76a5551cd4113b91df3bfc04995734357f3e9f9f5dc"
+        },
+        "shard": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "8d9401d286c6ec5dab6821642736b70e577f8a4bc9c76f16c6aa944e1c902795"
+        },
+        "feather": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            44,
+            88
+          ],
+          "sha256": "26367143eb488ff0411306ebac8e246f53f07b6b68c51268dd2113ee99d1824b"
+        },
+        "whetstone": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "538408a8604b99eca686569732395c2bbc13262c94f3821a5c6bacea19507232"
+        },
+        "amulet": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "41e4eb1147d2a13b6113034558be061809d49ea14d936d78c84fdb698ca2807f"
+        },
+        "luckybag": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "6e2763b77fcbf26bb27ac1d9645ca51e7e9f6589ccfc470eefb14282bfa4fbec"
+        },
+        "wardcharm": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "e78084e91f49cc58a45a924e3ec17d59dd14007d3d63b330b37cb5130c9fbbf0"
+        }
+      },
+      "market": {
+        "inkdust": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            18,
+            18
+          ],
+          "sha256": "d296ac43dbf6cb56c93f868b00685f756fe1787b4de0edf11b87825951d02f00"
+        },
+        "rubbing": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            18,
+            18
+          ],
+          "sha256": "b22f043397b51c65520047fe93ea04306f73b5903304360141d9fdd0c74752c2"
+        },
+        "tail": {
+          "src": "embedded",
+          "size": [
+            128,
+            64
+          ],
+          "box": [
+            18,
+            18
+          ],
+          "sha256": "22cf78e879a046b9e146f0a2d46d6f76b7bba0410ac5815293925ddb250064ed"
+        },
+        "redpaper": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            18,
+            18
+          ],
+          "sha256": "e72bd6c1d323bbf1a460f94397e417158600873f997c353c432bf33dc63f0d64"
+        },
+        "fur": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            18,
+            18
+          ],
+          "sha256": "e56622abde49751155fd827c9b26b41d0ef8b7e190fd362cadd39ae3cd759f1b"
+        },
+        "pearl": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            18,
+            18
+          ],
+          "sha256": "ef8ade840c80adcbe28a370812cbff945841c27a441b8c28d8bdb657bc97e592"
+        },
+        "token": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            18,
+            18
+          ],
+          "sha256": "fd36b49948f2798aa748f76a5551cd4113b91df3bfc04995734357f3e9f9f5dc"
+        },
+        "shard": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            18,
+            18
+          ],
+          "sha256": "8d9401d286c6ec5dab6821642736b70e577f8a4bc9c76f16c6aa944e1c902795"
+        },
+        "feather": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            18,
+            18
+          ],
+          "sha256": "26367143eb488ff0411306ebac8e246f53f07b6b68c51268dd2113ee99d1824b"
+        }
+      },
+      "wares": {
+        "oilpot": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "fb8d94b100d503c743eede3c67086bb82940300855492cebb88c10800de2e7ab"
+        },
+        "whetstone": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "538408a8604b99eca686569732395c2bbc13262c94f3821a5c6bacea19507232"
+        },
+        "amulet": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "41e4eb1147d2a13b6113034558be061809d49ea14d936d78c84fdb698ca2807f"
+        },
+        "luckybag": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "6e2763b77fcbf26bb27ac1d9645ca51e7e9f6589ccfc470eefb14282bfa4fbec"
+        },
+        "wardcharm": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            44,
+            44
+          ],
+          "sha256": "e78084e91f49cc58a45a924e3ec17d59dd14007d3d63b330b37cb5130c9fbbf0"
+        }
+      },
+      "errors": []
+    },
+    "phone": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 1,
+      "bag": {
+        "inkdust": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            46.20701599121094,
+            46.20703125
+          ],
+          "sha256": "d296ac43dbf6cb56c93f868b00685f756fe1787b4de0edf11b87825951d02f00"
+        },
+        "rubbing": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            46.20703125,
+            92.41403198242188
+          ],
+          "sha256": "b22f043397b51c65520047fe93ea04306f73b5903304360141d9fdd0c74752c2"
+        },
+        "tail": {
+          "src": "embedded",
+          "size": [
+            128,
+            64
+          ],
+          "box": [
+            92.41402435302734,
+            46.207000732421875
+          ],
+          "sha256": "22cf78e879a046b9e146f0a2d46d6f76b7bba0410ac5815293925ddb250064ed"
+        },
+        "oilpot": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            46.20701599121094,
+            92.41403198242188
+          ],
+          "sha256": "fb8d94b100d503c743eede3c67086bb82940300855492cebb88c10800de2e7ab"
+        },
+        "redpaper": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            46.20701599121094,
+            46.207000732421875
+          ],
+          "sha256": "e72bd6c1d323bbf1a460f94397e417158600873f997c353c432bf33dc63f0d64"
+        },
+        "fur": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            46.20701599121094,
+            46.20703125
+          ],
+          "sha256": "e56622abde49751155fd827c9b26b41d0ef8b7e190fd362cadd39ae3cd759f1b"
+        },
+        "pearl": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            46.207008361816406,
+            46.20703125
+          ],
+          "sha256": "ef8ade840c80adcbe28a370812cbff945841c27a441b8c28d8bdb657bc97e592"
+        },
+        "token": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            46.20701599121094,
+            46.20703125
+          ],
+          "sha256": "fd36b49948f2798aa748f76a5551cd4113b91df3bfc04995734357f3e9f9f5dc"
+        },
+        "shard": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            46.20703125,
+            46.20703125
+          ],
+          "sha256": "8d9401d286c6ec5dab6821642736b70e577f8a4bc9c76f16c6aa944e1c902795"
+        },
+        "feather": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            46.20701599121094,
+            92.41403198242188
+          ],
+          "sha256": "26367143eb488ff0411306ebac8e246f53f07b6b68c51268dd2113ee99d1824b"
+        },
+        "whetstone": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            46.207008361816406,
+            46.207000732421875
+          ],
+          "sha256": "538408a8604b99eca686569732395c2bbc13262c94f3821a5c6bacea19507232"
+        },
+        "amulet": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            46.20701599121094,
+            46.207000732421875
+          ],
+          "sha256": "41e4eb1147d2a13b6113034558be061809d49ea14d936d78c84fdb698ca2807f"
+        },
+        "luckybag": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            46.20701599121094,
+            46.207000732421875
+          ],
+          "sha256": "6e2763b77fcbf26bb27ac1d9645ca51e7e9f6589ccfc470eefb14282bfa4fbec"
+        },
+        "wardcharm": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            46.20703125,
+            46.207000732421875
+          ],
+          "sha256": "e78084e91f49cc58a45a924e3ec17d59dd14007d3d63b330b37cb5130c9fbbf0"
+        }
+      },
+      "sell": {
+        "inkdust": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767303466796875,
+            31.767333984375
+          ],
+          "sha256": "d296ac43dbf6cb56c93f868b00685f756fe1787b4de0edf11b87825951d02f00"
+        },
+        "rubbing": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            31.767333984375,
+            63.53466796875
+          ],
+          "sha256": "b22f043397b51c65520047fe93ea04306f73b5903304360141d9fdd0c74752c2"
+        },
+        "tail": {
+          "src": "embedded",
+          "size": [
+            128,
+            64
+          ],
+          "box": [
+            63.53465270996094,
+            31.767333984375
+          ],
+          "sha256": "22cf78e879a046b9e146f0a2d46d6f76b7bba0410ac5815293925ddb250064ed"
+        },
+        "oilpot": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            31.767333984375,
+            63.53466796875
+          ],
+          "sha256": "fb8d94b100d503c743eede3c67086bb82940300855492cebb88c10800de2e7ab"
+        },
+        "redpaper": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767303466796875,
+            31.767333984375
+          ],
+          "sha256": "e72bd6c1d323bbf1a460f94397e417158600873f997c353c432bf33dc63f0d64"
+        },
+        "fur": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767333984375,
+            31.767333984375
+          ],
+          "sha256": "e56622abde49751155fd827c9b26b41d0ef8b7e190fd362cadd39ae3cd759f1b"
+        },
+        "pearl": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767318725585938,
+            31.767333984375
+          ],
+          "sha256": "ef8ade840c80adcbe28a370812cbff945841c27a441b8c28d8bdb657bc97e592"
+        },
+        "token": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767303466796875,
+            31.767333984375
+          ],
+          "sha256": "fd36b49948f2798aa748f76a5551cd4113b91df3bfc04995734357f3e9f9f5dc"
+        },
+        "shard": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767333984375,
+            31.767333984375
+          ],
+          "sha256": "8d9401d286c6ec5dab6821642736b70e577f8a4bc9c76f16c6aa944e1c902795"
+        },
+        "feather": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            31.767333984375,
+            63.53460693359375
+          ],
+          "sha256": "26367143eb488ff0411306ebac8e246f53f07b6b68c51268dd2113ee99d1824b"
+        },
+        "whetstone": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767318725585938,
+            31.76727294921875
+          ],
+          "sha256": "538408a8604b99eca686569732395c2bbc13262c94f3821a5c6bacea19507232"
+        },
+        "amulet": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767333984375,
+            31.76727294921875
+          ],
+          "sha256": "41e4eb1147d2a13b6113034558be061809d49ea14d936d78c84fdb698ca2807f"
+        },
+        "luckybag": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767303466796875,
+            31.76727294921875
+          ],
+          "sha256": "6e2763b77fcbf26bb27ac1d9645ca51e7e9f6589ccfc470eefb14282bfa4fbec"
+        },
+        "wardcharm": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767333984375,
+            31.76727294921875
+          ],
+          "sha256": "e78084e91f49cc58a45a924e3ec17d59dd14007d3d63b330b37cb5130c9fbbf0"
+        }
+      },
+      "market": {
+        "inkdust": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            12.995723724365234,
+            12.9957275390625
+          ],
+          "sha256": "d296ac43dbf6cb56c93f868b00685f756fe1787b4de0edf11b87825951d02f00"
+        },
+        "rubbing": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            12.995723724365234,
+            12.9957275390625
+          ],
+          "sha256": "b22f043397b51c65520047fe93ea04306f73b5903304360141d9fdd0c74752c2"
+        },
+        "tail": {
+          "src": "embedded",
+          "size": [
+            128,
+            64
+          ],
+          "box": [
+            12.995723724365234,
+            12.9957275390625
+          ],
+          "sha256": "22cf78e879a046b9e146f0a2d46d6f76b7bba0410ac5815293925ddb250064ed"
+        },
+        "redpaper": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            12.995723724365234,
+            12.995712280273438
+          ],
+          "sha256": "e72bd6c1d323bbf1a460f94397e417158600873f997c353c432bf33dc63f0d64"
+        },
+        "fur": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            12.995719909667969,
+            12.995712280273438
+          ],
+          "sha256": "e56622abde49751155fd827c9b26b41d0ef8b7e190fd362cadd39ae3cd759f1b"
+        },
+        "pearl": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            12.995719909667969,
+            12.9957275390625
+          ],
+          "sha256": "ef8ade840c80adcbe28a370812cbff945841c27a441b8c28d8bdb657bc97e592"
+        },
+        "token": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            12.995719909667969,
+            12.9957275390625
+          ],
+          "sha256": "fd36b49948f2798aa748f76a5551cd4113b91df3bfc04995734357f3e9f9f5dc"
+        },
+        "shard": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            12.995723724365234,
+            12.995712280273438
+          ],
+          "sha256": "8d9401d286c6ec5dab6821642736b70e577f8a4bc9c76f16c6aa944e1c902795"
+        },
+        "feather": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            12.995719909667969,
+            12.995712280273438
+          ],
+          "sha256": "26367143eb488ff0411306ebac8e246f53f07b6b68c51268dd2113ee99d1824b"
+        }
+      },
+      "wares": {
+        "oilpot": {
+          "src": "embedded",
+          "size": [
+            64,
+            128
+          ],
+          "box": [
+            31.76732635498047,
+            31.76727294921875
+          ],
+          "sha256": "fb8d94b100d503c743eede3c67086bb82940300855492cebb88c10800de2e7ab"
+        },
+        "whetstone": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.76732635498047,
+            31.76727294921875
+          ],
+          "sha256": "538408a8604b99eca686569732395c2bbc13262c94f3821a5c6bacea19507232"
+        },
+        "amulet": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767318725585938,
+            31.76727294921875
+          ],
+          "sha256": "41e4eb1147d2a13b6113034558be061809d49ea14d936d78c84fdb698ca2807f"
+        },
+        "luckybag": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.767303466796875,
+            31.76727294921875
+          ],
+          "sha256": "6e2763b77fcbf26bb27ac1d9645ca51e7e9f6589ccfc470eefb14282bfa4fbec"
+        },
+        "wardcharm": {
+          "src": "embedded",
+          "size": [
+            128,
+            128
+          ],
+          "box": [
+            31.76732635498047,
+            31.767333984375
+          ],
+          "sha256": "e78084e91f49cc58a45a924e3ec17d59dd14007d3d63b330b37cb5130c9fbbf0"
+        }
+      },
+      "errors": []
+    }
+  }
+}

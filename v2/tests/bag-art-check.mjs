@@ -8,12 +8,13 @@
 // Also checks that the gold reach cells an accessory shows are see-through on plain and sewn (irregular) bags, so
 // they never hide the items under them (磨刀石 on a sewn bag).
 // Usage: node tests/bag-art-check.mjs   (starts its own Vite dev server; needs system Chrome). Exit code 1 on issues.
+import { fileURLToPath } from "node:url";
 import { chromium } from "playwright-core";
 import { createServer } from "vite";
 
 // Thin pictures (照影剑, 墨壳) legitimately cover only a sliver of their end cells, hence the low EMPTY bar.
 const EMPTY = 0.03, SPILL = 0.22, OUT = 0.2;
-const server = await createServer({ root: new URL("..", import.meta.url).pathname, server: { port: 0, host: "127.0.0.1" }, logLevel: "error" });
+const server = await createServer({ root: fileURLToPath(new URL("..", import.meta.url)), server: { port: 0, host: "127.0.0.1" }, logLevel: "error" });
 await server.listen();
 const base = server.resolvedUrls.local[0];
 const browser = await chromium.launch({ channel: "chrome", headless: true });

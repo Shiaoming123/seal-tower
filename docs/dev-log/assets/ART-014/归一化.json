@@ -1,0 +1,226 @@
+{
+  "inkdust": {
+    "source": "exec-7dd6816c-8f7e-42bb-a3a7-f60ba36de5a3.png",
+    "rawSha256": "7acde112892848c7da0325423a8a90a68424514e38920fd3246645e65235bff9",
+    "crop": {
+      "left": 112,
+      "top": 301,
+      "width": 1030,
+      "height": 648
+    },
+    "canvas": [
+      256,
+      256
+    ],
+    "mother": "art/icon-inkdust.png",
+    "motherSha256": "9634b774549545b4d68f3184998766572a8e9aa2da5b2c8d6be68e11b3963b7c"
+  },
+  "rubbing": {
+    "source": "exec-e27ef563-576c-43d3-ac23-9acd1f925263.png",
+    "rawSha256": "52d78599ae9470519a524cdb81c71104b7c66ae253ea14bd0900438028386e5a",
+    "crop": {
+      "left": 212,
+      "top": 53,
+      "width": 464,
+      "height": 1685
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "mother": "art/icon-rubbing.png",
+    "motherSha256": "7c55c20ed64e322a3f9a8366feec7f4e6358fe0cf184c871837f123a1178922e"
+  },
+  "tail": {
+    "source": "exec-bf95a889-17bc-4b29-ac0b-5a64be955d73.png",
+    "rawSha256": "147f2e86ccc6beb80b1eed3dfff2c8e80baa91d37514d91ff24237d05e298e60",
+    "crop": {
+      "left": 116,
+      "top": 208,
+      "width": 1554,
+      "height": 528
+    },
+    "canvas": [
+      256,
+      128
+    ],
+    "mother": "art/icon-tail.png",
+    "motherSha256": "97af7cce2b521dd5c20f326153b5a056b8b062f0046d1ff1c0c6d021470fd510"
+  },
+  "oilpot": {
+    "source": "exec-d1c473f1-ac9b-47fa-bf6f-831760ac5d94.png",
+    "rawSha256": "7e4a0185e571876aaddbb1f53b9e5eaa7e57a57356ee58e5b37fa4bf24ed9a09",
+    "crop": {
+      "left": 176,
+      "top": 116,
+      "width": 569,
+      "height": 1562
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "mother": "art/icon-oilpot.png",
+    "motherSha256": "7375cc652db4043ba05517c2eea2fedf0a99fd86150ea442c48e85e692601db0"
+  },
+  "redpaper": {
+    "source": "exec-3e19500c-e60c-49d2-80ce-30f7f3696226.png",
+    "rawSha256": "3f923c8e19853ad770481b4b09b34c995f38394fdb2156bafcf8f775fcb3aab5",
+    "crop": {
+      "left": 323,
+      "top": 101,
+      "width": 860,
+      "height": 875
+    },
+    "canvas": [
+      256,
+      256
+    ],
+    "mother": "art/icon-redpaper.png",
+    "motherSha256": "cf8a78e7f463c5285a32766718f3748b713b74c072cbe379eb6bd8cf0c2c0f75"
+  },
+  "fur": {
+    "source": "exec-1a51753c-4ef1-4759-86ad-c79a21154613.png",
+    "rawSha256": "3695023b9f7bbd1b76c2e4deb2ae57e3ea3b110ecfa2beb8e76736863f4f2567",
+    "crop": {
+      "left": 271,
+      "top": 182,
+      "width": 748,
+      "height": 838
+    },
+    "canvas": [
+      256,
+      256
+    ],
+    "mother": "art/icon-fur.png",
+    "motherSha256": "4c5a9b0ba5d34cdb18ae6adbd854fdc679f4d8bbd31b72446f1f5f2f0c28c688"
+  },
+  "pearl": {
+    "source": "exec-b6547204-75d0-4a59-924f-e66985e01c86.png",
+    "rawSha256": "47c90db76404c923132cfb144a62c936645f3c958d223ed7a2e5ae7691003432",
+    "crop": {
+      "left": 439,
+      "top": 201,
+      "width": 635,
+      "height": 620
+    },
+    "canvas": [
+      256,
+      256
+    ],
+    "mother": "art/icon-pearl.png",
+    "motherSha256": "2e108c515136da6034e340a410f29eac126bb80f3d95cfd3a720ea47115d2a71"
+  },
+  "token": {
+    "source": "exec-1b1a6841-8b4e-482a-ae1b-db64d5d6259d.png",
+    "rawSha256": "1e9e950687f85bb1fc15434a0e987b6e905a63a5d0ee99a06565e6373460c6e9",
+    "crop": {
+      "left": 104,
+      "top": 150,
+      "width": 705,
+      "height": 1188
+    },
+    "canvas": [
+      256,
+      256
+    ],
+    "mother": "art/icon-token.png",
+    "motherSha256": "95d4f198caa499d4308a09dbb6ccf617401773364923d38aec618076a214522c"
+  },
+  "shard": {
+    "source": "exec-29252cf0-b245-499e-8911-23d54a42524c.png",
+    "rawSha256": "a6ea0de723d52e69b80fc622bcf76d49a28f236fe55806540507dbae42850005",
+    "crop": {
+      "left": 180,
+      "top": 170,
+      "width": 896,
+      "height": 908
+    },
+    "canvas": [
+      256,
+      256
+    ],
+    "mother": "art/icon-shard.png",
+    "motherSha256": "7dd42ee41373121bdef730186059b71290f3b065723569f110a4d715d9a3d236"
+  },
+  "feather": {
+    "source": "exec-5b09b617-c881-474e-80b2-ad4fba3c5cd0.png",
+    "rawSha256": "efe1dbec6427b618ac66a55893e0f1ec021818f1fc86d270c0c287548abfd0d5",
+    "crop": {
+      "left": 334,
+      "top": 28,
+      "width": 333,
+      "height": 1485
+    },
+    "canvas": [
+      128,
+      256
+    ],
+    "mother": "art/icon-feather.png",
+    "motherSha256": "47c801660923a27d4423490d81eac3b1c02168dbc090ce0e8688a14edd5b9124"
+  },
+  "whetstone": {
+    "source": "exec-94d13a3b-ab11-4b70-b304-fe708a94ea88.png",
+    "rawSha256": "b6d1f0d31f08c6765df66c11bb55d7b489df5b720323a7d809468e48694698c1",
+    "crop": {
+      "left": 163,
+      "top": 132,
+      "width": 1205,
+      "height": 794
+    },
+    "canvas": [
+      256,
+      256
+    ],
+    "mother": "art/icon-whetstone.png",
+    "motherSha256": "8c653e80b94d50e2a954ead063d3998d32f0e0e07426f2ccb955d58675bcb6f9"
+  },
+  "amulet": {
+    "source": "exec-4d1b7924-630e-4f6e-b38b-4b4fa68f7a15.png",
+    "rawSha256": "4658b746762e6be4a11ed8521abafe4bcd18b04c63016de5524612f07ce8a3a4",
+    "crop": {
+      "left": 148,
+      "top": 38,
+      "width": 1010,
+      "height": 1139
+    },
+    "canvas": [
+      256,
+      256
+    ],
+    "mother": "art/icon-amulet.png",
+    "motherSha256": "ddf9b868b182099c7837881f7d53b43108308b156cf748586baeb5f991b616ec"
+  },
+  "luckybag": {
+    "source": "exec-231eb0ff-94df-4b89-9d58-7e0c73bd3a4e.png",
+    "rawSha256": "485b6e5675dbb098b0894361aa16b8817e2ca9f58cd7c2cbfcb877d5d8ebbd84",
+    "crop": {
+      "left": 171,
+      "top": 160,
+      "width": 941,
+      "height": 913
+    },
+    "canvas": [
+      256,
+      256
+    ],
+    "mother": "art/icon-luckybag.png",
+    "motherSha256": "e5cb3956afa0518d0e5dcae99b45ad70f7379077797b1866fe98a6e5b4c38aef"
+  },
+  "wardcharm": {
+    "source": "exec-3f57e9ac-5feb-4050-9d8c-60633f41ea46.png",
+    "rawSha256": "61b8cef6a07676dbb0f625e931c34aef5399a0abf70939904c2b016636ca0655",
+    "crop": {
+      "left": 364,
+      "top": 241,
+      "width": 812,
+      "height": 558
+    },
+    "canvas": [
+      256,
+      256
+    ],
+    "mother": "art/icon-wardcharm.png",
+    "motherSha256": "68174fdc7f27220479c3b9fffb3ee17e88ece68aa015378aadaa14f46bfc001f"
+  }
+}

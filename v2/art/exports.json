@@ -778,5 +778,75 @@
     "file": "omen-moon.png",
     "sourceSha256": "6349e714bc40495e0ac636f1dfe444746282da07358e3ecafc951e53e5efa655",
     "webpSha256": "e1b3fcad1f292c5d74b53761418603e445708e9852b7e9f74998383f934d56c2"
+  },
+  "icon-inkdust": {
+    "file": "icon-inkdust.png",
+    "sourceSha256": "9634b774549545b4d68f3184998766572a8e9aa2da5b2c8d6be68e11b3963b7c",
+    "webpSha256": "d296ac43dbf6cb56c93f868b00685f756fe1787b4de0edf11b87825951d02f00"
+  },
+  "icon-oilpot": {
+    "file": "icon-oilpot.png",
+    "sourceSha256": "7375cc652db4043ba05517c2eea2fedf0a99fd86150ea442c48e85e692601db0",
+    "webpSha256": "fb8d94b100d503c743eede3c67086bb82940300855492cebb88c10800de2e7ab"
+  },
+  "icon-rubbing": {
+    "file": "icon-rubbing.png",
+    "sourceSha256": "7c55c20ed64e322a3f9a8366feec7f4e6358fe0cf184c871837f123a1178922e",
+    "webpSha256": "b22f043397b51c65520047fe93ea04306f73b5903304360141d9fdd0c74752c2"
+  },
+  "icon-tail": {
+    "file": "icon-tail.png",
+    "sourceSha256": "97af7cce2b521dd5c20f326153b5a056b8b062f0046d1ff1c0c6d021470fd510",
+    "webpSha256": "22cf78e879a046b9e146f0a2d46d6f76b7bba0410ac5815293925ddb250064ed"
+  },
+  "icon-amulet": {
+    "file": "icon-amulet.png",
+    "sourceSha256": "ddf9b868b182099c7837881f7d53b43108308b156cf748586baeb5f991b616ec",
+    "webpSha256": "41e4eb1147d2a13b6113034558be061809d49ea14d936d78c84fdb698ca2807f"
+  },
+  "icon-feather": {
+    "file": "icon-feather.png",
+    "sourceSha256": "47c801660923a27d4423490d81eac3b1c02168dbc090ce0e8688a14edd5b9124",
+    "webpSha256": "26367143eb488ff0411306ebac8e246f53f07b6b68c51268dd2113ee99d1824b"
+  },
+  "icon-fur": {
+    "file": "icon-fur.png",
+    "sourceSha256": "4c5a9b0ba5d34cdb18ae6adbd854fdc679f4d8bbd31b72446f1f5f2f0c28c688",
+    "webpSha256": "e56622abde49751155fd827c9b26b41d0ef8b7e190fd362cadd39ae3cd759f1b"
+  },
+  "icon-luckybag": {
+    "file": "icon-luckybag.png",
+    "sourceSha256": "e5cb3956afa0518d0e5dcae99b45ad70f7379077797b1866fe98a6e5b4c38aef",
+    "webpSha256": "6e2763b77fcbf26bb27ac1d9645ca51e7e9f6589ccfc470eefb14282bfa4fbec"
+  },
+  "icon-pearl": {
+    "file": "icon-pearl.png",
+    "sourceSha256": "2e108c515136da6034e340a410f29eac126bb80f3d95cfd3a720ea47115d2a71",
+    "webpSha256": "ef8ade840c80adcbe28a370812cbff945841c27a441b8c28d8bdb657bc97e592"
+  },
+  "icon-redpaper": {
+    "file": "icon-redpaper.png",
+    "sourceSha256": "cf8a78e7f463c5285a32766718f3748b713b74c072cbe379eb6bd8cf0c2c0f75",
+    "webpSha256": "e72bd6c1d323bbf1a460f94397e417158600873f997c353c432bf33dc63f0d64"
+  },
+  "icon-shard": {
+    "file": "icon-shard.png",
+    "sourceSha256": "7dd42ee41373121bdef730186059b71290f3b065723569f110a4d715d9a3d236",
+    "webpSha256": "8d9401d286c6ec5dab6821642736b70e577f8a4bc9c76f16c6aa944e1c902795"
+  },
+  "icon-token": {
+    "file": "icon-token.png",
+    "sourceSha256": "95d4f198caa499d4308a09dbb6ccf617401773364923d38aec618076a214522c",
+    "webpSha256": "fd36b49948f2798aa748f76a5551cd4113b91df3bfc04995734357f3e9f9f5dc"
+  },
+  "icon-wardcharm": {
+    "file": "icon-wardcharm.png",
+    "sourceSha256": "68174fdc7f27220479c3b9fffb3ee17e88ece68aa015378aadaa14f46bfc001f",
+    "webpSha256": "e78084e91f49cc58a45a924e3ec17d59dd14007d3d63b330b37cb5130c9fbbf0"
+  },
+  "icon-whetstone": {
+    "file": "icon-whetstone.png",
+    "sourceSha256": "8c653e80b94d50e2a954ead063d3998d32f0e0e07426f2ccb955d58675bcb6f9",
+    "webpSha256": "538408a8604b99eca686569732395c2bbc13262c94f3821a5c6bacea19507232"
   }
 }
