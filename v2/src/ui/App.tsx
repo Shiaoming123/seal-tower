@@ -18,7 +18,7 @@ import { Result } from "./Result";
 import { Achievements, Help, Title, Town } from "./Title";
 import { Codex } from "./Codex";
 import { Bar, GoodChip, RelicRow, RollingNumber, TermPopover } from "./parts";
-import { canRestartFight, commit, overlay, page, profileSig, restartFight, runSig, say, tick, toast, useRun } from "./store";
+import { canRestartFight, commit, overlay, page, profileSig, restartFight, runSig, saveProfile, say, tick, toast, useRun } from "./store";
 
 /** Fixed-size stage scaled to fit the window, so nothing reflows or jumps while playing. */
 function useStage() {
@@ -193,7 +193,7 @@ export function SoundButton() {
     const q = profileSig.value;
     setSound(q.sound);
     setVolumes(q.musicVol ?? 0.7, q.sfxVol ?? 0.8);
-    commit();
+    saveProfile();
   };
   return (
     <div class="sound-menu">

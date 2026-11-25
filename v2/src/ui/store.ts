@@ -64,8 +64,10 @@ export function commit() {
     if (fresh.length) profileSig.value = { ...profileSig.value, codex: [...profileSig.value.codex, ...fresh] };
   }
   write(RUN_KEY, run && !run.outcome ? run : null);
-  write(PROFILE_KEY, profileSig.value);
+  saveProfile();
 }
+
+export function saveProfile() { write(PROFILE_KEY, profileSig.value); }
 
 export function clearRun() { write(RUN_KEY, null); }
 
