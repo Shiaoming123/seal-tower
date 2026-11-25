@@ -696,12 +696,12 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .ware.sold { opacity: 0.35; pointer-events: none; }
 .tag-price { background: #f2c14e; color: #2b1408; font-weight: bold; padding: 1px 8px; border-radius: 3px; font-size: 14px; }
 .tag-price.poor { background: #7a6a5a; color: #ddd; }
-.item-ware { width: 108px; height: 150px; border: 0; cursor: pointer; padding: 6px; border-radius: 4px; background: rgba(239, 226, 194, 0.95); color: var(--paper-ink); justify-content: flex-start; }
+.item-ware { width: 108px; min-height: 150px; border: 0; cursor: pointer; padding: 6px; border-radius: 4px; background: rgba(239, 226, 194, 0.95); color: var(--paper-ink); justify-content: flex-start; }
 .item-ware:hover { box-shadow: 0 0 0 2px var(--gold); }
 .item-ware img { width: 44px; height: 44px; object-fit: contain; flex: none; }
 .item-ware b { font-size: 15px; }
 .item-ware .shape { font-size: 11px; color: #2f6f78; }
-.item-ware .desc { font-size: 11px; line-height: 1.3; flex: 1; overflow: hidden; }
+.item-ware .desc { font-size: 11px; line-height: 1.3; flex: 1; } /* long descriptions (照影剑) grow the tile instead of being cut off */
 .item-ware .tag-price { margin-top: auto; }
 .shop-sell { display: flex; flex-direction: column; gap: 8px; overflow-y: auto; }
 .shop-sell h3 { font-size: 17px; margin: 0; }

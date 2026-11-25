@@ -184,7 +184,9 @@ async function run(vpName, viewport) {
     const evs = V.EVENTS ?? Object.values(V).find((v) => v && typeof v === "object" && v.fakefox);
     return { enemies: Object.keys(E.ENEMIES), events: Object.keys(evs) };
   });
-  const reset = () => S(() => { const r = window.__seal.runSig.value; r.screen = "explore"; r.combat = null; r.at = null; r.hp = r.maxHp; r.dungeon.entities = r.dungeon.entities.filter((e) => e.id < 9000); window.__seal.commit(); });
+  // Clear the card picker too: an event that opens it (upgrade / remove / copy) would otherwise stay on top of every
+  // later fight and event, so their clicks hit the picker and wait out the timeout.
+  const reset = () => S(() => { const r = window.__seal.runSig.value; r.screen = "explore"; r.combat = null; r.at = null; r.cardPick = null; window.__seal.overlay.value = null; r.hp = r.maxHp; r.dungeon.entities = r.dungeon.entities.filter((e) => e.id < 9000); window.__seal.commit(); });
   for (const id of enemies) {
     await S((id) => window.__seal.fight(id), id);
     await page.waitForTimeout(300);
@@ -211,7 +213,15 @@ async function run(vpName, viewport) {
   await S(() => window.__seal.fight("moth"));
   for (let t = 0; t < 8 && (await S(() => window.__seal.runSig.value.screen)) === "combat"; t++) {
     await S(() => { const c = window.__seal.runSig.value.combat; if (c) { c.enemy.hp = 1; window.__seal.commit(); } });
-    for (let i = 0; i < 5; i++) await click(page.locator(".hand .card:not(.disabled)"));
+    // The fanned hand overlaps each card with the next (portrait most of all): play the last card, which is fully on top,
+    // then tap it again if the layout uses two-step play (UI-005); clicking the first card only waits out the timeout.
+    for (let i = 0; i < 5; i++) {
+      const cards = page.locator(".hand .card:not(.disabled)");
+      if (!(await cards.count())) break;
+      await cards.last().click({ timeout: 3000 }).catch(() => {}); await page.waitForTimeout(250);
+      await click(page.locator(".hand-slot.picked .card"));
+      if ((await S(() => window.__seal.runSig.value.screen)) !== "combat") break;
+    }
     if ((await S(() => window.__seal.runSig.value.screen)) === "combat") await btn(/结束回合/);
   }
   await check("reward");
