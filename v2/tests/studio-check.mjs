@@ -97,15 +97,16 @@ async function check(name, ctxOpts, climb = false) {
     r.checks.padMoves = JSON.stringify(p0) !== JSON.stringify(p1);
   }
 
-  const visited = []; // shops and rests already used: they stay on the map but are not worth walking back to
+  const visited = []; // "floor:x,y" of shops and rests already used: they stay on the map but are not worth walking back to
   const ALL = ["guardian", "stairs", "shop", "event", "rest", "chest", "fight", "elite"];
   async function walkTo(kinds) {
     const s = await state();
     const pick = await frame.evaluate(([groups, visited]) => {
       const S = window.__seal, run = S.runSig.value, d = run.dungeon;
       // Try each group of kinds in order (active entities block paths, so fall back to clearing whatever is nearest).
-      for (const kinds of groups) {
-        const ents = d.entities.filter((e) => !e.done && kinds.includes(e.kind) && d.seen[e.y * d.w + e.x] && !visited.includes(e.x + "," + e.y))
+      // Last resort: a used rest (left with 「先不用」) or an event-shop stays a blocking tile; walk back through it as a player would.
+      for (const [kinds, skipVisited] of [...groups.map((k) => [k, true]), [groups.at(-1), false]]) {
+        const ents = d.entities.filter((e) => !e.done && kinds.includes(e.kind) && d.seen[e.y * d.w + e.x] && !(skipVisited && visited.includes(run.floor + ":" + e.x + "," + e.y)))
           .map((e) => ({ x: e.x, y: e.y, p: S.findPath(d, run.pos, e) })).filter((e) => e.p).sort((a, b) => a.p.length - b.p.length);
         if (ents.length) return { x: ents[0].x, y: ents[0].y, w: d.w, h: d.h };
       }
@@ -163,7 +164,10 @@ async function check(name, ctxOpts, climb = false) {
         if ((await state())?.screen !== "combat") return;
       }
       if ((await state())?.screen !== "combat") return;
-      await btn(/结束回合/);
+      // The last card's hit can end the fight a moment after the check above (the button goes with it): only a
+      // failed press while still in combat is an error.
+      const end = frame.getByRole("button", { name: /结束回合/ }).first();
+      if (!(await end.click({ timeout: 3000 }).then(() => true, () => false)) && (await state())?.screen === "combat") await btn(/结束回合/);
       await page.waitForTimeout(1300);
     }
   }
@@ -219,8 +223,8 @@ async function check(name, ctxOpts, climb = false) {
         if (await frame.locator(".overlay .deck-box, .reveal").count()) continue; // handled at the top of the loop
         await btn(/继续|迎战/); continue;
       }
-      if (s.screen === "shop") { visited.push(s.pos.x + "," + s.pos.y); await once("06-shop"); await btn("离开狐市"); continue; }
-      if (s.screen === "rest") { visited.push(s.pos.x + "," + s.pos.y); await press(frame.locator(".option:not([disabled])").first()); continue; }
+      if (s.screen === "shop") { visited.push(s.floor + ":" + s.pos.x + "," + s.pos.y); await once("06-shop"); await btn("离开狐市"); continue; }
+      if (s.screen === "rest") { visited.push(s.floor + ":" + s.pos.x + "," + s.pos.y); await press(frame.locator(".option:not([disabled])").first()); continue; }
       if (s.screen === "explore") {
         if (await frame.locator(".omen-card").count()) { await press(frame.locator(".omen-card .btn").first()); continue; }
         if (await frame.locator(".stairs-prompt").count()) {
