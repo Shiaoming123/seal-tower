@@ -102,10 +102,10 @@ const list: GoodDef[] = [
   { id: "wardcharm", kind: "gear", tier: 1, name: "镇货符", icon: "icon-wardcharm", shape: ONE, price: 6,
     aura: { kind: "ward", n: 1, text: "相邻的货不会被抢" }, text: "贴在货上，鼠妖不敢下嘴。" },
 
-  // ---------- refined gear (精): made in the bag, never sold in shops; same art with a gold 精 badge ----------
+  // ---------- refined gear (精): made in the bag, never sold in shops; uses a gold 精 badge ----------
   { id: "ironsword-fine", base: "ironsword", tags: ["blade"], kind: "gear", name: "精铁剑", icon: "ward-blade", tilt: [-45, 1.6], shape: V3, price: 14, cards: ["strike", "gap"], cardsUp: true, selfBonus: { dmg: 1 },
     passive: "牌已升级，伤害再 +1。", text: "磨刀石磨了一整夜的铁剑，刃口亮得能照人。" },
-  { id: "shield-fine", base: "shield", tags: ["guard"], kind: "gear", name: "精木挡板", icon: "plank", shape: H2, price: 16, cards: ["bash", "spikes"], cardsUp: true,
+  { id: "shield-fine", base: "shield", tags: ["guard"], kind: "gear", name: "精木挡板", icon: "icon-shield-fine", shape: H2, price: 16, cards: ["bash", "spikes"], cardsUp: true,
     passive: "牌已升级。回合结束时最多保留 6 点格挡。", text: "贴了护身符的木挡板，挨一下就嗡一声。" },
   { id: "lamp-fine", base: "lamp", tags: ["lamp"], kind: "gear", name: "精引灯盘", icon: "seal", shape: V2, price: 18, cards: ["dust", "flame"], cardsUp: true,
     aura: { kind: "ash", n: 1, text: "相邻的每份灯灰，在「灯火」这类按灯灰算的牌里算两份（灯油壶的效果留在了盘里）" },

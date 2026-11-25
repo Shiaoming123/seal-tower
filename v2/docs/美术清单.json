@@ -554,14 +554,13 @@
       "file": "plank",
       "category": "物品图标",
       "usedBy": [
-        "装备·木挡板",
-        "装备·精木挡板"
+        "装备·木挡板"
       ],
       "wanted": [],
-      "status": "placeholder-borrowed",
-      "shared": true,
-      "note": "现在借用：桥上的木板障碍",
-      "priority": "P1"
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "ward-blade",
@@ -678,6 +677,18 @@
       "category": "物品图标",
       "usedBy": [
         "装备·镇货符"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "icon-shield-fine",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·精木挡板"
       ],
       "wanted": [],
       "status": "ok",

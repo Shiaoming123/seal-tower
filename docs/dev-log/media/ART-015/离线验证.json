@@ -1,0 +1,152 @@
+{
+  "mode": "offline",
+  "seed": 101,
+  "pairedRefineFixture": true,
+  "report": {
+    "desktop": {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "town": {
+        "width": 72,
+        "height": 72,
+        "size": [
+          160,
+          80
+        ],
+        "src": "embedded",
+        "sha256": "9d19389eb694f7a0adbea3fcb345993654514803f7f0d408b61889c3add8e1d6"
+      },
+      "bag": {
+        "shield": {
+          "width": 128,
+          "height": 64,
+          "size": [
+            160,
+            80
+          ],
+          "src": "embedded",
+          "sha256": "9d19389eb694f7a0adbea3fcb345993654514803f7f0d408b61889c3add8e1d6"
+        },
+        "shield-fine": {
+          "width": 128,
+          "height": 64,
+          "size": [
+            128,
+            64
+          ],
+          "src": "embedded",
+          "sha256": "1de65c1500648112923f2b5ce44adea6b47e3326c95ffcbf5a8e069ab67987c4"
+        }
+      },
+      "buy": {
+        "width": 44,
+        "height": 44,
+        "size": [
+          160,
+          80
+        ],
+        "src": "embedded",
+        "sha256": "9d19389eb694f7a0adbea3fcb345993654514803f7f0d408b61889c3add8e1d6"
+      },
+      "sell": {
+        "shield": {
+          "width": 88,
+          "height": 44,
+          "size": [
+            160,
+            80
+          ],
+          "src": "embedded",
+          "sha256": "9d19389eb694f7a0adbea3fcb345993654514803f7f0d408b61889c3add8e1d6"
+        },
+        "shield-fine": {
+          "width": 88,
+          "height": 44,
+          "size": [
+            128,
+            64
+          ],
+          "src": "embedded",
+          "sha256": "1de65c1500648112923f2b5ce44adea6b47e3326c95ffcbf5a8e069ab67987c4"
+        }
+      },
+      "errors": []
+    },
+    "phone": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 1,
+      "town": {
+        "width": 51.982887268066406,
+        "height": 51.98284912109375,
+        "size": [
+          160,
+          80
+        ],
+        "src": "embedded",
+        "sha256": "9d19389eb694f7a0adbea3fcb345993654514803f7f0d408b61889c3add8e1d6"
+      },
+      "bag": {
+        "shield": {
+          "width": 92.41402435302734,
+          "height": 46.20703125,
+          "size": [
+            160,
+            80
+          ],
+          "src": "embedded",
+          "sha256": "9d19389eb694f7a0adbea3fcb345993654514803f7f0d408b61889c3add8e1d6"
+        },
+        "shield-fine": {
+          "width": 92.41403198242188,
+          "height": 46.20703125,
+          "size": [
+            128,
+            64
+          ],
+          "src": "embedded",
+          "sha256": "1de65c1500648112923f2b5ce44adea6b47e3326c95ffcbf5a8e069ab67987c4"
+        }
+      },
+      "buy": {
+        "width": 31.76732635498047,
+        "height": 31.767333984375,
+        "size": [
+          160,
+          80
+        ],
+        "src": "embedded",
+        "sha256": "9d19389eb694f7a0adbea3fcb345993654514803f7f0d408b61889c3add8e1d6"
+      },
+      "sell": {
+        "shield": {
+          "width": 63.53465270996094,
+          "height": 31.767333984375,
+          "size": [
+            160,
+            80
+          ],
+          "src": "embedded",
+          "sha256": "9d19389eb694f7a0adbea3fcb345993654514803f7f0d408b61889c3add8e1d6"
+        },
+        "shield-fine": {
+          "width": 63.534637451171875,
+          "height": 31.767333984375,
+          "size": [
+            128,
+            64
+          ],
+          "src": "embedded",
+          "sha256": "1de65c1500648112923f2b5ce44adea6b47e3326c95ffcbf5a8e069ab67987c4"
+        }
+      },
+      "errors": []
+    }
+  }
+}

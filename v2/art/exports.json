@@ -848,5 +848,15 @@
     "file": "icon-whetstone.png",
     "sourceSha256": "8c653e80b94d50e2a954ead063d3998d32f0e0e07426f2ccb955d58675bcb6f9",
     "webpSha256": "538408a8604b99eca686569732395c2bbc13262c94f3821a5c6bacea19507232"
+  },
+  "plank": {
+    "file": "plank.png",
+    "sourceSha256": "a50469d78a8d5ec617993b7336c26d7bd00944e72f2026bae58c665d9ba636e3",
+    "webpSha256": "9d19389eb694f7a0adbea3fcb345993654514803f7f0d408b61889c3add8e1d6"
+  },
+  "icon-shield-fine": {
+    "file": "icon-shield-fine.png",
+    "sourceSha256": "7b65eba90f29f5f9be3dc0b7428f49fc807495cf118ebe9896d1b6f094042200",
+    "webpSha256": "1de65c1500648112923f2b5ce44adea6b47e3326c95ffcbf5a8e069ab67987c4"
   }
 }

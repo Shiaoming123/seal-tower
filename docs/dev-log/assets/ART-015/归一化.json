@@ -1,0 +1,41 @@
+{
+  "baseRejected": {
+    "id": "plank",
+    "source": "exec-efabb97e-0b3a-4d19-a2b7-337bddb8cc01.png",
+    "sourceSha256": "4bdb71b3a745b6d3adef384cf67c69983b67846cd254bdb99133356417882c1a",
+    "crop": {
+      "left": 78,
+      "top": 129,
+      "width": 1713,
+      "height": 615
+    },
+    "target": "art/plank.png",
+    "motherSha256": "cea6cf59e575fb29348d3d08f4b86e26893a1dc334edc2d85d112e1344881e76"
+  },
+  "baseFinal": {
+    "id": "plank",
+    "source": "exec-34b1dd7a-080e-4c6d-a1e1-9aa64ab91bd3.png",
+    "sourceSha256": "d0838cba2f5099a1d9a4c9c49d45e2b35679fe3ced0778a6afe279fde16bb69a",
+    "crop": {
+      "left": 47,
+      "top": 107,
+      "width": 1636,
+      "height": 702
+    },
+    "target": "art/plank.png",
+    "motherSha256": "a50469d78a8d5ec617993b7336c26d7bd00944e72f2026bae58c665d9ba636e3"
+  },
+  "fineFinal": {
+    "id": "icon-shield-fine",
+    "source": "exec-145d9b58-4b4f-4456-b9ea-3cab55fa8ab3.png",
+    "sourceSha256": "ea8edd817d2e1b8bd6ebfe3cd66673fac368f7509e4456d3d37e9fcef187c65d",
+    "crop": {
+      "left": 59,
+      "top": 74,
+      "width": 1651,
+      "height": 732
+    },
+    "target": "art/icon-shield-fine.png",
+    "motherSha256": "7b65eba90f29f5f9be3dc0b7428f49fc807495cf118ebe9896d1b6f094042200"
+  }
+}
