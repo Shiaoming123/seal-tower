@@ -72,7 +72,8 @@ if (res.enteredCombat) {
   for (let i = 0; i < 60; i++) {
     const s = await state(); if (!s || s.screen !== "combat") break;
     const t = frame.getByRole("button", { name: "知道了" }); if (await t.count()) await press(t.first(), { timeout: 2000 }).catch(() => {});
-    const end = frame.getByRole("button", { name: /结束回合/ }); if (await end.count()) await tap(end.first());
+    // The enemy's turn can end the run while the button is being pressed (it leaves with the combat screen): the loop re-checks.
+    const end = frame.getByRole("button", { name: /结束回合/ }); if (await end.count()) await press(end.first(), { timeout: 5000 }).catch(() => {});
     await page.waitForTimeout(900);
   }
   const s = await state();
