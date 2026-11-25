@@ -1,0 +1,53 @@
+{
+  "bag": {
+    "offset": [
+      0.1750030517578125,
+      -0.23748779296875
+    ],
+    "landed": [
+      2,
+      1
+    ]
+  },
+  "shop": {
+    "offset": [
+      0.274993896484375,
+      -0.199981689453125
+    ],
+    "landed": [
+      2,
+      1
+    ],
+    "twoTapSale": true
+  },
+  "reward": {
+    "offset": [
+      -0.1999969482421875,
+      0.2375030517578125
+    ],
+    "landed": [
+      2,
+      1
+    ]
+  },
+  "desktopInteractions": [
+    "grab second cell",
+    "rotate",
+    "right-click item",
+    "rotate before movement",
+    "merge",
+    "full stack",
+    "outside",
+    "escape",
+    "pouch",
+    "pending"
+  ],
+  "phone": {
+    "width": 390,
+    "cancelledWithoutMoving": true,
+    "landed": [
+      2,
+      1
+    ]
+  }
+}

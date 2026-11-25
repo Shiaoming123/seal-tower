@@ -555,9 +555,9 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .det-aura { color: #6a3a9a; }
 .card .bonus-tag { position: absolute; right: 6px; bottom: 6px; font-size: 11px; color: #6a3a9a; font-weight: bold; }
 .mode-sell { grid-template-columns: auto; }
-.drag-ghost { position: fixed; z-index: 200; pointer-events: none; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; }
-.drag-ghost img { width: 64px; height: 64px; object-fit: contain; filter: drop-shadow(0 4px 6px #000); }
-.drag-ghost span { font-size: 11px; background: #000; padding: 0 4px; }
+.drag-ghost { position: absolute; z-index: 200; pointer-events: none; }
+.drag-ghost img { position: absolute; left: 50%; top: 50%; object-fit: contain; padding: 4px; filter: drop-shadow(0 4px 6px #000); }
+.drag-ghost span { position: absolute; left: 50%; top: 100%; transform: translateX(-50%); white-space: nowrap; font-size: 11px; background: #000; padding: 0 4px; }
 .item-details { height: 256px; background: rgba(239, 226, 194, 0.95); color: var(--paper-ink); border-radius: 4px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; overflow-y: auto; }
 .item-details.empty { justify-content: center; color: #6a5a4a; font-size: 15px; }
 .item-details p { margin: 0; font-size: 14px; line-height: 1.38; }
@@ -1001,8 +1001,6 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .bag-grid .item { transition: left 0.14s var(--ease-out), top 0.14s var(--ease-out), opacity 0.12s, transform 0.12s; }
 .bag-grid .item.selected { transform: scale(1.03); z-index: 5; }
 .bag-grid .item.held { transform: scale(0.96); }
-.drag-ghost img { animation: ghost-in 0.12s var(--ease-pop); }
-@keyframes ghost-in { from { transform: scale(0.8); } }
 .stack-n { position: absolute; right: 3px; bottom: 1px; z-index: 4; font-size: 13px; font-weight: bold; color: #fff3d0; text-shadow: 1px 1px 0 #000, 0 0 3px #000; pointer-events: none; }
 
 /* Numbers: the HUD coin count rolls and flashes; bars flash red on damage and green on healing. */
@@ -1021,7 +1019,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 /* Respect "reduce motion": keep state changes, drop the movement. */
 @media (prefers-reduced-motion: reduce) {
   .overlay, .overlay > .overlay-box, .overlay > .pause-box, .event-box, .event-art img, .options .option, .shop-row, .shop-sell,
-  .order-list .order-card, .weapon-list .weapon-card, .reward-bag, .reward-right, .result-box, .loot, .pile-warn, .drag-ghost img,
+  .order-list .order-card, .weapon-list .weapon-card, .reward-bag, .reward-right, .result-box, .loot, .pile-warn,
   .bar.flash-down, .bar.flash-up, .item-pop, .ware-info { animation: none !important; }
   .btn, .option, .order-card, .weapon-card, .item-ware, .relic-choice, .card, .bag-grid .item, .roll { transition: none !important; }
 }

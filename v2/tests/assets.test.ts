@@ -20,7 +20,8 @@ describe("asset references", () => {
     expect(missing(Object.values(ENEMIES).flatMap((e) => [[`enemy ${e.id}`, e.sprite], [`enemy ${e.id} attack`, e.spriteAttack], [`enemy ${e.id} stance`, (e as { spriteStance?: string }).spriteStance]] as [string, string | undefined][]))).toEqual([]);
   });
   it("event pictures exist", () => {
-    expect(missing(Object.values(EVENTS).map((ev) => [`event ${ev.id}`, ev.sprite]))).toEqual([]);
+    // The portal's map sprite is drawn at runtime, but the event close-up ships as a WebP.
+    expect(missing(Object.values(EVENTS).map(ev => [`event ${ev.id}`, ev.sprite === "portal" ? "event-portal" : ev.sprite]))).toEqual([]);
   });
   it("relic icons exist (dedicated art or the fallback)", () => {
     expect(missing(Object.values(RELICS).filter((r) => !have.has(`relic-${r.id}`)).map((r) => [`relic ${r.id}`, r.icon]))).toEqual([]);

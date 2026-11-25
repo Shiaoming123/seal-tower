@@ -55,7 +55,7 @@ const status = (file) => file === "portal" ? "code-drawn" : !have.has(file) ? "m
 // What the game shows now.
 for (const e of Object.values(ENEMIES)) {
   use(e.sprite, "敌怪", `敌怪·${e.name}`);
-  if (e.spriteAttack) use(e.spriteAttack, "敌怪", `敌怪·${e.name}·出招`);
+  if (e.spriteAttack) use(artId(`${e.sprite}-attack`, e.spriteAttack), "敌怪", `敌怪·${e.name}·出招`);
   if (e.spriteStance) use(e.spriteStance, "敌怪", `敌怪·${e.name}·架势`);
   if (e.phase2 && e.phase2.sprite !== e.sprite) use(e.phase2.sprite, "敌怪", `敌怪·${e.name}·二阶段`);
 }

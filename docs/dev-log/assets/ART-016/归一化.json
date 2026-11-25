@@ -1,0 +1,110 @@
+{
+  "wick": {
+    "source": "exec-a4bfa978-ecd1-4f52-903a-31ea4077e713.png",
+    "sourceSha256": "51f7092b81b3a57ecfc16925a066914cbd256d5b94bcada56839c6acb9653e24",
+    "crop": {
+      "left": 321,
+      "top": 117,
+      "width": 1122,
+      "height": 668
+    },
+    "target": "art/icon-wick.png",
+    "motherSha256": "c3ba8a1f74813bfd30d311f09d9c7763351415aa646ff68db7186f19aafa04e5"
+  },
+  "copper": {
+    "source": "exec-c8c5dc74-dccb-4ab1-b22f-f0b7d56184ac.png",
+    "sourceSha256": "8519cd7649916ad0b7627f2d329b861f38c586946b2055ee542f9487b6557b32",
+    "crop": {
+      "left": 21,
+      "top": 24,
+      "width": 1196,
+      "height": 1212
+    },
+    "target": "art/icon-copper.png",
+    "motherSha256": "c951f47acfc66cf9955ac9466e03681e7cea7948a0734d9c7e531b023e910a27"
+  },
+  "copper-cracked": {
+    "source": "exec-80cc4afe-2d43-4cf6-b3fe-b13362d23a4f.png",
+    "sourceSha256": "19179cd8243c5216a85967c2649c3e9680a3dc7006eac7bff81e506a7aef1428",
+    "crop": {
+      "left": 138,
+      "top": 108,
+      "width": 1022,
+      "height": 986
+    },
+    "target": "art/icon-copper-cracked.png",
+    "motherSha256": "d1a9d80378cda734760fd1f72863ec01f030b5b251ae195e05708ec1eb9fd894"
+  },
+  "clasp-broken": {
+    "source": "exec-56d7a976-7397-43f8-8f4d-042b8fe4a0b7.png",
+    "sourceSha256": "ac874650a6bf84924b5b964132cb6b46c912010d38bb8d90e37558c3b9ba3c78",
+    "crop": {
+      "left": 187,
+      "top": 37,
+      "width": 874,
+      "height": 1200
+    },
+    "target": "art/icon-clasp-broken.png",
+    "motherSha256": "00815d609153a1d330ca93db516beb0971ae0eff116771177b0f05c2b918effa"
+  },
+  "pearl-cracked": {
+    "source": "exec-5232b5c3-9566-4600-9ce3-0db1bc19d1ec.png",
+    "sourceSha256": "a78f4db0a0d718fbda1c741fc55516382067e014f3ed9f40d0338bc2b6d30192",
+    "crop": {
+      "left": 178,
+      "top": 136,
+      "width": 886,
+      "height": 986
+    },
+    "target": "art/icon-pearl-cracked.png",
+    "motherSha256": "cd8f0a3bb412ece0ea6cecde8b8c4f00022372173041cf589f9ea4d3eefa3ca8"
+  },
+  "lamp-fine": {
+    "source": "exec-06f692bf-bb24-40d9-827d-3075870d6195.png",
+    "sourceSha256": "ff208701cd8a247b6929bd573e0d6d62a743cc56f13aa7110dc14becc723e8c0",
+    "crop": {
+      "left": 211,
+      "top": 19,
+      "width": 459,
+      "height": 1743
+    },
+    "target": "art/icon-lamp-fine.png",
+    "motherSha256": "395b820fe946faf0b785a5ddbc94ffe50af020bf48b390ff11cf2a6ff27b1932"
+  },
+  "ironsword-fine": {
+    "source": "exec-762c1f07-7278-4404-88b4-06b234c7d774.png",
+    "sourceSha256": "98f64c9433935664e849edca2d653c6b21c31cd611506b4277135f7f11fd1ab4",
+    "crop": {
+      "left": 79,
+      "top": 48,
+      "width": 1133,
+      "height": 1191
+    },
+    "target": "art/icon-ironsword-fine.png",
+    "motherSha256": "7dd15475118c217b514ed603faa1dc96b3a094f8a1249b87b215e1e50da3f1f0"
+  },
+  "purse-fine": {
+    "source": "exec-4d9f5a62-2a81-4134-b612-fdd7575790f7.png",
+    "sourceSha256": "c98b97e24681a584bf9adefffa33a1e96a87b84b46d72c2e2da0bc321c199d1b",
+    "crop": {
+      "left": 57,
+      "top": 94,
+      "width": 1659,
+      "height": 698
+    },
+    "target": "art/icon-purse-fine.png",
+    "motherSha256": "f33b7f5a23c94d117523f3d43cd5099d9d442f21985f00c2b075c60d117c8dee"
+  },
+  "event-portal": {
+    "source": "exec-b48febba-ec17-486d-affa-5a7554e8a034.png",
+    "sourceSha256": "2e7dd7475e4bf7db31eaa026d79f75914081f66342ba25a11311ce61268a8351",
+    "crop": {
+      "left": 253,
+      "top": 94,
+      "width": 1013,
+      "height": 810
+    },
+    "target": "art/event-portal.png",
+    "motherSha256": "4708829d958dfac323b77c06bb0617abbae4920fe57e6926f75d0fbd6154e69a"
+  }
+}

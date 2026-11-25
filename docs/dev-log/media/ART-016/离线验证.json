@@ -1,0 +1,815 @@
+{
+  "desktop": {
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "names": {
+      "common": {
+        "bag": {
+          "wick": {
+            "asset": "icon-wick",
+            "size": [
+              64,
+              64
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "55518b3d44f904d98499a57630ab196e57833f26b981443cfdcef6bc19d14486"
+          },
+          "lamp": {
+            "asset": "seal",
+            "size": [
+              64,
+              128
+            ],
+            "native": [
+              88,
+              128
+            ],
+            "sha256": "95462a4f1f73eec847b95349802d40440412ea38fd65d9989aba3c379bed20cc"
+          },
+          "bell": {
+            "asset": "bell-item",
+            "size": [
+              128,
+              128
+            ],
+            "native": [
+              128,
+              115
+            ],
+            "sha256": "7327ce9596ee675ca1e9af850309ff10a86e130762aa35549c11b6546fef3685"
+          },
+          "copper": {
+            "asset": "icon-copper",
+            "size": [
+              128,
+              128
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "b2931aea7040d3b181c14abda2c177fde51065f4bf065e26b12dfaa0848797cd"
+          },
+          "copper-cracked": {
+            "asset": "icon-copper-cracked",
+            "size": [
+              128,
+              128
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "1ec04842c8ea46bf1d670b585eb19bf38473a881b2c7b14d699bd06bfb489f67"
+          },
+          "clasp": {
+            "asset": "clasp",
+            "size": [
+              64,
+              64
+            ],
+            "native": [
+              128,
+              115
+            ],
+            "sha256": "668f2d6792b6de9d4e1e81d613ff4aa76916558affaaa0e17887c9f51a728dbb"
+          },
+          "clasp-broken": {
+            "asset": "icon-clasp-broken",
+            "size": [
+              64,
+              64
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "f74ebe679677e5121d0b0c2374ff55ca50c841e202b5f41cc49783b944b12fb0"
+          },
+          "pearl": {
+            "asset": "icon-pearl",
+            "size": [
+              64,
+              64
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "ef8ade840c80adcbe28a370812cbff945841c27a441b8c28d8bdb657bc97e592"
+          },
+          "pearl-cracked": {
+            "asset": "icon-pearl-cracked",
+            "size": [
+              64,
+              64
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "b31fea695db430d1b0fa20c055b668cef901defddd43d7439dc3616cfbcfebb4"
+          }
+        },
+        "sell": {
+          "wick": {
+            "asset": "icon-wick",
+            "size": [
+              44,
+              44
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "55518b3d44f904d98499a57630ab196e57833f26b981443cfdcef6bc19d14486"
+          },
+          "lamp": {
+            "asset": "seal",
+            "size": [
+              44,
+              88
+            ],
+            "native": [
+              88,
+              128
+            ],
+            "sha256": "95462a4f1f73eec847b95349802d40440412ea38fd65d9989aba3c379bed20cc"
+          },
+          "bell": {
+            "asset": "bell-item",
+            "size": [
+              88,
+              88
+            ],
+            "native": [
+              128,
+              115
+            ],
+            "sha256": "7327ce9596ee675ca1e9af850309ff10a86e130762aa35549c11b6546fef3685"
+          },
+          "copper": {
+            "asset": "icon-copper",
+            "size": [
+              88,
+              88
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "b2931aea7040d3b181c14abda2c177fde51065f4bf065e26b12dfaa0848797cd"
+          },
+          "copper-cracked": {
+            "asset": "icon-copper-cracked",
+            "size": [
+              88,
+              88
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "1ec04842c8ea46bf1d670b585eb19bf38473a881b2c7b14d699bd06bfb489f67"
+          },
+          "clasp": {
+            "asset": "clasp",
+            "size": [
+              44,
+              44
+            ],
+            "native": [
+              128,
+              115
+            ],
+            "sha256": "668f2d6792b6de9d4e1e81d613ff4aa76916558affaaa0e17887c9f51a728dbb"
+          },
+          "clasp-broken": {
+            "asset": "icon-clasp-broken",
+            "size": [
+              44,
+              44
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "f74ebe679677e5121d0b0c2374ff55ca50c841e202b5f41cc49783b944b12fb0"
+          },
+          "pearl": {
+            "asset": "icon-pearl",
+            "size": [
+              44,
+              44
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "ef8ade840c80adcbe28a370812cbff945841c27a441b8c28d8bdb657bc97e592"
+          },
+          "pearl-cracked": {
+            "asset": "icon-pearl-cracked",
+            "size": [
+              44,
+              44
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "b31fea695db430d1b0fa20c055b668cef901defddd43d7439dc3616cfbcfebb4"
+          }
+        }
+      },
+      "refined": {
+        "bag": {
+          "lamp": {
+            "asset": "seal",
+            "size": [
+              64,
+              128
+            ],
+            "native": [
+              88,
+              128
+            ],
+            "sha256": "95462a4f1f73eec847b95349802d40440412ea38fd65d9989aba3c379bed20cc"
+          },
+          "lamp-fine": {
+            "asset": "icon-lamp-fine",
+            "size": [
+              64,
+              128
+            ],
+            "native": [
+              64,
+              128
+            ],
+            "sha256": "e671dcc88ed8fffad22a24d35bc972879d9499a37a637b0fc5eef3330ed4629d"
+          },
+          "ironsword": {
+            "asset": "ward-blade",
+            "size": [
+              289.6309509277344,
+              289.6309814453125
+            ],
+            "native": [
+              123,
+              128
+            ],
+            "sha256": "aeb24d2979c74a05e0f32910e0a26f46116551e41b1614b5676851aca5a31077"
+          },
+          "ironsword-fine": {
+            "asset": "icon-ironsword-fine",
+            "size": [
+              311.353271484375,
+              311.353271484375
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "6aa5e6c2e6e00a05ff4b530454e836377db80ee6a4c2541d616c4c12ea3fcf3d"
+          },
+          "purse": {
+            "asset": "order-purse",
+            "size": [
+              128,
+              64
+            ],
+            "native": [
+              128,
+              102
+            ],
+            "sha256": "ea979a962e69cb072deaac5a47329e48e4f3a3e89a7b5e30253b4ec153ff16d4"
+          },
+          "purse-fine": {
+            "asset": "icon-purse-fine",
+            "size": [
+              128,
+              64
+            ],
+            "native": [
+              128,
+              64
+            ],
+            "sha256": "784ccab39c853481ab4c365ab0a36c69ab32015d81832bdccac71ffa6988429d"
+          }
+        },
+        "sell": {
+          "lamp": {
+            "asset": "seal",
+            "size": [
+              44,
+              88
+            ],
+            "native": [
+              88,
+              128
+            ],
+            "sha256": "95462a4f1f73eec847b95349802d40440412ea38fd65d9989aba3c379bed20cc"
+          },
+          "lamp-fine": {
+            "asset": "icon-lamp-fine",
+            "size": [
+              44,
+              88
+            ],
+            "native": [
+              64,
+              128
+            ],
+            "sha256": "e671dcc88ed8fffad22a24d35bc972879d9499a37a637b0fc5eef3330ed4629d"
+          },
+          "ironsword": {
+            "asset": "ward-blade",
+            "size": [
+              199.121337890625,
+              199.12127685546875
+            ],
+            "native": [
+              123,
+              128
+            ],
+            "sha256": "aeb24d2979c74a05e0f32910e0a26f46116551e41b1614b5676851aca5a31077"
+          },
+          "ironsword-fine": {
+            "asset": "icon-ironsword-fine",
+            "size": [
+              214.055419921875,
+              214.055419921875
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "6aa5e6c2e6e00a05ff4b530454e836377db80ee6a4c2541d616c4c12ea3fcf3d"
+          },
+          "purse": {
+            "asset": "order-purse",
+            "size": [
+              88,
+              44
+            ],
+            "native": [
+              128,
+              102
+            ],
+            "sha256": "ea979a962e69cb072deaac5a47329e48e4f3a3e89a7b5e30253b4ec153ff16d4"
+          },
+          "purse-fine": {
+            "asset": "icon-purse-fine",
+            "size": [
+              88,
+              44
+            ],
+            "native": [
+              128,
+              64
+            ],
+            "sha256": "784ccab39c853481ab4c365ab0a36c69ab32015d81832bdccac71ffa6988429d"
+          }
+        }
+      },
+      "portal": {
+        "asset": "event-portal",
+        "size": [
+          580,
+          442.078125
+        ],
+        "native": [
+          420,
+          420
+        ],
+        "sha256": "977a38a080891496e915e51cf0c25abced6f2681329d5fd5efa148898af2c594"
+      },
+      "mirrorpool": {
+        "asset": "event-pool",
+        "size": [
+          580,
+          442.078125
+        ],
+        "native": [
+          320,
+          320
+        ],
+        "sha256": "767931ddd1b1713644f5838a2c4e1ceb2494a674ba1afac9f12075ec823ec1c1"
+      }
+    },
+    "errors": []
+  },
+  "phone": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "isMobile": true,
+    "hasTouch": true,
+    "deviceScaleFactor": 1,
+    "names": {
+      "common": {
+        "bag": {
+          "wick": {
+            "asset": "icon-wick",
+            "size": [
+              46.2070198059082,
+              46.20703125
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "55518b3d44f904d98499a57630ab196e57833f26b981443cfdcef6bc19d14486"
+          },
+          "lamp": {
+            "asset": "seal",
+            "size": [
+              46.20701599121094,
+              92.41403198242188
+            ],
+            "native": [
+              88,
+              128
+            ],
+            "sha256": "95462a4f1f73eec847b95349802d40440412ea38fd65d9989aba3c379bed20cc"
+          },
+          "bell": {
+            "asset": "bell-item",
+            "size": [
+              92.41403198242188,
+              92.41403198242188
+            ],
+            "native": [
+              128,
+              115
+            ],
+            "sha256": "7327ce9596ee675ca1e9af850309ff10a86e130762aa35549c11b6546fef3685"
+          },
+          "copper": {
+            "asset": "icon-copper",
+            "size": [
+              92.41401672363281,
+              92.41403198242188
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "b2931aea7040d3b181c14abda2c177fde51065f4bf065e26b12dfaa0848797cd"
+          },
+          "copper-cracked": {
+            "asset": "icon-copper-cracked",
+            "size": [
+              92.41401672363281,
+              92.41403198242188
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "1ec04842c8ea46bf1d670b585eb19bf38473a881b2c7b14d699bd06bfb489f67"
+          },
+          "clasp": {
+            "asset": "clasp",
+            "size": [
+              46.2070198059082,
+              46.20703125
+            ],
+            "native": [
+              128,
+              115
+            ],
+            "sha256": "668f2d6792b6de9d4e1e81d613ff4aa76916558affaaa0e17887c9f51a728dbb"
+          },
+          "clasp-broken": {
+            "asset": "icon-clasp-broken",
+            "size": [
+              46.20701599121094,
+              46.20703125
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "f74ebe679677e5121d0b0c2374ff55ca50c841e202b5f41cc49783b944b12fb0"
+          },
+          "pearl": {
+            "asset": "icon-pearl",
+            "size": [
+              46.20701599121094,
+              46.20703125
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "ef8ade840c80adcbe28a370812cbff945841c27a441b8c28d8bdb657bc97e592"
+          },
+          "pearl-cracked": {
+            "asset": "icon-pearl-cracked",
+            "size": [
+              46.20701599121094,
+              46.20703125
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "b31fea695db430d1b0fa20c055b668cef901defddd43d7439dc3616cfbcfebb4"
+          }
+        },
+        "sell": {
+          "wick": {
+            "asset": "icon-wick",
+            "size": [
+              25.991455078125,
+              25.991455078125
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "55518b3d44f904d98499a57630ab196e57833f26b981443cfdcef6bc19d14486"
+          },
+          "lamp": {
+            "asset": "seal",
+            "size": [
+              25.991439819335938,
+              51.98284912109375
+            ],
+            "native": [
+              88,
+              128
+            ],
+            "sha256": "95462a4f1f73eec847b95349802d40440412ea38fd65d9989aba3c379bed20cc"
+          },
+          "bell": {
+            "asset": "bell-item",
+            "size": [
+              51.982879638671875,
+              51.98284912109375
+            ],
+            "native": [
+              128,
+              115
+            ],
+            "sha256": "7327ce9596ee675ca1e9af850309ff10a86e130762aa35549c11b6546fef3685"
+          },
+          "copper": {
+            "asset": "icon-copper",
+            "size": [
+              51.98291015625,
+              51.98284912109375
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "b2931aea7040d3b181c14abda2c177fde51065f4bf065e26b12dfaa0848797cd"
+          },
+          "copper-cracked": {
+            "asset": "icon-copper-cracked",
+            "size": [
+              51.98291015625,
+              51.98291015625
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "1ec04842c8ea46bf1d670b585eb19bf38473a881b2c7b14d699bd06bfb489f67"
+          },
+          "clasp": {
+            "asset": "clasp",
+            "size": [
+              25.991455078125,
+              25.991455078125
+            ],
+            "native": [
+              128,
+              115
+            ],
+            "sha256": "668f2d6792b6de9d4e1e81d613ff4aa76916558affaaa0e17887c9f51a728dbb"
+          },
+          "clasp-broken": {
+            "asset": "icon-clasp-broken",
+            "size": [
+              25.991439819335938,
+              25.991455078125
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "f74ebe679677e5121d0b0c2374ff55ca50c841e202b5f41cc49783b944b12fb0"
+          },
+          "pearl": {
+            "asset": "icon-pearl",
+            "size": [
+              25.991455078125,
+              25.991455078125
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "ef8ade840c80adcbe28a370812cbff945841c27a441b8c28d8bdb657bc97e592"
+          },
+          "pearl-cracked": {
+            "asset": "icon-pearl-cracked",
+            "size": [
+              25.991424560546875,
+              25.991455078125
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "b31fea695db430d1b0fa20c055b668cef901defddd43d7439dc3616cfbcfebb4"
+          }
+        }
+      },
+      "refined": {
+        "bag": {
+          "lamp": {
+            "asset": "seal",
+            "size": [
+              46.2070198059082,
+              92.41403198242188
+            ],
+            "native": [
+              88,
+              128
+            ],
+            "sha256": "95462a4f1f73eec847b95349802d40440412ea38fd65d9989aba3c379bed20cc"
+          },
+          "lamp-fine": {
+            "asset": "icon-lamp-fine",
+            "size": [
+              46.20701599121094,
+              92.41403198242188
+            ],
+            "native": [
+              64,
+              128
+            ],
+            "sha256": "e671dcc88ed8fffad22a24d35bc972879d9499a37a637b0fc5eef3330ed4629d"
+          },
+          "ironsword": {
+            "asset": "ward-blade",
+            "size": [
+              209.10910034179688,
+              209.1090850830078
+            ],
+            "native": [
+              123,
+              128
+            ],
+            "sha256": "aeb24d2979c74a05e0f32910e0a26f46116551e41b1614b5676851aca5a31077"
+          },
+          "ironsword-fine": {
+            "asset": "icon-ironsword-fine",
+            "size": [
+              224.79226684570312,
+              224.7922821044922
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "6aa5e6c2e6e00a05ff4b530454e836377db80ee6a4c2541d616c4c12ea3fcf3d"
+          },
+          "purse": {
+            "asset": "order-purse",
+            "size": [
+              92.41403198242188,
+              46.207000732421875
+            ],
+            "native": [
+              128,
+              102
+            ],
+            "sha256": "ea979a962e69cb072deaac5a47329e48e4f3a3e89a7b5e30253b4ec153ff16d4"
+          },
+          "purse-fine": {
+            "asset": "icon-purse-fine",
+            "size": [
+              92.41403198242188,
+              46.207000732421875
+            ],
+            "native": [
+              128,
+              64
+            ],
+            "sha256": "784ccab39c853481ab4c365ab0a36c69ab32015d81832bdccac71ffa6988429d"
+          }
+        },
+        "sell": {
+          "lamp": {
+            "asset": "seal",
+            "size": [
+              25.991455078125,
+              51.98284912109375
+            ],
+            "native": [
+              88,
+              128
+            ],
+            "sha256": "95462a4f1f73eec847b95349802d40440412ea38fd65d9989aba3c379bed20cc"
+          },
+          "lamp-fine": {
+            "asset": "icon-lamp-fine",
+            "size": [
+              25.991439819335938,
+              51.98284912109375
+            ],
+            "native": [
+              64,
+              128
+            ],
+            "sha256": "e671dcc88ed8fffad22a24d35bc972879d9499a37a637b0fc5eef3330ed4629d"
+          },
+          "ironsword": {
+            "asset": "ward-blade",
+            "size": [
+              117.62385559082031,
+              117.6239013671875
+            ],
+            "native": [
+              123,
+              128
+            ],
+            "sha256": "aeb24d2979c74a05e0f32910e0a26f46116551e41b1614b5676851aca5a31077"
+          },
+          "ironsword-fine": {
+            "asset": "icon-ironsword-fine",
+            "size": [
+              126.44564819335938,
+              126.44561767578125
+            ],
+            "native": [
+              128,
+              128
+            ],
+            "sha256": "6aa5e6c2e6e00a05ff4b530454e836377db80ee6a4c2541d616c4c12ea3fcf3d"
+          },
+          "purse": {
+            "asset": "order-purse",
+            "size": [
+              51.98289489746094,
+              25.991455078125
+            ],
+            "native": [
+              128,
+              102
+            ],
+            "sha256": "ea979a962e69cb072deaac5a47329e48e4f3a3e89a7b5e30253b4ec153ff16d4"
+          },
+          "purse-fine": {
+            "asset": "icon-purse-fine",
+            "size": [
+              51.982879638671875,
+              25.991455078125
+            ],
+            "native": [
+              128,
+              64
+            ],
+            "sha256": "784ccab39c853481ab4c365ab0a36c69ab32015d81832bdccac71ffa6988429d"
+          }
+        }
+      },
+      "portal": {
+        "asset": "event-portal",
+        "size": [
+          366.7681884765625,
+          264.06585693359375
+        ],
+        "native": [
+          420,
+          420
+        ],
+        "sha256": "977a38a080891496e915e51cf0c25abced6f2681329d5fd5efa148898af2c594"
+      },
+      "mirrorpool": {
+        "asset": "event-pool",
+        "size": [
+          366.7681884765625,
+          264.06585693359375
+        ],
+        "native": [
+          320,
+          320
+        ],
+        "sha256": "767931ddd1b1713644f5838a2c4e1ceb2494a674ba1afac9f12075ec823ec1c1"
+      }
+    },
+    "errors": []
+  }
+}

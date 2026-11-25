@@ -27,17 +27,16 @@
       "priority": "-"
     },
     {
-      "file": "rat-swipe",
+      "file": "rat-attack",
       "category": "敌怪",
       "usedBy": [
-        "敌怪·灯鼠·出招",
-        "敌怪·火鼠·出招"
+        "敌怪·灯鼠·出招"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
-      "note": "",
-      "priority": "P2"
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "louse",
@@ -152,6 +151,18 @@
       "category": "敌怪",
       "usedBy": [
         "敌怪·火鼠"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "fire-rat-attack",
+      "category": "敌怪",
+      "usedBy": [
+        "敌怪·火鼠·出招"
       ],
       "wanted": [],
       "status": "ok",
@@ -389,31 +400,40 @@
       "priority": "-"
     },
     {
-      "file": "seal",
+      "file": "icon-wick",
       "category": "物品图标",
       "usedBy": [
-        "货物·灯芯",
-        "装备·引灯盘",
-        "装备·精引灯盘"
+        "货物·灯芯"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
-      "note": "",
-      "priority": "P2"
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "clasp",
       "category": "物品图标",
       "usedBy": [
-        "货物·完整狐扣",
+        "货物·完整狐扣"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
+    },
+    {
+      "file": "icon-clasp-broken",
+      "category": "物品图标",
+      "usedBy": [
         "货物·碎狐扣"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
-      "note": "",
-      "priority": "P2"
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "icon-redpaper",
@@ -455,14 +475,25 @@
       "file": "icon-pearl",
       "category": "物品图标",
       "usedBy": [
-        "货物·水珠",
+        "货物·水珠"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "icon-pearl-cracked",
+      "category": "物品图标",
+      "usedBy": [
         "货物·裂水珠"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "已采用 v2/art 原图",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "icon-rubbing",
@@ -525,18 +556,28 @@
       "priority": "-"
     },
     {
-      "file": "bell-item",
+      "file": "icon-copper",
       "category": "物品图标",
       "usedBy": [
-        "货物·钟铜",
-        "货物·裂钟铜",
-        "装备·铜铃"
+        "货物·钟铜"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
-      "note": "",
-      "priority": "P2"
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "icon-copper-cracked",
+      "category": "物品图标",
+      "usedBy": [
+        "货物·裂钟铜"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
     },
     {
       "file": "sword",
@@ -563,17 +604,28 @@
       "priority": "-"
     },
     {
-      "file": "ward-blade",
+      "file": "seal",
       "category": "物品图标",
       "usedBy": [
-        "装备·铁剑",
-        "装备·精铁剑"
+        "装备·引灯盘"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
+    },
+    {
+      "file": "ward-blade",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·铁剑"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
     },
     {
       "file": "hook",
@@ -612,17 +664,28 @@
       "priority": "-"
     },
     {
-      "file": "order-purse",
+      "file": "bell-item",
       "category": "物品图标",
       "usedBy": [
-        "装备·货郎钱袋",
-        "装备·精钱袋"
+        "装备·铜铃"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "",
-      "priority": "P2"
+      "priority": "-"
+    },
+    {
+      "file": "order-purse",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·货郎钱袋"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "",
+      "priority": "-"
     },
     {
       "file": "icon-whetstone",
@@ -685,10 +748,46 @@
       "priority": "-"
     },
     {
+      "file": "icon-ironsword-fine",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·精铁剑"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
       "file": "icon-shield-fine",
       "category": "物品图标",
       "usedBy": [
         "装备·精木挡板"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "icon-lamp-fine",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·精引灯盘"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "icon-purse-fine",
+      "category": "物品图标",
+      "usedBy": [
+        "装备·精钱袋"
       ],
       "wanted": [],
       "status": "ok",
@@ -1565,17 +1664,28 @@
       "priority": "-"
     },
     {
-      "file": "event-pool",
+      "file": "portal",
       "category": "事件",
       "usedBy": [
-        "事件·传送阵",
-        "事件·照影池"
+        "事件·传送阵"
+      ],
+      "wanted": [],
+      "status": "code-drawn",
+      "shared": false,
+      "note": "",
+      "priority": "P0"
+    },
+    {
+      "file": "event-portal",
+      "category": "事件",
+      "usedBy": [
+        "事件近景·传送阵"
       ],
       "wanted": [],
       "status": "ok",
-      "shared": true,
+      "shared": false,
       "note": "已采用 v2/art 原图",
-      "priority": "P2"
+      "priority": "-"
     },
     {
       "file": "event-den",
@@ -1654,6 +1764,18 @@
       "category": "事件",
       "usedBy": [
         "事件·灯神龛"
+      ],
+      "wanted": [],
+      "status": "ok",
+      "shared": false,
+      "note": "已采用 v2/art 原图",
+      "priority": "-"
+    },
+    {
+      "file": "event-pool",
+      "category": "事件",
+      "usedBy": [
+        "事件·照影池"
       ],
       "wanted": [],
       "status": "ok",

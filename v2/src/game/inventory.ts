@@ -207,8 +207,9 @@ export function unpack(run: RunState, uid: number) {
 }
 
 /** A same-kind stack with room covering cell (x, y), to drop a good onto. */
-function stackAt(run: RunState, id: GoodId, x: number, y: number) {
-  return run.bag.items.find((it) => it.id === id && bag.qty(it) < stackMax(id) && bag.footprint(it).some(([cx, cy]) => cx === x && cy === y)) ?? null;
+export function stackAt(run: RunState, id: GoodId, x: number, y: number, quantity = 1, ignoreUid = -1) {
+  return run.bag.items.find(it => it.uid !== ignoreUid && it.id === id && bag.qty(it) + quantity <= stackMax(id)
+    && bag.footprint(it).some(([cx, cy]) => cx === x && cy === y)) ?? null;
 }
 
 /** Throw one good away for good (a stack loses one; a single item leaves the bag). */
@@ -223,8 +224,8 @@ export function moveItem(run: RunState, uid: number, x: number, y: number, rot: 
   const it = run.bag.items.find((i) => i.uid === uid);
   if (!it) return false;
   // Dropped onto another stack of the same good: merge if it all fits.
-  const onto = run.bag.items.find((o) => o.uid !== uid && o.id === it.id && bag.footprint(o).some(([cx, cy]) => cx === x && cy === y));
-  if (onto && bag.qty(onto) + bag.qty(it) <= stackMax(it.id)) { onto.n = bag.qty(onto) + bag.qty(it); bag.removeUid(run.bag, uid); return true; }
+  const onto = stackAt(run, it.id, x, y, bag.qty(it), uid);
+  if (onto) { onto.n = bag.qty(onto) + bag.qty(it); bag.removeUid(run.bag, uid); return true; }
   if (!bag.fits(run.bag, it.id, x, y, rot, uid)) return false;
   Object.assign(it, { x, y, rot });
   return true;

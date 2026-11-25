@@ -858,5 +858,50 @@
     "file": "icon-shield-fine.png",
     "sourceSha256": "7b65eba90f29f5f9be3dc0b7428f49fc807495cf118ebe9896d1b6f094042200",
     "webpSha256": "1de65c1500648112923f2b5ce44adea6b47e3326c95ffcbf5a8e069ab67987c4"
+  },
+  "event-portal": {
+    "file": "event-portal.png",
+    "sourceSha256": "4708829d958dfac323b77c06bb0617abbae4920fe57e6926f75d0fbd6154e69a",
+    "webpSha256": "977a38a080891496e915e51cf0c25abced6f2681329d5fd5efa148898af2c594"
+  },
+  "icon-clasp-broken": {
+    "file": "icon-clasp-broken.png",
+    "sourceSha256": "00815d609153a1d330ca93db516beb0971ae0eff116771177b0f05c2b918effa",
+    "webpSha256": "f74ebe679677e5121d0b0c2374ff55ca50c841e202b5f41cc49783b944b12fb0"
+  },
+  "icon-copper-cracked": {
+    "file": "icon-copper-cracked.png",
+    "sourceSha256": "d1a9d80378cda734760fd1f72863ec01f030b5b251ae195e05708ec1eb9fd894",
+    "webpSha256": "1ec04842c8ea46bf1d670b585eb19bf38473a881b2c7b14d699bd06bfb489f67"
+  },
+  "icon-copper": {
+    "file": "icon-copper.png",
+    "sourceSha256": "c951f47acfc66cf9955ac9466e03681e7cea7948a0734d9c7e531b023e910a27",
+    "webpSha256": "b2931aea7040d3b181c14abda2c177fde51065f4bf065e26b12dfaa0848797cd"
+  },
+  "icon-ironsword-fine": {
+    "file": "icon-ironsword-fine.png",
+    "sourceSha256": "7dd15475118c217b514ed603faa1dc96b3a094f8a1249b87b215e1e50da3f1f0",
+    "webpSha256": "6aa5e6c2e6e00a05ff4b530454e836377db80ee6a4c2541d616c4c12ea3fcf3d"
+  },
+  "icon-lamp-fine": {
+    "file": "icon-lamp-fine.png",
+    "sourceSha256": "395b820fe946faf0b785a5ddbc94ffe50af020bf48b390ff11cf2a6ff27b1932",
+    "webpSha256": "e671dcc88ed8fffad22a24d35bc972879d9499a37a637b0fc5eef3330ed4629d"
+  },
+  "icon-pearl-cracked": {
+    "file": "icon-pearl-cracked.png",
+    "sourceSha256": "cd8f0a3bb412ece0ea6cecde8b8c4f00022372173041cf589f9ea4d3eefa3ca8",
+    "webpSha256": "b31fea695db430d1b0fa20c055b668cef901defddd43d7439dc3616cfbcfebb4"
+  },
+  "icon-purse-fine": {
+    "file": "icon-purse-fine.png",
+    "sourceSha256": "f33b7f5a23c94d117523f3d43cd5099d9d442f21985f00c2b075c60d117c8dee",
+    "webpSha256": "784ccab39c853481ab4c365ab0a36c69ab32015d81832bdccac71ffa6988429d"
+  },
+  "icon-wick": {
+    "file": "icon-wick.png",
+    "sourceSha256": "c3ba8a1f74813bfd30d311f09d9c7763351415aa646ff68db7186f19aafa04e5",
+    "webpSha256": "55518b3d44f904d98499a57630ab196e57833f26b981443cfdcef6bc19d14486"
   }
 }

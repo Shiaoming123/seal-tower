@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "preact/hooks";
+import { createPortal } from "preact/compat";
+import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 import { sfx } from "../audio/sfx";
 import { CARDS } from "../data/cards";
 import { GOODS, REFINES, TAGS, TAG_IDS, kindLabel, stackMax, townPrice, townPriceLabel } from "../data/goods";
 import * as bag from "../game/bag";
-import { POUCH_SLOTS, canExpand, discard, pouchFits, sellPending, sewPiece, autoPackPending, packOnePending, usePending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
+import { POUCH_SLOTS, canExpand, discard, pouchFits, sellPending, sewPiece, autoPackPending, packOnePending, usePending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, stackAt, toPouch, unpack, useItem } from "../game/inventory";
 import type { GoodId, PlacedGood, RunState } from "../game/types";
 import { ART } from "../render/assets";
 import { ConceptTip, GoodInfo, Term, cardText } from "./parts";
@@ -13,17 +14,20 @@ import { commit, overlay, say, useRun } from "./store";
 
 type Held = { from: "bag"; uid: number; id: GoodId; rot: number } | { from: "pending" | "pouch"; index: number; id: GoodId; rot: number };
 
-/** Is the pointer over the side pouch? */
-const overPouch = (e: PointerEvent) => !!document.elementFromPoint(e.clientX, e.clientY)?.closest(".pouch");
+type Point = { x: number; y: number };
+type Drag = { item: Held; pointerId: number; source: HTMLElement; start: Point; pointer: Point; anchor: Point };
 
 const CELL = 64;
+const DRAG_THRESHOLD = 4; // CSS pixels, independent of the stage scale.
 
-/** Pointer position in stage pixels (the stage is CSS-scaled, and fixed children follow its transform). */
-function stagePoint(e: PointerEvent) {
-  const st = document.querySelector(".stage") as HTMLElement;
-  const r = st.getBoundingClientRect();
-  const k = st.offsetWidth / r.width;
-  return { x: (e.clientX - r.left) * k, y: (e.clientY - r.top) * k };
+function itemArt(id: GoodId, rot: number, cell: number) {
+  const { w, h } = bag.sizeOf(id, rot);
+  const [angle, zoom] = GOODS[id].tilt ?? [0, 1];
+  return {
+    width: (rot % 2 ? h : w) * cell,
+    height: (rot % 2 ? w : h) * cell,
+    transform: `translate(-50%, -50%) rotate(${rot * 90 + angle}deg) scale(${zoom})`,
+  };
 }
 
 /**
@@ -36,10 +40,10 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
   const run = useRun();
   const b = run.bag;
   const gridRef = useRef<HTMLDivElement>(null);
-  const [held, setHeld] = useState<Held | null>(null);
-  const [hover, setHover] = useState<{ x: number; y: number } | null>(null);
+  const gesture = useRef<Drag | null>(null);
+  const [drag, setDrag] = useState<Drag | null>(null);
+  const held = drag?.item ?? null;
   const [selected, setSelected] = useState<number | null>(null);
-  const [ghost, setGhost] = useState<{ x: number; y: number } | null>(null);
   const moved = useRef(false);
   const [confirmSell, setConfirmSell] = useState<number | null>(null);
   // Confirming a pile sale remembers the slot *and* the good: handing in an order shifts the pile, and a second tap
@@ -51,51 +55,112 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
   /** Sewing a 扩囊衬布 on: the lining item's uid while the expander is open. */
   const [sewing, setSewing] = useState<number | null>(null);
 
-  const cellAt = (cx: number, cy: number) => {
-    const r = gridRef.current!.getBoundingClientRect();
-    const x = Math.floor(((cx - r.left) / r.width) * b.w), y = Math.floor(((cy - r.top) / r.height) * b.h);
-    return x >= 0 && y >= 0 && x < b.w && y < b.h ? { x, y } : null;
+  const dropCell = ({ pointer, anchor }: Drag) => {
+    const grid = gridRef.current;
+    if (!grid?.contains(document.elementFromPoint(pointer.x, pointer.y))) return null;
+    const r = grid.getBoundingClientRect();
+    const x = Math.floor(((pointer.x - r.left) * grid.offsetWidth / r.width - grid.clientLeft) / cell);
+    const y = Math.floor(((pointer.y - r.top) * grid.offsetHeight / r.height - grid.clientTop) / cell);
+    if (x < 0 || y < 0 || x >= b.w || y >= b.h) return null;
+    return { x: x - Math.floor(anchor.x), y: y - Math.floor(anchor.y) };
   };
 
-  // Place the held item so the cell under the pointer is its first cell.
-  const drop = (h: Held, at: { x: number; y: number } | null) => {
-    if (!at) return false;
-    const ok = h.from === "bag" ? moveItem(run, h.uid, at.x, at.y, h.rot)
-      : h.from === "pouch" ? fromPouch(run, h.index, { x: at.x, y: at.y, rot: h.rot })
-      : packPending(run, h.index, at.x, at.y, h.rot);
-    if (ok) { sfx.click(); commit(); }
-    return ok;
+  const rotateDrag = () => {
+    const active = gesture.current;
+    if (!active) return;
+    const { item, anchor } = active;
+    const { h } = bag.sizeOf(item.id, item.rot);
+    const rot = (item.rot + 1) % 4;
+    const next = { ...active, item: { ...item, rot }, anchor: { x: Math.min(h - 0.001, h - anchor.y), y: anchor.x } };
+    gesture.current = next;
+    if (moved.current) setDrag(next);
   };
 
-  useEffect(() => {
-    if (!held) return;
-    const onMove = (e: PointerEvent) => { moved.current = true; setGhost(stagePoint(e)); setHover(cellAt(e.clientX, e.clientY)); };
-    const onUp = (e: PointerEvent) => {
-      const at = cellAt(e.clientX, e.clientY);
-      if (moved.current && held.from !== "pouch" && overPouch(e)) {
-        // Dropped on the side pouch.
-        const ok = run.combat ? false : held.from === "bag" ? toPouch(run, held.uid) : pendingToPouch(run, held.index);
-        if (ok) { sfx.click(); setSelected(null); commit(); }
-        else say(run.combat ? "打架的时候腾不出手整理侧袋" : !pouchFits(held.id) ? "侧袋只放一格大的东西" : `侧袋只有 ${POUCH_SLOTS} 格，已经满了`);
+  useLayoutEffect(() => {
+    setDrag(null);
+    const clear = () => { gesture.current = null; setDrag(null); };
+    const cancelled = (e: PointerEvent) => { if (gesture.current?.pointerId === e.pointerId) clear(); };
+    const movedFar = (e: PointerEvent, start: Point) => Math.hypot(e.clientX - start.x, e.clientY - start.y) >= DRAG_THRESHOLD;
+    const onMove = (e: PointerEvent) => {
+      const active = gesture.current;
+      if (!active || active.pointerId !== e.pointerId) return;
+      if (e.pointerType === "mouse" && !(e.buttons & 1)) { clear(); return; }
+      if (!moved.current && !movedFar(e, active.start)) return;
+      if (!moved.current) {
+        active.source.setPointerCapture(e.pointerId);
+        setConfirmSell(null);
       }
-      else if (moved.current && !drop(held, at) && at) say("放不下：换个位置或先旋转");
-      setHeld(null); setHover(null); setGhost(null);
+      moved.current = true;
+      const next = { ...active, pointer: { x: e.clientX, y: e.clientY } };
+      gesture.current = next;
+      setDrag(next);
     };
-    const onKey = (e: KeyboardEvent) => { if (e.key === "r" || e.key === "R") setHeld((h) => (h ? { ...h, rot: (h.rot + 1) % 4 } : h)); };
+    const onUp = (e: PointerEvent) => {
+      const active = gesture.current;
+      if (!active || active.pointerId !== e.pointerId) return;
+      clear();
+      if (e.button !== 0) return;
+      if (!moved.current && !movedFar(e, active.start)) return;
+      moved.current = true;
+      const { item } = active;
+      if ((item.from === "pending" && run.pending[item.index] !== item.id)
+        || (item.from === "pouch" && run.pouch[item.index] !== item.id)) return;
+      const pointer = { x: e.clientX, y: e.clientY };
+      const pouch = document.elementFromPoint(pointer.x, pointer.y)?.closest(".pouch");
+      if (item.from !== "pouch" && pouch && gridRef.current?.parentElement?.contains(pouch)) {
+        const ok = item.from === "bag" ? toPouch(run, item.uid) : pendingToPouch(run, item.index);
+        if (ok) { sfx.click(); setSelected(null); commit(); }
+        else say(run.combat ? "打架的时候腾不出手整理侧袋" : !pouchFits(item.id) ? "侧袋只放一格大的东西" : `侧袋只有 ${POUCH_SLOTS} 格，已经满了`);
+        return;
+      }
+      const at = dropCell({ ...active, pointer });
+      if (!at) return;
+      const ok = item.from === "bag" ? moveItem(run, item.uid, at.x, at.y, item.rot)
+        : item.from === "pouch" ? fromPouch(run, item.index, { ...at, rot: item.rot })
+        : packPending(run, item.index, at.x, at.y, item.rot);
+      if (ok) { sfx.click(); commit(); }
+      else say("放不下：换个位置或先旋转");
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (!gesture.current || !moved.current) return;
+      if (e.key === "Escape") { e.preventDefault(); clear(); }
+      else if (e.key.toLowerCase() === "r" && !e.repeat) rotateDrag();
+    };
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerup", onUp);
-    window.addEventListener("keydown", onKey);
-    return () => { window.removeEventListener("pointermove", onMove); window.removeEventListener("pointerup", onUp); window.removeEventListener("keydown", onKey); };
-  }, [held]);
+    window.addEventListener("pointercancel", cancelled);
+    window.addEventListener("blur", clear);
+    window.addEventListener("resize", clear);
+    window.addEventListener("keydown", onKey, true);
+    return () => {
+      gesture.current = null;
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      window.removeEventListener("pointercancel", cancelled);
+      window.removeEventListener("blur", clear);
+      window.removeEventListener("resize", clear);
+      window.removeEventListener("keydown", onKey, true);
+    };
+  }, [run, b, cell]);
 
-  const startDrag = (h: Held, e: PointerEvent) => {
+  const startDrag = (item: Held, e: PointerEvent) => {
+    if (e.button !== 0 || !e.isPrimary || gesture.current) return;
     e.preventDefault();
     moved.current = false;
-    setHeld(h);
-    setGhost(stagePoint(e));
-    // A quick tap can release before the drag listeners below are attached; don't leave the item stuck in hand.
-    window.addEventListener("pointerup", () => { if (!moved.current) { setHeld(null); setHover(null); setGhost(null); } }, { once: true });
-    if (h.from === "bag") setSelected(h.uid);
+    const source = e.currentTarget as HTMLElement;
+    const start = { x: e.clientX, y: e.clientY };
+    const [x, y] = bag.shapeOf(item.id, item.rot)[0];
+    let anchor = { x: x + 0.5, y: y + 0.5 };
+    if (item.from === "bag") {
+      const r = source.getBoundingClientRect();
+      const { w, h } = bag.sizeOf(item.id, item.rot);
+      anchor = {
+        x: Math.max(0, Math.min(w - 0.001, (start.x - r.left) * w / r.width)),
+        y: Math.max(0, Math.min(h - 0.001, (start.y - r.top) * h / r.height)),
+      };
+      setSelected(item.uid);
+    }
+    gesture.current = { item, pointerId: e.pointerId, source, start, pointer: start, anchor };
   };
 
   const sel = run.bag.items.find((it) => it.uid === selected) ?? null;
@@ -113,7 +178,19 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
   }, [details, selected]);
   // Items lit up by the selected accessory (or the accessories boosting the selected item).
   const linked = new Set(sel ? bag.neighbours(b, sel).filter((o) => GOODS[sel.id].aura || GOODS[o.id].aura).map((o) => o.uid) : []);
-  const preview = held && hover ? { cells: bag.shapeOf(held.id, held.rot).map(([x, y]) => [x + hover.x, y + hover.y] as [number, number]), ok: bag.fits(b, held.id, hover.x, hover.y, held.rot, held.from === "bag" ? held.uid : -1) } : null;
+  const hover = drag && dropCell(drag);
+  const draggedStack = held?.from === "bag" ? b.items.find(it => it.uid === held.uid) : null;
+  const preview = held && hover ? {
+    cells: bag.shapeOf(held.id, held.rot)
+      .map(([x, y]) => [x + hover.x, y + hover.y] as [number, number])
+      .filter(([x, y]) => bag.usable(b, x, y)),
+    ok: (held.from !== "pouch" || !run.combat) && (
+      bag.fits(b, held.id, hover.x, hover.y, held.rot, draggedStack?.uid)
+      || !!stackAt(run, held.id, hover.x, hover.y, draggedStack ? bag.qty(draggedStack) : 1, draggedStack?.uid)
+    ),
+  } : null;
+  const dragStage = drag ? gridRef.current?.closest<HTMLElement>(".stage") : null;
+  const ghostRect = dragStage?.getBoundingClientRect();
   // Gold cells: where an accessory's boost reaches — for the one being dragged (at the drop spot) or the one selected.
   // Gear and accessories that will be refined (淬炼) after the next won fight.
   const refines = bag.pendingRefines(b);
@@ -121,8 +198,7 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
   const reach = held && GOODS[held.id].aura ? (preview ? bag.auraCells(b, preview.cells) : [])
     : !held && sel && GOODS[sel.id].aura ? bag.auraCells(b, bag.footprint(sel)) : [];
 
-  const rotateSelected = () => {
-    if (!sel) return;
+  const rotateItem = (sel: PlacedGood) => {
     for (const rot of [1, 2, 3].map((d) => (sel.rot + d) % 4)) {
       if (moveItem(run, sel.uid, sel.x, sel.y, rot)) { commit(); return; }
       const spot = bag.findSpot({ ...b, items: b.items.filter((i) => i.uid !== sel.uid) }, sel.id);
@@ -130,6 +206,8 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
     }
     say("这里转不开，先挪一挪别的东西");
   };
+
+  const rotateSelected = () => { if (sel) rotateItem(sel); };
 
   if (sewing !== null && run.bag.items.some((i) => i.uid === sewing)) {
     return <div class={`bag-wrap mode-${mode}`}><BagExpander run={run} uid={sewing} onDone={() => { setSewing(null); setSelected(null); }} /></div>;
@@ -147,7 +225,7 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
           : <p class="sell-hint muted">点一件货看说明和卖价，再点一下卖出。</p>}</div>;
       })()}
       <div class={`bag-grid ${b.holes?.length ? "irregular" : ""}`} ref={gridRef} style={{ width: `${b.w * cell}px`, height: `${b.h * cell}px`, "--cell": `${cell}px` } as never}
-        onContextMenu={(e) => { e.preventDefault(); if (held) setHeld({ ...held, rot: (held.rot + 1) % 4 }); else rotateSelected(); }}>
+        onContextMenu={(e) => { e.preventDefault(); if (gesture.current) rotateDrag(); else rotateSelected(); }}>
         {Array.from({ length: b.w * b.h }, (_, i) => bag.usable(b, i % b.w, Math.floor(i / b.w)) && <div class="cell" style={{ left: `${(i % b.w) * cell}px`, top: `${Math.floor(i / b.w) * cell}px` }} />)}
         {reach.map(([x, y]) => <div class="cell reach" style={{ left: `${x * cell}px`, top: `${y * cell}px` }} />)}
         {preview && preview.cells.map(([x, y]) => <div class={`cell preview ${preview.ok ? "ok" : "bad"}`} style={{ left: `${x * cell}px`, top: `${y * cell}px` }} />)}
@@ -159,6 +237,12 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
             <div class={`item kind-${g.kind} ${selected === it.uid ? "selected" : ""} ${isHeld ? "held" : ""} ${g.dim ? "dim" : ""} ${linked.has(it.uid) ? "linked" : ""} ${g.aura ? "aura" : ""} ${g.base ? "fine" : ""} ${refining.has(it.uid) ? "refining" : ""}`}
               style={{ left: `${it.x * cell}px`, top: `${it.y * cell}px`, width: `${size.w * cell}px`, height: `${size.h * cell}px` }}
               onPointerDown={(e) => startDrag({ from: "bag", uid: it.uid, id: it.id, rot: it.rot }, e as unknown as PointerEvent)}
+              onContextMenu={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (gesture.current) rotateDrag();
+                else { setSelected(it.uid); rotateItem(it); }
+              }}
               onClick={() => {
                 if (moved.current) return;
                 if (mode === "sell") {
@@ -175,7 +259,7 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
               }}>
               {bag.footprint(it).map(([x, y]) => <span class="foot" style={{ left: `${(x - it.x) * cell}px`, top: `${(y - it.y) * cell}px` }} />)}
               <img src={ART[g.icon]} alt={g.name} draggable={false} class="item-img"
-                style={{ width: `${(it.rot % 2 ? size.h : size.w) * cell}px`, height: `${(it.rot % 2 ? size.w : size.h) * cell}px`, transform: `translate(-50%, -50%) rotate(${it.rot * 90 + (g.tilt?.[0] ?? 0)}deg) scale(${g.tilt?.[1] ?? 1})` }} />
+                style={itemArt(it.id, it.rot, cell)} />
               {mode === "sell" && <span class={`price ${confirmSell === it.uid ? "confirm" : ""}`}>{confirmSell === it.uid ? `卖?${sellPrice(run, it.id, run.floor, run.shop?.sold[it.id] ?? 0, it.uid)}` : sellPrice(run, it.id, run.floor, run.shop?.sold[it.id] ?? 0, it.uid)}</span>}
               {mode !== "sell" && <AuraBadge run={run} uid={it.uid} />}
               {bag.qty(it) > 1 && <span class="stack-n">×{bag.qty(it)}</span>}
@@ -185,11 +269,16 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
           );
         })}
       </div>
-      {held && ghost && (
-        <div class="drag-ghost" style={{ left: `${ghost.x}px`, top: `${ghost.y}px` }}>
-          <img src={ART[GOODS[held.id].icon]} alt="" />
+      {drag && dragStage && ghostRect && createPortal(
+        <div class="drag-ghost" aria-hidden="true" style={{
+          left: (drag.pointer.x - ghostRect.left) * dragStage.offsetWidth / ghostRect.width - drag.anchor.x * cell,
+          top: (drag.pointer.y - ghostRect.top) * dragStage.offsetHeight / ghostRect.height - drag.anchor.y * cell,
+          width: bag.sizeOf(drag.item.id, drag.item.rot).w * cell,
+          height: bag.sizeOf(drag.item.id, drag.item.rot).h * cell,
+        }}>
+          <img src={ART[GOODS[drag.item.id].icon]} alt="" draggable={false} style={itemArt(drag.item.id, drag.item.rot, cell)} />
           <span class="keys-only">R 旋转</span>
-        </div>
+        </div>, dragStage,
       )}
       {mode === "manage" && details === "panel" && <ItemDetails run={run} uid={sel?.uid ?? null} onRotate={rotateSelected} onDone={() => setSelected(null)} onSew={setSewing} />}
       {mode === "manage" && details === "popover" && sel && (
@@ -200,7 +289,7 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
       )}
       <div class="bag-side">
         {mode !== "sell" && <TagSets run={run} />}
-        {(mode !== "sell" || run.pouch.length > 0) && <Pouch run={run} mode={mode} held={held} onDrag={(index, e) => startDrag({ from: "pouch", index, id: run.pouch[index], rot: 0 }, e)} />}
+        {(mode !== "sell" || run.pouch.length > 0) && <Pouch run={run} mode={mode} held={held} clickAllowed={() => !moved.current} onDrag={(index, e) => startDrag({ from: "pouch", index, id: run.pouch[index], rot: 0 }, e)} />}
       </div>
       {run.pending.length > 0 && (
         <div class="pending">
@@ -211,7 +300,7 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
                 onPointerDown={(e) => { if (mode !== "sell") startDrag({ from: "pending", index, id, rot: 0 }, e as unknown as PointerEvent); }}
                 onClick={() => {
                   // Outside selling a tap used to do nothing, so new players never learned the pile can be dragged (REVIEW-002).
-                  if (mode !== "sell") { sfx.click(); setPileSel(pileSel === `${index}:${id}` ? null : `${index}:${id}`); return; }
+                  if (mode !== "sell") { if (moved.current) return; sfx.click(); setPileSel(pileSel === `${index}:${id}` ? null : `${index}:${id}`); return; }
                   if (pileSell !== `${index}:${id}`) { sfx.click(); setPileSell(`${index}:${id}`); say(`再点一次，${sellPrice(run, id)} 石卖掉${GOODS[id].name}`, 3000); return; }
                   const p = sellPending(run, index); sfx.coin(); say(`卖出${GOODS[id].name}，得 ${p} 石`); setPileSell(null); commit();
                 }}>
@@ -401,7 +490,7 @@ function TagSets({ run }: { run: RunState }) {
  * 侧袋: three slots outside the bag. Things here don't count (no cards, boosts or set tags) but can't be
  * stolen. Drag items in and out, or use the buttons. Locked during a fight.
  */
-function Pouch({ run, mode, held, onDrag }: { run: RunState; mode: "manage" | "sell"; held: Held | null; onDrag: (index: number, e: PointerEvent) => void }) {
+function Pouch({ run, mode, held, clickAllowed, onDrag }: { run: RunState; mode: "manage" | "sell"; held: Held | null; clickAllowed: () => boolean; onDrag: (index: number, e: PointerEvent) => void }) {
   const locked = !!run.combat;
   const [confirm, setConfirm] = useState<string | null>(null); // slot and good, as for the pile
   const take = (i: number) => {
@@ -416,7 +505,7 @@ function Pouch({ run, mode, held, onDrag }: { run: RunState; mode: "manage" | "s
   };
   return (
     <div class={`pouch ${locked ? "locked" : ""} ${held && held.from !== "pouch" ? "target" : ""}`}>
-      <h4><Term id="pouch" /> <small>{locked ? "打完再整理" : mode === "sell" ? "点一下卖掉" : "只放一格大的东西。不生效，不会被抢，但挨打时易碎货照样会磕坏。点一下放回行囊"}</small></h4>
+      <h4><Term id="pouch" /> <small>{locked ? "打完再整理" : mode === "sell" ? "点一下看价，再点一下卖掉" : "只放一格大的东西。不生效，不会被抢，但挨打时易碎货照样会磕坏。点一下放回行囊"}</small></h4>
       <div class="pouch-slots">
         {Array.from({ length: POUCH_SLOTS }, (_, i) => {
           const id = run.pouch[i];
@@ -425,7 +514,7 @@ function Pouch({ run, mode, held, onDrag }: { run: RunState; mode: "manage" | "s
           return (
             <div class={`pouch-slot kind-${g.kind} ${held?.from === "pouch" && held.index === i ? "held" : ""}`} title={`${g.name}：${g.text}`}
               onPointerDown={(e) => { if (!locked) onDrag(i, e as unknown as PointerEvent); }}
-              onClick={() => take(i)}>
+              onClick={() => { if (clickAllowed()) take(i); }}>
               <img src={ART[g.icon]} alt={g.name} draggable={false} />
               <span>{g.name}</span>
               {mode === "sell" && <span class={`price ${confirm === `${i}:${id}` ? "confirm" : ""}`}>{sellPrice(run, id)}</span>}
