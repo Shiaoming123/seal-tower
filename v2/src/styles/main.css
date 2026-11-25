@@ -666,6 +666,14 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .shop-keeper > img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 10%; border-radius: 6px; border: 1px solid var(--gold-dim); }
 .market-board { position: absolute; left: 10px; right: 10px; top: 10px; padding: 8px 10px; border-radius: 2px; color: var(--paper-ink);
   background: var(--tex-paper, none) center / 256px, #efe2c2; box-shadow: inset 0 0 0 1px #8a6a3a, 0 6px 14px rgba(0, 0, 0, 0.6); }
+.market-tab { position: absolute; left: 10px; top: 10px; z-index: 2; display: flex; align-items: baseline; gap: 8px; max-width: calc(100% - 20px);
+  padding: 6px 12px; min-height: 40px; border: 0; border-radius: 2px; cursor: pointer; color: var(--paper-ink); font-family: var(--font-title); font-size: 18px;
+  background: var(--tex-paper, none) center / 256px, #efe2c2; box-shadow: inset 0 0 0 1px #8a6a3a, 0 4px 10px rgba(0, 0, 0, 0.55); }
+.market-tab small { font-family: var(--font-body); font-size: 12px; color: #8a2a1a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.market-tab .arrow, .market-close { font-family: var(--font-body); font-size: 12px; color: #6a5a4a; }
+.market-board { z-index: 2; }
+.market-board h4 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 6px; }
+.market-close { margin-left: auto; border: 0; background: none; cursor: pointer; padding: 4px 6px; min-height: 32px; }
 .market-board h4 { margin: 0 0 4px; font-family: var(--font-title); font-weight: normal; font-size: 20px; color: #8a1f14; }
 .market-board h4 small { font-family: var(--font-body); font-size: 11px; color: #6a5a4a; }
 .market-board ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1px 10px; }
@@ -679,8 +687,9 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .market-board li em.up { color: #2f7a3a; }
 .market-board li em.down { color: #a8322a; }
 .speech { position: absolute; left: 10px; right: 10px; bottom: 10px; background: rgba(239, 226, 194, 0.96); color: var(--paper-ink); padding: 10px 12px; border-radius: 4px; font-size: 16px; line-height: 1.5; }
-.shop-table { display: flex; flex-direction: column; gap: 8px; padding: 12px; border-radius: 6px; overflow-y: auto;
-  background: linear-gradient(rgba(122, 30, 24, 0.92), rgba(80, 18, 14, 0.95)); box-shadow: inset 0 0 0 2px var(--gold-dim), inset 0 0 40px rgba(0, 0, 0, 0.5); }
+/* Its frame is a real border, not an inset shadow: scrolled wares used to slide over the inset frame line (user feedback). */
+.shop-table { display: flex; flex-direction: column; gap: 8px; padding: 10px 12px 14px; border-radius: 6px; overflow-y: auto; border: 2px solid var(--gold-dim);
+  background: linear-gradient(rgba(122, 30, 24, 0.92), rgba(80, 18, 14, 0.95)); box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5); }
 .shop-row h3 { margin: 0 0 6px; font-weight: normal; color: var(--gold); font-size: 18px; }
 .wares { display: flex; gap: 8px; flex-wrap: wrap; }
 .ware { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; }
@@ -1086,3 +1095,12 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .portrait .term { padding: 12px 4px; margin: -12px -4px; }
 .portrait .oil .oil-max { display: none; }
 .hud-order .in-pile { font-size: 11px; }
+
+/* Scrolling lacquer panels (user feedback): the frame of .panel is an inset box-shadow, and a scroll container draws its
+   content over its own inset shadow, so the bag grid and wares covered the bottom frame line. Here the gold line is a
+   real border (content is clipped inside it); the dark rims stay as an outer and a 1px inset shadow. */
+.shop-sell.panel, .reward-bag.panel {
+  border: 3px solid #b08a3c;
+  box-shadow: 0 0 0 2px #1a0905, inset 0 0 0 1px #3a2008, inset 0 2px 24px rgba(0, 0, 0, 0.6), 0 12px 30px rgba(0, 0, 0, 0.7);
+  padding-bottom: 14px;
+}

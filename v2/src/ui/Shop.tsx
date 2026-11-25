@@ -1,3 +1,4 @@
+import { signal } from "@preact/signals";
 import { useState } from "preact/hooks";
 import { sfx } from "../audio/sfx";
 import { CARDS } from "../data/cards";
@@ -140,13 +141,25 @@ export function Shop() {
 }
 
 /** 行情牌: what this shop pays for each good right now, and the next floor's prices if a 道友 told you. */
+// A drawer (user feedback): open, the board covered 绯绡's face. Closed by default; it stays as you left it.
+const boardOpen = signal(false);
+
 function MarketBoard() {
   const run = useRun();
   const held = new Set(run.bag.items.map((i) => i.id));
   const goods = R.TRADE_GOODS.filter((g) => g !== "clasp-broken");
+  const toggle = () => { sfx.click(); boardOpen.value = !boardOpen.value; };
+  if (!boardOpen.value) {
+    return (
+      <button type="button" class="market-tab" onClick={toggle} title="看每种货现在的收价">
+        行情牌 <small>{run.shop ? `今日高价：${GOODS[run.shop.wanted].name}` : ""}</small> <span class="arrow">▾</span>
+      </button>
+    );
+  }
   return (
     <div class="market-board">
-      <h4>行情牌{run.rumor && run.floor < 3 ? <small> · 括号里是楼上（第 {run.floor + 1} 层）的价</small> : null}</h4>
+      <h4>行情牌{run.rumor && run.floor < 3 ? <small> · 括号里是楼上（第 {run.floor + 1} 层）的价</small> : null}
+        <button type="button" class="market-close" onClick={toggle} aria-label="收起行情牌">收起 ▴</button></h4>
       <ul>
         {goods.map((g: GoodId) => {
           const now = sellPrice(run, g);
