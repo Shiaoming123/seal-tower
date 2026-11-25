@@ -8,7 +8,7 @@ import { createRun, orderNeeds, orderRewardText } from "../game/run";
 import { ORDER_CHARACTER } from "../game/discover";
 import { MAX_FAVOR, UPGRADES } from "../data/town";
 import { seedFromString } from "../game/rng";
-import type { WeaponId } from "../game/types";
+import type { Profile, WeaponId } from "../game/types";
 import { previewFor } from "../game/combat";
 import { ART, artId } from "../render/assets";
 import { Art, CardView, portraitOf } from "./parts";
@@ -71,7 +71,13 @@ export function Title() {
   );
 }
 
-export const ABACUS_RENOWN = 4;
+export const DIFF_NAMES = ["寻常", "夜签", "血签", "死签"];
+export const ABACUS_RENOWN = 6; // was 4: one first run's achievements unlocked it at once (REVIEW-003)
+/** Harder 签 unlock by winning the one before (REVIEW-003; was renown 3 / 7 / 12, all reached in one run). */
+export function maxDifficulty(p: Profile): number {
+  const best = p.bestDiff ?? (p.wins > 0 ? 0 : -1); // older saves: a win counts as a win on 寻常
+  return Math.min(3, best + 1);
+}
 
 const WEAPONS: { id: WeaponId; label: string; note: string; tag: string }[] = [
   { id: "sword", label: "照影剑", tag: "连招", note: "一回合连出几刀，越打越疼。适合喜欢算伤害的人。" },
@@ -87,7 +93,7 @@ export function Town() {
   const slots = p.upgrades.counter ? 2 : 1;
   const [orders, setOrders] = useState<string[]>(["lamp"]);
   const [hint, setHint] = useState("lamp");
-  const maxDiff = p.renown >= 12 ? 3 : p.renown >= 7 ? 2 : p.renown >= 3 ? 1 : 0;
+  const maxDiff = maxDifficulty(p);
   const [diff, setDiff] = useState(0);
   const toggleOrder = (id: string) => {
     sfx.click();

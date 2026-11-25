@@ -5,6 +5,8 @@ import { MAX_FAVOR } from "../data/town";
 import * as R from "../game/run";
 import { playtestRecord } from "../game/stats";
 import { Term } from "./parts";
+import { ABACUS_RENOWN, DIFF_NAMES, maxDifficulty } from "./Title";
+import type { Profile } from "../game/types";
 import { ART } from "../render/assets";
 import { clearRun, commit, page, playtest, profileSig, runSig, today, useRun } from "./store";
 
@@ -26,6 +28,7 @@ export function Result() {
     const p = profileSig.value;
     profileSig.value = {
       ...p, renown: p.renown + settled.renown, wins: p.wins + (run.outcome === "win" ? 1 : 0),
+      bestDiff: run.outcome === "win" ? Math.max(p.bestDiff ?? (p.wins > 0 ? 0 : -1), run.difficulty) : p.bestDiff,
       bestFloor: Math.max(p.bestFloor, R.floorsCleared(run)), ordersDone: settled.ordersDone,
       favor: settled.favor, treasury: p.treasury + settled.carried,
       daily: run.flags.includes("daily") ? bestDaily(p.daily, R.floorsCleared(run), run.outcome === "win") : p.daily,
@@ -63,7 +66,7 @@ export function Result() {
           {settled.fresh.map((a) => <li class="ach">新成就「{a.name}」：{a.text} +{a.renown}</li>)}
           {!settled.lines.length && !settled.fresh.length && <li>这趟没挣到声望。</li>}
         </ul>
-        <p class="muted">总声望 {profileSig.value.renown}。声望到 4 解锁「算盘」兵器；到 3、7、12 解锁更难的签。</p>
+        <p class="muted">{unlockNote(profileSig.value)}</p>
         </div>
         {/* Outside the scrolling list: after a win the list (achievements, renown) can be taller than the stage. */}
         <div class="row result-actions">
@@ -96,4 +99,13 @@ function bestDaily(prev: { date: string; floor: number; win: boolean } | null, f
   const date = today();
   if (!prev || prev.date !== date) return { date, floor, win };
   return { date, floor: Math.max(prev.floor, floor), win: prev.win || win };
+}
+
+/** What the next goal is, only for what isn't unlocked yet (REVIEW-003: it kept saying 「到 4 解锁算盘」 after it was). */
+function unlockNote(p: Profile): string {
+  const bits: string[] = [];
+  if (p.renown < ABACUS_RENOWN) bits.push(`声望到 ${ABACUS_RENOWN} 解锁「算盘」兵器`);
+  const d = maxDifficulty(p);
+  if (d < 3) bits.push(d === 0 && p.wins === 0 ? "击败负钟君解锁更难的签" : `在「${DIFF_NAMES[d]}」下击败负钟君，解锁「${DIFF_NAMES[d + 1]}」`);
+  return `总声望 ${p.renown}。${bits.length ? bits.join("；") + "。" : "兵器和签都解锁了。"}`;
 }

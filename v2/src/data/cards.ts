@@ -117,9 +117,11 @@ const list: CardDef[] = [
     play: (c, v) => { c.consume("ash"); c.attack(v.dmg); c.enemyStatus("weak", 1); } },
   { id: "reveal", name: "照妖", cost: 1, type: "skill", rarity: "common", pool: "lamp", v: [{ vuln: 2 }, { vuln: 3 }],
     text: (v) => `施加 ${v.vuln} 回合破绽（受到伤害 +50%），抽 1 张牌。`, play: (c, v) => { c.enemyStatus("vuln", v.vuln); c.draw(1); } },
-  { id: "flame", name: "灯火", cost: 1, type: "attack", rarity: "common", pool: "lamp", tags: ["fire"], v: [{ dmg: 6, per: 2, cap: 12 }, { dmg: 7, per: 3, cap: 18 }],
-    // Capped (REVIEW-001): uncapped, a pile of cheap stacked 灯灰 made one card hit for 36+.
-    text: (v, p) => `造成 ${d(p, v.dmg + Math.min(v.cap, v.per * p.ash))} 伤害。行囊里每有 1 份灯灰，伤害 +${v.per}，最多 +${v.cap}（不消耗）。`,
+  { id: "flame", name: "灯火", cost: 1, type: "attack", rarity: "common", pool: "lamp", tags: ["fire"], v: [{ dmg: 6, per: 2, cap: 8 }, { dmg: 8, per: 2, cap: 12 }],
+    // Capped (REVIEW-001): uncapped, a pile of cheap stacked 灯灰 made one card hit for 36+. Capped lower in REVIEW-003:
+    // 灯火+ still hit 30 on a floor-1 elite and the lamp cleared 负钟君 in three turns.
+    // The total first, then how it's made, so it doesn't read as if the ash bonus is added again (REVIEW-003).
+    text: (v, p) => `造成 ${d(p, v.dmg + Math.min(v.cap, v.per * p.ash))} 伤害（基础 ${v.dmg}，行囊里每份灯灰 +${v.per}，最多 +${v.cap}；灯灰不消耗）。`,
     play: (c, v) => { c.attack(v.dmg + Math.min(v.cap, v.per * c.goods("ash"))); } },
   { id: "burnwick", name: "燃芯", cost: 0, type: "skill", rarity: "uncommon", pool: "lamp", v: [{ e: 2, draw: 2 }, { e: 3, draw: 2 }], tags: ["goods"],
     text: (v) => `烧掉 1 截灯芯：获得 ${v.e} 点能量，抽 ${v.draw} 张牌。`,

@@ -13,7 +13,7 @@ export function Reward() {
   const run = useRun();
   const rw = run.reward!;
   const preview = previewFor(run, null);
-  const title = rw.from === "chest" ? "打开宝箱" : rw.from === "guardian" ? "守关妖倒下了" : rw.from === "elite" ? "精英妖倒下了" : "妖倒下了";
+  const title = rw.from === "chest" ? "打开宝箱" : rw.from === "school" ? "学堂的一课" : rw.from === "guardian" ? "守关妖倒下了" : rw.from === "elite" ? "精英妖倒下了" : "妖倒下了";
   const pending = run.pending.length;
   const bg = useRef<HTMLDivElement>(null);
   // Choices take two taps: the first picks (and enlarges), the second — or the confirm button — takes it.

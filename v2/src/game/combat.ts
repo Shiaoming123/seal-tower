@@ -140,7 +140,13 @@ function damageEnemy(run: RunState, c: CombatState, dmg: number, events: CombatE
   let part: "broke" | undefined;
   if (def.part && e.partIntact && dmg - blocked >= def.part.threshold) { e.partIntact = false; part = "broke"; }
   events.push({ t: "hit", target: "enemy", amount: taken, blocked, part });
-  if (e.hp <= 0) { c.over = "win"; return taken; }
+  if (e.hp <= 0) {
+    // Killing it mid-charge with enough damage counts as interrupting it (REVIEW-003): the killing blow is the
+    // strongest interrupt there is, and 「至少打断一次」 harvests used to fail on it. Overkill counts toward the number.
+    const ch = e.intent.charge;
+    if (ch && !e.intent.stunned && c.dmgThisTurn + (dmg - blocked - taken) >= ch.threshold) { c.interrupts++; events.push({ t: "interrupt" }); }
+    c.over = "win"; return taken;
+  }
   // Thorns and counter stances hurt whoever lands a blow with a card.
   // The counter stance is the enemy's shown intent, so it is active during your turn.
   const stance = e.intent.stunned ? 0 : e.intent.counter ?? 0;

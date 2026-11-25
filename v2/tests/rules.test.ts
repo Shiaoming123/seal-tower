@@ -254,7 +254,7 @@ describe("harvest", () => {
     expect(c.enemy.intent.key).toBe("curl");
     c.enemy.hp = 1; c.enemy.block = 0; handOf(run, ["strike"]); playCard(run, 0);
     winCombat(run);
-    expect(run.reward!.note).toContain("没能取到");
+    expect(run.reward!.note).toContain("没能多取一份");
   });
 });
 
@@ -1096,6 +1096,42 @@ describe("GAME-010 木挡板", () => {
       c.enemy.intent = { key: "wait", name: "等", block: 1 } as never;
       endTurn(run);
       expect(c.block).toBe(want);
+    }
+  });
+});
+
+describe("REVIEW-003 second AI playtest", () => {
+  it("killing a charging monster with enough damage counts as interrupting it", () => {
+    const run = createRun(404, "sword", "lamp");
+    const c = fightWith(run, "moth-queen", "guardian");
+    c.enemy.intent = { key: "ignite", name: "焚翅", charge: { threshold: 12, then: "blaze" } } as never;
+    c.enemy.hp = 15; c.enemy.block = 0; // three strikes: 6 + 6 + a 6-point killing blow = 18 ≥ 12
+    c.energy = 9;
+    handOf(run, ["strike", "strike", "strike"]);
+    for (let i = 0; i < 3 && !c.over; i++) playCard(run, 0);
+    expect(c.over).toBe("win");
+    expect(c.interrupts).toBe(1);
+  });
+  it("a small killing blow on a charging monster is not an interrupt", () => {
+    const run = createRun(405, "sword", "lamp");
+    const c = fightWith(run, "moth-queen", "guardian");
+    c.enemy.intent = { key: "ignite", name: "焚翅", charge: { threshold: 40, then: "blaze" } } as never;
+    c.enemy.hp = 3; c.enemy.block = 0;
+    handOf(run, ["strike"]);
+    playCard(run, 0);
+    expect(c.over).toBe("win");
+    expect(c.interrupts).toBe(0);
+  });
+  it("the boss relic pick skips relics the deck can't use", async () => {
+    const { RELICS } = await import("../src/data/relics");
+    for (let seed = 1; seed <= 30; seed++) {
+      const run = createRun(seed, "abacus", "lamp");
+      const c = fightWith(run, "moth-queen", "guardian");
+      c.enemy.hp = 0; c.over = "win";
+      winCombat(run);
+      const picks = run.reward!.relicChoices ?? [];
+      expect(picks.every((id) => RELICS[id])).toBe(true);
+      expect(picks).not.toContain("wickcutter");
     }
   });
 });

@@ -56,7 +56,8 @@ export function createRun(seed: number, weapon: WeaponId, orders: string | strin
   enterFloor(run, 1);
   for (const ord of run.orders) discover(run, "c:" + ORDER_CHARACTER[ord.id]);
   addGood(run, STARTER_GEAR[weapon]);
-  if (weapon === "lamp") for (let i = 0; i < 4; i++) addGood(run, "ash");
+  // 3, not 4 (REVIEW-003): 4 filled 灯匠老周's 灯灰×4 order before the first step.
+  if (weapon === "lamp") for (let i = 0; i < 3; i++) addGood(run, "ash");
   for (const ord of run.orders) if (ord.level >= 1) {
     const r = ORDERS[ord.id].regular;
     for (const g of r.gift) addGood(run, g);
@@ -175,8 +176,7 @@ export function winCombat(run: RunState) {
     if (c.enemy.partIntact && def.part.good === "clasp") flag(run, "clasp");
     note = c.enemy.partIntact ? `${def.part.label}完好无损。` : `${def.part.label}被重击打碎了。`;
   }
-  if (has(run, "lamp")) goods.push("ash");
-  if (has(run, "lamp-fine")) goods.push("ash");
+  if (has(run, "lamp")) goods.push("ash"); // refined too (base); it no longer adds a second one (REVIEW-003)
   if (run.omen === "horde" && c.kind === "fight") goods.push(def.drops[0].good);
   if (has(run, "fangcharm")) run.hp = Math.min(run.maxHp, run.hp + 3); // REVIEW-001: 4 → 3
   // Normal fights sometimes drop a piece of basic gear; elites always drop tier-2 gear or better.
@@ -197,7 +197,8 @@ export function winCombat(run: RunState) {
         if (has(run, "butcher")) { goods.push(def.harvest.good); run.gold += 5; run.stats.goldEarned += 5; note += " 庖丁刀又多割下一份，外加 5 石。"; }
       }
       run.stats.harvests++;
-    } else if (def.harvest.good !== "stolen") note += ` 没能取到${def.harvest.label}（${def.harvest.text}）。`;
+    // 「没能多取一份」: the normal drop may well be in the loot row; only the harvest's extra one was missed (REVIEW-003).
+    } else if (def.harvest.good !== "stolen") note += ` 没能多取一份${def.harvest.label}（${def.harvest.text}）。`;
   }
   // 淬炼: gear next to its accessory is refined after a win, and the accessory is used up.
   const refined = bag.pendingRefines(run.bag);
@@ -282,10 +283,17 @@ export function flee(run: RunState, back: { x: number; y: number }) {
   run.screen = "explore";
 }
 
+/** Relics that only work with certain cards: offered in a pick only when the deck has such a card (REVIEW-003:
+ *  an 算盘 run was offered 灯纹印 and 灯芯剪, both useless to it). */
+const RELIC_NEEDS: Record<string, string> = { wickcutter: "fire", seal: "goods" };
+
 function pickRelics(run: RunState, n: number): string[] {
+  const tags = new Set<string>(combatDeck(run).flatMap((c) => CARDS[c.id].tags ?? []));
+  const skip = Object.entries(RELIC_NEEDS).filter(([, tag]) => !tags.has(tag)).map(([id]) => id);
   const out: string[] = [];
   for (let i = 0; i < n; i++) {
-    const id = randomRelic({ ...run, relics: [...run.relics, ...out] }, i === 0 ? "rare" : undefined);
+    // Pretend the unusable ones are owned so the pick skips them (randomRelic falls back if nothing else is left).
+    const id = randomRelic({ ...run, relics: [...run.relics, ...out, ...skip] }, i === 0 ? "rare" : undefined);
     if (id) out.push(id);
   }
   return out;
@@ -295,7 +303,9 @@ export function cardChoices(run: RunState, tier: "normal" | "elite" | "shop", n 
   const pool = Object.values(CARDS).filter((c) => c.rarity !== "basic" && (c.pool === "neutral" || c.pool === run.weapon || chance(run.rng, 0.25)));
   const w = (c: CardDef) => {
     const base = c.rarity === "common" ? 60 : c.rarity === "uncommon" ? 30 : tier === "normal" ? 6 : 14;
-    return base * (c.pool === run.weapon ? 1.6 : 1);
+    // Each copy you already have halves the odds of another (REVIEW-003: a run picked up three 灯火).
+    const copies = run.deck.filter((x) => x.id === c.id).length;
+    return base * (c.pool === run.weapon ? 1.6 : 1) * 0.5 ** copies;
   };
   return weighted(run.rng, pool, w, n).map((c) => c.id);
 }

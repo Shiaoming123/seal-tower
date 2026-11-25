@@ -515,7 +515,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 @keyframes deal { from { opacity: 0; transform: translate(-200px, 60px) rotate(-20deg); } }
 .combat-actions { position: absolute; right: 16px; bottom: 16px; z-index: 6; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
 .portrait .hand { left: 0; right: 0; bottom: 110px; }
-.portrait .hand-slot { margin: 0 calc(-18px - var(--n) * 4.5px); } /* UI-012: the 540-wide stage needs a tighter fan */
+.portrait .hand-slot { margin: 0 calc(-18px - var(--n) * 5.6px); } /* UI-012: the 540-wide stage needs a tighter fan; REVIEW-003: 7+ cards hung off both edges at 4.5px */
 .portrait .player-panel { bottom: 14px; }
 .portrait .enemy-head { width: 92%; }
 .portrait .combat-tip { bottom: 480px; }
@@ -704,6 +704,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .portrait .shop { grid-template-columns: 1fr 1fr; grid-template-rows: clamp(380px, 52%, 560px) 1fr; }
 .portrait .shop-sell { overflow-y: auto; }
 .shop-sell .leave { position: sticky; bottom: 0; flex: none; }
+/* Portrait: the sticky button sat on the bag's lower rows; put it first in the column instead, always in view (REVIEW-003). */
+.portrait .shop-sell .leave { position: static; order: -1; min-height: 44px; }
 .portrait .shop-table { grid-column: 1 / -1; grid-row: 2; }
 
 /* Rows sized to the stage; the scroll's text area scrolls and the continue button sits below it: with a full bag
@@ -815,6 +817,10 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .ribbon.miss { color: #c8b8a0; background: linear-gradient(90deg, transparent, rgba(40, 28, 22, 0.75) 15%, rgba(40, 28, 22, 0.75) 85%, transparent); }
 .section-title { margin: 0; font-weight: normal; font-size: 19px; color: var(--gold); text-align: center; letter-spacing: 2px; }
 .section-title small { font-size: 13px; color: #a08a6a; letter-spacing: 0; margin-left: 6px; }
+.pile-act { display: flex; flex-direction: column; gap: 6px; padding: 8px 10px; border-radius: 4px; background: rgba(239, 226, 194, 0.12); border: 1px solid var(--gold-dim); font-size: 14px; }
+.pile-act p { margin: 0; line-height: 1.5; }
+.pile-act .row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.pending-item.picked { outline: 2px solid var(--gold); outline-offset: 1px; }
 .reward-bag { min-height: 0; overflow-y: auto; display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 14px; }
 .reward-bag .bag-wrap { position: relative; grid-template-columns: auto minmax(0, 260px); justify-content: center; }
 .reward-bag .bag-side { grid-column: auto; grid-template-columns: 1fr; align-content: start; }

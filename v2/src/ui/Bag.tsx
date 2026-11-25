@@ -3,7 +3,7 @@ import { sfx } from "../audio/sfx";
 import { CARDS } from "../data/cards";
 import { GOODS, REFINES, TAGS, TAG_IDS, kindLabel, stackMax, townPrice, townPriceLabel } from "../data/goods";
 import * as bag from "../game/bag";
-import { POUCH_SLOTS, canExpand, discard, pouchFits, sellPending, sewPiece, autoPackPending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
+import { POUCH_SLOTS, canExpand, discard, pouchFits, sellPending, sewPiece, autoPackPending, packOnePending, usePending, fromPouch, moveItem, packPending, pendingToPouch, pouchFull, sellItem, sellPouch, sellPrice, toPouch, unpack, useItem } from "../game/inventory";
 import type { GoodId, PlacedGood, RunState } from "../game/types";
 import { ART } from "../render/assets";
 import { ConceptTip, GoodInfo, Term, cardText } from "./parts";
@@ -45,6 +45,9 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
   // Confirming a pile sale remembers the slot *and* the good: handing in an order shifts the pile, and a second tap
   // must never sell a different good that slid into the same slot (REVIEW-001).
   const [pileSell, setPileSell] = useState<string | null>(null);
+  // A tapped pile item (outside selling): shows its text and 装进行囊 / 用掉 buttons (REVIEW-003; dragging alone was
+  // hard on a phone, where the pile sits a screen below the grid).
+  const [pileSel, setPileSel] = useState<string | null>(null);
   /** Sewing a 扩囊衬布 on: the lining item's uid while the expander is open. */
   const [sewing, setSewing] = useState<number | null>(null);
 
@@ -204,11 +207,11 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
           <h4><Term id="pile" /> · {run.pending.length} 件 <small>{mode === "sell" ? "点一下看价，再点一下卖掉。" : "这一层一直跟着你，不生效也不会被偷。上楼或回镇前装进行囊，装不下的会留下。"}</small></h4>
           <div class="pending-list">
             {run.pending.map((id, index) => (
-              <div class={`pending-item ${held?.from === "pending" && held.index === index ? "held" : ""} ${mode === "sell" && pileSell === `${index}:${id}` ? "confirm" : ""}`} title={GOODS[id].text}
+              <div class={`pending-item ${held?.from === "pending" && held.index === index ? "held" : ""} ${mode === "sell" && pileSell === `${index}:${id}` ? "confirm" : ""} ${mode !== "sell" && pileSel === `${index}:${id}` ? "picked" : ""}`} title={GOODS[id].text}
                 onPointerDown={(e) => { if (mode !== "sell") startDrag({ from: "pending", index, id, rot: 0 }, e as unknown as PointerEvent); }}
                 onClick={() => {
                   // Outside selling a tap used to do nothing, so new players never learned the pile can be dragged (REVIEW-002).
-                  if (mode !== "sell") { sfx.click(); say(`${GOODS[id].name}（${kindLabel(id)}）：${GOODS[id].text} 按住拖进行囊或侧袋就装上了。`, 4500); return; }
+                  if (mode !== "sell") { sfx.click(); setPileSel(pileSel === `${index}:${id}` ? null : `${index}:${id}`); return; }
                   if (pileSell !== `${index}:${id}`) { sfx.click(); setPileSell(`${index}:${id}`); say(`再点一次，${sellPrice(run, id)} 石卖掉${GOODS[id].name}`, 3000); return; }
                   const p = sellPending(run, index); sfx.coin(); say(`卖出${GOODS[id].name}，得 ${p} 石`); setPileSell(null); commit();
                 }}>
@@ -218,6 +221,26 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
               </div>
             ))}
           </div>
+          {mode !== "sell" && (() => {
+            const idx = pileSel ? Number(pileSel.split(":")[0]) : -1;
+            const id = idx >= 0 && run.pending[idx] === pileSel!.split(":")[1] ? run.pending[idx] : null;
+            if (!id) return null;
+            const use = GOODS[id].use;
+            const canUse = !!use && !use.bagRow && !run.combat && !(use.oil && run.oil >= run.maxOil);
+            return (
+              <div class="pile-act">
+                <p><b>{GOODS[id].name}</b>（{kindLabel(id)}）：{GOODS[id].text}</p>
+                <div class="row">
+                  <button type="button" class="btn small primary" onClick={() => {
+                    if (packOnePending(run, idx)) { sfx.click(); say(`${GOODS[id].name}装进行囊了。`); setPileSel(null); commit(); }
+                    else { sfx.bump(); say("行囊里没有放得下它的空位。可以按住拖进去自己摆，或者先丢掉点东西。", 3000); }
+                  }}>装进行囊</button>
+                  {canUse && <button type="button" class="btn small" onClick={() => { const r = usePending(run, idx); if (r) { sfx.click(); say(r); setPileSel(null); commit(); } }}>{use!.label.split(" · ")[0]}</button>}
+                  <small class="muted">也可以按住拖到想放的位置</small>
+                </div>
+              </div>
+            );
+          })()}
           <button type="button" class="btn small" onClick={() => {
             const before = run.pending.length; autoPackPending(run); const packed = before - run.pending.length;
             sfx.click(); commit();
@@ -344,7 +367,11 @@ function AuraBadge({ run, uid }: { run: RunState; uid: number }) {
 
 function AuraLine({ run, uid }: { run: RunState; uid: number }) {
   const it = run.bag.items.find((i) => i.uid === uid)!;
-  const from = bag.neighbours(run.bag, it).filter((o) => GOODS[o.id].aura);
+  // Only auras that actually work on this item (REVIEW-003: 养元丹 listed 磨刀石, 护心镜 listed the 灯油壶).
+  const g = GOODS[it.id];
+  const applies = (k: string) => (k === "dmg" || k === "blk" ? g.kind === "gear" && !!g.cards?.length
+    : k === "sell" || k === "ward" ? g.kind === "goods" : k === "ash" ? it.id === "ash" : false);
+  const from = bag.neighbours(run.bag, it).filter((o) => GOODS[o.id].aura && applies(GOODS[o.id].aura!.kind));
   if (!from.length) return null;
   return <p class="det-aura">受到加成：{from.map((o) => `${GOODS[o.id].name}（${GOODS[o.id].aura!.text}）`).join("；")}</p>;
 }

@@ -254,6 +254,8 @@ export interface Profile {
   renown: number;
   runs: number;
   wins: number;
+  /** Highest difficulty won (REVIEW-003): the next one unlocks by winning, not by renown. Older saves lack it. */
+  bestDiff?: number;
   bestFloor: number;
   ordersDone: string[];
   seenTips: string[];

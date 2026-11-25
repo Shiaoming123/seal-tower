@@ -154,6 +154,33 @@ export function useItem(run: RunState, uid: number): string | null {
   }
   if (use.oil && run.oil >= run.maxOil) return null;
   bag.takeOne(run.bag, item); // one off a stack: burning 灯灰 ×3 used to burn all three (REVIEW-002)
+  return applyUse(run, use);
+}
+
+/** Use a consumable straight from the pile (REVIEW-003: 养元丹 in the pile had to be packed before it could be eaten). */
+export function usePending(run: RunState, index: number): string | null {
+  const id = run.pending[index];
+  const use = id && GOODS[id].use;
+  if (!use || use.bagRow || run.combat) return null;
+  if (use.oil && run.oil >= run.maxOil) return null;
+  run.pending.splice(index, 1);
+  return applyUse(run, use);
+}
+
+/** Put one pile item into the bag wherever it fits (stack first). False if there's no room. */
+export function packOnePending(run: RunState, index: number): boolean {
+  const id = run.pending[index];
+  if (!id) return false;
+  const stack = bag.stackWithRoom(run.bag, id);
+  if (stack) { stack.n = bag.qty(stack) + 1; run.pending.splice(index, 1); return true; }
+  const spot = bag.findSpot(run.bag, id);
+  if (!spot) return false;
+  run.bag.items.push({ uid: run.nextUid++, id, ...spot });
+  run.pending.splice(index, 1);
+  return true;
+}
+
+function applyUse(run: RunState, use: NonNullable<(typeof GOODS)[GoodId]["use"]>): string {
   const lines: string[] = [];
   if (use.maxHp) { run.maxHp += use.maxHp; lines.push(`最大气血 +${use.maxHp}`); }
   if (use.heal) { const a = Math.min(use.heal, run.maxHp - run.hp); run.hp += a; lines.push(`回复 ${a} 气血`); }

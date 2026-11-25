@@ -1,7 +1,7 @@
 import { addGood, gainRelic, randomRelic } from "../game/inventory";
 import * as bag from "../game/bag";
 import { type RngState, chance, int, makeRng, pick, shuffle } from "../game/rng";
-import { distances, reveal } from "../game/dungeon";
+import { distances, reveal, revealAll } from "../game/dungeon";
 import { CARDS } from "./cards";
 import { FLOOR_SPAWNS } from "./enemies";
 import { GEAR_IDS, GOODS } from "./goods";
@@ -61,7 +61,7 @@ export const EVENTS: Record<string, EventDef> = {
     text: "一位老道友靠在墙边歇脚。他在这层走了很多遍，知道路，也认得守关的妖。",
     options: [
       { label: "问路", detail: "付 8 石，本层地图全部点亮。", locked: (r) => (r.gold < 8 ? "石不够" : null),
-        apply: (r) => { r.gold -= 8; r.mapRevealed = true; return "道友在你的地图上画出了整层的路。"; } },
+        apply: (r) => { r.gold -= 8; r.mapRevealed = true; revealAll(r.dungeon); return "道友在你的地图上画出了整层的路。"; } },
       { label: "问守关妖", detail: "免费。之后在地图上能看到守关妖的招式。",
         apply: (r) => { r.bossIntel = true; return "道友把守关妖的招式一招一招讲给你听。小地图下面会一直写着它的招式。"; } },
       { label: "打听行情", detail: "付 3 石，知道楼上那一层狐市每种货收多少钱。", locked: (r) => (r.floor >= 3 ? "这已经是最高层了" : r.gold < 3 ? "石不够" : null),

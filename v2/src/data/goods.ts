@@ -109,7 +109,7 @@ const list: GoodDef[] = [
     passive: "牌已升级。回合结束时最多保留 6 点格挡。", text: "贴了护身符的木挡板，挨一下就嗡一声。" },
   { id: "lamp-fine", base: "lamp", tags: ["lamp"], kind: "gear", name: "精引灯盘", icon: "seal", shape: V2, price: 18, cards: ["dust", "flame"], cardsUp: true,
     aura: { kind: "ash", n: 1, text: "相邻的每份灯灰，在「灯火」这类按灯灰算的牌里算两份（灯油壶的效果留在了盘里）" },
-    passive: "牌已升级。每场战斗胜利后多得 2 份灯灰。", text: "浸过灯油的引灯盘，火一点就旺。" },
+    passive: "牌已升级。每场战斗胜利后多得 1 份灯灰。", text: "浸过灯油的引灯盘，火一点就旺。" },
   { id: "purse-fine", base: "purse", tags: ["coin"], kind: "gear", name: "精钱袋", icon: "order-purse", shape: H2, price: 12, cards: ["guardgoods"], cardsUp: true,
     aura: { kind: "sell", n: 2, text: "相邻的每件货物卖价 +2" }, text: "缝进了招财袋的钱袋，货装进去都显得体面。" },
 
