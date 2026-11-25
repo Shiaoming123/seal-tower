@@ -1,0 +1,112 @@
+{
+  "demand": {
+    "source": "exec-642bd0b4-6aad-49c3-8af5-6d5856d6c0e6.png",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "sourceSha256": "07a38e311fe44740fdd028bbf8b0004e4771bf2caabde5cc4b989f403c4ea9c5",
+    "mother": "art/omen-demand.png",
+    "motherSha256": "7a5380268d102853bc034d47141caf31fd5e74a9115236815742b20bca3fddc7"
+  },
+  "rain": {
+    "source": "exec-feb60046-976f-4d38-a69a-c8b12dc4b27e.png",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "sourceSha256": "24d0f33a83ae816e36926410151002ff85abad0938c61b68d8790041cc94d6dd",
+    "mother": "art/omen-rain.png",
+    "motherSha256": "7b5fcf06470fcf13c50456be2f35aaddbefb75e40657ca2bf3a50c01e6ab6cb8"
+  },
+  "incense": {
+    "source": "exec-2f89cba6-8b8a-4435-8540-723b17ff0ceb.png",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "sourceSha256": "3e08285ac76734cb07b6deea080a13683643fb509b44956e833ef36e974e99be",
+    "mother": "art/omen-incense.png",
+    "motherSha256": "9fe4496da428b355a524399abf4e11eff29789c525d49207d808c46edc9cd006"
+  },
+  "patrol": {
+    "source": "exec-3512af7d-2538-4734-b5b8-960de5a06a3e.png",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "sourceSha256": "3153cd18241d857b06192d76a60c10f3f2629c3892426a924801d878a302e070",
+    "mother": "art/omen-patrol.png",
+    "motherSha256": "c7ca5c4a5541a033f0a0b6b3829675db180ea0c121ed1b5695937bc9f74949fc"
+  },
+  "calm": {
+    "source": "exec-a7aa7e94-efd2-42a1-9a73-b0f24cd168bb.png",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "sourceSha256": "2c50f4a5cb9c472c879e1a3d77680bcc76a116dbfc640bfc7dd602436b25e7d4",
+    "mother": "art/omen-calm.png",
+    "motherSha256": "53dd1d3a188f399a3fe45f795202d97801b5a6a5da4a59a38295f7f48eb69d38"
+  },
+  "market": {
+    "source": "exec-bf9702db-0882-4f42-9ace-cad9ccf0154c.png",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "sourceSha256": "ab61a05a70019699463bee3e0fe5b657f7bd466827caa17bcd304771ef4e4d4f",
+    "mother": "art/omen-market.png",
+    "motherSha256": "294aa179558028d1ddd2e5b06135d9e0fad4576b6d155734f92a9df40d73d764"
+  },
+  "horde": {
+    "source": "exec-1d41e336-0ccd-4559-8f20-abd5c0651a5c.png",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "sourceSha256": "c0d30b7787df758f78c8c6eb079d6ba6de1e7c6c5280a3cb6297758afdec9c2b",
+    "mother": "art/omen-horde.png",
+    "motherSha256": "5fc0217f36d0af468b803166a38d07326a5fdeb4df0f1cea5db44ba2399a24d9"
+  },
+  "moon": {
+    "source": "exec-d1b2e147-244b-4718-9d46-714ee35c9559.png",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "sourceSha256": "84bcb0860a970d0b74e23f9883d67fa7e2d3ebdfdc251ea8e7f75a91a0457d8f",
+    "mother": "art/omen-moon.png",
+    "motherSha256": "6349e714bc40495e0ac636f1dfe444746282da07358e3ecafc951e53e5efa655"
+  },
+  "fog": {
+    "source": "exec-ce8766ab-46ce-4d1a-99c3-01951309a3cb.png",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "sourceSha256": "56e91fc520aae87856a824196b7207c534e639c5babcca6cfaaee27d0c7dfe52",
+    "mother": "art/omen-fog.png",
+    "motherSha256": "07271a9042faea4e56004032e6e464741743e126c0e15dbff555d8f1688b88a1"
+  },
+  "festival": {
+    "source": "exec-9d058d72-1d35-4514-8658-b0236dd98ec2.png",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "sourceSha256": "ec6f6fbdbf0fa5d26b5c9124c4e4eafb490fcce2b83013ac53d73af1a4151e34",
+    "mother": "art/omen-festival.png",
+    "motherSha256": "c8e779de2e9ae0a7f5ae4b48130cc0e8fef7455780ba6db22f6795b6ccc4923e"
+  },
+  "bloodmoon": {
+    "source": "exec-9d9c8b09-537f-4eb7-8b58-9ab4a8423c67.png",
+    "sourceSize": [
+      1672,
+      941
+    ],
+    "sourceSha256": "377407f65cadeab73cf8a39f295ba93954dbd221535dde98647800c20b53863c",
+    "mother": "art/omen-bloodmoon.png",
+    "motherSha256": "cfe5c11848e5e81bcd267536e6eb36539360f2c1621ab089bbfff2228670f604"
+  }
+}

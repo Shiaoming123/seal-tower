@@ -723,5 +723,60 @@
     "file": "build-shelf.png",
     "sourceSha256": "0e824a020d9065d8cd40dfe06eeff4db366c0088718e30d3be99838a603e7f95",
     "webpSha256": "5061406ef2efc2664c204b8a2113ef8946d813da04f8f80ddd13ac4d695bd1d2"
+  },
+  "omen-demand": {
+    "file": "omen-demand.png",
+    "sourceSha256": "7a5380268d102853bc034d47141caf31fd5e74a9115236815742b20bca3fddc7",
+    "webpSha256": "dc2588b055e8b178f1863aef9858e3ba7da5cfffa217d62fb8620357fb5a77de"
+  },
+  "omen-incense": {
+    "file": "omen-incense.png",
+    "sourceSha256": "9fe4496da428b355a524399abf4e11eff29789c525d49207d808c46edc9cd006",
+    "webpSha256": "99eaa91f593cae51ef3c6916051863740401f00b210e7563580d021181c6b2e4"
+  },
+  "omen-patrol": {
+    "file": "omen-patrol.png",
+    "sourceSha256": "c7ca5c4a5541a033f0a0b6b3829675db180ea0c121ed1b5695937bc9f74949fc",
+    "webpSha256": "4af1a77486c771c7205d8802b7b5403c3e26c684504885203b62f7e3756d808b"
+  },
+  "omen-rain": {
+    "file": "omen-rain.png",
+    "sourceSha256": "7b5fcf06470fcf13c50456be2f35aaddbefb75e40657ca2bf3a50c01e6ab6cb8",
+    "webpSha256": "783a6ecb960f08f0d797d92f23be43b2a01ca3b477a5673a757a8e7d11c4f109"
+  },
+  "omen-bloodmoon": {
+    "file": "omen-bloodmoon.png",
+    "sourceSha256": "cfe5c11848e5e81bcd267536e6eb36539360f2c1621ab089bbfff2228670f604",
+    "webpSha256": "da5956fd73492a361a5cc094804e99791fb4e0b05b14df46e326dd94b17922b9"
+  },
+  "omen-calm": {
+    "file": "omen-calm.png",
+    "sourceSha256": "53dd1d3a188f399a3fe45f795202d97801b5a6a5da4a59a38295f7f48eb69d38",
+    "webpSha256": "8f9363a8fffa690d43c02ed558453ce0dc526359e07e263d91a7c65edff74cca"
+  },
+  "omen-festival": {
+    "file": "omen-festival.png",
+    "sourceSha256": "c8e779de2e9ae0a7f5ae4b48130cc0e8fef7455780ba6db22f6795b6ccc4923e",
+    "webpSha256": "f22f97d202b9357df532be0588350d1d2e4aefa9dbf967e0aa920ea03804ea3a"
+  },
+  "omen-fog": {
+    "file": "omen-fog.png",
+    "sourceSha256": "07271a9042faea4e56004032e6e464741743e126c0e15dbff555d8f1688b88a1",
+    "webpSha256": "ffb318b711cfea87b332514ed3dc0b2c1cc91e974e95e8f0d8ea1da9b588cced"
+  },
+  "omen-horde": {
+    "file": "omen-horde.png",
+    "sourceSha256": "5fc0217f36d0af468b803166a38d07326a5fdeb4df0f1cea5db44ba2399a24d9",
+    "webpSha256": "c9c03335f28e356d6ec59b43f6be0d7d0b0f5d39d52cc7af6f315fbe3dd8a9be"
+  },
+  "omen-market": {
+    "file": "omen-market.png",
+    "sourceSha256": "294aa179558028d1ddd2e5b06135d9e0fad4576b6d155734f92a9df40d73d764",
+    "webpSha256": "4487d8e2aace0b0bdf2b4d21c0a9a266062e1bf7cbfee722561201ad100cf4a0"
+  },
+  "omen-moon": {
+    "file": "omen-moon.png",
+    "sourceSha256": "6349e714bc40495e0ac636f1dfe444746282da07358e3ecafc951e53e5efa655",
+    "webpSha256": "e1b3fcad1f292c5d74b53761418603e445708e9852b7e9f74998383f934d56c2"
   }
 }

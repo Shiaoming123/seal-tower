@@ -137,12 +137,12 @@ if (traces.length) {
     appType: "custom", logLevel: "error",
   });
   try {
-    const [enemy, event, goods, card, relic, codex, orders, town] = await Promise.all(
-      ["enemies", "events", "goods", "cards", "relics", "codex", "orders", "town"].map((module) => server.ssrLoadModule("/src/data/" + module + ".ts"))
+    const [enemy, event, goods, card, relic, codex, orders, town, omens] = await Promise.all(
+      ["enemies", "events", "goods", "cards", "relics", "codex", "orders", "town", "omens"].map((module) => server.ssrLoadModule("/src/data/" + module + ".ts"))
     );
     const ids = { enemy: enemy.ENEMIES, event: event.EVENTS, floor: enemy.FLOOR_SPAWNS,
       goods: goods.GOODS, card: card.CARDS, relic: relic.RELICS, mechanic: manifest.mechanics,
-      character: Object.fromEntries(codex.CHARACTERS.map((character) => [character.id, character])), order: orders.ORDERS, upgrade: town.UPGRADE };
+      character: Object.fromEntries(codex.CHARACTERS.map((character) => [character.id, character])), order: orders.ORDERS, upgrade: town.UPGRADE, omen: omens.OMEN };
     for (const { file, entities } of traces) {
       for (const entity of entities) {
         const [kind, id, extra] = entity.split(":");

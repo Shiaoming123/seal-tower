@@ -1049,7 +1049,7 @@
       "file": "card-spikes",
       "category": "卡牌插图",
       "usedBy": [
-        "卡牌·反震"
+        "卡牌·回敬"
       ],
       "wanted": [],
       "status": "ok",
@@ -1469,7 +1469,7 @@
       "file": "lamp",
       "category": "事件",
       "usedBy": [
-        "事件·没人管的灯台",
+        "事件·残灯",
         "迷宫里的灯台"
       ],
       "wanted": [],
@@ -2073,7 +2073,7 @@
     {
       "file": "card-spikes",
       "category": "卡牌插图",
-      "usedBy": "卡牌·反震",
+      "usedBy": "卡牌·回敬",
       "fallback": "hook",
       "status": "ok",
       "priority": "P1"
@@ -2907,52 +2907,57 @@
     {
       "file": "omen-calm",
       "name": "太平",
-      "status": "optional"
+      "status": "ok"
     },
     {
       "file": "omen-rain",
       "name": "雨夜",
-      "status": "optional"
+      "status": "ok"
     },
     {
       "file": "omen-market",
       "name": "集市日",
-      "status": "optional"
+      "status": "ok"
     },
     {
       "file": "omen-horde",
       "name": "妖潮",
-      "status": "optional"
+      "status": "ok"
     },
     {
       "file": "omen-moon",
       "name": "月明",
-      "status": "optional"
+      "status": "ok"
     },
     {
       "file": "omen-fog",
       "name": "迷雾",
-      "status": "optional"
+      "status": "ok"
     },
     {
       "file": "omen-festival",
       "name": "灯会",
-      "status": "optional"
+      "status": "ok"
     },
     {
       "file": "omen-bloodmoon",
       "name": "血月",
-      "status": "optional"
+      "status": "ok"
     },
     {
       "file": "omen-incense",
       "name": "香火旺",
-      "status": "optional"
+      "status": "ok"
     },
     {
       "file": "omen-patrol",
       "name": "精英巡夜",
-      "status": "optional"
+      "status": "ok"
+    },
+    {
+      "file": "omen-demand",
+      "name": "货紧",
+      "status": "ok"
     }
   ]
 }
