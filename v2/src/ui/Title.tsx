@@ -26,33 +26,44 @@ import { clearRun, commit, dailyMode, page, profileSig, runSig, savedRun, today 
 export function Title() {
   const saved = savedRun();
   const p = profileSig.value;
+  const goToTown = (daily: boolean) => {
+    sfx.click();
+    dailyMode.value = daily;
+    page.value = "town";
+  };
   return (
     <div class="title-screen">
       <div class="title-bg" style={{ backgroundImage: `url(${artUrl("shop")})` }} />
+      <div class="title-atmosphere" aria-hidden="true" />
       <div class="title-hero"><Art id="hero" /></div>
       <div class="title-box">
-        <h1 class="logo">斩妖塔</h1>
-        <p class="tagline">富婆狐商救救我！<br /><small>镇灯铺 · 一个斩妖人的进货生意</small></p>
+        <header class="title-identity">
+          <h1 class="logo">斩妖塔</h1>
+          <p class="tagline">富婆狐商救救我！<br /><small>镇灯铺 · 一个斩妖人的进货生意</small></p>
+        </header>
         <div class="title-buttons">
-          {saved && (
-            <button type="button" class="btn big primary" onClick={() => { sfx.click(); runSig.value = saved; page.value = "game"; commit(); }}>
+          {saved ? (
+            <button type="button" class="btn big primary title-entry" onClick={() => { sfx.click(); runSig.value = saved; page.value = "game"; commit(); }}>
               继续上一趟 <small>第 {saved.floor} 层 · 气血 {saved.hp}</small>
             </button>
+          ) : (
+            <button type="button" class="btn big primary title-entry" onClick={() => goToTown(false)}>去镇灯铺接单</button>
           )}
-          <button type="button" class="btn" onClick={() => { sfx.click(); dailyMode.value = true; page.value = "town"; }}
-            title="今天所有人进的都是同一座塔">
-            每日签 · {new Date().getMonth() + 1}月{new Date().getDate()}日
-            {p.daily?.date === today() && <small>今日最好：{p.daily.win ? "登顶" : `第 ${p.daily.floor} 层`}</small>}
-          </button>
-          <button type="button" class={`btn big ${saved ? "" : "primary"}`} onClick={() => { sfx.click(); dailyMode.value = false; page.value = "town"; }}>
-            {saved ? "放弃上一趟，重新接单" : "去镇灯铺接单"}
-          </button>
-          <div class="row">
-            <SoundButton />
-            <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "help"; }}>怎么玩</button>
-            <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "achievements"; }}>成就 {p.achievements.length}/{ACHIEVEMENTS.length}</button>
-            <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "codex"; }}>图鉴</button>
+          <div class="title-secondary">
+            <button type="button" class="btn" onClick={() => goToTown(true)} title="今天所有人进的都是同一座塔">
+              每日签 · {new Date().getMonth() + 1}月{new Date().getDate()}日
+              {p.daily?.date === today() && <small>今日最好：{p.daily.win ? "登顶" : `第 ${p.daily.floor} 层`}</small>}
+            </button>
+            {saved && (
+              <button type="button" class="btn" onClick={() => goToTown(false)}>放弃上一趟，重新接单</button>
+            )}
           </div>
+        </div>
+        <div class="title-utilities">
+          <SoundButton />
+          <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "help"; }}>怎么玩</button>
+          <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "achievements"; }}>成就 {p.achievements.length}/{ACHIEVEMENTS.length}</button>
+          <button type="button" class="btn" onClick={() => { sfx.click(); page.value = "codex"; }}>图鉴</button>
         </div>
         <p class="profile-line">声望 {p.renown} · 进塔 {p.runs} 次 · 登顶 {p.wins} 次</p>
       </div>
