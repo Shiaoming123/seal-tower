@@ -1,6 +1,6 @@
 {
   "package": "v2/dist-studio-flat/",
-  "hostUrl": "http://localhost:60227/",
+  "hostUrl": "http://localhost:63366/",
   "runs": [
     {
       "name": "desktop",
@@ -13,7 +13,7 @@
       "badResponses": [],
       "outsideRequests": [],
       "checks": {
-        "titleLoadMs": 417,
+        "titleLoadMs": 566,
         "fontsLoaded": [
           "TowerBrush",
           "TowerKai"
@@ -29,10 +29,10 @@
         "padMoves": true,
         "run": {
           "climb": false,
-          "steps": 51,
+          "steps": 21,
           "outcome": "retreat",
           "floorReached": 1,
-          "minutes": 2.2
+          "minutes": 0.8
         },
         "restart": {
           "newRunFloor": 1,
@@ -52,7 +52,7 @@
       "badResponses": [],
       "outsideRequests": [],
       "checks": {
-        "titleLoadMs": 504,
+        "titleLoadMs": 403,
         "fontsLoaded": [
           "TowerBrush",
           "TowerKai"
@@ -68,10 +68,10 @@
         "padMoves": true,
         "run": {
           "climb": false,
-          "steps": 28,
+          "steps": 30,
           "outcome": "dead",
           "floorReached": 1,
-          "minutes": 1.5
+          "minutes": 1.7
         },
         "restart": {
           "newRunFloor": 1,
@@ -91,7 +91,7 @@
       "badResponses": [],
       "outsideRequests": [],
       "checks": {
-        "titleLoadMs": 576,
+        "titleLoadMs": 505,
         "fontsLoaded": [
           "TowerBrush",
           "TowerKai"
@@ -107,10 +107,10 @@
         "padMoves": true,
         "run": {
           "climb": true,
-          "steps": 115,
+          "steps": 120,
           "outcome": "win",
           "floorReached": 3,
-          "minutes": 2.5
+          "minutes": 3.1
         },
         "restart": {
           "newRunFloor": 1,
@@ -121,10 +121,10 @@
     }
   ],
   "when": {
-    "climb": "2026-11-25T02:59:20.325Z",
+    "climb": "2026-11-25T08:36:19.017Z",
     "earlier": {
-      "phone-390": "2026-11-25T02:56:48.181Z",
-      "earlier": "2026-11-25T02:55:16.733Z"
+      "phone-390": "2026-11-25T08:33:12.954Z",
+      "earlier": "2026-11-25T08:31:26.994Z"
     }
   }
 }
