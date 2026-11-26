@@ -1,6 +1,6 @@
 {
   "package": "v2/dist-studio-flat/",
-  "hostUrl": "http://localhost:58804/",
+  "hostUrl": "http://localhost:57160/",
   "runs": [
     {
       "name": "desktop",
@@ -13,7 +13,7 @@
       "badResponses": [],
       "outsideRequests": [],
       "checks": {
-        "titleLoadMs": 410,
+        "titleLoadMs": 345,
         "fontsLoaded": [
           "TowerBrush",
           "TowerKai"
@@ -23,14 +23,14 @@
           "mutePersisted": true,
           "backOn": true,
           "audioContexts": [
-            "suspended"
+            "running"
           ]
         },
         "padMoves": true,
         "run": {
           "climb": false,
-          "steps": 25,
-          "outcome": "retreat",
+          "steps": 21,
+          "outcome": "dead",
           "floorReached": 1,
           "minutes": 1
         },
@@ -68,10 +68,10 @@
         "padMoves": true,
         "run": {
           "climb": false,
-          "steps": 35,
+          "steps": 46,
           "outcome": "retreat",
           "floorReached": 1,
-          "minutes": 1.6
+          "minutes": 1.9
         },
         "restart": {
           "newRunFloor": 1,
@@ -91,7 +91,7 @@
       "badResponses": [],
       "outsideRequests": [],
       "checks": {
-        "titleLoadMs": 330,
+        "titleLoadMs": 334,
         "fontsLoaded": [
           "TowerBrush",
           "TowerKai"
@@ -107,10 +107,10 @@
         "padMoves": true,
         "run": {
           "climb": true,
-          "steps": 122,
+          "steps": 103,
           "outcome": "win",
           "floorReached": 3,
-          "minutes": 3
+          "minutes": 2.2
         },
         "restart": {
           "newRunFloor": 1,
@@ -121,10 +121,10 @@
     }
   ],
   "when": {
-    "climb": "2026-11-25T09:40:03.907Z",
+    "climb": "2026-11-26T03:40:36.476Z",
     "earlier": {
-      "phone-390": "2026-11-25T09:37:00.547Z",
-      "earlier": "2026-11-25T09:35:22.414Z"
+      "phone-390": "2026-11-26T03:38:20.569Z",
+      "earlier": "2026-11-26T03:36:22.405Z"
     }
   }
 }
