@@ -58,7 +58,7 @@ export const PILE_LABELS = [
 ] as const satisfies ReadonlyArray<readonly [CombatPile, string]>;
 
 const PILE_NOTE: Record<CombatPile, string> = {
-  draw: "按牌种排列，实际抽牌顺序隐藏。",
+  draw: "按牌种排列，实际抽牌顺序隐藏。打出的心法这场一直生效，不回到任何牌堆。",
   discard: "抽牌堆用完后，弃牌会洗回抽牌堆。",
   exhaust: "这些牌本场战斗不会再抽到。",
 };

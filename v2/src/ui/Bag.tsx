@@ -19,6 +19,7 @@ type Drag = { item: Held; pointerId: number; source: HTMLElement; start: Point; 
 
 const CELL = 64;
 const DRAG_THRESHOLD = 4; // CSS pixels, independent of the stage scale.
+const TOUCH_DRAG_THRESHOLD = 10; // a finger wobbles 5–10px on a tap; at 4 taps on a phone became tiny drags (review of UI-018)
 
 function itemArt(id: GoodId, rot: number, cell: number) {
   const { w, h } = bag.sizeOf(id, rot);
@@ -80,7 +81,8 @@ export function BagGrid({ mode, cell = CELL, details = "panel" }: { mode: "manag
     setDrag(null);
     const clear = () => { gesture.current = null; setDrag(null); };
     const cancelled = (e: PointerEvent) => { if (gesture.current?.pointerId === e.pointerId) clear(); };
-    const movedFar = (e: PointerEvent, start: Point) => Math.hypot(e.clientX - start.x, e.clientY - start.y) >= DRAG_THRESHOLD;
+    const movedFar = (e: PointerEvent, start: Point) =>
+      Math.hypot(e.clientX - start.x, e.clientY - start.y) >= (e.pointerType === "touch" ? TOUCH_DRAG_THRESHOLD : DRAG_THRESHOLD);
     const onMove = (e: PointerEvent) => {
       const active = gesture.current;
       if (!active || active.pointerId !== e.pointerId) return;

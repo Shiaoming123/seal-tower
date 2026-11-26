@@ -123,7 +123,6 @@ export const EVENTS: Record<string, EventDef> = {
 
   // ================= new events (placeholder art; descriptions in docs/美术需求.md) =================
   portal: {
-    // No portal art yet (QA-001 asset check): the glowing pool stands in until a dedicated picture exists.
     id: "portal", title: "传送阵", sprite: "portal",
     text: "地上刻着一圈还在发光的阵纹，不知道是哪位前辈留下的。站上去，会被送到这一层的别处。",
     options: [

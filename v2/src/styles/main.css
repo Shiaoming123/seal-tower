@@ -243,6 +243,11 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
   background: linear-gradient(rgba(10, 5, 4, 0.75), rgba(10, 5, 4, 0.9)), var(--tex-lacquer, #1b0f0c) center / 512px 256px; }
 .codex-head { display: flex; align-items: center; gap: 16px; }
 .codex-head h2 { margin: 0; font-family: var(--font-title); font-weight: normal; font-size: 40px; color: var(--gold); }
+/* Portrait (480 stage, UI-020): tabs go to their own row so the count isn't pushed off the edge and 图鉴 stays one line. */
+.portrait .codex-head { flex-wrap: wrap; row-gap: 8px; }
+.portrait .codex-head h2 { white-space: nowrap; font-size: 34px; }
+.portrait .codex-head .town-tabs { order: 3; flex: 1 1 100%; }
+.portrait .codex-head .treasury { margin-left: auto; }
 .codex-body { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 420px; gap: 16px; }
 .codex-grid { display: grid; grid-template-columns: repeat(auto-fill, 104px); gap: 8px; align-content: start; overflow-y: auto; padding: 4px; }
 .codex-cell { width: 104px; height: 118px; border: 0; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px; border-radius: 2px;
@@ -381,11 +386,19 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .stairs-prompt { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 5; width: 420px; text-align: center; }
 .stairs-prompt .row { justify-content: center; }
 /* The 3D view takes whatever height is left on taller phones; the map and the look-ahead line size to their content. */
-.portrait .explore { grid-template-columns: 1fr; grid-template-rows: minmax(330px, 1fr) 70px auto; }
+/* minmax(0, 1fr): a plain 1fr track grew to its widest child (minimap + ahead, four 120px buttons) and pushed the
+   whole screen past the 480 stage (UI-020). */
+.portrait .explore { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(330px, 1fr) 70px auto; }
+.portrait .explore .pad { gap: 8px; }
+.portrait .pad-btn { min-width: 0; flex: 1 1 0; padding-left: 6px; padding-right: 6px; }
+.portrait .minimap canvas { width: 250px; }
+.portrait .minimap { width: 272px; flex: none; }
+.portrait .minimap .legend { flex-wrap: wrap; justify-content: center; } /* two rows, so 前面 fits beside the map, not under it */
+.portrait .explore .tip { max-width: calc(100% - 32px); }
 .portrait .explore .viewport { grid-row: 1; }
 .portrait .explore .pad { grid-row: 2; }
 .portrait .explore .side { grid-row: 3; grid-column: 1; flex-direction: row; flex-wrap: wrap; align-content: flex-start; }
-.portrait .ahead { flex: 1; }
+.portrait .ahead { flex: 1 1 140px; min-width: 0; }
 
 /* ---------------------------------------------------------------- cards */
 .card { --w: 156px; position: relative; width: var(--w); height: calc(var(--w) * 1.42); border: 0; padding: 0; cursor: pointer; text-align: center;
@@ -489,7 +502,9 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 @keyframes slash { 0% { clip-path: inset(0 100% 0 0); opacity: 1; } 45% { clip-path: inset(0 0 0 0); opacity: 1; } 100% { clip-path: inset(0 0 0 0); opacity: 0; } }
 .combat-tip { top: auto; bottom: 280px; left: 16px; z-index: 6; }
 
-.player-panel { position: absolute; left: 14px; bottom: 14px; z-index: 6; display: grid; grid-template-columns: 78px 210px; align-items: end; gap: 7px 10px; pointer-events: none; }
+/* z-index 4, under the hand (5): at 6 (UI-019) the panel covered the first card of a 7–8 card hand on desktop, and a tap there
+   opened a pile instead of playing the card (review of UI-019). */
+.player-panel { position: absolute; left: 14px; bottom: 14px; z-index: 4; display: grid; grid-template-columns: 78px 210px; align-items: end; gap: 7px 10px; pointer-events: none; }
 .energy { width: 78px; height: 78px; border-radius: 50%; display: grid; place-items: center; font-size: 38px; font-weight: bold; color: #fff;
   background: radial-gradient(circle at 35% 30%, #ffe08a, #e2a04a 45%, #8a4a10); box-shadow: 0 0 0 3px #3a1a08, 0 0 20px rgba(255, 190, 90, 0.6); text-shadow: 0 2px 3px #3a1a08; }
 .energy small { font-size: 16px; color: #fff3d0; }
@@ -504,7 +519,7 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 .piles b, .pile-switch b { font-variant-numeric: tabular-nums; }
 .portrait .piles .btn { min-height: 42px; font-size: 17px; }
 .hand { position: absolute; left: 330px; right: 220px; bottom: -14px; height: 240px; z-index: 5; display: flex; justify-content: center; align-items: flex-end; }
-.hand-slot { margin: 0 calc(-8px - var(--n) * 2.4px); transform: rotate(calc((var(--i) - (var(--n) - 1) / 2) * 3deg)) translateY(calc(max(var(--i) - (var(--n) - 1) / 2, (var(--n) - 1) / 2 - var(--i)) * 5px));
+.hand-slot { margin: 0 calc(-8px - var(--n) * 2.4px - max(0px, (var(--n) - 6) * 9px)); /* 7+ cards: tighter, so the fan clears the player panel (UI-020) */ transform: rotate(calc((var(--i) - (var(--n) - 1) / 2) * 3deg)) translateY(calc(max(var(--i) - (var(--n) - 1) / 2, (var(--n) - 1) / 2 - var(--i)) * 5px));
   transform-origin: 50% 120%; transition: transform 0.15s; animation: deal 0.25s ease-out backwards; animation-delay: calc(var(--i) * 40ms); }
 /* Hover lift only where there is a real hover (a tap would leave it stuck on phones). */
 @media (hover: hover) { .hand-slot:hover { z-index: 10; transform: translateY(-40px) scale(1.12); } }
@@ -518,8 +533,8 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
 @keyframes deal { from { opacity: 0; transform: translate(-200px, 60px) rotate(-20deg); } }
 .combat-actions { position: absolute; right: 16px; bottom: 16px; z-index: 6; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
 .portrait .hand { left: 0; right: 0; bottom: 130px; }
-.portrait .hand-slot { margin: 0 calc(-18px - var(--n) * 5.6px); } /* UI-012: the 540-wide stage needs a tighter fan; REVIEW-003: 7+ cards hung off both edges at 4.5px */
-.portrait .player-panel { bottom: 14px; }
+.portrait .hand-slot { margin: 0 calc(-18px - var(--n) * 6.1px); } /* UI-012: the 540-wide stage needs a tighter fan; REVIEW-003: 7+ cards hung off both edges at 4.5px; UI-020: the 480 stage draws cards bigger, so 6.1px */
+.portrait .player-panel { bottom: 14px; z-index: 6; } /* portrait: the hand sits just above the panel; keep the panel's lines on top */
 .portrait .enemy-head { width: 92%; }
 .portrait .combat-tip { bottom: 480px; }
 /* (UI-002) The water ghost's portrait-only offsets are no longer needed: every monster is placed on its tile. */
@@ -1120,3 +1135,6 @@ small { font-size: 0.8em; color: var(--ink-dim); font-weight: normal; }
   box-shadow: 0 0 0 2px #1a0905, inset 0 0 0 1px #3a2008, inset 0 2px 24px rgba(0, 0, 0, 0.6), 0 12px 30px rgba(0, 0, 0, 0.7);
   padding-bottom: 14px;
 }
+
+/* UI-020: portrait text a little larger where it was smallest (on a 390-wide phone the type tag was ~8px). */
+.portrait .card .type { font-size: 12.5px; }
